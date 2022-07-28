@@ -32,6 +32,7 @@ p {
 
 hr {
     height: 4px;
+    width: 95%;
     background-color: brown;
     border-width: 0;
 }
