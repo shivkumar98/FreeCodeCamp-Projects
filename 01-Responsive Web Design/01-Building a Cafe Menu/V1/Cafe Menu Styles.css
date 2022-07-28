@@ -47,18 +47,24 @@ img {
 }
 .main h1, h2{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  
-   
 }
 
+.main div {
+    display:block;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .flavour {
-    float: left;
+    float: left; width: 50%; text-align: left;
+}
 
-}
 .price {
-    float: right;
+    float: right; width: 50%;
+    text-align: right;
 }
+
 
 
 
