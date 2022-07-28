@@ -28,7 +28,8 @@ img {
 }
 
 .main {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     background-color: burlywood;
     text-align: center;
     width: 80%;
@@ -50,9 +51,19 @@ img {
    
 }
 
+
+.flavour {
+    float: left;
+
+}
+.price {
+    float: right;
+}
+
+
+
 .top-text{
     margin-top: 10px;
     margin-bottom: -10px;
 }
-
 
