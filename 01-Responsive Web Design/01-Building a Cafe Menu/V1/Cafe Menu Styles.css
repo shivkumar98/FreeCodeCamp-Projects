@@ -2,6 +2,31 @@ body {
     background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+hr {
+    height: 4px;
+    width: 95%;
+    background-color: brown;
+    border-width: 0;
+}
+
+img {
+    padding: 0;
+    margin: 0
+}
+
 .main {
     margin: auto;
     background-color: burlywood;
@@ -16,23 +41,18 @@ body {
     font-style: italic;
 }
 
-.main h1{
+.main h2{
+    margin-top: 5px;
+}
+.main h1, h2{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-   margin-bottom: -5px;
+  
    
 }
 
-h1 {
-    font-size: 40px;
+.top-text{
+    margin-top: 10px;
+    margin-bottom: -10px;
 }
 
-p {
-    font-family: sans-serif;
-}
 
-hr {
-    height: 4px;
-    width: 95%;
-    background-color: brown;
-    border-width: 0;
-}
