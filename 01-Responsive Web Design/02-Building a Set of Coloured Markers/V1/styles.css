@@ -14,15 +14,17 @@ h1 {
 
 .red {
     background:linear-gradient(180deg, rgb(122, 74, 14) 0%, rgb(245, 62, 113) 50%, rgb(162, 27, 27) 100%);
-    box-shadow: 5px 10px;
+    box-shadow: 0 0 20px 0 rgba(162, 27, 27, 0.75);
 }
 
 .green {
     background: linear-gradient(180deg, rgb(11, 124, 11), rgb(14, 194, 14), rgb(4, 71, 4));
+    box-shadow: 0 0 20px 0 rgba(14, 209, 89, 0.75);
 }
 
 .blue {
     background: linear-gradient(rgb(9, 9, 172), rgb(11, 89, 235), blue);
+    box-shadow: 0 0 20px 0 rgba(14, 28, 216, 0.75);
 }
 
 .sleeve {
