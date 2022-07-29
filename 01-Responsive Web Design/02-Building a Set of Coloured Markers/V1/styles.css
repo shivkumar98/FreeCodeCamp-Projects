@@ -13,13 +13,25 @@ h1 {
 }
 
 .red {
-    background-color: red;
+    background:linear-gradient(180deg, rgb(122, 74, 14) 0%, rgb(245, 62, 113) 50%, rgb(162, 27, 27) 100%);
+    box-shadow: 5px 10px;
 }
 
 .green {
-    background-color: green;
+    background: linear-gradient(180deg, rgb(11, 124, 11), rgb(14, 194, 14), rgb(4, 71, 4));
 }
 
 .blue {
-    background-color: blue;
+    background: linear-gradient(rgb(9, 9, 172), rgb(11, 89, 235), blue);
 }
+
+.sleeve {
+    opacity: 50%;
+    height: 30px;
+    width: 100px;
+    background-color: white;
+    margin-left: 80px;
+    border-left: 12px double black; 
+   
+}
+
