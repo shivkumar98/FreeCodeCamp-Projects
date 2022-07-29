@@ -1,0 +1,25 @@
+article{
+    text-align: center;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+.marker {
+    margin: 10px auto;
+    height: 30px;
+    width: 200px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
