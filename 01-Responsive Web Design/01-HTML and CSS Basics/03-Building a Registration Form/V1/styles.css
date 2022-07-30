@@ -28,4 +28,6 @@ fieldset p {
 
 input {
     width: 100%;
+    background-color: #0a0a23;
+    border: 2px solid #0a0a23;
 }
