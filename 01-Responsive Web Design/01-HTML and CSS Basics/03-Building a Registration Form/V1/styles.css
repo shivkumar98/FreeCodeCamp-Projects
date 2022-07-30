@@ -1,36 +1,68 @@
 body {
     background-color: #1b1b32;
     margin: 0 auto;
-    margin-top: 20px;
+   
 }
 
 h1, p {
-    margin: 20px auto;
+    margin: 30px auto;
     text-align: center;
     color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main{
-    margin: 40px auto;
+    margin: 30px auto;
     width: 500px;
     min-width: 500px;
 }
 fieldset{
     width: 500px;
-    margin: 10 auto;
+    margin: 10px auto;
     border: none;
-    border-bottom: 2px solid gray;
+    border-bottom: 3px solid #3B3B4F;
+    padding: 0 0 35px 0;
+
 }
 
-fieldset p {
+fieldset p, label {
     text-align: left;
     width: 100%;
+    margin: 10 auto;
+    
+}
+
+fieldset label{
+    display: block;
 }
 
 input {
     width: 100%;
+    height: 30px;
     background-color: #0a0a23;
     border: 2px solid #0a0a23;
     color: whitesmoke;
 }
+
+input[type="radio"]   {
+    padding: 0;
+   width: 15px;
+   height: 100%;
+    
+
+}
+
+.inline {
+    display: inline;
+}
+
+.vertical {
+    vertical-align: middle;
+}
+
+/* last-of-type lets you target the last element of nearest parent element/fieldset */
+/* NOTE: this did not work
+p:last-of-type{
+    padding-bottom: 0ch;
+}
+*/
