@@ -44,7 +44,7 @@ input {
     color: whitesmoke;
 }
 
-input[type="radio"]   {
+input[type="radio"], input[type="checkbox"]   {
     padding: 0;
    width: 15px;
    height: 100%;
