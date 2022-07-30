@@ -19,6 +19,8 @@ main{
 fieldset{
     width: 500px;
     margin: 10 auto;
+    border: none;
+    border-bottom: 2px solid gray;
 }
 
 fieldset p {
@@ -30,4 +32,5 @@ input {
     width: 100%;
     background-color: #0a0a23;
     border: 2px solid #0a0a23;
+    color: whitesmoke;
 }
