@@ -1,4 +1,31 @@
 body {
     background-color: #1b1b32;
-    margin: none;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+h1, p {
+    margin: 20px auto;
+    text-align: center;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main{
+    margin: 40px auto;
+    width: 500px;
+    min-width: 500px;
+}
+fieldset{
+    width: 500px;
+    margin: 10 auto;
+}
+
+fieldset p {
+    text-align: left;
+    width: 100%;
+}
+
+input {
+    width: 100%;
 }
