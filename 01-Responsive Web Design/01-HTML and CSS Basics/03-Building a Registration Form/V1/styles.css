@@ -42,6 +42,7 @@ input, select {
     background-color: #0a0a23;
     border: 2px solid #0a0a23;
     color: whitesmoke;
+    align-items: center;
 }
 
 textarea{
@@ -80,3 +81,18 @@ p:last-of-type{
     padding-bottom: 0ch;
 }
 */
+
+fieldset:last-of-type{
+    border: none;
+}
+
+input[type="submit"] {
+    border: 2px solid lightgrey;
+    font-size: 100%;
+    font-weight:bold ;
+    height:40px;
+    width: 60%;
+     margin:35px 20%;
+      background-color:
+       #3B3B4F;
+}
