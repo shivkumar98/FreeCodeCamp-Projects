@@ -1,0 +1,51 @@
+body{
+    background-color: white;
+    background-image: linear-gradient( rgba(43, 21, 212, 0.33), rgba(43, 21, 212, 0.33) ),  url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+    background-size: 120%; 
+    background-position: 10%;
+  
+ 
+}
+
+h1, p {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #f3f3f3;
+}
+
+h1 {
+    padding:0;
+    margin-top: 26px;
+    margin-bottom: -5px;
+    font-size: 16px;
+}
+
+#description {
+    font-style: italic;
+    font-size: 10px;
+    font-weight: 10;
+}
+
+article {
+    background-color: rgb(7, 1, 60);
+    opacity: 98%;
+    width: 40%;
+    min-width: 300px;
+    margin: 10px auto;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+form p,form input, select {
+    text-align: left;
+    font-size: 10px;
+    
+}
+
+label{
+    display: block;
+}
+
+input {
+    width: 100%;
+}
