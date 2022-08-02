@@ -29,11 +29,11 @@
                     </select>
                 </label>
                 <label name="recommend-label"><p>Would you recommend freeCodeCamp to a friend?</p></label>
-                <input class="inline" type="radio" id="defo" name="recommend" value="defo"><label class="inline"  for="defo">Definitely</label>
+                <input class="inline" type="radio" id="defo" name="recommend" value="defo"><label class="inline"  for="defo"> Definitely</label>
                 <br>
-                <input type="radio" id="maybe" name="recommend" value="maybe"><label class="inline" for="maybe">Maybe</label>
+                <input type="radio" id="maybe" name="recommend" value="maybe"><label class="inline" for="maybe"> Maybe</label>
                 <br>
-                <input type="radio" id="notsure" name="recommend" value="notsure"><label class="inline" for="notsure">Not sure</label>
+                <input type="radio" id="notsure" name="recommend" value="notsure"><label class="inline" for="notsure"> Not sure</label>
                 <label name="feature-label"><p>What is your favourite feature about freeCodeCamp?</p>
                     <select name="role" id="dropdown">
                         <option value="">Select an option</option>
@@ -45,7 +45,32 @@
                     </select>
                 </label>
                 <label name="improvements-label"><p>What would you like to see improved? <span class="allapply">(Check all that apply)</span></p></label>
+                <input name="improvements" type="checkbox" value="front-end"><label class="inline"> Front-end Projects</label>
+                <br>
+                <input name="improvements" type="checkbox" value="back-end"><label class="inline"> Back-end Projects</label>
+                <br>
+                <input name="improvements" type="checkbox" value="data-visualisation"><label class="inline"> Data Visualisation</label>
+                <br>
+                <input name="improvements" type="checkbox" value="challenges"><label class="inline"> Challenges</label>
+                <br>
+                <input name="improvements" type="checkbox" value="open-source"><label class="inline"> Open Source Community</label>
+                <br>
+                <input name="improvements" type="checkbox" value="gitter"><label class="inline"> Gitter help rooms</label>
+                <br>
+                <input name="improvements" type="checkbox" value="videos"><label class="inline"> Videos</label>
+                <br>
+                <input name="improvements" type="checkbox" value="city"><label class="inline"> City Meetups</label>
+                <br>
+                <input name="improvements" type="checkbox" value="wiki"><label class="inline"> Wiki</label>
+                <br>
+                <input name="improvements" type="checkbox" value="forum"><label class="inline"> Forum</label>
+                <br>
+                <input name="improvements" type="checkbox" value="additional-courses"><label class="inline"> Additional Courses</label>
+                
+                <label name="comments-label"><p>Any comments or suggestions?</p></label>
+                <textarea id="comments" placeholder="Enter your comments here..."></textarea>
 
+                <input id="submit" type="submit" value="Submit">
             </form>
         </article>
     </body>
