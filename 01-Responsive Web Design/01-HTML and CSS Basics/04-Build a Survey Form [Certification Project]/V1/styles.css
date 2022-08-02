@@ -1,10 +1,8 @@
 body{
     background-color: white;
-    background-image: linear-gradient( rgba(43, 21, 212, 0.33), rgba(43, 21, 212, 0.33) ),  url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
-    background-size: 120%; 
-    background-position: 10%;
-  
- 
+    background-image: linear-gradient( rgba(137, 125, 226, 0.6),rgba(137, 125, 226, 0.6)),  url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+    background-size: 100%; 
+
 }
 
 h1, p {
@@ -13,39 +11,47 @@ h1, p {
     color: #f3f3f3;
 }
 
-h1 {
+#title {
     padding:0;
-    margin-top: 26px;
+    margin-top: 50px;
     margin-bottom: -5px;
-    font-size: 16px;
+    font-weight: 100;
+    font-size: 35px;
 }
 
 #description {
     font-style: italic;
-    font-size: 10px;
-    font-weight: 10;
+    font-size: 20px;
+    font-weight: lighter;
 }
 
 article {
     background-color: rgb(7, 1, 60);
-    opacity: 98%;
-    width: 40%;
+    opacity: 80%;
+    width: 650px;
     min-width: 300px;
-    margin: 10px auto;
-    border-radius: 3px;
-    padding: 10px 20px;
-}
-
-form p,form input, select {
-    text-align: left;
-    font-size: 10px;
+    
+    border-radius: 5px;
     
 }
 
+form{
+    padding: 30px;
+}
+
+label p {
+    text-align: left;
+}
+
 label{
+    
     display: block;
 }
 
 input {
     width: 100%;
+}
+
+.center {
+    margin: 0 auto;
 }
