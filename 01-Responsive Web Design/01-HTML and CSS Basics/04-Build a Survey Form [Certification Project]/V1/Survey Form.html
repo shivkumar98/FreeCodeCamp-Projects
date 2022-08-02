@@ -18,17 +18,24 @@
                 <label name="age-label"><p>Age(optional)</p>
                     <input type="number" min="13" max="120" id="Age" placeholder="Age">
                 </label>
-                <label name="age-label"><p>Which option best describes your current role?</p>
+                <label name="role-label"><p>Which option best describes your current role?</p>
                     <select name="role" id="dropdown">
-                        <option>Select an option</option>
-                        <option>Student</option>
-                        <option>Full Time Job</option>
-                        <option>Full Time Learner</option>
-                        <option>Prefer not to say</option>
-                        <option>Other</option>
-
+                        <option value="">Select an option</option>
+                        <option value="STD">Student</option>
+                        <option value="FTJ">Full Time Job</option>
+                        <option value="FTL">Full Time Learner</option>
+                        <option value="PNS">Prefer not to say</option>
+                        <option value="">Other</option>
                     </select>
                 </label>
+                <label name="recommend-label"><p>Would you recommend freeCodeCamp to a friend?</p></label>
+                   
+                        <input class="inline" type="radio" id="defo" name="recommend" value="defo"><label class="inline"  for="defo">Definitely</label>
+                        <br>
+                        <input type="radio" id="maybe" name="recommend" value="maybe"><label class="inline" for="maybe">Maybe</label>
+                        <br>
+                        <input type="radio" id="notsure" name="recommend" value="notsure"><label class="inline" for="notsure">Not sure</label>
+                 
             </form>
         </article>
     </body>

@@ -5,7 +5,7 @@ body{
 
 }
 
-h1, p {
+h1, p , label{
     text-align: center;
     font-family: 'Poppins', sans-serif;
     color: #f3f3f3;
@@ -48,10 +48,20 @@ label{
     display: block;
 }
 
-input {
+input[type="text"] {
     width: 100%;
 }
 
 .center {
     margin: 0 auto;
+}
+
+.inline {
+    clear: none;
+display: inline;
+}
+
+
+.float-left {
+    float: left;
 }
