@@ -25,6 +25,11 @@ h1, p , label{
     font-weight: lighter;
 }
 
+.allapply {
+    font-size: 14px;
+  
+}
+
 article {
     background-color: rgb(7, 1, 60);
     opacity: 80%;
@@ -47,7 +52,6 @@ label{
     
     display: block;
 }
-input {}
 
 input[type="text"], input[type="email"], input[type="number"], select {
     width: 100%;
