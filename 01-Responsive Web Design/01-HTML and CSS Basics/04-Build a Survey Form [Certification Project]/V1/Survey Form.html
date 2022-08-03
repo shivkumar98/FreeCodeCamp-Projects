@@ -8,15 +8,15 @@
         <p id="description">Thank you for taking the time to help us improve the platform</p>
 
         <article class="center">
-            <form  >
-                <label name="name-label"><p>Name</p>
-                <input type="text" id="name" placeholder="Enter your name">
+            <form id="survey-form" >
+                <label id="name-label"><p>Name</p>
+                <input type="text" id="name" required placeholder="Enter your name">
                 </label>
-                <label name="email-label"><p>Email</p>
-                    <input type="email" id="email" placeholder="Enter your email">
+                <label id="email-label"><p>Email</p>
+                    <input type="email" required id="email" placeholder="Enter your email">
                 </label>
-                <label name="age-label"><p>Age(optional)</p>
-                    <input type="number" min="13" max="120" id="Age" placeholder="Age">
+                <label id="number-label" age-label"><p>Age(optional)</p>
+                    <input id="number" type="number" min="13" max="120" id="Age" placeholder="Age">
                 </label>
                 <label name="role-label"><p>Which option best describes your current role?</p>
                     <select name="role" id="dropdown">
