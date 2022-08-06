@@ -50,11 +50,10 @@
                 padding: 0;
                 
             }
-
+            /*Targets p elements without the class: no-divider*/  
             p:not(.no-divider){
                 border-bottom: 1px solid rgb(35, 35, 35)
             }
-
           
             .right{
                 float: right;
@@ -62,6 +61,10 @@
             }
             .left{
                 text-align: left;
+            }
+
+            .indent {
+                text-indent: 1em;
             }
 
         </style>
@@ -80,6 +83,14 @@
                 <div class="divider med"></div>
                 <p class="bold right no-divider">% Daily Value</p>
                 <div class="divider"></div>
+                <p><span class="bold">Total Fat</span> 8g <span class="right bold">10%</span></p>
+                <p class="indent">Saturated Fat 1g <span class="right bold">5%</span></p>
+                <p class="indent"><i>Trans</i> Fat 0g </p>
+                <p><span class="bold">Sodium </span>160mg <span class="bold right">7%</span></p>
+                <p class="indent">Dietary Fiber 4g</p>
+                <p class="indent">Total Sugar 12g</p>
+                <span class="indent"><p class="indent"><span class="indent">Includes 10g Added Sugars</span></p>
+            </span>
             </div>
         </header>>
 
