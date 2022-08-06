@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1 {
+                font-family: Arial;
+                text-align: center;
+                background-color: #DFDCDC;
+            }
+
+            body {
+                background-color:#DFDCDC;
+            }
+            #GALLERY img {
+                width:24%;
+                height:150px;
+                object-fit: cover;
+                padding: 2px;
+                border-radius: 10px;
+            }
+            #GALLERY {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            @media( max-width: 800px){
+                #GALLERY img {
+                    width: 50%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CSS FLEXBOX PHOTO GALLERY</h1>
+        <div id="GALLERY">
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg"/>
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg"/>
+
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg"/>
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg"/>
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg"/>
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg"/>
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg"/>
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg"/>
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg"/>
+            <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/10.jpg"/>
+
+        </div>
+    </body>
+
+</html>
