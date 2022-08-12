@@ -8,3 +8,16 @@ table, th, tr, td{
 th {
     cursor: pointer;
 }
+
+tr {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+th {
+    font-weight: 400;
+}
+
+body{
+    margin: 10px auto;
+    padding-left: 20px;
+}
