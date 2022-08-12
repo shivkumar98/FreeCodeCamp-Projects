@@ -1,2 +1,10 @@
 th{ font-size: large;}
 
+table, th, tr, td{
+    border-spacing: 0;
+    border: 1px solid #ddd;
+}
+
+th {
+    cursor: pointer;
+}
