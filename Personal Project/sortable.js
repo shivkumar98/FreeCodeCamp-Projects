@@ -15,6 +15,10 @@
   This basically means: do what you want with it.
 */
 
+/* making headings bold*/
+
+
+
 
 var stIsIE = /*@cc_on!@*/false;
 
