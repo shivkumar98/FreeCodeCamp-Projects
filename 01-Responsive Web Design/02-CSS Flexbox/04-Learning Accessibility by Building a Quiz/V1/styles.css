@@ -91,3 +91,15 @@ legend{
     width: 95%;
      /* why is my div overflowing? NM I fixed it */
 }
+
+#submit-bttn{
+    width: 95%;
+    margin: 0 auto;
+    height: 30px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    background-color:#d0d0d5 ;
+    margin-left: 20px;
+    border: 2px solid darkgray;
+    
+}
