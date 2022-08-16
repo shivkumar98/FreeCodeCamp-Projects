@@ -21,7 +21,7 @@ h1 {
     margin: auto ;
     
 }
- nav {
+nav {
     position: fixed;
     display: flex;
     vertical-align: middle;
@@ -33,12 +33,12 @@ h1 {
     justify-content: space-between;
     
 }
+
 #logo {
     height: 20px;
     padding-top: 17px;
-  
-    
 }
+
 nav li {
     display: inline;
     flex-direction: row;
@@ -60,25 +60,26 @@ a:last-of-type {
 fieldset {
     margin-top: 20px;
 }
-.question-section {
-    color: #1b1b32;
-    border-bottom: solid 3px #adb5c0 ;
-    margin-bottom: 30px;
-   
-   
- 
-    width: 95%;
-     /* why is my div overflowing? */
-    
-    
-    
-}
+
 
 fieldset {
     padding: 20px 50px;
 }
 
-label {
-    width: 10%;
+fieldset input {
+    float: right;
+    width: 50%;
+    margin-right: 34%;
+}
 
+.question-field {
+    margin-top: 5px;
+}
+
+.question-section {
+    color: #1b1b32;
+    border-bottom: solid 3px #adb5c0 ;
+    margin-bottom: 30px;
+    width: 95%;
+     /* why is my div overflowing? NM I fixed it */
 }
