@@ -4,11 +4,20 @@
         <meta charset="UTF-8">
         <title>HTML/CSS Quiz</title>
         <style>
+            main{
+                clear: both;
+                padding-top: 100px;
+                margin:0 auto;
+                width: 50%;
+                min-width: 500px;
+            }
             body {
                 margin: 0;
+                background-color: #f5f6f7;
+               
             }
             
-            h1, h2 {
+            h1, h2, label {
                 font-family: Verdana, sans-serif;
             }
             h1 {
@@ -16,7 +25,7 @@
                 
                 padding: 0;
                 margin: auto ;
-                display: inline;
+                
             }
              nav {
                 position: fixed;
@@ -41,9 +50,43 @@
                 flex-direction: row;
                 justify-content: center;
                 height: 80%;
-                background-color: aqua;
-                text-decoration: none;
+                font-size: 25px;
+                padding-left: 15px;
             }
+            li a {
+                text-decoration: none;
+                color:white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                
+            }
+            a:last-of-type {
+                padding-right: 20px;
+            }
+
+            fieldset {
+                margin-top: 20px;
+            }
+            .question-section {
+                color: #1b1b32;
+                border-bottom: solid 3px #adb5c0 ;
+                margin-bottom: 30px;
+               
+               
+             
+                width: 95%;
+                 /* why is my div overflowing? */
+                
+                
+                
+            }
+
+            fieldset {
+                padding: 20px 50px;
+            }
+
+
+
+
          </style>
     </head>
 
@@ -53,13 +96,23 @@
                 <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
                 <h1>HTML/CSS Quiz</h1>
                 <ul>
-                    <li><a href="#">INFO</a></li>
+                    <li><a href="#student-info">INFO</a></li>
                     <li><a href="#">HTML</a></li>
                     <li><a href="#">CSS</a></li>
                 </ul>
           </nav>
         </header>
         <main>
+            <form method="post" action="">
+                
+                <h1 class="question-section" id="student-info">Student Info</h1>
+
+                <fieldset>
+                    <label for="name">Name: <input id="name" name="name" type="text"></label>
+
+                </fieldset>
+
+            </form>
 
         </main>
         <footer>
