@@ -1,0 +1,84 @@
+main{
+    clear: both;
+    padding-top: 100px;
+    margin:0 auto;
+    width: 50%;
+    min-width: 500px;
+}
+body {
+    margin: 0;
+    background-color: #f5f6f7;
+   
+}
+
+h1, h2, label {
+    font-family: Verdana, sans-serif;
+}
+h1 {
+    color: #e6b232;
+    
+    padding: 0;
+    margin: auto ;
+    
+}
+ nav {
+    position: fixed;
+    display: flex;
+    vertical-align: middle;
+    background-color: #1b1b32;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    
+}
+#logo {
+    height: 20px;
+    padding-top: 17px;
+  
+    
+}
+nav li {
+    display: inline;
+    flex-direction: row;
+    justify-content: center;
+    height: 80%;
+    font-size: 25px;
+    padding-left: 15px;
+}
+li a {
+    text-decoration: none;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+a:last-of-type {
+    padding-right: 20px;
+}
+
+fieldset {
+    margin-top: 20px;
+}
+.question-section {
+    color: #1b1b32;
+    border-bottom: solid 3px #adb5c0 ;
+    margin-bottom: 30px;
+   
+   
+ 
+    width: 95%;
+     /* why is my div overflowing? */
+    
+    
+    
+}
+
+fieldset {
+    padding: 20px 50px;
+}
+
+label {
+    width: 10%;
+
+}
