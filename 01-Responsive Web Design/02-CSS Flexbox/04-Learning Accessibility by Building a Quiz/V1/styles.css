@@ -11,7 +11,7 @@ body {
    
 }
 
-h1, h2, label {
+h1, h2, label, p, legend {
     font-family: Verdana, sans-serif;
 }
 h1 {
@@ -59,14 +59,12 @@ a:last-of-type {
 
 fieldset {
     margin-top: 20px;
+    margin-bottom: 60px;
+    margin-left: 20px;
+    border: none;
 }
 
-
-fieldset {
-    padding: 20px 50px;
-}
-
-fieldset input {
+.float-right {
     float: right;
     width: 50%;
     margin-right: 34%;
