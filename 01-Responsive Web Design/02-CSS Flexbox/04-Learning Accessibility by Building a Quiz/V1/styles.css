@@ -59,10 +59,15 @@ a:last-of-type {
 
 fieldset {
     margin-top: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     margin-left: 20px;
     border: none;
 }
+
+legend{
+    font-size: 25px;
+}
+
 
 .float-right {
     float: right;
