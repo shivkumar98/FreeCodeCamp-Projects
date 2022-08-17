@@ -17,6 +17,6 @@ You can preview the rendered HTML [here]()
 
 The page I am attempting to mimick is below:
 
-![screenshot 1](Images/d-1.png)
-![screenshot 2](Images/d-2.png)
-![screenshot 3](Images/d-3.png)
+<img src="Images/d-1.png" width="600x">
+<img src="Images/d-2.png" width="600x">
+<img src="Images/d-3.png" width="600x">
