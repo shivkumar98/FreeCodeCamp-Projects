@@ -1,0 +1,16 @@
+body {
+    margin-top: 30px;
+    padding: 0;
+    
+    background-color: #ffffff;
+    
+}
+
+main {
+    background-color: #eeeeee;
+    margin: 0 auto;
+    width: 98%;
+    text-align: center;
+    font-family: Tahoma;
+    color: #333333;
+}
