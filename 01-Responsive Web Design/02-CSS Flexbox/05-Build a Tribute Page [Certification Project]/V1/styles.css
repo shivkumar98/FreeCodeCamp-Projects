@@ -28,3 +28,13 @@ main {
     width: 90%;
     text-align: center;
 }
+
+.year {
+    font-weight:bold ;
+}
+
+li {
+    text-align: left;
+    margin: auto;
+    width: 70%
+}
