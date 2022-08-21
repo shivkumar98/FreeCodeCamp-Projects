@@ -18,6 +18,7 @@ main {
 #image {
     display: block;
     width: 95%;
+    max-width: 800px;
     margin:  auto;
 }
 
@@ -36,5 +37,6 @@ main {
 li {
     text-align: left;
     margin: auto;
-    width: 70%
+    width: 70%;
+    padding-top: 20px;
 }
