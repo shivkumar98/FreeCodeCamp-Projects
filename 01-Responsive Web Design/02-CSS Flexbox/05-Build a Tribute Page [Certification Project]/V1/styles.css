@@ -2,15 +2,29 @@ body {
     margin-top: 30px;
     padding: 0;
     
-    background-color: #ffffff;
+    background-color: #eeeeee;
     
 }
 
 main {
-    background-color: #eeeeee;
+    background-color: #ffffff;
     margin: 0 auto;
     width: 98%;
     text-align: center;
     font-family: Tahoma;
     color: #333333;
+}
+
+#image {
+    display: block;
+    width: 95%;
+    margin:  auto;
+}
+
+#img-caption {
+    margin: 0 auto;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    width: 90%;
+    text-align: center;
 }
