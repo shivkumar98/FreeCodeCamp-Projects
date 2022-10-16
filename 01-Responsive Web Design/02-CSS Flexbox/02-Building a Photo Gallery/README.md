@@ -20,7 +20,7 @@ There are 2-axes for flexbox, a main axis and cross axis
 ### **Flex-Direction**
 The flex-direction property is the main direction of flexbox. This determines whether the items in the flexbox go horizontally (row) or vertically (column).
 
-<img src="basics1.png" alt="drawing" width="250"/>
+<img src="Images/basics1.png"  width="250"/>
 
 The **Flex-direction has 4 possible values**:
 
