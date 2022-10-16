@@ -9,3 +9,8 @@ In this tutorial, I will attempt to recreate the following:
 ## Notes:
 
 The aria-hidden property removes an element from the accessibility tree
+
+### HTML Tables
+A table in HTML is encapsulatred by the <table></table> tags 
+
+The header portion of the table is wrapped within <thead></thead> tags
