@@ -1,4 +1,4 @@
-## Project 1: Building a Cafe Menu 
+## Project 1: Learn Basic CSS by Building a Cafe Menu 
 
 I will attempt to recreate the HTML that I generated for the Cafe Menu project of the [Responsive Web Design freecodecamp certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-basic-css-by-building-a-cafe-menu/step-1)
 
