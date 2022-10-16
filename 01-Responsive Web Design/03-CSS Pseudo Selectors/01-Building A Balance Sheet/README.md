@@ -8,11 +8,21 @@ In this tutorial, I will attempt to recreate the following:
 
 ## Notes:
 
-The aria-hidden property removes an element from the accessibility tree
+1) The **aria-hidden** property removes an element from the accessibility tree
 
-We can target elements which has a class assigned to it using class~="class-name", this targets elements whose class ATLEAST CONTAINS "class-name". 
+2) We can target elements which has a class assigned to it using class~="class-name", this targets elements whose class ATLEAST CONTAINS "class-name". 
 
-- E.g. span[class~="sr-only"]
+     E.g. **span[class~="sr-only"]**
+
+3) **span[class]** will target ANY span whos class is set
+
+4) **:first-of-type** is a pseudo-selector which targets the first element prefixed by this selector
+
+    E.g. span:first-of-type will target the first span element
+
+5) **:last-of-type** targets the last element
+
+6) **border-collapse** is a property whicdh determines whether borders are seperated (seperatet) or collapsed into itself (collapse)
 
 ### HTML Tables
 A table in HTML is encapsulatred by the &lt;table>&lt;/table> tags 
