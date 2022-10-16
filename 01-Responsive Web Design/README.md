@@ -14,7 +14,7 @@ Hi! I started freeCodeCamp's (New) Responsive Web Design Certification in July 2
 5) [Learn the CSS Box Model by Building the Rothko Project](02-CSS%20Flexbox/01-Building%20a%20Rothko%20Painting/README.md)
 6) [Learn CSS Flexbox by Building a Photo Gallery](02-CSS%20Flexbox/02-Building%20a%20Photo%20Gallery/README.md)
 7) [Learn Typography by Building a Nutrition Label](02-CSS%20Flexbox/03-Building%20a%20Nutrition%20Label/README.md)
-8) [**Certification Project 2**: Tribute Page](02-CSS Flexbox/05-Build a Tribute Page [Certification Project]/README.md)
+8) [**Certification Project 2**: Tribute Page](02-CSS%20Flexbox/05-Build%20a%20Tribute%20Page%20[Certification%20Project]/README.md)
 
 - CSS Pseudo-Selectors
 9) [Learn More About CSS Pesudo Selectors By Building A Balance Sheet](03-CSS%20Pseudo%20Selectors/01-Building%20A%20Balance%20Sheet/README.md)
