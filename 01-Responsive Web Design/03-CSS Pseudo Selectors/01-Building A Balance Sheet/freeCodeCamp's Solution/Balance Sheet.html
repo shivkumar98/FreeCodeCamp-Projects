@@ -13,6 +13,17 @@
             }
             body{
                 font-family: sans-serif;
+                color: #0a0a23;
+            }
+
+            span[class~="sr-only"]{ /* We are making these elements invisible AND not affect the flow of visible content */
+                position: absolute;
+                overflow: hidden;
+                height: 1px; 
+                width: 1px;
+                border: 0;
+                margin: -1px;
+                padding: 0;
             }
         </style>
     </head>

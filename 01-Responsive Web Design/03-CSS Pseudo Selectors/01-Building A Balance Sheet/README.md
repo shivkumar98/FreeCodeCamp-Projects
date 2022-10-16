@@ -10,6 +10,10 @@ In this tutorial, I will attempt to recreate the following:
 
 The aria-hidden property removes an element from the accessibility tree
 
+We can target elements which has a class assigned to it using class~="class-name", this targets elements whose class ATLEAST CONTAINS "class-name". 
+
+- E.g. span[class~="sr-only"]
+
 ### HTML Tables
 A table in HTML is encapsulatred by the &lt;table>&lt;/table> tags 
 
