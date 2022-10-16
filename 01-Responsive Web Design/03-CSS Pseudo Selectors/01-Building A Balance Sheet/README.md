@@ -5,3 +5,7 @@ This is the 9th tutotorial from FreeCodeCamp's (New) Responsive Web Design Certi
 In this tutorial, I will attempt to recreate the following:
 
 <img src="Screenshot.PNG" width="600x">
+
+## Notes:
+
+The aria-hidden property removes an element from the accessibility tree
