@@ -72,3 +72,35 @@ Suppose we wanted to align the items towards the end of the column direction, we
 The align-items's default value is **flex-start**:
 
 <img src="Images/flex-start.PNG" width="400"/>
+
+If the align-items is set to **center**:
+
+<img src="Images/center.PNG" width="400"/>
+
+#### **justify-content** 
+
+This property lets us align the items on the **main** axis.
+
+The default value of the justify-content is flex-start.
+
+If it is set to **flex-end**:
+
+<img src="Images\juistify-end.PNG" width="400"/>
+
+If set to **center**:
+
+<img src="Images\justify-center.PNG" width="400"/>
+
+The justify-content property can also be set to a value which will add spacing between items, there are 3 spaced options
+
+1) **space-between**: elements are spaced evenly where first item is on start line and last item is on end line
+
+<img src="Images\space-between.PNG" width="400"/>
+
+2) **space around**: elements have even spacing between elements and half space at the ends
+
+<img src="Images\space-around.PNG" width="400"/>
+
+3) **space-evenly**: elements have even spacing
+
+<img src="Images\space-evenly.PNG" width="400"/>
