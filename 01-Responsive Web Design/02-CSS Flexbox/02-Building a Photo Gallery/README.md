@@ -51,7 +51,7 @@ This is the **perpendicular direction of the Flex-direction**
 ### **Start and End Lines**
 If the flex direction is row then the start line will be on the LHS and end line will be on RHS as shown below:
 
-<img src="Images/start.PNG" width="400"/>
+<img src="Images/start.png" width="400"/>
 
 ### The Flex Container
 
