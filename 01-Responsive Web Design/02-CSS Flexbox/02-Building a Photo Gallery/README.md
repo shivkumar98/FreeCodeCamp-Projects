@@ -1,4 +1,4 @@
-# Project 6: Learn CSS Flexbox Building a Photo Gallery
+# Project 6: Learn CSS Flexbox by Building a Photo Gallery
 
 In this project, I will attempt to recreate the Rothko Painting project seen below:
 
