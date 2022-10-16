@@ -1,4 +1,4 @@
-## Project 8: Learning Accessibility by Building a Quiz
+## Project 8: Learn Accessibility by Building a Quiz
 
 In this project, I attempt to replicate the quiz which was part of freeCodeCamps Responsive Web Design Certification ([link](https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-67))
 
