@@ -17,4 +17,4 @@ Below are the projects I completed:
 8) [Learn Accessibility by Building a Quiz](02-CSS%20Flexbox/04-Learning%20Accessibility%20by%20Building%20a%20Quiz/README.md)
 
 - 03-CSS Pseudo-Selectors
-9) (Learn More About CSS Pesudo Selectors By Building A Balance Sheet)[03-CSS%20Pseudo%20Selectors/01-Building%20A%20Balance%20Sheet/README.md]
+9) [Learn More About CSS Pesudo Selectors By Building A Balance Sheet](03-CSS%20Pseudo%20Selectors/01-Building%20A%20Balance%20Sheet/README.md)
