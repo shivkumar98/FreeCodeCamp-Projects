@@ -6,7 +6,6 @@
         <title>Balance Sheet</title>
         <style>
             .table-wrap {
-                background-color: aqua;
             }
             html {
                 box-sizing: border-box;
@@ -34,7 +33,6 @@
             }
 
             h1 .flex { /* Adding vertical flex to above heading so words will become rows*/
-                background-color: orange;
                 display: flex;
                 flex-direction: column-reverse;
                 gap:1rem; /* sets the gap between the rows to 1rem*/ 
@@ -86,6 +84,45 @@
             table {
                 border-collapse: collapse; /* removes spaces between cell borders */
                 border: 0;
+                position: relative;
+                width: 100%;
+                margin-top: 3rem;
+            }
+            table caption {
+                color: #356aef;
+                font-size: 1.3em;
+                font-weight: normal;
+                position: absolute;
+                top: -2.25rem;
+                left: 0.5rem;
+            }
+            tbody td {
+                width: 100vw;
+                min-width: 4rem; max-width: 4rem;
+            }
+            tbody th {
+             width: calc(100% - 12rem);
+            }
+            tr[class="total"] {
+                border-bottom: 4px double #0202a3;
+                font-weight: bold;
+            }
+            tr[class="total"] th {
+                text-align: left;
+                padding: 0.5rem 0 0.25rem 0.5rem;
+            }
+            tr.total td {
+            text-align:right;
+            padding:  0 0.25rem;
+            }
+            tr.total td:nth-of-type(3) {
+                padding-right: 0.5rem;
+            }
+            tr.total:hover{
+                background-color: #99c9ff;
+            }
+            td.current {
+                font-style:italic;
             }
 
         </style>
