@@ -1,0 +1,143 @@
+.table-wrap {
+}
+html {
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    color: #0a0a23;
+}
+
+span[class~="sr-only"]{ /* We are making these elements invisible AND not affect the flow of visible content */
+    position: absolute !important;
+    overflow: hidden !important;
+    height: 1px !important; 
+    width: 1px !important;
+    border: 0 !important;
+    margin: -1px !important;
+    padding: 0 !important;
+}
+
+h1 {
+    /* Setting formatting of "AcmeWidgetCorp Balance Sheet"  */
+    margin: 0 auto;
+    padding: 1.5rem;
+    max-width: 37.25rem;
+}
+
+h1 .flex { /* Adding vertical flex to above heading so words will become rows*/
+    display: flex;
+    flex-direction: column-reverse;
+    gap:1rem; /* sets the gap between the rows to 1rem*/ 
+}
+
+h1 .flex span:first-of-type { /* we are targetting the first span element of the flex container
+                                 so this would target: "<span>AcmeWidgetCorp</span>" */
+    size: 1.2rem;
+}
+
+h1 .flex span:last-of-type { /* this will target: "<span>Balance Sheet</span>" */
+    size: 0.5em;
+}
+
+section {
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid gray
+}
+
+#years { /* targetting the container of year spans */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    top:0;
+    background-color: aquamarine;
+    position: sticky;
+    color: white;
+    background-color: #0a0a23;
+    z-index: 999;
+    margin: 0 -2px;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+}
+
+#years span[class] { /* this wil target any span which has a class */
+    text-align: right;
+    font-weight: bold;
+    width: 4.5rem;
+}
+
+.table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
+}
+
+span:not(.sr-only){ /* taregetting spans which do not have sr-only */
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse; /* removes spaces between cell borders */
+    border: 0;
+    position: relative;
+    width: 100%;
+    margin-top: 3rem;
+}
+table caption {
+    color: #356aef;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+}
+tbody td {
+    width: 100vw;
+    min-width: 4rem; max-width: 4rem;
+}
+tbody th {
+ width: calc(100% - 12rem);
+}
+tr[class="total"] {
+    border-bottom: 4px double #0202a3;
+    font-weight: bold;
+}
+tr[class="total"] th {
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+}
+tr.total td {
+text-align:right;
+padding:  0 0.25rem;
+}
+tr.total td:nth-of-type(3) {
+    padding-right: 0.5rem;
+}
+tr.total:hover{
+    background-color: #99c9ff;
+}
+td.current {
+    font-style:italic;
+}
+tr.data {
+ background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+tr.data th {
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+tr.data th .description {
+    display: block;
+    padding: 1rem 0 0.75rem;
+    font-weight: normal;
+    font-style: italic;
+}
+tr.data td {
+padding: 0.3rem 0.25rem 0;
+vertical-align: top;
+text-align:right
+}
+
+tr.data td:last-of-type {
+    padding-right: 0.5rem;
+}
