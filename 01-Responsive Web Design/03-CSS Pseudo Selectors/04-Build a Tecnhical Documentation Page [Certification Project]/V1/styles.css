@@ -1,0 +1,12 @@
+#navbar {
+    height:100;
+    width: 40px;
+    position:fixed;
+    top:0;
+    left:0;
+  }
+  
+  #main-doc {
+    position:fixed;
+    left: 50px;
+  }
