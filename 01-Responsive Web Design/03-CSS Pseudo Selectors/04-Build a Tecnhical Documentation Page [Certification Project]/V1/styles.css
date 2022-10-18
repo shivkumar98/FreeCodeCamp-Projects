@@ -1,14 +1,10 @@
 #navbar {
-    height:100%;
-    width: 25%;
-    position:fixed;
-    top:0;
-    left:0;
+    float: left
   }
   
   #main-doc {
-    position:fixed;
-    left: 25%
+   
+    float: right;
   }
   
   #navbar header {
@@ -50,4 +46,9 @@
 
   .main-section li {
     margin: 10px 0;
+  }
+
+  html {
+    height: 100%;
+    overflow: auto;
   }
