@@ -1,25 +1,31 @@
 #navbar {
-    float: left
-  }
+  float: left;
+  width:100px;
+}
   
-  #main-doc {
-   
-    float: right;
-  }
+#main-doc {
+  float: right;
+  width: calc(100% - 200px)
+}
   
-  #navbar header {
-    font-size: 30px;
-    padding: 10px 5px;
-  }
+#navbar header {
+  font-size: 30px;
+  padding: 10px 5px;
+}
   
-  a {
-    color: black;
-    text-decoration: none;
-    margin: 5px;
-    margin-top: 30px;
-    display: block;
-  }
-  
+a {
+  color: black;
+  text-decoration: none;
+  margin: 5px;
+  margin-top: 30px;
+  display: block;
+}
+
+.main-section p {
+    font-size: 15px;
+    font-weight: normal;
+}
+
   * {
     font-family: sans-serif;
   }
@@ -30,21 +36,22 @@
     font-size: 15px;
     background-color: rgb(239, 234, 234);
    
-    margin: 20px 0 20px 0;
-    padding: 5px 10px 5px 20px
+    margin: 20px 40px 40px 0;
+    
   }
 
-  .main-section header {
+  main header {
     font-size:30px;
     font-weight: bold;
+    margin-top: 20px;
   }
 
-  .main-section p {
+main p {
     
     margin:20px 0
   }
 
-  .main-section li {
+main li {
     margin: 10px 0;
   }
 
