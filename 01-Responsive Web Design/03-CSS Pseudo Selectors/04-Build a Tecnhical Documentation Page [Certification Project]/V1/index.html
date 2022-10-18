@@ -7,21 +7,35 @@
   </head>
   <body>
     <main id="main-doc">
-      <section class="main-section" id="Death_Note">
-        <header>Death Note</header>
-        <p>Death Note is a cluturally explosive anime about an intelligent high-school student who gains the ability to kill individuals by writing their name in his Death Note<p>
-        <p>The main antagonist is another high-school student is also the greatest detective in Japan.<p>
-        <p>The manga was authored in 2003 and after record-breaking sales an anime was produced in 2006<p>
-        <code></code>
-        <li></li>
+      <section class="main-section" id="encapsulation">
+        <header>Encapsulation</header>
+        <p>Encapsulation is a key design principle from object-oriented design<p>
+        <p>Conceptually, it means classes should wrap data and methods which operate on its data within the class itself<p>
+        <p>This is achieved by using access modifiers and making fields private, and getters/setters public<p>
+        <code>class Anime {
+          private String title;
+          private Genre genre;
+          // public setters and getters
+        }
+        </code>
+        <p>Encapsulation achieves the following:</p>
+        <ul>
+          <li>Data-integrity</li>
+          <li>Security
+        </ul>
       </section>
-      <section class="main-section" id="Hunter_x_Hunter">
-        <header>Hunter x Hunter</header>
-        <p> Hunter x Hunter is an anime series created by famed manga author Yoshihiro Togashi<p>
-        <p> It is a spiritual successor to Togashis previous work: Yu Yu Hakush<p>
-        <p> Often referred to "Hiatus x Hiatus" for long periods between chapters being published<p>
-        <code></code>
-        <li></li>    
+      <section class="main-section" id="#arrays">
+        <header>Arrays</header>
+        <p> Arrays are a funamental data structure in Java<p>
+        <p> Arrays are ordered and have a fixed size<p>
+        <p> Arrays is also an interface, it can be used to store primitives and objects<p>
+        <code> int[] arr = new int[3] </code>
+        <p>Arrays have the following properties:</p>    
+        <ul>
+          <li>They have fast read and write speeds<li>
+          <li>You can get the size of an array using <code>.lenght()</code> method
+          <li> Each item of the array has an index which is required to retrieve the item</li>
+        </ul>
       </section>
       <section class="main-section" id="Erased">
         <header>Erased</header>
@@ -45,12 +59,12 @@
       </section>
     </main>
     <nav id="navbar">
-        <header>Anime</header>
-        <a class="nav-link" href="#Death_Note">Death Note</a>
-        <a class="nav-link" href="#Hunter_x_Hunter">Hunter x Hunter</a>
-        <a class="nav-link" href="#Erased">Erased</a>
-        <a class="nav-link" href="#Your_Lie_In_April">Your Lie in April</a>
-        <a class="nav-link" href="#Kaiji">Kaiji</a>
+        <header><b>Java<b></header>
+        <a class="nav-link" href="#encapsulation">Encapsulation</a>
+        <a class="nav-link" href="#arrays">Arrays</a>
+        <a class="nav-link" href="#strings">Strings</a>
+        <a class="nav-link" href="#exceptions">Exceptions</a>
+        <a class="nav-link" href="#polymorpism">Polymorphism</a>
     </nav>
   </body>
 </html>
