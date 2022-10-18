@@ -35,7 +35,7 @@ a {
     font-family: monospace;
     font-size: 15px;
     background-color: rgb(239, 234, 234);
-   
+   font-weight: normal;
     margin: 20px 40px 40px 0;
     
   }
@@ -53,9 +53,14 @@ main p {
 
 main li {
     margin: 10px 0;
+    font-weight: normal;
   }
 
   html {
     height: 100%;
     overflow: auto;
+  }
+
+  @media  (max-width: 750px) {
+
   }

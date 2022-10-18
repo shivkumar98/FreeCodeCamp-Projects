@@ -12,8 +12,9 @@
       <a class="nav-link" href="#arrays">Arrays</a>
       <a class="nav-link" href="#strings">Strings</a>
       <a class="nav-link" href="#exceptions">Exceptions</a>
-      <a class="nav-link" href="#polymorpism">Polymorphism</a>
+      <a class="nav-link" href="#polymorphism">Polymorphism</a>
   </nav>
+  <br>
     <main id="main-doc">
       <section class="main-section" id="encapsulation">
         <header>Encapsulation</header>
@@ -42,7 +43,7 @@
         <p> Arrays are a funamental data structure in Java<p>
         <p> Arrays are ordered and have a fixed size<p>
         <p> Arrays is also an interface, it can be used to store primitives and objects<p>
-        <code> int[] arr = new int[3] </code>
+        <code> &nbsp;  int[] arr = new int[3] </code>
         <p>Arrays have the following properties:</p>    
         <ul>
           <li>They have fast read and write speeds</li>
@@ -55,7 +56,7 @@
         <p>Strings are an immutable data-structure in Java</p>
         <p>String literals are managed by the String Pool which is a stored in the Heap memory</p>
         <p>It is better for performance if we declare Strings as literals rather than using a String constructor</p>
-        <code>String str = "Hello world!"</code>
+        <code>&nbsp;  String str = "Hello world!"</code>
         
       </section>
       <section class="main-section"id="exceptions">
@@ -63,6 +64,9 @@
         <p>Exceptions are a way of handling issues which may arrise during execution<p>
         <p>Exceptions are either thrown programatically or by the JVM </p>
         <p>We can handle exceptions using try/catch blocks </p>
+        <code> try {  exceptionCausingMethod(); }
+          <br> catch (Exception e)
+        </code>
     
       </section>
       <section class="main-section" id="polymorphism">
@@ -71,9 +75,11 @@
         <p> Java supports Polymorphism; objects can be referenced by the class of the object OR a superclass of the object OR an interface of the class which it implements.<p>
         <p>Polymorphism consequentially allows for method overriding in which a method's implementation is dependent on the object which calls it<p>
         <code>
-            class Fruits {};
-            class Apple extends Fruite {};
-            Fruits apple = new Apple(); // polymorphism
+          &nbsp;  class Fruits {};
+          <br>
+          &nbsp;  class Apple extends Fruite {};
+          <br>
+          &nbsp;  Fruits apple = new Apple(); // polymorphism
         </code>
       </section>
     </main>
