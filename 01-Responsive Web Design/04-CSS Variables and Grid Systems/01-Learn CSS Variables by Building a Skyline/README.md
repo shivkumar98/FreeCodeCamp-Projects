@@ -17,3 +17,5 @@ To use a CSS variables as a property you write var() and insert the CSS variable
 We can use setback values for the var function if there is a problem with getting the variable. E.g.:
 
     background-color: var(--buildiing-color1, green);
+
+In order to make CSS variables globally available we need to declare them in a :root selector which is the highest level of the style sheet
