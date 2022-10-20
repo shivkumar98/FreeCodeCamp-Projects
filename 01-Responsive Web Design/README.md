@@ -21,3 +21,6 @@ Hi! I started freeCodeCamp's (New) Responsive Web Design Certification in July 2
 10) [Learn Intermediate CSS by Building a Picasso Painting](03-CSS%20Pseudo%20Selectors/02-Building%20A%20Picasso%20Painting)
 11) [Learn Responsive Web Design by Building a Piano](03-CSS%20Pseudo%20Selectors/03-Building%20A%20Piano)
 12) [**Certification Project 3**: Technical Documentation Page](03-CSS%20Pseudo%20Selectors/04-Build%20a%20Tecnhical%20Documentation%20Page%20%5BCertification%20Project%5D)
+
+- **CSS Variables:**
+13) [Learn CSS Variables by Building a Skyline](04-CSS%20Variables%20and%20Grid%20Systems/01-Learn%20CSS%20Variables%20by%20Building%20a%20Skyline)
