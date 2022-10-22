@@ -6,16 +6,20 @@
 
  ## Note on CSS variables: 
 
- To declare a CSS variable, you need two dashes (--). E.g.:
+- To declare a CSS variable, you need two dashes (--). E.g.:
 
-    --buildingcolor: #999;
+        --buildingcolor: #999;
 
-To use a CSS variables as a property you write var() and insert the CSS variable name in the brackets, e.g.:
+- To use a CSS variables as a property you write var() and insert the CSS variable name in the brackets, e.g.:
 
-    background-color: var(--buildiing-color1);
+        background-color: var(--buildiing-color1);
 
-We can use setback values for the var function if there is a problem with getting the variable. E.g.:
+- We can use setback values for the var function if there is a problem with getting the variable. E.g.:
 
-    background-color: var(--buildiing-color1, green);
+        background-color: var(--buildiing-color1, green);
 
-In order to make CSS variables globally available we need to declare them in a :root selector which is the highest level of the style sheet
+- In order to make CSS variables globally available we need to declare them in a :root selector which is the highest level of the style sheet
+
+- You can applu gradients using the following syntax:
+
+        background-color: linear-gradient(color1, color2);
