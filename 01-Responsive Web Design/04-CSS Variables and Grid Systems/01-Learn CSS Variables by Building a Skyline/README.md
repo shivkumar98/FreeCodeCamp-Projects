@@ -46,7 +46,7 @@
                 var(--window-color2) 9%
         );
 
--- You can specify the direction of gradient by giving an angle as the first argument:
+- You can specify the direction of gradient by giving an angle as the first argument:
 
         gradient-type(
                 direction,
@@ -54,7 +54,19 @@
                 color2
                 );
 
-      
+- You can make a rounded gradient by using:
+
+        radial-gradient(
+
+        )
+
+- we can choose the center of the radial gradient:
+
+         background: radial-gradient(
+                        circle closest-corner at 15% 15%,  /* moved centre to 15% left and top */
+                        color1,
+                        color2
+                    );
 ---
 
 ## Progress of project

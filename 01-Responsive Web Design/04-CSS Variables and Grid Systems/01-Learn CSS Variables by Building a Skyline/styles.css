@@ -42,6 +42,16 @@
     align-items: center;
     justify-content: space-evenly;
   }
+
+  .sky {
+    background: radial-gradient(
+                    circle closest-corner at 15% 15%,  /* moved centre to 15% left and top */
+                    #ffcf33 0%,
+                    #ffcf33 20%,
+                    #ffff66 21%,
+                    #bbeeff 100%
+                );
+  }
   
   /*BACKGROUND BUILDINGS - "bb" stands for "background building" */
   .bb1 {
@@ -269,5 +279,29 @@
                     var(--window-color3) 10%,
                     var(--window-color3) 30%
                 );
+  }
+
+  @media (max-width: 1000px){
+    .sky {
+        background: radial-gradient(
+                        circle closest-corner at 15% 15%,  /* moved centre to 15% left and top */
+                        #ccc  0%,
+                        #ccc 20%,
+                        #445 21%,
+                        #223 100%
+                    );
+      }    
+
+
+      :root {
+        --building-color1: #000;
+        --building-color2: #000;
+        --building-color3: #000;
+        --building-color4: #000;
+        --window-color1: #777;
+        --window-color2: #777;
+        --window-color3: #777;
+        --window-color4: #777;
+      }
   }
       
