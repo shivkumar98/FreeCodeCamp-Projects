@@ -71,3 +71,7 @@ After completing step 58:
  After completing step 60:
 
  <img src="Images/step-60.PNG" width="250px">
+
+  After completing step 72:
+
+ <img src="Images/step-72.PNG" width="250px">
