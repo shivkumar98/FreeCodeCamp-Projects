@@ -22,4 +22,8 @@
 
 - You can applu gradients using the following syntax:
 
-        background-color: linear-gradient(color1, color2);
+        background: linear-gradient(color1, color2);
+
+        Note you can not use background-color with the linear gradient function
+
+- You can use as many colours as you wish with linear-gradient
