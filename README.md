@@ -1,4 +1,4 @@
-# FreeCodeCampProjects
+# [FreeCodeCamp](https://www.freecodecamp.org) Projects
 
 This repo contains documentation, code, solutions I curated while working through freeCodeCamp's certifications.
 
