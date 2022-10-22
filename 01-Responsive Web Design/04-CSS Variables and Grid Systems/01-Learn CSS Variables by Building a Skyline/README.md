@@ -46,6 +46,14 @@
                 var(--window-color2) 9%
         );
 
+-- You can specify the direction of gradient by giving an angle as the first argument:
+
+        gradient-type(
+                direction,
+                color1,
+                color2
+                );
+
       
 ---
 

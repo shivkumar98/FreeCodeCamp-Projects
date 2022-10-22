@@ -5,6 +5,7 @@
     --building-color4: #538cc6;
     --window-color1: black;
     --window-color2: #8cd9b3;
+    --window-color3: #d98cb3;
   }
   
   * {
@@ -84,6 +85,7 @@
     width: 10%;
     height: 55%;
     background-color: var(--building-color3);
+    background: repeating-linear-gradient( 90deg, var(--building-color3), var(--building-color3), var(--window-color3) 15%)
   }
   
   .bb4 {
