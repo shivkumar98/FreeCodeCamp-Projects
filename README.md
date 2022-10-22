@@ -5,9 +5,9 @@ This repo contains documentation, code, solutions I curated while working throug
 
 ### **1: (New) Repsonsive Web Design Certification**
 
-📍 Started on 28th July 2022.
+   &nbsp; 📍 Started on 28th July 2022.
 
-📍 [View projects here](https://github.com/shivkumar98/FreeCodeCamp-Projects/tree/main/01-Responsive%20Web%20Design)
+   &nbsp; 📍 [View projects here](https://github.com/shivkumar98/FreeCodeCamp-Projects/tree/main/01-Responsive%20Web%20Design)
 
 
 
