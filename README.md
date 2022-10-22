@@ -3,7 +3,7 @@
 This repo contains documentation, code, solutions I curated while working through [freeCodeCamp's](https://www.freecodecamp.org)  certifications.
 
 
-### **1: Repsonsive Web Design Certification**
+### **1: Responsive Web Design Certification**
 
    &nbsp; 📍 Started on 28th July 2022.
 
