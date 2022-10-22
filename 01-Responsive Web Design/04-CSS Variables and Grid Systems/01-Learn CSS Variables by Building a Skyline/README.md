@@ -68,18 +68,22 @@ After completing step 58:
 
  <img src="Images/step-58.PNG" width="350px">
 
- After completing step 60:
+After completing step 60:
 
- <img src="Images/step-60.PNG" width="350px">
+<img src="Images/step-60.PNG" width="350px">
 
-  After completing step 72:
+After completing step 72:
 
- <img src="Images/step-72.PNG" width="350px">
+<img src="Images/step-72.PNG" width="350px">
 
-   After completing step 81:
+After completing step 81:
 
- <img src="Images/step-81.PNG" width="350px">
+<img src="Images/step-81.PNG" width="350px">
 
-    After completing step 87:
+After completing step 87:
 
- <img src="Images/step-87.PNG" width="350px">
+<img src="Images/step-87.PNG" width="350px">
+
+After completing step 95:
+
+<img src="Images/step-95.PNG" width="350px">
