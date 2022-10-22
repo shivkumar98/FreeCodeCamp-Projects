@@ -67,3 +67,7 @@ After completing step 45, the result of the HTML and CSS looked like:
 After completing step 58:
 
  <img src="Images/step-58.PNG" width="250px">
+
+ After completing step 60:
+
+ <img src="Images/step-60.PNG" width="250px">
