@@ -47,9 +47,15 @@
         );
 
       
+---
 
 ## Progress of project
 
 After completing step 45, the result of the HTML and CSS looked like:
 
  <img src="Images/step-45.PNG" width="250px">
+
+
+After completing step 58:
+
+ <img src="Images/step-58.PNG" width="250px">
