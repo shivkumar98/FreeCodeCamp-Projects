@@ -1,6 +1,8 @@
-# freeCodeCamp's Responsive Web Design Certification
+# Responsive Web Design Certification
 
-Hi! I started freeCodeCamp's (New) Responsive Web Design Certification in July 28th 2022. This repo contains my personal solutions to the tutorials found on the course.
+Hi! I started freeCodeCamp's [(New) Responsive Web Design Certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/) in July 28th 2022. This repo contains the solutions from freeCodeCamp and my personal solutions to the tutorials.
+
+This repo also contains my code for the certification projects (see italicised links)
 
 **Below are the projects I completed:**
 
@@ -8,7 +10,7 @@ Hi! I started freeCodeCamp's (New) Responsive Web Design Certification in July 2
 1) [Learn Basic CSS by Building a Cafe Menu](01-HTML%20and%20CSS%20Basics/01-Building%20a%20Cafe%20Menu)
 2) [Learn CSS Colors by Building a Set of Coloured Markers](01-HTML%20and%20CSS%20Basics/02-Building%20a%20Set%20of%20Coloured%20Mrkers)
 3) [Learn HTML Forms by Building a Registration Form](01-HTML%20and%20CSS%20Basics/03-Building%20a%20Registration%20Form)
-4) [**Certification Project 1**: Survey Form](01-HTML%20and%20CSS%20Basics/04-Build%20a%20Survey%20Form%20[Certification%20Project])
+4) [***Certification Project 1***: Survey Form](01-HTML%20and%20CSS%20Basics/04-Build%20a%20Survey%20Form%20[Certification%20Project])
 
 - **CSS Flexbox:**
 5) [Learn the CSS Box Model by Building the Rothko Project](02-CSS%20Flexbox/01-Building%20a%20Rothko%20Painting)
