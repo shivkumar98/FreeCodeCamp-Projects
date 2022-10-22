@@ -111,3 +111,8 @@ After completing step 107:
 After completing step 110:
 
 <img src="Images/step-110.PNG" width="350px">
+
+The finished project:
+
+<img src="Images/step-118.PNG" width="350px">
+
