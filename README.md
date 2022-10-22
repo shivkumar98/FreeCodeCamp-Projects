@@ -1,6 +1,6 @@
-# [FreeCodeCamp](https://www.freecodecamp.org) Projects
+# FreeCodeCamp Projects
 
-This repo contains documentation, code, solutions I curated while working through freeCodeCamp's certifications.
+This repo contains documentation, code, solutions I curated while working through [freeCodeCamp's](https://www.freecodecamp.org)  certifications.
 
 
 ### **1: (New) Repsonsive Web Design Certification**
