@@ -104,9 +104,9 @@ After completing step 103:
 
 <img src="Images/step-103.PNG" width="350px">
 
-After completing step 107:
+After completing step 106:
 
-<img src="Images/step-107.PNG" width="350px">
+<img src="Images/step-106.PNG" width="350px">
 
 After completing step 110:
 
