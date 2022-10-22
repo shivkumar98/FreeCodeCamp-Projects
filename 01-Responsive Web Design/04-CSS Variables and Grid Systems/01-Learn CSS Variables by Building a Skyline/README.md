@@ -26,7 +26,27 @@
 
         Note you can not use background-color with the linear gradient function
 
-- You can use as many colours as you wish with linear-gradient
+- You can use as many colours as you wish with linear-gradient, you can also specify where the transitions should start by specifying a percentage after the color
+
+- We can get a solid colour change without transition by writing the following:
+        
+        linear-gradient(
+                var(--first-color) 0%,
+                var(--first-color) 40%,
+                var(--second-color) 40%,
+                var(--second-color) 80%
+        );
+
+- You can repeat a linear gradient pattern using repeating-linear-gradient(); E.g.:
+
+        background: repeating-linear-gradient(
+                var(--building-color2),
+                var(--building-color2) 6%,
+                var(--window-color2) 6%,
+                var(--window-color2) 9%
+        );
+
+      
 
 ## Progress of project
 
