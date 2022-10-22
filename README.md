@@ -1,6 +1,14 @@
 # FreeCodeCampProjects
 
-This repo will contain my personal attempts of the tutorials of FreeCodeCamp's certifications as well as my attempts of the certification projects which have no tutorials.
+This repo contains documentation, code, solutions I curated while working through freeCodeCamp's certifications.
 
-- **I started with FreeCodeCamp's (New) Responsive Web Design Certification on the 28th July 2022.**
-  - You can view my projects [here](https://github.com/shivkumar98/FreeCodeCamp-Projects/tree/main/01-Responsive%20Web%20Design)
+
+### **1) (New) Repsonsive Web Design Certification**
+
+- Started on 28th July 2022.
+
+- [View projects here](https://github.com/shivkumar98/FreeCodeCamp-Projects/tree/main/01-Responsive%20Web%20Design)
+
+
+
+ 
