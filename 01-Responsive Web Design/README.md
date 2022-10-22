@@ -1,4 +1,4 @@
-# Responsive Web Design Certification
+## Responsive Web Design Certification
 
 I started freeCodeCamp's [(New) Responsive Web Design Certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/) on July 28th 2022. This repo contains the solutions and my own solutions to the tutorials from the certifications
 
