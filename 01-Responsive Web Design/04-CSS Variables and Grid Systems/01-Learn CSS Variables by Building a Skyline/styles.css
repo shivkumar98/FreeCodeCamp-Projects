@@ -208,9 +208,29 @@
   .fb4 {
     width: 8%;
     height: 45%;
-    background-color: var(--building-color1);
     position: relative;
     left: 10%;
+  }
+
+  .fb4a {
+    border-top: 5vh solid transparent;
+    border-left: 8vw solid var(--building-color1);
+  }
+
+  .fb4b {
+    width: 100%;
+    height: 89%;
+    background-color: var(--building-color1);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .fb4-window {
+    width: 30%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: var(--window-color1);
+    margin: 10%;
   }
   
   .fb5 {
