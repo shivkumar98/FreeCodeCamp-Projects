@@ -27,3 +27,9 @@
         Note you can not use background-color with the linear gradient function
 
 - You can use as many colours as you wish with linear-gradient
+
+## Progress of project
+
+After completing step 45, the result of the HTML and CSS looked like:
+
+ <img src="Images/step-45.PNG" width="250px">
