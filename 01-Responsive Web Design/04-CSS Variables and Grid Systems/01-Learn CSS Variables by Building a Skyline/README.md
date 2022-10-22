@@ -91,3 +91,7 @@ After completing step 95:
 After completing step 103:
 
 <img src="Images/step-103.PNG" width="350px">
+
+After completing step 107:
+
+<img src="Images/step-107.PNG" width="350px">
