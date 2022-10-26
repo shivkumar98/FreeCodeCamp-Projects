@@ -126,3 +126,15 @@ hr {
     margin-bottom: 3rem;
 }
 
+.lists {
+    list-style-type: none; /* removes bullet points*/
+    margin-top: 2rem;
+}
+
+.lists li {
+    margin-bottom: 1.5rem;
+}
+
+.list-title, .list-subtitle {
+    color: #00beef;
+}
