@@ -1,0 +1,23 @@
+/* normalising all elements:*/
+*, ::before, ::after {
+    margin: 0; padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Baskervville, serif;
+    color:linen;
+    background-color: rgb(20,30,40);
+}
+
+h1 {
+    font-family: Anton, sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: Raleway, sans-serif;
+}
