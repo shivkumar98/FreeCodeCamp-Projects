@@ -24,4 +24,7 @@ We can make spacing between elements of the grid by specifying the row-gap prope
 
 
 ## grid-autoflow
-This property specifies how items are autoplaced in the flow of the grid 
+This property specifies how items are autoplaced in the flow of the grid
+
+## ::first-letter
+This pseudo-selector lets us target the first letter of a selection
