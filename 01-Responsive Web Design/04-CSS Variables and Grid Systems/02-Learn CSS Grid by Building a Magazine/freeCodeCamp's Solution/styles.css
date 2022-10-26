@@ -29,5 +29,22 @@ a{
 
 main {
     display: grid;
-    grid-template-columns: 1fr 94rem 1fr; /* this creates 3 columns with widths of 1fr, 94rem and 1fr*/
+    grid-template-columns: minmax(2rem,1fr) minmax(min-content,94rem) minmax(2rem,1fr); /* this creates 3 columns with widths of 1fr, 94rem and 1fr*/
+    row-gap: 3rem;
+}
+
+.heading {
+    grid-column: 2 / 3; /* this specifies the heading will start at grid 2 and finish at grid 3*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.5rem;
+}
+
+.text {
+    grid-column: 2 / 3;
+}
+
+.hero {
+    position:relative;
+    grid-column: 1 / -1;
 }
