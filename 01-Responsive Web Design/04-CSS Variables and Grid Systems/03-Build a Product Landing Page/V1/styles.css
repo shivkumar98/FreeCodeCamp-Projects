@@ -1,0 +1,12 @@
+#nav-bar {
+    position: fixed;
+    top: 0;
+}
+
+@media (max-width:500px) {
+    
+}
+
+#features-section {
+    display: flex;
+}
