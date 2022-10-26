@@ -24,3 +24,4 @@ I started freeCodeCamp's [(New) Responsive Web Design Certification](https://www
 
 - **CSS Variables and Grid System:**
 13) [Learn CSS Variables by Building a Skyline](04-CSS%20Variables%20and%20Grid%20Systems/01-Learn%20CSS%20Variables%20by%20Building%20a%20Skyline)
+14) [Learn CSS Grid by Building a Magazine](04-CSS%20Variables%20and%20Grid%20Systems/02-Learn%20CSS%20Grid%20by%20Building%20a%20Magazine)
