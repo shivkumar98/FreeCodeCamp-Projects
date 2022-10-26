@@ -26,3 +26,8 @@ a{
     text-decoration: none;
     color:linen
 }
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 94rem 1fr; /* this creates 3 columns with widths of 1fr, 94rem and 1fr*/
+}

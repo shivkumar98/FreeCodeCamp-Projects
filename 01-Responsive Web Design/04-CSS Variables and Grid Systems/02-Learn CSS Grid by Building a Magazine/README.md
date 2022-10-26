@@ -6,3 +6,8 @@ The CSS Grid System is a 2-dimensional grid-based layout. It allows for horizont
 We can set a container to follow the frid system by setting:
 
     display: grid;
+
+We can set the set the column and row sizes by specifying the following properties:
+
+- grid-template-columns
+- grid-template-rows
