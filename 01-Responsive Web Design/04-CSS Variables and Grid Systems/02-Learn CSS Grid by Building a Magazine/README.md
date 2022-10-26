@@ -21,3 +21,7 @@ We can use min-content and max-content as parameters
 ## row-gap Property:
 
 We can make spacing between elements of the grid by specifying the row-gap property
+
+
+## grid-autoflow
+This property specifies how items are autoplaced in the flow of the grid 
