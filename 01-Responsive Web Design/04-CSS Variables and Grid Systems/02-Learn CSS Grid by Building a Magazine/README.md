@@ -27,8 +27,11 @@ We can use the unit fr as a way of desribing the ratio of the lengths for the gr
 We can make spacing between elements of the grid by specifying the row-gap property
 
 
-### grid-autoflow
+### grid-autoflow Property
 This property specifies how items are autoplaced in the flow of the grid
 
 ### ::first-letter
 This pseudo-selector lets us target the first letter of a selection
+
+### place-items Property
+This property sets the align-items and justify-items at the same time
