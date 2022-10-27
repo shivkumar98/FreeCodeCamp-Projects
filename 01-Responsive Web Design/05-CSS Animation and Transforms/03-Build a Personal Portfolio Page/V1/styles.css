@@ -1,0 +1,12 @@
+#welcome-section{
+    height: 100vh;
+}
+
+nav {
+    position: fixed;
+    top:0;
+}
+
+@media  (max-width:720px){
+    
+}
