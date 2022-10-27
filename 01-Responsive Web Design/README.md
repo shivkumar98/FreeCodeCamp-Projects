@@ -6,7 +6,7 @@ I started freeCodeCamp's [(New) Responsive Web Design Certification](https://www
 
 - **HTML and CSS Basics:**
 1) [Learn Basic CSS by Building a Cafe Menu](01-HTML%20and%20CSS%20Basics/01-Building%20a%20Cafe%20Menu)
-2) [Learn CSS Colors by Building a Set of Coloured Markers](01-HTML%20and%20CSS%20Basics/02-Building%20a%20Set%20of%20Coloured%20Mrkers)
+2) [Learn CSS Colors by Building a Set of Coloured Markers](01-HTML%20and%20CSS%20Basics/02-Building%20a%20Set%20of%20Coloured%20Markers)
 3) [Learn HTML Forms by Building a Registration Form](01-HTML%20and%20CSS%20Basics/03-Building%20a%20Registration%20Form)
 4) [***Certification Project 1: Survey Form***](01-HTML%20and%20CSS%20Basics/04-Build%20a%20Survey%20Form%20[Certification%20Project])
 
@@ -26,3 +26,6 @@ I started freeCodeCamp's [(New) Responsive Web Design Certification](https://www
 13) [Learn CSS Variables by Building a Skyline](04-CSS%20Variables%20and%20Grid%20Systems/01-Learn%20CSS%20Variables%20by%20Building%20a%20Skyline)
 14) [Learn CSS Grid by Building a Magazine](04-CSS%20Variables%20and%20Grid%20Systems/02-Learn%20CSS%20Grid%20by%20Building%20a%20Magazine)
 15) [***Certification Project 4: Build a Project Landing Page***](04-CSS%20Variables%20and%20Grid%20Systems/03-Build%20a%20Product%20Landing%20Page)
+
+- **CSS Animation and Transforms:**
+16) [Learn CSS Animation by Building a Ferris Wheel](05-CSS%20Animation%20and%20Transforms/01-Learn%20CSS%20Animation%20by%20Building%20a%20Ferris%20Wheel)
