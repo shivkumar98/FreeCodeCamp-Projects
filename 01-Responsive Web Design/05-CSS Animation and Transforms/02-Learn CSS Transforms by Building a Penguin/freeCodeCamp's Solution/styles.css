@@ -144,6 +144,22 @@ body {
     opacity: 70%;
 }
 
+.shirt {
+    font-size: 25px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    top:165px;
+    left: 127.5px;
+    z-index:1;
+    color: #6a6969;
+}
+
+.shirt div {
+    font-weight: normal;
+    top:22.5px;
+    left:12px;
+}
+
 .left-mountain {
     width: 300px; height: 300px;
     background: linear-gradient(rgb(203, 241, 228) , rgb(80, 183, 255));
