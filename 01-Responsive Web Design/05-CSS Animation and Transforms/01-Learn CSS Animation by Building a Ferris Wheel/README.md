@@ -11,3 +11,7 @@ In this project we will attempt to recreate the following CSS:
 - The @keyframes rule is used to define the flow of a CSS animation. It allows us to specify sdpecific points in the animation sequence. This rule requires a name to be assigned to it
 
     - The animation-name property lets us link to a @keyframes rule
+
+    - animation-iteration-count property selects number of repetitions, can be set to infinite
+
+    - animation-timing-function sets how the animation rate. We can set this to linear so it is smooth
