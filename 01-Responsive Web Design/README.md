@@ -30,4 +30,4 @@ I started freeCodeCamp's [(New) Responsive Web Design Certification](https://www
 - **CSS Animation and Transforms:**
 16) [Learn CSS Animation by Building a Ferris Wheel](05-CSS%20Animation%20and%20Transforms/01-Learn%20CSS%20Animation%20by%20Building%20a%20Ferris%20Wheel)
 17) [Learn CSS Transforms by Building a Penguin](05-CSS%20Animation%20and%20Transforms/02-Learn%20CSS%20Transforms%20by%20Building%20a%20Penguin)
-18) [***Certification Project 5: Personal Portfolio Page***]()
+18) [***Certification Project 5: Personal Portfolio Page***](05-CSS%20Animation%20and%20Transforms/03-Build%20a%20Personal%20Portfolio%20Page)
