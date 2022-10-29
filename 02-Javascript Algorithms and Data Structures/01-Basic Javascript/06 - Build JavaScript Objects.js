@@ -30,6 +30,8 @@ const myDog = {
 
   // properties can be accessed either by dot notation or bracket notation
 
+  // if the property name has whitespace then you must use bracket notation
+
   /* example 2:
 
   Read in the property values of testObj using dot notation. Set the variable hatValue equal to the object's property hat and set the variable shirtValue equal to the object's property shirt.
@@ -61,6 +63,8 @@ const testObj1 = {
     "my side": "veggies",
     "the drink": "water"
   };
+
+  
   
   // Only change code below this line
   const entreeValue = testObj1["an entree"];   // Change this line
