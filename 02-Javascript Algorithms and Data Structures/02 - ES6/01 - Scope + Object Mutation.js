@@ -22,3 +22,35 @@
 
 
 // ---------------- Compare Scopes of the var and let Keywords -------------------- //
+
+    // declaring a variable makes a variable read-only
+    const pi = 3.14;
+    // pi = 3; // javascript will not allow reassignment
+
+    // even though reassignment is not allowed, the object assigned to the variable can still be modified!
+        
+    /*** Example 2: ***/
+    /*  An array is declared as const s = [5, 7, 2].
+        Change the array to [2, 5, 7] using various element assignments.  */
+
+        const s = [5, 7, 2];
+        function editInPlace() {
+          // Only change code below this line
+          s[0] = 2; s[1] = 5; s[2] =7
+          // Using s = [2, 5, 7] would be invalid
+
+          // Only change code above this line
+        }
+        editInPlace();
+        console.log(s)
+
+// ---------------- Compare Scopes of the var and let Keywords -------------------- //
+
+
+
+
+// -------------------- Prevent Object Mutation ------------------- //
+      // javascript has a method which prevents object mutation: Object.freeze
+      
+// -------------------- Prevent Object Mutation ------------------- //
+
