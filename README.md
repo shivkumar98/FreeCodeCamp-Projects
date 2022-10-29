@@ -9,7 +9,7 @@ This repo contains documentation, code, solutions I curated while working throug
   
   &nbsp; 📍 Started on 28/07/2022.
 
-  &nbsp; 📍 [Earned Certification](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/responsive-web-design) on 27/10/2022.
+  &nbsp; 📍 Earned [**Certification**](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/responsive-web-design) on 27/10/2022.
 
  ### **2 - Javascript Data Structures and Algorithms**
 
