@@ -15,8 +15,11 @@
 
     /*** Challenge ***/
         // fix the regex to return the HTML tag <h1> and not the text "<h1>Winter is coming</h1>"
+        // 1) The result variable should be an array with <h1> in it
+        // 2) myRegex should use lazy matching
+        // 3) myRegex should not include the string h1
         let text = "<h1>Winter is coming</h1>";
-        let myRegex = /<.*>/; // Change this line
+        let myRegex = /<.*?>/; // Change this line
         let result = text.match(myRegex);
     /*** Challenge ***/
 
