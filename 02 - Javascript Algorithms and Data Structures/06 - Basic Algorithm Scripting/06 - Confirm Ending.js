@@ -1,7 +1,6 @@
 // --------------- Confirm Ending --------------- \
     // check if a string ends with target string
     function confirmEnding(str, target) {
-        
         if (str.length < target.length){
             return false
         } else {
@@ -13,11 +12,14 @@
             }
             return true
         }
-       
-        
     }
-      
     
-      console.log(confirmEnding("Congratulation", "on"))
+    console.log(confirmEnding("Congratulation", "on"))
+
+    /* Better solutions
+    function confirmEnding(str, target) {
+        return str.slice(str.length - target.length) === target
+    }
+
       
 // --------------- Confirm Ending --------------- \
