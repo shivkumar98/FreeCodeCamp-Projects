@@ -21,3 +21,11 @@ First class functions are functions which are assigned to a variable, passed to 
 Higher order functions are functions which can take another function as an argument
 
 Functions which can be supplied as arguments or returned from a function can be called *lambdas*
+
+### Understand the Hazards of Using Imperative Code
+
+Functional programming can make your code more manageable and less prone to bugs.
+
+Functional programming is a form of declarative programming
+
+Writing for-loops is a common task of imperative programming, JS has built in methods to handle such common tasks.
