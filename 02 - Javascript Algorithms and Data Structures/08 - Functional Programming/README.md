@@ -29,3 +29,9 @@ Functional programming can make your code more manageable and less prone to bugs
 Functional programming is a form of declarative programming
 
 Writing for-loops is a common task of imperative programming, JS has built in methods to handle such common tasks.
+
+### Avoid Mutations and Side Effects Using Functional Programming
+
+Imperative code which calls a function on a variable, array or an object and the functions changes the variable or property of an object
+
+E.g. using the splice method on an array mutates the original array.
