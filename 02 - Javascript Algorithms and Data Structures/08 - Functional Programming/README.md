@@ -35,3 +35,9 @@ Writing for-loops is a common task of imperative programming, JS has built in me
 Imperative code which calls a function on a variable, array or an object and the functions changes the variable or property of an object
 
 E.g. using the splice method on an array mutates the original array.
+
+### Pass Arguments to Avoid External Dependence in a Function
+
+Another core principle of functional programming is declaring an explicit depedence rather than relying on a global variable
+
+This makes the function easier to test and it won't depend on the state of the program
