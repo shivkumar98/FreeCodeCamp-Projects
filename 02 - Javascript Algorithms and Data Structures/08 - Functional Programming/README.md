@@ -74,3 +74,9 @@ The splice method takes 2 arguments: index where to start splice and number of e
     const cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
     console.log(cities.splice(3, 1)) // ["London"]
     console.log(cities) // ["Chicago", "Delhi", "Islamabad", "Berlin"];
+
+### Concatenation of two arrays
+
+We can merge two arrays using the concat() method without mutating either array
+
+    [1, 2, 3].concat([4, 5, 6]); // [1,2,3,4,5]
