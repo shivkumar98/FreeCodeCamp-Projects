@@ -80,3 +80,5 @@ The splice method takes 2 arguments: index where to start splice and number of e
 We can merge two arrays using the concat() method without mutating either array
 
     [1, 2, 3].concat([4, 5, 6]); // [1,2,3,4,5]
+
+We can use concat to add elements to the end of an array rather than use push()
