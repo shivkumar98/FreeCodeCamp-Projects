@@ -55,3 +55,12 @@ The map method iterated over each item in the array and returns a new array cont
 ### Filter Method
 
 Array.prototype.filter() calls a function on each element of an array and returns a new filtered array
+
+### Slice Method
+
+The slice method returns a copy of certain elements of an array, it takes two parameters: start index and end index.
+
+If no parameters are supplied then the whole array is copied.
+
+    const arr = ["Cat", "Dog", "Tiger", "Zebra"];
+    const newArray = arr.slice(1, 3); // ["Dog", "Tiger"]
