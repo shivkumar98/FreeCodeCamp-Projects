@@ -50,3 +50,8 @@ The map method iterated over each item in the array and returns a new array cont
 
     let x = [1,2,3]
     console.log("x: "+x.map(num=> num+1)) // x: 2,3,4
+
+
+### Filter Method
+
+Array.prototype.filter() calls a function on each element of an array and returns a new filtered array
