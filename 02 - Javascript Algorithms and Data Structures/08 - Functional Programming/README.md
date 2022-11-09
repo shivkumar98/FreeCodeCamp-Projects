@@ -64,3 +64,13 @@ If no parameters are supplied then the whole array is copied.
 
     const arr = ["Cat", "Dog", "Tiger", "Zebra"];
     const newArray = arr.slice(1, 3); // ["Dog", "Tiger"]
+
+### Splice Method
+
+We can use the splice() method to remove specific elements from an array.
+
+The splice method takes 2 arguments: index where to start splice and number of elements to remove. If second argument is not provided then elements are removed till end index
+
+    const cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+    console.log(cities.splice(3, 1)) // ["London"]
+    console.log(cities) // ["Chicago", "Delhi", "Islamabad", "Berlin"];
