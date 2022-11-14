@@ -109,3 +109,9 @@ If the callback returns a value:
 * >0 - a is placed after b
 * =0 - no change 
 * <0 - b is placed after a
+
+If we wanted to sort alphabetically
+
+    ['a', 'f', 'z', 't', 'c'].sort((a,b) => a===b ? 0 : a<b ? 1 : -1
+
+The sort method is a mutative function!
