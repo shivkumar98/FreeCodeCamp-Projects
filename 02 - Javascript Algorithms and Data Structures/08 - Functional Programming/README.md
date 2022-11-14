@@ -82,3 +82,18 @@ We can merge two arrays using the concat() method without mutating either array
     [1, 2, 3].concat([4, 5, 6]); // [1,2,3,4,5]
 
 We can use concat to add elements to the end of an array rather than use push()
+
+
+### Reduce Method
+
+Array.prototype.reduce() allows us to process an array, it iterates through each item of an array and returns a single value via the callback function.
+
+The reduce() function also has another parameter which takes an initial value for the accumulator, this can be used to find a sum.
+
+    const users = [
+        { name: 'John', age: 34 },
+        { name: 'Amy', age: 20 },
+        { name: 'camperCat', age: 10 }
+    ];
+    const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
+    console.log(sumOfAges); // 64
