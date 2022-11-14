@@ -115,3 +115,10 @@ If we wanted to sort alphabetically
     ['a', 'f', 'z', 't', 'c'].sort((a,b) => a===b ? 0 : a<b ? 1 : -1
 
 The sort method is a mutative function!
+
+### split() Method
+
+The split method splits an array of strings. It takes a delimiter argument.
+You can use regex as an argument
+
+    "How9Are8You3Today".split(/\d/) // ["How", "Are", "You", "Today"]
