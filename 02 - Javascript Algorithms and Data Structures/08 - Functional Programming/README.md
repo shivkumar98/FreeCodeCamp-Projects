@@ -122,3 +122,8 @@ The split method splits an array of strings. It takes a delimiter argument.
 You can use regex as an argument
 
     "How9Are8You3Today".split(/\d/) // ["How", "Are", "You", "Today"]
+
+
+### join() method
+
+The join method does the reverse of the split() method, it joins an array into a string based on a delimiter
