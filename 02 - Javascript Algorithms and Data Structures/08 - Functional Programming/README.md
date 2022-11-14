@@ -97,3 +97,15 @@ The reduce() function also has another parameter which takes an initial value fo
     ];
     const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
     console.log(sumOfAges); // 64
+
+### Sort Method
+ 
+The sort method allows you to sort an array based on a callback method:
+
+    [1,5,4,6,8,2,5,6].sort((a,b)=> a-b) 
+
+If the callback returns a value:
+
+* >0 - a is placed after b
+* =0 - no change 
+* <0 - b is placed after a
