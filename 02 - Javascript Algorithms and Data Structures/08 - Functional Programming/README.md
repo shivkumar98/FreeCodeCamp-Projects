@@ -139,3 +139,38 @@ The every method checks if EVERY element of an array passes a test
 The any method checks if ANY element of an array passes a test
 
     [21, -2].some(i=>i>0) // true
+
+
+### Currying and Partial Application
+
+Currying a function means changing a function which accepts n arguments into n functions which take 1 parameter
+
+For example, we can define a function which takes 2 parameters:
+
+    function unCurried(x,y){ return x+y; }
+
+And we can call it, e.g. unCurried(1,2)
+
+We can Curry the method like this:
+
+    function curried(x){
+        return function(y){
+            return x+y
+        }
+    }
+
+And then call it via curried(1)(2)
+
+Suppose we have the following partial function:
+
+    function impartial(x,y,z){
+        return x+y+z;
+    }
+
+We can make this partial:
+
+    const partialFn = impartial.bind(this,1,2)
+
+And then we can call it:
+
+    partialFn(10);
