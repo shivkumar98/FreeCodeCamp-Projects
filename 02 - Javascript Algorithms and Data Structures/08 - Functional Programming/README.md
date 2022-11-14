@@ -42,7 +42,7 @@ Another core principle of functional programming is declaring an explicit depede
 
 This makes the function easier to test and it won't depend on the state of the program.
 
-### Map Method
+### map() Method
 
 Arrays have a built in method: Array.prototype.map().
 
@@ -52,11 +52,11 @@ The map method iterated over each item in the array and returns a new array cont
     console.log("x: "+x.map(num=> num+1)) // x: 2,3,4
 
 
-### Filter Method
+### filter() Method
 
 Array.prototype.filter() calls a function on each element of an array and returns a new filtered array
 
-### Slice Method
+### slice() Method
 
 The slice method returns a copy of certain elements of an array, it takes two parameters: start index and end index.
 
@@ -65,7 +65,7 @@ If no parameters are supplied then the whole array is copied.
     const arr = ["Cat", "Dog", "Tiger", "Zebra"];
     const newArray = arr.slice(1, 3); // ["Dog", "Tiger"]
 
-### Splice Method
+### splice() Method
 
 We can use the splice() method to remove specific elements from an array.
 
@@ -75,7 +75,7 @@ The splice method takes 2 arguments: index where to start splice and number of e
     console.log(cities.splice(3, 1)) // ["London"]
     console.log(cities) // ["Chicago", "Delhi", "Islamabad", "Berlin"];
 
-### Concatenation of two arrays
+### concat() Method - joining two arrays
 
 We can merge two arrays using the concat() method without mutating either array
 
@@ -84,7 +84,7 @@ We can merge two arrays using the concat() method without mutating either array
 We can use concat to add elements to the end of an array rather than use push()
 
 
-### Reduce Method
+### reduce() Method
 
 Array.prototype.reduce() allows us to process an array, it iterates through each item of an array and returns a single value via the callback function.
 
@@ -98,7 +98,7 @@ The reduce() function also has another parameter which takes an initial value fo
     const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
     console.log(sumOfAges); // 64
 
-### Sort Method
+### sort() Method
  
 The sort method allows you to sort an array based on a callback method:
 
@@ -124,6 +124,18 @@ You can use regex as an argument
     "How9Are8You3Today".split(/\d/) // ["How", "Are", "You", "Today"]
 
 
-### join() method
+### join() Method
 
 The join method does the reverse of the split() method, it joins an array into a string based on a delimiter
+
+### every() Method
+
+The every method checks if EVERY element of an array passes a test
+
+    [21, 2, 65, 2].every(i=>i>0) // true
+
+### some() Method
+
+The any method checks if ANY element of an array passes a test
+
+    [21, -2].some(i=>i>0) // true
