@@ -1,6 +1,37 @@
-## Section 8: Functional Programming
+# 8: Functional Programming
 
-### What is Functional Programming?
+## Contents:
+
+1) [**What is Functional Programming?**](#8-functional-programming)
+    
+    * [Callbacks](#811-callbacks)
+    
+2) [**Imperative VS Functional Code**](#82---imperative-vs-functional-code)
+
+    * [Benefits of Functional Code](#821-benefits-of-functional-code)
+    * [Avoid Mutations and Side Effects Using Functional Programming](#822-avoid-mutations-and-side-effects-using-functional-programming)
+    * [Pass Arguments to Avoid External Dependence in a Function](#823-pass-arguments-to-avoid-external-dependence-in-a-function)
+
+3) [**JavaScript Functional Methods**](#83---javascript-functional-methods)
+
+    * [map() Method](#831-map-method)
+    * [filter() Method](#832-filter-method)
+    * [slice() Method](#834-slice-method)
+    * [splice() Method](#835-splice-method)
+    * [concat() Method](#836-concat-method)
+    * [reduce() Method](#837-reduce-method)
+    * [sort() Method](#838-sort-method)
+    * [split() Method](#839-split-method)
+    * [join() Method](#8310-join-method)
+    * [every() Method](#8311-every-method)
+    * [some() Method](#8312-some-method)
+    * [Currying](#8313-currying)
+    * [Partial Functions](#8314-partial-functions)
+
+
+<hr>
+
+<h2 id ="8.1"> 8.1 - What is Functional Programming?</h2>
 
 This is a style of programming where solutions are isolated, simple and independent of other components of the application.
 
@@ -12,165 +43,206 @@ They key features of functional programming is:
 
 3) Limited side effects
 
-### Callbacks
-
-A callback is a function passed into another function.
-
-First class functions are functions which are assigned to a variable, passed to another function or returned from another function.
-
-Higher order functions are functions which can take another function as an argument.
-
-Functions which can be supplied as arguments or returned from a function can be called *lambdas*.
-
-### Understand the Hazards of Using Imperative Code
-
-Functional programming can make your code more manageable and less prone to bugs.
-
-Functional programming is a form of declarative programming.
-
-Writing for-loops is a common task of imperative programming, JS has built in methods to handle such common tasks.
-
-### Avoid Mutations and Side Effects Using Functional Programming
-
-Imperative code which calls a function on a variable, array or an object and the functions changes the variable or property of an object.
-
-E.g. using the splice method on an array mutates the original array.
-
-### Pass Arguments to Avoid External Dependence in a Function
-
-Another core principle of functional programming is declaring an explicit depedence rather than relying on a global variable.
-
-This makes the function easier to test and it won't depend on the state of the program.
-
-### map() Method
-
-Arrays have a built in method: Array.prototype.map().
-
-The map method iterated over each item in the array and returns a new array containing the result of any functions applied.
-
-    let x = [1,2,3]
-    console.log("x: "+x.map(num=> num+1)) // x: 2,3,4
 
 
-### filter() Method
+### 8.1.1 *Callbacks*
 
-Array.prototype.filter() calls a function on each element of an array and returns a new filtered array
+* A callback is a function passed into another function.
 
-### slice() Method
+* First class functions are functions which are assigned to a variable, passed to another function or returned from another function.
 
-The slice method returns a copy of certain elements of an array, it takes two parameters: start index and end index.
+* Higher order functions are functions which can take another function as an argument.
 
-If no parameters are supplied then the whole array is copied.
+* Functions which can be supplied as arguments or returned from a function can be called *lambdas*.
 
-    const arr = ["Cat", "Dog", "Tiger", "Zebra"];
-    const newArray = arr.slice(1, 3); // ["Dog", "Tiger"]
-
-### splice() Method
-
-We can use the splice() method to remove specific elements from an array.
-
-The splice method takes 2 arguments: index where to start splice and number of elements to remove. If second argument is not provided then elements are removed till end index
-
-    const cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
-    console.log(cities.splice(3, 1)) // ["London"]
-    console.log(cities) // ["Chicago", "Delhi", "Islamabad", "Berlin"];
-
-### concat() Method - joining two arrays
-
-We can merge two arrays using the concat() method without mutating either array
-
-    [1, 2, 3].concat([4, 5, 6]); // [1,2,3,4,5]
-
-We can use concat to add elements to the end of an array rather than use push()
+<hr>
 
 
-### reduce() Method
+## 8.2 - Imperative VS Functional Code
 
-Array.prototype.reduce() allows us to process an array, it iterates through each item of an array and returns a single value via the callback function.
+### 8.2.1 *Benefits of Functional Code*
 
-The reduce() function also has another parameter which takes an initial value for the accumulator, this can be used to find a sum.
+* Functional programming can make your code more manageable and less prone to bugs.
 
-    const users = [
-        { name: 'John', age: 34 },
-        { name: 'Amy', age: 20 },
-        { name: 'camperCat', age: 10 }
-    ];
-    const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
-    console.log(sumOfAges); // 64
+* Functional programming is a form of **declarative programming**.
 
-### sort() Method
+* Writing for-loops is a common task of imperative programming, JS has built in methods to handle such common tasks.
+
+
+### 8.2.2 *Avoid Mutations and Side Effects Using Functional Programming*
+
+* Imperative code which calls a function on a variable, array or an object and the functions changes the variable or property of an object.
+
+* E.g. using the splice method on an array mutates the original array.
+
+### 8.2.3 *Pass Arguments to Avoid External Dependence in a Function*
+
+* **declare an explicit depedence rather than relying on a global variable**
+
+* This makes the function easier to test and it won't depend on the state of the program.
+
+<hr>
+
+## 8.3 - JavaScript Functional Methods
+
+### 8.3.1 *map() Method*
+
+
+* **iterates over each item in the array and returns a *new* array containing the result of any functions applied.**
+
+* This is a built-in method: Array.prototype.map().
+    
+        let x = [1,2,3]
+        console.log("x: "+x.map(num=> num+1)) // x: 2,3,4
+
+
+### 8.3.2 *filter() Method*
+
+* **Calls a function on each element of an array and returns a new filtered array**
+
+* **Non-mutative** function
+
+* E.g. the below code maps each movie to an object with title and rating properties, then filters movies based on the rating
+
+        const filteredList = watchList.map(movie=>(
+            {
+                "title": movie.Title,
+                "rating": movie.imdbRating
+            }))
+        .filter(movie => movie.rating >= 8.0)
+
+### 8.3.4 *slice() Method*
+
+* **Returns a copy of certain elements of an array based on start and end index**
+
+* **Non-mutative** function
+
+* If no parameters are supplied then the whole array is copied.
+
+        const arr = ["Cat", "Dog", "Tiger", "Zebra"];
+        const newArray = arr.slice(1, 3); // ["Dog", "Tiger"]
+
+### 8.3.5 *splice() Method*
+
+ * **Removes specific elements from an array based on index and number of elements to remove**
+
+ * **Mutative** function
+
+* The splice method takes 2 arguments: index where to start splice and number of elements to remove. If second argument is not provided then elements are removed till end index
+
+
+        const cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+        console.log(cities.splice(3, 1)) // ["London"]
+        console.log(cities) // ["Chicago", "Delhi", "Islamabad", "Berlin"];
+
+### 8.3.6 *concat() Method*
+
+* **Joins two arrays**
+
+* **Non-Mutative** function
+
+* We can merge two arrays using the concat() method without mutating either array
+
+        [1, 2, 3].concat([4, 5, 6]); // [1,2,3,4,5]
+
+* We can use concat to add elements to the end of an array rather than use push()
+
+
+### 8.3.7 *reduce() Method*
+
+* **Processes an array and returns a single value based on reducer function**
+
+* Syntax:
+
+        arr.reduce(callback(accumulator, currentValue), initialValue)
+
+* Example:
+
+        const users = [ { name: 'John', age: 34 },
+                        { name: 'Amy', age: 20 },
+                        { name: 'camperCat', age: 10 } ];
+        const sumOfAges = users.reduce( (sum, user) => sum + user.age , 0 ); // 64
+        
+
+### 8.3.8 *sort() Method*
  
-The sort method allows you to sort an array based on a callback method:
+* **Sorts an array based on a callback method**
 
-    [1,5,4,6,8,2,5,6].sort((a,b)=> a-b) 
+* **Mutative** function
 
-If the callback returns a value:
+        [1,5,4,6,8,2,5,6].sort((a,b)=> a-b) 
 
-* >0 - a is placed after b
-* =0 - no change 
-* <0 - b is placed after a
+* The indexing of elements is dependent on the sign of the callback function:
 
-If we wanted to sort alphabetically
+    1) &gt;0 - a is placed after b
+    2) =0 - no change 
+    3) &lt;0 - b is placed after a
 
-    ['a', 'f', 'z', 't', 'c'].sort((a,b) => a===b ? 0 : a<b ? 1 : -1
+* E.g. if we wanted to sort alphabetically
 
-The sort method is a mutative function!
-
-### split() Method
-
-The split method splits an array of strings. It takes a delimiter argument.
-You can use regex as an argument
-
-    "How9Are8You3Today".split(/\d/) // ["How", "Are", "You", "Today"]
+        ['a', 'f', 'z', 't', 'c'].sort((a,b) => a===b ? 0 : a<b ? 1 : -1
 
 
-### join() Method
+### 8.3.9 *split() Method*
 
-The join method does the reverse of the split() method, it joins an array into a string based on a delimiter
+* **Splits a string to an array of strings based on delimiter argument.**
 
-### every() Method
+* You can use regex as an argument:
 
-The every method checks if EVERY element of an array passes a test
-
-    [21, 2, 65, 2].every(i=>i>0) // true
-
-### some() Method
-
-The any method checks if ANY element of an array passes a test
-
-    [21, -2].some(i=>i>0) // true
+        "How9Are8You3Today".split(/\d/) // ["How", "Are", "You", "Today"]
 
 
-### Currying and Partial Application
+### 8.3.10 *join() Method*
 
-Currying a function means changing a function which accepts n arguments into n functions which take 1 parameter
+* **Does the reverse of the split() method, it joins an array into a string based on a delimiter**
 
-For example, we can define a function which takes 2 parameters:
+* This can be useful for creating URLs!
 
-    function unCurried(x,y){ return x+y; }
+### 8.3.11 *every() Method*
 
-And we can call it, e.g. unCurried(1,2)
+* **Checks if EVERY element of an array passes a test**
 
-We can Curry the method like this:
+       [21, 2, 65, 2].every(i=>i>0) // true
 
-    function curried(x){
-        return function(y){
-            return x+y
+### 8.3.12  *some() Method*
+
+*   **checks if ANY element of an array passes a test**
+
+         [21, -2].some(i=>i>0) // true
+
+
+### 8.3.13 *Currying*
+
+* **Currying a function means changing a function which accepts n arguments into n functions which take 1 parameter**
+
+* E.g. here's function which takes 2 parameters:
+
+        function unCurried(x,y){ return x+y; }
+
+* And we can call it via *unCurried(1,2)*
+
+* We can Curry the method like this:
+
+        function curried(x){
+            return function(y){
+                return x+y
+            }
         }
-    }
 
-And then call it via curried(1)(2)
+* And then call it via *curried(1)(2)*
 
-Suppose we have the following partial function:
+### 8.3.14 *Partial Functions*
 
-    function impartial(x,y,z){
-        return x+y+z;
-    }
+* Suppose we have the following impartial function:
 
-We can make this partial:
+        function impartial(x,y,z){
+            return x+y+z;
+        }
 
-    const partialFn = impartial.bind(this,1,2)
+* We can make this partial:
 
-And then we can call it:
+        const partialFn = impartial.bind(this,1,2)
 
-    partialFn(10);
+* And then we can call it:
+
+        partialFn(10); //13
