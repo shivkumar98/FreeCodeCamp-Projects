@@ -1,4 +1,4 @@
-// --------------- Create Basic JavaScript Onject --------------- \
+// --------------- Create Basic JavaScript Object --------------- \
     // object oriented program creates models for real life objects
     // the models have properties and behaviours
 
@@ -14,4 +14,4 @@
         };
     /*** Challenge ***/
     
-// --------------- Create Basic JavaScript Onject --------------- \
+// --------------- Create Basic JavaScript Object --------------- \
