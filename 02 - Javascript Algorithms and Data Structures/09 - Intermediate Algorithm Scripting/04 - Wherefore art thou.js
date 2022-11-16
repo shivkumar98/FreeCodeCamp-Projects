@@ -37,5 +37,6 @@ function whatIsInAName(collection, source) {
       return true;
     });
   }
-  
+}
+
   whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
