@@ -8,7 +8,7 @@
 
 ## Contents
 
-1) [Basic JavaScript]()
+1) [Basic JavaScript](/01%20-%20Basic%20Javascript)
 
 2) [ES6]()
 
