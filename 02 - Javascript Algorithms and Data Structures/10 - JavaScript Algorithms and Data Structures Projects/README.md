@@ -20,3 +20,10 @@
 * ROT13 values of the letters are shifted by 13 places. Thus A ↔ N, B ↔ O and so on
 
 * View project [**here**](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/10%20-%20JavaScript%20Algorithms%20and%20Data%20Structures%20Projects/3%20-%20Caeser%20Cipher)
+
+### 4) Telephone Validator
+
+* **Write a function which return true if the passed string looks like a valid US phone number.**
+
+
+* View project [**here**](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/10%20-%20JavaScript%20Algorithms%20and%20Data%20Structures%20Projects/4%20-%20Telephone%20Validator/)
