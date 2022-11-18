@@ -8,7 +8,7 @@
 
 ## Contents
 
-1) [Basic JavaScript](/01%20-%20Basic%20Javascript)
+1) [Basic JavaScript](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/01%20-%20Basic%20Javascript/)
 
 2) [ES6]()
 
