@@ -2,6 +2,8 @@
 
 * View my code [here](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/10%20-%20JavaScript%20Algorithms%20and%20Data%20Structures%20Projects/4%20-%20Telephone%20Validator/Telephone%20Validator.js)
 
+* View test cases [here](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/10%20-%20JavaScript%20Algorithms%20and%20Data%20Structures%20Projects/4%20-%20Telephone%20Validator/Tests.js)
+
 ##  Project Details
 
 * Return true if the passed string looks like a valid US phone number.
