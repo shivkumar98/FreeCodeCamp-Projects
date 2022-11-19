@@ -1,6 +1,6 @@
 # Cash Register
 
-* View my code [here](/Cash%20Register%V3.js)
+* View my code [here](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/10%20-%20JavaScript%20Algorithms%20and%20Data%20Structures%20Projects/5%20-%20Cash%20Register/Cash%20Register%20V3.js)
 
 * View test cases [here](/Cash%20Register/Tests.js)
 
