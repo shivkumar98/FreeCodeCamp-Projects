@@ -27,3 +27,13 @@
 
 
 * View project [**here**](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/10%20-%20JavaScript%20Algorithms%20and%20Data%20Structures%20Projects/4%20-%20Telephone%20Validator/)
+
+### 4) Cash Register
+
+* **Write a function which will return the change due when a customer purchases an item**
+
+
+* View project [**here**](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/10%20-%20JavaScript%20Algorithms%20and%20Data%20Structures%20Projects/5%20-%20Cash%20Register/)
+
+
+
