@@ -11,7 +11,6 @@ function checkCashRegister(price, cash, cid) {
       let cashValues = [["PENNY", 0.01], ["NICKEL", 0.05] , ["DIME",0.1] , ["QUARTER",0.25] , ["ONE",1] , ["FIVE",5], ["TEN",10], ["TWENTY",20], ["ONE HUNDRED",100] ]
       return cashValues[cashIndexes[currency]][1]
     }
-    
   
     //assume there is not enough money in draw
     let totalCashInDraw = 0
@@ -58,17 +57,51 @@ function checkCashRegister(price, cash, cid) {
         }
        }
     }
+     
+      // assume change can be returned as exact change
+      var denominations = [
+        {name:"ONE HUNDRED", value: 100.00},
+        {name:"TWENTY", value: 20.00},
+        {name:"TEN", value: 10.00},
+        {name:"FIVE", value: 5.00},
+        {name:"ONE", value: 1.00},
+        {name:"QUARTER", value: 0.25},
+        {name:"DIME", value: 0.10},
+        {name:"NICKEL", value: 0.05},
+        {name:"PENNY", value: 0.01}
+      ]
+      function checkExactChange(){
+        var change = changeOfPurchase
+        let CID = cid.reverse()
+        var result = denominations.reduce(function(acc, next, index){
+            if (change >= next.value){
+                var currentValue = 0.0;
+                while (change>= next.value && cid[index][1]>=next.value){
+                    currentValue += next.value;
+                    change -= next.value;
+                    change = Math.round(change*100)/100; // enduring precision
+                    CID[index][1] -= next.value
+
+                }
+                acc.push([next.name, currentValue])
+                return acc
+            } else {
+                return acc
+            }
+        }, []);
+        console.log("result: "+result)
+        return result.length > 0 && change === 0 ? result : false
+      }
+
+      let exactChange = checkExactChange()
+      console.log("exact: "+exactChange)
+      if (exactChange!=false){ // assuming exact change exists
+        return  {status: "OPEN", change: exactChange}
+      } else return {status: "INSUFFICIENT_FUNDS", change:[]}
+}
   
-      // assume change cannot be returned as exact change
-  
-      // assume exact change cannot be returned
-      return {status:"INSUFFICIENT_FUNDS",change:[]}
-  
-  }
-  
-  
-  
-  
+//TESTS:
+
   // console.log("return: "+JSON.stringify(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])))
   
   // console.log("return: "+JSON.stringify(checkCashRegister(19.5, 20, [["PENNY", 0], ["NICKEL", 0], ["DIME", 0], ["QUARTER",0], ["ONE",0], ["FIVE",0], ["TEN", 0], ["TWENTY",0], ["ONE HUNDRED",0]])))
@@ -80,5 +113,7 @@ function checkCashRegister(price, cash, cid) {
   // console.log(JSON.stringify(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])))
   // should return {status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}.
   
-  console.log(JSON.stringify(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])))
+  //console.log(JSON.stringify(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])))
   //  should return {status: "INSUFFICIENT_FUNDS", change: []}
+
+  console.log(JSON.stringify(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])))
