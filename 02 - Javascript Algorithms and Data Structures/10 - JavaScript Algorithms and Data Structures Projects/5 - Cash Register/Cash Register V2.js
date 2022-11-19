@@ -29,17 +29,19 @@ function checkCashRegister(price, cash, cid) {
      for (let j=1;j<=numOfCoin;j++){
       if (valueOfCoin*j == changeOfPurchase){
         console.log("exact change found")
-        let change = [coin,changeOfPurchase]
+        let change = [[coin,changeOfPurchase]]
         let ReturnedChange ={
           status: "CLOSED",
-          change: [change]
+          change: [["QUARTER", 0.5]]
         }
-        return ReturnedChange
+        return {status: "OPEN", change: change}
       }
      }
   }
 
 }
+
+
 
 
 console.log("return: "+JSON.stringify(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])))
