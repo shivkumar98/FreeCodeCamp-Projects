@@ -1,7 +1,4 @@
-
-
 function checkCashRegister(price, cash, cid) {
-
 
     const changeOfPurchase = cash - price;
     const cashIndexes = { "PENNY": 0, "NICKEL": 1, "DIME": 2, "QUARTER": 3, "ONE": 4,"FIVE":5, "TEN":6, "TWENTY":7, "ONE HUNDRED":8 }
@@ -14,7 +11,6 @@ function checkCashRegister(price, cash, cid) {
       let cashValues = [["PENNY", 0.01], ["NICKEL", 0.05] , ["DIME",0.1] , ["QUARTER",0.25] , ["ONE",1] , ["FIVE",5], ["TEN",10], ["TWENTY",20], ["ONE HUNDRED",100] ]
       return cashValues[cashIndexes[currency]][1]
     }
-  
     
   
     //assume there is not enough money in draw
@@ -34,23 +30,18 @@ function checkCashRegister(price, cash, cid) {
       return {status:"CLOSED", change:cid}
     }
     
-  
-  
-      
-    let numberOfCoinsForChange = cashValues.slice()
-    // finding the amount of coins which can fit into the changeOfPurchase
-    for (let i=0;i<numberOfCoinsForChange.length;i++){
-        console.log("coin: "+numberOfCoinsForChange[i])
-        console.log("before: "+numberOfCoinsForChange[i][1])
-        let totalForCoin = getCashInDrawForCurrency(numberOfCoinsForChange[i][0])[1]
-        let numOfCoins= totalForCoin /numberOfCoinsForChange[i][1]
-      numberOfCoinsForChange[i][1] = totalForCoin
-      console.log("after: "+numberOfCoinsForChange[i][1])
-    }
-    numberOfCoinsForChange = numberOfCoinsForChange.filter(i=>i[1]!=0).reverse()
-    
-  
+     
     // assume change can be returned in a single denominator
+    let numberOfCoinsForChange = cashValues.slice()
+      // finding the amount of coins which can fit into the changeOfPurchase
+      for (let i=0;i<numberOfCoinsForChange.length;i++){
+          let totalForCoin = getCashInDrawForCurrency(numberOfCoinsForChange[i][0])[1]
+          let numOfCoins= totalForCoin /numberOfCoinsForChange[i][1]
+        numberOfCoinsForChange[i][1] = totalForCoin
+        console.log("after: "+numberOfCoinsForChange[i][1])
+      }
+      numberOfCoinsForChange = numberOfCoinsForChange.filter(i=>i[1]!=0).reverse()
+  
     console.log("number of coins: "+numberOfCoinsForChange)
     for (let i=0;i<numberOfCoinsForChange.length;i++){
       let coin = numberOfCoinsForChange[i][0]
