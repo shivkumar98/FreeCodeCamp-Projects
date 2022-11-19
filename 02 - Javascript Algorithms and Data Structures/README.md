@@ -1,6 +1,6 @@
 # JavaScript Algorithms and Data Structures Certification
 
-- I started this on 27/10/2022 and worked from approximately 50 hours through the curriculum.
+- I started this on 27/10/2022 and worked from approximately 46 hours through the curriculum.
 
 - In order to receive the certification, I need to implement 5 JavaScript Data Structures and Algorithms projects. You can view my solutions [here](/02%20-%20Javascript%20Algorithms%20and%20Data%20Structures/10%20-%20JavaScript%20Algorithms%20and%20Data%20Structures%20Projects/).
 
