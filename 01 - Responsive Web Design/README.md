@@ -2,7 +2,9 @@
 
 - I started freeCodeCamp's [(New) Responsive Web Design Certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/) on July 28th 2022.
 
-- I completed the curriculum on October 27th 2022 (view certification [here](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/responsive-web-design)), I spent approximately 74 hours studying and completing the projects.
+- I completed the curriculum on October 27th 2022 (view certification [here](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/responsive-web-design))
+
+- I spent approximately 74 hours studying and completing the projects.
 
 - This repo contains the solutions and my own solutions to the tutorials from the certifications
 
