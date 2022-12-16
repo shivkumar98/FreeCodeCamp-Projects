@@ -491,16 +491,47 @@
         Foreign-key constraints:
             "more_info_character_id_fkey" FOREIGN KEY (character_id) REFERENCES characters(character_id)
 
+#### Adding rows to more_info table:
+
 - Displaying character_id from characters:
 
-        +--------------+
-        | character_id |
-        +--------------+
-        |            2 |
-        |            3 |
-        |            7 |
-        |            6 |
-        |            1 |
-        |            4 |
-        |            5 |
-        +--------------+
+        +--------------+--------+
+        | character_id |  name  |
+        +--------------+--------+
+        |            2 | Luigi  |
+        |            3 | Peach  |
+        |            7 | Yoshi  |
+        |            6 | Daisy  |
+        |            1 | Mario  |
+        |            4 | Toad   |
+        |            5 | Bowser |
+        +--------------+--------+
+
+- I will now add information for Mario:
+
+        INSERT INTO more_info(birthday, height, weight, character_id) VALUES ('1981-07-09', 155, 64.5, 1);
+
+        INSERT INTO more_info(birthday, height, weight, character_id) VALUES ('1983-07-14', 175, 48.8, 2);
+
+        INSERT INTO more_info(birthday, height, weight, character_id) VALUES ('1985-10-18', 173, 52.2, 3);
+
+        INSERT INTO more_info(birthday, height, weight, character_id) VALUES ('1950-01-10',66,35.6, 4); 
+
+        INSERT INTO more_info(birthday , height, weight, character_id) VALUES ('1990-10-29', 258, 300, 5);
+
+        INSERT INTO more_info(birthday, height, weight, character_id) VALUES ('1989,07-31', NULL, NULL, 6);
+
+- Result:
+
+        +--------------+------------+--------+--------+--------------+
+        | more_info_id |  birthday  | height | weight | character_id |
+        +--------------+------------+--------+--------+--------------+
+        |            1 | 1981-07-09 |    155 |   64.5 |            1 |
+        |            2 | 1983-07-14 |    175 |   48.8 |            2 |
+        |            3 | 1985-10-18 |    173 |   52.2 |            3 |
+        |            4 | 1950-01-10 |     66 |   35.6 |            4 |
+        |            5 | 1990-10-29 |    258 |  300.0 |            5 |
+        |            6 | 1989-07-31 |        |        |            6 |
+        +--------------+------------+--------+--------+--------------+
+
+  
