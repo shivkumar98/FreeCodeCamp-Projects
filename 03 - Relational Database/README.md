@@ -67,6 +67,8 @@
 * ***DROP TABLE tablename***
 * ***DROP DATABASE databasename***
 * **UPDATE TABLE tablename SET col1 = val1, SET col2 = val2 .... WHERE condition;**
+*  ***ALTER TABLE tablename ADD PRIMARY KEY(columnname);***
+*  ***ALTER TABLE tablename DROP CONSTANT constraintname;***
 
 <hr>
 
@@ -306,3 +308,80 @@
         |            6 | Daisy     | Sarasaland       | Yellow         |
         |            7 | Yoshi     | Dinosaur Land    | Green          |
         +--------------+-----------+------------------+----------------+
+
+
+
+- Updated favourite color:
+
+        UPDATE characters SET favorite_color = 'Orange' WHERE name='Daisy';
+
+- Displayed table:
+
+        +--------------+-----------+------------------+----------------+
+        | character_id |   name    |     homeland     | favorite_color |
+        +--------------+-----------+------------------+----------------+
+        |            1 | Mario     | Mushroom Kingdom | Red            |
+        |            2 | Luigi     | Mushroom Kingdom | Green          |
+        |            3 | Peach     | Mushroom Kingdom | Pink           |
+        |            5 | Bowser    | Mushroom Kingdom | Green          |
+        |            4 | Toadstool | Mushroom Kingdom | Red            |
+        |            7 | Yoshi     | Dinosaur Land    | Green          |
+        |            6 | Daisy     | Sarasaland       | Orange         |
+        +--------------+-----------+------------------+----------------+
+
+- UPDATE characters SET name='Toad' WHERE favorite_color='Red';
+    - Two rows were modified:
+
+            +--------------+--------+------------------+----------------+
+            | character_id |  name  |     homeland     | favorite_color |
+            +--------------+--------+------------------+----------------+
+            |            2 | Luigi  | Mushroom Kingdom | Green          |
+            |            3 | Peach  | Mushroom Kingdom | Pink           |
+            |            5 | Bowser | Mushroom Kingdom | Green          |
+            |            7 | Yoshi  | Dinosaur Land    | Green          |
+            |            6 | Daisy  | Sarasaland       | Orange         |
+            |            1 | Toad   | Mushroom Kingdom | Red            |
+            |            4 | Toad   | Mushroom Kingdom | Red            |
+            +--------------+--------+------------------+----------------+
+
+- Corrected Mario row:
+
+        UPDATE characters SET name='Mario' WHERE character_id=1;
+
+- Corrected Toad row:
+
+        UPDATE characters SET favorite_color='Blue' WHERE character_id=4;
+
+- Updated Bowser row:
+
+        UPDATE characters SET favorite_color='Yellow' WHERE character_id=5;
+        UPDATE characters SET homeland='Koopa Kingdom' WHERE character_id=5;
+
+- Displaying data by character_id:
+
+        SELECT * FROM characters ORDER BY character_id;
+
+- Added primary key using name column:
+
+        ALTER TABLE characters ADD PRIMARY KEY(name);
+
+- Showing characters table information:
+
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        |     Column     |         Type          | Collation | Nullable |                     Default                      |
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        | character_id   | integer               |           | not null | nextval('characters_character_id_seq'::regclass) |
+        | name           | character varying(30) |           | not null |                                                  |
+        | homeland       | character varying(60) |           |          |                                                  |
+        | favorite_color | character varying(30) |           |          |                                                  |
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        Indexes:
+            "characters_pkey" PRIMARY KEY, btree (name)
+
+- Dropped the constraint which was created:
+
+        ALTER TABLE characters DROP CONSTRAINT characters_pkey;
+
+- Using character_id as primary key:
+
+        ALTER TABLE characters ADD PRIMARY KEY(character_id);
