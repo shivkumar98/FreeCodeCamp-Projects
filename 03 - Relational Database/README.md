@@ -58,23 +58,25 @@
 * ***\d*** - displays database tables
     - ***\d tablename*** - displays column info of a specified table
 *  ***CREATE TABLE tablename()** *
-* ***ALTER TABLE table_name ADD COLUMN column_name DATATYPE;*** - adds a column to table
-* ***ALTER TABLE tablename DROP COLUMN <columnname>;*** - drops a column
-* ***ALTER TABLE <tablename> RENAME COLUMN <columnname> TO <newname>;*** - rename column
+* ***ALTER TABLE table_name ADD COLUMN column_name DATATYPE;*** 
+* ***ALTER TABLE tablename DROP COLUMN <columnname>;***
+* ***ALTER TABLE <tablename> RENAME COLUMN <columnname> TO <newname>;***
 * ***INSERT INTO tablename(col1, col2) VALUES (val1,val2);***
 * ***SELECT columns FROM tablename***
 * ***DELETE FROM tablename WHERE condition***
+* ***DROP TABLE tablename***
+* ***DROP DATABASE databasename***
+* **UPDATE TABLE tablename SET col1 = val1, SET col2 = val2 .... WHERE condition;**
 
 <hr>
 
 ### 2.3: Building a Mario Database:
 
-- I have PostgreSQL installed on my VM
-- I will use the terminal application
-- I logged in:
-    - **psql --usernam=freecodecamp --dbname=postgres**
+- Using terminal I logged in:
+    
+        psql --usernam=freecodecamp --dbname=postgres
 
-- **\l** lists databases:
+- Display databases:
 
         +-----------+----------+----------+---------+---------+-----------------------+
         |   Name    |  Owner   | Encoding | Collate |  Ctype  |   Access privileges   |
@@ -87,24 +89,24 @@
         +-----------+----------+----------+---------+---------+-----------------------+
 
 - I created 2 databases using:
-    - **CREATE DATABASE first_database;**
-    - **CREATE DATABASE second_database;**
+
+        CREATE DATABASE first_database;
+        CREATE DATABASE second_database;
 
 - I connected to the second database:
-    - **\c second_database**
+    
+        \c second_database;
 
 - Displayed tables:
-    - **\d**
 
         +--------+-------------+-------+--------------+
         | Schema |    Name     | Type  |    Owner     |
         +--------+-------------+-------+--------------+
         | public | first_table | table | freecodecamp |
         +--------+-------------+-------+--------------+
-        (1 row)
+       
 
 - Displayed details of second table:
-    - **\d second_table**
 
         Table "public.second_table"
         +--------+------+-----------+----------+---------+
@@ -127,12 +129,14 @@
         +--------------+---------+-----------+----------+---------+
 
 - I dropped the first_column:
-    - **ALTER TABLE second_table DROP COLUMN first_column;**
+
+        ALTER TABLE second_table DROP COLUMN first_column;
 
 - VARCHAR is used to declare a type of string with a max length specified
 
 - I added a new column called name:
-    - ALTER TABLE second_table ADD COLUMN name VARCHAR(30);
+
+        ALTER TABLE second_table ADD COLUMN name VARCHAR(30);
 
 - I displayed the table:
         
@@ -145,30 +149,160 @@
         +--------+-----------------------+-----------+----------+---------+
 
 - The column name was renamed:
-    - **ALTER TABLE second_table RENAME COLUMN name TO username;**
 
-- Inserted row into second table:
-    - **INSERT INTO second_table(id,username) VALUES (1,'Samus');**
+       ALTER TABLE second_table RENAME COLUMN name TO username;
+
+- Inserted row into second table:#
+
+        INSERT INTO second_table(id,username) VALUES (1,'Samus');
 
 - Selected all columns from table:
     - **SELECT * FROM second_table;**
 
-        +----+----------+
-        | id | username |
-        +----+----------+
-        |  1 | Samus    |
-        +----+----------+
+            +----+----------+
+            | id | username |
+            +----+----------+
+            |  1 | Samus    |
+            +----+----------+
 
 - Inserted more rows:
-    - INSERT INTO second_table(id, username) VALUES (2, 'Mario');
-    - INSERT INTO second_table(id, username) VALUES (3, 'Luigi');
+     
+        INSERT INTO second_table(id, username) VALUES (2, 'Mario');
+        INSERT INTO second_table(id, username) VALUES (3, 'Luigi');
 
 - Deleted all rows:
-    - DELETE FROM second_table WHERE username = 'Luigi';
-    - DELETE FROM second_table WHERE username = 'Mario';
-    - DELETE FROM second_table WHERE username = 'Samus';
+
+        DELETE FROM second_table WHERE username = 'Luigi';
+        DELETE FROM second_table WHERE username = 'Mario';
+        DELETE FROM second_table WHERE username = 'Samus';
+    
     - NOTE: double quotations (") can not be used.
 
 - Dropped all columns:
     - ALTER TABLE second_table DROP COLUMN username;
     - ALTER TABLE second_table DROP COLUMN id;
+
+- Displaying tables:
+
+        +--------+--------------+-------+--------------+
+        | Schema |     Name     | Type  |    Owner     |
+        +--------+--------------+-------+--------------+
+        | public | first_table  | table | freecodecamp |
+        | public | second_table | table | freecodecamp |
+        +--------+--------------+-------+--------------+
+
+- Dropped all tables from second_datbase:
+    - **DROP TABLE second_table;**
+    - **DROP TABLE first_table;**
+
+- Listed all databases:
+
+        +-----------------+--------------+----------+---------+---------+-----------------------+
+        |      Name       |    Owner     | Encoding | Collate |  Ctype  |   Access privileges   |
+        +-----------------+--------------+----------+---------+---------+-----------------------+
+        | first_database  | freecodecamp | UTF8     | C.UTF-8 | C.UTF-8 |                       |
+        | postgres        | postgres     | UTF8     | C.UTF-8 | C.UTF-8 |                       |
+        | second_database | freecodecamp | UTF8     | C.UTF-8 | C.UTF-8 |                       |
+        | template0       | postgres     | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +|
+        |                 |              |          |         |         | postgres=CTc/postgres |
+        | template1       | postgres     | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +|
+        |                 |              |          |         |         | postgres=CTc/postgres |
+        +-----------------+--------------+----------+---------+---------+-----------------------+
+
+- ALTER DATABASE first_database RENAME TO mario_database;
+
+        +-----------------+--------------+----------+---------+---------+-----------------------+
+        |      Name       |    Owner     | Encoding | Collate |  Ctype  |   Access privileges   |
+        +-----------------+--------------+----------+---------+---------+-----------------------+
+        | mario_database  | freecodecamp | UTF8     | C.UTF-8 | C.UTF-8 |                       |
+        | postgres        | postgres     | UTF8     | C.UTF-8 | C.UTF-8 |                       |
+        | second_database | freecodecamp | UTF8     | C.UTF-8 | C.UTF-8 |                       |
+        | template0       | postgres     | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +|
+        |                 |              |          |         |         | postgres=CTc/postgres |
+        | template1       | postgres     | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +|
+        |                 |              |          |         |         | postgres=CTc/postgres |
+        +-----------------+--------------+----------+---------+---------+-----------------------+
+
+- **\c mario_database**
+
+- **DROP DATABASE second_database;**
+
+- Creating a new table:
+        
+        CREATE TABLE characters();
+
+- Added a character_id column in table:
+        
+    - The SERIAL type will only accept non-null ints;
+
+            ALTER TABLE characters ADD COLUMN character_id SERIAL;
+    
+
+- Displaying table:
+
+        Table "public.characters"
+        +--------------+---------+-----------+----------+--------------------------------------------------+
+        |    Column    |  Type   | Collation | Nullable |                     Default                      |
+        +--------------+---------+-----------+----------+--------------------------------------------------+
+        | character_id | integer |           | not null | nextval('characters_character_id_seq'::regclass) |
+        +--------------+---------+-----------+----------+--------------------------------------------------+
+
+- Added non-null column:
+
+         ALTER TABLE characters ADD COLUMN name VARCHAR(30) NOT NULL;
+
+- Added homeland column:
+    
+        ALTER TABLE characters ADD COLUMN homeland VARCHAR(60);
+
+- Added favorite_color column:
+        
+        ALTER TABLE characters ADD COLUMN favorite_color VARCHAR(30);
+
+- Displaying table:
+
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        |     Column     |         Type          | Collation | Nullable |                     Default                      |
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        | character_id   | integer               |           | not null | nextval('characters_character_id_seq'::regclass) |
+        | name           | character varying(30) |           | not null |                                                  |
+        | homeland       | character varying(60) |           |          |                                                  |
+        | favorite_color | character varying(30) |           |          |                                                  |
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+
+- Added Mario:
+
+        INSERT INTO characters( name, homeland, favorite_color) VALUES ('Mario', 'Mushroom Kingdom', 'Red');
+
+- Inserted Luigi:
+        
+        INSERT INTO characters (name, homeland, favorite_color) VALUES ('Luigi', 'Mushroom Kingdom', 'Green');
+
+- Displaying all columns:
+    
+        +--------------+-------+------------------+----------------+
+        | character_id | name  |     homeland     | favorite_color |
+        +--------------+-------+------------------+----------------+
+        |            1 | Mario | Mushroom Kingdom | Red            |
+        |            2 | Luigi | Mushroom Kingdom | Green          |
+        +--------------+-------+------------------+----------------+
+
+- Inserting more characters:
+        
+        INSERT INTO characters (name, homeland, favorite_color) VALUES ('Peach', 'Mushroom Kingdom', 'Pink');
+        INSERT INTO characters (name, homeland, favorite_color) VALUES ('Toadstool', 'Mushroom Kingdom', 'Red'), ('Bowser', 'Mushroom Kingdom', 'Green');
+        INSERT INTO characters (name, homeland, favorite_color) VALUES ('Daisy', 'Sarasaland', 'Yellow'), ('Yoshi', 'Dinosaur Land', 'Green');
+
+- Displaying all columns:
+
+        +--------------+-----------+------------------+----------------+
+        | character_id |   name    |     homeland     | favorite_color |
+        +--------------+-----------+------------------+----------------+
+        |            1 | Mario     | Mushroom Kingdom | Red            |
+        |            2 | Luigi     | Mushroom Kingdom | Green          |
+        |            3 | Peach     | Mushroom Kingdom | Pink           |
+        |            5 | Bowser    | Mushroom Kingdom | Green          |
+        |            4 | Toadstool | Mushroom Kingdom | Red            |
+        |            6 | Daisy     | Sarasaland       | Yellow         |
+        |            7 | Yoshi     | Dinosaur Land    | Green          |
+        +--------------+-----------+------------------+----------------+
