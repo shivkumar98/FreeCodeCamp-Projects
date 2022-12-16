@@ -51,17 +51,19 @@
 
 ### 2.2: PostgreSQL Commands:
 
-* ***psql --usernam=user --dbname=name** - connects to database
-* **\l;** - lists databases
-* **CREATE DATABASE database_name;**
-* **\c database_name** - connects to a database
-* **\d** - displays database tables
-    - **\d table_name** - displays column info of a specified table
-*  **CREATE TABLE <tablename>()** 
-* **ALTER TABLE table_name ADD COLUMN column_name DATATYPE;** - adds a column to table
-* **ALTER TABLE <tablename> DROP COLUMN <columnname>;** - drops a column
-* **ALTER TABLE <tablename> RENAME COLUMN <columnname> TO <newname>;** - rename column
-* **INSERT INTO tablename(col1, col2) VALUES (val1,val2);**
+* ***psql --usernam=user --dbname=name*** - connects to database
+* ***\l;*** - lists databases
+* ***CREATE DATABASE databasename;***
+* ***\c databasename*** - connects to a database
+* ***\d*** - displays database tables
+    - ***\d tablename*** - displays column info of a specified table
+*  ***CREATE TABLE tablename()** *
+* ***ALTER TABLE table_name ADD COLUMN column_name DATATYPE;*** - adds a column to table
+* ***ALTER TABLE tablename DROP COLUMN <columnname>;*** - drops a column
+* ***ALTER TABLE <tablename> RENAME COLUMN <columnname> TO <newname>;*** - rename column
+* ***INSERT INTO tablename(col1, col2) VALUES (val1,val2);***
+* ***SELECT columns FROM tablename***
+* ***DELETE FROM tablename WHERE condition***
 
 <hr>
 
@@ -143,4 +145,30 @@
         +--------+-----------------------+-----------+----------+---------+
 
 - The column name was renamed:
-    - ALTER TABLE second_table RENAME COLUMN name TO username;
+    - **ALTER TABLE second_table RENAME COLUMN name TO username;**
+
+- Inserted row into second table:
+    - **INSERT INTO second_table(id,username) VALUES (1,'Samus');**
+
+- Selected all columns from table:
+    - **SELECT * FROM second_table;**
+
+        +----+----------+
+        | id | username |
+        +----+----------+
+        |  1 | Samus    |
+        +----+----------+
+
+- Inserted more rows:
+    - INSERT INTO second_table(id, username) VALUES (2, 'Mario');
+    - INSERT INTO second_table(id, username) VALUES (3, 'Luigi');
+
+- Deleted all rows:
+    - DELETE FROM second_table WHERE username = 'Luigi';
+    - DELETE FROM second_table WHERE username = 'Mario';
+    - DELETE FROM second_table WHERE username = 'Samus';
+    - NOTE: double quotations (") can not be used.
+
+- Dropped all columns:
+    - ALTER TABLE second_table DROP COLUMN username;
+    - ALTER TABLE second_table DROP COLUMN id;
