@@ -57,7 +57,7 @@
 * ***\c databasename*** - connects to a database
 * ***\d*** - displays database tables
     - ***\d tablename*** - displays column info of a specified table
-*  ***CREATE TABLE tablename()** *
+*  ***CREATE TABLE tablename()***
 * ***ALTER TABLE table_name ADD COLUMN column_name DATATYPE;*** 
 * ***ALTER TABLE tablename DROP COLUMN <columnname>;***
 * ***ALTER TABLE <tablename> RENAME COLUMN <columnname> TO <newname>;***
@@ -69,6 +69,9 @@
 * **UPDATE TABLE tablename SET col1 = val1, SET col2 = val2 .... WHERE condition;**
 *  ***ALTER TABLE tablename ADD PRIMARY KEY(columnname);***
 *  ***ALTER TABLE tablename DROP CONSTANT constraintname;***
+*  ***ALTER TABLE tablename ADD COLUMN columnname DATATYPE REFERENCES referenced_tablename(referenced_columnname);***
+* ***ALTER TABLE tablename ADD UNIQUE(columnname);***
+* ***ALTER TABLE tablename ALTER COLUMN columnname SET NOT NULL;***
 
 <hr>
 
@@ -385,3 +388,119 @@
 - Using character_id as primary key:
 
         ALTER TABLE characters ADD PRIMARY KEY(character_id);
+
+- Displaying characters table information:
+
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        |     Column     |         Type          | Collation | Nullable |                     Default                      |
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        | character_id   | integer               |           | not null | nextval('characters_character_id_seq'::regclass) |
+        | name           | character varying(30) |           | not null |                                                  |
+        | homeland       | character varying(60) |           |          |                                                  |
+        | favorite_color | character varying(30) |           |          |                                                  |
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+
+- Created more_info table:
+
+        CREATE TABLE more_info();
+
+- Displaying characters table, we can see the default value for character_id:
+
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        |     Column     |         Type          | Collation | Nullable |                     Default                      |
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        | character_id   | integer               |           | not null | nextval('characters_character_id_seq'::regclass) |
+        | name           | character varying(30) |           | not null |                                                  |
+        | homeland       | character varying(60) |           |          |                                                  |
+        | favorite_color | character varying(30) |           |          |                                                  |
+        +----------------+-----------------------+-----------+----------+--------------------------------------------------+
+        Indexes:
+            "characters_pkey" PRIMARY KEY, btree (character_id)
+
+- Added a column to the more_info table:
+
+        ALTER TABLE more_info ADD COLUMN more_info_id  SERIAL;
+
+- Added primary key:
+
+        ALTER TABLE more_info ADD PRIMARY KEY(more_info_id);
+
+- Displaying tables:
+
+        +--------+-----------------------------+----------+--------------+
+        | Schema |            Name             |   Type   |    Owner     |
+        +--------+-----------------------------+----------+--------------+
+        | public | characters                  | table    | freecodecamp |
+        | public | characters_character_id_seq | sequence | freecodecamp |
+        | public | more_info                   | table    | freecodecamp |
+        | public | more_info_more_info_id_seq  | sequence | freecodecamp |
+        +--------+-----------------------------+----------+--------------+
+
+- Added birthday and height column:
+
+        ALTER TABLE more_info ADD COLUMN birthday DATE;
+        ALTER TABLE more_info ADD COLUMN height INT;
+
+- Added weight column with type numeric(4,1) which is a 4 digit value and 1 digit after decimal.
+
+    ALTER TABLE more_info ADD COLUMN height INT;
+
+         ALTER TABLE more_info ADD COLUMN weight numeric(4,1);
+
+- Displaying more_info table:
+
+        +--------------+--------------+-----------+----------+-------------------------------------------------+
+        |    Column    |     Type     | Collation | Nullable |                     Default                     |
+        +--------------+--------------+-----------+----------+-------------------------------------------------+
+        | more_info_id | integer      |           | not null | nextval('more_info_more_info_id_seq'::regclass) |
+        | birthday     | date         |           |          |                                                 |
+        | height       | integer      |           |          |                                                 |
+        | weight       | numeric(4,1) |           |          |                                                 |
+        +--------------+--------------+-----------+----------+-------------------------------------------------+
+        Indexes:
+            "more_info_pkey" PRIMARY KEY, btree (more_info_id)
+
+
+- To create a relationship with the characters table, we need to set a foreign key. I will add a character_id column to the more_info table which references the primary key of the characters table:
+
+        ALTER TABLE more_info ADD COLUMN character_id INT REFERENCES characters(character_id);
+
+- These tables now have a one-to-one relationship. One row in characters will correspond with one row in more_info.
+    - We can enforce that each character_id in more_info will be unique:
+
+            ALTER TABLE more_info ADD UNIQUE(character_id);
+
+    - We can also ensure the value is not null:
+
+            ALTER TABLE more_info ALTER COLUMN character_id SET NOT NULL;
+
+- Displaying more_info table:
+
+        +--------------+--------------+-----------+----------+-------------------------------------------------+
+        |    Column    |     Type     | Collation | Nullable |                     Default                     |
+        +--------------+--------------+-----------+----------+-------------------------------------------------+
+        | more_info_id | integer      |           | not null | nextval('more_info_more_info_id_seq'::regclass) |
+        | birthday     | date         |           |          |                                                 |
+        | height       | integer      |           |          |                                                 |
+        | weight       | numeric(4,1) |           |          |                                                 |
+        | character_id | integer      |           | not null |                                                 |
+        +--------------+--------------+-----------+----------+-------------------------------------------------+
+        Indexes:
+            "more_info_pkey" PRIMARY KEY, btree (more_info_id)
+            "more_info_character_id_key" UNIQUE CONSTRAINT, btree (character_id)
+        Foreign-key constraints:
+            "more_info_character_id_fkey" FOREIGN KEY (character_id) REFERENCES characters(character_id)
+
+- Displaying character_id from characters:
+
+        +--------------+
+        | character_id |
+        +--------------+
+        |            2 |
+        |            3 |
+        |            7 |
+        |            6 |
+        |            1 |
+        |            4 |
+        |            5 |
+        +--------------+
