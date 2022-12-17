@@ -70,9 +70,10 @@
 * **UPDATE TABLE tablename SET col1 = val1, SET col2 = val2 .... WHERE condition;**
 *  ***ALTER TABLE tablename ADD PRIMARY KEY(columnname);***
 *  ***ALTER TABLE tablename DROP CONSTANT constraintname;***
-*  ***ALTER TABLE tablename ADD COLUMN columnname DATATYPE REFERENCES referenced_tablename(referenced_columnname);***
 * ***ALTER TABLE tablename ADD UNIQUE(columnname);***
 * ***ALTER TABLE tablename ALTER COLUMN columnname SET NOT NULL;***
+*  ***ALTER TABLE tablename ADD COLUMN columnname DATATYPE REFERENCES referenced_tablename(referenced_columnname);***
+* ***ALTER TABLE tablename ADD FOREIGN KEY(columnname) REFERENCES ref_tablename(ref_colname);***
 
 <hr>
 
@@ -542,6 +543,7 @@
 
         ALTER TABLE more_info RENAME COLUMN height TO height_in_cm;
 
+<hr>
 
 #### Creating sound table:
 
@@ -581,12 +583,84 @@ ALTER TABLE sounds ADD COLUMN filename VARCHAR(40) UNIQUE NOT NULL;
                 "sounds_character_id_fkey" FOREIGN KEY (character_id) REFERENCES characters(character_id)
 
 
-INSERT INTO sounds(filename, character_id) VALUES ('its-a-me.wav', 1);
+- Added rows for Mario, Luigi and Peach:
 
-INSERT INTO sounds(filename, character_id) VALUES ('yippee.wav', 1);
+                INSERT INTO sounds(filename, character_id) VALUES ('its-a-me.wav', 1);
 
-INSERT INTO sounds(filename, character_id) VALUES ('ha-ha.wav', 2);
+                INSERT INTO sounds(filename, character_id) VALUES ('yippee.wav', 1);
 
-INSERT INTO sounds(filename, character_id) VALUES ('oh-yeah.wav', 2);
+                INSERT INTO sounds(filename, character_id) VALUES ('ha-ha.wav', 2);
 
-INSERT INTO sounds(filename, character_id) VALUES ('yay.wav', 3),('woo-hoo.wav',3);
+                INSERT INTO sounds(filename, character_id) VALUES ('oh-yeah.wav', 2);
+
+                INSERT INTO sounds(filename, character_id) VALUES ('yay.wav', 3),('woo-hoo.wav',3);
+
+                INSERT INTO sounds(filename, character_id) VALUES ('yahoo.wav', 1),('mm-hmm.wav',3);
+
+- Displaying the table:
+
+                +----------+--------------+--------------+
+                | sound_id |   filename   | character_id |
+                +----------+--------------+--------------+
+                |        1 | its-a-me.wav |            1 |
+                |        2 | yippee.wav   |            1 |
+                |        3 | ha-ha.wav    |            2 |
+                |        4 | oh-yeah.wav  |            2 |
+                |        5 | yay.wav      |            3 |
+                |        6 | woo-hoo.wav  |            3 |
+                |        7 | yahoo.wav    |            1 |
+                |        8 | mm-hmm.wav   |            3 |
+                +----------+--------------+--------------+
+
+### Creating actions Table:
+
+- Created action table:
+
+                CREATE TABLE actions(action_id SERIAL PRIMARY KEY);
+
+- Added column:
+
+                 ALTER TABLE actions ADD COLUMN action VARCHAR(20) UNIQUE NOT NULL;
+
+- There will be a many-to-many relationship between characters and actions, i.e. a single character can have multiple actions and a single action can be used by multiple characters.
+
+- **A many-to-many relationship does not require a constraint**
+
+
+INSERT INTO actions(action) VALUES ('run');
+
+INSERT INTO actions(action) VALUES ('jump');
+
+INSERT INTO actions(action) VALUES ('duck');
+
+- Many-to-many relationships usually use a **junction** table to link two tables together, forming "one-to-many" relationships. We will link the characters and actions table using a junction table called character_actions:
+
+                CREATE TABLE character_actions();
+
+- This table will use primary keys from the characters and actions tables as foreign keys.
+
+- Adding character_id column and foreign key:
+
+                ALTER TABLE character_actions ADD COLUMN character_ID INT NOT NULL;
+                ALTER TABLE character_actions ADD FOREIGN KEY(character_id) REFERENCES characters(character_id);
+
+- Adding character_action column and setting foreign key:
+
+                ALTER TABLE character_actions ADD COLUMN action_id INT NOT NULL;
+                ALTER TABLE character_actions ADD FOREIGN KEY (action_id) REFERENCES actions(action_id);
+
+- Displaying table:
+
+                +--------------+---------+-----------+----------+---------+
+                |    Column    |  Type   | Collation | Nullable | Default |
+                +--------------+---------+-----------+----------+---------+
+                | character_id | integer |           | not null |         |
+                | action_id    | integer |           | not null |         |
+                +--------------+---------+-----------+----------+---------+
+                Foreign-key constraints:
+                "character_actions_action_id_fkey" FOREIGN KEY (action_id) REFERENCES actions(action_id)
+                "character_actions_character_id_fkey" FOREIGN KEY (character_id) REFERENCES characters(character_id)
+
+- We shall creatge a **composite primary key** for the character_actions table:
+
+                ALTER TABLE character_actions ADD PRIMARY KEY(character_id, action_id);
