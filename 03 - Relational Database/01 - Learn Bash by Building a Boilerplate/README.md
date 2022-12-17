@@ -19,6 +19,7 @@
 **4) Clear terminal:**
 
         clear # clears terminal
+
 **5) Print working directory:**
 
         pwd # prints current location
