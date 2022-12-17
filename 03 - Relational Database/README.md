@@ -58,6 +58,7 @@
 * ***\d*** - displays database tables
     - ***\d tablename*** - displays column info of a specified table
 *  ***CREATE TABLE tablename()***
+* ***CREATE TABLE tablename(columnname DATATYPE CONSTRAINTS);***
 * ***ALTER TABLE table_name ADD COLUMN column_name DATATYPE;*** 
 * ***ALTER TABLE tablename DROP COLUMN <columnname>;***
 * ***ALTER TABLE <tablename> RENAME COLUMN <columnname> TO <newname>;***
@@ -521,6 +522,8 @@
 
         INSERT INTO more_info(birthday, height, weight, character_id) VALUES ('1989,07-31', NULL, NULL, 6);
 
+        INSERT INTO more_info(birthday, height, weight, character_id) VALUES ('1990,04-13',162,59.1, 7);
+
 - Result:
 
         +--------------+------------+--------+--------+--------------+
@@ -532,6 +535,58 @@
         |            4 | 1950-01-10 |     66 |   35.6 |            4 |
         |            5 | 1990-10-29 |    258 |  300.0 |            5 |
         |            6 | 1989-07-31 |        |        |            6 |
+        |            7 | 1990-04-13 |    162 |   59.1 |            7 |
         +--------------+------------+--------+--------+--------------+
 
-  
+  - I renamed columns:
+
+        ALTER TABLE more_info RENAME COLUMN height TO height_in_cm;
+
+
+#### Creating sound table:
+
+- Created new table for sounds:
+
+                 CREATE TABLE sounds(sound_id SERIAL PRIMARY KEY);
+
+                +--------+-----------------------------+----------+--------------+
+                | Schema |            Name             |   Type   |    Owner     |
+                +--------+-----------------------------+----------+--------------+
+                | public | characters                  | table    | freecodecamp |
+                | public | characters_character_id_seq | sequence | freecodecamp |
+                | public | more_info                   | table    | freecodecamp |
+                | public | more_info_more_info_id_seq  | sequence | freecodecamp |
+                | public | sounds                      | table    | freecodecamp |
+                | public | sounds_sound_id_seq         | sequence | freecodecamp |
+                +--------+-----------------------------+----------+--------------+
+
+
+ALTER TABLE sounds ADD COLUMN filename VARCHAR(40) UNIQUE NOT NULL;
+
+- Created a foreign key constraint so each character can have multiple sounds but a sound can not correspond to multiple characters:
+
+                ALTER TABLE sounds ADD COLUMN character_id INT NOT NULL REFERENCES characters(character_id);
+
+                +--------------+-----------------------+-----------+----------+------------------------------------------+
+                |    Column    |         Type          | Collation | Nullable |                 Default                  |
+                +--------------+-----------------------+-----------+----------+------------------------------------------+
+                | sound_id     | integer               |           | not null | nextval('sounds_sound_id_seq'::regclass) |
+                | filename     | character varying(40) |           | not null |                                          |
+                | character_id | integer               |           | not null |                                          |
+                +--------------+-----------------------+-----------+----------+------------------------------------------+
+                Indexes:
+                "sounds_pkey" PRIMARY KEY, btree (sound_id)
+                "sounds_filename_key" UNIQUE CONSTRAINT, btree (filename)
+                Foreign-key constraints:
+                "sounds_character_id_fkey" FOREIGN KEY (character_id) REFERENCES characters(character_id)
+
+
+INSERT INTO sounds(filename, character_id) VALUES ('its-a-me.wav', 1);
+
+INSERT INTO sounds(filename, character_id) VALUES ('yippee.wav', 1);
+
+INSERT INTO sounds(filename, character_id) VALUES ('ha-ha.wav', 2);
+
+INSERT INTO sounds(filename, character_id) VALUES ('oh-yeah.wav', 2);
+
+INSERT INTO sounds(filename, character_id) VALUES ('yay.wav', 3),('woo-hoo.wav',3);
