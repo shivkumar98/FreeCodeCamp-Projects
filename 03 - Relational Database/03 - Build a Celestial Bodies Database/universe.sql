@@ -286,6 +286,15 @@ INSERT INTO public.moon VALUES (4, 'Callisto', false, 3);
 INSERT INTO public.planet VALUES (1, 'Earth', 6378, 1, 0, true, 1);
 INSERT INTO public.planet VALUES (3, 'Jupiter', 69991, 80, 71000000, false, 1);
 INSERT INTO public.planet VALUES (4, 'Proxima B', 6589, 7, 99999999, true, 6);
+INSERT INTO public.planet VALUES (5, 'Venus', 6051, 0, 245000000, false, 1);
+INSERT INTO public.planet VALUES (6, 'Mars', 3389, 2, 87400000, false, 1);
+INSERT INTO public.planet VALUES (7, 'Saturn', 58232, 2, 999999999, false, 1);
+INSERT INTO public.planet VALUES (8, 'Uranus', 654716, 3, 999999999, false, 1);
+INSERT INTO public.planet VALUES (9, 'Neptune', 49461949, 11, 99999999, false, 1);
+INSERT INTO public.planet VALUES (11, 'Proxima a', 684864, 0, 99999999, true, 6);
+INSERT INTO public.planet VALUES (12, 'Proxima b', 64648, 0, 99999999, true, 6);
+INSERT INTO public.planet VALUES (13, 'Proxima c', 68138416, 0, 99999999, true, 6);
+INSERT INTO public.planet VALUES (14, 'Proxima d', 6555816, 1, 99999999, true, 6);
 
 
 --
@@ -329,7 +338,7 @@ SELECT pg_catalog.setval('public.moon_moon_id_seq', 4, true);
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 4, true);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 14, true);
 
 
 --

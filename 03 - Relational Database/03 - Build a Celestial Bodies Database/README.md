@@ -273,3 +273,64 @@ Inserting 3 rows:
         INSERT INTO planet_type(name, description, planet_id) VALUES ('Proxima description', 'Rocky planet with conditions similar to earth',4);
 
 - First 15 Tests now pass!
+
+- The current dataset is:
+                
+                Galaxy:
+                +-----------+------------+
+                | galaxy_id |    name    |
+                +-----------+------------+
+                |         1 | Mily Way   |
+                |         2 | Andromeda  |
+                |         3 | Messier 63 |
+                |         4 | Sembrero   |
+                |         5 | Whirlpool  |
+                |         6 | Messier 81 |
+                +-----------+------------+
+
+                Star:
+                +---------+-----------+-----------+
+                | star_id |   name    | galaxy_id |
+                +---------+-----------+-----------+
+                |       1 | The Sun   |         1 |
+                |       6 | Proxima   |         1 |
+                |       7 | Mirach    |         2 |
+                |       8 | Adhil     |         2 |
+                |       9 | Nero      |         3 |
+                |      10 | Sunflower |         3 |
+                |      11 | Zenus     |         4 |
+                |      12 | Mario     |         4 |
+                +---------+-----------+-----------+
+
+                Moon:
+                +---------+----------+---------------+-----------+
+                | moon_id |   name   | is_dwarf_moon | planet_id |
+                +---------+----------+---------------+-----------+
+                |       1 | The Moon | f             |         1 |
+                |       2 | Europa   | f             |         3 |
+                |       4 | Callisto | f             |         3 |
+                +---------+----------+---------------+-----------+
+
+                Planet:
+                +-----------+-----------+--------------+-----------------+---------------------------+--------------+---------+
+                | planet_id |   name    | radius_in_km | number_of_moons | distance_from_earth_in_km | is_habitable | star_id |
+                +-----------+-----------+--------------+-----------------+---------------------------+--------------+---------+
+                |         1 | Earth     |         6378 |               1 |                         0 | t            |       1 |
+                |         3 | Jupiter   |        69991 |              80 |                  71000000 | f            |       1 |
+                |         4 | Proxima B |         6589 |               7 |                  99999999 | t            |       6 |
+                +-----------+-----------+--------------+-----------------+---------------------------+--------------+---------+
+
+- I added more planets:
+
+                INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Venus', 6051, 0, 245000000, FALSE, 1);
+                INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Mars',3389, 2, 87400000, FALSE, 1);
+                INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Saturn', 58232,2, 999999999, FALSE, 1);
+                INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Uranus', 654716,3, 999999999, FALSE, 1);
+                INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Neptune', 49461949, 11, 99999999, FALSE, 1);
+                INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Proxima a', 684864,0,99999999, TRUE, 6);
+                 INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Proxima b', 64648,0,99999999, TRUE, 6);
+                 INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Proxima c', 68138416,0,99999999, TRUE, 6);
+                 INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Proxima d', 6555816,1,99999999, TRUE, 6);
+
+
+- The planet table now has 12 rows! So first 16 tests passed
