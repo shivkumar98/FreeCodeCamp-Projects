@@ -334,3 +334,32 @@ Inserting 3 rows:
 
 
 - The planet table now has 12 rows! So first 16 tests passed
+
+- Added 18 moons so there is 21 moons:
+
+                
+                INSERT INTO moon(name, is_dwarf_moon,planet_id) VALUES
+                ('Himalia', FALSE, 3),
+                ('Carme', FALSE, 3),
+                ('Ersa', FALSE, 3),
+                ('Arche', FALSE,3),
+                ('Valetudo',FALSE,3),
+                ('Carpo', FALSE,3);
+
+                INSERT INTO moon(name, is_dwarf_moon,planet_id) VALUES
+                ('Dia', FALSE, 3),
+                ('Eupheme', FALSE, 3),
+                ('Cyllene', FALSE, 3),
+                ('Arche', FALSE,3),
+                ('Euphorie',FALSE,3),
+                ('Iocaste', FALSE,3);
+
+                INSERT INTO moon(name, is_dwarf_moon,planet_id) VALUES
+                ('proxy a', FALSE,4),
+                ('prox b', FALSE,4),
+                ('prxy c', FALSE, 4),
+                ('prxma c', FALSE,4),
+                ('prxima d',FALSE,4),
+                ('proxima e', FALSE,4);
+
+- First 17 tests now pass!
