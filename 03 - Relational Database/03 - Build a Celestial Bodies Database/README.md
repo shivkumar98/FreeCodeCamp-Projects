@@ -15,53 +15,53 @@
 
 ### **Complete the tasks below:**
 
-- You should create a database named universe
+1. You should create a database named universe
 
-- Be sure to connect to your database with \c universe. Then, you should add tables named galaxy, star, planet, and moon
+1. Be sure to connect to your database with \c universe. Then, you should add tables named galaxy, star, planet, and moon
 
-- Each table should have a primary key
+1. Each table should have a primary key
 
-- Each primary key should automatically increment
+1. Each primary key should automatically increment
 
-- Each table should have a name column
+1. Each table should have a name column
 
-- You should use the INT data type for at least two columns that are not a primary or foreign key
+1. You should use the INT data type for at least two columns that are not a primary or foreign key
 
-- You should use the NUMERIC data type at least once
+1. You should use the NUMERIC data type at least once
 
-- You should use the TEXT data type at least once
+1. You should use the TEXT data type at least once
 
-- You should use the BOOLEAN data type on at least two columns
+1. You should use the BOOLEAN data type on at least two columns
 
-- Each "star" should have a foreign key that references one of the rows in galaxy
+1. Each "star" should have a foreign key that references one of the rows in galaxy
 
-- Each "planet" should have a foreign key that references one of the rows in star
+1. Each "planet" should have a foreign key that references one of the rows in star
 
-- Each "moon" should have a foreign key that references one of the rows in planet
+1. Each "moon" should have a foreign key that references one of the rows in planet
 
-- Your database should have at least five tables
+1. Your database should have at least five tables
 
-- Each table should have at least three rows
+1. Each table should have at least three rows
 
-- The galaxy and star tables should each have at least six rows
+1. The galaxy and star tables should each have at least six rows
 
-- The planet table should have at least 12 rows
+1. The planet table should have at least 12 rows
 
-- The moon table should have at least 20 rows
+1. The moon table should have at least 20 rows
 
-- Each table should have at least three columns
+1. Each table should have at least three columns
 
-- The galaxy, star, planet, and moon tables should each have at least five columns
+1. The galaxy, star, planet, and moon tables should each have at least five columns
 
-- At least two columns per table should not accept NULL values
+1. At least two columns per table should not accept NULL values
 
-- At least one column from each table should be required to be UNIQUE
+1. At least one column from each table should be required to be UNIQUE
 
-- All columns named name should be of type VARCHAR
+1. All columns named name should be of type VARCHAR
 
-- Each primary key column should follow the naming convention table_name_id. For example, the moon table should have a primary key column named moon_id
+1. Each primary key column should follow the naming convention table_name_id. For example, the moon table should have a primary key column named moon_id
 
-- Each foreign key column should have the same name as the column it is referencing
+1. Each foreign key column should have the same name as the column it is referencing
 
 
 ## 2 - Project Commentary
@@ -180,3 +180,96 @@ INSERT INTO moon(name, is_dwarf_moon, planet_id) VALUES ('The Moon', FALSE, 1);
 CREATE TABLE planet_type(planet_type_id SERIAL NOT NULL, descriptrion TEXT NOT NULL);
 
 - A planet will have a unique description, so a one-to-one relationship.
+
+ALTER TABLE planet_type ADD COLUMN planet_id INT UNIQUE NOT NULL REFERENCES planet(planet_id);
+
+- Attempting to insert another description for Earth leads to error:
+
+INSERT INTO planet_type(description, planet_id) VALUES ('Rocky planet', 1);ERROR:  duplicate key value violates unique constraint "planet_type_planet_id_key"
+DETAIL:  Key (planet_id)=(1) already exists.
+
+- I realised I made a mistake implementing the one-to-many relationships😰
+
+
+- Inserted 5 more galaxies and stars:
+
+        INSERT INTO galaxy(name) VALUES ('Andromeda'), ('Messier 63'), ('Sembrero'),('Whirlpool'), ('Messier 81');
+        
+- I realised not all the tests were passing (primary key and name column) due to planet_type table
+
+ALTER TABLE planet_type ADD COLUMN name TEXT;
+ ALTER TABLE planet_type ADD PRIMARY KEY(planet_type_id);
+
+ - NOW ll of first 12 tests pass
+
+ - I tried adding a Proxima star for Milky Way galaxy but my constraint won't allow it:
+
+        universe=> INSERT INTO star(name, galaxy_id) VALUES ('Proxima',1);
+        ERROR:  duplicate key value violates unique constraint "star_galaxy_id_key"
+        DETAIL:  Key (galaxy_id)=(1) already exists.
+
+- Mistakenly dropper unique constraint for planet_type:
+
+        ALTER TABLE planet_type DROP CONSTRAINT planet_type_planet_id_key;
+        ALTER TABLE planet_type ADD CONSTRAINT planet_type_planet_id_key UNIQUE(planet_type_id);
+
+- Dropping uniqueness constraint:
+
+        ALTER TABLE star DROP CONSTRAINT star_galaxy_id_key ;
+
+- Successfully inserted more rows without issue:
+
+        INSERT INTO star(name, galaxy_id) VALUES ('Proxima',1);
+        INSERT INTO star(name, galaxy_id) VALUES ('Mirach',2),('Adhil',2)
+        INSERT INTO star(name, galaxy_id) VALUES ('Nero',3),('Sunflower',3);
+         INSERT INTO star(name, galaxy_id) VALUES ('Zenus',4),('Mario',4);
+
+- The 15th test passes!
+
+- Attempting to add another planet:
+
+        universe=> INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Jupiter', 69991, 80, 71000000, FALSE, 1);
+        ERROR:  duplicate key value violates unique constraint "planet_star_id_key"
+        DETAIL:  Key (star_id)=(1) already exists.
+
+- I dropped the uniqueness constraint:
+
+        ALTER TABLE planet DROP CONSTRAINT planet_star_id_key;
+
+- Inserted:
+
+        INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Jupiter', 69991, 80, 71000000, FALSE, 1);
+        INSERT INTO planet (name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Proxima B', 6589,7 , 99999999, TRUE, 6);
+
+- Creating more moons:
+
+         INSERT INTO moon(name, is_dwarf_moon,planet_id) VALUES ('Europa', FALSE, 3);
+
+
+- Attempting to add another moon for Jupiter yhields an error:
+
+        universe=> INSERT INTO moon(name, is_dwarf_moon,planet_id) VALUES ('Callisto', FALSE, 3);
+        ERROR:  duplicate key value violates unique constraint "moon_planet_id_key"
+        DETAIL:  Key (planet_id)=(3) already exists.
+
+- Dropped constraint:
+
+        ALTER TABLE moon DROP CONSTRAINT moon_planet_id_key;
+
+- Successfully added row:
+
+        INSERT INTO moon(name, is_dwarf_moon,planet_id) VALUES ('Callisto', FALSE, 3);
+
+- Deleted rows from planet_type:
+
+        DELETE FROM planet_type;
+
+Inserting 3 rows:
+
+        INSERT INTO planet_type(name, description, planet_id) VALUES ('Earth description', 'Rocky planet with super conditions',1);
+
+        INSERT INTO planet_type(name, description, planet_id) VALUES ('Jupter description', 'Gas giant planet',3);
+
+        INSERT INTO planet_type(name, description, planet_id) VALUES ('Proxima description', 'Rocky planet with conditions similar to earth',4);
+
+- First 15 Tests now pass!
