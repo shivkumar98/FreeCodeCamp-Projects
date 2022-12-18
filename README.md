@@ -18,3 +18,12 @@ This repo contains documentation, code, solutions I curated while working throug
   &nbsp; 📍 Started on 27/10/2022.
 
   &nbsp; 📍 Earned [**Certification**](https://freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/javascript-algorithms-and-data-structures) on 19/11/2022.
+
+
+
+ ### **3 - Relational Databases**
+
+  &nbsp; 📍 [**View projects here**]()
+  
+  &nbsp; 📍 Started on 17/12/2022
+
