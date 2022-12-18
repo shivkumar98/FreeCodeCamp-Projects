@@ -6,11 +6,11 @@
 
 ### Tutorials:
 
-1) [Learn Bash By Building a Boilerplate]()
+1) [Learn Bash By Building a Boilerplate](01%20-%20Learn%20Bash%20by%20Building%20a%20Boilerplate)
 
-2) [Learn SQL By Building a Mario Database]()
+2) [Learn SQL By Building a Mario Database](02%20-%20Learn%20SQL%20By%20Building%20a%20Mario%20Database)
 
 ### Certification Projects:
 
-1) [Build a Celestial Bodies Database using SQL [Certification Project]]()
+1) [Build a Celestial Bodies Database using SQL](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
 
