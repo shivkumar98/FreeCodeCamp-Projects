@@ -23,7 +23,7 @@ This repo contains documentation, code, solutions I curated while working throug
 
  ### **3 - Relational Databases**
 
-  &nbsp; 📍 [**View projects here**]()
+  &nbsp; 📍 [**View projects here**](03%20-%20Relational%20Database)
   
   &nbsp; 📍 Started on 17/12/2022
 
