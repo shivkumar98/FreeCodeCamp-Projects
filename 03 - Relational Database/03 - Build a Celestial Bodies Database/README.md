@@ -166,3 +166,17 @@ INSERT INTO star(name, galaxy_id) VALUES ('The Sun',1);
 
 - I shall assume that a planet can orbit only a single star even though exoplanets exists!
 
+ALTER TABLE planet ADD COLUMN star_id INT UNIQUE NOT NULL REFERENCES star(star_id);
+
+INSERT INTO planet(name, radius_in_km, number_of_moons, distance_from_earth_in_km, is_habitable, star_id) VALUES ('Earth', 6378, 1, 0, TRUE, 1);
+
+- I shall assume a moon can orbit a single planet, and planets can have multiple moons#
+
+ALTER TABLE moon ADD COLUMN planet_id INT UNIQUE REFERENCES planet(planet_id);
+INSERT INTO moon(name, is_dwarf_moon, planet_id) VALUES ('The Moon', FALSE, 1);
+
+- The 11th test now passes: Each "moon" should have a foreign key that references one of the rows in planet!
+
+CREATE TABLE planet_type(planet_type_id SERIAL NOT NULL, descriptrion TEXT NOT NULL);
+
+- A planet will have a unique description, so a one-to-one relationship.

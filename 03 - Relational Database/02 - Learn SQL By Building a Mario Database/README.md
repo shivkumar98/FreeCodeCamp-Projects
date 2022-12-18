@@ -841,3 +841,6 @@ This displays the following results illustrating the one-to-one relationship:
                 |            1 | Mario  | Mushroom Kingdom | Red            |            1 |         2 |         2 | jump   |
                 |            1 | Mario  | Mushroom Kingdom | Red            |            1 |         3 |         3 | duck   |
                 +--------------+--------+------------------+----------------+--------------+-----------+-----------+--------+
+
+
+- A galaxy can have multiple moons but a single moon cannot belong to multiple galaxies.
