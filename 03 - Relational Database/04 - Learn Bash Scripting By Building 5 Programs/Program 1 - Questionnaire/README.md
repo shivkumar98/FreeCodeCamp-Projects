@@ -1,8 +1,17 @@
-# 4: Learn Bash Scripting By Building 5 Programs
+# Program 1: Questionnaire
 
-## Program 1: Questionnaire
+## Contents:
 
-### Creating questionnaire.sh file:
+1. [Creating questionnaire.sh file]()
+1. [Adding location of shell interpreter]()
+1. [Changing Permissions]()
+1. [Creating questionnaire.sh file]()
+1. [Creating questionnaire.sh file]()
+1. [Creating questionnaire.sh file]()
+
+<hr>
+
+## Creating questionnaire.sh file:
 
 - Created a questionnaire.sh file in the project folder:
 
@@ -22,7 +31,9 @@
 
 - This again display hello questionnaire to the console.
 
-### Adding location of shell interpreter:
+<hr>
+
+## Adding location of shell interpreter:
 
 - We can display the location of the bash interpreter:
 
@@ -44,7 +55,9 @@
 
 - The permissions were denied for this!
 
-### Changing Permissions:
+<hr>
+
+## Changing Permissions:
 
 - Displaying the files:
 
@@ -90,7 +103,9 @@
     ~/project$ more questionnaire.sh 
         #!/bin/bash
 
-### Functions and Variables
+<hr>
+
+## Functions and Variables
 
 - You can create variables and functions within bash, to create a variable you have the following syntax
 
@@ -111,7 +126,9 @@
     ~/project$ ./questionnaire.sh 
         What's your name?
 
-### Taking Input From User
+<hr>
+
+## Taking Input From User
 
 - You can take input from user using read keyword:
 
@@ -134,4 +151,28 @@
 
 - Creating QUESTION2 variable with text "Where are you from?"
 
-    ~/project$ echo 'QUESTION2="Where are you from?"' >> questionnaire.sh 
+    ~/project$ echo 'QUESTION2="Where are you from?"' >> questionnaire.sh
+
+- I inserted the printing of QUESTION2 on line 8 using sed:
+
+    ~/project$ sed -i '8i\echo $QUESTION2' questionnaire.sh
+
+- Reading input from user for QUESTION2:
+
+    ~/project$ sed -i '9i\read LOCATION' questionnaire.sh
+
+- Updating the response from hello name to hello name from location.:
+
+    ~/project$ sed -i '$d' questionnaire.sh # deleting last line
+    ~/project$ echo 'echo "Hello $NAME from $LOCATION."' >> questionnaire.sh 
+
+- Running Script:
+
+    ~/project$ ./questionnaire.sh 
+        What's your name?
+        Shiv
+        Where are you from?
+        UK
+        Hello Shiv from UK.
+
+## Adding a title:
