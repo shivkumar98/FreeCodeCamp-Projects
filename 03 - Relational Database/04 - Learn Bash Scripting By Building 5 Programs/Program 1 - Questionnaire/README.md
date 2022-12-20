@@ -105,7 +105,7 @@
 
 <hr>
 
-## Functions and Variables
+## Functions and Variables (Adding question1 and question2)
 
 - You can create variables and functions within bash, to create a variable you have the following syntax
 
@@ -176,3 +176,158 @@
         Hello Shiv from UK.
 
 ## Adding a title:
+
+- I want to print a title before any of the questions are asked, so I echo a line on line 2:
+
+    ~/project$ sed -i '2s/^/ echo ~~ Questionnaire ~~ /' questionnaire.sh 
+
+- Running the script:
+
+    ~/project$ ./questionnaire.sh 
+        ~~ Questionnaire ~~
+        What's your name?
+        Shiv
+        Where are you from?
+        UK
+        Hello Shiv from UK.
+
+
+## Adding spaces around title:
+
+- I need help from echo:
+
+    ~/project$ man echo # this just prints --help
+
+- We can use the man command instead for a manual:
+
+    ~/project$ man echo
+
+- Replacing line 2:
+
+    - Deleting second line:
+
+        ~/project$ sed -i '2d' questionnaire.sh 
+
+    - Inserting new line:
+
+        ~/project$ sed -i '2i\ echo "\n~~ Questionnaire ~~\n"' questionnaire.sh 
+
+- My solution generated literal line breaks:
+
+    #!/bin/bash
+    echo "
+    ~~ Questionnaire ~~
+    "
+
+    QUESTION1="What's your name?"
+    QUESTION2="Where are you from?"
+
+    echo $QUESTION1
+    read NAME
+
+    echo $QUESTION2
+    read LOCATION
+
+    echo Hello $NAME from $LOCATION.
+
+- Running the script:
+
+    ~/project$ ./questionnaire.sh 
+
+        ~~ Questionnaire ~~
+
+        What's your name?
+        Shiv
+        Where are you from?
+        UK
+        Hello Shiv from UK.
+
+- I cheated and manually set the value in the script:
+
+    #!/bin/bash
+    echo -e "\n~~ Questionnaire ~~\n"
+
+
+    QUESTION1="What's your name?"
+    QUESTION2="Where are you from?"
+
+    echo $QUESTION1
+    read NAME
+
+    echo $QUESTION2
+    read LOCATION
+
+    echo Hello $NAME from $LOCATION.
+
+- I realised that I didn't have to do everything via terminal :(
+
+- I ran the script:
+
+    ~/project$ ./questionnaire.sh 
+
+    ~~ Questionnaire ~~
+
+    What's your name?
+    Shiv
+    Where are you from?
+    UK
+    Hello Shiv from UK.
+
+## Creating question 3:
+
+- Added question:
+
+    QUESTION3="What's your favorite coding website?"
+
+- echoed the question:
+
+    echo $QUESTION3
+
+- Read the input:
+
+    read WEBSITE
+
+- Modified message from script:
+
+    echo Hello $NAME from $LOCATION. I learned that your favorite coding website is $WEBSITE!
+
+- Running the program:
+
+    ~/project$ ./questionnaire.sh 
+
+    ~~ Questionnaire ~~
+
+    What's your name?
+    Shiv
+    Where are you from?
+    UK
+    What's your favorite coding website?
+    FCC
+    Hello Shiv from UK. I learned that your favorite coding website is FCC!
+
+- Added line break before response is displayed
+
+    echo -e "\nHello $NAME from $LOCATION. I learned that your favorite coding website is $WEBSITE!"
+
+- Application works! Project Finished!
+
+## Final Bash Script:
+
+    #!/bin/bash
+    echo -e "\n~~ Questionnaire ~~\n"
+
+
+    QUESTION1="What's your name?"
+    QUESTION2="Where are you from?"
+    QUESTION3="What's your favorite coding website?"
+
+    echo $QUESTION1
+    read NAME
+
+    echo $QUESTION2
+    read LOCATION
+
+    echo $QUESTION3
+    read WEBSITE
+
+    echo -e "\nHello $NAME from $LOCATION. I learned that your favorite coding website is $WEBSITE!"
