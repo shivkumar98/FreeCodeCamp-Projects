@@ -10,7 +10,7 @@
 
 2) [Learn SQL By Building a Mario Database](02%20-%20Learn%20SQL%20By%20Building%20a%20Mario%20Database)
 
-3) [Learn Bash Scripting By Building 5 Programs](/04%20-%20Learn%20Bash%20Scripting%20By%20Building%205%20Programs)
+3) [Learn Bash Scripting By Building 5 Programs](/03%20-%20Relational%20Database/04%20-%20Learn%20Bash%20Scripting%20By%20Building%205%20Programs)
 
 ### Certification Projects:
 
