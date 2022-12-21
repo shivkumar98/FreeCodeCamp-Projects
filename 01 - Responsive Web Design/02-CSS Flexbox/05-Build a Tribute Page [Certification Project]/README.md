@@ -2,7 +2,7 @@
 
 In this project I will attempt to create a Tribute Page similar to https://tribute-page.freecodecamp.rocks/
 
-You can preview the rendered HTML [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/01-Responsive%20Web%20Design/02-CSS%20Flexbox/05-Build%20a%20Tribute%20Page%20%5BCertification%20Project%5D/V1/Tribute%20Page.html)
+You can preview the rendered HTML [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/01%20-%20Responsive%20Web%20Design/02-CSS%20Flexbox/05-Build%20a%20Tribute%20Page%20%5BCertification%20Project%5D/V1/Tribute%20Page.html)
 
 ### User Stories:
 1. Your tribute page should have a main element with a corresponding id of main, which contains all other elements
