@@ -1,5 +1,19 @@
 # Program 2: Countdown
 
+## Contents:
+1. [Creating file](#creating-file)
+1. [Arguments](#arguments)
+1. [Conditionals](#conditionals)
+1. [Arithmetic Comparisons](#arithmetic-comparisons)
+1. [Checking File exists](#checking-file-exists)
+1. [Checking Execution Permissions](#checking-execution-permissions)
+1. [Printing Numbers counting down](#printing-numbers-counting-down)
+1. [Adding pauses between numbers](#adding-pauses-between-numbers)
+1. [Using a While Loop](#using-a-while-loop)
+1. [Finished Script](#finished-script)
+
+<hr>
+
 ## Creating file:
 
 - Created file in terminal:
@@ -17,6 +31,8 @@
 - Added comment to script:
 
         #Program that counts down to zerio from a given argument
+
+<hr>
 
 ## Arguments:
 
@@ -44,6 +60,8 @@
 
         ~/project$ ./countdown.sh arg1 arg2 arg3
             arg1
+
+<hr>
 
 ## Conditionals:
 
@@ -85,6 +103,8 @@
 
         ~/project$ ./countdown.sh arg
             false
+
+<hr>
 
 ## Arithmetic Comparisons:
 
@@ -246,6 +266,7 @@
         ~/project$ bad_command; echo $?
             bash: bad_command: command not found
             127
+<hr>
 
 ## Checking File exists:
 
@@ -258,12 +279,15 @@
         ~/project$ [[ -a  countdown.sh ]]; echo $?
             0
 
+<hr>
+
 ## Checking Execution Permissions:
 
 - Using the -x operator, you can check if a file is executeable by you:
 
         ~/project$ [[ -x countdown.sh ]]; echo $?
             0   
+<hr>
 
 ## Printing Numbers counting down:
 
@@ -346,6 +370,8 @@
 
 - The script works as intended!
 
+<hr>
+
 ## Adding pauses between numbers
 
 - We need to use some non built in commands. We can display available pacakges using ls /bin:
@@ -410,6 +436,7 @@
 
         echo -e "\n~~ Countdown Timer ~~\n"
 
+<hr>
 
 ## Using a While Loop
 
@@ -455,6 +482,8 @@
         done
 
 - The script works
+
+<hr>
 
 ## Finished Script:
 
