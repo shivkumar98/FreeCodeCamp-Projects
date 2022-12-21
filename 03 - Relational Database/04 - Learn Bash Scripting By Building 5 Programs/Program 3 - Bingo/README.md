@@ -1,5 +1,14 @@
 # Program 3: Bingo
 
+## Contents:
+
+1.[Creating file and setting permissions](#creating-file-and-setting-permissions)
+1.[Generating random number](#generating-random-number)
+1.[Conditionals](#conditionals)
+1.[Finished Script](#finished-script)
+
+<hr>
+
 ## Creating file and setting permissions:
 
 - I create a bingo.sh file:
@@ -15,6 +24,8 @@
         #!/bin/bash
         # Bingo Number Generator
         echo -e "\n~~ Bingo Number Generator ~~\n"
+
+<hr>
 
 ## Generating random number:
 
@@ -113,6 +124,8 @@
         NUMBER=$(( RANDOM%75 + 1 ))
         echo $NUMBER
 
+<hr>
+
 ##  Conditionals:
 
 - I used round brackets to check if the number is <= 15:
@@ -193,6 +206,8 @@
         fi
 
 - Project is finished and works!
+
+<hr>
 
 ## Finished Script:
 
