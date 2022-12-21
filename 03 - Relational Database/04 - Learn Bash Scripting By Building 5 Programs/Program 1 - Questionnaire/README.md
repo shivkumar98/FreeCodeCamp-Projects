@@ -2,12 +2,15 @@
 
 ## Contents:
 
-1. [Creating questionnaire.sh file]()
-1. [Adding location of shell interpreter]()
-1. [Changing Permissions]()
-1. [Creating questionnaire.sh file]()
-1. [Creating questionnaire.sh file]()
-1. [Creating questionnaire.sh file]()
+1. [Creating questionnaire.sh file](#creating-questionnairesh-file)
+1. [Adding location of shell interpreter](#adding-location-of-shell-interpreter)
+1. [Changing Permissions](#changing-permissions)
+1. [Functions and Variables (Adding question1 and question2)](#functions-and-variables-adding-question1-and-question2)
+1. [Taking Input From User](#taking-input-from-user)
+1. [Adding a title](#adding-a-title)
+1. [Adding spaces around title](#adding-spaces-around-title)
+1. [Creating question 3](#creating-question-3)
+1. [Final Bash Script](#final-bash-script)
 
 <hr>
 
