@@ -3,7 +3,7 @@
 This repo contains documentation, code, solutions I curated while working through [freeCodeCamp's](https://www.freecodecamp.org)  certifications.
 
 
-### **1 - Responsive Web Design Certification**
+## **1 - Responsive Web Design Certification**
 
   &nbsp; 📍 [**View projects here**](https://github.com/shivkumar98/FreeCodeCamp-Projects/tree/main/01%20-%20Responsive%20Web%20Design)
   
@@ -11,7 +11,7 @@ This repo contains documentation, code, solutions I curated while working throug
 
   &nbsp; 📍 Earned [**Certification**](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/responsive-web-design) on 27/10/2022.
 
- ### **2 - Javascript Data Structures and Algorithms**
+## **2 - Javascript Data Structures and Algorithms**
 
   &nbsp; 📍 [**View projects here**](02%20-%20Javascript%20Algorithms%20and%20Data%20Structures)
   
@@ -21,7 +21,7 @@ This repo contains documentation, code, solutions I curated while working throug
 
 
 
- ### **3 - Relational Databases**
+## **3 - Relational Databases**
 
   &nbsp; 📍 [**View projects here**](03%20-%20Relational%20Database)
   
