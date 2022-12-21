@@ -1,5 +1,7 @@
 # Program 1: Questionnaire
 
+- In this tutorial, I learnt about variable, reading input to build a simple questionnaire.
+
 ## Contents:
 
 1. [Creating questionnaire.sh file](#creating-questionnairesh-file)

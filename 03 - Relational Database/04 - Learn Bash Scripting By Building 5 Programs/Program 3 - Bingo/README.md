@@ -1,5 +1,7 @@
 # Program 3: Bingo
 
+- In this tutorial, I learnt about random number generations and elif statements in scripts.
+
 ## Contents:
 
 1.[Creating file and setting permissions](#creating-file-and-setting-permissions)
