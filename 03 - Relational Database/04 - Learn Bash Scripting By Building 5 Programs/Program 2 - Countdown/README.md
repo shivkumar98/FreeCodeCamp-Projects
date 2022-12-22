@@ -1,6 +1,6 @@
 # Program 2: Countdown
 
-- In this tutorial, I learnt about script arguments, conditionals, comparisons, terminal commands, sleep and while loops.s
+In this tutorial, I learnt about script arguments, conditionals, comparisons, terminal commands, sleep and while loops.
 
 ## Contents:
 1. [Creating file](#creating-file)
