@@ -705,4 +705,45 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
                 # insert student
         fi
 
-- I will add all columns from the CSV except the major_id which will reference the majors table, if not found we can insert NULL
+- I will add all columns from the CSV except the major_id which will reference the majors table, if not found we can insert NULL:
+
+        # get major_id
+        MAJOR_ID=$($PSQL "SELECT MAJOR_ID FROM majors WHERE major='$MAJOR'")
+        echo $MAJOR_ID
+
+- Some of the students do not have a major or course:
+
+         # if not found
+        if [[ -z $MAJOR_ID ]]
+        then
+                # set to null
+                MAJOR_ID=null
+        fi
+
+- Inserting student row:
+
+        # insert student
+        INSERT_STUDENT_RESULT=$($PSQL "INSERT INTO students(first_name,last_name,major_id,gpa) VALUES ('$FIRST', '$LAST', $MAJOR_ID, $GPA)")
+        if [[ $INSERT_STUDENT_RESULT == "INSERT 0 1" ]]
+        then
+                echo "Inserted into students, $FIRST $LAST"
+        fi
+
+- Executing the script:
+
+        ~/project$ ./insert_data.sh 
+        TRUNCATE TABLE
+        Inserted into majors, Database Administration
+        Inserted into courses, Data Structures and Algorithms
+        Inserted into majors_courses, Database Administration : Data Structures and Algorithms
+        Inserted into majors, Web Development
+        Inserted into courses, Web Programming
+        Inserted into majors_courses, Web Development : Web Programming
+        Inserted into courses, Database Systems
+        Inserted into majors_courses, Database Administration : Database Systems
+        Inserted into majors, Data Science
+        Inserted into majors_courses, Data Science : Data Structures and Algorithms
+        Inserted into students, Rhea Kellems
+        Inserted into students, Emma Gilbert
+        Inserted into students, Kimberly Whitley
+        Inserted into students, Jimmy Felipe
