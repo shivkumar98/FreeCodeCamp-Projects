@@ -1,13 +1,13 @@
 # Program 3: Bingo
 
-- In this tutorial, I learnt about random number generations and elif statements in scripts.
+In this tutorial, I learnt about random number generations and elif statements in scripts.
 
 ## Contents:
 
-1.[Creating file and setting permissions](#creating-file-and-setting-permissions)
-1.[Generating random number](#generating-random-number)
-1.[Conditionals](#conditionals)
-1.[Finished Script](#finished-script)
+1. [Creating file and setting permissions](#creating-file-and-setting-permissions)
+1. [Generating random number](#generating-random-number)
+1. [Conditionals](#conditionals)
+1. [Finished Script](#finished-script)
 
 <hr>
 
