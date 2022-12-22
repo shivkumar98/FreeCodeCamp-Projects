@@ -1,6 +1,6 @@
 # 4: Learn Bash Scripting by Building 5 Programs
 
-- In this tutorial, I created 5 bash scripts and learnt more about the Linux terminal.
+In this tutorial, I created 5 bash scripts and learnt more about the Linux terminal.
 
 ## Programs:
 
