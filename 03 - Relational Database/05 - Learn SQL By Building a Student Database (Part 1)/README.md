@@ -604,3 +604,105 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         |         3 | Web Programming                |
         |         4 | Database Systems               |
         +-----------+--------------------------------+
+
+- Truncating the tables within the script:
+
+        # clearing tables:
+        echo $($PSQL "TRUNCATE students, majors, courses, majors_courses")
+
+- Getting the course_id of inseted course:
+
+        # get new course_id
+        COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
+
+- Inserting into the major_courses table:
+
+        # insert into majors_courses
+        INSERT_MAJORS_COURSES_RESULT=$($PSQL "INSERT INTO majors_courses(major_id, course_id) VALUES ($MAJOR_ID,$COURSE_ID)")
+
+- Added a print statement:
+
+        # insert into majors_courses
+        INSERT_MAJORS_COURSES_RESULT=$($PSQL "INSERT INTO majors_courses(major_id, course_id) VALUES ($MAJOR_ID,$COURSE_ID)")
+        if [[ $INSERT_MAJORS_COURSES_RESULT == "INSERT 0 1" ]]
+        then
+                echo Inserted into majors_courses, $MAJOR : $COURSE
+        fi
+
+- Then executing the script:
+
+        ~/project$ ./insert_data.sh 
+        TRUNCATE TABLE
+        Inserted into majors, Database Administration
+        Inserted into courses, Data Structures and Algorithms
+        Inserted into majors_courses, Database Administration : Data Structures and Algorithms
+        Inserted into majors, Web Development
+        Inserted into courses, Web Programming
+        Inserted into majors_courses, Web Development : Web Programming
+        Inserted into courses, Database Systems
+        Inserted into majors_courses, Database Administration : Database Systems
+        Inserted into majors, Data Science
+        Inserted into majors_courses, Data Science : Data Structures and Algorithms
+
+
+- Displaying the tables:
+
+                       
+        +----------+-------------------------+
+        | major_id |          major          |
+        +----------+-------------------------+
+        |       21 | Database Administration |
+        |       22 | Web Development         |
+        |       23 | Data Science            |
+        +----------+-------------------------+
+
+        +-----------+--------------------------------+
+        | course_id |             course             |
+        +-----------+--------------------------------+
+        |         8 | Data Structures and Algorithms |
+        |         9 | Web Programming                |
+        |        10 | Database Systems               |
+        +-----------+--------------------------------+
+                
+        +----------+-----------+
+        | major_id | course_id |
+        +----------+-----------+
+        |       21 |         8 |
+        |       22 |         9 |
+        |       21 |        10 |
+        |       23 |         8 |
+        +----------+-----------+
+
+## Students data:
+
+- I make a copy of the students.csv file:
+
+        ~/project$ cp students.csv students_test.csv
+
+- I removed all but 5 lines, including a line break on line 6 for students_test.csv:
+
+        first_name,last_name,major,gpa
+        Rhea,Kellems,Database Administration,2.5
+        Emma,Gilbert,null,null
+        Kimberly,Whitley,Web Development,3.8
+        Jimmy,Felipe,Database Administration,3.7
+
+
+- Below the loop of the courses.csv, I add the following command:
+
+        cat students_test.csv | while IFS="," read FIRST LAST MAJOR GPA
+        do
+                echo $FIRST
+        done
+
+- I check if the first column is not "first_name":
+
+        if [[ $FIRST != "first_name" ]]
+        then
+                # get major_id
+                # if not found
+                # set to null
+                # insert student
+        fi
+
+- I will add all columns from the CSV except the major_id which will reference the majors table, if not found we can insert NULL
