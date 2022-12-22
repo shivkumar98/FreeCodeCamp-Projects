@@ -537,3 +537,70 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         |       10 | Web Development         |
         |       11 | Data Science            |
         +----------+-------------------------+
+
+- In order to get useful information of what is printed, I check if the result of the query is "INSERT 0 1" and echo the major:
+
+        # insert major
+        INSERT_MAJOR_RESULT=$($PSQL "INSERT INTO majors(major) VALUES('$MAJOR')")
+        if [[ $INSERT_MAJOR_RESULT == "INSERT 0 1" ]]
+        then
+                echo "Inserted into majors, $MAJOR"
+        fi
+
+- I truncated the majors table again:
+
+        students=> TRUNCATE majors, students, majors_courses;
+        TRUNCATE TABLE
+
+- Running the script again:
+
+        ~/project$ ./insert_data.sh 
+        Inserted into majors, Database Administration
+        Inserted into majors, Web Development
+        Inserted into majors, Data Science
+
+- I now get the new major_id of the inserted table:
+
+      $MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE  major='$MAJOR'")
+
+- Getting course_id from database:
+
+        # get course_id
+        COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
+        
+
+- Inserting the course if the course_id is empty:
+
+        # insert course
+        INSERT_COURSE_RESULT=$($PSQL "INSERT INTO courses(course) VALUES('$COURSE')")
+        if [[ $INSERT_COURSE_RESULT == "INSERT 0 1" ]]
+        then
+                echo Inserted into courses, $COURSE
+        fi
+
+- Again, deleting all data:
+
+        students=> TRUNCATE majors, students, majors_courses;
+        TRUNCATE TABLE
+
+- Running the script again:
+
+        ~/project$ ./insert_data.sh 
+        Inserted into majors, Database Administration
+        Inserted into courses, Data Structures and Algorithms
+        Inserted into majors, Web Development
+        Inserted into courses, Web Programming
+        Inserted into courses, Database Systems
+        Inserted into majors, Data Science
+
+- Displaying the data:
+        
+        students=> select * from courses;
+        students=>                        
+        +-----------+--------------------------------+
+        | course_id |             course             |
+        +-----------+--------------------------------+
+        |         2 | Data Structures and Algorithms |
+        |         3 | Web Programming                |
+        |         4 | Database Systems               |
+        +-----------+--------------------------------+
