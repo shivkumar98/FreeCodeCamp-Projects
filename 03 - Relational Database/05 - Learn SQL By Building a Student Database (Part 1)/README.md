@@ -453,3 +453,87 @@ postgres=> CREATE DATABASE students;
         Network Engineering,Computer Networks
 
 - Running the script on courses_test.csv inserts 3 rows into the table
+
+- Displaying the majors table:
+
+        students=> SELECT * FROM majors;
+        +----------+-------------------------+
+        | major_id |          major          |
+        +----------+-------------------------+
+        |        1 | Database Administration |
+        |        2 | major                   |
+        |        3 | Web Development         |
+        |        4 | Data Science            |
+        +----------+-------------------------+
+        (4 rows)
+
+- I deleted all content from the table using truncate command:
+
+students=> TRUNCATE majors;
+ERROR:  cannot truncate a table referenced in a foreign key constraint
+DETAIL:  Table "majors_courses" references "majors".
+HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CASCADE.
+
+- Due to a foreign key constraint I cannot delete the data! But I will truncate all data from the tables:
+
+        students=> TRUNCATE majors, students, majors_courses, courses;
+        TRUNCATE TABLE
+
+- Running the script:
+
+        ~/project$ ./insert_data.sh 
+        INSERT 0 1
+        INSERT 0 1
+        INSERT 0 1
+        INSERT 0 1
+
+- Displaying the table:
+
+        students=> SELECT * FROM majors;
+        +----------+-------------------------+
+        | major_id |          major          |
+        +----------+-------------------------+
+        |        5 | major                   |
+        |        6 | Database Administration |
+        |        7 | Web Development         |
+        |        8 | Data Science            |
+        +----------+-------------------------+
+
+- I do not want to add the data from the first line :
+
+        if [[ $MAJOR != major ]]
+        then
+                # get major_id
+                MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")
+                # if not found
+                if [[ -z $MAJOR_ID ]]
+                then
+                        # insert major
+                        INSERT_MAJOR_RESULT=$($PSQL "INSERT INTO majors(major) VALUES('$MAJOR')")
+                        echo $INSERT_MAJOR_RESULT
+                        # get new major_id
+                fi
+        fi
+
+- Truncated all the data:
+
+        students=> TRUNCATE majors, students, majors_courses;
+        TRUNCATE TABLE
+
+- Running the script:
+
+        ~/project$ ./insert_data.sh 
+        INSERT 0 1
+        INSERT 0 1
+        INSERT 0 1
+
+- The majors table contains expected results:
+
+        students=> select * from majors;
+        +----------+-------------------------+
+        | major_id |          major          |
+        +----------+-------------------------+
+        |        9 | Database Administration |
+        |       10 | Web Development         |
+        |       11 | Data Science            |
+        +----------+-------------------------+
