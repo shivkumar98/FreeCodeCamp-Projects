@@ -239,3 +239,147 @@ postgres=> CREATE DATABASE students;
         INSERT 0 1
 
 <hr>
+
+## 4: Creating Script
+
+- I split the terminal to access the project folder, and create a script:
+
+        ~/project$ touch insert_data.sh
+        ~/project$ chmod +x insert_data.sh
+
+- Initialised script:
+
+        #!/bin/bash
+        # Script to insert data from courses.csv and students.csv into students database
+
+- I need to get the information from the csv file, using the cat command you can print contents of a file:
+
+        cat courses.csv
+
+- We can loop through the content using the pipe command:
+
+        cat courses.csv | while read MAJOR COURSE
+        do
+                echo $MAJOR
+        done
+
+- Running the script:
+
+        ~/project$ ./insert_data.sh 
+                major,course
+                Database
+                Web
+                Database
+                Data
+                Network
+                Database
+                Data
+                Network
+                Computer
+                Database
+                Game
+                Data
+                Computer
+                System
+                Game
+                Web
+                Data
+                Web
+                Game
+                System
+                Game
+                System
+                System
+                Computer
+                Computer
+                Network
+                Web
+                Network
+
+- This is only printing the first word of the major 😰
+
+- Bash has an IFS (Internal Field Seperator) variable:
+
+        ~/project$ declare -p IFSdeclare -- IFS=" 
+        "
+
+- We need to change this to a comma!
+
+        cat courses.csv | while IFS="," read MAJOR COURSE
+        do
+                echo $MAJOR
+        done
+
+- Running the script now displays the correct result:
+
+        ~/project$ ./insert_data.sh 
+                major
+                Database Administration
+                Web Development
+                Database Administration
+                Data Science
+                Network Engineering
+                Database Administration
+                Data Science
+                Network Engineering
+                Computer Programming
+                Database Administration
+                Game Design
+                Data Science
+                Computer Programming
+                System Administration
+                Game Design
+                Web Development
+                Data Science
+                Web Development
+                Game Design
+                System Administration
+                Game Design
+                System Administration
+                System Administration
+                Computer Programming
+                Computer Programming
+                Network Engineering
+                Web Development
+                Network Engineering
+
+
+- Updating the script to print the course too:
+
+        cat courses.csv | while IFS="," read MAJOR COURSE
+        do
+                echo $MAJOR $COURSE
+        done
+
+- Running the script:
+
+        ~/project$ ./insert_data.sh 
+        major course
+        Database Administration Data Structures and Algorithms
+        Web Development Web Programming
+        Database Administration Database Systems
+        Data Science Data Structures and Algorithms
+        Network Engineering Computer Networks
+        Database Administration SQL
+        Data Science Machine Learning
+        Network Engineering Computer Systems
+        Computer Programming Computer Networks
+        Database Administration Web Applications
+        Game Design Artificial Intelligence
+        Data Science Python
+        Computer Programming Object-Oriented Programming
+        System Administration Computer Systems
+        Game Design Calculus
+        Web Development Data Structures and Algorithms
+        Data Science Calculus
+        Web Development Object-Oriented Programming
+        Game Design Game Architecture
+        System Administration Computer Networks
+        Game Design Algorithms
+        System Administration UNIX
+        System Administration Server Administration
+        Computer Programming Computer Systems
+        Computer Programming Python
+        Network Engineering Network Security
+        Web Development Web Applications
+        Network Engineering Algorithms
