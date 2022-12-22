@@ -1,6 +1,6 @@
 # Program 4: Fortune Teller
 
-- In this tutorial, I learnt about arrays, functions, until command and regex to generate a fortune teller program.
+In this tutorial, I learnt about arrays, functions, until command and regex to generate a fortune teller program.
 
 ## Contents
 1. [Creating Bash Script](#creating-bash-script)
