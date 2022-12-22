@@ -6,13 +6,15 @@
 
 ### Tutorials:
 
-1) [Learn Bash By Building a Boilerplate](01%20-%20Learn%20Bash%20by%20Building%20a%20Boilerplate)
+1) [**Learn Bash By Building a Boilerplate**](01%20-%20Learn%20Bash%20by%20Building%20a%20Boilerplate)
 
-2) [Learn SQL By Building a Mario Database](02%20-%20Learn%20SQL%20By%20Building%20a%20Mario%20Database)
+2) [**Learn SQL By Building a Mario Database**](02%20-%20Learn%20SQL%20By%20Building%20a%20Mario%20Database)
 
-3) [Learn Bash Scripting By Building 5 Programs](/03%20-%20Relational%20Database/04%20-%20Learn%20Bash%20Scripting%20By%20Building%205%20Programs)
+3) [**Learn Bash Scripting By Building 5 Programs**](/03%20-%20Relational%20Database/04%20-%20Learn%20Bash%20Scripting%20By%20Building%205%20Programs)
+
+4) [**Learn SQL by Building a Student Database: Part 1**](/05%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database)
 
 ### Certification Projects:
 
-1) [Build a Celestial Bodies Database using SQL](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
+1) [**Build a Celestial Bodies Database using SQL**](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
 
