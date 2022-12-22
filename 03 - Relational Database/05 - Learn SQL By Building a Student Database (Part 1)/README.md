@@ -1,6 +1,54 @@
 # Learn SQL by Building a Student Database: Part 1
 
-## 1 Logging in and creating database
+In this tutorial, I defined an SQL database to store information about students, their courses and majors. I created a Bash Script (insert_data.sh) which looped through all rows of the students.csv and courses.csv files and populated the database tables. My script would check if the course/major already existed before inserting a row. Additionally, a junction table (majors_courses) would be populated after a course and major was inserted. 
+
+## Table of Contents:
+
+[1 Logging In and Creating database](#1-logging-in-and-creating-database)
+
+[2 Setting Up Tables](#2-setting-up-tables)
++ [2.1 Creating tables](#21-creating-tables)
++ [2.2 Adding columns to students table](#22-adding-columns-to-students-table)
++ [2.3 Adding columns to majors table](#22-adding-columns-to-majors-table-)
++ [2.4 Adding foreign key for students table for major_id](#23-adding-columns-to-majors-table)
++ [2.5 Adding columns to courses table](#24-adding-foreign-key-for-students-table-for-major_id)
++ [2.6 Adding columns to majors_courses](#26-adding-columns-to-majors_courses)
++ [2.7 Displaying all tables](#27-displaying-all-tables)
+
+[3 Adding Data to Tables](#3-adding-data-to-tables)
++ [3.1 Adding data to tables:](#31-adding-data-to-tables-)
+
+[4 Creating Script](#4-creating-script)
++ [4.1 Creating file](#41-creating-file)
++ [4.2 Printing from a file](#42-printing-from-a-file)
++ [4.3 Pipe command](#43-pipe-command)
+
+[5 Inserting Data For Majors Table](#5-inserting-data-for-majors-table-)
++ [5.1 connecting to database](#51-connecting-to-database-)
++ [5.2 Populating courses Table](#52-populating-courses-table-)
++ [5.3 Inserting row into majors table if not already present](#53-inserting-row-into-majors-table-if-not-already-present-)
++ [5.4 Deleting Table Data](#54-deleting-table-data-)
++ [5.5 Ignoring first line from CSV](#55-ignoring-first-line-from-csv-)
++ [5.6 Getting major_id](#56-getting-major_id)
++ [5.7 Populating courses Table](#57-populating-courses-table)
++ [5.8 Deleting Table Data From Script](#58-deleting-table-data-from-script-)
++ [5.9 Updating majors_courses table after majors and courses are updated](#59-updating-majors_courses-table-after-majors-and-courses-are-updated)
++ [5.10 Data in DB after executing script](#510-data-in-db-after-executing-script)
+
+[6 Inserting Data for Students Table](#6-inserting-data-for-students-table)
++ [6.1 Making test data](#61-making-test-data-)
++ [6.2 Dealing with Students with no Major or Course](#62-dealing-with-students-with-no-major-or-course-)
++ [6.3 Using original data files](#63-using-original-data-files-)
+
+[7 Displaying Rows From All Tables](#7-displaying-rows-from-all-tables)
+
+[8 Dumping SQL database](#8-dumping-sql-database)
+
+
+
+<hr>
+
+## **1 Logging In and Creating database**
 
 - Logged into psql interactive terminal:
 
@@ -22,7 +70,7 @@
 
 - All the info from the CSV files will go into a single database. Create a new database named students
 
-postgres=> CREATE DATABASE students;
+        postgres=> CREATE DATABASE students;
 
 - Connecting to database:
 
@@ -31,9 +79,9 @@ postgres=> CREATE DATABASE students;
 
 <hr>
 
-## 2 Setting up tables:
+## **2 Setting Up Tables**
 
-### 2.1 Creating tables:
+### **2.1 Creating tables:**
 
 - The CSV files have a bunch of students with info about them, and some courses and majors. You will have four tables. One for the students and their info, one for each major, another for each course, and a final one for showing what courses are included in each major.
 
@@ -66,7 +114,7 @@ postgres=> CREATE DATABASE students;
             | public | students       | table | freecodecamp |
             +--------+----------------+-------+--------------+
 
-### 2.2 Adding columns to students table:
+### **2.2 Adding columns to students table:**
 
 -  The students.csv file has four fields, you will make a column for each of those as well as an ID column.
 
@@ -94,7 +142,7 @@ postgres=> CREATE DATABASE students;
 
         students=> ALTER TABLE students ADD COLUMN gpa NUMERIC(2,1);
 
-### 2.2 Adding columns to majors table:
+### **2.3 Adding columns to majors table:**
 
 - Creating major_id column:
 
@@ -119,14 +167,14 @@ postgres=> CREATE DATABASE students;
         Indexes:
         "majors_pkey" PRIMARY KEY, btree (major_id)
 
-### 2.3 Adding foreign key for students table for major_id
+### **2.4 Adding foreign key for students table for major_id:**
 
 - Executed following command:
 
         students=> ALTER TABLE students ADD FOREIGN KEY(major_id) REFERENCES majors(major_id);
         ALTER TABLE
 
-### 2.4 Adding columns to courses table:
+### **2.5 Adding columns to courses table:**
 
 - Adding course_id column:
 
@@ -149,7 +197,7 @@ postgres=> CREATE DATABASE students;
         Indexes:
         "courses_pkey" PRIMARY KEY, btree (course_id)
 
-### 2.5 Adding columns to majors_courses:
+### **2.6 Adding columns to majors_courses:**
 
 - Adding major_id column:
 
@@ -193,7 +241,7 @@ postgres=> CREATE DATABASE students;
         "majors_courses_course_id_fkey" FOREIGN KEY (course_id) REFERENCES courses(course_id)
         "majors_courses_major_id_fkey" FOREIGN KEY (major_id) REFERENCES majors(major_id)
 
-### 2.6 Displaying all tables:
+### **2.7 Displaying all tables:**
 
 - Displaying tables:
 
@@ -216,7 +264,7 @@ postgres=> CREATE DATABASE students;
 
 ## 3 Adding Data to Tables
 
-### 3.1 Adding data to tables:
+### **3.1 Adding data to tables:**
 
 - Using the first row from course.csv, I inserted the major:
 
@@ -240,9 +288,9 @@ postgres=> CREATE DATABASE students;
 
 <hr>
 
-## 4: Creating Script
+## 4 Creating Script
 
-### 4.1 Creating file
+### **4.1 Creating file:**
 
 - I split the terminal to access the project folder, and create a script:
 
@@ -254,13 +302,13 @@ postgres=> CREATE DATABASE students;
         #!/bin/bash
         # Script to insert data from courses.csv and students.csv into students database
 
-### 4.2 Printing from a file
+### **4.2 Printing from a file:**
 
 - I need to get the information from the csv file, using the cat command you can print contents of a file:
 
         cat courses.csv
 
-### 4.3 Pipe command
+### **4.3 Pipe command:**
 
 - We can loop through the content using the pipe command:
 
@@ -390,7 +438,9 @@ postgres=> CREATE DATABASE students;
         Web Development Web Applications
         Network Engineering Algorithms
 
-## 5 Querying data within bash script
+## **5 Inserting Data For Majors Table**
+
+### **5.1 connecting to database:**
 
 - I want to add the majors and courses from the CSV file into the database if it does not exist.
 
@@ -399,6 +449,8 @@ postgres=> CREATE DATABASE students;
         PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c"
 
         - The -c flag allows for single command and exiting, the other flags are for formatting.
+
+### **5.2 Populating courses Table:**
 
 - I added SQL query and assigned it to MAJOR_ID and echoed it:
 
@@ -427,6 +479,8 @@ postgres=> CREATE DATABASE students;
 
 
         ~/project$
+
+### **5.3 Inserting row into majors table if not already present:**
 
 - We will check if the major_id is not found, hence the major does not exist:
 
@@ -467,6 +521,8 @@ postgres=> CREATE DATABASE students;
         +----------+-------------------------+
         (4 rows)
 
+### **5.4 Deleting Table Data:**
+
 - I deleted all content from the table using truncate command:
 
 students=> TRUNCATE majors;
@@ -498,6 +554,8 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         |        7 | Web Development         |
         |        8 | Data Science            |
         +----------+-------------------------+
+
+### **5.5 Ignoring first line from CSV:**
 
 - I do not want to add the data from the first line :
 
@@ -559,9 +617,13 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         Inserted into majors, Web Development
         Inserted into majors, Data Science
 
+### **5.6 Getting major_id:**
+
 - I now get the new major_id of the inserted table:
 
       $MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE  major='$MAJOR'")
+
+### **5.7 Populating courses Table:**
 
 - Getting course_id from database:
 
@@ -605,17 +667,21 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         |         4 | Database Systems               |
         +-----------+--------------------------------+
 
+### **5.8 Deleting Table Data From Script:**
+
 - Truncating the tables within the script:
 
         # clearing tables:
         echo $($PSQL "TRUNCATE students, majors, courses, majors_courses")
 
-- Getting the course_id of inseted course:
+- Getting the course_id of inserted course:
 
         # get new course_id
         COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
 
-- Inserting into the major_courses table:
+### **5.9 Updating majors_courses table after majors and courses are updated:**
+
+- Inserting into the majors_courses table:
 
         # insert into majors_courses
         INSERT_MAJORS_COURSES_RESULT=$($PSQL "INSERT INTO majors_courses(major_id, course_id) VALUES ($MAJOR_ID,$COURSE_ID)")
@@ -644,6 +710,7 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         Inserted into majors, Data Science
         Inserted into majors_courses, Data Science : Data Structures and Algorithms
 
+### **5.10 Data in DB after executing script:**
 
 - Displaying the tables:
 
@@ -673,7 +740,11 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         |       23 |         8 |
         +----------+-----------+
 
-## Students data:
+<hr>
+
+## **6 Inserting Data for Students Table**
+
+### **6.1 Making test data:**
 
 - I make a copy of the students.csv file:
 
@@ -711,6 +782,8 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         MAJOR_ID=$($PSQL "SELECT MAJOR_ID FROM majors WHERE major='$MAJOR'")
         echo $MAJOR_ID
 
+### **6.2 Dealing with Students with no Major or Course:**
+
 - Some of the students do not have a major or course:
 
          # if not found
@@ -747,3 +820,147 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
         Inserted into students, Emma Gilbert
         Inserted into students, Kimberly Whitley
         Inserted into students, Jimmy Felipe
+
+- Displaying the data from the students table:
+
+        +------------+------------+-----------+----------+-----+
+        | student_id | first_name | last_name | major_id | gpa |
+        +------------+------------+-----------+----------+-----+
+        |          2 | Rhea       | Kellems   |       36 | 2.5 |
+        |          3 | Emma       | Gilbert   |          |     |
+        |          4 | Kimberly   | Whitley   |       37 | 3.8 |
+        |          5 | Jimmy      | Felipe    |       36 | 3.7 |
+        +------------+------------+-----------+----------+-----+
+        (31 rows)
+
+### **6.3 Using original data files:**
+
+- I updated the script to use the original csv files.
+
+## **7 Displaying Rows From All Tables**
+
+- Displaying the students table:
+
+        +------------+------------+--------------+----------+-----+
+        | student_id | first_name |  last_name   | major_id | gpa |
+        +------------+------------+--------------+----------+-----+
+        |          6 | Rhea       | Kellems      |       39 | 2.5 |
+        |          7 | Emma       | Gilbert      |          |     |
+        |          8 | Kimberly   | Whitley      |       40 | 3.8 |
+        |          9 | Jimmy      | Felipe       |       39 | 3.7 |
+        |         10 | Kyle       | Stimson      |          | 2.8 |
+        |         11 | Casares    | Hijo         |       44 | 4.0 |
+        |         12 | Noe        | Savage       |          | 3.6 |
+        |         13 | Sterling   | Boss         |       44 | 3.9 |
+        |         14 | Brian      | Davis        |          | 2.3 |
+        |         15 | Kaija      | Uronen       |       44 | 3.7 |
+        |         16 | Faye       | Conn         |       44 | 2.1 |
+        |         17 | Efren      | Reilly       |       40 | 3.9 |
+        |         18 | Danh       | Nhung        |          | 2.4 |
+        |         19 | Maxine     | Hagenes      |       39 | 2.9 |
+        |         20 | Larry      | Saunders     |       41 | 2.2 |
+        |         21 | Karl       | Kuhar        |       40 |     |
+        |         22 | Lieke      | Hazenveld    |       44 | 3.5 |
+        |         23 | Obie       | Hilpert      |       40 |     |
+        |         24 | Peter      | Booysen      |          | 2.9 |
+        |         25 | Nathan     | Turner       |       39 | 3.3 |
+        |         26 | Gerald     | Osiki        |       41 | 2.2 |
+        |         27 | Vanya      | Hassanah     |       44 | 4.0 |
+        |         28 | Roxelana   | Florescu     |       39 | 3.2 |
+        |         29 | Helene     | Parker       |       41 | 3.4 |
+        |         30 | Mariana    | Russel       |       40 | 1.8 |
+        |         31 | Ajit       | Dhungel      |          | 3.0 |
+        |         32 | Mehdi      | Vandenberghe |       39 | 1.9 |
+        |         33 | Dejon      | Howell       |       40 | 4.0 |
+        |         34 | Aliya      | Gulgowski    |       45 | 2.6 |
+        |         35 | Ana        | Tupajic      |       41 | 3.1 |
+        |         36 | Hugo       | Duran        |          | 3.8 |
+        +------------+------------+--------------+----------+-----+
+        (7 rows)
+
+- Displaying the majors table:
+
+        +----------+-------------------------+
+        | major_id |          major          |
+        +----------+-------------------------+
+        |       39 | Database Administration |
+        |       40 | Web Development         |
+        |       41 | Data Science            |
+        |       42 | Network Engineering     |
+        |       43 | Computer Programming    |
+        |       44 | Game Design             |
+        |       45 | System Administration   |
+        +----------+-------------------------+
+
+- Displaying the courses:
+
+        +-----------+--------------------------------+
+        | course_id |             course             |
+        +-----------+--------------------------------+
+        |        26 | Data Structures and Algorithms |
+        |        27 | Web Programming                |
+        |        28 | Database Systems               |
+        |        29 | Computer Networks              |
+        |        30 | SQL                            |
+        |        31 | Machine Learning               |
+        |        32 | Computer Systems               |
+        |        33 | Web Applications               |
+        |        34 | Artificial Intelligence        |
+        |        35 | Python                         |
+        |        36 | Object-Oriented Programming    |
+        |        37 | Calculus                       |
+        |        38 | Game Architecture              |
+        |        39 | Algorithms                     |
+        |        40 | UNIX                           |
+        |        41 | Server Administration          |
+        |        42 | Network Security               |
+        +-----------+--------------------------------+
+        (17 rows)
+
+
+- Displaying the majors_courses:
+
+        +----------+-----------+
+        | major_id | course_id |
+        +----------+-----------+
+        |       39 |        26 |
+        |       40 |        27 |
+        |       39 |        28 |
+        |       41 |        26 |
+        |       42 |        29 |
+        |       39 |        30 |
+        |       41 |        31 |
+        |       42 |        32 |
+        |       43 |        29 |
+        |       39 |        33 |
+        |       44 |        34 |
+        |       41 |        35 |
+        |       43 |        36 |
+        |       45 |        32 |
+        |       44 |        37 |
+        |       40 |        26 |
+        |       41 |        37 |
+        |       40 |        36 |
+        |       44 |        38 |
+        |       45 |        29 |
+        |       44 |        39 |
+        |       45 |        40 |
+        |       45 |        41 |
+        |       43 |        32 |
+        |       43 |        35 |
+        |       42 |        42 |
+        |       40 |        33 |
+        |       42 |        39 |
+        +----------+-----------+
+        (28 rows)
+
+- To finish I deleted the test CSV files:
+
+~/project$ rm students_test.csv 
+~/project$ rm courses_test.csv 
+
+## **8 Dumping SQL database**
+
+- I dumped the SQL database:
+
+        ~/project$ pg_dump --clean --create --inserts  --username=freecodecamp students > students.sql
