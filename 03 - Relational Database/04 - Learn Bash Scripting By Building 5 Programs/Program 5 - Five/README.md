@@ -1,8 +1,8 @@
 # Program 5: Five
 
-## Finished Script:
+This script will be used to execute the four programs I've made consecutively.
 
-- This script will be used to execute the four programs I've made consecutively.
+## Finished Script:
 
 - I define the script as:
 
