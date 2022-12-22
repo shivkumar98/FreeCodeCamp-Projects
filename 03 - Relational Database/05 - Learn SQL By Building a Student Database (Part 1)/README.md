@@ -242,6 +242,8 @@ postgres=> CREATE DATABASE students;
 
 ## 4: Creating Script
 
+### 4.1 Creating file
+
 - I split the terminal to access the project folder, and create a script:
 
         ~/project$ touch insert_data.sh
@@ -252,9 +254,13 @@ postgres=> CREATE DATABASE students;
         #!/bin/bash
         # Script to insert data from courses.csv and students.csv into students database
 
+### 4.2 Printing from a file
+
 - I need to get the information from the csv file, using the cat command you can print contents of a file:
 
         cat courses.csv
+
+### 4.3 Pipe command
 
 - We can loop through the content using the pipe command:
 
@@ -383,3 +389,67 @@ postgres=> CREATE DATABASE students;
         Network Engineering Network Security
         Web Development Web Applications
         Network Engineering Algorithms
+
+## 5 Querying data within bash script
+
+- I want to add the majors and courses from the CSV file into the database if it does not exist.
+
+- I added the psql command to connect to database:
+
+        PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c"
+
+        - The -c flag allows for single command and exiting, the other flags are for formatting.
+
+- I added SQL query and assigned it to MAJOR_ID and echoed it:
+
+        # get major_id
+        MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")
+        echo $MAJOR_ID
+
+- Running the script:
+
+        ~/project$ ./insert_data.sh 
+
+        1
+
+        1
+
+
+        1
+
+
+
+        1
+
+
+
+
+
+
+        ~/project$
+
+- We will check if the major_id is not found, hence the major does not exist:
+
+        # if not found
+        if [[ -z $MAJOR_ID ]]
+        then
+                # insert major
+                INSERT_MAJOR_RESULT=$($PSQL "INSERT INTO majors(major) VALUES('$MAJOR')")
+                echo $INSERT_MAJOR_RESULT
+                # get new major_id
+        fi
+
+- I copied the courses.csv file so I can enter dummy data into it:
+
+        ~/project$ cp courses.csv courses_test.csv
+
+- I kept only first 5 lines of the test file:
+
+        major,course
+        Database Administration,Data Structures and Algorithms
+        Web Development,Web Programming
+        Database Administration,Database Systems
+        Data Science,Data Structures and Algorithms
+        Network Engineering,Computer Networks
+
+- Running the script on courses_test.csv inserts 3 rows into the table
