@@ -1,6 +1,6 @@
 # Program 1: Questionnaire
 
-- In this tutorial, I learnt about variable, reading input to build a simple questionnaire.
+In this tutorial, I learnt about variables, reading input from user to build a simple questionnaire.
 
 ## Contents:
 
