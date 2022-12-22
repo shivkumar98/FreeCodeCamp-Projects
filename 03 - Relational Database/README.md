@@ -12,7 +12,7 @@
 
 3) [**Learn Bash Scripting By Building 5 Programs**](/03%20-%20Relational%20Database/04%20-%20Learn%20Bash%20Scripting%20By%20Building%205%20Programs)
 
-4) [**Learn SQL by Building a Student Database: Part 1**](/05%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database)
+4) [**Learn SQL by Building a Student Database: Part 1**](/03%20-%20Relational%20Database/05%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database)
 
 ### Certification Projects:
 
