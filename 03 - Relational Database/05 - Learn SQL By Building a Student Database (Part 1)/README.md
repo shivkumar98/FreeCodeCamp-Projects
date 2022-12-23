@@ -956,8 +956,8 @@ HINT:  Truncate table "majors_courses" at the same time, or use TRUNCATE ... CAS
 
 - To finish I deleted the test CSV files:
 
-~/project$ rm students_test.csv 
-~/project$ rm courses_test.csv 
+        ~/project$ rm students_test.csv 
+        ~/project$ rm courses_test.csv 
 
 ## **8 Dumping SQL database**
 
