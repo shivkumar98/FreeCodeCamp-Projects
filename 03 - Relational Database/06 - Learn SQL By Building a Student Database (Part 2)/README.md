@@ -254,3 +254,166 @@
 
     ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-11-55-19.png)
 
+- By default, ORDER BY has the ASC option on. You can reverse the ordering using DESC option:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-10-58.png)
+
+- We can have multiple ordering criteria by adding commas.
+
+- Viewing students with highhest GPA and in alphabetical order of first_name.
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-32-11.png)
+
+
+- Now if students have the same GPA, they will be sorted by first name.
+
+- We can limit the number of rows using the **LIMIT** keyword.
+
+- E.g. showing the top 10 rows of the previous query:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-33-39.png)
+
+- The ordering of keywords is important! WHERE must be before ORDER BY. LIMIT must be at the end!
+
+- The query which answers the question of this section is:
+
+
+- I added the following statement to the students_info.sh script:
+
+        echo "$($PSQL "SELECT course FROM courses WHERE course LIKE '_e%' OR course LIKE '%s' ORDER BY course DESC LIMIT 5")"
+
+- The script up to this point looks like:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-43-26.png)
+
+- Running the script:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-44-56.png)
+
+### **4.7 Average GPA of all students roundedf to 2 decimal places:**
+
+- I added the following echo to the script:
+
+        echo -e "\nAverage GPA of all students rounded to two decimal places:"
+
+- There a number of mathematical functions within SQL, one is **MIN** which returns the smallesdt value from a column:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-48-17.png)
+
+- Another is **MAX**, which returns the largest value of a column:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-49-16.png)
+
+- The **SUM** function gives accumulative sum:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-50-33.png)
+
+- The **AVG** function returns mean value:
+
+     ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-51-59.png)
+
+- We have **CEIL** and **FLOOR** functions:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-55-36.png)
+
+- The **ROUND** function, rounds to closest integer:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-13-59-52.png)
+
+- The ROUND function can overloaded to round to specific number of digits:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-01-12.png)
+    
+- The query which answers the above question is:
+
+        SELECT ROUND(AVG(gpa),2) FROM students;
+
+- I added the above query to my script:
+
+        echo "$($PSQL "SELECT ROUND(AVG(gpa),2) FROM students")"
+
+- The script up to this point is:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-04-20.png)
+
+- Running the script:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-05-20.png)
+
+
+### **4.8 Displaying total number of students, average GPA for each major_id with more than 1 student:**
+
+- I added the following echo to my script:
+
+        echo -e "\nMajor ID, total number of students in a column named 'number_of_students', and average GPA rounded to two decimal places in a column name 'average_gpa', for each major ID in the students table having a student count greater than 1:"
+
+- The **COUNT** function is used to count number of entries in the table for a column. We can use COUNT(*) instead of specifying the column:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-11-47.png)
+
+- Counting number of students:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-12-24.png)
+
+- If we want to count non-null entries of a specific column, we can specify the column name in the COUNT function:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-14-23.png)
+
+- The **DISTINCT** keyword is used to filter the distinct entries within a table:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-16-25.png)
+
+- We can group data by distinct entries using the **GROUP BY** keywords:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-19-24.png)
+
+- Displaying major_id and number of students in each major:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-21-51.png)
+
+- When using GROUP BY, any columns in the in the selection must be in the GROUP BY.
+
+- Viewing the unique major_id with the lowest GPA scores:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-25-59.png)
+
+- Additionally, displaying highest GPAs:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-27-20.png)
+
+- An additonal option of GROUP BY is **HAVING**. The HAVING condition must be an aggregate function.
+
+- E.g., displaying rows from previous query where max GPA is 4.0:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-30-19.png)
+
+- Attempting to use a non-aggregate function results in an error:
+
+- We can use **aliases** to display user-friendly columns with the **AS** keyword:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-37-09.png)    
+
+- Displaying number of students of each major:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-39-17.png)
+
+- Showing rows which have less than 8 students:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-40-56.png)
+
+- The SQL query which answers the above question is:
+
+        SELECT major_id, COUNT(*) as number_of_students, ROUND(AVG(gpa),2) AS average_gpa FROM students GROUP BY major_id HAVING COUNT(*)>1;
+
+- This produces the following results:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-46-50.png)
+
+- I added the query to my bash script:
+
+        echo "$($PSQL "SELECT major_id, COUNT(*) as number_of_students, ROUND(AVG(gpa),2) AS average_gpa FROM students GROUP BY major_id HAVING COUNT(*)>1")"
+
+- The script up to this point looks like:
+
+    ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-14-48-12.png)
+
