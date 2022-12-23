@@ -31,7 +31,11 @@
 
 - I initialised the script:
 
-    ![](/screenshots/2022-12-23-09-10-15.png)
+    ![](2022-12-23-09-10-15.png)
+
+    <img sr>
+
+    
 
 - I added the following command to correctly format data from postgres:
 
@@ -167,7 +171,7 @@
 
 - Showing courses with space in their name:
 
-    ![](%20%20%20%20image.png.png)
+    ![](screenshots/image.png)
 
 - We can use the keyword NOT LIKE to get non matches! E.g. courses with no spaces:
 
