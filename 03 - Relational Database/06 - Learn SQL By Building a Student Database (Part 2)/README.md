@@ -21,6 +21,7 @@
 
 + [Logical Conjuctions and Disjunctions (AND and OR)](#logical-conjuctions-and-disjunctions-and-and-or)
 + [Query which answers question](#--query-which-answers-question---)
++ [Script](#script-2)
 + [Running Script](#running-script-2)
 
 [**7 Displaying students whose last name contains 'sa' or have 'r' as second to last character**](#7-displaying-students-whose-last-name-contains-sa-or-have-r-as-second-to-last-character)
