@@ -1,5 +1,94 @@
 # Learn SQL by Building a Student Database: Part 2
 
+## Contents
+  [**1 Recap**](#--1-recap--)
+  
+  [**2 Rebuilding Database**](#--2-rebuilding-database--)
+  
+  [**3 Creating student_info.sh**](#3-creating-student_infosh)
+  
+  [**4 Displaying Students With a GPA of 4.0**](#--4-displaying-students-with-a-gpa-of-40--)
++ [Query which answers the question](#--query-which-answers-the-question---)
++ [Script](#--script---)
++ [Running Script](#--running-script---)
+
+[**5 Displaying Courses Whose First Letter is Before 'D' in the Alphabet:**](#5-displaying-courses-whose-first-letter-is-before-d-in-the-alphabet)
++ [Query Which Answers The Question](#query-which-answers-the-question-1)
++ [Script](#script-1)
++ [Running Script](#running-script-1)
+
+[**6 Displaying Students Whose Name Begins with 'R' or after and GPA Less Than 2.0 or Greater Than 3.8**](#6-displaying-students-whose-name-begins-with-r-or-after-and-gpa-less-than-20-or-greater-than-38)
+
++ [Logical Conjuctions and Disjunctions (AND and OR)](#logical-conjuctions-and-disjunctions-and-and-or)
++ [Query which answers question](#--query-which-answers-question---)
++ [Running Script](#running-script-2)
+
+[**7 Displaying students whose last name contains 'sa' or have 'r' as second to last character**](#7-displaying-students-whose-last-name-contains-sa-or-have-r-as-second-to-last-character)
+
++ [LIKE Keyword](#like-keyword)
++ [Single Character Placeholder _](#single-character-placeholder-_)
++ [Zero or More Characters Placeholder %](#--zero-or-more-characters-placeholder-----)
++ [NOT LIKE keyword](#--not-like-keyword---)
++ [ILIKE Keyword](#--ilike-keyword---)
++ [Query which answers the Question](#query-which-answers-the-question-2)
++ [Script](#script-3)
++ [Running The Script](#--running-the-script---)
+
+[**8 Displaying students who have not selected a major and either their first name begins with 'D' or they have a gpa greater than 3.0:**](#8-displaying-students-who-have-not-selected-a-major-and-either-their-first-name-begins-with-d-or-they-have-a-gpa-greater-than-30)
+
++ [IS NULL](#--is-null---)
++ [IS NOT NULL](#--is-not-null---)
++ [Script](#script-4)
++ [Running The Script](#running-the-script-1)
+
+[**9 Course names of first 5 courses that have an 'e' as second letter or end with an 's':**](#9-course-names-of-first-5-courses-that-have-an-e-as-second-letter-or-end-with-an-s)
+
++ [ORDER BY](#--order-by---)
++ [ASC AND DESC Options](#--asc-and-desc-options---)
++ [ORDER BY Multiple Criteria](#--order-by-multiple-criteria---)
++ [LIMIT](#--limit---)
++ [Using WHERE, ORDER BY, LIMIT together](#using-where-order-by-limit-together)
++ [Query Which Answers The Question](#query-which-answers-the-question-3)
++ [Script](#script-5)
++ [Running Script](#running-script-3)
+
+[**10 Average GPA of all students roundedf to 2 decimal places:**](#--10-average-gpa-of-all-students-roundedf-to-2-decimal-places---)
++ [MIN, MAX, SUM, AVG Aggregate Functions](#min-max-sum-avg-aggregate-functions)
++ [CEIL, FLOOR, ROUND Functions](#ceil-floor-round-functions)
++ [Script](#script-6)
++ [Running Script](#running-script-4)
+
+[**11 Displaying total number of students, average GPA for each major_id with more than 1 student:**](#11-displaying-total-number-of-students-average-gpa-for-each-major_id-with-more-than-1-student)
+
++ [COUNT Function](#--count-function---)
++ [DISTINCT Keyword](#--distinct-keyword---)
++ [GROUP BY](#--group-by---)
++ [HAVING](#--having---)
++ [Aliases using AS](#--aliases-using-as---)
++ [Query Which Answers The question](#query-which-answers-the-question-6)
++ [Script](#script-7)
+
+[**12 List of majors in alphabetical order that either no student is taking or has a student with first name containing 'me':**](#12-list-of-majors-in-alphabetical-order-that-either-no-student-is-taking-or-has-a-student-with-first-name-containing-me)
++ [FULL JOIN](#--full-join---)
++ [LEFT JOIN](#--left-join---)
++ [RIGHT JOIN](#--right-join---)
++ [INNER JOIN](#--inner-join---)
++ [Query Which Answers The question](#query-which-answers-the-question-6)
++ [Script](#script-8)
++ [Running Script](#running-script-5)
+
+[**13 List of unique courses, in reverse alphabetical order, that no student is taking or 'Obie Hipert' is taking**](#13-list-of-unique-courses-in-reverse-alphabetical-order-that-no-student-is-taking-or-obie-hipert-is-taking)
++ [Multiple Joins and USING Keyword](#--multiple-joins-and-using-keyword--)
++ [Query Which Answers The question](#query-which-answers-the-question-7)
++ [Script](#script-9)
+
+[**14 List of courses, in alphabetical order, with only one student enrolled**](#14-list-of-courses-in-alphabetical-order-with-only-one-student-enrolled)
+    
++ [Query Which Answers The question](#14-list-of-courses-in-alphabetical-order-with-only-one-student-enrolled)
+
+[**15 Finished script**](#15-finished-script)
+
+<br>
 
 ## **1 Recap**
 
@@ -151,7 +240,7 @@
 <br>
 <hr>
 
-### **6 Displaying Students Whose Name Begins with 'R' or after and GPA Less Than 2.0 or Greater Than 3.8**
+## **6 Displaying Students Whose Name Begins with 'R' or after and GPA Less Than 2.0 or Greater Than 3.8**
 
 - I add the following echo:
 
@@ -205,7 +294,7 @@
         echo -e "\nFirst name, last name, and GPA of students whose last name begins with an 'R' or after and have a GPA greater than 3.8 or less than 2.0:"
         echo "$($PSQL "SELECT first_name, last_name, gpa FROM students WHERE last_name >= 'R' AND (gpa > 3.8 OR gpa < 2.0)")"
 
-    ### **Excuting the Script:**
+    ### **Running Script:**
 
 - And executing the script:
 
@@ -215,7 +304,7 @@
 <br>
 <hr>
 
-### **7 Displaying students whose last name contains 'sa' or have 'r' as second to last character**
+## **7 Displaying students whose last name contains 'sa' or have 'r' as second to last character**
 
 - I echoed the following:
 
@@ -232,7 +321,7 @@
 
 - We will start pattern matching the courses. We can use the **LIKE** keyword to make comparisons.
 
-    ### **Single Character Placeholder %:**
+    ### **Single Character Placeholder _:**
 
 - The underscore character _ is a placeholder for ANY character.
 
@@ -331,7 +420,7 @@
 <br>
 <hr>
 
-### **8 Displaying students who have not selected a major and either their first name begins with 'D' or they have a gpa greater than 3.0:**
+## **8 Displaying students who have not selected a major and either their first name begins with 'D' or they have a gpa greater than 3.0:**
 
 - I add the following echo:
 
@@ -394,7 +483,7 @@
 <br>
 <hr>
 
-### **9 Course names of first 5 courses that have an 'e' as second letter or end with an 's':**
+## **9 Course names of first 5 courses that have an 'e' as second letter or end with an 's':**
 
 - The question I need to solve is: **Course names of first 5 courses, in reverse alphabetical order, that have an 'e' as second letter or end with an 's'**
 
@@ -485,7 +574,7 @@
 <br>
 <hr>
 
-### **10 Average GPA of all students roundedf to 2 decimal places:**
+## **10 Average GPA of all students roundedf to 2 decimal places:**
 
 - I added the following echo to the script:
 
@@ -889,7 +978,7 @@
         echo -e "\nList of unique courses, in reverse alphabetical order, that no student or 'Obie Hilpert' is taking:"
         echo "$($PSQL "SELECT DISTINCT(course) FROM students FULL JOIN majors USING(major_id) FULL JOIN majors_courses USING(major_id) FULL JOIN courses USING(course_id) WHERE student_id IS NULL OR (first_name='Obie' AND last_name='Hilpert') ORDER BY course DESC")"
 
-## **12 List of courses, in alphabetical order, with only one student enrolled**
+## **14 List of courses, in alphabetical order, with only one student enrolled**
 
 - Added the following echo:
 
@@ -905,7 +994,7 @@
 
     ![](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202)/screenshots/2022-12-23-17-05-47.png)
 
-## **13 Finished script**
+## **15 Finished script**
 
 - The finished script is:
 
