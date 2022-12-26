@@ -20,3 +20,4 @@
 
 1) [**Build a Celestial Bodies Database using SQL**](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
 
+2) [**Build a World Cup Database**](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database)
