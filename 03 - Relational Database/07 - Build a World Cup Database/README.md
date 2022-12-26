@@ -393,3 +393,8 @@ I will create a Bash script which enters information from World Cup games into P
 - The final script is:
 
 ![](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database/screenshots/2022-12-26-13-17-02.png)
+
+
+- All tests now pass! I execute the following to get a dump of the database:
+
+        ~/project$ pg_dump -cC --inserts -U freecodecamp worldcup > worldcup.sql
