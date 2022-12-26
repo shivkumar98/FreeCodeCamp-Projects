@@ -107,5 +107,41 @@
     ![](2022-12-26-10-39-04.png)
 
 
+## Part 2: Insert Data
 
+- I added execution permissions:
 
+        ~/project$ chmod +x insert_data.sh 
+        ~/project$ chmod +x queries.sh 
+
+- The insert_data.sh script contains:
+
+    ![](2022-12-26-10-53-04.png)
+
+- I add a query to the script to connect to the worldcup database:
+
+        echo $($PSQL "\c worldcup")
+
+- I added a statement to truncate all tables before anything else:
+
+echo $($PSQL "TRUNCATE games, teams")
+
+- I start my script with a while loop which reads each column of the CSV and ignoring the first line:
+
+        cat games.csv | while IFS="," read -r YEAR ROUND WINNER OPPONENT WINNER_GOALS OPPONENT_GOALS
+        do
+            if [[ $YEAR != "year" ]]
+            then
+                echo $YEAR
+            fi
+        done
+
+- I created a while loop which skipped first line and then had a check for the opponent and winner from each row of whether they were inside the teams table.
+
+- After 1 line was read and teams were added, I inserted a row into games using winner_id and opponent_id from the teams table
+
+### inser_data.sh Script:
+
+- My script, after completing part 2, looked like:
+
+    ![](2022-12-26-11-49-53.png)
