@@ -105,7 +105,7 @@ I will create a Bash script which enters information from World Cup games into P
 
 - Now the first 4 tests pass:
 
-    ![](2022-12-26-10-26-50.png)
+    ![](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database/screenshots/2022-12-26-10-26-50.png)
 
 - Added foreign key columns to games table:
 
@@ -116,7 +116,7 @@ I will create a Bash script which enters information from World Cup games into P
 
 - Fifth test now passes:
 
-    ![](2022-12-26-10-30-11.png)
+    ![](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database/screenshots/2022-12-26-10-30-11.png)
     
 - Added winner_goals and opponent_goals to the games table:
 
@@ -127,7 +127,7 @@ I will create a Bash script which enters information from World Cup games into P
 
 - The 6th test now passes:
 
-    ![](2022-12-26-10-33-02.png)
+    ![](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database/screenshots/2022-12-26-10-33-02.png)
 
 - I forgot the non-null requirement for all columns so altered the games and teams tables:
 
@@ -140,7 +140,7 @@ I will create a Bash script which enters information from World Cup games into P
 
 - The seventh test now passes:
 
-    ![](2022-12-26-10-39-04.png)
+    ![](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database/screenshots/2022-12-26-10-39-04.png)
 
 <br>
 
@@ -153,7 +153,7 @@ I will create a Bash script which enters information from World Cup games into P
 
 - The insert_data.sh script contains:
 
-    ![](2022-12-26-10-53-04.png)
+    ![](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database/screenshots/2022-12-26-10-53-04.png)
 
 - I add a query to the script to connect to the worldcup database:
 
@@ -183,7 +183,7 @@ I will create a Bash script which enters information from World Cup games into P
 
 - My script, after completing part 2, looked like:
 
-    ![](2022-12-26-11-49-53.png)
+    ![](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database/screenshots/2022-12-26-11-49-53.png)
 
 <br>
 <hr>
@@ -392,4 +392,4 @@ I will create a Bash script which enters information from World Cup games into P
 
 - The final script is:
 
-![](2022-12-26-13-17-02.png)
+![](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database/screenshots/2022-12-26-13-17-02.png)
