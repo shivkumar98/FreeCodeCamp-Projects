@@ -37,3 +37,75 @@
 * 9. When you run your insert_data.sh script, it should add unique to the teams table. There should be 24 rows.
 * 10. When you run insert_data.sh script, it should insert a row for each line in the games.csv file. There should be 32 rows filled with appropiate information.
 * 11. Correctly complete the queries in queries.sh file. The output should match what is in the expected_output.txt file exactly.
+
+
+## Project Commentary.
+
+### Part 1: Create the Database
+
+- Logged into postgreSQL:
+
+        ~/project$ psql --username=freecodecamp --dbname=postgres
+
+- Created worldcup database:
+
+        postgres=> CREATE DATABASE worldcup;
+        CREATE DATABASE
+
+- Connected to database:
+
+        postgres=> \c worldcup
+        You are now connected to database "worldcup" as user "freecodecamp".#
+
+- Created teams table:
+
+        worldcup=> CREATE TABLE teams(team_id SERIAL PRIMARY KEY NOT NULL, name VARCHAR(50) UNIQUE);
+        CREATE TABLE
+
+- Created games table:
+
+        worldcup=> CREATE TABLE games(game_id SERIAL PRIMARY KEY NOT NULL, year INT NOT NULL, round VARCHAR NOT NULL);
+        CREATE TABLE
+
+- Now the first 4 tests pass:
+
+    ![](2022-12-26-10-26-50.png)
+
+- Added foreign key columns to games table:
+
+        worldcup=> ALTER TABLE games ADD COLUMN winner_id INT references teams(team_id);
+        ALTER TABLE
+        worldcup=> ALTER TABLE games ADD COLUMN opponent_id INT references teams(team_id);
+        ALTER TABLE
+
+- Fifth test now passes:
+
+    ![](2022-12-26-10-30-11.png)
+    
+- Added winner_goals and opponent_goals to the games table:
+
+        worldcup=> ALTER TABLE games ADD COLUMN winner_goals INT NOT NULL;
+        ALTER TABLE
+        worldcup=> ALTER TABLE games ADD COLUMN opponent_goals INT NOT NULL;
+        ALTER TABLE
+
+- The 6th test now passes:
+
+    ![](2022-12-26-10-33-02.png)
+
+- I forgot the non-null requirement for all columns so altered the games and teams tables:
+
+        worldcup=> ALTER TABLE games ALTER COLUMN winner_id SET NOT NULL;
+        ALTER TABLE   
+        worldcup=> ALTER TABLE games ALTER COLUMN opponent_id SET NOT NULL;
+        ALTER TABLE
+        worldcup=> ALTER TABLE teams ALTER COLUMN name SET NOT NULL;
+        ALTER TABLE
+
+- The seventh test now passes:
+
+    ![](2022-12-26-10-39-04.png)
+
+
+
+
