@@ -103,4 +103,27 @@ bash: bad_command: command not found
         ~/project$ cat name.txt
             freeCodeCamp
 
-## Exanmple Script
+## Example Script
+
+- I created a script which reads name and prints it out, along with a unsuccessful command:
+
+    ![](2022-12-27-10-39-31.png)
+
+- Instead of giving the stdin after executing the scipt, we can use pipe to set it beforehand:
+
+        ~/project$ echo Shiv | ./script.sh
+            Hello Shiv
+            ./script.sh: line 4: bad_command: command not found
+
+- We can redirect the stdout and stderr to files in one command:
+
+        ~/project$ echo Shiv | ./script.sh 2> stderr.txt > stdout.txt 
+
+- The stdout.txt and stderr.txt files look like
+
+    ![](2022-12-27-10-44-26.png)
+
+- We can use redirection to give the stdin from a text file:
+
+        ~/project$ ./script.sh < name.txt 2> stderr.txt 
+            Hello freeCodeCamp
