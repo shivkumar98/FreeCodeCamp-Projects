@@ -1,5 +1,42 @@
 # 8: Learn Advanced Bash by Building a Kitty Ipsum Translator
 
+## Table of Contens:
+
+[**1 Standard Output and Standard Error**](#--1-standard-output-and-standard-error--)
++ [Redirecting Commands](#--redirecting-commands---)
++ [Redirecting Unsuccessful Commands to File](#--redirecting-unsuccessful-commands-to-file--)
++ [stdout and stderr](#--stdout-and-stderr--)
++ [Printing stderr Output](#--printing-stderr-output--)
+
+[**2 Standard in: stdin**](#2-standard-in-stdin)
++ [Redirection: Reading input from a File](#redirection-reading-input-from-a-file)
++ [Pipe Command](#--pipe-command--)
++ [Cat Command](#--cat-command--)
+
+[**3 Example Script**](#--3-example-script--)
+
+[**4 Wordcount, sed and grep**](#4-wordcount-sed-and-grep)
++ [Wordcount Command: wc](#wordcount-command-wc)
++ [sed Command](#--sed-command--)
++ [grep command](#--grep-command--)
+
+[**5 Information about kitty_ipsum_1.txt**](#5-information-about-kitty_ipsum_1txt)
++ [Title, number of lines, words and characters](#--title--number-of-lines--words-and-characters---)
++ [Number of times meow or meower appears and their lines](#--number-of-times-meow-or-meower-appears-and-their-lines---)
++ [Number of Times cat, cats or catnips appear and line numbers](#--number-of-times-cat--cats-or-catnips-appear-and-line-numbers--)
+
+[**6 Information about kitty_ipsum_2.txt**](#6-information-about-kitty_ipsum_2txt)
++ [Title, number of lines, words and characters](#title-number-of-lines-words-and-characters-1)
+
+[**7 Finished kitty_info File**](#7-finished-kitty_info-file)
+
+[**8 Kitty Ispum Translator**](#8-kitty-ispum-translator)
++ [Kitty Ipsum Translator Finished Script](#--kitty-ipsum-translator-finished-script---)
++ [diff command](#--diff-command--)
+
+<br>
+<hr>
+
 ## **1 Standard Output and Standard Error**
 
 ### **Redirecting Commands:**
@@ -149,7 +186,7 @@
 
 <br><hr>
 
-## 4 Kitty Ipsum Translator:
+## **4 Wordcount, sed and grep**
 
 - I will write a small script to translate 2 text files into doggy ipsum.
 - I have 2 kitty_ipsum files:
@@ -360,7 +397,7 @@
 
 <br><hr>
 
-## **6 Information about kitty_ipsum_1.txt**
+## **6 Information about kitty_ipsum_2.txt**
 
 - I now get information for kitty_ipsum_2.txt
 
