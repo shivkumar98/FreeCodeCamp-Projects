@@ -1,6 +1,7 @@
 # **7: Build a World Cup Database [Certification Project]**
 
 ## Table of Contents:
+[**Introduction**](#--introduction--)
 
 [**Instructions**](#--instructions--)
 + [Part 1: Create the Database](#--part-1--create-the-database--)
@@ -28,6 +29,7 @@
   - [queries.sh Script](#--queriessh-script--)
 
 
+## **Introduction**
 
 This is the second project which I need to complete in order to get the certification!
 
