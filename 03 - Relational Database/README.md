@@ -16,6 +16,8 @@
 
 5) [**Learn SQL by Building a Student Database: Part 2**](/03%20-%20Relational%20Database/06%20-%20Learn%20SQL%20By%20Building%20a%20Student%20Database%20(Part%202))
 
+6) [**Learn Advanced Bash by Building a Kitty Ipsum Translator**](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator)
+
 ### Certification Projects:
 
 1) [**Build a Celestial Bodies Database using SQL**](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
