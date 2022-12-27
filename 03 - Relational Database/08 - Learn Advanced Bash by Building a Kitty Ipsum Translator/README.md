@@ -260,7 +260,7 @@
 
 - Number of lines:
 
-        ~/project$ echo -e "\nNumber of lines:" >> kitty_info.txt 
+      mkitty_info.txt 
 
         ~/project$ cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt
 
@@ -372,7 +372,7 @@
     ![](2022-12-27-12-58-42.png)
 
     
-- Number of appearences of word beginning with 'meow':
+- Number of appearences of words beginning with 'meow':
 
         ~/project$ echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt
 
@@ -383,3 +383,89 @@
         ~/project$ echo -e "\nLines that they appear on:" >> kitty_info.txt
 
         ~/project$ grep -n 'meow[a-z]*' kitty_ipsum_2.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
+
+- Number of appearences of words beginning with 'cat':
+
+        ~/project$ echo -e "\nNumber of times cat, cats, or catnip appears:" >> kitty_info.txt
+
+- Lines they appear on:
+
+
+        ~/project$ echo -e "\nLines that they appear on:" >> kitty_info.txt
+
+        ~/project$ grep -n 'cat[a-z]*' kitty_ipsum_2.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
+
+- The kitty_info file is complete!
+
+## Finished kitty_info File:
+
+    - The finished file looks like:
+
+    ~~ kitty_ipsum_1.txt info ~~
+
+    Number of lines:
+    27
+
+    Number of words:
+    332
+
+    Number of characters:
+    1738
+
+    Number of times meow or meowzer appears:
+    7
+
+    Lines that they appear on:
+    1
+    4
+    10
+    22
+    23
+
+    Number of times cat, cats, or catnip appears:
+    7
+
+    Lines that they appear on:
+    1
+    3
+    7
+    17
+    21
+    22
+    26
+
+
+    ~~ kitty_ipsum_2.txt info ~~
+
+    Number of lines:
+    28
+
+    Number of words:
+    307
+
+    Number of characters:
+    1678
+
+    Number of times meow or meowzer appears:
+    9
+
+    Lines that they appear on:
+    4
+    8
+    12
+    20
+    24
+    25
+    28
+
+    Number of times cat, cats, or catnip appears:
+    8
+
+    Lines that they appear on:
+    10
+    14
+    19
+    20
+    25
+    26
+    28
