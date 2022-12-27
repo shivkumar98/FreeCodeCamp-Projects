@@ -16,7 +16,7 @@
 
 - The stdout.txt file looks like:
 
-    ![](2022-12-27-09-54-40.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-09-54-40.png)
 
 - If I execute this command:
 
@@ -24,7 +24,7 @@
 
 - Then the file is overwritten:
 
-    ![](2022-12-27-09-55-31.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-09-55-31.png)
 
 - We can empty the file by redirecting no command:
 
@@ -54,7 +54,7 @@
 
 - The stderr.txt file looks like:
 
-![](2022-12-27-10-02-27.png)
+![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-10-02-27.png)
 
 - You can use 1> to redirect stdout which is used by default:
 
@@ -115,7 +115,7 @@
 
 - I created a script which reads name and prints it out, along with a unsuccessful command:
 
-    ![](2022-12-27-10-39-31.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-10-39-31.png)
 
 - Instead of giving the stdin after executing the scipt, we can use pipe to set it beforehand:
 
@@ -129,7 +129,7 @@
 
 - The stdout.txt and stderr.txt files look like
 
-    ![](2022-12-27-10-44-26.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-10-44-26.png)
 
 - We can use redirection to give the stdin from a text file:
 
@@ -145,11 +145,11 @@
 
 1. kitty_ipsum_1.txt:
 
-    ![](2022-12-27-10-51-49.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-10-51-49.png)
 
 2. kitty_ipsum_2.txt:
 
-    ![](2022-12-27-10-52-34.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-10-52-34.png)
 
    ### Wordcount Command: wc
 
@@ -157,7 +157,7 @@
 
 - I display the manual for wc:
 
-    ![](2022-12-27-10-55-19.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-10-55-19.png)
 
 - I display number of lines using -l flag:
 
@@ -218,19 +218,19 @@
 
 - E.g., executing grep with parameter 'meow', it will display all lines containing the word 'meow':
 
-    ![](2022-12-27-11-15-23.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-11-15-23.png)
 
 - We can use the --color flag, to highlight the matches:
 
-    ![](2022-12-27-11-18-31.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-11-18-31.png)
 
 - The -n flag can be used to display line number:
 
-    ![](2022-12-27-11-19-22.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-11-19-22.png)
 
 - We can also use grep with regex! E.g., here is all the sentences which contain a word beginning with meow:
 
-    ![](2022-12-27-11-21-58.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-11-21-58.png)
 
 - We can count number of line matches of a regx, using ther -c flag:
 
@@ -239,7 +239,7 @@
 
 - The -o flag will place matches on their own lines:
 
-    ![](2022-12-27-11-27-26.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-11-27-26.png)
 
 - We can then pipe that into a wc command for number of lines:
 
@@ -290,19 +290,19 @@
 
 - I will display the lines in which the matches appear on:
 
-    ![](2022-12-27-11-53-36.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-11-53-36.png)
 
 - In order to work out how to target the numbers, I use a replacement to find all the line numbers:
 
-    ![](2022-12-27-12-00-08.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-00-08.png)
 
 - I surround the line numbers in a capture group:
 
-    ![](2022-12-27-12-03-12.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-03-12.png)
 
 - I isolate the line numbers:
 
-    ![](2022-12-27-12-06-02.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-06-02.png)
 
 - I append the line numbers to kitty_info.txt:
 
@@ -310,7 +310,7 @@
 
 - The kitty_info.txt file looks like:
 
-    ![](2022-12-27-12-07-44.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-07-44.png)
 
     ### **Number of Times cat, cats or catnips appear and line numbers**
 
@@ -320,7 +320,7 @@
 
 - I display all matches on their own line:
 
-    ![](2022-12-27-12-13-05.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-13-05.png)
 
 - Finally I count each line of the above and append it to the kitty_info file:
 
@@ -333,11 +333,11 @@
 
 - I follow the same process as before. I display lines which match:
 
-    ![](2022-12-27-12-23-51.png)    
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-23-51.png)    
 
 - Capturing and isolating line numbers:
 
-    ![](2022-12-27-12-30-04.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-30-04.png)
 
 - Appended the above to the kitty_info file:
 
@@ -369,7 +369,7 @@
 
 - Search for words beginning with 'meow':
 
-    ![](2022-12-27-12-58-42.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-58-42.png)
 
     
 - Number of appearences of words beginning with 'meow':
@@ -488,11 +488,11 @@
 
 - I replace 'catnip' with 'dogchow' to begin with:
 
-    ![](2022-12-27-13-44-55.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-13-44-55.png)
 
 - Executing the script and searching for dogchow:
 
-    ![](2022-12-27-13-45-31.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-13-45-31.png)
 
 - We can replace many patterns with sed using the following syntax:
 
@@ -500,35 +500,35 @@
         
 - I update the script so it replaces cat with dog:
 
-    ![](2022-12-27-13-47-43.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-13-47-43.png)
 
 - Running the script and finding words beginning with dog:
 
-    ![](2022-12-27-13-48-54.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-13-48-54.png)
 
 - Running the script and finding words containing cat yields no results!
 
 - Replacing 'meow' with 'woof':
 
-    ![](2022-12-27-13-52-54.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-13-52-54.png)
 
 - Executing the script and searching for words beginning with dog or woof:
 
 - Note how the extended flag (-E) was required for the above!
 
-    ![](2022-12-27-13-56-18.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-13-56-18.png)
 
 - The result of the script contains the word meowzer so I add ther global flag to the regex:
 
-    ![](2022-12-27-13-57-59.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-13-57-59.png)
 
 - Running the script again:
 
-    ![](2022-12-27-14-08-20.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-14-08-20.png)
 
 - The output contains woofzer which is not ideal. I update the script so meow and meowzer are just replaced with woof:
 
-    ![](2022-12-27-14-10-30.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-14-10-30.png)
 
 - The script is now finished!
 
@@ -536,10 +536,10 @@
 
 - The finished script is:
 
-    ![](2022-12-27-14-13-31.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-14-13-31.png)
     
 
-## diff command
+## **diff command**
 
 - The diff command is used to compare 2 files.
 
@@ -549,4 +549,4 @@
 
 - This outputs to the terminal:
 
-    ![](2022-12-27-14-31-10.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-14-31-10.png)
