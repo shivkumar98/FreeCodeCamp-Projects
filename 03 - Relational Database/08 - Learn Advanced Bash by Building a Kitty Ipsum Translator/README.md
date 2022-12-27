@@ -127,3 +127,105 @@ bash: bad_command: command not found
 
         ~/project$ ./script.sh < name.txt 2> stderr.txt 
             Hello freeCodeCamp
+
+## Kitty Ipsum Translator:
+
+- I will write a small script to translate 2 text files into doggy ipsum.
+- I have 2 kitty_ipsum files:
+
+1. kitty_ipsum_1.txt:
+
+    ![](2022-12-27-10-51-49.png)
+
+2. kitty_ipsum_2.txt:
+
+    ![](2022-12-27-10-52-34.png)
+
+### Wordcount Command: wc
+
+- The wc keyword can be used to get wordcount of a file
+
+- I display the manual for wc:
+
+![](2022-12-27-10-55-19.png)
+
+- I display number of lines using -l flag:
+
+        ~/project$ wc kitty_ipsum_1.txt -l
+            27 kitty_ipsum_1.txt
+
+- Number of words, using -w flag:
+
+        ~/project$ wc kitty_ipsum_1.txt -w
+            332 kitty_ipsum_1.txt
+
+- Number of chracters using -m flag:
+
+        ~/project$ wc kitty_ipsum_1.txt -m
+            1738 kitty_ipsum_1.txt
+
+- Using no flags:
+
+        ~/project$ wc kitty_ipsum_1.txt
+            27  332 1744 kitty_ipsum_1.txt
+
+- The last value is byte count, and is larger than character count as a character can have multiple bytes.
+
+### Grep command
+
+- The grep command is used for searching patterns in text. 
+
+- E.g., executing grep with parameter 'meow', it will display all lines containing the word 'meow':
+
+    ![](2022-12-27-11-15-23.png)
+
+- We can use the --color flag, to highlight the matches:
+
+    ![](2022-12-27-11-18-31.png)
+
+- The -n flag can be used to display line number:
+
+    ![](2022-12-27-11-19-22.png)
+
+- We can also use grep with regex! E.g., here is all the sentences which contain a word beginning with meow:
+
+    ![](2022-12-27-11-21-58.png)
+
+- We can count number of line matches of a regx, using ther -c flag:
+
+        ~/project$ grep 'meow[a-z]*' kitty_ipsum_1.txt -c
+            5
+
+- The -o flag will place matches on their own lines:
+
+![](2022-12-27-11-27-26.png)
+
+- We can then piper that into a wc command for number of lines:
+
+        ~/project$ grep 'meow[a-z]*' kitty_ipsum_1.txt -o | wc -l
+            7
+
+- To get the lines which the matches appear on:
+
+### Information about kitty_ipsum_1.txt
+
+
+~/project$ echo "~~ kitty_ipsum_1.txt info ~~" > kitty_info.txt
+
+~/project$ echo -e "\nNumber of lines:" >> kitty_info.txt 
+
+~/project$ cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+
+~/project$ echo -e "\nNumber of words:" >> kitty_info.txt 
+
+~/project$ cat kitty_ipsum_1.txt | wc -w >> kitty_info.txt
+
+~/project$ echo -e "\nNumber of characters:" >> kitty_info.txt
+
+~/project$ wc -m < kitty_ipsum_1.txt >> kitty_info.txt
+
+~/project$ echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt
+
+~/project$ grep 'meow[a-z]*' kitty_ipsum_1.txt -o | wc -l >> kitty_info.txt 
+
+~/project$ echo -e "\nLines that they appear on:"  >> kitty_info.txt
