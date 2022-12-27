@@ -1,8 +1,8 @@
 # 8: Learn Advanced Bash by Building a Kitty Ipsum Translator
 
-<br>
+## **1 Standard Output and Standard Error**
 
-## 1 Standard Output and Standard Error
+### **Redirecting Commands:**
 
 - You can redirect the output of a command to a file using >
 
@@ -30,6 +30,8 @@
 
         ~/project$ > stdout.txt
 
+<br>
+
   ### **Redirecting Unsuccessful Commands to File**
 
 - If you try to redirect an incorrect command to a file, nothing is printed:
@@ -37,7 +39,9 @@
         ~/project$ bad_command > stderr.txt
         bash: bad_command: command not found
 
-  ### **stdout and stderr**
+<br>
+
+### **stdout and stderr**
 
 - There are 2 types of outputs for a command:
 
@@ -46,19 +50,21 @@
 
 - Both of these will print to the terminal by default
 
-  ### **Printing stderr Output**
+<br>
+
+### **Printing stderr Output**
 
 - In order to print the output of an unsuccessful command, you must prepend the redirect symbol with 2:
 
-~/project$ bad_command 2> stderr.txt
+        ~/project$ bad_command 2> stderr.txt
 
 - The stderr.txt file looks like:
 
-![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-10-02-27.png)
+    ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-10-02-27.png)
 
 - You can use 1> to redirect stdout which is used by default:
 
-~/project$ echo hello bash 1> stdout.txt 
+        ~/project$ echo hello bash 1> stdout.txt 
 
 <br>
 <hr>
@@ -72,7 +78,9 @@
         ~/project$ read NAME
             shiv
 
-  ### **Redirection: Reading input from a File**
+<br>
+
+### **Redirection: Reading input from a File**
 
 - We can use redirection to read data from a file.
 
@@ -85,7 +93,9 @@
         ~/project$ echo $NAME
             freeCodeCamp
 
-  ### **Pipe Command**
+<br>
+
+### **Pipe Command**
 
 - The pipe symbol instructs to use the output from one command as the input of another
 
@@ -100,8 +110,9 @@
 
 - When using the pipe, it is using another terminal instance. Hence the commands are being executed in isolation!
 
+<br>
 
-  ### Cat Command
+### **Cat Command**
 
 - The cat command is used to display the contents of a file:
 
@@ -212,7 +223,7 @@
         ~/project$ sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
             f233C0d3C@mp
 
-  ### **grep command**
+### **grep command**
 
 - The grep command is used for searching patterns in text. 
 
@@ -250,9 +261,7 @@
 
 ## **5 Information about kitty_ipsum_1.txt**
 
-- I first get infromation about kitty_ipsum_1.txt
-
-  ### **Title, number of lines, words and characters:**
+### **Title, number of lines, words and characters:**
 
 - Add title:
 
@@ -276,7 +285,9 @@
 
         ~/project$ wc -m < kitty_ipsum_1.txt >> kitty_info.txt
 
-  ### **Number of times meow or meower appears and their lines:**
+<br>
+
+### **Number of times meow or meower appears and their lines:**
 
 - Number of times meow or meower appears:
 
@@ -312,7 +323,9 @@
 
     ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-12-07-44.png)
 
-    ### **Number of Times cat, cats or catnips appear and line numbers**
+<br>
+
+### **Number of Times cat, cats or catnips appear and line numbers**
 
 - Number of times cat, cats or catnip appears:
 
@@ -397,87 +410,91 @@
 
 - The kitty_info file is complete!
 
-## Finished kitty_info File:
+<br><hr>
 
-    - The finished file looks like:
+## **7 Finished kitty_info File:**
 
-    ~~ kitty_ipsum_1.txt info ~~
+- The finished file looks like:
 
-    Number of lines:
-    27
+        ~~ kitty_ipsum_1.txt info ~~
 
-    Number of words:
-    332
+        Number of lines:
+        27
 
-    Number of characters:
-    1738
+        Number of words:
+        332
 
-    Number of times meow or meowzer appears:
-    7
+        Number of characters:
+        1738
 
-    Lines that they appear on:
-    1
-    4
-    10
-    22
-    23
+        Number of times meow or meowzer appears:
+        7
 
-    Number of times cat, cats, or catnip appears:
-    7
+        Lines that they appear on:
+        1
+        4
+        10
+        22
+        23
 
-    Lines that they appear on:
-    1
-    3
-    7
-    17
-    21
-    22
-    26
+        Number of times cat, cats, or catnip appears:
+        7
+
+        Lines that they appear on:
+        1
+        3
+        7
+        17
+        21
+        22
+        26
 
 
-    ~~ kitty_ipsum_2.txt info ~~
+        ~~ kitty_ipsum_2.txt info ~~
 
-    Number of lines:
-    28
+        Number of lines:
+        28
 
-    Number of words:
-    307
+        Number of words:
+        307
 
-    Number of characters:
-    1678
+        Number of characters:
+        1678
 
-    Number of times meow or meowzer appears:
-    9
+        Number of times meow or meowzer appears:
+        9
 
-    Lines that they appear on:
-    4
-    8
-    12
-    20
-    24
-    25
-    28
+        Lines that they appear on:
+        4
+        8
+        12
+        20
+        24
+        25
+        28
 
-    Number of times cat, cats, or catnip appears:
-    8
+        Number of times cat, cats, or catnip appears:
+        8
 
-    Lines that they appear on:
-    10
-    14
-    19
-    20
-    25
-    26
-    28
+        Lines that they appear on:
+        10
+        14
+        19
+        20
+        25
+        26
+        28
 
-## Kitty Ispum Translator:
+<br><hr>
+
+## **8: Kitty Ispum Translator**
 
 - I will create a script to translate the Kitty Ipsum text files into Doggy Ipsum. I will replace all cat references with words for dogs
 
 - I created the translate script:
 
-~/project$ touch translate.sh
-~/project$ chmod +x translate.sh
+        ~/project$ touch translate.sh
+        ~/project$ chmod +x translate.sh
 
 
 - The script will accept an argument or read from stdin.
@@ -532,14 +549,17 @@
 
 - The script is now finished!
 
-  ### **Kitty Ipsum Translator Finished Script:**
+<br>
+
+### **Kitty Ipsum Translator Finished Script:**
 
 - The finished script is:
 
     ![](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator/screenshots/2022-12-27-14-13-31.png)
-    
 
-## **diff command**
+<br>
+
+### **diff command**
 
 - The diff command is used to compare 2 files.
 
