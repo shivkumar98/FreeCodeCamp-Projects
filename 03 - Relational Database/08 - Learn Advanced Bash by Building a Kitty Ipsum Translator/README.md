@@ -1,4 +1,6 @@
-# 8 Learn Advanced Bash by Building a Kitty Ipsum Translator
+# 8: Learn Advanced Bash by Building a Kitty Ipsum Translator
+
+<br>
 
 ## 1 Standard Output and Standard Error
 
@@ -6,36 +8,36 @@
 
 - I printed hello bash to a file:
 
-~/project$ echo hello bash > stdout.txt
+        ~/project$ echo hello bash > stdout.txt
 
 - Using a single > will create and overwrite the file with the command, a double >> will append to a file.
 
-~/project$ echo hello bash >> stdout.txt
+        ~/project$ echo hello bash >> stdout.txt
 
 - The stdout.txt file looks like:
 
-![](2022-12-27-09-54-40.png)
+    ![](2022-12-27-09-54-40.png)
 
 - If I execute this command:
 
-~/project$ echo hello bash > stdout.txt
+        ~/project$ echo hello bash > stdout.txt
 
 - Then the file is overwritten:
 
-![](2022-12-27-09-55-31.png)
+    ![](2022-12-27-09-55-31.png)
 
 - We can empty the file by redirecting no command:
 
-~/project$ > stdout.txt
+        ~/project$ > stdout.txt
 
-### Redirecting Unsuccessful Commands to File:
+  ### **Redirecting Unsuccessful Commands to File**
 
 - If you try to redirect an incorrect command to a file, nothing is printed:
 
-~/project$ bad_command > stderr.txt
-bash: bad_command: command not found
+        ~/project$ bad_command > stderr.txt
+        bash: bad_command: command not found
 
-### stdout and stderr
+  ### **stdout and stderr**
 
 - There are 2 types of outputs for a command:
 
@@ -44,7 +46,7 @@ bash: bad_command: command not found
 
 - Both of these will print to the terminal by default
 
-### Printing stderr Output
+  ### **Printing stderr Output**
 
 - In order to print the output of an unsuccessful command, you must prepend the redirect symbol with 2:
 
@@ -58,7 +60,10 @@ bash: bad_command: command not found
 
 ~/project$ echo hello bash 1> stdout.txt 
 
-## 2 Standard In: stdin
+<br>
+<hr>
+
+## **2 Standard in: stdin**
 
 - stdin is used to read information, usually from the keyboard.
 
@@ -67,7 +72,7 @@ bash: bad_command: command not found
         ~/project$ read NAME
             shiv
 
-### Redirection: Reading input from a File
+  ### **Redirection: Reading input from a File**
 
 - We can use redirection to read data from a file.
 
@@ -80,7 +85,7 @@ bash: bad_command: command not found
         ~/project$ echo $NAME
             freeCodeCamp
 
-### Piped Command
+  ### **Pipe Command**
 
 - The pipe symbol instructs to use the output from one command as the input of another
 
@@ -96,14 +101,17 @@ bash: bad_command: command not found
 - When using the pipe, it is using another terminal instance. Hence the commands are being executed in isolation!
 
 
-### Cat Command
+  ### Cat Command
 
 - The cat command is used to display the contents of a file:
 
         ~/project$ cat name.txt
             freeCodeCamp
 
-## Example Script
+<br>
+<hr>
+
+## **3 Example Script**
 
 - I created a script which reads name and prints it out, along with a unsuccessful command:
 
@@ -128,7 +136,9 @@ bash: bad_command: command not found
         ~/project$ ./script.sh < name.txt 2> stderr.txt 
             Hello freeCodeCamp
 
-## Kitty Ipsum Translator:
+<br><hr>
+
+## 4 Kitty Ipsum Translator:
 
 - I will write a small script to translate 2 text files into doggy ipsum.
 - I have 2 kitty_ipsum files:
@@ -141,13 +151,13 @@ bash: bad_command: command not found
 
     ![](2022-12-27-10-52-34.png)
 
-### Wordcount Command: wc
+   ### Wordcount Command: wc
 
 - The wc keyword can be used to get wordcount of a file
 
 - I display the manual for wc:
 
-![](2022-12-27-10-55-19.png)
+    ![](2022-12-27-10-55-19.png)
 
 - I display number of lines using -l flag:
 
@@ -171,7 +181,38 @@ bash: bad_command: command not found
 
 - The last value is byte count, and is larger than character count as a character can have multiple bytes.
 
-### Grep command
+  ### **sed Command**
+
+- The sed command is used to replace text. By default it will output stdout.
+
+        sed 's/<pattern_to_replace>/<text_to_replace_it_with>/' <filename>
+
+- E.g., replaceing 'r' with 2 in name.txt:
+
+        ~/project$ sed 's/r/2/' name.txt
+            f2eeCodeCamp
+
+- Replacing the word Free with f233:
+
+        ~/project$ sed 's/free/f233/' name.txt
+            f233CodeCamp
+
+- Replacing freecodecamp with f233C0d3C@mp:
+
+        ~/project$ sed 's/freecodecamp/f233C0d3C@mp/' name.txt
+            freeCodeCamp
+
+- It did not replace anything due to casing. We can use the ig to make the match global and case insentive:
+
+        ~/project$ sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
+            f233C0d3C@mp
+
+- We can redirect the input without affecting the file:
+
+        ~/project$ sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
+            f233C0d3C@mp
+
+  ### **grep command**
 
 - The grep command is used for searching patterns in text. 
 
@@ -198,34 +239,147 @@ bash: bad_command: command not found
 
 - The -o flag will place matches on their own lines:
 
-![](2022-12-27-11-27-26.png)
+    ![](2022-12-27-11-27-26.png)
 
-- We can then piper that into a wc command for number of lines:
+- We can then pipe that into a wc command for number of lines:
 
         ~/project$ grep 'meow[a-z]*' kitty_ipsum_1.txt -o | wc -l
             7
 
-- To get the lines which the matches appear on:
+<br><hr>
 
-### Information about kitty_ipsum_1.txt
+## **5 Information about kitty_ipsum_1.txt**
+
+- I first get infromation about kitty_ipsum_1.txt
+
+  ### **Title, number of lines, words and characters:**
+
+- Add title:
+
+        ~/project$ echo "~~ kitty_ipsum_1.txt info ~~" > kitty_info.txt
+
+- Number of lines:
+
+        ~/project$ echo -e "\nNumber of lines:" >> kitty_info.txt 
+
+        ~/project$ cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+
+- Number of words:
+
+        ~/project$ echo -e "\nNumber of words:" >> kitty_info.txt 
+
+        ~/project$ cat kitty_ipsum_1.txt | wc -w >> kitty_info.txt
+
+- Number of characters:
+
+        ~/project$ echo -e "\nNumber of characters:" >> kitty_info.txt
+
+        ~/project$ wc -m < kitty_ipsum_1.txt >> kitty_info.txt
+
+  ### **Number of times meow or meower appears and their lines:**
+
+- Number of times meow or meower appears:
+
+        ~/project$ echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt
+
+        ~/project$ grep 'meow[a-z]*' kitty_ipsum_1.txt -o | wc -l >> kitty_info.txt 
+
+- Lines that they appear on
+
+        ~/project$ echo -e "\nLines that they appear on:"  >> kitty_info.txt
+
+- I will display the lines in which the matches appear on:
+
+    ![](2022-12-27-11-53-36.png)
+
+- In order to work out how to target the numbers, I use a replacement to find all the line numbers:
+
+    ![](2022-12-27-12-00-08.png)
+
+- I surround the line numbers in a capture group:
+
+    ![](2022-12-27-12-03-12.png)
+
+- I isolate the line numbers:
+
+    ![](2022-12-27-12-06-02.png)
+
+- I append the line numbers to kitty_info.txt:
+
+        ~/project$ grep 'meow[a-z]*' kitty_ipsum_1.txt -n | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
+
+- The kitty_info.txt file looks like:
+
+    ![](2022-12-27-12-07-44.png)
+
+    ### **Number of Times cat, cats or catnips appear and line numbers**
+
+- Number of times cat, cats or catnip appears:
+
+        ~/project$ echo -e "\nNumber of times cat, cats, or catnip appears:" >> kitty_info.txt
+
+- I display all matches on their own line:
+
+    ![](2022-12-27-12-13-05.png)
+
+- Finally I count each line of the above and append it to the kitty_info file:
 
 
-~/project$ echo "~~ kitty_ipsum_1.txt info ~~" > kitty_info.txt
+        ~/project$ grep -o 'cat[a-z]*' kitty_ipsum_1.txt | wc -l >> kitty_info.txt
 
-~/project$ echo -e "\nNumber of lines:" >> kitty_info.txt 
+- The Lines they appear on:
 
-~/project$ cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+        ~/project$ echo -e "\nLines that they appear on:" >> kitty_info.txt
 
-~/project$ echo -e "\nNumber of words:" >> kitty_info.txt 
+- I follow the same process as before. I display lines which match:
 
-~/project$ cat kitty_ipsum_1.txt | wc -w >> kitty_info.txt
+    ![](2022-12-27-12-23-51.png)    
 
-~/project$ echo -e "\nNumber of characters:" >> kitty_info.txt
+- Capturing and isolating line numbers:
 
-~/project$ wc -m < kitty_ipsum_1.txt >> kitty_info.txt
+    ![](2022-12-27-12-30-04.png)
 
-~/project$ echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt
+- Appended the above to the kitty_info file:
 
-~/project$ grep 'meow[a-z]*' kitty_ipsum_1.txt -o | wc -l >> kitty_info.txt 
+        ~/project$ grep -n 'cat[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
 
-~/project$ echo -e "\nLines that they appear on:"  >> kitty_info.txt
+- I will now do the same for kitty_ipsum_2.txt
+
+<br><hr>
+
+## **6 Information about kitty_ipsum_1.txt**
+
+- I now get information for kitty_ipsum_2.txt
+
+  ### **Title, number of lines, words and characters:** 
+
+        ~/project$ echo -e "\n\n~~ kitty_ipsum_2.txt info ~~" >> kitty_info.txt
+
+        ~/project$ echo -e "\nNumber of lines:" >> kitty_info.txt
+
+        ~/project$ cat kitty_ipsum_2.txt | wc -l >> kitty_info.txt
+
+        ~/project$ echo -e "\nNumber of words:" >> kitty_info.txt
+
+        ~/project$ wc -w < kitty_ipsum_2.txt >> kitty_info.txt
+
+        ~/project$ echo -e "\nNumber of characters:" >> kitty_info.txt
+
+        ~/project$ wc -m < kitty_ipsum_2.txt >> kitty_info.txt
+
+- Search for words beginning with 'meow':
+
+    ![](2022-12-27-12-58-42.png)
+
+    
+- Number of appearences of word beginning with 'meow':
+
+        ~/project$ echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt
+
+        ~/project$ grep --color -o 'meow[a-z]*' kitty_ipsum_2.txt | wc -l >> kitty_info.txt
+
+- Lines they appear on:
+
+        ~/project$ echo -e "\nLines that they appear on:" >> kitty_info.txt
+
+        ~/project$ grep -n 'meow[a-z]*' kitty_ipsum_2.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
