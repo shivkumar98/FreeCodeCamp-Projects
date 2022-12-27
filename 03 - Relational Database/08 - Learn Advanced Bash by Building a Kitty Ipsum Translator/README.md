@@ -537,3 +537,16 @@
 - The finished script is:
 
     ![](2022-12-27-14-13-31.png)
+    
+
+## diff command
+
+- The diff command is used to compare 2 files.
+
+- I used diff to compare the output of the translate script with the input:
+
+        ~/project$ diff kitty_ipsum_1.txt doggy_ipsum_1.txt
+
+- This outputs to the terminal:
+
+    ![](2022-12-27-14-31-10.png)
