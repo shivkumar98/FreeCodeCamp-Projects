@@ -469,3 +469,71 @@
     25
     26
     28
+
+## Kitty Ispum Translator:
+
+- I will create a script to translate the Kitty Ipsum text files into Doggy Ipsum. I will replace all cat references with words for dogs
+
+- I created the translate script:
+
+~/project$ touch translate.sh
+~/project$ chmod +x translate.sh
+
+
+- The script will accept an argument or read from stdin.
+
+- I can see the argument passed into the script using $1:
+
+        cat $1
+
+- I replace 'catnip' with 'dogchow' to begin with:
+
+    ![](2022-12-27-13-44-55.png)
+
+- Executing the script and searching for dogchow:
+
+    ![](2022-12-27-13-45-31.png)
+
+- We can replace many patterns with sed using the following syntax:
+
+        sed 's/<pattern_1>/<replacement_1>/; s/<pattern_2>/<replacement_2>/'
+        
+- I update the script so it replaces cat with dog:
+
+    ![](2022-12-27-13-47-43.png)
+
+- Running the script and finding words beginning with dog:
+
+    ![](2022-12-27-13-48-54.png)
+
+- Running the script and finding words containing cat yields no results!
+
+- Replacing 'meow' with 'woof':
+
+    ![](2022-12-27-13-52-54.png)
+
+- Executing the script and searching for words beginning with dog or woof:
+
+- Note how the extended flag (-E) was required for the above!
+
+    ![](2022-12-27-13-56-18.png)
+
+- The result of the script contains the word meowzer so I add ther global flag to the regex:
+
+    ![](2022-12-27-13-57-59.png)
+
+- Running the script again:
+
+    ![](2022-12-27-14-08-20.png)
+
+- The output contains woofzer which is not ideal. I update the script so meow and meowzer are just replaced with woof:
+
+    ![](2022-12-27-14-10-30.png)
+
+- The script is now finished!
+
+  ### **Kitty Ipsum Translator Finished Script:**
+
+- The finished script is:
+
+    ![](2022-12-27-14-13-31.png)
