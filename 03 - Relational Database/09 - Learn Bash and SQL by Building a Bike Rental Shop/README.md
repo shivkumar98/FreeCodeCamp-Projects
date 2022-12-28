@@ -165,6 +165,9 @@
 
     ![](2022-12-28-11-50-36.png)
 
+<br>
+<hr>
+
 ## 2 Creating Bike Shop Script:
 
 - I create a bash script in project folder:
@@ -311,3 +314,150 @@
 - Below the 'if not available' comment, I check if the query is empty and call the MAIN_MENU function:
 
     ![](2022-12-28-13-21-51.png)
+
+
+### Script Up To This Point
+
+- The entire script looks like:
+
+    ![](2022-12-28-13-29-51.png)
+    ![](2022-12-28-13-30-17.png)
+
+- Executing the script:
+
+    ![](2022-12-28-13-33-31.png)
+
+
+### Bike is Available
+
+- I set all bikes availability to true:
+
+        bikes=> UPDATE bikes SET available=true;
+        UPDATE 9
+
+- I add an else statement to the check if the BIKE_AVAILABILITY variable is empty and I added some comments:
+
+    ![](2022-12-28-13-37-51.png)
+
+
+### Get Customer Information
+
+- Below the 'get customer info' comment, I add the following:
+
+    ![](2022-12-28-13-42-58.png)
+
+- Since the phone number is unique, we can use it to see if the customer is already in the database!
+
+
+### If Customer Doesn't Exist
+
+- Below the 'if customer doesn't exist' comment, I check if the CUSTOMER_NAME variable is empty:
+
+![](2022-12-28-13-45-31.png)
+
+### Getting New Customer Name
+
+- I get the customer's name:
+
+    ![](2022-12-28-13-47-29.png)
+
+### Insert New Customer
+
+- I add the following statement:
+
+    ![](2022-12-28-13-51-40.png)
+
+
+### Script Up To This Point
+
+- The RENT_MENU function at this point is defined as:
+
+    ![](2022-12-28-13-53-53.png)
+
+- Running the script:
+
+    ![](2022-12-28-14-00-47.png)
+
+- Displaying the customers and rentals tables:
+
+    ![](2022-12-28-14-01-49.png) 
+
+- The rentals is still empty!
+
+### Inserting data into rentals table
+
+- Below the if statementg for inserting the customer details, I add the following comments:
+
+    ![](2022-12-28-14-06-52.png)
+
+
+### Getting Customer ID
+
+- I get the customer ID usiong the phone number:
+
+    ![](2022-12-28-14-09-25.png)
+
+### Insert Bike Rental
+
+- I inserted the customer ID and bike ID into the rentals table:
+
+    ![](2022-12-28-14-13-37.png)
+
+### Set Bike Availability to False
+
+- Updated bikes table and set available to false:
+
+    ![](2022-12-28-14-16-54.png)
+
+### Script up to this point
+
+- The RENT_MENU() function at this point looks like:
+
+![](2022-12-28-14-23-13.png)
+![](2022-12-28-14-23-42.png)
+
+- Running the script:
+
+    ![](2022-12-28-14-24-35.png)
+
+- As we can see, the name of the customer was not asked!
+
+- Displaying the rentals table, shows a row was added:
+
+    ![](2022-12-28-14-25-55.png)
+
+- The bikes table also has the availability to false:
+
+![](2022-12-28-14-27-27.png)
+
+### Get Bike Information
+
+- Below the 'get bike info' comment, I create the following variable:
+
+    ![](2022-12-28-14-31-14.png)
+
+- Running the script shows the following:
+
+    ![](2022-12-28-14-31-46.png)
+
+- I will use the sed command so it will print: I have put you down for the 28" Mountain Bike, Me.
+
+- Using sed, I printed "29" Mountain" to the terminal:
+
+    ![](2022-12-28-14-36-59.png)
+
+- I used a sub-shell to place the above in a variable:
+
+    ![](2022-12-28-14-38-43.png)
+
+- I use the above to print a message when returning to main menu:
+
+    ![](2022-12-28-14-41-38.png)
+
+### Script up to this point
+
+![](2022-12-28-14-44-52.png)
+
+- There was an extra space before the name! We can fix this by using regex in a sub shell:
+
+    ![](2022-12-28-14-56-11.png)
