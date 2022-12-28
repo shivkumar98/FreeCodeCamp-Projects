@@ -20,8 +20,18 @@
 
 7) [**Learn Bash and SQL by Building a Bike Rental Shop**](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop)
 
+8) [**Learn Nano by Building a Castle**]()
+
+9) [**Learn Git by Building an SQL Reference Object**]()
+
 ### Certification Projects:
 
 1) [**Build a Celestial Bodies Database using SQL**](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
 
 2) [**Build a World Cup Database**](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database)
+
+3) [**Build a Salon Appointment Scheduler**]()
+
+4) [**Periodic Table Database**]()
+
+5) [**Number Guessing Game**]()
