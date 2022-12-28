@@ -18,6 +18,8 @@
 
 6) [**Learn Advanced Bash by Building a Kitty Ipsum Translator**](/03%20-%20Relational%20Database/08%20-%20Learn%20Advanced%20Bash%20by%20Building%20a%20Kitty%20Ipsum%20Translator)
 
+7) [**Learn Bash and SQL by Building a Bike Rental Shop**](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop)
+
 ### Certification Projects:
 
 1) [**Build a Celestial Bodies Database using SQL**](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
