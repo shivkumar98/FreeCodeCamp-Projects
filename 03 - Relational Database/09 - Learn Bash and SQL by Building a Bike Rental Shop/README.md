@@ -1,5 +1,59 @@
 # Learn Bash and SQL by Building a Bike Rental Shop
 
+## Table of Contents:
+
+[**1 Creating Tables and Populating Data**](#--1-creating-tables-and-populating-data--)
++ [Logging In and Connecting to Database](#--logging-in-and-connecting-to-database--)
++ [Creating Bikes Table](#--creating-bikes-table--)
++ [Creating Customers table](#--creating-customers-table--)
++ [Creating Rentals Table](#--creating-rentals-table--)
++ [Adding bikes to inventory](#--adding-bikes-to-inventory--)
+
+[**2 Creating Bike Shop Script**](#--2-creating-bike-shop-script--)
++ [Script at This Point](#--script-at-this-point--)
+
+[**3 Implementing Rent Menu Function**](#--3-implementing-rent-menu-function--)
++ [Get Available Bikes](#--get-available-bikes--)
++ [If No Bikes are Available](#--if-no-bikes-are-available--)
++ [Script at This Point](#--script-at-this-point---1)
++ [Displaying Available Bikes](#displaying-available-bikes)
++ [Ask Bike to Rent](#--ask-bike-to-rent--)
++ [Get Bike Availability](#--get-bike-availability--)
++ [If Bike is Not Available](#--if-bike-is-not-available--)
++ [Script Up To This Point](#--script-up-to-this-point--)
++ [Bike is Available](#--bike-is-available--)
++ [Get Customer Information](#--get-customer-information--)
++ [If Customer Doesn't Exist](#--if-customer-doesn-t-exist--)
++ [Getting New Customer Name](#--getting-new-customer-name--)
++ [Insert New Customer](#--insert-new-customer--)
++ [Script Up To This Point](#--script-up-to-this-point---1)
++ [Inserting data into rentals table](#--inserting-data-into-rentals-table--)
++ [Getting Customer ID](#--getting-customer-id--)
++ [Insert Bike Rental](#--insert-bike-rental--)
++ [Set Bike Availability to False](#--set-bike-availability-to-false--)
++ [Script up to this point](#--script-up-to-this-point--)
++ [Get Bike Information](#--get-bike-information--)
++ [Script up to this point](#--script-up-to-this-point---1)
+
+[**4 Implementing Return Menu**](#--4-implementing-return-menu--)
++ [Get Customer Information](#--get-customer-information---1)
++ [If Customer is Not Found](#--if-customer-is-not-found--)
++ [Get Customer's Rentals](#--get-customer-s-rentals--)
++ [Return Menu Function At This Point](#--return-menu-function-at-this-point--)
++ [If The Customer Has No Rentals](#--if-the-customer-has-no-rentals--)
++ [If Customer Does Have Rentals](#--if-customer-does-have-rentals--)
++ [Display Rented Bikes](#--display-rented-bikes--)
++ [Ask bike for return](#--ask-bike-for-return--)
++ [If Input is not a Number](#--if-input-is-not-a-number--)
++ [Check If Input ID is Rented](#--check-if-input-id-is-rented--)
++ [If Input ID is not Rented](#--if-input-id-is-not-rented--)
++ [RETURN_MENU At This Point](#--return-menu-at-this-point---)
++ [Update Date Returned Column](#--update-date-returned-column--)
++ [Set Bike Availability to True](#--set-bike-availability-to-true--)
++ [Send to Main Menu](#--send-to-main-menu--)
+
+
+
 ## **1 Creating Tables and Populating Data**
 
 ### **Logging In and Connecting to Database**
