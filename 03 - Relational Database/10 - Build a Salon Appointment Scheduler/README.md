@@ -1,4 +1,4 @@
-# 10 - Build a Salon Appointment Scheduler
+# **10 - Build a Salon Appointment Scheduler**
     
 ## **1 Introduction**
 
@@ -69,17 +69,17 @@ In this project I will create an interactive Bash program that uses PostgreSQL t
 
 - The first 4 tests now pass:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-05-56.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-05-56.png)
 
 - Adding customer_id foreign key to appointments table:
 
-salon=> ALTER TABLE appointments ADD COLUMN customer_id INT NOT NULL;ALTER TABLE
-salon=> ALTER TABLE appointments ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);
-ALTER TABLE
+        salon=> ALTER TABLE appointments ADD COLUMN customer_id INT NOT NULL;ALTER TABLE
+        salon=> ALTER TABLE appointments ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);
+        ALTER TABLE
 
 - Fifth test now passes:
 
-![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-11-14.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-11-14.png)
 
 - Adding service_id foreign key to appointments table:
 
@@ -89,16 +89,16 @@ ALTER TABLE
 
 - Sixth test now passes:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-13-32.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-13-32.png)
 
 - Added phone column to customers table:
 
-salon=> ALTER TABLE customers ADD COLUMN phone VARCHAR(20) UNIQUE;
-ALTER TABLE
+        salon=> ALTER TABLE customers ADD COLUMN phone VARCHAR(20) UNIQUE;
+        ALTER TABLE
 
 - Seventh test now passes:
 
-![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-18-25.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-18-25.png)
 
 - Added name columns to customers and services table:
 
@@ -109,12 +109,12 @@ ALTER TABLE
 
 - Adding time column to appointments:
 
-salon=> ALTER TABLE appointments ADD COLUMN time VARCHAR(10);
-ALTER TABLE
+        salon=> ALTER TABLE appointments ADD COLUMN time VARCHAR(10);
+        ALTER TABLE
 
 - Eighth test now passes:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-23-42.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-23-42.png)
 
 - Adding rows to the services table:
 
@@ -123,7 +123,7 @@ ALTER TABLE
 
 - Ninth test now passes:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-27-30.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-27-30.png)
 
 <br><hr>
 
@@ -137,18 +137,18 @@ ALTER TABLE
 
 - Tests 10-12 now pass:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-31-46.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-31-46.png)
 
 
 ### **Services Menu**
 
 - I initialise the script by formatting SQL queries and defining a SERVICES_MENU which prints available services from the database:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-44-42.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-44-42.png)
 
 - The fifteenth test now passes:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-45-37.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-10-45-37.png)
 
 
 - If a selected service does not exist then the menu should be displayed again. I update the services menu to display any arguments passed into it. I first check if the users input is a number and then query the database to see if a services exists for the give ID:
@@ -159,15 +159,15 @@ ALTER TABLE
 
 - The entire script looks like:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-08-08.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-11-08-08.png)
 
 - Executing the script:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-12-09.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-11-12-09.png)
 
 - The first 15 tests now pass! The fifteenth test being:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-14-09.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-11-14-09.png)
 
 ### **Getting Customer Details**
 
@@ -175,23 +175,23 @@ ALTER TABLE
 
 - The SERVICES_MENU function is now defined as:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-33-14.png)
+   ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-11-33-14.png)
 
 ### **Script at this point**
 
 - The entire script looks like:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-34-26.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-11-34-26.png)
 
 
 - Executing the script:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-36-18.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-11-36-18.png)
 
 
 - The first 16 tests now pass:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-38-42.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-11-38-42.png)
 
 ### **Inserted Appointments Into Database**
 
@@ -199,7 +199,7 @@ ALTER TABLE
 
 - The SERVICES_MENU function is now defined as:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-59-14.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-11-59-14.png)
 
 
 - All tests now pass!
@@ -210,8 +210,8 @@ ALTER TABLE
 
 - The finished script looks like:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-12-05-00.png
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-12-05-00.png)
 
 - Executing the script:
 
-    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-12-16-07.png)
+    ![](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler/screenshots/2022-12-29-12-16-07.png)
