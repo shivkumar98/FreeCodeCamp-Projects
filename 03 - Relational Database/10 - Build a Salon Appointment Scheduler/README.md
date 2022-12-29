@@ -32,3 +32,91 @@ In this project I will create an interactive Bash program that uses PostgreSQL t
 20) You can insert another row into appointments table by entering 2, 555-555-5555, 11am if the number is already in the table
 21) After an appointment is successfully added, you should output the message:
 "I have put you doen for a &lt;service&gt; at  &lt;time&gt;, &lt;name&gt;.
+
+
+## Creating Database:
+
+- I logged into postgres in the terminal:
+
+    ~/project$ psql --username=freecodecamp --dbname=postgres
+
+- Connected to database:
+
+postgres=> \c salon 
+You are now connected to database "salon" as user "freecodecamp".
+
+- Created 3 tables:
+
+salon=> CREATE TABLE customers();
+CREATE TABLE
+salon=> CREATE TABLE appointments();
+CREATE TABLE
+salon=> CREATE TABLE services();
+CREATE TABLE
+
+- Added primary key for each table:
+
+salon=> ALTER TABLE customers ADD COLUMN customer_id SERIAL PRIMARY KEY;
+ALTER TABLE
+salon=> ALTER TABLE appointments ADD COLUMN appointment_id SERIAL PRIMARY KEY;
+ALTER TABLE
+salon=> ALTER TABLE services ADD COLUMN service_id SERIAL PRIMARY KEY;
+ALTER TABLE
+
+- The first 4 tests now pass:
+
+![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-05-56.png)
+
+- Adding customer_id foreign key to appointments table:
+
+salon=> ALTER TABLE appointments ADD COLUMN customer_id INT NOT NULL;ALTER TABLE
+salon=> ALTER TABLE appointments ADD FOREIGN KEY(customer_id) REFERENCES customers(customer_id);
+ALTER TABLE
+
+- Fifth test now passes:
+
+![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-11-14.png)
+
+- Adding service_id foreign key to appointments table:
+
+salon=> ALTER TABLE appointments ADD COLUMN service_id INT NOT NULL;ALTER TABLE
+salon=> ALTER TABLE appointments ADD FOREIGN KEY(service_id) REFERENCES services(service_id);
+ALTER TABLE
+
+- Sixth test now passes:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-13-32.png)
+
+- Added phone column to customers table:
+
+salon=> ALTER TABLE customers ADD COLUMN phone VARCHAR(20) UNIQUE;
+ALTER TABLE
+
+- Seventh test now passes:
+
+![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-18-25.png)
+
+- Added name columns to customers and services table:
+
+salon=> ALTER TABLE customers ADD COLUMN name VARCHAR(30);
+ALTER TABLE
+salon=> ALTER TABLE services ADD COLUMN name VARCHAR(30);
+ALTER TABLE
+
+- Adding time column to appointments:
+
+salon=> ALTER TABLE appointments ADD COLUMN time VARCHAR(10);
+ALTER TABLE
+
+- Eighth test now passes:
+
+![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-23-42.png)
+
+- Adding rows to the services table:
+
+salon=> INSERT INTO services(name) VALUES ('Haircut'),('Hair wash and style'),('Nails'),('Pedicure'),('All services');
+INSERT 0 5
+
+- Ninth test now passes:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-27-30.png)
