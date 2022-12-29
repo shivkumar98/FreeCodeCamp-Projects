@@ -162,3 +162,27 @@ codeally@97e30f6002bb:~/project$ chmod +x salon.sh
 - The first 15 tests now pass! The fifteenth test being:
 
     ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/2022-12-29-11-14-09.png)
+
+### Getting Customer Details:
+
+- I update the SERVICES_MENU function to ask for a phone number. The script checks if the number exists in the customers database. If it does exist, the script will ask for the time for the appointment. If its a new customer then it will ask for their name and then appointment time
+
+- The SERVICES_MENU function is now defined as:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/2022-12-29-11-33-14.png)
+
+### Script at this point
+
+- The entire script looks like:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/2022-12-29-11-34-26.png)
+
+
+- Executing the script:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/2022-12-29-11-36-18.png)
+
+
+- The first 16 tests now pass:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/2022-12-29-11-38-42.png)
