@@ -527,3 +527,82 @@ Git is a version control sytstem that keeps track of all the changes you make to
 - I add all the files to staging:
 
         ~/project/sql_reference$ git add .
+
+- I commit the changes:
+
+    ~/project/sql_reference$ git commit -m "feat: add drop column reference"
+        [feat/add-column-references 5c0afc2] feat: add drop column reference
+        1 file changed, 2 insertions(+), 1 deletion(-)
+
+- Looking at the commit history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-41-02.png)    
+
+- Switching back to main branch:
+
+        ~/project/sql_reference$ git checkout main
+            Switched to branch 'main'
+
+# 13 Creating New Feature Branch:
+
+- I create a new branch called feat/add-insert-row-reference:
+
+        ~/project/sql_reference$ git checkout -b feat/add-insert-row-reference
+            Switched to a new branch 'feat/add-insert-row-reference'
+
+## Updating sql_reference.json:
+
+- I add a new key-value pair to the JSON file.
+
+- The JSON file now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-49-36.png)
+
+- Checking status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-50-11.png)
+
+- Checking differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-50-42.png)
+
+- Added files to staging:
+
+    ~/project/sql_reference$ git add .
+
+- Commiting:
+
+        ~/project/sql_reference$ git commit -m "feat: add insert row reference"
+            [feat/add-insert-row-reference 1dd6d5f] feat: add insert row reference
+            1 file changed, 3 insertions(+)
+
+- Switching back to main branch to merge changes:
+
+        ~/project/sql_reference$ git checkout main
+
+- Merged branches:
+
+        ~/project/sql_reference$ git merge feat/add-insert-row-reference
+        Updating d3609d2..1dd6d5f
+        Fast-forward
+        sql_reference.json | 3 +++
+        1 file changed, 3 insertions(+)
+
+- Checking logs:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-54-29.png)
+
+### Changing to feat/add-column-references branch
+
+- I changed branches:
+
+        ~/project/sql_reference$ git checkout feat/add-column-references
+            Switched to branch 'feat/add-column-references'
+
+- I rebase this branch from main branch:
+
+        ~/project/sql_reference$ git rebase main
+
+- The rebasing fails:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-58-19.png)
