@@ -120,3 +120,45 @@ INSERT 0 5
 - Ninth test now passes:
 
     ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-27-30.png)
+
+## Creating Salon Script
+
+- I create a salon.sh script in the project folder:
+
+codeally@97e30f6002bb:~/project$ touch salon.sh
+codeally@97e30f6002bb:~/project$ echo "#! /bin/bash" >> salon.sh
+codeally@97e30f6002bb:~/project$ chmod +x salon.sh
+
+- Tests 10-12 now pass:
+
+![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-31-46.png)
+
+
+### Services Menu
+
+- I initialise the script by formatting SQL queries and defining a SERVICES_MENU which prints available services from the database:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-44-42.png)
+
+- The fifteenth test now passes:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-10-45-37.png)
+
+
+- If a selected service does not exist then the menu should be displayed again. I update the services menu to display any arguments passed into it. I first check if the users input is a number and then query the database to see if a services exists for the give ID:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-06-54.png)
+
+### Script at this point
+
+- The entire script looks like:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-08-08.png)
+
+- Executing the script:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/screenshots/2022-12-29-11-12-09.png)
+
+- The first 15 tests now pass! The fifteenth test being:
+
+    ![](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop/2022-12-29-11-14-09.png)
