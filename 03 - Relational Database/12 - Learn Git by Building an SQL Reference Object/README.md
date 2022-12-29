@@ -292,3 +292,60 @@ Git is a version control sytstem that keeps track of all the changes you make to
 - This prints the following to terminal:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-15-09-16.png)
+
+- Checking to commit history again:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-15-12-28.png)
+
+### Deleting a Branch
+
+- We can delete a branch using the branch command with the -d flag.
+
+- We shall delete the old branch:
+
+        ~/project/sql_reference$ git branch -d feat/add-create-table-reference
+            Deleted branch feat/add-create-table-reference (was 87efc2f).
+
+## New Branch: feat/add-drop-table-reference
+
+### Creating New Branch
+
+- We can use the checkout command to create and switch to a new branch named feat/add-drop-table-reference:
+
+        ~/project/sql_reference$ git checkout -b feat/add-drop-table-reference
+
+### Updating sql_reference.json
+
+- I update the sql_reference.json with a new key-value pair for the table object.
+
+- The sql_reference.json now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-15-22-54.png)
+
+- Checking the status again:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-15-24-06.png)
+
+- Checking the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-15-24-42.png)
+
+- Added json file to staging:
+
+        ~/project/sql_reference$ git add sql_reference.json
+
+### Commiting Changes
+
+- Commiting the changes to git:
+
+        ~/project/sql_reference$ git commit -m "feat: add drop table reference"
+
+### Switching Back to main Branch
+
+- We switch back to the main branch:
+
+        ~/project/sql_reference$ git checkout main
+
+- I merge the changes from the other branch:
+
+        ~/project/sql_reference$ git merge feat/add-drop-table-reference
