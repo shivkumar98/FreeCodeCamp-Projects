@@ -428,6 +428,8 @@ Git is a version control sytstem that keeps track of all the changes you make to
         ~/project/sql_reference$ git checkout -b fix/create-table-syntax
             Switched to a new branch 'fix/create-table-syntax'
 
+## Fixing Bug
+
 - The create table command in the JSON file is missing the brackets!
 
 - I update the sql_reference.json file:
@@ -439,5 +441,89 @@ Git is a version control sytstem that keeps track of all the changes you make to
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-15-58-51.png)
 
 - I then add the files to staging area:
+
+        ~/project/sql_reference$ git add .
+
+## Commit Changes
+
+- I commiit the changes:
+
+        ~/project/sql_reference$ git commit -m "fix: create table syntax"
+        [fix/create-table-syntax 3ad2ef3] fix: create table syntax
+        1 file changed, 1 insertion(+), 1 deletion(-)
+
+## Change Back To main Branch
+
+- I change back to the main branch to merge the fix:
+
+        ~/project/sql_reference$ git checkout main
+        Switched to branch 'main'
+
+- Merge:
+
+        ~/project/sql_reference$ git merge fix/create-table-syntax
+        Updating 16ca4d4..3ad2ef3
+        Fast-forward
+        sql_reference.json | 2 +-
+        1 file changed, 1 insertion(+), 1 deletion(-)
+
+- Displaying commit history of main branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-09-28.png)
+
+- I delete the fix branch:
+
+        ~/project/sql_reference$ git branch -d fix/create-table-syntax
+            Deleted branch fix/create-table-syntax (was d3609d2).
+
+## Switching Back to Feature Branch
+
+- I switch back to the feature branch:
+
+        ~/project/sql_reference$ git checkout feat/add-column-references
+            Switched to branch 'feat/add-column-references'
+
+- I display the commits of this branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-14-31.png)
+
+<br><hr>
+
+# 12 Rebase Branch
+
+- The bug was fixed in the fix branch and merged to the main branch. We want the feat branch to pull the changes from the main branch. 
+
+## git rebase
+
+- We can rebase from the main branch with the following command:
+
+        ~/project/sql_reference$ git rebase main
+
+- This prints to the terminal:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-24-55.png)
+
+- Displaying the git history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-25-58.png)
+
+
+## Updating sql_reference.json:
+
+- I add a drop key to the column object in the json file.
+
+- The sql_reference.json file now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-33-04.png)
+
+- Looking at the status, we can see the file has been modified:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-33-52.png)
+
+- Checking the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-34-31.png)
+
+- I add all the files to staging:
 
         ~/project/sql_reference$ git add .
