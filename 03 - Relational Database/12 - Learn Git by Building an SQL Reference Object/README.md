@@ -592,12 +592,14 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-54-29.png)
 
-### Changing to feat/add-column-references branch
+## Changing to feat/add-column-references branch
 
 - I changed branches:
 
         ~/project/sql_reference$ git checkout feat/add-column-references
             Switched to branch 'feat/add-column-references'
+
+## Rebase Conflict
 
 - I rebase this branch from main branch:
 
@@ -606,3 +608,74 @@ Git is a version control sytstem that keeps track of all the changes you make to
 - The rebasing fails:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-16-58-19.png)
+
+- Looking at the sql_reference.json file:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-03-44.png)
+
+- I update the JSON file, so it now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-06-34.png)
+
+- Checking the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-07-05.png)
+
+- It says I'm still in process of rebasing. So I add the file to staging:
+
+        ~/project/sql_reference$ git add .
+
+- Checking the status again:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-08-32.png)
+
+- It shows all conflicts fixed so I trun the suggested command:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-10-05.png)
+
+- Viewing commit history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-10-44.png)    
+
+## Updating sql_reference.json Again
+
+- I update the JSON file again, so it now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-12-28.png)
+
+- Checking the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-12-59.png)
+
+- Checking the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-13-25.png)
+
+- Adding files to staging:
+
+        ~/project/sql_reference$ git add .
+
+- Commiting changes:
+
+        ~/project/sql_reference$ git commit -m "feat: add rename column reference"
+        [feat/add-column-references 958b7b9] feat: add rename column reference
+        1 file changed, 2 insertions(+), 1 deletion(-)
+
+# 14 Going Back to feat/add-insert-row-reference Branch
+
+- I change to the other feature branch:
+
+        ~/project/sql_reference$ git checkout feat/add-insert-row-reference
+            Switched to branch 'feat/add-insert-row-reference'
+
+## Updating sql_reference.json file:
+
+- I add another key-value pair to the row object with value: "Update table_name SET column_name = new_value WHERE condition;"
+
+- The sql_reference.json is updated to:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-19-26.png)
+
+- I check the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-20-21.png)
