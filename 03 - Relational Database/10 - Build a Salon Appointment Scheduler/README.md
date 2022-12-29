@@ -1,10 +1,29 @@
 # **10 - Build a Salon Appointment Scheduler**
     
+## **Table of Contents**
+[**1 Introduction**](#--1-introduction--)
+
+[**2 Instructions**](#--2-instructions--)
++ [User Stories](#--user-stories--)
+
+[**3 Creating Database**](#--3-creating-database--)
+
+[**4 Creating Salon Script**](#--4-creating-salon-script--)
++ [Services Menu](#--services-menu--)
++ [Script at this point](#--script-at-this-point--)
++ [Getting Customer Details](#--getting-customer-details--)
++ [Script at this point](#--script-at-this-point---1)
++ [Inserted Appointments Into Database](#--inserted-appointments-into-database--)
+
+[**5 Finished script**](#--5-finished-script--)
+
+<br><hr>
+
 ## **1 Introduction**
 
 In this project I will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon.
 
-<hr>
+<br><hr>
 
 ## **2 Instructions**
 
