@@ -26,12 +26,12 @@
 
 ### Certification Projects:
 
-1) [**Build a Celestial Bodies Database using SQL**](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
+1) [**Build a Celestial Bodies Database**](03%20-%20Build%20a%20Celestial%20Bodies%20Database)
 
 2) [**Build a World Cup Database**](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database)
 
 3) [**Build a Salon Appointment Scheduler**](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler)
 
-4) [**Periodic Table Database**]()
+4) [**Build a Periodic Table Database**]()
 
-5) [**Number Guessing Game**]()
+5) [**Build a Number Guessing Game**]()
