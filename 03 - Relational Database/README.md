@@ -20,7 +20,7 @@
 
 7) [**Learn Bash and SQL by Building a Bike Rental Shop**](/03%20-%20Relational%20Database/09%20-%20Learn%20Bash%20and%20SQL%20by%20Building%20a%20Bike%20Rental%20Shop)
 
-8) [**Learn Nano by Building a Castle**]()
+8) [**Learn Nano by Building a Castle**](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle)
 
 9) [**Learn Git by Building an SQL Reference Object**]()
 
