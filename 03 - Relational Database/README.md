@@ -30,7 +30,7 @@
 
 2) [**Build a World Cup Database**](/03%20-%20Relational%20Database/07%20-%20Build%20a%20World%20Cup%20Database)
 
-3) [**Build a Salon Appointment Scheduler**]()
+3) [**Build a Salon Appointment Scheduler**](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler)
 
 4) [**Periodic Table Database**]()
 
