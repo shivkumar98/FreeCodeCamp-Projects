@@ -37,66 +37,66 @@ Nano is a program which allows you to edit files right in the terminal.
 
 - I echo someline breaks:
 
-![](2022-12-29-13-01-02.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-01-02.png)
 
 - I draw the ground level using 20 underscores:
 
-![](2022-12-29-13-01-58.png)]
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-01-58.png)]
 
 - I exit nano using ctrl+x
 
 - I execute my castle script again:
 
-![](2022-12-29-13-03-13.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-03-13.png)
 
 - I add vertical bars around the ground floor:
 
-    ![](2022-12-29-13-04-11.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-04-11.png)
 
 - I add another story to the castle:
 
-    ![](2022-12-29-13-04-57.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-04-57.png)
 
 - You can use ctrl+k to cut and ctrl+u to uncut or paste. I add five more stories to the castle:
 
-    ![](2022-12-29-13-06-37.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-06-37.png)
 
 - I make the roof for the castle:
 
-![](2022-12-29-13-13-24.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-13-24.png)
 
 - I add the lookout towers:
 
-![](2022-12-29-13-15-28.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-15-28.png)
 
 - Added peaks:
 
-![](2022-12-29-13-16-07.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-16-07.png)
 
 - Running the script:
 
-![](2022-12-29-13-16-47.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-16-47.png)
 
 - I add two spaces to the right hand side of the slope of the tower:
 
-![](2022-12-29-13-19-58.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-19-58.png)
 
 - Running the script:
 
-    ![](2022-12-29-13-20-37.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-20-37.png)
 
 - Adding windows to fourth story:
 
-    ![](2022-12-29-13-22-53.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-22-53.png)
 
 - Adding the door:
 
-![](2022-12-29-13-24-14.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-24-14.png)
 
 - I add a message at the beginning of the castle script:
 
-    ![](2022-12-29-13-25-58.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-25-58.png)
 
 - Finally, running the script:
 
-    ![](2022-12-29-13-26-32.png)
+    ![](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle/screenshots/2022-12-29-13-26-32.png)
