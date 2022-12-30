@@ -280,3 +280,16 @@ Your script (.sh) file should have executable permissions
 
 - I realise I made an error and restarted the project!
 
+- Adding Fluroine to the database:
+
+        INSERT INTO elements(atomic_number, symbol, name)
+        VALUES (9, 'F', 'Fluorine');
+        INSERT 0 1`
+
+        INSERT INTO properties(atomic_number, type, atomic_mass, melting_point_celsius, boiling_point_celsius, type_id)
+        VALUES (9, 'nonmetal', 18.998, -220, -188.1,1);
+        INSERT 0 1
+
+- The 15th test now passes:
+
+    ![](2022-12-30-18-00-16.png)
