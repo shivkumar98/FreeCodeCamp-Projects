@@ -1,8 +1,127 @@
 # 12 Learn Git by Building an SQL Reference Object
 
+# Table of Contents:
+
+[1 Basic Git Commands](#1-basic-git-commands)
+* [git init](#git-init)
+* [Branches](#branches)
+* [git status](#git-status)
+* [git checkout](#git-checkout)
+
+[2 Creating README.md](#2-creating-readmemd)
+  * [git add <file_name>](#git-add--file-name-)
+
+
+[3 Creating sql_reference.json](#3-creating-sql-referencejson)
+
+[4 git commit](#4-git-commit)
+  * [git log](#git-log)
+
+[5 Adding Database Key to sql_reference.json](#5-adding-database-key-to-sql-referencejson)
+  * [git diff](#--git-diff--)
+
+[6 Adding drop key to database object](#6-adding-drop-key-to-database-object)
+
+[7 Creatinng Another Branch](#7-creatinng-another-branch)
+  * [git branch](#--git-branch--)
+  * [Creating Add Create Table Reference Branch](#creating-add-create-table-reference-branch)
+  * [Viewing the branches](#viewing-the-branches)
+  * [git checkout <branch_name>](#git-checkout--branch-name-)
+
+[8 Merging Branches](#8-merging-branches)
+  * [Adding SQL Table reference To sql_reference.json](#--adding-sql-table-reference-to-sql-referencejson--)
+  * [git log --oneline](#--git-log---oneline--)
+  * [Switching back to main branch](#--switching-back-to-main-branch--)
+  * [git merge](#--git-merge--)
+  * [Deleting a Branch](#--deleting-a-branch--)
+
+[9 Creating Add Drop Table Reference Branch](#9-creating-add-drop-table-reference-branch)
+  * [Creating New Branch](#--creating-new-branch--)
+  * [Adding Table Key to sql_reference.json](#--adding-table-key-to-sql-referencejson--)
+  * [Commiting Changes](#--commiting-changes--)
+  * [Switching Back to main Branch](#--switching-back-to-main-branch--)
+  * [Deleting Created Branch](#--deleting-created-branch--)
+
+[10 New Branch: feat/add-column-references](#10-new-branch--feat-add-column-references)
+  * [Creating Add Column Branch](#--creating-add-column-branch--)
+  * [Adding Column Key to sql_reference.json file](#--adding-column-key-to-sql-referencejson-file--)
+
+[11 Fixing error on new branch](#11--fixing-error-on-new-branch)
+  * [Creating fix/create-table-syntax Branch](#--creating-fix-create-table-syntax-branch--)
+  * [Fixing Bug in Create Table Line in sql_reference.json](#--fixing-bug-in-create-table-line-in-sql-referencejson--)
+  * [Commit Changes](#--commit-changes--)
+  * [Change Back To main Branch](#--change-back-to-main-branch--)
+  * [Switching Back to Feature Branch](#switching-back-to-feature-branch)
+
+[12 Rebasing a Branch](#12-rebasing-a-branch)
+  * [git rebase](#git-rebase)
+  * [Updating sql_reference.json:](#updating-sql-referencejson-)
+
+[13 Creating New Feature Branch:](#13-creating-new-feature-branch-)
+  * [Updating sql_reference.json:](#updating-sql-referencejson--1)
+  * [Changing to feat/add-column-references branch](#changing-to-feat-add-column-references-branch) 
+  
+[14 Rebase Conflict](#14-rebase-conflict)
+  * [Updating sql_reference.json Again](#--updating-sql-referencejson-again--)
+
+[15 Going Back to feat/add-insert-row-reference Branch](#15-going-back-to-feat-add-insert-row-reference-branch)
+  * [Adding Row Update Key to sql_reference.json file](#--adding-row-update-key-to-sql-referencejson-file--)
+
+[16 Git stash](#16-git-stash)
+  * [git stash](#--git-stash--)
+  * [git stash list](#--git-stash-list--)
+  * [git stash pop](#--git-stash-pop--)
+  * [git stash show](#--git-stash-show--)
+  * [git stash apply](#--git-stash-apply--)
+  * [git stash show stasg@{#}](#--git-stash-show-stasg------)
+  * [git stash drop](#--git-stash-drop--)
+  * [Changing Back To Main Branch](#--changing-back-to-main-branch--)
+  * [Deleting Add Insert Row Reference Branch](#--deleting-add-insert-row-reference-branch--)
+
+[17 Creating Add More Row References Branch](#17-creating-add-more-row-references-branch)
+  * [Changing back to main branch](#--changing-back-to-main-branch--)
+
+[18 Changing back to Add Column References Branch](#18-changing-back-to-add-column-references-branch)
+  * [Rebasing against main branch](#--rebasing-against-main-branch--)
+  * [Adding Primary Key to sql_references.json](#adding-primary-key-to-sql-referencesjson)
+  * [Adding Foreign Key to sql_references.json](#--adding-foreign-key-to-sql-referencesjson--)
+
+[19 Changing back to Row References Branch](#19-changing-back-to-row-references-branch)
+  * [Adding Row Delete Key to the sql_reference.json File](#--adding-row-delete-key-to-the-sql-referencejson-file--)
+  * [Going Back To Main Branch To Merge](#--going-back-to-main-branch-to-merge--)
+  * [Deleting Row References Branch](#deleting-row-references-branch)
+
+[20 Creating Fix: Add Missing Rename References Branch](#20-creating-fix--add-missing-rename-references-branch)
+  * [Adding Database Rename Key to sql_reference.json](#--adding-database-rename-key-to-sql-referencejson--)
+
+[21 Going Back to Colum References Branch](#21-going-back-to-colum-references-branch)
+  * [Rebasing Against main Branch](#--rebasing-against-main-branch--)
+  * [Rebase Conflicts](#--rebase-conflicts--)
+  * [Adding unique Key to Column Object](#adding-unique-key-to-column-object)
+  * [Rebase Conntinue](#--rebase-conntinue--)
+
+[22 Undoing Commits](#22-undoing-commits)
+  * [git reset](#--git-reset--)
+  * [Git HEAD](#--git-head--)
+  * [git revert](#--git-revert--)
+  * [git show](#--git-show--)
+  * [git rebase --interactive](#--git-rebase---interactive--)
+  * [Squashing commits](#--squashing-commits--)
+  * [Switching to main Branch](#--switching-to-main-branch--)
+  * [Switching to Add Missing Rename References Branch](#--switching-to-add-missing-rename-references-branch--)
+  * [Adding Table Rename Key to sql_reference.json](#--adding-table-rename-key-to-sql-referencejson--)
+  * [Switch back to main branch](#--switch-back-to-main-branch--)
+
+[22 gitignore](#22-gitignore)
+  * [Creating add-gitignore Branch](#--creating-add-gitignore-branch--)
+  * [Creating .gitignore](#--creating-gitignore--)
+  * [Switching Back to main Branch](#--switching-back-to-main-branch---1)
+
+
+
 # Introduction
 
-Git is a version control sytstem that keeps track of all the changes you make to a codebase. In this tutorial, I will learn how Git keeps track of code by creating an object commonly used by SQL commands.
+Git is a version control sytstem that keeps track of all the changes you make to a codebase. In this  240-lesson tutorial, I will learn how Git keeps track of code by creating an object commonly used by SQL commands.
 
 <br><hr>
 
@@ -28,7 +147,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 
 
-## Git Branches
+## Branches
 
 - A git repository has branches to help keep track of the code. The "main" branch is a common branch which may be used for code for production.
 
@@ -78,7 +197,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 <br><hr>
 
-# 3 Creating sql_reference.JSON
+# 3 Creating sql_reference.json
 
 - I create another file:
 
@@ -126,7 +245,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 <br><hr>
 
-# 5 Adding Database Connection
+# 5 Adding Database Key to sql_reference.json
 
 - I update the sql_reference.json object:
 
@@ -138,7 +257,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - Git recognises that a file is modified rather than untracked since it was committed already.
 
-## git diff
+## **git diff**
 
 - We can see new changes using git diff:
 
@@ -200,13 +319,13 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 # 7 Creatinng Another Branch
 
-## git branch
+## **git branch**
 
-- I check which branch I am on using git branch command:
+- I check which branch I am on using **git branch** command:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-14-21-40.png)
 
-## Creating New Branch: git branch <branch_name>
+## Creating Add Create Table Reference Branch
 
 - We create a new branch named feat/add-create-table-reference:
 
@@ -241,7 +360,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - We often do not want to add changes directly to the main branch, we would rather merge changes from a staging branch.
 
-## Adding SQL Table reference
+## **Adding SQL Table reference To sql_reference.json**
 
 - I add another object, alongside the database property of the JSON file.
 
@@ -273,7 +392,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-14-59-22.png)
 
-## git log --oneline
+## **git log --oneline**
 
 - This is really long! We can use the --oneline flag:
 
@@ -283,7 +402,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](2022-12-29-15-01-21.png)
 
-## Switching back to main branch
+## **Switching back to main branch**
 
 - I switch back to the main branch using the checkout command:
 
@@ -300,7 +419,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-15-04-55.png)
 
-## git merge
+## **git merge**
 
 - Now that I am on the main branch, I can merge the changes in the feat/add-create-table-reference using the git merge command:
 
@@ -314,7 +433,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-15-12-28.png)
 
-## Deleting a Branch
+## **Deleting a Branch**
 
 - We can delete a branch using the branch command with the -d flag.
 
@@ -325,15 +444,15 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 <br><hr>
 
-# 9 New Branch: feat/add-drop-table-reference
+# 9 Creating Add Drop Table Reference Branch
 
-## Creating New Branch
+## **Creating New Branch**
 
 - We can use the checkout command to create and switch to a new branch named feat/add-drop-table-reference:
 
         ~/project/sql_reference$ git checkout -b feat/add-drop-table-reference
 
-## Updating sql_reference.json
+## **Adding Table Key to sql_reference.json**
 
 - I update the sql_reference.json with a new key-value pair for the table object.
 
@@ -353,13 +472,13 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
         ~/project/sql_reference$ git add sql_reference.json
 
-## Commiting Changes
+## **Commiting Changes**
 
 - Commiting the changes to git:
 
         ~/project/sql_reference$ git commit -m "feat: add drop table reference"
 
-## Switching Back to main Branch
+## **Switching Back to main Branch**
 
 - We switch back to the main branch:
 
@@ -369,7 +488,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
         ~/project/sql_reference$ git merge feat/add-drop-table-reference
 
-## Deleting Created Branch
+## **Deleting Created Branch**
 
 - I deleted the other branch:
 
@@ -380,7 +499,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 # 10 New Branch: feat/add-column-references
 
-## Creating Add Column Branch
+## **Creating Add Column Branch**
 
 - I created a new branch:
 
@@ -389,7 +508,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - This will be a working process branch!
 
-## Updating sql_reference.json file:
+## **Adding Column Key to sql_reference.json file**
 
 - I add another property to the JSON file:
 
@@ -417,18 +536,20 @@ Git is a version control sytstem that keeps track of all the changes you make to
         ~/project/sql_reference$ git checkout main
         Switched to branch 'main'
 
+<br><hr>
+
 # 11: Fixing error on new branch   
 
 - There was an error in one of the commands, we shall fix it by cloning another branch!
 
-## Creating fix/create-table-syntax Branch
+## **Creating fix/create-table-syntax Branch**
 
 - I create another branch:
 
         ~/project/sql_reference$ git checkout -b fix/create-table-syntax
             Switched to a new branch 'fix/create-table-syntax'
 
-## Fixing Bug
+## **Fixing Bug in Create Table Line in sql_reference.json**
 
 - The create table command in the JSON file is missing the brackets!
 
@@ -444,7 +565,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
         ~/project/sql_reference$ git add .
 
-## Commit Changes
+## **Commit Changes**
 
 - I commiit the changes:
 
@@ -452,7 +573,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
         [fix/create-table-syntax 3ad2ef3] fix: create table syntax
         1 file changed, 1 insertion(+), 1 deletion(-)
 
-## Change Back To main Branch
+## **Change Back To main Branch**
 
 - I change back to the main branch to merge the fix:
 
@@ -489,7 +610,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 <br><hr>
 
-# 12 Rebase Branch
+# 12 Rebasing a Branch
 
 - The bug was fixed in the fix branch and merged to the main branch. We want the feat branch to pull the changes from the main branch. 
 
@@ -639,7 +760,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-10-44.png)    
 
-## Updating sql_reference.json Again
+## **Updating sql_reference.json Again**
 
 - I update the JSON file again, so it now looks like:
 
@@ -672,7 +793,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
         ~/project/sql_reference$ git checkout feat/add-insert-row-reference
             Switched to branch 'feat/add-insert-row-reference'
 
-## Updating sql_reference.json file:
+## **Adding Row Update Key to sql_reference.json file**
 
 - I add another key-value pair to the row object with value: "Update table_name SET column_name = new_value WHERE condition;"
 
@@ -692,7 +813,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - The update we applied to sql_reference.json was an insert command, not an update
 
-## git stash
+## **git stash**
 
 - We can stash changes so we can add them to another branch:
 
@@ -710,13 +831,13 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-47-30.png)
 
-## git stash list
+## **git stash list**
 
 - We can view stashed changes with git stash list:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-48-19.png)
 
-## git stash pop
+## **git stash pop**
 
 - You can bring the changes back with git stash pop:
 
@@ -736,7 +857,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
         ~/project/sql_reference$ git stash
 
-## git stash show
+## **git stash show**
 
 - We can see a condensed view of the stashes with git stash show:
 
@@ -750,7 +871,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-55-22.png)
 
-## git stash apply
+## **git stash apply**
 
 - We can apply the change in the stash without removing it using the git stash apply command:
 
@@ -770,7 +891,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - The most recent stash will appear at the top (stash@{0})
 
-## git stash show stasg@{#}
+## **git stash show stasg@{#}**
 
 - We can display details of a specific stash by using its ID.
 
@@ -782,8 +903,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-04-51.png)
 
-
-## git stash drop
+## **git stash drop**
 
 - We have two identical stashes! We can drop a specified stash using git stash drop &lt;stashname&gt;
 
@@ -795,11 +915,13 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-08-18.png)
 
-## Changing Back To Main Branch
+## **Changing Back To Main Branch**
 
 - I switch back to main branch:
 
-## Deleting Inssert Row Reference Branch
+        ~/project/sql_reference$ git checkout main
+
+## **Deleting Add Insert Row Reference Branch**
 
 - I delete the branch:
 
@@ -843,7 +965,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-30-23.png)
 
-## Changing back to main branch
+## **Changing back to main branch**
 
 - I change back to the main branch to merge the changes:
 
@@ -854,13 +976,15 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-32-11.png)
 
+<br><hr>
+
 # 18 Changing back to Add Column References Branch
 
 - I switch back to the other branch:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-33-38.png)
 
-## Rebasing against main branch
+## **Rebasing against main branch**
 
 - I rebase against main branch:
 
@@ -912,7 +1036,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-48-22.png)
 
-## Adding Foreign Key to sql_references.json:
+## **Adding Foreign Key to sql_references.json**
 
 - I add a foreign_key key to the column object to the JSON file.
 
@@ -933,13 +1057,15 @@ Git is a version control sytstem that keeps track of all the changes you make to
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-51-37.png)
 
 
-# Changing back to Row References branch
+<br><hr>
+
+# 19 Changing back to Row References Branch
 
 - I checkout the other branch:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-52-42.png)
 
-## Adding Delete Key to the sql_reference.json File
+## **Adding Row Delete Key to the sql_reference.json File**
 
 - I add another key to the row object in the JSON file
 
@@ -959,7 +1085,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-56-07.png)
 
-## Going Back To Main Branch To Merge
+## **Going Back To Main Branch To Merge**
 
 - I checkout the main branch:
 
@@ -971,13 +1097,21 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 ## Deleting Row References Branch
 
+- I delete the feat/add-more-row-references branch:
+
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-59-18.png)
 
-# Creating Add Missing Rename References Branch
+<br><hr>
 
-- I create and checkout a new branch since we missed a bunch of renamed commands:
+# 20 Creating Fix: Add Missing Rename References Branch
+
+- I create and checkout a new branch since we missed a bunch of renamed commands!
+
+- I create and checkout a branch titled "fix/add-missing-rename-references" branch:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-00-59.png)
+
+## **Adding Database Rename Key to sql_reference.json**
 
 - I add a rename key to the database object in the JSON file:
 
@@ -996,15 +1130,21 @@ Git is a version control sytstem that keeps track of all the changes you make to
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-03-52.png)
 
 
-# Going Back to Colum References Branch
+<br><hr>
+
+# 21 Going Back to Colum References Branch
 
 - I got back to the column references branch:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-08-29.png)
 
+## **Rebasing Against main Branch**
+
 - There was a commit to main since working on this branch. I will rebase against main branch:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-09-43.png)
+
+## **Rebase Conflicts**
 
 - We have conflicts! Looking at the sql_reference.json file:
 
@@ -1046,17 +1186,23 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
         ~/project/sql_reference$ git add .
 
+## **Rebase Conntinue**
+
 - Committing changes:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-24-24.png)
 
-# Removing a Commit
+<br><hr>
+
+# 22 Undoing Commits
 
 - We shall explore ways to undo a commit.
 
-## git reset
+## **git reset**
 
 - The git reset command lets us go "back in time" by travelling to any point in your commit history.
+
+## **Git HEAD**
 
 - The current **HEAD** is a reference to the last commit
 
@@ -1086,7 +1232,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-33-43.png)
 
-## git revert
+## **git revert**
 
 - Reverting is a good way to undo a commit
 
@@ -1104,6 +1250,9 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-37-43.png)
 
+
+## **git show**
+
 - I use **git show** to display details of last commit:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-39-48.png)
@@ -1111,6 +1260,8 @@ Git is a version control sytstem that keeps track of all the changes you make to
 - I use **git show HEAD~1** to show details of orginal commit I reverted to:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-40-45.png)
+
+## **git rebase --interactive**
 
 - You can use the --interactive flag to manipulate the commits
 
@@ -1177,7 +1328,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-14-51.png)
 
-# Squashing commits
+## **Squashing commits**
 
 - Squashing commits means taking several commits and turning them into one.
 
@@ -1203,7 +1354,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-32-08.png)
 
-## Switching to main Branch
+## **Switching to main Branch**
 
 - I switch to main branch:
 
@@ -1218,7 +1369,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-35-02.png)
 
-## Switching to Add Missing Rename References Branch
+## **Switching to Add Missing Rename References Branch**
 
 - I checkout the other branches:
 
@@ -1232,7 +1383,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-38-56.png)
 
-## Adding rename key to table objectg in JSON file
+## **Adding Table Rename Key to sql_reference.json**
 
 - I udpate the sql_reference.json file to:
 
@@ -1282,7 +1433,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-58-28.png)
 
-## Switch back to main branch:
+## **Switch back to main branch**
 
 - I checkout the main branch:
 
@@ -1302,9 +1453,11 @@ Git is a version control sytstem that keeps track of all the changes you make to
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-01-17.png)
 
 
-# gitignore
+<br><hr>
 
-## Creating add-gitignore Branch
+# 23 gitignore
+
+## **Creating add-gitignore Branch**
 
 - I create and checkout a new branch:
 
@@ -1324,7 +1477,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-06-50.png)
 
-## Creating .gitignore
+## **Creating .gitignore**
 
 - I create the .gitignore file:
 
@@ -1369,4 +1522,53 @@ Git is a version control sytstem that keeps track of all the changes you make to
 - I add the file to staging:
 
     ~/project/sql_reference$ git add .
-s
+
+- I commit the changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-21-52.png)
+
+- Displaying last 5 commits:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-22-40.png)
+
+- The last two commits can be squashed, so I rebase the last 2 commits using **git rebase --interactive HEAD~2**. This brings up Nano:
+
+    ![](2022-12-30-13-41-02.png)    
+
+- I squash the commit for add sample.env:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-41-45.png)
+
+- I save changes and this opens a new instance of Nano:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-43-59.png)
+
+- I add a message to the top of the file:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-44-43.png)
+
+- I check the commit details for last commit:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-45-50.png)
+
+## **Switching Back to main Branch**
+
+- I checkout the main branch:
+
+        ~/project/sql_reference$ git checkout main
+        Switched to branch 'main'
+
+- I merge from the previous branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-47-26.png)
+
+- Deleting the previous branch:
+
+        ~/project/sql_reference$ git branch -d feat/add-gitignore
+        Deleted branch feat/add-gitignore (was a798e23).
+
+- Displaying the commit history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-48-38.png)
+
+- Tutorial is now complete!
