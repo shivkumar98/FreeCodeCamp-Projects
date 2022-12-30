@@ -543,6 +543,8 @@ Git is a version control sytstem that keeps track of all the changes you make to
         ~/project/sql_reference$ git checkout main
             Switched to branch 'main'
 
+<br><hr>
+
 # 13 Creating New Feature Branch:
 
 - I create a new branch called feat/add-insert-row-reference:
@@ -599,7 +601,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
         ~/project/sql_reference$ git checkout feat/add-column-references
             Switched to branch 'feat/add-column-references'
 
-## Rebase Conflict
+## 14 Rebase Conflict
 
 - I rebase this branch from main branch:
 
@@ -661,7 +663,9 @@ Git is a version control sytstem that keeps track of all the changes you make to
         [feat/add-column-references 958b7b9] feat: add rename column reference
         1 file changed, 2 insertions(+), 1 deletion(-)
 
-# 14 Going Back to feat/add-insert-row-reference Branch
+<br><hr>
+
+# 15 Going Back to feat/add-insert-row-reference Branch
 
 - I change to the other feature branch:
 
@@ -679,3 +683,97 @@ Git is a version control sytstem that keeps track of all the changes you make to
 - I check the status:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-29-17-20-21.png)
+
+<br><hr>
+
+# 16 Git stash
+
+- We made a mistake earlier! 😰😰😰
+
+- The update we applied to sql_reference.json was an insert command, not an update
+
+### git stash
+
+- We can stash changes so we can add them to another branch:
+
+        ~/project/sql_reference$ git stash
+
+- This prints to terminal:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-45-41.png)
+
+- The uncommited changes have now dissapeared:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-46-28.png)
+
+- Looking at the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-47-30.png)
+
+### git stash list
+
+- We can view stashed changes with git stash list:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-48-19.png)
+
+### git stash pop
+
+- You can bring the changes back with git stash pop:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-49-04.png)
+
+- This removes the last stashed save!
+
+- The JSON file is restored:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-50-07.png)
+
+- Listing the stashes again returns nothing:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-52-14.png)
+
+- I stash the changes again:
+
+        ~/project/sql_reference$ git stash
+
+### git stash show
+
+- We can see a condensed view of the stashes with git stash show:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-53-56.png)
+
+- We can see the full changes of the last patch using the -p flag:
+
+        ~/project/sql_reference$ git stash show -p
+
+- This diaplays:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-55-22.png)
+
+### git stash apply
+
+- We can apply the change in the stash without removing it using the git stash apply command:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-57-09.png)
+
+- Looking at the JSON file, we can see the stash has been applied:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-57-50.png)
+
+- Looking at the stash list again:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-58-28.png)
+
+- I stash the changes again
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-59-24.png)
+
+- The most recent stash will appear at the top (stash@{0})
+
+### git stash show stasg@{#}
+
+- We can display details of a specific stash by using its ID.
+
+- I display details of oldest stash:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-01-42.png)
