@@ -32,6 +32,6 @@
 
 3) [**Build a Salon Appointment Scheduler**](/03%20-%20Relational%20Database/10%20-%20Build%20a%20Salon%20Appointment%20Scheduler)
 
-4) [**Build a Periodic Table Database**]()
+4) [**Build a Periodic Table Database**](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database)
 
 5) [**Build a Number Guessing Game**]()
