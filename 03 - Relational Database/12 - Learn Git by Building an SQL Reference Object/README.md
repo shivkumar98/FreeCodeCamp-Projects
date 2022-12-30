@@ -692,7 +692,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - The update we applied to sql_reference.json was an insert command, not an update
 
-### git stash
+## git stash
 
 - We can stash changes so we can add them to another branch:
 
@@ -710,13 +710,13 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-47-30.png)
 
-### git stash list
+## git stash list
 
 - We can view stashed changes with git stash list:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-48-19.png)
 
-### git stash pop
+## git stash pop
 
 - You can bring the changes back with git stash pop:
 
@@ -736,7 +736,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
         ~/project/sql_reference$ git stash
 
-### git stash show
+## git stash show
 
 - We can see a condensed view of the stashes with git stash show:
 
@@ -750,7 +750,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-09-55-22.png)
 
-### git stash apply
+## git stash apply
 
 - We can apply the change in the stash without removing it using the git stash apply command:
 
@@ -770,10 +770,127 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - The most recent stash will appear at the top (stash@{0})
 
-### git stash show stasg@{#}
+## git stash show stasg@{#}
 
 - We can display details of a specific stash by using its ID.
 
 - I display details of oldest stash:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-01-42.png)
+
+- Displaying all details using patch flag:
+
+    ![](2022-12-30-10-04-51.png)
+
+
+## git stash drop
+
+- We have two identical stashes! We can drop a specified stash using git stash drop &lt;stashname&gt;
+
+- I drop one of the stashes since they're identical:
+
+    ![](2022-12-30-10-07-17.png)
+
+- Listing stashes again:
+
+    ![](2022-12-30-10-08-18.png)
+
+## Changing Back To Main Branch
+
+- I switch back to main branch:
+
+## Deleting Inssert Row Reference Branch
+
+- I delete the branch:
+
+    ![](2022-12-30-10-12-41.png)
+
+
+<br><hr>
+
+# 17 Creating Add More Row References Branch
+
+- I create and checkout a new branch:
+
+        ~/project/sql_reference$ git checkout -b feat/add-more-row-references
+        Switched to a new branch 'feat/add-more-row-references'
+
+- Viewing stashes again:
+
+    ![](2022-12-30-10-25-34.png)
+
+- Popping the stash:
+
+    ![](2022-12-30-10-26-44.png)
+
+- Verifying the stash list:
+
+    ![](2022-12-30-10-27-43.png)
+
+- Looking at the difference, we can see the update key has been added:
+
+    ![](2022-12-30-10-28-33.png)
+
+- Adding changes:
+
+        ~/project/sql_reference$ git add .
+
+- Viewing the status:
+
+    ![](2022-12-30-10-29-40.png)
+
+- Committing the changes:
+
+    ![](2022-12-30-10-30-23.png)
+
+## Changing back to main branch
+
+- I change back to the main branch to merge the changes:
+
+        ~/project/sql_reference$ git checkout main
+        Switched to branch 'main'
+
+- Merge the changes:
+
+    ![](2022-12-30-10-32-11.png)
+
+# 18 Changing back to Add Column References Branch
+
+- I switch back to the other branch:
+
+    ![](2022-12-30-10-33-38.png)
+
+## Rebasing against main branch
+
+- I rebase against main branch:
+
+    ![](2022-12-30-10-34-58.png)
+
+- There is an error!
+
+- Looking at the JSON file again:
+
+    ![](2022-12-30-10-35-43.png)
+
+- I make the JSON file whole again:
+
+    ![](2022-12-30-10-36-49.png)
+
+- Looking at the status:
+
+    ![](2022-12-30-10-37-33.png)
+
+- I add the files to staging:
+
+        ~/project/sql_reference$ git add .
+
+- Displaying the status again:
+
+    ![](2022-12-30-10-38-57.png)
+
+- Continuing with rebase command:
+
+    ![](2022-12-30-10-39-34.png)
+
+- Viewing the commit history:
+
