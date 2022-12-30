@@ -346,3 +346,60 @@ Your script (.sh) file should have executable permissions
 
 - I then initialise git in the folder:
 
+~/project/periodic_table$ git init
+Initialized empty Git repository in /home/codeally/project/periodic_table/.git/
+
+- The first test now passes:
+
+    ![](2022-12-30-18-17-04.png)
+
+- I create a main branch and checkout:
+
+~/project/periodic_table$ git checkout -b main
+Switched to a new branch 'main'
+
+- I create my element.sh file:
+
+~/project/periodic_table$ touch element.sh
+
+- I add all files to staging:
+
+        ~/project/periodic_table$ git add .
+
+- I then make my initial commit:
+
+        ~/project/periodic_table$ git commit -m "Initial commit"
+        [main (root-commit) e5166f4] Initial commit
+        1 file changed, 0 insertions(+), 0 deletions(-)
+        create mode 100644 element.sh
+
+- The following test now passes:
+
+    ![](2022-12-30-18-21-34.png)
+
+
+## Part 3
+
+- I add execution permission to element.sh
+
+        ~/project/periodic_table$ chmod +x element.sh 
+
+- The following test passes:
+
+    ![](2022-12-30-18-32-01.png)
+
+
+- I initalise my script so that it checks if an argument is provided:
+
+    ![](2022-12-30-18-34-38.png)
+
+- The following test passes:
+
+    ![](2022-12-30-18-36-34.png)
+
+- I updated the script so that almost all tests pass:
+
+    ![](2022-12-30-19-39-20.png)
+
+    
+- I added more commits now all tests pass!
