@@ -325,3 +325,24 @@ Your script (.sh) file should have executable permissions
     ![](2022-12-30-18-09-53.png)
 
 - I'm finished with part 1!
+
+## Part 2
+
+- The test which need to pass are:
+
+    ![](2022-12-30-18-13-37.png)
+
+- The commits I make must obide the following:
+
+    ![](2022-12-30-18-14-18.png)
+
+- I make a periodic_table directory in the project folder:
+
+        ~/project$ mkdir periodic_table
+
+- I change into the folder:
+
+~/project$ cd periodic_table
+
+- I then initialise git in the folder:
+
