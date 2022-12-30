@@ -1249,3 +1249,67 @@ Git is a version control sytstem that keeps track of all the changes you make to
 - Committing changes:
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-42-46.png)
+
+- Viewing last 5 commits again:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-50-49.png)
+
+- There are two commits which can be squashed! I rebase using **git rebase --interactive HEAD~2**
+
+- This brings up nano:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-53-11.png)
+
+- I replace pick with "s":
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-54-11.png)
+
+- This opens another instance of Nano:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-54-38.png)
+
+- I add a new commit message:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-56-54.png)
+
+- I add the following line:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-57-13.png)
+
+- I save and exit Nano.
+
+- I display details of the last commit:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-58-28.png)
+
+## Switch back to main branch:
+
+- I checkout the main branch:
+
+        ~/project/sql_reference$ git checkout main
+        Switched to branch 'main'
+
+- I merge branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-59-48.png)
+
+- I delete the other branches except main:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-00-48.png)
+
+- Viewing the commit history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-01-17.png)
+
+
+# gitignore
+
+## Creating add-gitignore Branch
+
+- I create and checkout a new branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-02-37.png)
+
+- I create a file called ".env":
+
+        ~/project/sql_reference$ touch .env
