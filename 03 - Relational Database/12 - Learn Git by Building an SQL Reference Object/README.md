@@ -780,7 +780,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - Displaying all details using patch flag:
 
-    ![](2022-12-30-10-04-51.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-04-51.png)
 
 
 ## git stash drop
@@ -789,11 +789,11 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - I drop one of the stashes since they're identical:
 
-    ![](2022-12-30-10-07-17.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-07-17.png)
 
 - Listing stashes again:
 
-    ![](2022-12-30-10-08-18.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-08-18.png)
 
 ## Changing Back To Main Branch
 
@@ -803,7 +803,7 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - I delete the branch:
 
-    ![](2022-12-30-10-12-41.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-12-41.png)
 
 
 <br><hr>
@@ -817,19 +817,19 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - Viewing stashes again:
 
-    ![](2022-12-30-10-25-34.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-25-34.png)
 
 - Popping the stash:
 
-    ![](2022-12-30-10-26-44.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-26-44.png)
 
 - Verifying the stash list:
 
-    ![](2022-12-30-10-27-43.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-27-43.png)
 
 - Looking at the difference, we can see the update key has been added:
 
-    ![](2022-12-30-10-28-33.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-28-33.png)
 
 - Adding changes:
 
@@ -837,11 +837,11 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - Viewing the status:
 
-    ![](2022-12-30-10-29-40.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-29-40.png)
 
 - Committing the changes:
 
-    ![](2022-12-30-10-30-23.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-30-23.png)
 
 ## Changing back to main branch
 
@@ -852,33 +852,33 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - Merge the changes:
 
-    ![](2022-12-30-10-32-11.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-32-11.png)
 
 # 18 Changing back to Add Column References Branch
 
 - I switch back to the other branch:
 
-    ![](2022-12-30-10-33-38.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-33-38.png)
 
 ## Rebasing against main branch
 
 - I rebase against main branch:
 
-    ![](2022-12-30-10-34-58.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-34-58.png)
 
 - There is an error!
 
 - Looking at the JSON file again:
 
-    ![](2022-12-30-10-35-43.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-35-43.png)
 
 - I make the JSON file whole again:
 
-    ![](2022-12-30-10-36-49.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-36-49.png)
 
 - Looking at the status:
 
-    ![](2022-12-30-10-37-33.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-37-33.png)
 
 - I add the files to staging:
 
@@ -886,11 +886,155 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
 - Displaying the status again:
 
-    ![](2022-12-30-10-38-57.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-38-57.png)
 
 - Continuing with rebase command:
 
-    ![](2022-12-30-10-39-34.png)
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-39-34.png)
 
 - Viewing the commit history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-40-12.png)
+
+## Adding Primary Key to sql_references.json
+
+- I add another key to the column object in the JSON file.
+
+- The JSON file now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-47-00.png)
+
+- Adding changes to staging:
+
+        ~/project/sql_reference$ git add .
+
+- Commiting changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-48-22.png)
+
+## Adding Foreign Key to sql_references.json:
+
+- I add a foreign_key key to the column object to the JSON file.
+
+- The JSON file now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-49-48.png)
+
+- Checking the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-50-19.png)
+
+- Added files to staging area:
+
+        ~/project/sql_reference$ git add .
+
+- Committing changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-51-37.png)
+
+
+# Changing back to Row References branch
+
+- I checkout the other branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-52-42.png)
+
+## Adding Delete Key to the sql_reference.json File
+
+- I add another key to the row object in the JSON file
+
+- The JSON file now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-54-03.png)
+
+- Looking at the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-54-38.png)    
+
+- Added files to staging area:
+
+        ~/project/sql_reference$ git add .
+
+- Committing changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-56-07.png)
+
+## Going Back To Main Branch To Merge
+
+- I checkout the main branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-56-59.png)
+
+- Merging from row references branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-57-55.png)
+
+## Deleting Row References Branch
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-10-59-18.png)
+
+# Creating Add Missing Rename References Branch
+
+- I create and checkout a new branch since we missed a bunch of renamed commands:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-00-59.png)
+
+- I add a rename key to the database object in the JSON file:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-02-08.png)
+
+- Viewing the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-02-46.png)
+
+- Adding files to staging area:
+
+        ~/project/sql_reference$ git add .
+
+- Committing changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-03-52.png)
+
+
+# Going Back to Colum References Branch
+
+- I got back to the column references branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-08-29.png)
+
+- There was a commit to main since working on this branch. I will rebase against main branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-09-43.png)
+
+- We have conflicts! Looking at the sql_reference.json file:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-10-38.png)
+
+- I fix the sql_reference.json file:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-11-24.png)
+
+- Checking the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-11-55.png)
+
+- Adding files to staging area:
+
+        ~/project/sql_reference$ git add .
+
+- Checking the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-16-15.png)
+
+- Continuing with rebase:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-16-56.png)
+
+## Adding unique Key to Column Object
+
+- I update the sql_reference.json object by adding a unique key in the column object.
+
+- The sql_reference.json file now looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-18-57.png)
 
