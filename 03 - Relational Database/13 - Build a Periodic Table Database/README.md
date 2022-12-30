@@ -141,7 +141,7 @@ Your script (.sh) file should have executable permissions
         periodic_table=> ALTER TABLE properties ALTER COLUMN boiling_point_celsius SET NOT NULL;
         ALTER TABLE
 
-- The third test passes:
+- The 3rd test passes:
 
     ![](2022-12-30-15-00-56.png)
 
@@ -152,7 +152,7 @@ Your script (.sh) file should have executable permissions
         periodic_table=> ALTER TABLE elements ADD UNIQUE(name);
         ALTER TABLE
 
-- The fourth test now passes:
+- The 4th test now passes:
 
     ![](2022-12-30-15-03-15.png)
 
@@ -163,6 +163,74 @@ Your script (.sh) file should have executable permissions
         periodic_table=> ALTER TABLE elements ALTER COLUMN name SET NOT NULL;
         ALTER TABLE
 
-- The fifth test now passes:
+- The 5th test now passes:
 
     ![](2022-12-30-15-05-00.png)
+
+- Adding foreign key column (atomic_number) from properties table to reference column from elements table:
+
+periodic_table=> ALTER TABLE properties ADD FOREIGN KEY(atomic_number) REFERENCES elements(atomic_number);
+ALTER TABLE
+
+- The 6th test now passes:
+
+    ![](2022-12-30-15-36-16.png)
+
+- Creating types table with type_id column as primary key:
+
+        periodic_table=> CREATE TABLE types(type_id SERIAL PRIMARY KEY);
+        CREATE TABLE
+
+- The 7th and 8th tests now pass:
+
+    ![](2022-12-30-15-38-44.png)
+
+- Adding type column:
+
+        periodic_table=> ALTER TABLE types ADD COLUMN type VARCHAR NOT NULL;
+        ALTER TABLE
+
+- The 9th test now passes:
+
+    ![](2022-12-30-15-40-08.png)
+
+- Adding 3 types to the types table:
+
+        periodic_table=> INSERT INTO types(type) VALUES ('nonmetal'),('metal'),('metalloid');
+        INSERT 0 3
+
+- The 10th test now passes:
+    
+    ![](2022-12-30-15-42-43.png)
+
+- Adding type_id foreign key column to properties table:
+
+    periodic_table=> ALTER TABLE properties ADD COLUMN type_id INT;
+    ALTER TABLE
+
+- Displaying the types from types table:
+
+    ![](2022-12-30-15-46-13.png)
+
+- Updating the type_id in properties table:
+
+        periodic_table=> UPDATE properties SET type_id=1 WHERE type='nonmetal';
+        UPDATE 5
+        periodic_table=> UPDATE properties SET type_id=2 WHERE type='metal';
+        UPDATE 2
+        periodic_table=> UPDATE properties SET type_id=3 WHERE type='metalloid';
+        UPDATE 2
+
+- Adding NOT NULL constraint to type_id on properties table:
+
+        periodic_table=> ALTER TABLE properties ALTER COLUMN type_id SET NOT NULL;
+        ALTER TABLE
+
+- Adding foreign key constraint:
+
+        periodic_table=> ALTER TABLE properties ADD CONSTRAINT fk_properties_types FOREIGN KEY(type_id) REFERENCES types(type_id);
+        ALTER TABLE
+
+- The 11th and 12th tests now pass:
+
+![](2022-12-30-15-55-34.png)
