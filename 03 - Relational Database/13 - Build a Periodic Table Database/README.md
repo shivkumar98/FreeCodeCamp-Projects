@@ -169,8 +169,8 @@ Your script (.sh) file should have executable permissions
 
 - Adding foreign key column (atomic_number) from properties table to reference column from elements table:
 
-periodic_table=> ALTER TABLE properties ADD FOREIGN KEY(atomic_number) REFERENCES elements(atomic_number);
-ALTER TABLE
+        periodic_table=> ALTER TABLE properties ADD FOREIGN KEY(atomic_number) REFERENCES elements(atomic_number);
+        ALTER TABLE
 
 - The 6th test now passes:
 
@@ -265,4 +265,18 @@ ALTER TABLE
         ALTER TABLE
 
 - The 15th test now passes:
+
+    ![](2022-12-30-16-07-12.png)
+
+- For the 16th test, I add the element Fluroine to the database:
+
+        periodic_table=> INSERT INTO elements(atomic_number, symbol, name)
+        periodic_table-> VALUES (9, 'F', 'Fluorine');
+        INSERT 0 1
+
+        periodic_table=> INSERT INTO properties(atomic_number, type, melting_point_celsius, boiling_point_celsius, type_id, atomic_mass)
+        VALUES (9, 'nonmetal', -220, -188.1, 1, 18.998);
+        INSERT 0 1
+
+- I realise I made an error and restarted the project!
 
