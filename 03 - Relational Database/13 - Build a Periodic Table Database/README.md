@@ -4,7 +4,9 @@
 
 This is a certification project in which I will create a Bash script to get information about chemical elements from a periodic table database.
 
-# Instructions
+<br><hr>
+
+# 1 Instructions
 
 - I will connect to a pre-existing database called periodic_table.
 
@@ -24,16 +26,16 @@ This is a certification project in which I will create a Bash script to get info
 
 - I will create a script which accepts an argument in the form of atomic number, symbol, or name of an element and outputs some information about the given element.
 
-## User Stories
+## **User Stories**
 
-### Part 1 - Fix the datbase
+### **Part 1 - Fix the datbase**
 
 
 1) You should rename the weight column to atomic_mass
 
 2) You should rename the melting_point column to melting_point_celsius and the boiling_point column to boiling_point_celsius
 
-3)Your melting_point_celsius and boiling_point_celsius columns should not accept null values
+3) Your melting_point_celsius and boiling_point_celsius columns should not accept null values
 
 4) You should add the UNIQUE constraint to the symbol and name columns from the elements table
 
@@ -65,7 +67,7 @@ This is a certification project in which I will create a Bash script to get info
 
 18) Your properties table should not have a type column
 
-### Part 2 - Create a git repository
+### **Part 2 - Create a git repository**
 
 1) You should create a periodic_table folder in the project folder and turn it into a git repository with git init
 
@@ -79,13 +81,11 @@ This is a certification project in which I will create a Bash script to get info
 
 6) You should finish your project while on the main branch. Your working tree should be clean and you should not have any uncommitted changes
 
-### Part 3 - Create a Script
+### **Part 3 - Create a Script**
 
-1) 
-You should create an element.sh file in your repo folder for the program I want you to make
+1) You should create an element.sh file in your repo folder for the program I want you to make
 
-2) 
-Your script (.sh) file should have executable permissions
+2) Your script (.sh) file should have executable permissions
 
 3) If you run ./element.sh, it should output only Please provide an element as an argument. and finish running.
 
@@ -95,9 +95,11 @@ Your script (.sh) file should have executable permissions
 
 6) If the argument input to your element.sh script doesn't exist as an atomic_number, symbol, or name in the database, the only output should be I could not find that element in the database.
 
+<br><hr>
+
 # Project Commentary:
 
-## Part 1 - Fixing the Database:
+## **Part 1 - Fixing the Database**
 
 ### Logging in and Connecting to Database
 
@@ -111,15 +113,15 @@ Your script (.sh) file should have executable permissions
 
 - This dislays two tables:
 
-    ![](2022-12-30-14-53-25.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-14-53-25.png)
 
 - Displaying properties of elements table:
 
-    ![](2022-12-30-14-54-22.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-14-54-22.png)
 
 - Displaying properties of properties:
 
-    ![](2022-12-30-14-54-55.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-14-54-55.png)
 
 - I start renaming columns:
 
@@ -132,7 +134,7 @@ Your script (.sh) file should have executable permissions
 
 - The first two tests now pass:
 
-    ![](2022-12-30-14-58-30.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-14-58-30.png)
 
 - I add the NOT NULL constraint to the boiling and melting point columns:
 
@@ -143,7 +145,7 @@ Your script (.sh) file should have executable permissions
 
 - The 3rd test passes:
 
-    ![](2022-12-30-15-00-56.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-15-00-56.png)
 
 - Adding UNIQUE constrain to cymbol and name columns in elements table:
 
@@ -154,7 +156,7 @@ Your script (.sh) file should have executable permissions
 
 - The 4th test now passes:
 
-    ![](2022-12-30-15-03-15.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-15-03-15.png)
 
 - Adding NOT NULL constraint to symbol and name columns:
 
@@ -165,7 +167,7 @@ Your script (.sh) file should have executable permissions
 
 - The 5th test now passes:
 
-    ![](2022-12-30-15-05-00.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-15-05-00.png)
 
 - Adding foreign key column (atomic_number) from properties table to reference column from elements table:
 
@@ -174,7 +176,7 @@ Your script (.sh) file should have executable permissions
 
 - The 6th test now passes:
 
-    ![](2022-12-30-15-36-16.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-15-36-16.png)
 
 - Creating types table with type_id column as primary key:
 
@@ -183,43 +185,36 @@ Your script (.sh) file should have executable permissions
 
 - The 7th and 8th tests now pass:
 
-    ![](2022-12-30-15-38-44.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-15-38-44.png)
 
 - Adding type column:
 
-        periodic_table=> ALTER TABLE types ADD COLUMN type VARCHAR NOT NULL;
-        ALTER TABLE
+        ALTER TABLE types ADD COLUMN type VARCHAR NOT NULL;
+            ALTER TABLE
 
-- The 9th test now passes:
-
-    ![](2022-12-30-15-40-08.png)
+- The 9th test now passes!
 
 - Adding 3 types to the types table:
 
-        periodic_table=> INSERT INTO types(type) VALUES ('nonmetal'),('metal'),('metalloid');
-        INSERT 0 3
+        INSERT INTO types(type) VALUES ('nonmetal'),('metal'),('metalloid');
+            INSERT 0 3
 
-- The 10th test now passes:
-    
-    ![](2022-12-30-15-42-43.png)
+- The 10th test now passes!
 
 - Adding type_id foreign key column to properties table:
 
-    periodic_table=> ALTER TABLE properties ADD COLUMN type_id INT;
-    ALTER TABLE
+        ALTER TABLE properties ADD COLUMN type_id INT;
+            ALTER TABLE
 
-- Displaying the types from types table:
-
-    ![](2022-12-30-15-46-13.png)
 
 - Updating the type_id in properties table:
 
-        periodic_table=> UPDATE properties SET type_id=1 WHERE type='nonmetal';
-        UPDATE 5
-        periodic_table=> UPDATE properties SET type_id=2 WHERE type='metal';
-        UPDATE 2
-        periodic_table=> UPDATE properties SET type_id=3 WHERE type='metalloid';
-        UPDATE 2
+        UPDATE properties SET type_id=1 WHERE type='nonmetal';
+            UPDATE 5
+        UPDATE properties SET type_id=2 WHERE type='metal';
+            UPDATE 2
+        UPDATE properties SET type_id=3 WHERE type='metalloid';
+            UPDATE 2
 
 - Adding NOT NULL constraint to type_id on properties table:
 
@@ -228,35 +223,35 @@ Your script (.sh) file should have executable permissions
 
 - Adding foreign key constraint:
 
-        periodic_table=> ALTER TABLE properties ADD CONSTRAINT fk_properties_types FOREIGN KEY(type_id) REFERENCES types(type_id);
-        ALTER TABLE
+        ALTER TABLE properties ADD CONSTRAINT fk_properties_types FOREIGN KEY(type_id) REFERENCES types(type_id);
+            ALTER TABLE
 
-- The 11th and 12th tests now pass:
+- The 11th and 12th tests now pass!
 
-![](2022-12-30-15-55-34.png)
+![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-15-55-34.png)
 
 - For the 13th test I need to ensure the captilization of the elements table is correct
 
 - Looking at the elements table:
 
-    ![](2022-12-30-15-58-50.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-15-58-50.png)
 
 - I update the symbols:
 
-        periodic_table=> UPDATE elements SET symbol='Mt' WHERE atomic_number=1000;
-        UPDATE 1
-        periodic_table=> UPDATE elements SET symbol='Li' WHERE atomic_number=3;UPDATE 1
-        periodic_table=> UPDATE elements SET symbol='He' WHERE atomic_number=2;UPDATE 1
+        UPDATE elements SET symbol='Mt' WHERE atomic_number=1000;
+            UPDATE 1
+        UPDATE elements SET symbol='Li' WHERE atomic_number=3;UPDATE 1
+        UPDATE elements SET symbol='He' WHERE atomic_number=2;UPDATE 1
 
 - The 14th test now passes:
 
-    ![](2022-12-30-16-02-10.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-16-02-10.png)
 
 - I need to update the properties table for the 15th test.
 
 - Displaying all rows of properties:
 
-    ![](2022-12-30-16-03-30.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-16-03-30.png)
 
 - I change the type of the atomic_mass column:
 
@@ -266,17 +261,17 @@ Your script (.sh) file should have executable permissions
 
 - The 15th test now passes:
 
-    ![](2022-12-30-16-07-12.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-16-07-12.png)
 
 - For the 16th test, I add the element Fluroine to the database:
 
-        periodic_table=> INSERT INTO elements(atomic_number, symbol, name)
-        periodic_table-> VALUES (9, 'F', 'Fluorine');
-        INSERT 0 1
+        INSERT INTO elements(atomic_number, symbol, name)
+        VALUES (9, 'F', 'Fluorine');
+            INSERT 0 1
 
-        periodic_table=> INSERT INTO properties(atomic_number, type, melting_point_celsius, boiling_point_celsius, type_id, atomic_mass)
+        INSERT INTO properties(atomic_number, type, melting_point_celsius, boiling_point_celsius, type_id, atomic_mass)
         VALUES (9, 'nonmetal', -220, -188.1, 1, 18.998);
-        INSERT 0 1
+            INSERT 0 1
 
 - I realise I made an error and restarted the project!
 
@@ -284,57 +279,58 @@ Your script (.sh) file should have executable permissions
 
         INSERT INTO elements(atomic_number, symbol, name)
         VALUES (9, 'F', 'Fluorine');
-        INSERT 0 1`
+            INSERT 0 1
 
         INSERT INTO properties(atomic_number, type, atomic_mass, melting_point_celsius, boiling_point_celsius, type_id)
         VALUES (9, 'nonmetal', 18.998, -220, -188.1,1);
-        INSERT 0 1
+            INSERT 0 1
 
 - The 15th test now passes:
 
-    ![](2022-12-30-18-00-16.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-00-16.png)
 
 - Adding Neon to the database:
+
         INSERT INTO elements(atomic_number, symbol, name)VALUES (10, 'Ne', 'Neon');
-        INSERT 0 1
+            INSERT 0 1
         INSERT INTO properties(atomic_number, type, atomic_mass, melting_point_celsius, boiling_point_celsius, type_id) VALUES (10, 'nonmetal', 20.18, -248.6, -246.1, 1);
-        INSERT 0 1
+            INSERT 0 1
 
 - The 16th test now passes:
 
-    ![](2022-12-30-18-04-52.png)    
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-04-52.png)    
 
 - I delete the non-existent element from properties:
 
         DELETE FROM properties WHERE atomic_number = 1000;
-        DELETE 1
+            DELETE 1
         DELETE FROM elements WHERE atomic_number = 1000;
-        DELETE 1
+            DELETE 1
 
 - The following test passes:
 
-    ![](2022-12-30-18-08-31.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-08-31.png)
 
 - I drop the type column from the properties table:
 
         ALTER TABLE properties DROP COLUMN type;
-        ALTER TABLE
+            ALTER TABLE
 
 - The final test of part 1 passes:
 
-    ![](2022-12-30-18-09-53.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-09-53.png)
 
 - I'm finished with part 1!
 
-## Part 2
+## **Part 2 - Initialisng Git Repo**
 
 - The test which need to pass are:
 
-    ![](2022-12-30-18-13-37.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-13-37.png)
 
 - The commits I make must obide the following:
 
-    ![](2022-12-30-18-14-18.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-14-18.png)
 
 - I make a periodic_table directory in the project folder:
 
@@ -342,25 +338,25 @@ Your script (.sh) file should have executable permissions
 
 - I change into the folder:
 
-~/project$ cd periodic_table
+        ~/project$ cd periodic_table
 
 - I then initialise git in the folder:
 
-~/project/periodic_table$ git init
-Initialized empty Git repository in /home/codeally/project/periodic_table/.git/
+        ~/project/periodic_table$ git init
+        Initialized empty Git repository in /home/codeally/project/periodic_table/.git/
 
 - The first test now passes:
 
-    ![](2022-12-30-18-17-04.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-17-04.png)
 
 - I create a main branch and checkout:
 
-~/project/periodic_table$ git checkout -b main
-Switched to a new branch 'main'
+        ~/project/periodic_table$ git checkout -b main
+        Switched to a new branch 'main'
 
 - I create my element.sh file:
 
-~/project/periodic_table$ touch element.sh
+        ~/project/periodic_table$ touch element.sh
 
 - I add all files to staging:
 
@@ -375,10 +371,10 @@ Switched to a new branch 'main'
 
 - The following test now passes:
 
-    ![](2022-12-30-18-21-34.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-21-34.png)
 
 
-## Part 3
+## Part 3 - Creating Elements Script
 
 - I add execution permission to element.sh
 
@@ -386,20 +382,20 @@ Switched to a new branch 'main'
 
 - The following test passes:
 
-    ![](2022-12-30-18-32-01.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-32-01.png)
 
 
 - I initalise my script so that it checks if an argument is provided:
 
-    ![](2022-12-30-18-34-38.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-34-38.png)
 
 - The following test passes:
 
-    ![](2022-12-30-18-36-34.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-18-36-34.png)
 
 - I updated the script so that almost all tests pass:
 
-    ![](2022-12-30-19-39-20.png)
+    ![](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database/screenshots/2022-12-30-19-39-20.png)
 
     
 - I added more commits now all tests pass!
