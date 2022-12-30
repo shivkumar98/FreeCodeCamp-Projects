@@ -22,7 +22,7 @@
 
 8) [**Learn Nano by Building a Castle**](/03%20-%20Relational%20Database/11%20-%20Learn%20Nano%20by%20Building%20a%20Castle)
 
-9) [**Learn Git by Building an SQL Reference Object**]()
+9) [**Learn Git by Building an SQL Reference Object**](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object)
 
 ### Certification Projects:
 
