@@ -303,3 +303,25 @@ Your script (.sh) file should have executable permissions
 - The 16th test now passes:
 
     ![](2022-12-30-18-04-52.png)    
+
+- I delete the non-existent element from properties:
+
+        DELETE FROM properties WHERE atomic_number = 1000;
+        DELETE 1
+        DELETE FROM elements WHERE atomic_number = 1000;
+        DELETE 1
+
+- The following test passes:
+
+    ![](2022-12-30-18-08-31.png)
+
+- I drop the type column from the properties table:
+
+        ALTER TABLE properties DROP COLUMN type;
+        ALTER TABLE
+
+- The final test of part 1 passes:
+
+    ![](2022-12-30-18-09-53.png)
+
+- I'm finished with part 1!
