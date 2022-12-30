@@ -234,3 +234,6 @@ ALTER TABLE
 - The 11th and 12th tests now pass:
 
 ![](2022-12-30-15-55-34.png)
+
+- For the 13th test I need to ensure the captilization of the elements table is correct:
+
