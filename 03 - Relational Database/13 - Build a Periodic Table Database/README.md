@@ -293,3 +293,13 @@ Your script (.sh) file should have executable permissions
 - The 15th test now passes:
 
     ![](2022-12-30-18-00-16.png)
+
+- Adding Neon to the database:
+        INSERT INTO elements(atomic_number, symbol, name)VALUES (10, 'Ne', 'Neon');
+        INSERT 0 1
+        INSERT INTO properties(atomic_number, type, atomic_mass, melting_point_celsius, boiling_point_celsius, type_id) VALUES (10, 'nonmetal', 20.18, -248.6, -246.1, 1);
+        INSERT 0 1
+
+- The 16th test now passes:
+
+    ![](2022-12-30-18-04-52.png)    
