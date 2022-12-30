@@ -1,5 +1,23 @@
 # 13 Build a Periodic Table Database
 
+# Table of Contents:
+
+[**Introduction**](#introduction)
+
+[**1 Instructions**](#1-instructions)
+* [User Stories](#--user-stories--)
+    + [Part 1 - Fix the datbase](#--part-1---fix-the-datbase--)
+    + [Part 2 - Create a git repository](#--part-2---create-a-git-repository--)
+    + [Part 3 - Create a Script](#--part-3---create-a-script--)
+
+[**2 Project Commentary**](#project-commentary-)
+* [Part 1 - Fixing the Database](#--part-1---fixing-the-database--)
+    * [Logging in and Connecting to Database](#logging-in-and-connecting-to-database)
+* [Part 2 - Initialisng Git Repo](#--part-2---initialisng-git-repo--)
+* [Part 3 - Creating Elements Script](#part-3---creating-elements-script)
+
+<br><hr>
+
 # Introduction
 
 This is a certification project in which I will create a Bash script to get information about chemical elements from a periodic table database.
@@ -97,7 +115,7 @@ This is a certification project in which I will create a Bash script to get info
 
 <br><hr>
 
-# Project Commentary:
+# 2 Project Commentary
 
 ## **Part 1 - Fixing the Database**
 
