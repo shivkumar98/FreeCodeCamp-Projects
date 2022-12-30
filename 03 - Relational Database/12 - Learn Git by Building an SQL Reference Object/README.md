@@ -1038,3 +1038,214 @@ Git is a version control sytstem that keeps track of all the changes you make to
 
     ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-18-57.png)
 
+- Viewing the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-23-05.png)
+
+- Adding the files to staging area:
+
+        ~/project/sql_reference$ git add .
+
+- Committing changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-24-24.png)
+
+# Removing a Commit
+
+- We shall explore ways to undo a commit.
+
+## git reset
+
+- The git reset command lets us go "back in time" by travelling to any point in your commit history.
+
+- The current **HEAD** is a reference to the last commit
+
+- Hence we can go back 1 commit earlier using **git reset HEAD~1**:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-28-13.png)
+
+- Viewing the commit history, we can see the last commit of "feat: add unique reference" is gone!
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-30-17.png)
+
+- Viewing the git status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-31-00.png)
+
+- Looking at the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-31-27.png)
+
+- We can see the unique line is still there!
+
+- Adding the files to staging:
+
+        ~/project/sql_reference$ git add .
+
+- Committing the changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-33-43.png)
+
+## git revert
+
+- Reverting is a good way to undo a commit
+
+- Undoing the last commit using **git revert HEAD**:
+
+        ~/project/sql_reference$ git revert HEAD
+
+- git opens up nano asking for a commit message for the revert:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-36-26.png)
+
+- I use the default message and exit nano!
+
+- I view the commit history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-37-43.png)
+
+- I use **git show** to display details of last commit:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-39-48.png)
+
+- I use **git show HEAD~1** to show details of orginal commit I reverted to:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-40-45.png)
+
+- You can use the --interactive flag to manipulate the commits
+
+- I enter **git rebase --interactive HEAD~2** into the terminal to change the last 2 commits:, this opens nano:
+
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-58-08.png)
+
+
+- The top two commits have "pick" next to them. Pick means it will use the commits as they were.
+
+- At the bottom it shows:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-11-59-41.png)
+
+- I replace the word pick with"d" for the two commits. So now it looks like:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-00-50.png)
+
+- I saved and exit nano
+
+- Showing commit history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-01-48.png)
+
+- The commit to add the unique command and the one to revert it have beemn dropped.
+
+- I rebase to the --root using interactive command:
+
+        ~/project/sql_reference$ git rebase --interactive --root
+
+- This opens nano:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-03-53.png)
+
+- The latest commit is at the bottom. There is an option "r" to edit the commit message.
+
+- I edit the commit message for the commit with message "feat: add drop table reference":
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-07-02.png)
+
+- I save and exit Nano.
+
+- Another Nano instance opens asking me to edit the commit message:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-10-48.png)
+
+- I add an "s" to the end of the commit message:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-11-15.png)
+
+- I save and exit Nano.
+
+- Showing commit history:
+
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-12-09.png)
+
+- I rebase from main branch
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-13-42.png)
+
+- Displaying commit history again:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-14-51.png)
+
+# Squashing commits
+
+- Squashing commits means taking several commits and turning them into one.
+
+- We can use the "s" keyword to squash commits:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-22-43.png)
+
+- I replace pick with "s" for commits I want to squash":
+    
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-27-39.png)
+
+- This opens another instance of Nano:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-29-41.png)
+
+- Nano brought up a list of all commit messages. I exit Nano
+
+- Viewing  commit history:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-31-15.png)
+
+- I bring up details of last commit using -1 flag@
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-32-08.png)
+
+## Switching to main Branch
+
+- I switch to main branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-32-50.png)
+
+
+- Merging branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-34-12.png)
+
+- Deleting the add column references branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-35-02.png)
+
+## Switching to Add Missing Rename References Branch
+
+- I checkout the other branches:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-36-41.png)
+
+- Rebasing from main branch:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-37-22.png)
+
+- Viewing 5 last commits:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-38-56.png)
+
+## Adding rename key to table objectg in JSON file
+
+- I udpate the sql_reference.json file to:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-41-03.png)
+
+- Looking at the differences:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-41-34.png)
+
+- I add the files to staging:
+
+        ~/project/sql_reference$ git add .
+
+- Committing changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-12-42-46.png)
