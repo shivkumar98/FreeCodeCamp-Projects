@@ -1313,3 +1313,60 @@ Git is a version control sytstem that keeps track of all the changes you make to
 - I create a file called ".env":
 
         ~/project/sql_reference$ touch .env
+
+- .env files are used to store environment variables for running code. These sometimes contain secrets
+
+- I add a secret text to the file:
+
+        ~/project/sql_reference$ echo "SECRET=MY_SECRET" >> .env
+
+- Displaying the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-06-50.png)
+
+## Creating .gitignore
+
+- I create the .gitignore file:
+
+    ~/project/sql_reference$ touch .gitignore
+
+- Displaying status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-08-06.png)
+
+- I add .env to the gitignore file:
+
+    ~/project/sql_reference$ echo ".env" >> .gitignore
+
+- Displaying the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-09-36.png)
+
+- Now the .env file is ignored!
+
+- Adding files to staging:
+
+        ~/project/sql_reference$ git add .
+
+- Committing changes:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-11-30.png)
+
+- Creating another file called sample.env
+
+        ~/project/sql_reference$ touch sample.env
+
+- Displaying the status:
+
+    ![](/03%20-%20Relational%20Database/12%20-%20Learn%20Git%20by%20Building%20an%20SQL%20Reference%20Object/screenshots/2022-12-30-13-12-41.png)
+
+- Git will not ignore this file!
+
+- I add some text to the sample.env file:
+
+    ~/project/sql_reference$ echo "SECRET=" >> sample.env
+
+- I add the file to staging:
+
+    ~/project/sql_reference$ git add .
+s
