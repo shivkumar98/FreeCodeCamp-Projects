@@ -235,5 +235,34 @@ ALTER TABLE
 
 ![](2022-12-30-15-55-34.png)
 
-- For the 13th test I need to ensure the captilization of the elements table is correct:
+- For the 13th test I need to ensure the captilization of the elements table is correct
+
+- Looking at the elements table:
+
+    ![](2022-12-30-15-58-50.png)
+
+- I update the symbols:
+
+        periodic_table=> UPDATE elements SET symbol='Mt' WHERE atomic_number=1000;
+        UPDATE 1
+        periodic_table=> UPDATE elements SET symbol='Li' WHERE atomic_number=3;UPDATE 1
+        periodic_table=> UPDATE elements SET symbol='He' WHERE atomic_number=2;UPDATE 1
+
+- The 14th test now passes:
+
+    ![](2022-12-30-16-02-10.png)
+
+- I need to update the properties table for the 15th test.
+
+- Displaying all rows of properties:
+
+    ![](2022-12-30-16-03-30.png)
+
+- I change the type of the atomic_mass column:
+
+        periodic_table=> ALTER TABLE properties 
+        periodic_table-> ALTER COLUMN atomic_mass TYPE decimal(4,0);
+        ALTER TABLE
+
+- The 15th test now passes:
 
