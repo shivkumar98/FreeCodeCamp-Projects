@@ -1,5 +1,9 @@
 # 12 Learn Git by Building an SQL Reference Object
 
+# Introduction
+
+Git is a version control sytstem that keeps track of all the changes you make to a codebase. In this  240-lesson tutorial, I will learn how Git keeps track of code by creating an object commonly used by SQL commands.
+
 # Table of Contents:
 
 [1 Basic Git Commands](#1-basic-git-commands)
@@ -118,10 +122,6 @@
   * [Switching Back to main Branch](#--switching-back-to-main-branch---1)
 
 
-
-# Introduction
-
-Git is a version control sytstem that keeps track of all the changes you make to a codebase. In this  240-lesson tutorial, I will learn how Git keeps track of code by creating an object commonly used by SQL commands.
 
 <br><hr>
 
