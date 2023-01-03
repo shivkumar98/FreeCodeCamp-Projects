@@ -21,7 +21,7 @@ This repo contains documentation, code, solutions I curated while working throug
 
 
 
-## **3 - Relational Databases**
+## **3 - Relational Database Developer**
 
   &nbsp; 📍 [**View projects here**](03%20-%20Relational%20Database)
   
