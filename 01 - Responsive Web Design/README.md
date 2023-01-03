@@ -33,7 +33,7 @@
 - [Learn CSS Grid by Building a Magazine](04-CSS%20Variables%20and%20Grid%20Systems/02-Learn%20CSS%20Grid%20by%20Building%20a%20Magazine)
 - [***Certification Project 4: Build a Project Landing Page***](04-CSS%20Variables%20and%20Grid%20Systems/03-Build%20a%20Product%20Landing%20Page)
 
-## **5 -CSS Animation and Transforms:**
+## **5 - CSS Animation and Transforms:**
 - [Learn CSS Animation by Building a Ferris Wheel](05-CSS%20Animation%20and%20Transforms/01-Learn%20CSS%20Animation%20by%20Building%20a%20Ferris%20Wheel)
 - [Learn CSS Transforms by Building a Penguin](05-CSS%20Animation%20and%20Transforms/02-Learn%20CSS%20Transforms%20by%20Building%20a%20Penguin)
 - [***Certification Project 5: Personal Portfolio Page***](05-CSS%20Animation%20and%20Transforms/03-Build%20a%20Personal%20Portfolio%20Page)
