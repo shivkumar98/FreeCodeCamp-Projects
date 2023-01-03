@@ -2,6 +2,8 @@
 
 * I started this certication on 17/12/2022
 
+* I completed the curriculum on 30/12/2022 ([**view certification here**](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/relational-database-v8))
+
 ## Contents:
 
 ### Tutorials:
