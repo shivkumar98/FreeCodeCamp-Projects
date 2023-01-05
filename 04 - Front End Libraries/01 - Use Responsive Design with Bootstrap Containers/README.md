@@ -334,3 +334,17 @@ I removed smaller-image class from top image and added img-responsive:
 The app now looks like:
 
 ![](2023-01-05-13-44-45.png)
+
+## Step 11: Use a span to Target Inline Elements
+
+Using a span element, nest the word love inside the p element that currently has the text Things cats love. Then give the span the class text-danger to make the text red.
+
+## Difference between inline and block
+
+Previously, we used btn-block class so that an element takes the whole width of container. This illustrates inline elements:
+
+![](2023-01-05-13-50-49.png)
+
+I update the p element with an inline span:
+
+    <p>Things cats <span class="text-danger">love</span></p>
