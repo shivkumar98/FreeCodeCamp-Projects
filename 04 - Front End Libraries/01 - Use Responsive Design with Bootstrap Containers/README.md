@@ -191,4 +191,39 @@ The app now looks like:
 
 ![](2023-01-05-12-48-11.png)
 
-## Step 5: Create a Block Element Bootstrap Button
+## Step 6: Taste the Bootstrap Button Color Rainbow
+
+The **btn-primary** is often used as the main color for highlighting actions.
+
+I replace the btn-default class with btn-primary:
+
+    <button class="btn btn-primary btn-block">Like</button>
+
+The app now looks like:
+
+![](2023-01-05-12-53-37.png)
+
+## Step 7: Call out Optional Actions with btn-info
+
+The **btn-info** class is used for optional actions which user can take.
+
+I create a new button below like button:
+
+    <button class="btn btn-block btn-primary">Like</button>
+
+The app now looks like:
+
+![](2023-01-05-12-56-44.png)
+
+## Step 8: Warn Your Users of a Dangerous Action
+
+The **btn-danger** class is often using for actions which are destructive such as deleting a photo.
+
+I add a delete button belo the info button:
+
+    <button class="btn btn-block btn-danger">Delete</button>
+
+The app now looks like:
+
+![](2023-01-05-12-59-24.png)
+
