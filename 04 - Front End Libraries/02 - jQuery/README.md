@@ -31,7 +31,7 @@ All jQuery functions start with $ - dollar sign operator
 
 Using jQuery to apply the Animate.css bounce class to your button elements.
 
-Inside the ready function, I use the addClass functiont to add animated and bounce classes:
+*Inside the ready function, I use the addClass functiont to add animated and bounce classes:*
 
     <script>
     $(document).ready(function() {
@@ -39,6 +39,11 @@ Inside the ready function, I use the addClass functiont to add animated and boun
     });
     </script>
 
+Now the elements are animated:
+
+<img src="step-02.gif">
+
 <br><hr>
 
 ## Step 3: Target Elements by Class Using jQuery
+
