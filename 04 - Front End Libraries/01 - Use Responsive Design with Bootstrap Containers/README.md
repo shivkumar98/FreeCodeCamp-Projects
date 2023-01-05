@@ -368,3 +368,27 @@ Solution:
 The app now looks like:
 
 ![](2023-01-05-14-00-10.png)
+
+
+
+## Step 13: Add Font Awesome Icons to outr Buttons
+
+### Task
+
+Use Font Awesome to add a thumbs-up icon to your like button by giving it an i element with the classes fas and fa-thumbs-up. Make sure to keep the text Like next to the icon.
+
+### What is Font Awesome?
+
+Font Awesome is a convienent library of icons which are treated just like fonts.
+
+We can add Font Awesome by adding the following link to the top of HTML: 
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+The i tag was originally made to make text italic but is now used for icons. E.g.:
+
+    <i class="fas fa-info-circle"></i>
+
+I update the Like button:
+
+    <button class="btn btn-block btn-primary"><i class="fas fa-thumbs-up"></i>Like</button>
