@@ -19,11 +19,18 @@ This repo contains documentation, code, solutions I curated while working throug
 
   &nbsp; 📍 Earned [**Certification**](https://freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/javascript-algorithms-and-data-structures) on 19/11/2022.
 
-
-
 ## **3 - Relational Database Developer**
 
   &nbsp; 📍 [**View projects here**](03%20-%20Relational%20Database)
   
   &nbsp; 📍 Started on 17/12/2022
+  
+  &nbsp; 📍 Earned [**Certification**](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/relational-database-v8) on 30/12/2022
+
+## **4 - Front End Development Libraries**
+
+  &nbsp; 📍 [**View projects here**](/04%20-%20Front%20End%20Libraries)
+  
+  &nbsp; 📍 Started on 05/01/2022
+
 
