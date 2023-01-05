@@ -12,7 +12,7 @@ We can add this frameword by adding the following link to the top of the code:
 
 <br><hr>
 
-# Building a Cat App
+# 1.1 Building a Cat App
 
 The Cat Photo App has the following HTML:
 
@@ -73,10 +73,12 @@ The Cat Photo App has the following HTML:
 
 And the app looks like:
 
-![](2023-01-05-12-24-33.png)
 
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-24-33.png)
 
-## Step 1: Nesting all elements into a container-fluid div
+<br><hr>
+
+## **Step 1: Nesting all elements into a container-fluid div**
 
 The **container-fluid** is a container class which takes width of entire viewport
 
@@ -139,7 +141,9 @@ The code now looks like:
     </form>
     </div>
 
-## Step 2: Make Images Mobile Responsive
+<br><hr>
+
+## **Step 2: Make Images Mobile Responsive**
 
 We shall add a new image below the existing one with a link: https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg
 
@@ -152,9 +156,11 @@ I add a new image below the pre-existing one:
 
 The app now looks like:
     
-![](2023-01-05-12-30-56.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-30-56.png)
 
-## Step 3: Center Text With Bootstrap
+<br><hr>
+
+## **Step 3: Center Text With Bootstrap**
 
 Bootstrap has a **text-center** class which centers text.
 
@@ -164,13 +170,16 @@ I center the heading using the above class:
 
 The app now looks like:
 
-![](2023-01-05-12-38-23.png)
 
-## Step 4: Create a Bootstrap Button
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-38-23.png)
+
+<br><hr>
+
+## **Step 4: Create a Bootstrap Button**
 
 We can create multiple types of buttons as shown in the documentation:
 
-![](2023-01-05-12-39-49.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-39-49.png)
 
 I create a new button below the large kitten photo with default styling:
 
@@ -178,9 +187,11 @@ I create a new button below the large kitten photo with default styling:
 
 The app now looks like:
 
-![](2023-01-05-12-44-12.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-44-12.png)
 
-## Step 5: Create a Block Element Bootstrap Button
+<br><hr>
+
+## **Step 5: Create a Block Element Bootstrap Button**
 
 Buttons with btn and btn-default classes will only be as wide as the text.
 
@@ -192,9 +203,11 @@ I add this class to the button:
 
 The app now looks like:
 
-![](2023-01-05-12-48-11.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-48-11.png)
 
-## Step 6: Taste the Bootstrap Button Color Rainbow
+<br><hr>
+
+## **Step 6: Taste the Bootstrap Button Color Rainbow**
 
 The **btn-primary** is often used as the main color for highlighting actions.
 
@@ -204,9 +217,11 @@ I replace the btn-default class with btn-primary:
 
 The app now looks like:
 
-![](2023-01-05-12-53-37.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-53-37.png)
 
-## Step 7: Call out Optional Actions with btn-info
+<br><hr>
+
+## **Step 7: Call out Optional Actions with btn-info**
 
 The **btn-info** class is used for optional actions which user can take.
 
@@ -216,9 +231,11 @@ I create a new button below like button:
 
 The app now looks like:
 
-![](2023-01-05-12-56-44.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-56-44.png)
 
-## Step 8: Warn Your Users of a Dangerous Action
+<br><hr>
+
+## **Step 8: Warn Your Users of a Dangerous Action**
 
 The **btn-danger** class is often using for actions which are destructive such as deleting a photo.
 
@@ -228,10 +245,11 @@ I add a delete button belo the info button:
 
 The app now looks like:
 
-![](2023-01-05-12-59-24.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-59-24.png)
 
+<br><hr>
 
-## Step 9: Use the Bootstrap Grid to Put Elements Side By Side
+## **Step 9: Use the Bootstrap Grid to Put Elements Side By Side**
 
 Put the Like, Info and Delete buttons side-by-side by nesting all three of them within one &lt;div class="row"> element, then each of them within a &lt;div class="col-xs-4"> element.
 
@@ -260,17 +278,18 @@ I surround each of the buttons with a div with class col-xs-4 and inserted them 
 
 The app now looks like:
 
-![](2023-01-05-13-22-54.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-13-22-54.png)
 
-## Step 10: Ditch Custom CSS for BootStrap
+<br><hr>
 
-### Task:
+## **Step 10: Ditch Custom CSS for BootStrap**
 
-Delete the .red-text, p, and .smaller-image CSS declarations from your style element so that the only declarations left in your style element are h2 and thick-green-border.
 
-Then delete the p element that contains a dead link. Then remove the red-text class from your h2 element and replace it with the text-primary Bootstrap class.
+*Delete the .red-text, p, and .smaller-image CSS declarations from your style element so that the only declarations left in your style element are h2 and thick-green-border.*
 
-Finally, remove the smaller-image class from your first img element and replace it with the img-responsive class.
+*Then delete the p element that contains a dead link. Then remove the red-text class from your h2 element and replace it with the text-primary Bootstrap class.*
+
+*Finally, remove the smaller-image class from your first img element and replace it with the img-responsive class.*
 
 Currently there is CSS defined as:
 
@@ -317,7 +336,7 @@ It now looks like:
 
     </style>
 
-### Changes:
+
 
 Removed red-text class and added text-primary class to h2:
 
@@ -330,7 +349,7 @@ I removed smaller-image class from top image and added img-responsive:
 
 The app now looks like:
 
-![](2023-01-05-13-44-45.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-13-44-45.png)
 
 ## Step 11: Use a span to Target Inline Elements
 
@@ -340,18 +359,18 @@ Using a span element, nest the word love inside the p element that currently has
 
 Previously, we used btn-block class so that an element takes the whole width of container. This illustrates inline elements:
 
-![](2023-01-05-13-50-49.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-13-50-49.png)
 
 I update the p element with an inline span:
 
     <p>Things cats <span class="text-danger">love</span></p>
 
+<br><hr>
 
-## Step 12: Create a Custom Heading
+## **Step 12: Create a Custom Heading**
 
-Nest your first image and your h2 element within a single &lt;div class="row"> element. Nest your h2 element within a &lt;div class="col-xs-8"> and your image in a &lt;div class="col-xs-4"> so that they are on the same line.
+*Nest your first image and your h2 element within a single &lt;div class="row"> element. Nest your h2 element within a &lt;div class="col-xs-8"> and your image in a &lt;div class="col-xs-4"> so that they are on the same line.*
 
-Solution:
 
     <div class="row">
         <div class="col-xs-4">
@@ -364,17 +383,16 @@ Solution:
 
 The app now looks like:
 
-![](2023-01-05-14-00-10.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-14-00-10.png)
+
+<br><hr>
+
+## **Step 13: Add Font Awesome Icons to our Buttons**
 
 
 
-## Step 13: Add Font Awesome Icons to our Buttons
+*Use Font Awesome to add a thumbs-up icon to your like button by giving it an i element with the classes fas and fa-thumbs-up. Make sure to keep the text Like next to the icon.*
 
-### Task
-
-Use Font Awesome to add a thumbs-up icon to your like button by giving it an i element with the classes fas and fa-thumbs-up. Make sure to keep the text Like next to the icon.
-
-### What is Font Awesome?
 
 Font Awesome is a convienent library of icons which are treated just like fonts.
 
@@ -386,7 +404,6 @@ The i tag was originally made to make text italic but is now used for icons. E.g
 
     <i class="fas fa-info-circle"></i>
 
-### Solution
 
 I update the Like button:
 
@@ -394,14 +411,15 @@ I update the Like button:
 
 The App now looks like:
 
-![](2023-01-05-14-57-47.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-14-57-47.png)
 
+<br><hr>
 
-## Step 14: Add Font Awesome Icons to all of our Buttons
+## **Step 14: Add Font Awesome Icons to all of our Buttons**
 
 We can create a Info Circle icon using **fa-info-circle** and a bin icon using **fa-trash**.
 
-Use Font Awesome to add an info-circle icon to your info button and a trash icon to your delete button.
+*Use Font Awesome to add an info-circle icon to your info button and a trash icon to your delete button.*
 
 I update the Info and Delete buttons:
 
@@ -410,12 +428,13 @@ I update the Info and Delete buttons:
 
 The App now looks like:
 
-![](2023-01-05-15-03-39.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-15-03-39.png)
 
+<br><hr>
 
-## Step 15: Responsively Style Radio Buttons
+## **Step 15: Responsively Style Radio Buttons**
 
-Nest both your radio buttons within a &lt;div class="row"> element. Then nest each of them within a &lt;div class="col-xs-6"> element.
+*Nest both your radio buttons within a &lt;div class="row"> element. Then nest each of them within a &lt;div class="col-xs-6"> element.*
 
 We can use classes from the system (like col-xs-*) on form elements too. So we can spread radio buttons across page.
 
@@ -435,9 +454,11 @@ The code now looks like:
 
 The App now looks like:
 
-![](2023-01-05-15-13-50.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-15-13-50.png)
 
-## Code At This Point
+<br><hr>
+
+## **Code At This Point**
 
 The entire HTML file at this point looks like:
 
@@ -491,11 +512,14 @@ The entire HTML file at this point looks like:
     <form action="https://freecatphotoapp.com/submit-cat-photo">
         
     <div class="row">
-            <div class="col-xs-6"><label><input type="radio" name="indoor-outdoor"> Indoor</label></div>
-            <div class="col-xs-6">
-            <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-            </div>
+        <div class="col-xs-6">
+            <label><input type="radio" name="indoor-outdoor">
+            Indoor</label>
         </div>
+        <div class="col-xs-6">
+            <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+        </div>
+    </div>
         
         <label><input type="checkbox" name="personality"> Loving</label>
         <label><input type="checkbox" name="personality"> Lazy</label>
@@ -505,12 +529,13 @@ The entire HTML file at this point looks like:
     </form>
     </div>
 
+<br><hr>
 
-## Step 16: Responsively Style Checkboxes
+## **Step 16: Responsively Style Checkboxes**
 
 We can apply grid styling to checkboxes also!
 
-Task: **Nest all three of your checkboxes in a &lt;div class="row"> element. Then nest each of them in a &lt;div class="col-xs-4"> element.**
+*Nest all three of your checkboxes in a &lt;div class="row"> element. Then nest each of them in a &lt;div class="col-xs-4"> element.*
 
 ### Solution
 
@@ -537,14 +562,16 @@ The code has been updated to:
 
 The App now looks like:
 
-![](2023-01-05-15-23-42.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-15-23-42.png)
 
 
-## Step 17: Style Text Inputs as Form Controls
+<br><hr>
+
+## **Step 17: Style Text Inputs as Form Controls**
 
 The paper-plane submit icon has class **fa-paper-plane**
 
-Give your form's text input field a class of form-control. Give your form's submit button the classes btn btn-primary. Also give this button the Font Awesome icon of fa-paper-plane.
+*Give your form's text input field a class of form-control. Give your form's submit button the classes btn btn-primary. Also give this button the Font Awesome icon of fa-paper-plane.*
 
 I update the submit button to:
 
@@ -556,14 +583,15 @@ I add form-control class to the input element:
 
 The app now looks like:
 
-![](2023-01-05-15-35-18.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-15-35-18.png)
 
+<br><hr>
 
-## Step 18: Line up Form Elements Responsively with Bootstrap
+## **Step 18: Line up Form Elements Responsively with Bootstrap**
 
 Now let's get your form input and your submission button on the same line. We'll do this the same way we have previously: by using a div element with the class row, and other div elements within it using the col-xs-* class.
 
-Nest both your form's text input and submit button within a div with the class row. Nest your form's text input within a div with the class of col-xs-7. Nest your form's submit button in a div with the class col-xs-5.
+*Nest both your form's text input and submit button within a div with the class row. Nest your form's text input within a div with the class of col-xs-7. Nest your form's submit button in a div with the class col-xs-5.*
 
 The code currently looks like:
 
@@ -583,7 +611,7 @@ I updated it to:
 
 The Cat App is now finished:
 
-![](2023-01-05-15-44-57.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-15-44-57.png)
 
 The entire code for this app is:
 
@@ -666,42 +694,47 @@ The entire code for this app is:
     </form>
     </div>
 
+<br><hr>
 
-# Creating Something from Scratch:
+# 1.2 Creating Something from Scratch:
 
-## Step 1: Create a Bootstrap Headline
+## **Step 1: Create a Bootstrap Headline**
 
 
 We shall build a jQuery playground which will be used in the jQuery section
 
-To start with, create an h3 element, with the text jQuery Playground.
+*To start with, create an h3 element, with the text jQuery Playground.*
 
-Color your h3 element with the text-primary Bootstrap class, and center it with the text-center Bootstrap class.
-
+*Color your h3 element with the text-primary Bootstrap class, and center it with the text-center Bootstrap class.*
 
     <h3 class="text-primary text-center">jQuery Playground</h3>
 
+<br><hr>
 
-## Step 2: House our page within a Bootstrap contained-fluid div
+## **Step 2: House our page within a Bootstrap contained-fluid div**
 
-Nest your h3 element within a div element with the class container-fluid.
+*Nest your h3 element within a div element with the class container-fluid.*
 
     <div class="container-fluid">
     <h3 class="text-primary text-center">jQuery Playground</h3>
     </div>
 
-## Step 3: Create a Bootstrap Row
+<br><hr>
 
-Create a div element below the h3 tag, with a class of row.
+## **Step 3: Create a Bootstrap Row**
+
+*Create a div element below the h3 tag, with a class of row.*
 
     <div class="container-fluid">
         <h3 class="text-primary text-center">jQuery Playground</h3>
     <div class="row"></div>
     </div>
 
-## Step 4: Split Your Bootstrap Row
+<br><hr>
 
-Create two div elements within your row, both with the class col-xs-6.
+## **Step 4: Split Your Bootstrap Row**
+
+*Create two div elements within your row, both with the class col-xs-6.*
 
     <div class="container-fluid">
         <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -713,11 +746,13 @@ Create two div elements within your row, both with the class col-xs-6.
         </div>
     </div>
 
-## Step 5: Create Bootstrap Wells
+<br><hr>
+
+## **Step 5: Create Bootstrap Wells**
 
 The Bootstrap **well** clas is used for styling columns of the grid
 
-Nest one div element with the class well within each of your col-xs-6 div elements.
+*Nest one div element with the class well within each of your col-xs-6 div elements.*
 
     <div class="container-fluid">
         <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -733,9 +768,11 @@ Nest one div element with the class well within each of your col-xs-6 div elemen
 
 The App now looks like:
 
-![](2023-01-05-16-18-00.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-16-18-00.png)
 
-## Step 6: Add Elements within Your Bootstrap Wells
+<br><hr>
+
+## **Step 6: Add Elements within Your Bootstrap Wells**
 
 Nest three buttons within each of the well divs.
 
@@ -759,11 +796,14 @@ Nest three buttons within each of the well divs.
 
 The app now looks like:
 
-![](2023-01-05-16-20-49.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-16-20-49.png)
 
-## Step 7: Apply the Default Bootstrap Button Style
+<br><hr>
 
-The buttons have been updated with default styling:
+## **Step 7: Apply the Default Bootstrap Button Style**
+
+*Apply the default Bootstrap button style*
+
 
     <div class="row">
         <div class="col-xs-6">
@@ -784,13 +824,15 @@ The buttons have been updated with default styling:
 
 The App now looks like:
 
-![](2023-01-05-16-22-41.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-16-22-41.png)
 
-## Step 8: Create a Class to Target with jQuery Selectors
+<br><hr>
+
+## **Step 8: Create a Class to Target with jQuery Selectors**
 
 We do not need to use classes just for styling, classes can be targeted with jQuery
 
-Add target class to each button
+*Add target class to each button.*
 
 
     <div class="row">
@@ -810,7 +852,9 @@ Add target class to each button
         </div>
     </div>
 
-## Step 9: Add id Attributes to Bootstrap Elements
+<br><hr>
+
+## **Step 9: Add id Attributes to Bootstrap Elements**
 
 Give the well on the left the id of left-well. Give the well on the right the id of right-well.
 
@@ -831,14 +875,15 @@ Give the well on the left the id of left-well. Give the well on the right the id
         </div>
     </div>
 
+<br><hr>
 
-## Step 10: Label Bootstrap Wells
+## **Step 10: Label Bootstrap Wells**
 
-**For sake of clarity, we shall add some labels above the wells.**
+For sake of clarity, we shall add some labels above the wells.
 
-Above your left-well, inside its col-xs-6 div element, add a h4 element with the text #left-well.
+*Above your left-well, inside its col-xs-6 div element, add a h4 element with the text #left-well.*
 
-Above your right-well, inside its col-xs-6 div element, add a h4 element with the text #right-well.
+*Above your right-well, inside its col-xs-6 div element, add a h4 element with the text #right-well.*
 
     <div class="row">
         <div class="col-xs-6">
@@ -861,12 +906,13 @@ Above your right-well, inside its col-xs-6 div element, add a h4 element with th
 
 The App now looks like:
 
-![](2023-01-05-16-27-58.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-16-27-58.png)
 
+<br><hr>
 
-## Step 11: Give Each Element a Unique id
+## **Step 11: Give Each Element a Unique id**
 
-We want to be able to target each of these buttons. So I will give each button an id of target1 to target6
+*We want to be able to target each of these buttons. So I will give each button an id of target1 to target6*
 
     <div class="row">
         <div class="col-xs-6">
@@ -887,10 +933,11 @@ We want to be able to target each of these buttons. So I will give each button a
         </div>
     </div>
 
+<br><hr>
 
-## Step 12: Label; Bootstrap Buttons
+## **Step 12: Label; Bootstrap Buttons**
 
-Give each button element text which corresponds to its id.
+*Give each button element text which corresponds to its id.*
 
 
     <div class="row">
@@ -914,9 +961,11 @@ Give each button element text which corresponds to its id.
 
 The App now looks like:
 
-![](2023-01-05-16-33-06.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-16-33-06.png)
 
-## Step 13: Use Comments to Clarify Code
+<br><hr>
+
+## **Step 13: Use Comments to Clarify Code**
 
 Add a comment at the top of your HTML that says Code below this line should not be changed
 
@@ -947,4 +996,4 @@ The finished code now looks like:
 
 The finished App looks like:
 
-![](2023-01-05-16-37-25.png)
+![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-16-37-25.png)
