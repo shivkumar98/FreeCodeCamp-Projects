@@ -10,7 +10,9 @@ We can add this frameword by adding the following link to the top of the code:
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
-## Starting HTML/CSS and App
+<br><hr>
+
+# Starting HTML/CSS and App
 
 The Cat Photo App has the following HTML:
 
@@ -72,6 +74,10 @@ The Cat Photo App has the following HTML:
 And the app looks like:
 
 ![](2023-01-05-12-24-33.png)
+
+<br><hr>
+
+# Tutorial Commentary
 
 ## Step 1: Nesting all elements into a container-fluid div
 
@@ -258,3 +264,73 @@ I surround each of the buttons with a div with class col-xs-4 and inserted them 
 The app now looks like:
 
 ![](2023-01-05-13-22-54.png)
+
+## Step 10: Ditch Custom CSS for BootStrap
+
+### Task:
+
+Delete the .red-text, p, and .smaller-image CSS declarations from your style element so that the only declarations left in your style element are h2 and thick-green-border.
+
+Then delete the p element that contains a dead link. Then remove the red-text class from your h2 element and replace it with the text-primary Bootstrap class.
+
+Finally, remove the smaller-image class from your first img element and replace it with the img-responsive class.
+
+Currently there is CSS defined as:
+
+    <style>
+    .red-text {
+        color: red;
+    }
+
+    h2 {
+        font-family: Lobster, Monospace;
+    }
+
+    p {
+        font-size: 16px;
+        font-family: Monospace;
+    }
+
+    .thick-green-border {
+        border-color: green;
+        border-width: 10px;
+        border-style: solid;
+        border-radius: 50%;
+    }
+
+    .smaller-image {
+        width: 100px;
+    }
+    </style>
+
+It now looks like:
+
+    <style>
+
+    h2 {
+        font-family: Lobster, Monospace;
+    }
+
+    .thick-green-border {
+        border-color: green;
+        border-width: 10px;
+        border-style: solid;
+        border-radius: 50%;
+    }
+
+    </style>
+
+### Changes:
+
+Removed red-text class and added text-primary class to h2:
+
+    <h2 class="text-primary text-center">CatPhotoApp</h2>
+
+I removed smaller-image class from top image and added img-responsive:
+
+    <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+
+
+The app now looks like:
+
+![](2023-01-05-13-44-45.png)
