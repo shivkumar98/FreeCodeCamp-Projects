@@ -410,3 +410,32 @@ I update the Info and Delete buttons:
 
     <button class="btn btn-block btn-info"><i class="fas fa-info-circle"></i>Info</button>
     <button class="btn btn-block btn-danger"><i class="fas fa-trash"></i>Delete</button>
+
+The App now looks like:
+
+![](2023-01-05-15-03-39.png)
+
+
+## Step 15: Responsively Style Radio Buttons
+
+Nest both your radio buttons within a &lt;div class="row"> element. Then nest each of them within a &lt;div class="col-xs-6"> element.
+
+We can use classes from the system (like col-xs-*) on form elements too. So we can spread radio buttons across page.
+
+The code for the radio-buttons looks like:
+
+    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+       
+The code now looks like:
+
+    <div class="row">
+        <div class="col-xs-6"><label><input type="radio" name="indoor-outdoor"> Indoor</label></div>
+        <div class="col-xs-6">
+        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+        </div>
+    </div>
+
+The App now looks like:
+
+![](2023-01-05-15-13-50.png)
