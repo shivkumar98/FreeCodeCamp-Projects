@@ -1,5 +1,50 @@
 # 1 Use Responsive Design with BootStrap Fluid Containers
 
+## Table of Contents:
+
+
+[**1.1 Building a Cat App**](#11-building-a-cat-app)
+ * [Step 1: Nesting all elements into a container-fluid div](#--step-1--nesting-all-elements-into-a-container-fluid-div--)
+ * [Step 2: Make Images Mobile Responsive](#--step-2--make-images-mobile-responsive--)
+  * [Step 3: Center Text With Bootstrap](#--step-3--center-text-with-bootstrap--)
+  * [Step 4: Create a Bootstrap Button](#--step-4--create-a-bootstrap-button--)
+  * [Step 5: Create a Block Element Bootstrap Button](#--step-5--create-a-block-element-bootstrap-button--)
+  * [Step 6: Taste the Bootstrap Button Color Rainbow](#--step-6--taste-the-bootstrap-button-color-rainbow--)
+  * [Step 7: Call out Optional Actions with btn-info](#--step-7--call-out-optional-actions-with-btn-info--)
+  * [Step 8: Warn Your Users of a Dangerous Action](#--step-8--warn-your-users-of-a-dangerous-action--)
+  * [Step 9: Use the Bootstrap Grid to Put Elements Side By Side](#--step-9--use-the-bootstrap-grid-to-put-elements-side-by-side--)
+  * [Step 10: Ditch Custom CSS for BootStrap](#--step-10--ditch-custom-css-for-bootstrap--)
+  * [Step 11: Use a span to Target Inline Elements](#step-11--use-a-span-to-target-inline-elements)
+  * [Difference between inline and block](#difference-between-inline-and-block)
+  * [Step 12: Create a Custom Heading](#--step-12--create-a-custom-heading--)
+  * [Step 13: Add Font Awesome Icons to our Buttons](#--step-13--add-font-awesome-icons-to-our-buttons--)
+  * [Step 14: Add Font Awesome Icons to all of our Buttons](#--step-14--add-font-awesome-icons-to-all-of-our-buttons--)
+  * [Step 15: Responsively Style Radio Buttons](#--step-15--responsively-style-radio-buttons--)
+  * [Code At This Point](#--code-at-this-point--)
+  * [Step 16: Responsively Style Checkboxes](#--step-16--responsively-style-checkboxes--)
+  * [Step 17: Style Text Inputs as Form Controls](#--step-17--style-text-inputs-as-form-controls--)
+  * [Step 18: Line up Form Elements Responsively with Bootstrap](#--step-18--line-up-form-elements-responsively-with-bootstrap--)
+
+[**1.2 Creating Something from Scratch**](#12-creating-something-from-scratch-)
+  * [Step 1: Create a Bootstrap Headline](#--step-1--create-a-bootstrap-headline--)
+  * [Step 2: House our page within a Bootstrap contained-fluid div](#--step-2--house-our-page-within-a-bootstrap-contained-fluid-div--)
+  * [Step 3: Create a Bootstrap Row](#--step-3--create-a-bootstrap-row--)
+  * [Step 4: Split Your Bootstrap Row](#--step-4--split-your-bootstrap-row--)
+  * [Step 5: Create Bootstrap Wells](#--step-5--create-bootstrap-wells--)
+  * [Step 6: Add Elements within Your Bootstrap Wells](#--step-6--add-elements-within-your-bootstrap-wells--)
+  * [Step 7: Apply the Default Bootstrap Button Style](#--step-7--apply-the-default-bootstrap-button-style--)
+  * [Step 8: Create a Class to Target with jQuery Selectors](#--step-8--create-a-class-to-target-with-jquery-selectors--)
+  * [Step 9: Add id Attributes to Bootstrap Elements](#--step-9--add-id-attributes-to-bootstrap-elements--)
+  * [Step 10: Label Bootstrap Wells](#--step-10--label-bootstrap-wells--)
+  * [Step 11: Give Each Element a Unique id](#--step-11--give-each-element-a-unique-id--)
+  * [Step 12: Label; Bootstrap Buttons](#--step-12--label--bootstrap-buttons--)
+  * [Step 13: Use Comments to Clarify Code](#--step-13--use-comments-to-clarify-code--)
+
+
+<br><hr>
+
+# Introduction
+
 In the HTML and CSS section we built a Cat Photo App
 
 We shall remake this with Bootstrap responsive CSS framework.
