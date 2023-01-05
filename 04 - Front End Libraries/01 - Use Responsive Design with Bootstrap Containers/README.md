@@ -541,3 +541,22 @@ The code has been updated to:
 The App now looks like:
 
 ![](2023-01-05-15-23-42.png)
+
+
+## Step 17: Style Text Inputs as Form Controls
+
+The paper-plane submit icon has class **fa-paper-plane**
+
+Give your form's text input field a class of form-control. Give your form's submit button the classes btn btn-primary. Also give this button the Font Awesome icon of fa-paper-plane.
+
+I update the submit button to:
+
+    <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"></i> Submit</button>
+
+I add form-control class to the input element:
+
+    <input class="form-control" type="text" placeholder="cat photo URL" required>
+
+The app now looks like:
+
+![](2023-01-05-15-35-18.png)
