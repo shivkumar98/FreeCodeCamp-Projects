@@ -1,6 +1,8 @@
-# Relational Database Certification
+# Relational Database Developer Certification
 
 * I started this certication on 17/12/2022
+
+* I completed the curriculum on 30/12/2022 ([**view certification here**](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/relational-database-v8))
 
 ## Contents:
 
@@ -34,4 +36,4 @@
 
 4) [**Build a Periodic Table Database**](/03%20-%20Relational%20Database/13%20-%20Build%20a%20Periodic%20Table%20Database)
 
-5) [**Build a Number Guessing Game**]()
+5) [**Build a Number Guessing Game**](/03%20-%20Relational%20Database/14%20-%20Build%20a%20Number%20Guessing%20Game)
