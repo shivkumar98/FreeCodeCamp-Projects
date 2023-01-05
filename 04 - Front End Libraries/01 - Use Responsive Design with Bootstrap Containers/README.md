@@ -227,3 +227,34 @@ The app now looks like:
 
 ![](2023-01-05-12-59-24.png)
 
+
+## Step 9: Use the Bootstrap Grid to Put Elements Side By Side
+
+Put the Like, Info and Delete buttons side-by-side by nesting all three of them within one &lt;div class="row"> element, then each of them within a &lt;div class="col-xs-4"> element.
+
+Bootstrap uses a 12-column grid system. We can specify positioning of elements within this grid by specifying a ratio of 12. So if we want an element to take half of the grid using 6.
+
+For this step, I need to make a grid for a small screen so I use col-xs-* where * is replaced by a proportion of 12
+
+I first create a row div:
+
+    <div class="row">
+    </div>
+
+I surround each of the buttons with a div with class col-xs-4 and inserted them in the row div:
+
+    <div class="row">
+        <div class="col-xs-4">
+            <button class="btn btn-block btn-primary">Like</button>
+        </div>
+        <div class="col-xs-4">
+            <button class="btn btn-block btn-info">Info</button>
+        </div>
+        <div class="col-xs-4">
+            <button class="btn btn-block btn-danger">Delete</button>
+        </div>  
+    </div>
+
+The app now looks like:
+
+![](2023-01-05-13-22-54.png)
