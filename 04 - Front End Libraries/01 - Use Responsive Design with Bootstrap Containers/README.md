@@ -371,7 +371,7 @@ The app now looks like:
 
 
 
-## Step 13: Add Font Awesome Icons to outr Buttons
+## Step 13: Add Font Awesome Icons to our Buttons
 
 ### Task
 
@@ -389,6 +389,24 @@ The i tag was originally made to make text italic but is now used for icons. E.g
 
     <i class="fas fa-info-circle"></i>
 
+### Solution
+
 I update the Like button:
 
     <button class="btn btn-block btn-primary"><i class="fas fa-thumbs-up"></i>Like</button>
+
+The App now looks like:
+
+![](2023-01-05-14-57-47.png)
+
+
+## Step 14: Add Font Awesome Icons to all of our Buttons
+
+We can create a Info Circle icon using **fa-info-circle** and a bin icon using **fa-trash**.
+
+Use Font Awesome to add an info-circle icon to your info button and a trash icon to your delete button.
+
+I update the Info and Delete buttons:
+
+    <button class="btn btn-block btn-info"><i class="fas fa-info-circle"></i>Info</button>
+    <button class="btn btn-block btn-danger"><i class="fas fa-trash"></i>Delete</button>
