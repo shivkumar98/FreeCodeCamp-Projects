@@ -12,7 +12,7 @@ We can add this frameword by adding the following link to the top of the code:
 
 <br><hr>
 
-# Starting HTML/CSS and App
+# Building a Cat App
 
 The Cat Photo App has the following HTML:
 
@@ -75,9 +75,6 @@ And the app looks like:
 
 ![](2023-01-05-12-24-33.png)
 
-<br><hr>
-
-# Tutorial Commentary
 
 ## Step 1: Nesting all elements into a container-fluid div
 
@@ -560,3 +557,394 @@ I add form-control class to the input element:
 The app now looks like:
 
 ![](2023-01-05-15-35-18.png)
+
+
+## Step 18: Line up Form Elements Responsively with Bootstrap
+
+Now let's get your form input and your submission button on the same line. We'll do this the same way we have previously: by using a div element with the class row, and other div elements within it using the col-xs-* class.
+
+Nest both your form's text input and submit button within a div with the class row. Nest your form's text input within a div with the class of col-xs-7. Nest your form's submit button in a div with the class col-xs-5.
+
+The code currently looks like:
+
+    <input type="text" class="form-control" placeholder="cat photo URL" required>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
+
+I updated it to:
+
+    <div class="row">
+        <div class="col-xs-7">
+            <input type="text" class="form-control" placeholder="cat photo URL" required>
+        </div>
+        <div class="col-xs-5">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
+        </div>
+    </div>
+
+The Cat App is now finished:
+
+![](2023-01-05-15-44-57.png)
+
+The entire code for this app is:
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <style>
+    h2 {
+        font-family: Lobster, Monospace;
+    }
+
+    .thick-green-border {
+        border-color: green;
+        border-width: 10px;
+        border-style: solid;
+        border-radius: 50%;
+    }
+
+    </style>
+
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-8">
+        <h2 class="text-primary text-center">CatPhotoApp</h2>
+        </div>
+        <div class="col-xs-4">
+        <a href="#"><img class="img-responsive thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+        </div>
+    </div>
+    <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
+    <div class="row">
+        <div class="col-xs-4">
+        <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+        </div>
+        <div class="col-xs-4">
+        <button class="btn btn-block btn-info"><i class="fa fa-info-circle"></i> Info</button>
+        </div>
+        <div class="col-xs-4">
+        <button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button>
+        </div>
+    </div>
+    <p>Things cats <span class="text-danger">love:</span></p>
+    <ul>
+        <li>cat nip</li>
+        <li>laser pointers</li>
+        <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+    </ol>
+    <form action="https://freecatphotoapp.com/submit-cat-photo">
+        <div class="row">
+        <div class="col-xs-6">
+            <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+        </div>
+        <div class="col-xs-6">
+            <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-xs-4">
+            <label><input type="checkbox" name="personality"> Loving</label>
+        </div>
+        <div class="col-xs-4">
+            <label><input type="checkbox" name="personality"> Lazy</label>
+        </div>
+        <div class="col-xs-4">
+            <label><input type="checkbox" name="personality"> Crazy</label>
+        </div>
+        </div>
+            <div class="row">
+            <div class="col-xs-7">
+                <input type="text" class="form-control" placeholder="cat photo URL" required>
+            </div>
+            <div class="col-xs-5">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
+            </div>
+        </div>
+    </form>
+    </div>
+
+
+# Creating Something from Scratch:
+
+## Step 1: Create a Bootstrap Headline
+
+
+We shall build a jQuery playground which will be used in the jQuery section
+
+To start with, create an h3 element, with the text jQuery Playground.
+
+Color your h3 element with the text-primary Bootstrap class, and center it with the text-center Bootstrap class.
+
+
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+
+
+## Step 2: House our page within a Bootstrap contained-fluid div
+
+Nest your h3 element within a div element with the class container-fluid.
+
+    <div class="container-fluid">
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+    </div>
+
+## Step 3: Create a Bootstrap Row
+
+Create a div element below the h3 tag, with a class of row.
+
+    <div class="container-fluid">
+        <h3 class="text-primary text-center">jQuery Playground</h3>
+    <div class="row"></div>
+    </div>
+
+## Step 4: Split Your Bootstrap Row
+
+Create two div elements within your row, both with the class col-xs-6.
+
+    <div class="container-fluid">
+        <h3 class="text-primary text-center">jQuery Playground</h3>
+        <div class="row">
+            <div class="col-xs-6">
+            </div>
+            <div class="col-xs-6">
+            </div>
+        </div>
+    </div>
+
+## Step 5: Create Bootstrap Wells
+
+The Bootstrap **well** clas is used for styling columns of the grid
+
+Nest one div element with the class well within each of your col-xs-6 div elements.
+
+    <div class="container-fluid">
+        <h3 class="text-primary text-center">jQuery Playground</h3>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="well"></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="well"></div>
+            </div>
+        </div>
+    </div>
+
+The App now looks like:
+
+![](2023-01-05-16-18-00.png)
+
+## Step 6: Add Elements within Your Bootstrap Wells
+
+Nest three buttons within each of the well divs.
+
+    <div class="row">
+        <div class="col-xs-6">
+        <div class="well">
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+        </div>
+        <div class="col-xs-6">
+        <div class="well">
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+The app now looks like:
+
+![](2023-01-05-16-20-49.png)
+
+## Step 7: Apply the Default Bootstrap Button Style
+
+The buttons have been updated with default styling:
+
+    <div class="row">
+        <div class="col-xs-6">
+        <div class="well">
+            <button class="btn btn-default"></button>
+            <button class="btn btn-default"></button>
+            <button class="btn btn-default"></button>
+        </div>
+        </div>
+        <div class="col-xs-6">
+        <div class="well">
+            <button class="btn btn-default"></button>
+            <button class="btn btn-default"></button>
+            <button class="btn btn-default"></button>
+        </div>
+        </div>
+    </div>
+
+The App now looks like:
+
+![](2023-01-05-16-22-41.png)
+
+## Step 8: Create a Class to Target with jQuery Selectors
+
+We do not need to use classes just for styling, classes can be targeted with jQuery
+
+Add target class to each button
+
+
+    <div class="row">
+        <div class="col-xs-6">
+        <div class="well">
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+        </div>
+        </div>
+        <div class="col-xs-6">
+        <div class="well">
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+        </div>
+        </div>
+    </div>
+
+## Step 9: Add id Attributes to Bootstrap Elements
+
+Give the well on the left the id of left-well. Give the well on the right the id of right-well.
+
+    <div class="row">
+        <div class="col-xs-6">
+        <div class="well" id="left-well">
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+        </div>
+        </div>
+        <div class="col-xs-6">
+        <div class="well" id="right-well">
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+        </div>
+        </div>
+    </div>
+
+
+## Step 10: Label Bootstrap Wells
+
+**For sake of clarity, we shall add some labels above the wells.**
+
+Above your left-well, inside its col-xs-6 div element, add a h4 element with the text #left-well.
+
+Above your right-well, inside its col-xs-6 div element, add a h4 element with the text #right-well.
+
+    <div class="row">
+        <div class="col-xs-6">
+        <h4>#left-well</h4>
+        <div class="well" id="left-well">
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+        </div>
+        </div>
+        <div class="col-xs-6">
+        <h4>#right-well</h4>
+        <div class="well" id="right-well">
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+            <button class="btn btn-default target"></button>
+        </div>
+        </div>
+    </div>
+
+The App now looks like:
+
+![](2023-01-05-16-27-58.png)
+
+
+## Step 11: Give Each Element a Unique id
+
+We want to be able to target each of these buttons. So I will give each button an id of target1 to target6
+
+    <div class="row">
+        <div class="col-xs-6">
+        <h4>#left-well</h4>
+        <div class="well" id="left-well">
+            <button class="btn btn-default target" id="target1"></button>
+            <button class="btn btn-default target target" id="target2"></button>
+            <button class="btn btn-default target target" id="target3"></button>
+        </div>
+        </div>
+        <div class="col-xs-6">
+        <h4>#right-well</h4>
+        <div class="well" id="right-well">
+            <button class="btn btn-default target" target" id="target4"></button>
+            <button class="btn btn-default target" target" id="target5"></button>
+            <button class="btn btn-default target" target" id="target6"></button>
+        </div>
+        </div>
+    </div>
+
+
+## Step 12: Label; Bootstrap Buttons
+
+Give each button element text which corresponds to its id.
+
+
+    <div class="row">
+        <div class="col-xs-6">
+        <h4>#left-well</h4>
+        <div class="well" id="left-well">
+            <button class="btn btn-default target" id="target1">#target1</button>
+            <button class="btn btn-default target" id="target2">#target2</button>
+            <button class="btn btn-default target" id="target3">#target3</button>
+        </div>
+        </div>
+        <div class="col-xs-6">
+        <h4>#right-well</h4>
+        <div class="well" id="right-well">
+            <button class="btn btn-default target" id="target4">#target4</button>
+            <button class="btn btn-default target" id="target5">#target5</button>
+            <button class="btn btn-default target" id="target6">#target6</button>
+        </div>
+        </div>
+    </div>
+
+The App now looks like:
+
+![](2023-01-05-16-33-06.png)
+
+## Step 13: Use Comments to Clarify Code
+
+Add a comment at the top of your HTML that says Code below this line should not be changed
+
+The finished code now looks like:
+
+    <!-- Code below this line should not be changed -->
+    <div class="container-fluid">
+        <h3 class="text-primary text-center">jQuery Playground</h3>
+        <div class="row">
+            <div class="col-xs-6">
+            <h4>#left-well</h4>
+            <div class="well" id="left-well">
+                <button class="btn btn-default target" id="target1">#target1</button>
+                <button class="btn btn-default target" id="target2">#target2</button>
+                <button class="btn btn-default target" id="target3">#target3</button>
+            </div>
+            </div>
+            <div class="col-xs-6">
+            <h4>#right-well</h4>
+            <div class="well" id="right-well">
+                <button class="btn btn-default target" id="target4">#target4</button>
+                <button class="btn btn-default target" id="target5">#target5</button>
+                <button class="btn btn-default target" id="target6">#target6</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+The finished App looks like:
+
+![](2023-01-05-16-37-25.png)
