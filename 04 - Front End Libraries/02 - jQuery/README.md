@@ -96,3 +96,29 @@ The App now looks like:
 
 ![](2023-01-06-08-18-56.png)
 
+<br><hr>
+
+# Step 6: Target the same Element with Multiple jQuery Selectors
+
+*Using .addClass(), add only one class at a time to the same element, three different ways:*
+
+*Add the animated class to all elements with type button.*
+
+*Add the shake class to all the buttons with class .btn.*
+
+*Add the btn-primary class to the button with id #target1.*
+
+
+    <script>
+        $(document).ready(function() {
+            $("button").addClass("animated")
+            $(".btn").addClass("shake")
+            $("#target1").addClass("btn-primary")
+        });
+    </script>
+
+The App now looks like:
+
+<img src="step-06.gif">
+
+<br><hr>
