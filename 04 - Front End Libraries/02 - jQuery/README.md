@@ -57,4 +57,28 @@ Now the elements are animated:
         $(".well").addClass("animated shake");
     });
 
+The App now looks like:
+
 <img src="step-03.gif">
+
+<br><hr>
+
+## Step 4: Target Elements by id using jQuery
+
+We can also target elements by their id by using #id
+
+Use jQuery's .addClass() function to add the classes animated and fadeOut to the buttons with id target3
+
+    $(document).ready(function() {
+        $("button").addClass("animated bounce");
+        $(".well").addClass("animated shake");
+        $("#target3").addClass("animated fadeout")
+    });
+
+The App now looks like:
+
+
+<img src="step-04.gif">
+
+<br><hr>
+
