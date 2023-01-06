@@ -122,3 +122,22 @@ The App now looks like:
 <img src="step-06.gif">
 
 <br><hr>
+
+# Step 7: Remove Classes from an Element with jQuery
+
+jQuery has a **removeClass()** function!
+
+*Remove the btn-default class from all of our button elements.*
+
+    <script>
+        $(document).ready(function() {
+            $("button").addClass("animated bounce");
+            $(".well").addClass("animated shake");
+            $("#target3").addClass("animated fadeOut");
+            $("button").removeClass("btn-default")
+        });
+    </script>
+
+The App now looks like:
+
+![](2023-01-06-08-29-35.png)
