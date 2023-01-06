@@ -47,3 +47,14 @@ Now the elements are animated:
 
 ## Step 3: Target Elements by Class Using jQuery
 
+ *To the Well elements, add the classes animated and shake.*
+
+ We can target classes the same way as in CSS, by using the .classname targeter:
+
+
+    $(document).ready(function() {
+        $("button").addClass("animated bounce");
+        $(".well").addClass("animated shake");
+    });
+
+<img src="step-03.gif">
