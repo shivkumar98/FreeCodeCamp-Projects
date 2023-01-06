@@ -82,3 +82,17 @@ The App now looks like:
 
 <br><hr>
 
+# Step 5: Delete your jQuery Functions
+
+*Delete all three of these jQuery functions from your document ready function, but leave your document ready function itself intact.*
+
+    <script>
+        $(document).ready(function() {
+        
+        });
+    </script>
+
+The App now looks like:
+
+![](2023-01-06-08-18-56.png)
+
