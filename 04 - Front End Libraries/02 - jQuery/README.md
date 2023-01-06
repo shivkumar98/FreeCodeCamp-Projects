@@ -141,3 +141,23 @@ jQuery has a **removeClass()** function!
 The App now looks like:
 
 ![](2023-01-06-08-29-35.png)
+
+<br><hr>
+
+# Step 8: Change the CSS of an Element Using jQuery
+
+The jQuery **.css()** function allows you to change the CSS of an element
+
+*Delete your jQuery selectors, leaving an empty document ready function.*
+
+*Select target1 and change its color to red.*
+
+    <script>
+        $(document).ready(function() {
+            $("#target1").css("color", "red")
+        });
+    </script>
+
+The App now looks like:
+
+    ![](2023-01-06-08-35-38.png)
