@@ -160,4 +160,46 @@ The jQuery **.css()** function allows you to change the CSS of an element
 
 The App now looks like:
 
-    ![](2023-01-06-08-35-38.png)
+![](2023-01-06-08-35-38.png)
+
+<br><hr>
+
+# Step 9: Disable an Element Using jQuery
+
+We can modify other properties of elements using the **.prop()** function.
+
+We can disable a button so it greys out after being clicked with the following syntax:
+
+    $("button").prop("disabled", true);
+
+*Disable only the target1 button.*
+
+    <script>
+    $(document).ready(function() {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+    });
+    </script>
+
+The App now looks like:
+
+![](2023-01-08-12-46-18.png)
+
+
+# Step 10: Change Text Inside an Element Using jQuery
+
+jQuery has a **.html()** function which lets you modify the contents within an element - everything will be completely replaced!
+
+
+*Change the button with id target4 by emphasizing its text.*
+
+    <script>
+    $(document).ready(function() {
+        $("#target1").css("color", "red");
+        $("#target4").html("<em>#target4</em>");
+    });
+    </script>
+
+The App now looks like:
+
+![](2023-01-08-12-50-10.png)
