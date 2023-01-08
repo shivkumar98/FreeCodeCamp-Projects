@@ -69,6 +69,30 @@
 
 <hr>
 
+## Table of Contents:
+
+
+  * [Step 1: Learn How Script Tags and Documents Ready Work](#step-1--learn-how-script-tags-and-documents-ready-work)
+  * [Step 2: Target HTML Elements with Selectors Using jQuery](#step-2--target-html-elements-with-selectors-using-jquery)
+  * [Step 3: Target Elements by Class Using jQuery](#step-3--target-elements-by-class-using-jquery)
+  * [Step 4: Target Elements by id using jQuery](#step-4--target-elements-by-id-using-jquery)
+  * [Step 5: Delete your jQuery Functions](#step-5--delete-your-jquery-functions)
+  * [Step 6: Target the same Element with Multiple jQuery Selectors](#step-6--target-the-same-element-with-multiple-jquery-selectors)
+  * [Step 7: Remove Classes from an Element with jQuery](#step-7--remove-classes-from-an-element-with-jquery)
+  * [Step 8: Change the CSS of an Element Using jQuery](#step-8--change-the-css-of-an-element-using-jquery)
+  * [Step 9: Disable an Element Using jQuery](#step-9--disable-an-element-using-jquery)
+  * [Step 10: Change Text Inside an Element Using jQuery](#step-10--change-text-inside-an-element-using-jquery)
+  * [Step 11: Remove an Element Using jQuery](#step-11--remove-an-element-using-jquery)
+  * [Step 12: Use appendTo to Move Elements with jQuery](#step-12--use-appendto-to-move-elements-with-jquery)
+  * [Step 13: Clone an Element Using jQuery](#step-13--clone-an-element-using-jquery)
+  * [Step 14: Target the Parent of an Element using jQuery](#step-14--target-the-parent-of-an-element-using-jquery)
+  * [Step 15: Target the Children of an Element Using jQuery](#step-15--target-the-children-of-an-element-using-jquery)
+  * [Step 16: Target a Specific Child of an Element Using jQuery](#step-16--target-a-specific-child-of-an-element-using-jquery)
+  * [Step 17: Target Even Elements Using jQuery](#step-17--target-even-elements-using-jquery)
+  * [Step 18: Use jQuery to Modify the Entire Page](#step-18--use-jquery-to-modify-the-entire-page)
+  * [Finished File](#finished-file-)
+
+<hr>
 
 # Introduction
 
