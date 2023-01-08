@@ -297,6 +297,8 @@ The App now looks like:
 
 ![](2023-01-08-13-13-00.png)
 
+<br><hr>
+
 ## Step 15: Target the Children of an Element Using jQuery
 
 HTML elements which are one level belone of another are called **children** of the element.
@@ -320,3 +322,32 @@ The jQuery function **children()** lets you access the children of selected elem
 The App now looks like:
 
 ![](2023-01-08-13-17-27.png)
+
+<br><hr>
+
+## Step 16: Target a Specific Child of an Element Using jQuery
+
+jQuery can use CSS selectors to target specific elements. E.g. target:nth-child(n) lets you target nth element with the target class of element or type.
+
+For example, if we wanted to give the third element in each well the bounce class:
+
+    $(".target:nth-child(3)").addClass("animated bounce");
+
+*Make the second child in each of your well elements bounce*
+
+    <script>
+        $(document).ready(function() {
+            $("#target1").css("color", "red");
+            $("#target1").prop("disabled", true);
+            $("#target4").remove();
+            $("#target2").appendTo("#right-well");
+            $("#target5").clone().appendTo("#left-well");
+            $("#target1").parent().css("background-color", "red");
+            $("#right-well").children().css("color", "orange");
+            $(".target:nth-child(2)").addClass("animated bounce");
+        });
+    </script>
+
+The App now looks like:
+
+![](step-16.gif)
