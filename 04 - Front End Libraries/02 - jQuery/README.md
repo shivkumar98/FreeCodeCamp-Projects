@@ -1,5 +1,9 @@
 # 2 jQuery
 
+# 2.1 Summary
+
+## jQuery Function
+
 # Introduction
 
 jQuery is the most widely used JavaScript libraries, it simplifies client-side JavaScript so it outputs consistently for all browsers.
@@ -8,7 +12,7 @@ In this section, I will learn how to select, remove, clone and modify different 
 
 <br><hr>
 
-# 2.1 Tutorial Commentary
+# 2.2 Tutorial Commentary
 
 ## Step 1: Learn How Script Tags and Documents Ready Work
 
@@ -351,3 +355,20 @@ For example, if we wanted to give the third element in each well the bounce clas
 The App now looks like:
 
 ![](step-16.gif)
+
+<br><hr>
+
+## Step 17: Target Even Elements Using jQuery
+
+jQuery is zero-indexed, meaning targeting even elements targets elements with position (0, 2, 4...) and odd targets elements with position (1, 3, 5...).
+
+We target odd and even elements with
+
+    $(".class:odd")
+    $(".class:even")
+
+Select all even target elements and give them class animated and shake
+
+The App now looks like:
+
+![](step-17.gif)
