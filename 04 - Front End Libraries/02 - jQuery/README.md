@@ -98,7 +98,7 @@ The App now looks like:
 
 <br><hr>
 
-# Step 6: Target the same Element with Multiple jQuery Selectors
+### Step 6: Target the same Element with Multiple jQuery Selectors
 
 *Using .addClass(), add only one class at a time to the same element, three different ways:*
 
@@ -123,7 +123,7 @@ The App now looks like:
 
 <br><hr>
 
-# Step 7: Remove Classes from an Element with jQuery
+## Step 7: Remove Classes from an Element with jQuery
 
 jQuery has a **removeClass()** function!
 
@@ -144,7 +144,7 @@ The App now looks like:
 
 <br><hr>
 
-# Step 8: Change the CSS of an Element Using jQuery
+## Step 8: Change the CSS of an Element Using jQuery
 
 The jQuery **.css()** function allows you to change the CSS of an element
 
@@ -164,7 +164,7 @@ The App now looks like:
 
 <br><hr>
 
-# Step 9: Disable an Element Using jQuery
+## Step 9: Disable an Element Using jQuery
 
 We can modify other properties of elements using the **.prop()** function.
 
@@ -187,7 +187,7 @@ The App now looks like:
 
 <br><hr>
 
-# Step 10: Change Text Inside an Element Using jQuery
+## Step 10: Change Text Inside an Element Using jQuery
 
 jQuery has a **.html()** function which lets you modify the contents within an element - everything will be completely replaced!
 
@@ -207,7 +207,7 @@ The App now looks like:
 
 <br><hr>
 
-# Step 12: Remove an Element Using jQuery
+## Step 11: Remove an Element Using jQuery
 
 jQuery has the **.remove()** function which removes an HTML element entirely
 
@@ -227,7 +227,7 @@ The App now looks like:
 
 <br><hr>
 
-# Step 13: Use appendTo to Move Elements with jQuery
+## Step 12: Use appendTo to Move Elements with jQuery
 
 The **appendTo()** function allows you to select HTML elements and append them to another element.
 
@@ -248,7 +248,7 @@ The App now looks like:
 
 <br><hr>
 
-# Step 14: Clone an Element Using jQuery
+## Step 13: Clone an Element Using jQuery
 
 The **clone()** function makes a copy of an element.
 
@@ -271,3 +271,52 @@ For example, if we wanted to copy target2 from our left-well to our right well, 
 The App now looks like:
 
 ![](2023-01-08-13-02-21.png)
+
+<br><hr>
+
+## Step 14: Target the Parent of an Element using jQuery
+
+Every HTML element has a parent which it **inherits** its properties from.
+
+The jQuery function **parent()** allows you to access the parent of whichever element is selected.
+
+*Give the parent of the #target1 element a background-color of red*
+
+    <script>
+        $(document).ready(function() {
+            $("#target1").css("color", "red");
+            $("#target1").prop("disabled", true);
+            $("#target4").remove();
+            $("#target2").appendTo("#right-well");
+            $("#target5").clone().appendTo("#left-well");
+            $("#target1").parent().css("background-color", "red")
+        });
+    </script>
+
+The App now looks like:
+
+![](2023-01-08-13-13-00.png)
+
+## Step 15: Target the Children of an Element Using jQuery
+
+HTML elements which are one level belone of another are called **children** of the element.
+
+The jQuery function **children()** lets you access the children of selected element.
+
+*Give all the children of your right-well elements the color orange*
+
+    <script>
+        $(document).ready(function() {
+            $("#target1").css("color", "red");
+            $("#target1").prop("disabled", true);
+            $("#target4").remove();
+            $("#target2").appendTo("#right-well");
+            $("#target5").clone().appendTo("#left-well");
+            $("#target1").parent().css("background-color", "red");
+            $("#right-well").children().css("color", "orange");
+        });
+    </script>
+
+The App now looks like:
+
+![](2023-01-08-13-17-27.png)
