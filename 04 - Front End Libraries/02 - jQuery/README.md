@@ -185,6 +185,7 @@ The App now looks like:
 
 ![](2023-01-08-12-46-18.png)
 
+<br><hr>
 
 # Step 10: Change Text Inside an Element Using jQuery
 
@@ -203,3 +204,70 @@ jQuery has a **.html()** function which lets you modify the contents within an e
 The App now looks like:
 
 ![](2023-01-08-12-50-10.png)
+
+<br><hr>
+
+# Step 12: Remove an Element Using jQuery
+
+jQuery has the **.remove()** function which removes an HTML element entirely
+
+*Remove the #target4 element from the page*
+
+    <script>
+        $(document).ready(function() {
+            $("#target1").css("color", "red");
+            $("#target1").prop("disabled", true);
+            $("#target4").remove();
+        });
+    </script>
+
+The App now looks like:
+
+![](2023-01-08-12-53-46.png)
+
+<br><hr>
+
+# Step 13: Use appendTo to Move Elements with jQuery
+
+The **appendTo()** function allows you to select HTML elements and append them to another element.
+
+*Move your target2 element from your left well to your right well*
+
+    <script>
+        $(document).ready(function() {
+            $("#target1").css("color", "red");
+            $("#target1").prop("disabled", true);
+            $("#target4").remove();
+            $("#target2").appendTo("#right-well")
+        });
+    </script>
+
+The App now looks like:
+
+![](2023-01-08-12-57-01.png)
+
+<br><hr>
+
+# Step 14: Clone an Element Using jQuery
+
+The **clone()** function makes a copy of an element.
+
+For example, if we wanted to copy target2 from our left-well to our right well, we would write:
+
+    $("#target2").clone().appendTo("#right-well");
+
+*Clone your target5 element and append it to your left well*
+
+    <script>
+        $(document).ready(function() {
+            $("#target1").css("color", "red");
+            $("#target1").prop("disabled", true);
+            $("#target4").remove();
+            $("#target2").appendTo("#right-well");
+            $("#target5").clone().appendTo("#left-well");
+        });
+    </script>
+
+The App now looks like:
+
+![](2023-01-08-13-02-21.png)
