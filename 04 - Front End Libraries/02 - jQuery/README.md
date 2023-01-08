@@ -1,18 +1,87 @@
-# 2 jQuery
+# 2: jQuery
 
-# 2.1 Summary
+## Summary
 
-## jQuery Function
+1. We need a **script tag** to write jQuery:
+
+        <script>
+        </script>
+
+2. **readyFunction()** on the document lets the code runs *after* HTML renders
+
+        <script>
+            $(document).ready(function() {});
+        </script>
+3. We can target elements using element name, class or ID:
+
+        $("button")
+        $(".btn-primary")
+        $("#target")
+
+4. **addClass()** function lets you add classes to elements:
+
+        $("button").addClass("animated bounce");
+
+5. **removeClass()** function lets you remove classes from elements:
+
+        $("button").removeClass("btn-default")
+
+6. **css()** function lets you set CSS attributes:
+
+        $("button").css("color", "red")
+
+7. **prop()** function lets set a property of an element. E.g. we can disable button upon click:
+
+         $("#target1").prop("disabled", true);
+
+8. **html()** function lets you update the contents of an element, it replaces everything:
+
+        "#target4").html("<em>#target4</em>");
+
+9. **remove()** functions lets you completely remove an element from document:
+
+        $("#target").remove();
+
+10. **appendTo()** function lets you select an element and append it to another:
+
+        $("#target1").appendTo("#right-well")
+
+11. **clone()** function lets you copy an element
+
+        $("#target2").clone().appendTo("#right-well");
+
+12. **parent()** function lets you select element which is contained by the one specified:
+
+        $("#target1").parent().css("background-color", "red")
+
+13. **children()** function lets you select element one level below. This is useful for selecting multiple elements:
+
+         $("#right-well").children().css("color", "orange");
+
+14. **:nth-child(n)** lets you target the nth child. E.g. targeting the 2nd child of target class:
+
+         $(".target:nth-child(2)").addClass("animated bounce");
+
+15. **Odd and even elements are targeted using zero-index**. The :odd selector target elements on lines 2,4,6... and :even selector target elements on lines 1,3,5...:
+
+        $(".class:odd")
+        $(".class:even")
+
+<hr>
+
 
 # Introduction
+
+## What is jQuery?
 
 jQuery is the most widely used JavaScript libraries, it simplifies client-side JavaScript so it outputs consistently for all browsers.
 
 In this section, I will learn how to select, remove, clone and modify different elements using jQuery
 
-<br><hr>
+<hr>
 
-# 2.2 Tutorial Commentary
+
+# Tutorial Commentary
 
 ## Step 1: Learn How Script Tags and Documents Ready Work
 
@@ -26,7 +95,8 @@ I add the following above the comment of the HTML from Bootstrap tutorial:
         $(document).ready(function() {});
     </script>
 
-<br><hr>
+<hr>
+
 
 
 ## Step 2: Target HTML Elements with Selectors Using jQuery
@@ -45,9 +115,10 @@ Using jQuery to apply the Animate.css bounce class to your button elements.
 
 Now the elements are animated:
 
-<img src="step-02.gif">
+<img src="screenshots/step-02.gif">
 
-<br><hr>
+<hr>
+
 
 ## Step 3: Target Elements by Class Using jQuery
 
@@ -63,9 +134,10 @@ Now the elements are animated:
 
 The App now looks like:
 
-<img src="step-03.gif">
+<img src="screenshots/step-03.gif">
 
-<br><hr>
+<hr>
+
 
 ## Step 4: Target Elements by id using jQuery
 
@@ -82,11 +154,11 @@ Use jQuery's .addClass() function to add the classes animated and fadeOut to the
 The App now looks like:
 
 
-<img src="step-04.gif">
+<img src="screenshots/step-04.gif">
 
-<br><hr>
+<hr>
 
-# Step 5: Delete your jQuery Functions
+## Step 5: Delete your jQuery Functions
 
 *Delete all three of these jQuery functions from your document ready function, but leave your document ready function itself intact.*
 
@@ -98,11 +170,11 @@ The App now looks like:
 
 The App now looks like:
 
-![](2023-01-06-08-18-56.png)
+![](screenshots/2023-01-06-08-18-56.png)
 
-<br><hr>
+<hr>
 
-### Step 6: Target the same Element with Multiple jQuery Selectors
+## Step 6: Target the same Element with Multiple jQuery Selectors
 
 *Using .addClass(), add only one class at a time to the same element, three different ways:*
 
@@ -123,9 +195,9 @@ The App now looks like:
 
 The App now looks like:
 
-<img src="step-06.gif">
+<img src="screenshots/step-06.gif">
 
-<br><hr>
+<hr>
 
 ## Step 7: Remove Classes from an Element with jQuery
 
@@ -146,7 +218,7 @@ The App now looks like:
 
 ![](2023-01-06-08-29-35.png)
 
-<br><hr>
+<hr>
 
 ## Step 8: Change the CSS of an Element Using jQuery
 
@@ -164,9 +236,9 @@ The jQuery **.css()** function allows you to change the CSS of an element
 
 The App now looks like:
 
-![](2023-01-06-08-35-38.png)
+![](screenshots/2023-01-06-08-35-38.png)
 
-<br><hr>
+<hr>
 
 ## Step 9: Disable an Element Using jQuery
 
@@ -187,9 +259,9 @@ We can disable a button so it greys out after being clicked with the following s
 
 The App now looks like:
 
-![](2023-01-08-12-46-18.png)
+![](screenshots/2023-01-08-12-46-18.png)
 
-<br><hr>
+<hr>
 
 ## Step 10: Change Text Inside an Element Using jQuery
 
@@ -207,9 +279,9 @@ jQuery has a **.html()** function which lets you modify the contents within an e
 
 The App now looks like:
 
-![](2023-01-08-12-50-10.png)
+![](screenshots/2023-01-08-12-50-10.png)
 
-<br><hr>
+<hr>
 
 ## Step 11: Remove an Element Using jQuery
 
@@ -227,9 +299,10 @@ jQuery has the **.remove()** function which removes an HTML element entirely
 
 The App now looks like:
 
-![](2023-01-08-12-53-46.png)
+![](screenshots/2023-01-08-12-53-46.png)
 
-<br><hr>
+<hr>
+
 
 ## Step 12: Use appendTo to Move Elements with jQuery
 
@@ -248,9 +321,10 @@ The **appendTo()** function allows you to select HTML elements and append them t
 
 The App now looks like:
 
-![](2023-01-08-12-57-01.png)
+![](screenshots/2023-01-08-12-57-01.png)
 
-<br><hr>
+<hr>
+
 
 ## Step 13: Clone an Element Using jQuery
 
@@ -274,9 +348,10 @@ For example, if we wanted to copy target2 from our left-well to our right well, 
 
 The App now looks like:
 
-![](2023-01-08-13-02-21.png)
+![](screenshots/2023-01-08-13-02-21.png)
 
-<br><hr>
+<hr>
+
 
 ## Step 14: Target the Parent of an Element using jQuery
 
@@ -299,9 +374,9 @@ The jQuery function **parent()** allows you to access the parent of whichever el
 
 The App now looks like:
 
-![](2023-01-08-13-13-00.png)
+![](screenshots/2023-01-08-13-13-00.png)
 
-<br><hr>
+<hr>
 
 ## Step 15: Target the Children of an Element Using jQuery
 
@@ -325,9 +400,9 @@ The jQuery function **children()** lets you access the children of selected elem
 
 The App now looks like:
 
-![](2023-01-08-13-17-27.png)
+![](screenshots/2023-01-08-13-17-27.png)
 
-<br><hr>
+<hr>
 
 ## Step 16: Target a Specific Child of an Element Using jQuery
 
@@ -354,9 +429,9 @@ For example, if we wanted to give the third element in each well the bounce clas
 
 The App now looks like:
 
-![](step-16.gif)
+![](screenshots/step-16.gif)
 
-<br><hr>
+<hr>
 
 ## Step 17: Target Even Elements Using jQuery
 
@@ -367,14 +442,27 @@ We target odd and even elements with
     $(".class:odd")
     $(".class:even")
 
-Select all even target elements and give them class animated and shake
+*Select all even target elements and give them class animated and shake*
+
+    <script>
+        $(document).ready(function() {
+        $("#target1").css("color", "red");
+        $("#target1").prop("disabled", true);
+        $("#target4").remove();
+        $("#target2").appendTo("#right-well");
+        $("#target5").clone().appendTo("#left-well");
+        $("#target1").parent().css("background-color", "red");
+        $("#right-well").children().css("color", "orange");
+        $("#left-well").children().css("color", "green");
+        $(".target:nth-child(2)").addClass("animated bounce");
+        $(".target:even").addClass("animated shake");
+    </script>
 
 The App now looks like:
 
-![](step-17.gif)
+![](screenshots/step-17.gif)
 
-
-<br><hr>
+<hr>
 
 ## Step 18: Use jQuery to Modify the Entire Page
 
@@ -402,32 +490,51 @@ Add the classes animated and hinge to your body element
 The App now looks like:
 
 
-![](step-18.gif)
+![](screenshots/step-18.gif)
 
-<br><hr>
+<hr>
 
 ## Finished File:
 
   <!-- Only change code above this line -->
   
-    <div class="container-fluid">
-        <h3 class="text-primary text-center">jQuery Playground</h3>
-        <div class="row">
-        <div class="col-xs-6">
-            <h4>#left-well</h4>
-            <div class="well" id="left-well">
-            <button class="btn btn-default target" id="target1">#target1</button>
-            <button class="btn btn-default target" id="target2">#target2</button>
-            <button class="btn btn-default target" id="target3">#target3</button>
+        <script>
+            $(document).ready(function() {
+            $("#target1").css("color", "red");
+            $("#target1").prop("disabled", true);
+            $("#target4").remove();
+            $("#target2").appendTo("#right-well");
+            $("#target5").clone().appendTo("#left-well");
+            $("#target1").parent().css("background-color", "red");
+            $("#right-well").children().css("color", "orange");
+            $("#left-well").children().css("color", "green");
+            $(".target:nth-child(2)").addClass("animated bounce");
+            $(".target:even").addClass("animated shake");
+            $("body").addClass("animated hinge");
+        
+            });
+        </script>
+        
+        <!-- Only change code above this line -->
+        
+        <div class="container-fluid">
+            <h3 class="text-primary text-center">jQuery Playground</h3>
+            <div class="row">
+            <div class="col-xs-6">
+                <h4>#left-well</h4>
+                <div class="well" id="left-well">
+                <button class="btn btn-default target" id="target1">#target1</button>
+                <button class="btn btn-default target" id="target2">#target2</button>
+                <button class="btn btn-default target" id="target3">#target3</button>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <h4>#right-well</h4>
+                <div class="well" id="right-well">
+                <button class="btn btn-default target" id="target4">#target4</button>
+                <button class="btn btn-default target" id="target5">#target5</button>
+                <button class="btn btn-default target" id="target6">#target6</button>
+                </div>
+            </div>
             </div>
         </div>
-        <div class="col-xs-6">
-            <h4>#right-well</h4>
-            <div class="well" id="right-well">
-            <button class="btn btn-default target" id="target4">#target4</button>
-            <button class="btn btn-default target" id="target5">#target5</button>
-            <button class="btn btn-default target" id="target6">#target6</button>
-            </div>
-        </div>
-        </div>
-    </div>
