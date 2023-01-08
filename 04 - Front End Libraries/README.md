@@ -7,3 +7,5 @@
 ## Tutorials:
 
 1. [**Bootstrap**](/04%20-%20Front%20End%20Libraries/01%20-%20Bootstrap)
+
+2. [**jQuery**](/04%20-%20Front%20End%20Libraries/01%20-%20Bootstrap))
