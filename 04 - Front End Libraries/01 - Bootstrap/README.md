@@ -1,6 +1,87 @@
 # 1 Use Responsive Design with BootStrap Fluid Containers
 
-## Table of Contents:
+# Summary:
+
+- We can use CDN to add thejQuery library to HTML. The link is:
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+- Containers are basic building blocks and are required to use the grid system. We can make a **container which is responsive**:
+
+        <div class="container-fluid"></div>
+
+- We can make an **image responsive** also by adding the class img-responsive:
+
+        <img src="cats.jpg" class="img-responsive">
+
+- We can modify text allignment:
+
+        <p class="text-left">Left aligned text on all viewport sizes.</p>
+        <p class="text-center">Center aligned text on all viewport sizes.</p>
+        <p class="text-right">Right aligned text on all viewport sizes.</p>
+
+- Bootstrap buttons are created using btn class:
+
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+
+        
+    ![](screenshots/2023-01-09-13-18-48.png)
+
+- We can make a button take up the full width of container:
+
+        <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+
+    ![](screenshots/2023-01-09-13-22-27.png)
+
+- The Bootstrap Grid system is built on flexbox and consists of 12 columns which can be used for spacing between elements on the same row. To use grid system we create a div with class row:
+
+        <div class="row">
+        </div>
+
+- We then create columns by adding a class beginning with "col-" to the div. We then suffix it with sm (small <576px), md (mediunm ≥576px), lg (large ≥992px) or xl (extra large ≥1200px). Then specify the number of columns.
+
+- E.g.:
+
+        <div class="row">
+            <div class="col-xs-4">
+                <button class="btn btn-block btn-primary">Like</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-block btn-info">Info</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-block btn-danger">Delete</button>
+            </div>  
+        </div>
+
+    ![](screenshots/2023-01-09-13-31-37.png)
+
+- We can replace CSS with just jQuery classes! E.g for a thick green border for an image we need:
+
+        <img src="cat.jpeg" class="image-responsive thick-green-border">
+
+- We can use Font Awesome to add icons to our page! We add the following stylesheet:
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+- We cam create info circle, trash and thumbs-up icons:
+
+        <i class="fas fa-info-circle"></i>
+        <i class="fas fa-trash"></i>
+        <i class="fas fa-thumbs-up"></i>
+
+<br><hr>
+
+# Table of Contents:
 
 
 [**Building a Cat App**](#11-building-a-cat-app)
@@ -45,13 +126,13 @@
 
 # Introduction
 
-In the HTML and CSS section we built a Cat Photo App
+In the HTML and CSS section I built a Cat Photo App
 
-We shall remake this with Bootstrap responsive CSS framework.
+I shall remake this with Bootstrap responsive CSS framework.
 
 Bootstrap will figure out how wide the screen is and resize HTML elements.
 
-We can add this frameword by adding the following link to the top of the code:
+We can add this framework by adding the following link to the top of the code:
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
@@ -278,7 +359,7 @@ I create a new button below like button:
 
 The app now looks like:
 
-![](/04%20-%20Front%20End%20Libraries/01%20-%20Use%20Responsive%20Design%20with%20Bootstrap%20Containers/screenshots/2023-01-05-12-56-44.png)
+![](screenshots/2023-01-05-12-56-44.png)
 
 <hr>
 
