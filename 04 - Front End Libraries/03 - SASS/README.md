@@ -220,22 +220,92 @@ E.g.:
 
 *Write @for directive that takes a variable $j that goes from 1 to 6 and creates 5 classs called .text-1, ... text-5 with font-size of 15px times index*
 
-    <style type='text/scss'>
+```html
+<style type='text/scss'>
 
-    @for $j from 1 to 6{
-        .text-#{$j}{
-        font-size: 15px * $j;
-        }
+@for $j from 1 to 6{
+    .text-#{$j}{
+    font-size: 15px * $j;
     }
+}
 
-    </style>
+</style>
 
-    <p class="text-1">Hello</p>
-    <p class="text-2">Hello</p>
-    <p class="text-3">Hello</p>
-    <p class="text-4">Hello</p>
-    <p class="text-5">Hello</p>
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
 
 Output:
 
-![](2023-01-28-09-08-48.png)
+<img src="2023-01-28-09-08-48.png" width="150px">
+
+<hr>
+
+## 6:  Use @each to Map Over Items in a List
+
+The @each directive iterates over a list or map
+
+**The syntax for a list is:**
+
+```css
+@each $color in red, green blue {
+    .#{$color}-text {
+        color: $color;
+    }
+}
+```
+
+**The syntax for a map is:**
+
+```css
+$colors: (color1:red, color2: blue, color3: green)
+@each $key, $color in $colors{
+    .#{$color}-text {
+        color: $color;
+    }
+}
+```
+
+Both of the above examples generate the following CSS:
+
+```css
+.red-text{ color:red; }
+.green-text { color:green; }
+.blue-text { color:blue; }
+```
+
+### Task:
+Write an ~each directive which goes through a list: blue, black, red and assigns each variable to a .color-bg class which sets the background color to their respective colors
+
+### Solution:
+
+```css
+<style type='text/scss'>
+
+
+  @each $color in blue, black, red{
+    .#{$color}-bg{
+      background-color: $color;
+    }
+  }
+
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+```
+
+
+
+### Result:
+
+<img src="2023-01-28-09-49-51.png" width="150px">
