@@ -417,3 +417,81 @@ We can then use them within a main file:
 <!-- The main.scss file -->
 @import 'variables'
 ```
+
+<hr>
+
+## 🟨 9: Using Extend to
+
+### ⚪ Intro
+
+Sass allows you to take rules from one element and extend it using the @extend directive
+
+### 🟠 Example
+
+Suppose we have a panel class:
+
+```css
+.panel{
+    background-color: red;
+    height: 70px;
+    border: 2px solid green;
+}
+```
+
+We want another panel class which has the same properties as above but more rules for width and font-size, we use the @extend directive:
+
+```css
+.big-panel{
+    @extend .panel;
+    width: 150px;
+    font-size: 2em;
+}
+```
+
+
+### 🔴 Task
+
+*Make a ckass .info-important which extends .info and has a background-color of magenta.*
+
+We have the following HTML:
+
+```html
+<style type='text/scss'>
+  h3{
+    text-align: center;
+  }
+  .info{
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+
+</style>
+<h3>Posts</h3>
+<div class="info-important">
+  <p>This is an important post. It should extend the class ".info" and have its own CSS styles.</p>
+</div>
+
+<div class="info">
+  <p>This is a simple post. It has basic styling and can be extended for other uses.</p>
+</div>
+
+```
+
+Which generates:
+
+![](2023-01-28-13-16-46.png)
+
+### 🟢 Solution
+
+```css
+.info-important{
+    @extend .info;
+    background-color: magenta;
+  }
+```
+
+
+### 🟣 Result 
+
+![](2023-01-28-13-24-00.png)
