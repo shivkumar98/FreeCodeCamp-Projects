@@ -1,8 +1,163 @@
-# ⭕ Summary
+# 3: SASS Tutorial
+
+# ✏️ Summary
+
+<span style="font-size:20px; font-weight:bold">
+
+### ✅   Sass is not understood by browsers, we use the Sass software to generate a CSS file from a SCSS file
+
+### ✅ We can declare Sass code within a style tag:
+
+```html
+<style type='text/scss'>
+</style>
+```
+
+
+
+### ✅ We can create variables using **$** notation:
+
+```html
+<style type='text/scss'>
+    $x: red;
+</style>
+```
+
+### ✅ We can then use the value of the variable by calling the variable:
+
+```html
+<style type='text/scss'>
+    $text-color: red;
+    h2 {
+        color: $text-color;
+    }
+</style>
+```
+
+### ✅ Sass allows for nesting of rules which improves code readability:
+
+```html
+<style type='text/scss'>
+    .blog-post {
+        h1 {
+            color: blue;
+        }
+        p {
+            font-size: 20px;
+        }
+    }        
+</style>
+```
+
+### ✅ We can define mixins using @mixin
+
+```css
+@mixin box-shadow($x, $y, $blur, $c){
+        -webkit-box-shadow: $x $y $blur $c;
+        -moz-box-shadow: $x $y $blur $c;
+        -ms-box-shadow: $x $y $blur $c;
+}
+```
+
+### ✅ We use mixins using @include:
+
+```css
+div {
+    @include box-shadow(0px, 0px, 4px, #fff);
+}
+```
+
+### ✅ We can apply conditional logic based off variables using @if and @else:
+
+```css
+@if $val == light {
+    border: 1px solid black;
+} @else if $val == medium {
+    border: 3px solid black;
+} @else {
+    border: none;
+}
+```
+
+### ✅ Create for loops with @for
+
+- We can iterate *through* a loop where the final iteration is included or *to* which excludes final iteration  
+
+```css
+@for $i from 1 to 12 { /* loops from 1-11*/
+    .col-#{$i} { width: 100%/12 * $i; }
+}
+@for $i from 1 through 12 { /* loops from 1-12*/
+    .col-#{$i} { width: 100%/12 * $i; }
+}
+```
+
+### ✅ Use @each to iterate over list/map
+
+- To iterate through a list:
+
+```css
+@each $color in red, green blue {
+    .#{$color}-text {
+        color: $color;
+    }
+}
+```
+
+- To iterate through a map:
+
+```css
+$colors: (color1:red, color2: blue, color3: green)
+@each $key, $color in $colors{
+    .#{$color}-text {
+        color: $color;
+    }
+}
+```
+
+### ✅ Create While Loops using @while
+
+```css
+$x: 1,
+@while $x < 13 {
+    .cok-#{$x} {
+        width: 100%/12 * $x;
+    }
+    $x: $x+1;
+}
+```
+
+### ✅ We can use Partials to split up CSS
+
+- Partials must begin with an underscore, e.g. _variables.scss
+
+- To use the partial we must import:
+
+```html
+<!-- The main.scss file -->
+@import 'variables'
+```
+
+### ✅ We can extend CSS rules of another Class using @extend
+
+- Suppose we have a "parent" class defined, we can use its rules using @extend:
+
+```css
+.child {
+    @extend .parent;
+    font-color:red
+}
+```
+
+</span>
+
+<br>
 
 # ⭕ Introduction
 
  Sass (Syntactically Awesome StyleSheets) is a language extension of CSS. It adds features which aren't available in basic CSS
+
+ <br>
 
 # ⭕ Tutorial Commentary
 
