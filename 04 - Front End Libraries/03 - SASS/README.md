@@ -1,34 +1,3 @@
-<style>
-p,ol{
-    font:sans-serif;
-    font-size:18px;
-    
-}   
-h1 {font: sans-serif;
-font-size:26px;
-font-weight:bold;
-color:#66d9ff}
-h2 {font: sans-serif;
-font-size:22px;
-font-weight:bold;
-color: #b380ff}
-h3 {font: sans-serif;
-font-size:20px;
-font-weight:bold}
-#task{
-    color:#e60000 ;
-}
-#solution{
-    color: #00ff00;
-}
-#result{
-    color:#0066ff;
-}
-</style>
-
-
-
-
 # Summary
 
 # Introduction
@@ -37,7 +6,7 @@ font-weight:bold}
 
 # Tutorial Commentary
 
-## 1: Store Data With Sass Variables {task}
+## 1: Store Data With Sass Variables
 
   The code for this step was initialised as:
 
