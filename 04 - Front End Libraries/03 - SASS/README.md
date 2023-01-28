@@ -6,7 +6,7 @@
 
 [Introduction](#-introduction)
 
-[Tutorial Commentary](#--tutorial-commentary)
+[Tutorial Commentary](#-tutorial-commentary)
 
 - [1: Store Data With Sass Variables](#-1-store-data-with-sass-variables)
 - [2: Nest CSS with Sass](#-2-nest-css-with-sass)
