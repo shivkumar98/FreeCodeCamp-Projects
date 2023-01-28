@@ -12,8 +12,8 @@
 
   The code for this step was initialised as:
 
+```html
     <style type='text/scss'>
-
 
         .header{
             text-align: center;
@@ -36,6 +36,7 @@
         <h2>Here is another header</h2>
         <p>Even more random text within a paragraph</p>
     </div>
+```
 
 And the page looks like:
 
@@ -45,6 +46,7 @@ And the page looks like:
 
  *Create a variable for the text color and apply it to the properties of .blog-post*
 
+```html
     <style type='text/scss'>
         $text-color: red;
         .header{
@@ -54,13 +56,15 @@ And the page looks like:
             color: $text-color;
         }
     </style>
+```
 
 <hr>
 
 ## 2: Nest CSS with Sass
 
-The code was initialised as:
+**The code was initialised as:**
 
+```html
     <style type='text/scss'>
         .blog-post {
 
@@ -78,11 +82,13 @@ The code was initialised as:
         <h1>Blog Title</h1>
         <p>This is a paragraph</p>
     </div>
+```
 
 Sass allows for nesting of CSS rules!
 
 *Re-organize the CSS rules for both children of .blog-post element*
 
+```html
     <style type='text/scss'>
         .blog-post {
             h1 {
@@ -92,9 +98,9 @@ Sass allows for nesting of CSS rules!
             p {
                 font-size: 20px;
             }
-        }
-        
+        }        
     </style>
+```
 
 ## 3: Create Usable CSS Mixins
 
@@ -102,37 +108,43 @@ A mixin is a group of CSS declarations which can be reused
 
 Suppose we had a div with the following properties:
 
+```css
     div {
         -webkit-box-shadow: 0px 0px 4px #fff;
         -moz-box-shadow: 0px 0px 4px #fff;
         -ms-box-shadow: 0px 0px 4px #fff;
         box-shadow: 0px 0px 4px #fff;
     }
+```
 
 We can abstract out the repetition:
 
+```css
     @mixin box-shadow($x, $y, $blur, $c){
         -webkit-box-shadow: $x $y $blur $c;
         -moz-box-shadow: $x $y $blur $c;
         -ms-box-shadow: $x $y $blur $c;
     }
+```
 
 We can then add the mixin with specified parameters using @include:
 
+```css
     div {
         @include box-shadow(0px, 0px, 4px, #fff);
     }
+```
 
 *Write a mixin for border-radius with $radius parameter. Then givde the #awesome element a border of 15px;*
 
-    <style type='text/scss'>
-        @mixin border-radius($radius){
+```html
+<style type='text/scss'>
+    @mixin border-radius($radius){
         -webkit-border-radius: $radius;
         -moz-border-radius: $radius;
         -ms-border-radius: $radius;
         border-radius: $radius;
     }
-
 
     #awesome {
         width: 150px;
@@ -140,9 +152,10 @@ We can then add the mixin with specified parameters using @include:
         background-color: green;
         @include border-radius(15px);
     }
-    </style>
+</style>
 
-    <div id="awesome"></div>
+<div id="awesome"></div>
+```
 
 Output:
 
@@ -157,35 +170,38 @@ Output:
 - *heavy* - 6px solid black*
 - *otherwise set border to none*
 
+```html
+<style type='text/scss'>
 
-        <style type='text/scss'>
-
-        @mixin border-stroke($val){
-            @if $val == light {
-            border: 1px solid black;
-            } @else if $val == medium {
-            border: 3px solid black;
-            } @else if $val == heavy {
-            border: 6px solid black;
-            } @else {
-            border: none;
-            }
-        }
+@mixin border-stroke($val){
+    @if $val == light {
+    border: 1px solid black;
+    } @else if $val == medium {
+    border: 3px solid black;
+    } @else if $val == heavy {
+    border: 6px solid black;
+    } @else {
+    border: none;
+    }
+}
 
 
-        #box {
-            width: 150px;
-            height: 150px;
-            background-color: red;
-            @include border-stroke(medium);
-        }
-        </style>
+#box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+}
+</style>
 
-        <div id="box"></div>
+<div id="box"></div>
+```
 
 Output:
 
 ![](2023-01-10-14-07-39.png)
+
+<hr>
 
 ## 5: Use @for to Create a Sass Loop
 
@@ -196,9 +212,11 @@ There are two types of for-loops which can be created:
 
 E.g.:
 
-    @for $i from 1 through 12 {
-        .col-#{$i} { width: 100%/12 * $i; }
-    }
+```css
+@for $i from 1 through 12 {
+    .col-#{$i} { width: 100%/12 * $i; }
+}
+```
 
 *Write @for directive that takes a variable $j that goes from 1 to 6 and creates 5 classs called .text-1, ... text-5 with font-size of 15px times index*
 
