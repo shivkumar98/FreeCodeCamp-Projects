@@ -153,11 +153,27 @@ $x: 1,
 
 <br>
 
+[⭕ Introduction](#--introduction)
+
+[⭕ Tutorial Commentary](#--tutorial-commentary)
+
+- [1: Store Data With Sass Variables](#---1--store-data-with-sass-variables)
+- [2: Nest CSS with Sass](#---2--nest-css-with-sass)
+- [3: Create Usable CSS Mixins](#---3--create-usable-css-mixins)
+- [4: Use @if and @else to Add Logic To Your Styles](#---4--use--if-and--else-to-add-logic-to-your-styles)
+- [5: Use @for to Create a Sass Loop](#---5--use--for-to-create-a-sass-loop)
+- [6:  Use @each to Map Over Items in a List](#---6---use--each-to-map-over-items-in-a-list)
+- [7:  Using @while Apply a Style Until a Condition is Met](#---7---using--while-apply-a-style-until-a-condition-is-met)
+- [8:  Use Partials to Split Styles to Smaller Chunks](#---8---use-partials-to-split-styles-to-smaller-chunks)
+- [9: Using Extend to](#---9--using-extend-to)
+
+
+
 # ⭕ Introduction
 
  Sass (Syntactically Awesome StyleSheets) is a language extension of CSS. It adds features which aren't available in basic CSS
 
- <br>
+>
 
 # ⭕ Tutorial Commentary
 
