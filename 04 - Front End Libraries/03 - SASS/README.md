@@ -1,14 +1,43 @@
- # SASS
+<style>
+p,ol{
+    font:sans-serif;
+    font-size:18px;
+    
+}   
+h1 {font: sans-serif;
+font-size:26px;
+font-weight:bold;
+color:#66d9ff}
+h2 {font: sans-serif;
+font-size:22px;
+font-weight:bold;
+color: #b380ff}
+h3 {font: sans-serif;
+font-size:20px;
+font-weight:bold}
+#task{
+    color:#e60000 ;
+}
+#solution{
+    color: #00ff00;
+}
+#result{
+    color:#0066ff;
+}
+</style>
 
- # Summary
 
- # Introduction
+
+
+# Summary
+
+# Introduction
 
  Sass (Syntactically Awesome StyleSheets) is a language extension of CSS. It adds features which aren't available in basic CSS
 
- # Tutorial Commentary
+# Tutorial Commentary
 
- ## 1: Store Data With Sass Variables
+## 1: Store Data With Sass Variables {task}
 
   The code for this step was initialised as:
 
@@ -161,6 +190,8 @@ Output:
 
 ![](2023-01-10-13-58-07.png)
 
+<hr>
+
 ## 4: Use @if and @else to Add Logic To Your Styles
 
 *Create a mixin called border-stroke that takes a parameter $val. The mixinwill check for the following conditions:*
@@ -278,7 +309,7 @@ Both of the above examples generate the following CSS:
 ```
 
 ### Task:
-Write an ~each directive which goes through a list: blue, black, red and assigns each variable to a .color-bg class which sets the background color to their respective colors
+Write an @each directive which goes through a list: blue, black, red and assigns each variable to a .color-bg class which sets the background color to their respective colors
 
 ### Solution:
 
