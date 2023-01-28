@@ -1,12 +1,14 @@
-# Summary
+# ⭕ Summary
 
-# Introduction
+# ⭕ Introduction
 
  Sass (Syntactically Awesome StyleSheets) is a language extension of CSS. It adds features which aren't available in basic CSS
 
-# Tutorial Commentary
+# ⭕ Tutorial Commentary
 
-## 1: Store Data With Sass Variables
+## 🟨 1: Store Data With Sass Variables
+
+###  ⚪ Intro
 
   The code for this step was initialised as:
 
@@ -42,7 +44,11 @@ And the page looks like:
 
  Sass allows you to declare and store variables using $ before variable name
 
+### 🔴 Task
+
  *Create a variable for the text color and apply it to the properties of .blog-post*
+
+### 🟢 Solution
 
 ```html
     <style type='text/scss'>
@@ -58,7 +64,9 @@ And the page looks like:
 
 <hr>
 
-## 2: Nest CSS with Sass
+## 🟨 2: Nest CSS with Sass
+
+### ⚪ Intro
 
 **The code was initialised as:**
 
@@ -84,7 +92,11 @@ And the page looks like:
 
 Sass allows for nesting of CSS rules!
 
+### 🔴 Task
+
 *Re-organize the CSS rules for both children of .blog-post element*
+
+### 🟢 Solution
 
 ```html
     <style type='text/scss'>
@@ -100,7 +112,9 @@ Sass allows for nesting of CSS rules!
     </style>
 ```
 
-## 3: Create Usable CSS Mixins
+## 🟨 3: Create Usable CSS Mixins
+
+### ⚪ Intro
 
 A mixin is a group of CSS declarations which can be reused
 
@@ -133,7 +147,11 @@ We can then add the mixin with specified parameters using @include:
     }
 ```
 
+### 🔴 Task
+
 *Write a mixin for border-radius with $radius parameter. Then givde the #awesome element a border of 15px;*
+
+### 🟢 Solution
 
 ```html
 <style type='text/scss'>
@@ -155,13 +173,16 @@ We can then add the mixin with specified parameters using @include:
 <div id="awesome"></div>
 ```
 
-Output:
+### 🟣 Result 
+
 
 ![](2023-01-10-13-58-07.png)
 
 <hr>
 
-## 4: Use @if and @else to Add Logic To Your Styles
+## 🟨 4: Use @if and @else to Add Logic To Your Styles
+
+### 🔴 Task
 
 *Create a mixin called border-stroke that takes a parameter $val. The mixinwill check for the following conditions:*
 
@@ -169,6 +190,8 @@ Output:
 - *medium - 3px solid black*
 - *heavy* - 6px solid black*
 - *otherwise set border to none*
+
+### 🟢 Solution
 
 ```html
 <style type='text/scss'>
@@ -197,13 +220,13 @@ Output:
 <div id="box"></div>
 ```
 
-Output:
+### 🟣 Result 
 
 ![](2023-01-10-14-07-39.png)
 
 <hr>
 
-## 5: Use @for to Create a Sass Loop
+## 🟨 5: Use @for to Create a Sass Loop
 
 There are two types of for-loops which can be created:
 
@@ -238,13 +261,15 @@ E.g.:
 <p class="text-5">Hello</p>
 ```
 
-Output:
+### 🟣 Result 
 
 <img src="2023-01-28-09-08-48.png" width="150px">
 
 <hr>
 
-## 6:  Use @each to Map Over Items in a List
+## 🟨 6:  Use @each to Map Over Items in a List
+
+### ⚪ Intro
 
 The @each directive iterates over a list or map
 
@@ -277,10 +302,11 @@ Both of the above examples generate the following CSS:
 .blue-text { color:blue; }
 ```
 
-### Task:
-Write an @each directive which goes through a list: blue, black, red and assigns each variable to a .color-bg class which sets the background color to their respective colors
+### 🔴 Task 
 
-### Solution:
+*Write an @each directive which goes through a list: blue, black, red and assigns each variable to a .color-bg class which sets the background color to their respective colors
+*
+### 🟢 Solution 
 
 ```css
 <style type='text/scss'>
@@ -306,6 +332,88 @@ Write an @each directive which goes through a list: blue, black, red and assigns
 
 
 
-### Result:
+### 🟣 Result 
 
 <img src="2023-01-28-09-49-51.png" width="150px">
+
+<hr>
+
+## 🟨 7:  Using @while Apply a Style Until a Condition is Met
+
+### ⚪ Intro 
+
+We can use the @while directive to apply a rule until a condition is met. E.g.:
+
+```css
+$x: 1,
+@while $x < 13 {
+    .cok-#{$x} {
+        width: 100%/12 * $x;
+    }
+    $x: $x+1;
+}
+```
+
+### 🔴 Task 
+
+*Use @while to create a series of classes with different font-sizes. There should be classes text-1, ... , text-5 whhere the font-size is a multiple of 15px
+*
+### 🟢 Solution 
+
+```html
+<style type='text/scss'>
+
+$x: 1;
+@while $x < 6{
+  .text-#{$x} {
+    font-size: 15px * $x;
+  }
+  $x: $x+1;
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
+
+### 🟣 Result 
+
+<img src="2023-01-28-12-49-09.png" width="100px">
+
+<hr>
+
+## 🟨 8:  Use Partials to Split Styles to Smaller Chunks
+
+### ⚪ What is a Partial?
+
+A Partial is a seperate file which holds a segment of CSS code. These are importged into other Sass files. 
+
+Names for partials begin with an underscore _. These also have a different extension of .scss 
+
+To import a partial you use the @import directive
+
+### 🟠 Example
+
+We can create a Partial for a mixin and store it into a file called _mixins.scss
+
+We can then use them within a main file:
+
+```css
+@import 'mixins'
+```
+
+### 🔴 Task
+
+*Write an @import statement to import a partial _variables.scss into the main.scss file*
+
+### 🟢 Solution
+
+```html
+<!-- The main.scss file -->
+@import 'variables'
+```
