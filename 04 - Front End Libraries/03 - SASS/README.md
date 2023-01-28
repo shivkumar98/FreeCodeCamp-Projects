@@ -215,7 +215,7 @@ $x: 1,
 
 And the page looks like:
 
-![](2023-01-10-13-39-51.png)
+![](screenshots/2023-01-10-13-39-51.png)
 
  Sass allows you to declare and store variables using $ before variable name
 
@@ -351,7 +351,7 @@ We can then add the mixin with specified parameters using @include:
 ### 🟣 Result 
 
 
-![](2023-01-10-13-58-07.png)
+![](screenshots/2023-01-10-13-58-07.png)
 
 <hr>
 
@@ -397,7 +397,7 @@ We can then add the mixin with specified parameters using @include:
 
 ### 🟣 Result 
 
-![](2023-01-10-14-07-39.png)
+![](screenshots/2023-01-10-14-07-39.png)
 
 <hr>
 
@@ -438,7 +438,7 @@ E.g.:
 
 ### 🟣 Result 
 
-<img src="2023-01-28-09-08-48.png" width="150px">
+<img src="screenshots/2023-01-28-09-08-48.png" width="150px">
 
 <hr>
 
@@ -509,7 +509,7 @@ Both of the above examples generate the following CSS:
 
 ### 🟣 Result 
 
-<img src="2023-01-28-09-49-51.png" width="150px">
+<img src="screenshots/2023-01-28-09-49-51.png" width="150px">
 
 <hr>
 
@@ -558,7 +558,7 @@ $x: 1;
 
 ### 🟣 Result 
 
-<img src="2023-01-28-12-49-09.png" width="100px">
+<img src="screenshots/2023-01-28-12-49-09.png" width="100px">
 
 <hr>
 
@@ -655,7 +655,7 @@ We have the following HTML:
 
 Which generates:
 
-![](2023-01-28-13-16-46.png)
+![](screenshots/2023-01-28-13-16-46.png)
 
 ### 🟢 Solution
 
@@ -669,4 +669,4 @@ Which generates:
 
 ### 🟣 Result 
 
-![](2023-01-28-13-24-00.png)
+![](screenshots/2023-01-28-13-24-00.png)
