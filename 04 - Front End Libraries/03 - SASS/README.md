@@ -200,4 +200,24 @@ E.g.:
         .col-#{$i} { width: 100%/12 * $i; }
     }
 
-*Write @for directive that takes a variable $j that goes from 1 to 6 and creates 5 classs called .text-1, ... text-5 with font-size of 15px times index
+*Write @for directive that takes a variable $j that goes from 1 to 6 and creates 5 classs called .text-1, ... text-5 with font-size of 15px times index*
+
+    <style type='text/scss'>
+
+    @for $j from 1 to 6{
+        .text-#{$j}{
+        font-size: 15px * $j;
+        }
+    }
+
+    </style>
+
+    <p class="text-1">Hello</p>
+    <p class="text-2">Hello</p>
+    <p class="text-3">Hello</p>
+    <p class="text-4">Hello</p>
+    <p class="text-5">Hello</p>
+
+Output:
+
+![](2023-01-28-09-08-48.png)
