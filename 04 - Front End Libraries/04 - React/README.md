@@ -129,13 +129,15 @@ const JSX = <div><h1>Shiv Kumar</h1>
 {/*this is a comment */}
 ```
 
+<hr>
+
 ## 🟨 4: Render HTML Elements to the DOM
 
 <h3 class="intro"> ⚪ What is DOM? </h3>
 
 - DOM is the data reperesentation of the object which compise the structure and content of a web document.
 
-- The DOMis a programmin interface for a web document, it can be modified by a language like JavaScript
+- The DOMis a programming interface for a web document, it can be modified by a language like JavaScript
 
 <h3 class="intro"> ⚪ What is ReactDOM? </h3>
 
@@ -185,6 +187,42 @@ ReactDOM.render(JSX, document.getElementById('challenge-node'))
 <h3 class="result"> 🔵 Result</h3>
 
 ![](2023-01-29-10-36-42.png)
+
+<hr>
+
+## 🟨 5: Define a HTML Class in JSX
+
+<h3 class="intro"> ⚪ HTML Classes </h3>
+
+- HTML classes are defined using className, as class is a reserved keyword in JavaScript.
+
+<h3 class="task"> 🔴 Task </h3>
+
+*Apply a class of myDiv to the div in the below code.*
+
+The code is initialised as:
+
+```jsx
+const JSX  = (
+    <div>
+        <h1>Add a class to this div</h1>
+    </div>
+);
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+const JSX = (
+  <div className="myDiv">
+    <h1>Add a class to this div</h1>
+  </div>
+);
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+![](2023-01-29-10-54-30.png)
 
 ## 🟨  PLACEHOLDER
 
