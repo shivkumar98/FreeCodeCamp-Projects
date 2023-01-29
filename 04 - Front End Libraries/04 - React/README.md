@@ -576,7 +576,100 @@ class TypesOfFood extends React.Component {
 
 <hr>
 
-## 🟨 10: Use React to Render Nested Components
+## 🟨 11: Compose React Components
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below has a TypesOfFood component is always rendering a Vegetable componet.
+
+- There is also a Fruits component, nest two components inside of Fruits, first NonCitrus then Citrus.
+
+- Nest the Fruits component into the TypesOfFood component below the h1 heading
+
+- The code is initialised as:
+
+```jsx
+class Fruit extends React.Component {
+  constructor(props){ super(props); }
+  render() {
+    return (
+      <div>
+        <h2>Fruits:</h2>
+        {/* change code below this line*/}
+
+        {/* change code above this line*/}
+      </div>
+    );
+  }
+};
+
+class TypesOfFood extend React.component {
+  constructor(props) { super(props); }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        { /* Change code below this line */ }
+
+        { /* Change code above this line */ }
+        <Vegetables />
+      </div>
+    );
+  }
+};
+```
+
+- This outputs:
+
+![](2023-01-29-14-22-13.png)
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```jsx
+class Fruits extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h2>Fruits:</h2>
+        { /* Change code below this line */ }
+        <NonCitrus />
+        <Citrus />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) {
+     super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        { /* Change code below this line */ }
+        <Fruits />
+        { /* Change code above this line */ }
+        <Vegetables />
+      </div>
+    );
+  }
+};
+```
+
+This outputs:
+
+![](2023-01-29-14-22-57.png)
+
+
+<h3 class="result"> 🔵 Result</h3>
 
 
 
