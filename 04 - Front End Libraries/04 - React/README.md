@@ -59,11 +59,15 @@ const JSX = <div></div>;
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 const JSX = <h1>Hello JSX!</h1>;
 ```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-10-02-52.png)
 
@@ -102,6 +106,8 @@ const JSX = <h1>Hello JSX!</h1>;
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 const JSX = <div><h1>Shiv Kumar</h1>
   <p>I like to code in:</p>
@@ -114,6 +120,8 @@ const JSX = <div><h1>Shiv Kumar</h1>
 ```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-10-15-08.png)
 
@@ -173,6 +181,8 @@ const JSX = (
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 const JSX = (
   <div>
@@ -185,6 +195,8 @@ ReactDOM.render(JSX, document.getElementById('challenge-node'))
 ```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-10-36-42.png)
 
@@ -212,6 +224,8 @@ const JSX  = (
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 const JSX = (
   <div className="myDiv">
@@ -221,6 +235,8 @@ const JSX = (
 ```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-10-54-30.png)
 
@@ -250,6 +266,8 @@ const JSX = (
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 const JSX = (
   <div>
@@ -261,6 +279,8 @@ const JSX = (
 ```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-11-05-55.png)
 
@@ -300,6 +320,8 @@ Complete the function so that is returns a single div which contains some text
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 const MyComponent = function() {
   return (
@@ -309,6 +331,8 @@ const MyComponent = function() {
 ```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-13-01-55.png)
 
@@ -357,6 +381,8 @@ class MyComponent extends React.Component {
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 class MyComponent extends React.Component {
   constructor(props) {
@@ -373,6 +399,8 @@ class MyComponent extends React.Component {
 ```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-13-15-31.png)
 
@@ -438,6 +466,8 @@ The above code generates:
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 const ChildComponent = () => {
   return (
@@ -465,6 +495,8 @@ class ParentComponent extends React.Component {
 ```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-13-30-52.png)
 
@@ -528,6 +560,8 @@ class TypesOfFood extends React.Component {
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+The solution is:
+
 ```jsx
 const TypesOfFruit = () => {
   return (
@@ -570,7 +604,7 @@ class TypesOfFood extends React.Component {
 
 <h3 class="result"> 🔵 Result</h3>
 
-- The output of the solution:
+The output is:
 
 ![](2023-01-29-13-53-06.png)
 
@@ -664,12 +698,81 @@ class TypesOfFood extends React.Component {
 };
 ```
 
-This outputs:
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 ![](2023-01-29-14-22-57.png)
 
+<hr>
+
+## 🟨 12: Render a Class Component to the DOM
+
+<h3 class="intro"> ⚪ Introduction </h3>
+
+- In order to render code you write to the DOM, you must make a call to the ReactDOM APO.
+
+- The syntax is:
+
+```jsx
+ReactDOM.render(componentToRender, targetNode);
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- We have Fruits and Vegetables components are defined behind the scenese.
+
+- Render both of these components into a TypoOfFood component, then render TypoOfFood to the DOM
+
+- There is a div with id='challenge-node' available to use
+
+- The code is initialised as:
+
+```jsx
+class TypesOfFood extends React.Component {
+  constructor(props){ super(props); }
+  render(){
+    return (
+      <div>
+        <h1>Type of Food:</h1>
+        {/* change code below this line*/}
+        {/* change code above this line*/}
+      </div>
+    );
+  }
+};
+// change code below this line
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```jsx
+class TypesOfFood extends React.Component {
+  constructor(props){ super(props); }
+  render(){
+    return (
+      <div>
+        <h1>Type of Food:</h1>
+        {/* change code below this line*/}
+        <Fruits />
+        <Vegetables />
+        {/* change code above this line*/}
+      </div>
+    );
+  }
+};
+// change code below this line
+ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));
+```
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-29-14-38-44.png)
 
 
 
