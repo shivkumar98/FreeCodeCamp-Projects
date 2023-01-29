@@ -230,7 +230,7 @@ const JSX = (
 
 - In JSX, any element can be written as a self-closing tag ( like &lt;br /> in HTML)
 
-- E.g. &lt;div>&lt;/div> can be written as &lt;div /> or &lt;div></div>, but not as &lt;div> alone!
+- E.g. &lt;div>&lt;/div> can be written as &lt;div /> or &lt;div>&lt;/div> but not as &lt;div> alone!
 
 - Self closing tags like &lt;br> must be closed!
 
@@ -300,7 +300,83 @@ Complete the function so that is returns a single div which contains some text
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+```jsx
+const MyComponent = function() {
+  return (
+    <div>Hello World!</div>
+  );
+}
+```
+
 <h3 class="result"> 🔵 Result</h3>
+
+![](2023-01-29-13-01-55.png)
+
+<hr>
+
+## 🟨 8: Creating a React Component Using class Syntax
+
+- The other way to create a React component is to use the ES6 class syntax.
+
+<h3 class="example"> 🟠 Example </h3>
+
+- Here is a Kitten class which extends React.Component:
+
+```jsx
+class Kitten extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  render() {
+    return (
+      <h1>Hi</h1>
+    );
+  }
+}
+```
+
+- It is best practice to call the component's constructor with super and pass both properties.
+
+<h3 class="task"> 🔴 Task </h3>
+
+Finish writing the render method so it returns a div with a h1 element with the text Hello React!
+
+The code is initialised as:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render(){
+
+  }
+}
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Hello React!</h1>
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+![](2023-01-29-13-15-31.png)
+
+
 
 ## 🟨  PLACEHOLDER
 
