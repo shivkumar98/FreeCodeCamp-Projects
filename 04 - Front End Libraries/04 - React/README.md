@@ -1050,6 +1050,62 @@ const ShoppingCart = (props) => {
 ShoppingCart.defaultProps = {items:0};
 ```
 
+<hr>
+
+
+## 🟨 17: Override Default Props
+
+- We can explicitly override the default props of a component.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The ShoppingCart component now renders a child component Items.
+
+- The Items component has a default prop quantity set to 0
+
+- Override the default prop by passing it with a value of 10 for quantity.
+
+- The code is initialised as:
+
+```jsx
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {propse.quantity}</h1>
+}
+Items.defaultProps= { quantity: 0}
+
+class ShoppingQuantity extends React.Component {
+  constructor(props){ super(props);}
+  render(){
+    { /* Change code below this line */ }
+    return <Items />
+    { /* Change code above this line */}
+  }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- The ShoppingCart class has been updated to:
+
+```jsx
+class ShoppingCart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    { /* Change code below this line */ }
+    return <Items quantity={10} />
+    { /* Change code above this line */ }
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-29-16-41-47.png)
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
