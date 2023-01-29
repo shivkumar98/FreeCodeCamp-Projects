@@ -264,6 +264,44 @@ const JSX = (
 
 ![](2023-01-29-11-05-55.png)
 
+<hr>
+
+## 🟨 7: Create a Stateless Functional Component
+
+- We shall learn how to create components as these are the key building blocks of react
+
+- We can create a React component in two ways, one ways is to write a JavaScript function which returns either JSX or null
+
+- ⚠️ JavaScript function must begin with captial letter ⚠️
+
+<h3 class="example"> 🟠 Example </h3>
+
+- Here is a stateless functional component which assigns a HTML class in JSX:
+
+```jsx
+const DemoComponent = function(){
+  return (
+    <div className='customClass' />
+  );
+};
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+The code editor defines an emptry function called MyFunction:
+
+```jsx
+const MyComponent = function(){
+
+}
+```
+
+Complete the function so that is returns a single div which contains some text
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+<h3 class="result"> 🔵 Result</h3>
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
