@@ -774,7 +774,48 @@ The output is:
 
 ![](2023-01-29-14-38-44.png)
 
+<hr>
 
+## 🟨 13: Writing a React Component from Scratch
+
+<h3 class="intro"> ⚪ Intro </h3>
+
+- A react componment extends React.Component and has a .render() method which returns HTML (JSX) or null
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Define a MyComponent class with a return method which returns a div which contains h1 tag with the text: My First React Component
+
+- Render this component to DOM to a node with id='challenge-node'
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>My First React Component!</h1>
+      </div>
+    );
+  }
+};
+ReactDOM.render(<MyComponent />,document.getElementById('challenge-node'));
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-29-14-57-18.png)
+
+<hr>
 
 ## 🟨  PLACEHOLDER
 
