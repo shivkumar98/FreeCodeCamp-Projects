@@ -117,6 +117,74 @@ const JSX = <div><h1>Shiv Kumar</h1>
 
 ![](2023-01-29-10-15-08.png)
 
+<hr>
+
+## 🟨 3: Add Comments in JSX
+
+<h3 class="intro"> ⚪ JSX Comments </h3>
+
+- The syntax for comments in JSX is:
+
+```jsx
+{/*this is a comment */}
+```
+
+## 🟨 4: Render HTML Elements to the DOM
+
+<h3 class="intro"> ⚪ What is DOM? </h3>
+
+- DOM is the data reperesentation of the object which compise the structure and content of a web document.
+
+- The DOMis a programmin interface for a web document, it can be modified by a language like JavaScript
+
+<h3 class="intro"> ⚪ What is ReactDOM? </h3>
+
+- ReactDOM offers a simple method to render React elements to the DOM.
+
+- It has the following syntax:
+
+```jsx
+ReactDOM.render(componentToRender, targetNode)
+```
+
+- The .render() method must be called after JSC element declarations
+
+<h3 class="task"> 🔴 Task </h3>
+
+The code editor has a simple JSX component, use the .render() method to rend the component to the page.
+
+Use document.getElementById() to select the DOM node to render them to.
+
+There is a div with id='challenge-node' available for you to use. 
+
+The code is initialised as:
+
+```jsx
+const JSX = (
+  <div>
+    <h1>Hello World</h1>
+    <p>Lets render this to the DOM</p>
+  </div>
+);
+// Change code below this line
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+const JSX = (
+  <div>
+    <h1>Hello World</h1>
+    <p>Lets render this to the DOM</p>
+  </div>
+);
+// Change code below this line
+ReactDOM.render(JSX, document.getElementById('challenge-node'))
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+![](2023-01-29-10-36-42.png)
 
 ## 🟨  PLACEHOLDER
 

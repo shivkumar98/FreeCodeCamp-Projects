@@ -1,0 +1,47 @@
+p,ol{
+    font:sans-serif;
+    font-size:18px;
+
+}   
+h1 {font: sans-serif;
+font: size 23px;
+font-weight:bold;
+color:#66d9ff}
+h2 {font: sans-serif;
+font-size:22px;
+font-weight:bold;
+color: #b380ff}
+h3 {font: sans-serif;
+font-size:16px;
+font-weight:bold;
+
+}
+#task{
+    color:#e60000 ;
+}
+#solution{
+    color: #00ff00;
+}
+#result{
+    color:#0066ff;
+}
+.intro{
+    font-size: 18px;
+    color: rgb(233, 233, 233);
+}
+.task{
+    font-size: 18px;
+    color: rgb(243, 102, 102);
+}
+.solution{
+    font-size: 18px;
+    color: #69ee69;
+}
+.result{
+    font-size: 18px;
+    color: rgb(55, 118, 228);
+}
+.example {
+    font-size: 18px;
+    color: rgb(255, 156, 72) ;
+}
