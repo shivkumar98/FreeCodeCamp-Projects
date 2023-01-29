@@ -224,6 +224,46 @@ const JSX = (
 
 ![](2023-01-29-10-54-30.png)
 
+<hr>
+
+## 🟨 6: Learn about Self-Closing JSX Tags
+
+- In JSX, any element can be written as a self-closing tag ( like &lt;br /> in HTML)
+
+- E.g. &lt;div>&lt;/div> can be written as &lt;div /> or &lt;div></div>, but not as &lt;div> alone!
+
+- Self closing tags like &lt;br> must be closed!
+
+<h3 class="task"> 🔴 Task </h3>
+
+Fix the errors in the code below so that it is valid JSX and successfully transpiles.
+
+```jsx
+const JSX = (
+  <div>
+    <h2>Welcome to React!</h2> <br >
+    <p>Be sure to close all tags!</p>
+    <hr >
+  </div>
+);
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+const JSX = (
+  <div>
+    <h2>Welcome to React!</h2> <br />
+    <p>Be sure to close all tags!</p>
+    <hr />
+  </div>
+);
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+![](2023-01-29-11-05-55.png)
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
