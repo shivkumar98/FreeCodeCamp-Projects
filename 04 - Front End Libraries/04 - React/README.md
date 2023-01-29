@@ -817,6 +817,103 @@ The output is:
 
 <hr>
 
+
+## 🟨 14: Pass Props to a Stateless Functional Component
+
+<h3 class="intro"> ⚪ Intro </h3>
+
+- React allows you to pass properties into child components
+
+<h3 class="example"> 🟠 Example </h3>
+
+- Suppose you have an App component which renders a child component called Welcome which is a stateless functional component. You can pass Welcome a user property by writing:
+
+```jsx
+<App>
+  <Welcome user='Mark' />
+</App>
+```
+
+- You can use custom HTML attributes created by you! Since Welcome is stateless, it can access the user variable by:
+
+```jsx
+const Welcome = (props) => <h1>Hello. {props.user}!</h1>
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- When rendering CurrentDate from the Calendar component, pass in a property of date assigned to the current date from JavaScript's Date object.
+
+
+- Thew code is initialised as:
+
+```jsx
+const CurrentDate = (prop) => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+      <p>The current date is: </p>
+      { /* Change code above this line */ }
+  );
+};
+
+class Calendar extends React.Component {
+  constructor(props){ super(props); }
+  render() {
+    return (
+      <div>
+      <h3>What date is it?</h3>
+        { /* Change code below this line */ }
+        <CurrentDate />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I updated the CurrentDate component so it calls the date from the props object:
+
+```jsx
+const CurrentDate = (props) => {
+  return (
+    <div>
+      { /* Change code below this line */ }
+      <p>The current date is: {props.date}</p>
+      { /* Change code above this line */ }
+    </div>
+  );
+};
+```
+
+- I then passed a property to the CurrentDate declaration in the Calendar component:
+
+```jsx
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        { /* Change code below this line */ }
+        <CurrentDate date={Date()} />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-29-15-49-28.png)
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
