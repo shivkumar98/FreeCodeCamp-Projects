@@ -914,6 +914,103 @@ The output is:
 
 ![](2023-01-29-15-49-28.png)
 
+<hr>
+
+
+## 🟨 15: Pass an Array as Props
+
+- We can pass an array by wrapping it with curly braces
+
+<h3 class="example"> 🟠 Example </h3>
+
+- E.g., we can pass a colors array:
+
+```jsx
+<ParentComponent>
+  <ChildComponent colors={["green", "blue", "red"]} />
+</ParentComponent>
+```
+
+- We can then access it using a call to props.colors
+
+<h3 class="task"> 🔴 Task </h3>
+
+- When rendering each List from ToDo component, pass a tasks property to an array of tasks
+
+- Then access the tasks array in the List component, showing its value within the p element as a comma seperated list.
+
+- Todays list should have atleast 2 tasks
+
+- Tomorrows list should have atleast 3 tasks
+
+- The code was initialised as:
+
+```jsx
+const List = (props) => {
+  { /* Change code below this line */ }
+  return <p></p>
+  { /* Change code above this line */ }
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        { /* Change code below this line */ }
+        <List />
+        <h2>Tomorrow</h2>
+        <List />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- The solution is:
+
+```jsx
+const List = (props) => {
+  { /* Change code below this line */ }
+  return <p>{props.tasks.join(", ")}</p>
+  { /* Change code above this line */ }
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        { /* Change code below this line */ }
+        <List tasks={['finish this course', 'eat food']}/>
+        <h2>Tomorrow</h2>
+        <List tasks={['go work', 'squat', 'cook']}/>
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+``` 
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-29-16-06-35.png)
+
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
