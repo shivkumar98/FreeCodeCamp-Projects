@@ -12,8 +12,10 @@ font-size:22px;
 font-weight:bold;
 color: #b380ff}
 h3 {font: sans-serif;
-font-size:20px;
-font-weight:bold}
+font-size:16px;
+font-weight:bold;
+
+}
 #task{
     color:#e60000 ;
 }
@@ -23,6 +25,23 @@ font-weight:bold}
 #result{
     color:#0066ff;
 }
-#-intro{
-    color: #0066ff;
+.intro{
+    font-size: 18px;
+    color: rgb(189, 186, 186);
+}
+.task{
+    font-size: 18px;
+    color: rgb(243, 102, 102);
+}
+.solution{
+    font-size: 18px;
+    color: #69ee69;
+}
+.result{
+    font-size: 18px;
+    color: rgb(55, 118, 228);
+}
+.example {
+    font-size: 18px;
+    color: rgb(255, 156, 72) ;
 }

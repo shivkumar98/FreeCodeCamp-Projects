@@ -185,7 +185,7 @@ $x: 1,
 
 ## 🟨 1: Store Data With Sass Variables
 
-###  ⚪ Intro
+<h3 class="intro">  ⚪ Intro </h3>
 
   The code for this step was initialised as:
 
@@ -221,11 +221,12 @@ And the page looks like:
 
  Sass allows you to declare and store variables using $ before variable name
 
-### 🔴 Task
+<h3 class="task">  🔴 Task </h3>
 
  *Create a variable for the text color and apply it to the properties of .blog-post*
 
-### 🟢 Solution
+<h3 class="solution"> 🟢 Solution </h3>
+
 
 ```html
     <style type='text/scss'>
@@ -243,7 +244,7 @@ And the page looks like:
 
 ## 🟨 2: Nest CSS with Sass
 
-### ⚪ Intro
+<h3 class="intro">  ⚪ Intro </h3>
 
 **The code was initialised as:**
 
@@ -269,11 +270,11 @@ And the page looks like:
 
 Sass allows for nesting of CSS rules!
 
-### 🔴 Task
+<h3 class="task">  🔴 Task </h3>
 
 *Re-organize the CSS rules for both children of .blog-post element*
 
-### 🟢 Solution
+<h3 class="solution"> 🟢 Solution </h3>
 
 ```html
     <style type='text/scss'>
@@ -291,7 +292,7 @@ Sass allows for nesting of CSS rules!
 
 ## 🟨 3: Create Usable CSS Mixins
 
-### ⚪ Intro
+<h3 class="intro">  ⚪ Intro </h3>
 
 A mixin is a group of CSS declarations which can be reused
 
@@ -324,11 +325,11 @@ We can then add the mixin with specified parameters using @include:
     }
 ```
 
-### 🔴 Task
+<h3 class="task">  🔴 Task </h3>
 
 *Write a mixin for border-radius with $radius parameter. Then givde the #awesome element a border of 15px;*
 
-### 🟢 Solution
+<h3 class="solution"> 🟢 Solution </h3>
 
 ```html
 <style type='text/scss'>
@@ -349,9 +350,7 @@ We can then add the mixin with specified parameters using @include:
 
 <div id="awesome"></div>
 ```
-
-### 🟣 Result 
-
+<h3 class="result">🔵 Result</h3>
 
 ![](screenshots/2023-01-10-13-58-07.png)
 
@@ -359,7 +358,7 @@ We can then add the mixin with specified parameters using @include:
 
 ## 🟨 4: Use @if and @else to Add Logic To Your Styles
 
-### 🔴 Task
+<h3 class="task">  🔴 Task </h3>
 
 *Create a mixin called border-stroke that takes a parameter $val. The mixinwill check for the following conditions:*
 
@@ -368,7 +367,7 @@ We can then add the mixin with specified parameters using @include:
 - *heavy* - 6px solid black*
 - *otherwise set border to none*
 
-### 🟢 Solution
+<h3 class="solution"> 🟢 Solution </h3>
 
 ```html
 <style type='text/scss'>
@@ -397,7 +396,7 @@ We can then add the mixin with specified parameters using @include:
 <div id="box"></div>
 ```
 
-### 🟣 Result 
+<h3 class="result">🔵 Result</h3>
 
 ![](screenshots/2023-01-10-14-07-39.png)
 
@@ -438,7 +437,7 @@ E.g.:
 <p class="text-5">Hello</p>
 ```
 
-### 🟣 Result 
+<h3 class="result">🔵 Result</h3>
 
 <img src="screenshots/2023-01-28-09-08-48.png" width="150px">
 
@@ -446,7 +445,7 @@ E.g.:
 
 ## 🟨 6:  Use @each to Map Over Items in a List
 
-### ⚪ Intro
+<h3 class="intro">  ⚪ Intro </h3>
 
 The @each directive iterates over a list or map
 
@@ -479,11 +478,12 @@ Both of the above examples generate the following CSS:
 .blue-text { color:blue; }
 ```
 
-### 🔴 Task 
+<h3 class="task">  🔴 Task </h3>
 
 *Write an @each directive which goes through a list: blue, black, red and assigns each variable to a .color-bg class which sets the background color to their respective colors
 *
-### 🟢 Solution 
+
+<h3 class="solution"> 🟢 Solution </h3>
 
 ```css
 <style type='text/scss'>
@@ -508,8 +508,7 @@ Both of the above examples generate the following CSS:
 ```
 
 
-
-### 🟣 Result 
+<h3 class="result">🔵 Result</h3>
 
 <img src="screenshots/2023-01-28-09-49-51.png" width="150px">
 
@@ -517,7 +516,7 @@ Both of the above examples generate the following CSS:
 
 ## 🟨 7:  Using @while Apply a Style Until a Condition is Met
 
-### ⚪ Intro 
+<h3 class="intro">  ⚪ Intro </h3>
 
 We can use the @while directive to apply a rule until a condition is met. E.g.:
 
@@ -531,11 +530,12 @@ $x: 1,
 }
 ```
 
-### 🔴 Task 
+<h3 class="task">  🔴 Task </h3>
 
 *Use @while to create a series of classes with different font-sizes. There should be classes text-1, ... , text-5 whhere the font-size is a multiple of 15px
 *
-### 🟢 Solution 
+
+<h3 class="solution"> 🟢 Solution </h3>
 
 ```html
 <style type='text/scss'>
@@ -558,7 +558,7 @@ $x: 1;
 ```
 
 
-### 🟣 Result 
+<h3 class="result">🔵 Result</h3>
 
 <img src="screenshots/2023-01-28-12-49-09.png" width="100px">
 
@@ -566,7 +566,7 @@ $x: 1;
 
 ## 🟨 8:  Use Partials to Split Styles to Smaller Chunks
 
-### ⚪ What is a Partial?
+<h3 class="intro">  ⚪ What is a Partial? </h3>
 
 A Partial is a seperate file which holds a segment of CSS code. These are importged into other Sass files. 
 
@@ -574,7 +574,7 @@ Names for partials begin with an underscore _. These also have a different exten
 
 To import a partial you use the @import directive
 
-### 🟠 Example
+<h3 class="example"> 🟠 Example </h3>
 
 We can create a Partial for a mixin and store it into a file called _mixins.scss
 
@@ -584,11 +584,11 @@ We can then use them within a main file:
 @import 'mixins'
 ```
 
-### 🔴 Task
+<h3 class="task">  🔴 Task </h3>
 
 *Write an @import statement to import a partial _variables.scss into the main.scss file*
 
-### 🟢 Solution
+<h3 class="solution"> 🟢 Solution </h3>
 
 ```html
 <!-- The main.scss file -->
@@ -599,11 +599,11 @@ We can then use them within a main file:
 
 ## 🟨 9: Using Extend to
 
-### ⚪ Intro
+<h3 class="intro">  ⚪ Intro </h3>
 
 Sass allows you to take rules from one element and extend it using the @extend directive
 
-### 🟠 Example
+<h3 class="example"> 🟠 Example </h3>
 
 Suppose we have a panel class:
 
@@ -626,7 +626,7 @@ We want another panel class which has the same properties as above but more rule
 ```
 
 
-### 🔴 Task
+<h3 class="task">  🔴 Task </h3>
 
 *Make a ckass .info-important which extends .info and has a background-color of magenta.*
 
@@ -659,7 +659,7 @@ Which generates:
 
 ![](screenshots/2023-01-28-13-16-46.png)
 
-### 🟢 Solution
+<h3 class="solution"> 🟢 Solution </h3>
 
 ```css
 .info-important{
@@ -669,6 +669,6 @@ Which generates:
 ```
 
 
-### 🟣 Result 
+<h3 class="result">🔵 Result</h3>
 
 ![](screenshots/2023-01-28-13-24-00.png)
