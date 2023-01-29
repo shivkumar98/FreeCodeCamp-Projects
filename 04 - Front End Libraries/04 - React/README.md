@@ -1010,6 +1010,45 @@ The output is:
 
 ![](2023-01-29-16-06-35.png)
 
+<hr>
+
+
+## 🟨 16: Use Default Props
+
+- React has an option to set default properties.
+
+- We can do this using the defaultProps property.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Define default props on the ShoppingCart component of items with value of 0.
+
+- The code is initialised as:
+
+```jsx
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  );
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- The solution is:
+
+```jsx
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+ShoppingCart.defaultProps = {items:0};
+```
 
 ## 🟨  PLACEHOLDER
 
