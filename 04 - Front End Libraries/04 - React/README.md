@@ -376,6 +376,97 @@ class MyComponent extends React.Component {
 
 ![](2023-01-29-13-15-31.png)
 
+<hr>
+
+## 🟨 8: Using Composition within Compnents
+
+<h3 class="example"> 🟠 Example </h3>
+
+- Suppose we want to build an app with three components: a Navbar, Dashboard and Footer
+
+- To compose these components together, you can create an App conponent which renders each of the three child components.
+
+- You write each of the child components as custom tags wrapped with &lt; and &gt; symbols.
+
+- E.g. the render method would contain:
+
+```jsx
+return (
+  <App>
+    <Navbar />
+    <Dashboard />
+    <Footer />
+  </App>
+)
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below defines a simple functional component called ChildComponent and a class called ParentComponent.
+
+- Compose the two together by rendering ChildComponent within the ParentComponent.
+
+```jsx
+const ChildComponent = () => {
+  rerutn (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        {/* change code below this line*/}
+        <ChildComponent />
+        {/* change code above this line*/}
+      </div>
+    );
+  }
+};
+```
+
+The above code generates:
+
+![](2023-01-29-13-29-47.png)
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+const ChildComponent = () => {
+  return (
+    <div>
+      <p>I am the child</p>
+    </div>
+  );
+};
+
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        { /* Change code below this line */ }
+        <ChildComponent />
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+![](2023-01-29-13-30-52.png)
 
 
 ## 🟨  PLACEHOLDER
