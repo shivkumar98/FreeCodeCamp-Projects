@@ -468,6 +468,117 @@ class ParentComponent extends React.Component {
 
 ![](2023-01-29-13-30-52.png)
 
+<hr>
+
+## 🟨 10: Use React to Render Nested Components
+
+<h3 class="task"> 🔴 Task </h3>
+
+- There are two functional components: TypeosOfFruit and Fruits.
+
+- Take the TypesOfFruit component and compose it within the Fruits component. 
+
+- Then take the Fruits component and compose it within the TypseOfFood component.
+
+- The initialised code looks like:
+
+```jsx
+const TypesOfFruit = () => {
+  return (
+    <div>
+      <h2>Fruits:</h2>
+      <ul>
+        <li>Apples</li>
+        <li>Blueberries</li>
+        <li>Strawberries</li>
+        <li>Bananas</li>
+      </ul>
+  );
+};
+
+const Fruits = () => {
+  return (
+    <div>
+      {/* change code below this line*/}
+
+      {/* change code above this line*/}
+  );
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props){ super(props); }
+  render {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        {/* change code below this line*/}
+
+        {/* change code above this line*/}
+      </div>
+    );
+  }
+};
+```
+
+- The code currently outputs:
+
+![](2023-01-29-13-50-09.png)
+
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+const TypesOfFruit = () => {
+  return (
+    <div>
+      <h2>Fruits:</h2>
+      <ul>
+        <li>Apples</li>
+        <li>Blueberries</li>
+        <li>Strawberries</li>
+        <li>Bananas</li>
+      </ul>
+    </div>
+  );
+};
+
+const Fruits = () => {
+  return (
+    <div>
+      { /* change code below this line */ }
+      <TypesOfFruit />
+      { /* change code above this line */ }
+    </div>
+  );
+};
+
+class TypesOfFood extends React.Component {
+  constructor(props) { super(props); }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        { /* change code below this line */ }
+        <Fruits />
+        { /* change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+- The output of the solution:
+
+![](2023-01-29-13-53-06.png)
+
+<hr>
+
+## 🟨 10: Use React to Render Nested Components
+
+
 
 ## 🟨  PLACEHOLDER
 
