@@ -1106,6 +1106,68 @@ The output is:
 
 ![](2023-01-29-16-41-47.png)
 
+<hr>
+
+
+## 🟨 18: Use PropTypes to Define Props You Expect
+
+<h3 class="intro"> ⚪ Intro </h3>
+
+- React offers type-checking features to verify components receive correct props.
+
+- E.g., we can set propTypes to require an array.
+
+- We define propTypes by setting the .propTypes property of the component and using the key to specify the name of the property
+
+<h3 class="example"> 🟠 Example </h3>
+
+- Here we specify the onClick prop must be a function and is required.
+
+```jsx
+MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Define propTypes for the Items component to require quantity as a prop and verify it is of type number
+
+- The code is initialised as:
+
+```jsx
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+// Change code below this line
+
+// Change code above this line
+
+Items.defaultProps = { quantity: 0};
+
+class ShoppingCart extends React.Component {
+  constructor(props) { super(props); }
+  render() { return <Items />}
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I add the following line:
+
+```jsx
+// Change code below this line
+Items.propTypes = {quantity:PropTypes.number.isRequired }
+// Change code above this line
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-30-09-02-49.png)
+
+
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
