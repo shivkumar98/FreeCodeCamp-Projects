@@ -1466,6 +1466,72 @@ The output is:
 
 ![](2023-01-30-15-54-23.png)
 
+<hr>
+
+
+## 🟨 24: Set State using this.setState()
+
+- Previously, we initialisewd state in the constructor.
+
+- React offers another way to set state using the setState method.
+
+- We can call this method within the class via this.setState(). We pass it an object with key-value pair.
+
+- React does not expect you to modify the state directly insteady to use setState()
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below defines aa button with a onClick() handler.
+
+- The handler is trigger when the buttom receieves a click event.
+
+- Within the handleClick method, update the handleClick method, update the state using setState.
+
+- Set the name property to "React Rocks!"
+
+- The code is initialised as:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { name: 'Initial State' };
+    this.handleClickl.bind(this);
+    handleClick() {
+    // Change code below this line
+
+    // Change code above this line
+    }
+    render() {
+      return (
+        <div>
+          <button onClick={this.handleClick}>Click Me</button>
+            <h1>{this.state.name}</h1>
+          </button>
+        </div>
+      );
+    }
+  }
+}
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I add the following line:
+
+```jsx
+this.setState({name:'React Rocks!'})
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The page is initialised as:
+
+![](2023-01-30-16-08-15.png)
+
+Clicking on the page:
+
+![](2023-01-30-16-08-35.png)
 
 
 ## 🟨  PLACEHOLDER
