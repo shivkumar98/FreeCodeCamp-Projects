@@ -1629,6 +1629,117 @@ After clicking:
 ![](2023-01-30-16-23-30.png)
 
 
+<hr>
+
+
+## 🟨 26: Use State to Toggle an Element
+
+- React may batch multiple setState() calls to a single update, meaning we can not rely on the previous value of this.states or this.props when calculating the next value.
+
+- We can not write code like this:
+
+```jsx
+this.setState({counter: this.state.counter + this.props.incrmement })
+```
+
+- Instead, we should pass a function to the setState to access state and props which guarantees you are working with the most current  values of state and props. Hence, the above should be written as:
+
+```jsx
+this.setState((state, propa) => ({
+  counter: state.counter + props.increment
+}));
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- MyComponent has a visibility property initialised to false.
+
+- The render methodf reutrns a view dependent on visibility.
+
+- Currently, there is no way to update visibility in components state.
+
+- Pass a function setState to define a method so the visbility toggles
+
+- The code is initialised as:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props){ 
+    super(props);
+    this.state = {
+      visibility: false
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  // Change code below this line
+
+  // Change code abov
+  render() {
+    if (this.state.visibility){
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!<h1>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
+```
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+    // change code below this line
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+    // change code above this line
+  }
+  // change code below this line
+  toggleVisibility() {
+    this.setState(state => {
+      if (state.visibility === true) {
+         return { visibility: false };
+       } else {
+         return { visibility: true };
+      }
+    });
+  }
+  // change code above this line
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+<img src="step-26.gif">
 
 
 ## 🟨  PLACEHOLDER
