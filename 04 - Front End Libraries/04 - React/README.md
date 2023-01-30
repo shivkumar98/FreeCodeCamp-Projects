@@ -1300,6 +1300,66 @@ This outputs:
 
 ![](2023-01-30-14-32-01.png)
 
+<hr>
+
+
+## 🟨 21: Createful a Statefut Component
+
+<h3 class="intro"> ⚪ Creating States </h3>
+
+- State consists of any data your application needs to know about
+
+- You want your app to respond to state changes, React offers a nice solution for state management!
+
+- You create state by declaring state property on the component class in its constructor - this initialises it
+
+- The state must be set to a JavaScript object, we can declare it using:
+
+```jsx
+this.state = { }
+```
+
+- You have access to state throughout the life of your component.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- There is a StatefulCompoment defined below which is trying to render firstName property from the state
+
+- Initialise the state in the constructor!
+
+- The code is initialised as:
+
+```jsx
+class StatefulComponent extends React.Component {
+  constructor(props){
+    super(props);
+    // Only change code below this line
+
+    // Only change code above this line
+  }
+  render(){
+    return (
+      <div>
+        <h1>{this.state.firstName}</h1>
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I add the following line to my constructor:
+
+```jsx
+this.state = { firstName: "Shiv" }
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-30-15-18-11.png)
 
 
 
