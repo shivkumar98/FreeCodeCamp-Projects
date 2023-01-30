@@ -1496,7 +1496,7 @@ class MyComponent extends React.Component {
   constructor(props){
     super(props);
     this.state = { name: 'Initial State' };
-    this.handleClickl.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     handleClick() {
     // Change code below this line
 
@@ -1532,6 +1532,103 @@ The page is initialised as:
 Clicking on the page:
 
 ![](2023-01-30-16-08-35.png)
+
+<hr>
+
+
+## 🟨 25: Bind 'this' to a Class Method
+
+- We need to allow a method to use the "this" keyword.
+
+- One way is to bind "this" in the constructor
+
+- In the previous example we used:
+
+```jsx
+this.handleClick = this.handleClick.bind(this)
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Fix the MyComponent class so that by explicitly binding this to the handleClick method
+
+- Add an onClick handler to the button, so that the text is update in the h1 tags
+
+- The code is initialised as:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button >Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+I update the code to:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // Change code below this line
+    this.handleClick = this.handleClick.bind(this);
+    // Change code above this line
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <button onClick={this.handleClick}>Click Me</button>
+        { /* Change code above this line */ }
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The page initialises as:
+
+![](2023-01-30-16-23-10.png)
+
+After clicking:
+
+![](2023-01-30-16-23-30.png)
+
+
 
 
 ## 🟨  PLACEHOLDER
