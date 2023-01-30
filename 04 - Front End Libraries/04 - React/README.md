@@ -1809,6 +1809,33 @@ class Counter extends React.Component {
 <img src="step-27.gif">
 
 
+<hr>
+
+
+## 🟨 28: Write a Controlled Input
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The below code has the skeleton of a component called ControlledInput to create a controlled "input" element
+
+- The components state is already initialised with an input property that holds an empty string.
+
+- First, create a method called handleChange() that has a parameter called event.
+
+- When the method is called, it receives an event object that contains a string of text from the input element.
+
+- This can be accessed via event.target.value inside the method.
+
+- Update the input property of the component's state with this new string.
+
+- In the render method, create the input element above, the h4 tag
+
+- Add a value aittribute which is equal to the in
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+<h3 class="result"> 🔵 Result</h3>
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
