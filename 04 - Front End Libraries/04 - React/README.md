@@ -1230,9 +1230,78 @@ class Welcome extends React.Component {
 <p>Hello, <strong>{this.props.name}</strong>!</p>
 ```
 
+<h3 class="result"> 🔵 Result</h3>
 
+The output is:
+
+![](2023-01-30-14-15-09.png)
+
+<hr>
+
+
+## 🟨 20: Review Using Props with Stateless Functional Components
+
+- So far we have been passing props to stateless functional components - these components are acting as pure functions.
+
+- A **stateless functional component** is any function which accepts props and returns JSX.
+
+- A **stateless component** is a class which extends React.Component, but does not use internal state
+
+- A **stateful component** is a class component which does maintain its own internal state.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- There is a CampSite component which renders a Camper component as a child
+
+- Define the Camper component and assign it default props of { name: 'CamperBot' }
+
+- Inside the Camper component, make sure to have one p element whidh only the name value that is passed in as a prop
+
+- Define a propTypes on the Camper to require name which is of type string
+
+- The code is intialised as:
+
+```jsx
+class CampSite extends React.Component {
+  constructor(props){ super(props); }
+  render() {
+    return (
+      <div>
+        <Camper />
+      </div>
+    );
+  }
+};
+// Change code below this line
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I add the following below the CampSite component:
+
+```jsx
+class Camper extends React.Component {
+  constructor(props) { super(props); }
+  render(){
+    return (
+      <div>
+        <p>{this.props.name}</p>
+      </div>
+    )
+  }
+};
+Camper.defaultProps = {name:"CamperBot"}
+Camper.propTypes = {name:PropTypes.string.isRequired}
+```
 
 <h3 class="result"> 🔵 Result</h3>
+
+This outputs:
+
+![](2023-01-30-14-32-01.png)
+
+
+
 
 ## 🟨  PLACEHOLDER
 
