@@ -1361,7 +1361,56 @@ The output is:
 
 ![](2023-01-30-15-18-11.png)
 
+<hr>
 
+
+## 🟨 22: Render State in the User Interface
+
+- State can be accessed via this.state within the render() method.
+
+- State should be encapsulated!
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The MyComponent defined is stateful!
+
+- Define a h1 tag in the component's render method which renders the value of name from the component's state.
+
+- The code is intialised as:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I add the following line between the comments:
+
+```jsx
+<h1>{this.state.name}</h1>
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-30-15-27-30.png)
 
 ## 🟨  PLACEHOLDER
 
