@@ -1412,6 +1412,62 @@ The output is:
 
 ![](2023-01-30-15-27-30.png)
 
+<hr>
+
+
+## 🟨 23: Render State in UI in another way
+
+- We can also access statw within the render() method within JavaScript code.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Within the render() method, define a const called name and set it equal to the name value in the component's state.
+
+- The code is initialised as:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props){ 
+    super(props);
+    this.state = { name: 'FreeCodeCamp' }
+  }
+  render() {
+    // change code below this line
+
+    // change code above this line
+    return(
+      <div>
+        { /* Change code below this line */ }
+
+        { /* Change code above this line */ }
+      </div>
+    );
+  }
+}
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- Within the render() method, I initialise a name constant:
+
+```javascript
+const name = this.state.name;
+```
+
+- I then use this variable in the div:
+
+```jsx
+<h1>{name}</h1>
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-01-30-15-54-23.png)
+
+
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
