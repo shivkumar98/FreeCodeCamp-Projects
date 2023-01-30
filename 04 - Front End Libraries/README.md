@@ -12,4 +12,4 @@
 
 3. [**SASS**](/04%20-%20Front%20End%20Libraries/03%20-%20SASS)
 
-4. [**REACT**](/04%20-%20Front%20End%20Libraries//04%20-%20React/)
+4. [**React**](/04%20-%20Front%20End%20Libraries//04%20-%20React/)
