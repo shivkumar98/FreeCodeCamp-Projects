@@ -1741,6 +1741,73 @@ class MyComponent extends React.Component {
 
 <img src="step-26.gif">
 
+<hr>
+
+
+## 🟨 27: Write a Simple Counter
+
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The Counter component keeps track of a count value in state
+
+- There are two buttons which call increment() and decrement() methods.
+
+- Write these methods so the counter value is incremented/decremented by 1
+
+- Create a reset() method which sets the value to 0
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+    // Change code below this line
+    this.increment = this.increment.bind(this);
+     this.decrement = this.decrement.bind(this);
+     this.reset = this.reset.bind(this);
+    // Change code above this line
+  }
+  // Change code below this line
+    increment() {
+      this.setState(state=>{
+        const incremented = state.count + 1;
+        return {count:incremented};
+      });
+    };
+        decrement() {
+      this.setState(state=>{
+        return {count:state.count-1};
+      });
+    };
+        reset(){
+      this.setState(state=>{
+        return {count:0};
+      });
+    };
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        <button className='inc' onClick={this.increment}>Increment!</button>
+        <button className='dec' onClick={this.decrement}>Decrement!</button>
+        <button className='reset' onClick={this.reset}>Reset</button>
+        <h1>Current Count: {this.state.count}</h1>
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+
+<img src="step-27.gif">
+
 
 ## 🟨  PLACEHOLDER
 
