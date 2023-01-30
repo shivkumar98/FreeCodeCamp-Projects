@@ -1166,7 +1166,73 @@ The output is:
 
 ![](2023-01-30-09-02-49.png)
 
+<hr>
 
+
+## 🟨 19: Access Props Using this.props
+
+- To refer to a class component within itself you must use *this* keyword
+
+- E.g, to access a data prop within a class, you write:
+
+```jsx
+{this.props.data}
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Render an instance of the Welcome component in teh parent component App.
+
+- Give Welcome a prop of name and assign it a value of a string
+
+- Within the Welcome element, access the name prop within the strong tags.
+
+- The code is initialised as:
+
+```jsx
+class App extends React.Component {
+  constructor(props) { super(props); }
+  render(){
+    return (
+      <div>
+        {/* change the code below this line */}
+        <Welcome />
+        { /* Change code above this line */ }
+    );
+  }
+};
+
+class Welcome extends React.Component {
+  constructor(props){ super(props); }
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <p>Hello, <strong></strong>!</p>
+        { /* Change code below this line */ }
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I added a property to the Welcome Tag in the App component:
+
+```jsx
+<Welcome name="Shiv"/>
+```
+
+- I then updated the &lt;p> tag in the Welcome component declaration:
+
+```jsx
+<p>Hello, <strong>{this.props.name}</strong>!</p>
+```
+
+
+
+<h3 class="result"> 🔵 Result</h3>
 
 ## 🟨  PLACEHOLDER
 
