@@ -1820,21 +1820,109 @@ class Counter extends React.Component {
 
 - The components state is already initialised with an input property that holds an empty string.
 
-- First, create a method called handleChange() that has a parameter called event.
+1. Create a method called handleChange() that has a parameter called event. When the method receives an event, it receives an event object which contains a string of text from input element.
 
-- When the method is called, it receives an event object that contains a string of text from the input element.
+2. In the render method, create the input element above the h4 tag. Add a value attribute equal to input property from state. Then add an onChange() even handler set to handleChange() method
 
-- This can be accessed via event.target.value inside the method.
+- When yout type in input box, thge text should be processed by handleChange() method set as the input property in local state.
 
-- Update the input property of the component's state with this new string.
+- The code is initialised as:
 
-- In the render method, create the input element above, the h4 tag
+```jsx
+class ControlledInput extends React.Component {
+  constructor(props){ 
+    super(props);
+    this.state = { input: '' };
+    // change code below this line
 
-- Add a value aittribute which is equal to the in
+    // change code above this line
+    }
+    // change code below this line
+
+    // change code above this line
+  render(){
+    return(
+      <div>
+        {/* change code below this line */ }
+        
+        {/* change code above this line */ }
+        <h4>Controlled Input:</h4>
+        <p>{this.state.onput}</p>
+      </div>
+    );
+  }
+};
+```
+
+
+- The output currently looks like:
+
+![](2023-01-31-08-36-02.png)
 
 <h3 class="solution"> 🟢 Solution </h3>
 
+- I first define the handleChange() method as:
+
+```jsx
+handleChange(event){
+  this.setState({input:event.target.value});
+}
+```
+
+- I then add the binding of the handleChange() method:
+
+```jsx 
+this.handleChange = this.handleChange.bind(this);
+```
+
+- I add the input element to the render() method whose value is set to the input of the state. I also set the onChange attribute to call the handleChange() method:
+
+
+```jsx
+<input value={this.state.value} onChange = {this.handleChange}>
+```
+
+- **The final code looks like:**
+
+```jsx
+class ControlledInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    // Change code below this line
+    this.handleChange = this.handleChange.bind(this);
+    // Change code above this line
+  }
+  // Change code below this line
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+}
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */}
+        <input value={this.state.input} onChange={this.handleChange}></input>
+
+        { /* Change code above this line */}
+        <h4>Controlled Input:</h4>
+        <p>{this.state.input}</p>
+      </div>
+    );
+  }
+};
+```
+
 <h3 class="result"> 🔵 Result</h3>
+
+The output looks like:
+
+<img src="step-28.gif">
+
 
 ## 🟨  PLACEHOLDER
 
