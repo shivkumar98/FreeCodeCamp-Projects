@@ -2068,10 +2068,73 @@ The output of the above code is:
 <hr>
 
 
-## 🟨 30
+## 🟨 30: Pass State as Props to Child Components
+
+- A common pattern is to have a stateful component that then renders child components. You want these componnets to have access to some pieces of that statem which are passed in as props.
+
+<h3 class="example"> 🟠 Example </h3>
+
+- You may have an App component which renders a Navbar
+
+- In your App, you have a state which contains useful information, but the Navbar only needs access to the user's username. You pass that as a prop to the Navbar component.
 
 
+<h3 class="task"> 🔴 Task </h3>
 
+- The MyApp component is stateful and renders a Navbar component as a child.
+
+- Pass the name property in its state down to the child componentm then show the name in the h1 tag as part of the Navbar's render() method.
+
+- The name should appear after the text: "Hello, my name is:"
+
+- The code is initialised as:
+
+```jsx
+class MyApp extends React.Component {
+  constructor(props){}
+}
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'CamperBot'
+    }
+  }
+  render() {
+    return (
+       <div>
+         {/* Change code below this line */}
+         <Navbar name={this.state.name}/>
+         {/* Change code above this line */}
+       </div>
+    );
+  }
+};
+
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+    <div>
+      {/* Change code below this line */}
+      <h1>Hello, my name is: {this.props.name}</h1>
+      {/* Change code above this line */}
+    </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+![](2023-01-31-16-30-19.png)
 
 ## 🟨  PLACEHOLDER
 
