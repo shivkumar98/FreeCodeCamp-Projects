@@ -1907,7 +1907,6 @@ class ControlledInput extends React.Component {
       <div>
         { /* Change code below this line */}
         <input value={this.state.input} onChange={this.handleChange}></input>
-
         { /* Change code above this line */}
         <h4>Controlled Input:</h4>
         <p>{this.state.input}</p>
@@ -1922,6 +1921,152 @@ class ControlledInput extends React.Component {
 The output looks like:
 
 <img src="step-28.gif">
+
+<hr>
+
+
+## 🟨 29: Create a Controlled Form
+
+- Controlled elements are elements whose internal state is controlled by React!
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below has a MyForm component set up with an empty form with a submit handler. Thye submit handle will be called when the form is submitted.
+
+- A submit button is included.
+
+- Add the input element and set iuts value and onChange() attributes
+
+- Complete the hanleSubmit method so that it set the component state property submit to the current input value in the local state.
+
+- Finally, create a h1 tag after the form which renders the submit value from the component's state.
+
+- **The code is initialised as:**
+
+```jsx
+class MyForm extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      input: '', submit: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handlSubmit.bind(this);
+    handleChange(event){
+      this.setState({
+        input: event.target.value
+      });
+    }
+    handleSubmit(){
+      // Change code below this line
+
+      // Change code above this line
+    }
+    render(){
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            {/* Change code below this line */}
+
+            {/* Change code above this line */}
+            <button type='submit'>Submit!</button>
+          </form>
+          {/* Change code below this line */}
+
+          {/* Change code above this line */}
+        </div>
+      );
+    }
+  }
+}
+```
+
+The current output looks like:
+
+<img src="step-29.gif">
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+
+- I first add the input element in the form and set its value and onChange attribute
+
+```jsx
+<input value={this.state.input} onChange={this.handleChange}></input>
+```
+
+- I start implementing the handleSubmit() method by first calling event. I then update the submit value of the state:
+
+```jsx
+handleSubmit(event) {
+  // Change code below this line
+  event.preventDefault();
+  this.setState({
+    submit: this.state.input
+  })
+  // Change code above this line
+}
+```
+
+- I then create a h1 tag below the form which displays what was submitted by ther form:
+
+```jsx
+<h1>{this.state.submit}</h1>
+```
+
+
+- **The final code looks like:**
+
+```jsx
+class MyForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      submit: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  handleSubmit(event) {
+    // Change code below this line
+    event.preventDefault()
+    this.setState({
+      submit:this.state.input
+    })
+    // Change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          {/* Change code below this line */}
+          <input value={this.state.input} onChange={this.handleChange}></input>
+          {/* Change code above this line */}
+          <button type='submit'>Submit!</button>
+        </form>
+        {/* Change code below this line */}
+        <h1>{this.state.submit}</h1>
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output of the above code is:
+
+<img src="step-29-solution.gif">
+
+
+
 
 
 ## 🟨  PLACEHOLDER
