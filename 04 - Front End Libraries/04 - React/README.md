@@ -69,7 +69,7 @@ const JSX = <h1>Hello JSX!</h1>;
 
 The output is:
 
-![](2023-01-29-10-02-52.png)
+![](screenshots/2023-01-29-10-02-52.png)
 
 
 <hr>
@@ -123,7 +123,7 @@ const JSX = <div><h1>Shiv Kumar</h1>
 
 The output is:
 
-![](2023-01-29-10-15-08.png)
+![](screenshots/2023-01-29-10-15-08.png)
 
 <hr>
 
@@ -198,7 +198,7 @@ ReactDOM.render(JSX, document.getElementById('challenge-node'))
 
 The output is:
 
-![](2023-01-29-10-36-42.png)
+![](screenshots/2023-01-29-10-36-42.png)
 
 <hr>
 
@@ -238,7 +238,7 @@ const JSX = (
 
 The output is:
 
-![](2023-01-29-10-54-30.png)
+![](screenshots/2023-01-29-10-54-30.png)
 
 <hr>
 
@@ -282,7 +282,7 @@ const JSX = (
 
 The output is:
 
-![](2023-01-29-11-05-55.png)
+![](screenshots/2023-01-29-11-05-55.png)
 
 <hr>
 
@@ -334,7 +334,7 @@ const MyComponent = function() {
 
 The output is:
 
-![](2023-01-29-13-01-55.png)
+![](screenshots/2023-01-29-13-01-55.png)
 
 <hr>
 
@@ -402,7 +402,7 @@ class MyComponent extends React.Component {
 
 The output is:
 
-![](2023-01-29-13-15-31.png)
+![](screenshots/2023-01-29-13-15-31.png)
 
 <hr>
 
@@ -462,7 +462,7 @@ class ParentComponent extends React.Component {
 
 The above code generates:
 
-![](2023-01-29-13-29-47.png)
+![](screenshots/2023-01-29-13-29-47.png)
 
 <h3 class="solution"> 🟢 Solution </h3>
 
@@ -498,7 +498,7 @@ class ParentComponent extends React.Component {
 
 The output is:
 
-![](2023-01-29-13-30-52.png)
+![](screenshots/2023-01-29-13-30-52.png)
 
 <hr>
 
@@ -554,7 +554,7 @@ class TypesOfFood extends React.Component {
 
 - The code currently outputs:
 
-![](2023-01-29-13-50-09.png)
+![](screenshots/2023-01-29-13-50-09.png)
 
 
 
@@ -606,7 +606,7 @@ class TypesOfFood extends React.Component {
 
 The output is:
 
-![](2023-01-29-13-53-06.png)
+![](screenshots/2023-01-29-13-53-06.png)
 
 <hr>
 
@@ -655,7 +655,7 @@ class TypesOfFood extend React.component {
 
 - This outputs:
 
-![](2023-01-29-14-22-13.png)
+![](screenshots/2023-01-29-14-22-13.png)
 
 
 <h3 class="solution"> 🟢 Solution </h3>
@@ -703,7 +703,7 @@ class TypesOfFood extends React.Component {
 
 The output is:
 
-![](2023-01-29-14-22-57.png)
+![](screenshots/2023-01-29-14-22-57.png)
 
 <hr>
 
@@ -772,7 +772,7 @@ ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));
 
 The output is:
 
-![](2023-01-29-14-38-44.png)
+![](screenshots/2023-01-29-14-38-44.png)
 
 <hr>
 
@@ -813,7 +813,7 @@ ReactDOM.render(<MyComponent />,document.getElementById('challenge-node'));
 
 The output is:
 
-![](2023-01-29-14-57-18.png)
+![](screenshots/2023-01-29-14-57-18.png)
 
 <hr>
 
@@ -912,7 +912,7 @@ class Calendar extends React.Component {
 
 The output is:
 
-![](2023-01-29-15-49-28.png)
+![](screenshots/2023-01-29-15-49-28.png)
 
 <hr>
 
@@ -1008,7 +1008,7 @@ class ToDo extends React.Component {
 
 The output is:
 
-![](2023-01-29-16-06-35.png)
+![](screenshots/2023-01-29-16-06-35.png)
 
 <hr>
 
@@ -1104,7 +1104,7 @@ class ShoppingCart extends React.Component {
 
 The output is:
 
-![](2023-01-29-16-41-47.png)
+![](screenshots/2023-01-29-16-41-47.png)
 
 <hr>
 
@@ -1164,7 +1164,7 @@ Items.propTypes = {quantity:PropTypes.number.isRequired }
 
 The output is:
 
-![](2023-01-30-09-02-49.png)
+![](screenshots/2023-01-30-09-02-49.png)
 
 <hr>
 
@@ -1234,7 +1234,7 @@ class Welcome extends React.Component {
 
 The output is:
 
-![](2023-01-30-14-15-09.png)
+![](screenshots/2023-01-30-14-15-09.png)
 
 <hr>
 
@@ -1298,7 +1298,7 @@ Camper.propTypes = {name:PropTypes.string.isRequired}
 
 This outputs:
 
-![](2023-01-30-14-32-01.png)
+![](screenshots/2023-01-30-14-32-01.png)
 
 <hr>
 
@@ -1359,7 +1359,7 @@ this.state = { firstName: "Shiv" }
 
 The output is:
 
-![](2023-01-30-15-18-11.png)
+![](screenshots/2023-01-30-15-18-11.png)
 
 <hr>
 
@@ -1410,7 +1410,7 @@ class MyComponent extends React.Component {
 
 The output is:
 
-![](2023-01-30-15-27-30.png)
+![](screenshots/2023-01-30-15-27-30.png)
 
 <hr>
 
@@ -1464,7 +1464,7 @@ const name = this.state.name;
 
 The output is:
 
-![](2023-01-30-15-54-23.png)
+![](screenshots/2023-01-30-15-54-23.png)
 
 <hr>
 
@@ -1527,11 +1527,11 @@ this.setState({name:'React Rocks!'})
 
 The page is initialised as:
 
-![](2023-01-30-16-08-15.png)
+![](screenshots/2023-01-30-16-08-15.png)
 
 Clicking on the page:
 
-![](2023-01-30-16-08-35.png)
+![](screenshots/2023-01-30-16-08-35.png)
 
 <hr>
 
@@ -1622,11 +1622,11 @@ class MyComponent extends React.Component {
 
 The page initialises as:
 
-![](2023-01-30-16-23-10.png)
+![](screenshots/2023-01-30-16-23-10.png)
 
 After clicking:
 
-![](2023-01-30-16-23-30.png)
+![](screenshots/2023-01-30-16-23-30.png)
 
 
 <hr>
@@ -1739,7 +1739,7 @@ class MyComponent extends React.Component {
 
 <h3 class="result"> 🔵 Result</h3>
 
-<img src="step-26.gif">
+<img src="screenshots/step-26.gif">
 
 <hr>
 
@@ -1806,7 +1806,7 @@ class Counter extends React.Component {
 <h3 class="result"> 🔵 Result</h3>
 
 
-<img src="step-27.gif">
+<img src="screenshots/step-27.gif">
 
 
 <hr>
@@ -1857,7 +1857,7 @@ class ControlledInput extends React.Component {
 
 - The output currently looks like:
 
-![](2023-01-31-08-36-02.png)
+![](screenshots/2023-01-31-08-36-02.png)
 
 <h3 class="solution"> 🟢 Solution </h3>
 
@@ -1920,7 +1920,7 @@ class ControlledInput extends React.Component {
 
 The output looks like:
 
-<img src="step-28.gif">
+<img src="screenshots/step-28.gif">
 
 <hr>
 
@@ -1983,7 +1983,7 @@ class MyForm extends React.Component {
 
 The current output looks like:
 
-<img src="step-29.gif">
+<img src="screenshots/step-29.gif">
 
 
 <h3 class="solution"> 🟢 Solution </h3>
@@ -2063,8 +2063,12 @@ class MyForm extends React.Component {
 
 The output of the above code is:
 
-<img src="step-29-solution.gif">
+<img src="screenshots/step-29-solution.gif">
 
+<hr>
+
+
+## 🟨 30
 
 
 
