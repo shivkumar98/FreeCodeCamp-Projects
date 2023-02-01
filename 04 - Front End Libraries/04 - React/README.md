@@ -2136,6 +2136,150 @@ class Navbar extends React.Component {
 
 ![](2023-01-31-16-30-19.png)
 
+
+<hr>
+
+
+## 🟨 31: Pass a Callback as Props
+
+- You can pass state as props to child components.
+
+- We can also pass handler functions or any method that's defined on a React Componentr
+
+- You can pass methods to a child just like a regular prop.
+
+<h3 class="task"> 🔴 Task </h3>r
+
+- There are three components defined in the code below
+
+- The MyApp component is the parent that will render the GetInput and RenderInputr child components.
+
+1. Add the GetInput component to render, then pass it a prop called input assigned to inputValue from MyApp's state
+
+- The code is initialised as:
+
+```jsx
+class MyApp extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={ inputValue: ''}
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(eventt) {
+    this.setState({ inputValue: event.target.value });
+  }
+  render(){
+    return (
+      <div>
+        {/*  change code below this line */}
+
+        {/*  change code above this line */}
+    );
+  }
+};
+
+class GetInput extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return (
+      <div>
+        <h3>Get Input</h3>
+        <input value={this.props.input} onChange={this.props.handleChange} />
+      </div>
+    );
+  }
+}
+
+class RenderInput extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>Input Render:</h3>
+        <p>{this.props.input}</p>
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I first declare the GetInput component and set its props to the handleChange method!
+
+```jsx
+<GetInput input={this.state.inputValue} props={this.handleChange} />
+```
+
+- I then declare the RenderInput component:
+
+```jsx
+<RenderInput input={this.state.inputValue}>
+
+```
+
+- The final code looks like:
+
+```jsx
+class MyApp extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={inputValue: ''}
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event){
+    this.setState({inputValue: event.target.value});
+  }
+  render() {
+    return (
+      <div>
+        {/* change code below this line*/}
+
+        {/* change code above this line */}
+      </div>
+    );
+  }
+};
+
+class GetInput extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return (
+      <div>
+        <h3>Get Input</h3>
+        <input value={this.props.input} onChange={this.props.handleChange} />
+      </div>
+    );
+  }
+};
+
+class RenderInput extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>Input Render:</h3>
+        <p>{this.props.input}</p>
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="step-31.gif">
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
