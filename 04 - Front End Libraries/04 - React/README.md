@@ -2280,6 +2280,55 @@ The output is:
 
 <img src="step-31.gif">
 
+# 32: Use Lifecycle Method componentWillMount
+
+<h3 class="intro"> ⚪ Lifecycle Methods </h3>
+
+- React offers methods which allow you to perform actions in the lifecycle of a component
+
+- These are also known as lifecycle methods or lifecycle hooks.
+
+- These methods can be before they are rendered, before they update, before they recieve props, before the unmount.
+
+- Here is a list of main lifecycle methods:
+
+1. componentWillMount()
+2. componentDidMount()
+3. shouldComponentUpdate()
+4. componentDidUpdate()
+5. componentWillUnmount()
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The componentWillMount() method is called before the render() methodf when a component is mounted to the DOM
+
+- Log something to console with componentWillMount()
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  componentWillMount(){
+    console.log("component will mount")
+  }
+  rendeR(){
+    return <div>hello</div>
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+```console
+component will mount
+in render
+```
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
