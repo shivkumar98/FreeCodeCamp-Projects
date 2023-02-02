@@ -2134,7 +2134,7 @@ class Navbar extends React.Component {
 
 <h3 class="result"> 🔵 Result</h3>
 
-![](2023-01-31-16-30-19.png)
+![](screenshots/2023-01-31-16-30-19.png)
 
 
 <hr>
@@ -2278,7 +2278,7 @@ class RenderInput extends React.Component {
 
 The output is:
 
-<img src="step-31.gif">
+<img src="screenshots/step-31.gif">
 
 <hr>
 
@@ -2386,7 +2386,7 @@ class MyComponent extends React.Component {
 
 The output is:
 
-<img src="step-33.gif">
+<img src="screenshots/step-33.gif">
 
 <hr>
 
@@ -2474,7 +2474,7 @@ class MyComponent extends React.Component {
 
 - The code currently functions like below:
 
-<img src="step-35.gif">
+<img src="screenshots/step-35.gif">
 
 
 <h3 class="solution"> 🟢 Solution </h3>
@@ -2528,6 +2528,9 @@ class Controller extends React.Component {
 
 <h3 class="result"> 🔵 Result</h3>
 
+The output is:
+
+<img src="screenshots/step-35-solution.gif">
 
 ## 🟨  PLACEHOLDER
 
