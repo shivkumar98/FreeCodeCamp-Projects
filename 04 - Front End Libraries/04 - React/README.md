@@ -2532,6 +2532,65 @@ The output is:
 
 <img src="screenshots/step-35-solution.gif">
 
+<hr>
+
+
+## 🟨 36: Introducing Inline Styles
+
+- React allows you style elements using inline styles the a similar way as HTML
+
+- E.g. to style a div in HTML
+
+```html
+<div style="color:yellow; font-size: 16px">Mellow Yellow</div>
+```
+
+- In react, we use camelCasing and the units for fontSize are optional:
+
+```jsx
+<div style={{color: "yellow", fontSize:16}}>Mellow Yellow</div>
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Add a style attribute to div to the give the text a color of red and font-size of 72px
+
+- **The code is initialised as:**
+
+```jsx
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div>Big Red</div>
+    );
+  }
+}
+```
+
+This displays the following:
+
+![](2023-02-02-10-32-06.png)
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The final code solution is:
+
+```jsx
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={{color:"red", fontSize:"72"}}>Big Red</div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-02-02-10-33-41.png)
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
