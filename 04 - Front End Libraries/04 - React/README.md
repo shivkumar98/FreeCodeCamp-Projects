@@ -2317,7 +2317,7 @@ class MyComponent extends React.Component {
   componentWillMount(){
     console.log("component will mount")
   }
-  rendeR(){
+  render(){
     return <div>hello</div>
   }
 }
@@ -2387,6 +2387,68 @@ class MyComponent extends React.Component {
 The output is:
 
 <img src="step-33.gif">
+
+<hr>
+
+
+## 🟨 34: Add Event Listeners
+
+<h3 class="intro"> ⚪ Intro </h3>
+
+- The componentDidMount() method is the best place to attach any event listeners you need to add for specific functionality.
+
+- React has a synthetic wrapper event system which wraps native event system in browserrs. Hence the synthetic system behaves exactly the same regardless of user's browser.
+
+- We have seen event handlers such as onClick, React offers most event handlers needed.
+
+<h3 class="task"> 🔴 Task </h3>
+
+1. Attach an event listener in the componentDidMount() method for keydown events and have these event trigger the callback handleKeyPress(). You can use document.addEventListener() which takes the event as the first argument, and the callback as the second argument.
+
+2. In componentWillMount() remove the same event listener using document.removeEventListener() with same arguments
+
+- Cleaning up components before they are destroyed is good practice
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  // Change code below this line
+  componentDidMount() {
+    document.addEventListener("keydown",this.handleKeyPress);
+  }
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyPress);
+  }
+  // Change code above this line
+  handleEnter() {
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
+```
 
 
 ## 🟨  PLACEHOLDER
