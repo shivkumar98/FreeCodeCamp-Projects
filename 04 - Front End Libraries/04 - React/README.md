@@ -2451,6 +2451,84 @@ class MyComponent extends React.Component {
 ```
 
 
+<hr>
+
+
+## 🟨 35: Optimise Re-Renders with shouldComponentUpdate
+
+- So far, if any component receives new state or props, it re-renders itself and all its children.
+
+- React provides a lifecycle method you can call when chilkd components receive new state or props, and eclare whether the component should update or not.
+
+- The method is shouldComponentUpdate(), and it takes nextProps and nextState as parameters.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The shouldComponentUpdate() method is added in a component called OnlyEvens
+
+- Currently this method returns true so OnlyEvens re-render every time it receives new props.
+
+1. Modify the method so OnlyEvens udpates only if the value of its new peops is even.
+
+2. Click the Add button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
+
+- The code currently functions like below:
+
+<img src="step-35.gif">
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+class OnlyEvens extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('Should I update?');
+    // Change code below this line
+    if (nextProps.value%2==0)  
+    {
+      return true;
+    }
+    return false;
+    // Change code above this line
+  }
+  componentDidUpdate() {
+    console.log('Component re-rendered.');
+  }
+  render() {
+    return <h1>{this.props.value}</h1>;
+  }
+}
+
+class Controller extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 0
+    };
+    this.addValue = this.addValue.bind(this);
+  }
+  addValue() {
+    this.setState(state => ({
+      value: state.value + 1
+    }));
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.addValue}>Add</button>
+        <OnlyEvens value={this.state.value} />
+      </div>
+    );
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
