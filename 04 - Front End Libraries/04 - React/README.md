@@ -2280,7 +2280,10 @@ The output is:
 
 <img src="step-31.gif">
 
-# 32: Use Lifecycle Method componentWillMount
+<hr>
+
+
+## 🟨 32: Use Lifecycle Method componentWillMount
 
 <h3 class="intro"> ⚪ Lifecycle Methods </h3>
 
@@ -2328,6 +2331,63 @@ The output is:
 component will mount
 in render
 ```
+
+<hr>
+
+
+## 🟨 33: Use componentDidMount Method
+
+- The componentDidMount method is called after the component is mounted to the DOM
+
+- Its best practice to place API calls or any calls to your server in the componentDidMount() method.=
+
+- Any calls to setState() here will trigger re-rendering of component.
+
+- Hence, when an API call is made, and the state is set with data from API, an update will trigger when data is returned.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- There is a mock API call in componentDidMount().
+
+- It sets state after 2.5 seconds to simulate calling sa serverr to retrieve data.
+
+- This example requests the current total active users for a site.
+
+- In the render method, render the values of activeUsers in the h1 after the text "Active Users:"
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { activeUsers:null };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        activeUsers: 1273
+      });
+    }, 2500);
+  }
+  render(){
+    return (
+        <div>
+          {/* change code below this line */}
+          <h1>Active Users: {this.state.activeUsers}
+          {/* change code above this line */}
+        </div>
+    );
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="step-33.gif">
+
 
 ## 🟨  PLACEHOLDER
 
