@@ -2591,6 +2591,75 @@ The output is:
 
 ![](2023-02-02-10-33-41.png)
 
+<hr>
+
+
+## 🟨 37: Add Inline Styles in React
+
+- All property value length units are assumed to be in px unless specified
+
+- If you have a large set of styles, you can assign a style object to a constant
+
+
+<h3 class="task"> 🔴 Task </h3>
+
+
+
+- Declare your styles as a global variable
+
+- Initialise styles constant and assign it to an object with three style properties and their values.
+
+- Give the div a colour of purple, a font-size of 40, a border of 2px solid purple.
+
+- Then set the style attribute equal to the styles constant.
+
+- The code is initialised as:
+
+```jsx
+// Change code above this line
+class Colorful extends React.Component {
+  render() {
+    // Change code below this line
+    return (
+      <div style={{color: "yellow", fontSize: 24}}>Style Me!</div>
+    );
+    // Change code above this line
+  }
+}
+```
+
+This outputs:
+
+![](2023-02-04-14-39-02.png)
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```jsx
+const styles = {
+  color: "purple",
+  fontSize: 40,
+  border: "2px solid purple"
+}
+// Change code above this line
+class Colorful extends React.Component {
+  render() {
+    // Change code below this line
+    return (
+      <div style={styles}>Style Me!</div>
+    );
+    // Change code above this line
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](2023-02-04-14-45-06.png)
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
