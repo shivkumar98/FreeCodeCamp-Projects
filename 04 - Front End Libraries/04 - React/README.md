@@ -2845,6 +2845,98 @@ The output is:
 
 <img src="screenshots/step-38.gif">
 
+<hr>
+
+
+## 🟨 39: Render with an If-Else Condition
+
+- Another application of using JavaScript is to control rendered view to tie elements which are rendered to a condition.
+
+
+<h3 class="task"> 🔴 Task </h3>
+
+- MyComponent contains a boolean in its state which tracks whether you want to display some UI or not.
+
+- The button toggles the state of this value.
+
+1. Rewrite the render() method with an if/else statement so if "display" is true, you return the current markup otherwise return markupo without h1 element
+
+- The code is initialised as:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayL true
+    }
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState((state) => ({
+      display: !state.display
+    }));
+  }
+  render(){
+    // Change code below this line
+
+    return (
+      <div>
+        <button onClick={this.toggleDisplay}></button>
+        <h1>Displayed!</h1>
+      </div>
+    );
+  }
+};
+```
+
+- Currently the app has no function:
+
+![](2023-02-05-11-19-16.png)
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- The solution is:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: true
+    }
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState((state) => ({
+      display: !state.display
+    }));
+  }
+  render() {
+   if (this.state.props==true){
+    return (
+      <div>
+        <button onClick={this.toggleDisplay}>Toggle Display</button>
+        <h1>Displayed!</h1>
+      </div>
+    );
+   } else {
+    return (
+      <div>
+        <button onClick={this.toggleDisplay}>Toggle Display</button>
+      </div>
+    );
+   }
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="step-39.gif">
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
