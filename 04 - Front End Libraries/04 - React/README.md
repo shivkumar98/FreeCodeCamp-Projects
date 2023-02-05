@@ -2589,7 +2589,7 @@ class Colorful extends React.Component {
 
 The output is:
 
-![](2023-02-02-10-33-41.png)
+![](screenshots/2023-02-02-10-33-41.png)
 
 <hr>
 
@@ -2658,7 +2658,7 @@ class Colorful extends React.Component {
 
 The output is:
 
-![](2023-02-04-14-45-06.png)
+![](screenshots/2023-02-04-14-45-06.png)
 
 
 <hr>
@@ -2757,7 +2757,7 @@ class MagicEightBall extends React.Component {
 
 The app currently has no function:
 
-![](2023-02-04-15-16-35.png)
+![](screenshots/2023-02-04-15-16-35.png)
 
 <h3 class="solution"> 🟢 Solution </h3>
 
@@ -2843,7 +2843,7 @@ class MagicEightBall extends React.Component {
 
 The output is:
 
-<img src="step-38.gif">
+<img src="screenshots/step-38.gif">
 
 ## 🟨  PLACEHOLDER
 
