@@ -3188,6 +3188,160 @@ The output is:
 
 <img src="screenshots/step-41-solution.gif">
 
+<hr>
+
+## 🟨 42: Render Conditionally from Props
+
+- Use props to conditionally render code is a popular paradigm.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below has two components that are partially defined for you a parent called "GameOfChance" and a child called "Results".
+
+- They are used to create a simple game where the user presses a button to see if they win or lose.
+
+1. Update the expression in the render() method of GameOfChance so that it randomly generates true or false
+
+2. Render the "Results" component as a child of GameOfChance. Pass the expression as a prop called fiftyFifty.
+
+3. In the "Results" component, write a ternary operator to render the h1 element with "You Win!" or "You Lose!" based on fiftyFifty
+
+4. Make sure the handleClick() method is correctly counting the number of times played
+
+- The code was initialised as:
+
+```jsx
+class Results extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render() {
+    {/* change code below this line */}
+    return <h1></h1>
+    {/* change code above this line */}
+  }
+}
+
+class GameOfChance extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 1
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState(prevState => {
+      // Complete the return statement:
+      return {
+        counter: prevState
+      }
+    });
+  }
+  render() {
+    const expression = null; // Change this line
+    return (
+      <div>
+        <button onClick={this.handleClick}>Play Again</button>
+        {/* Change code below this line */}
+
+        {/* Change code above this line */}
+        <p>{'Turn: '+this.state.counter}</p>
+      </div>
+    );
+  }
+}
+```
+
+- The current behaviour of the app is:
+
+<img src="screenshots/step-42.gif">
+
+- I first update the expression in GameOfChance component:
+
+```jsx
+const expression = Math.random()>=0.5 ? true : false; // Change this 
+```
+
+- I then added the Results component in the render method of GameOfLifeL
+
+```jsx
+<Results fiftyFifty={expression} />
+```
+
+- I update the render() method in the Results component:
+
+```jsx
+return <h1>{this.props.fiftyFifty?"You Win!":"You Lose!"}</h1>;
+```
+
+- Finally, I upadte the counter on the handleClick() method:
+
+```jsx
+handleClick() {
+  this.setState(prevState => {
+    // Complete the return statement:
+    return {
+      counter: prevState.counter+1
+    }
+  });
+}
+```
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The final solution is:
+
+```jsx
+class Results extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  render() {
+    {/* Change code below this line */}
+    return <h1>{this.props.fiftyFifty?"You Win!":"You Lose!"}</h1>;
+    {/* Change code above this line */}
+  }
+}
+
+class GameOfChance extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 1
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState(prevState => {
+      // Complete the return statement:
+      return {
+        counter: prevState.counter+1
+      }
+    });
+  }
+  render() {
+    const expression = Math.random()>=0.5?true:false; // Change this line
+    return (
+      <div>
+        <button onClick={this.handleClick}>Play Again</button>
+        {/* Change code below this line */}
+        <Results fiftyFifty={expression} />
+        {/* Change code above this line */}
+        <p>{'Turn: ' + this.state.counter}</p>
+      </div>
+    );
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="screenshots/step-42-solution.gif">
 
 ## 🟨  PLACEHOLDER
 
@@ -3198,5 +3352,7 @@ The output is:
 <h3 class="solution"> 🟢 Solution </h3>
 
 <h3 class="result"> 🔵 Result</h3>
+
+The output is:
 
 <h3 class="example"> 🟠 Example </h3>
