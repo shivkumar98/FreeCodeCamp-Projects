@@ -2937,6 +2937,56 @@ The output is:
 
 <img src="step-39.gif">
 
+## 🟨 40: Use && for a More Concise Conditional
+
+- We can use && instead of using if/else structure.
+
+- E.g., the markup in the &lt;p&gt; will render if condition is true otherwise does not render:
+
+```jsx
+{condition && <p>markup</p>}
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Solve the previous example again, so h1 only render if "display" is true.
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- The solution is:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      display: true
+    }
+    this.toggleDisplay = this.toggleDisplay.bind(this);
+  }
+  toggleDisplay() {
+    this.setState( state => ({
+      display: !state.display
+    }));
+  }
+  render() {
+    // Change code below this line
+    return (
+      <div>
+        <button onClick={this.toggleDisplay}>Toggle Display</button>
+        {this.state.display && <h1>Displayed!</h1>}
+      </div>
+    );
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="step-39.gif">
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
