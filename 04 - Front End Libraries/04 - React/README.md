@@ -2937,6 +2937,8 @@ The output is:
 
 <img src="step-39.gif">
 
+<hr>
+
 ## 🟨 40: Use && for a More Concise Conditional
 
 - We can use && instead of using if/else structure.
@@ -2986,6 +2988,206 @@ class MyComponent extends React.Component {
 The output is:
 
 <img src="step-39.gif">
+
+<hr>
+
+## 🟨 41: Use a Ternary Expression for Conditional Rendering
+
+- Ternary operators are popular because of the way JSX is compiled, if/else can't be inserted directly into JSX code.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below has three constants defined within thed CheckUserAge component's render() method: "buttonOne", "buttonTwo", and "buttonThree". Each is assigned to a JSX expression representing a button element.
+
+1. Initialise the state of "CheckUserAge", "input", and "userAge" both set to values of an empty string.
+
+- Once the component is rendering information to the page, users should have a way to interact with it.
+
+2. Within the component's return statement, set up a ternary expression that implements the following:
+
+- When the page first loads, render the submit button "buttonOne" to page
+
+- Then, when a user enters their age and clicks the button, render a different button based on the age.
+
+- If a user enters a number < 18, render buttonThree
+
+- If a user enters a number >= 18, render buttonTwo
+
+- The code is initialised as:
+
+```jsx
+const inputStyle = {
+  width: 235,
+  margin: 5
+};
+
+class CheckUserAge extends React.Component {
+  constructor(props) {
+    super(props);
+    // Change code below this line
+
+    // Change code above this line
+    this.submit = this.submit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    this.setState({
+      input: e.target.value,
+      userAge: ''
+    });
+  }
+  submit() {
+    this.setState(state => ({
+      userAge: state.input
+    }));
+  }
+  render() {
+    const buttonOne = <button onClick={this.submit}>Submit</button>;
+    const buttonTwo = <button>You May Enter</button>;
+    const buttonThree = <button>You Shall Not Pass</button>;
+    return (
+      <div>
+        <h3>Enter Your Age to Continue</h3>
+        <input
+          style={inputStyle}
+          type='number'
+          value={this.state.input}
+          onChange={this.handleChange}
+        />
+        <br />
+        {/* Change code below this line*/}
+
+        {/* Change code above this line*/}
+      </div>
+    );
+  }
+}
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- My solution is:
+
+```jsx
+const inputStyle = {
+  width: 235,
+  margin: 5
+};
+
+class CheckUserAge extends React.Component {
+  constructor(props) {
+    super(props);
+    // Change code below this line
+     this.state = {
+      userAge: '',
+      input: ''
+    }
+    // Change code above this line
+    this.submit = this.submit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    this.setState({
+      input: e.target.value,
+      userAge: ''
+    });
+  }
+  submit() {
+    this.setState(state => ({
+      userAge: state.input
+    }));
+  }
+  render() {
+    const buttonOne = <button onClick={this.submit}>Submit</button>;
+    const buttonTwo = <button>You May Enter</button>;
+    const buttonThree = <button>You Shall Not Pass</button>;
+    return (
+      <div>
+        <h3>Enter Your Age to Continue</h3>
+        <input
+          style={inputStyle}
+          type='number'
+          value={this.state.input}
+          onChange={this.handleChange}
+        />
+        <br />
+        {/* Change code below this line */}
+        {this.state.input=='' && buttonOne}
+        
+        {this.state.input<18?buttonThree:buttonTwo}
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+}
+```
+
+- My solution does not pass requirements! It behaves as such:
+
+<img src="step-41.gif">
+
+- The solution from FreeCodeCamp uses double ternary operator:
+
+```jsx
+const inputStyle = {
+  width: 235,
+  margin: 5
+};
+
+class CheckUserAge extends React.Component {
+  constructor(props) {
+    super(props);
+    // Change code below this line
+     this.state = {
+      userAge: '',
+      input: ''
+    }
+    // Change code above this line
+    this.submit = this.submit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e) {
+    this.setState({
+      input: e.target.value,
+      userAge: ''
+    });
+  }
+  submit() {
+    this.setState(state => ({
+      userAge: state.input
+    }));
+  }
+  render() {
+    const buttonOne = <button onClick={this.submit}>Submit</button>;
+    const buttonTwo = <button>You May Enter</button>;
+    const buttonThree = <button>You Shall Not Pass</button>;
+    return (
+      <div>
+        <h3>Enter Your Age to Continue</h3>
+        <input
+          style={inputStyle}
+          type='number'
+          value={this.state.input}
+          onChange={this.handleChange}
+        />
+        <br />
+        {/* Change code below this line */}
+        {
+          this.state.userAge===''?buttonOne: this.state.userAge>=18 ? buttonTwo : buttonThree
+        }
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="step-41-solution.gif">
+
 
 ## 🟨  PLACEHOLDER
 
