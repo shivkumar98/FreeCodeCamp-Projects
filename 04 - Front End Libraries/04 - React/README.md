@@ -2660,6 +2660,191 @@ The output is:
 
 ![](2023-02-04-14-45-06.png)
 
+
+<hr>
+
+
+## 🟨 38: Use Advanced JavaScript in React Render Method
+
+- Previously, we have use curly braces to inject JavaScript code into JSX for things like accessing props, state, inserting comment, and styling components.
+
+- We can use JavaScript directly in your render methods, before the return statement,  without inserting in curly braces.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- In the code below, the render() method has an array that contains 20 phrases to represent the answers found in the classic Magic Eight Ball
+
+- The button click even is bound to the ask method, so each time it is clicked a random number will be generated and stored as the randomIndex in state.
+
+1. On line 52, reassign the answer const so your code randomly access a different index of the possibleAnswers array each time the component updates.
+
+2. Finally, insert the answer const inside the p tags.
+
+- The code is initialised as:
+
+```jsx
+const inputStyle = {
+  width: 235,
+  margin: 5
+}
+
+class MagicEightBall extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { userInput: '', randomIndex: ''};
+    this.ask = this.ask.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  ask() {
+    if (this.state.userInput) {
+      this.setState({
+        randomIndex: Math.floor(Math.random()*20),
+        userInput: ''
+      });
+    }
+  }
+  handleChange(event){
+    this.setState({
+      userInput: event.target.value
+    });
+  }
+  render() {
+    const possibleAnswers = [
+      'It is certain',
+      'It is decidely so',
+      'Without a doubt',
+      'Yes, definitely',
+      'You may rely on it'
+      'As I see it, yes',
+      'Outlook good',
+      'Yes',
+      'Signs point to yes',
+      'Reply hazy try again',
+      'Ask again later',
+      'Better not tell you now',
+      'Cannot predict now',
+      'Concentrate and ask again',
+      "Don't count on it",
+      'My reply is no',
+      'My sources say no',
+      'Most likely',
+      'Outlook not so good',
+      'Very doubtful'
+    ];
+    const answer = 'change me!'; // Change this line
+    return (
+      <div>
+        <input 
+          type='text'
+          value={this.state.userInput}
+          onChange={this.handleChange}
+          style={inputStyle} 
+        />
+        <br />
+        <button onClick={this.ask}>Ask the Magic Eight Ball!</button>
+        <br />
+        <h3>Answer:</h3>
+        <p>
+          {/* change code below this line */}
+
+          {/* change code above this line */}
+        </p>
+      </div>
+    );
+  }
+}
+```
+
+The app currently has no function:
+
+![](2023-02-04-15-16-35.png)
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```jsx
+const inputStyle = {
+  width: 235,
+  margin: 5
+};
+
+class MagicEightBall extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInput: '',
+      randomIndex: ''
+    };
+    this.ask = this.ask.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  ask() {
+    if (this.state.userInput) {
+      this.setState({
+        randomIndex: Math.floor(Math.random() * 20),
+        userInput: ''
+      });
+    }
+  }
+  handleChange(event) {
+    this.setState({
+      userInput: event.target.value
+    });
+  }
+  render() {
+    const possibleAnswers = [
+      'It is certain',
+      'It is decidedly so',
+      'Without a doubt',
+      'Yes, definitely',
+      'You may rely on it',
+      'As I see it, yes',
+      'Outlook good',
+      'Yes',
+      'Signs point to yes',
+      'Reply hazy try again',
+      'Ask again later',
+      'Better not tell you now',
+      'Cannot predict now',
+      'Concentrate and ask again',
+      "Don't count on it",
+      'My reply is no',
+      'My sources say no',
+      'Most likely',
+      'Outlook not so good',
+      'Very doubtful'
+    ];
+    const answer = possibleAnswers[this.state.randomIndex]
+    return (
+      <div>
+        <input
+          type='text'
+          value={this.state.userInput}
+          onChange={this.handleChange}
+          style={inputStyle}
+        />
+        <br />
+        <button onClick={this.ask}>Ask the Magic Eight Ball!</button>
+        <br />
+        <h3>Answer:</h3>
+        <p>
+          {/* Change code below this line */}
+          {answer}
+          {/* Change code above this line */}
+        </p>
+      </div>
+    );
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="step-38.gif">
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
