@@ -2868,7 +2868,7 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayL true
+      display: true
     }
     this.toggleDisplay = this.toggleDisplay.bind(this);
   }
@@ -2892,7 +2892,7 @@ class MyComponent extends React.Component {
 
 - Currently the app has no function:
 
-![](2023-02-05-11-19-16.png)
+![](screenshots/2023-02-05-11-19-16.png)
 
 <h3 class="solution"> 🟢 Solution </h3>
 
@@ -2935,7 +2935,7 @@ class MyComponent extends React.Component {
 
 The output is:
 
-<img src="step-39.gif">
+<img src="screenshots/step-39.gif">
 
 <hr>
 
@@ -2987,7 +2987,7 @@ class MyComponent extends React.Component {
 
 The output is:
 
-<img src="step-39.gif">
+<img src="screenshots/step-39.gif">
 
 <hr>
 
@@ -3124,7 +3124,7 @@ class CheckUserAge extends React.Component {
 
 - My solution does not pass requirements! It behaves as such:
 
-<img src="step-41.gif">
+<img src="screenshots/step-41.gif">
 
 - The solution from FreeCodeCamp uses double ternary operator:
 
@@ -3186,7 +3186,7 @@ class CheckUserAge extends React.Component {
 
 The output is:
 
-<img src="step-41-solution.gif">
+<img src="screenshots/step-41-solution.gif">
 
 
 ## 🟨  PLACEHOLDER
