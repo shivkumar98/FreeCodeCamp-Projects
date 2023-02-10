@@ -3343,6 +3343,118 @@ The output is:
 
 <img src="screenshots/step-42-solution.gif">
 
+<hr>
+
+
+## 🟨  43: Change Inline CSS Conditionally Based on Component State
+
+- You can render CSS conditionally based on state of a React component.
+
+- We check for a condition, if it is met then you modify the styles object assigned to the JSX elements in render().
+
+- This contrasrs the traditional approach of applying styles by modifying DOM elements directly.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The cobe below hass a simple controller input component with a styled border.
+
+- The border should be red if the user types more than 15 characters in input box. Apply a condition so that the border style is set to 3px solid red.
+
+- The code is initialised as:
+
+```jsx
+classz GateKeeper extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      input: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState( { input: event.target.value })
+  }
+  render() {
+    let inputStyle = {
+       border: '1px solid black'
+    };
+    // Change code below this line
+
+    // Change code above this line
+    return (
+      <div>
+        <h3>Don't Type Too Much:</h3>
+        <input 
+          type="text"
+          style={inputStyle}
+          value={this.state.input}
+          onChange={this.handleChange} />
+      </div>
+    );
+  }
+};
+```
+
+
+
+- The current behaviour of the app is:
+
+<img src="screenshots/step-43.gif">
+
+- I add the following condition:
+
+```jsx
+if (this.state.input.length>15){
+  inputStyle = {border:'3px solid red'}
+}
+```
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The final solution is:
+
+```jsx
+class GateKeeper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({ input: event.target.value })
+  }
+  render() {
+    let inputStyle = {
+      border: '1px solid black'
+    };
+    // Change code below this line
+    if (this.state.input.length>15){
+      inputStyle = {border:'3px solid red'}    
+    }
+    // Change code above this line
+    return (
+      <div>
+        <h3>Don't Type Too Much:</h3>
+        <input
+          type="text"
+          style={inputStyle}
+          value={this.state.input}
+          onChange={this.handleChange} />
+      </div>
+    );
+  }
+};
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="screenshots/step-43-solution.gif">
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
