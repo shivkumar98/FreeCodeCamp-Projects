@@ -3343,7 +3343,6 @@ The output is:
 
 <img src="screenshots/step-42-solution.gif">
 
-<<<<<<< Updated upstream
 <hr>
 
 
@@ -3360,28 +3359,11 @@ The output is:
 - The cobe below hass a simple controller input component with a styled border.
 
 - The border should be red if the user types more than 15 characters in input box. Apply a condition so that the border style is set to 3px solid red.
-=======
-## 🟨 Step 43: Use Array.map() to Dynamically Render Elements
-
-- We often do not know the state of the application until it's being used! For example, we can not predict how many notes a user makes on a to-do app.
-
-
-<h3 class="task"> 🔴 Task </h3>
-
-- The code below shows the MyToDoList component.
-
-- Inside the constructor, create a this.state object and define two states: userInput should be initialised as an empty string, and toDoList show be initialised as an empty array.
-
-- Nextm delete the null value in the render(), map over the toDoList array stored in the component's internal state and dynamically render a "li" for each item.
-
-- Try entering the string eat, code, sleep, repeat into textarea.
->>>>>>> Stashed changes
 
 - The code is initialised as:
 
 ```jsx
-<<<<<<< Updated upstream
-classz GateKeeper extends React.Component {
+class GateKeeper extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -3414,7 +3396,6 @@ classz GateKeeper extends React.Component {
 ```
 
 
-
 - The current behaviour of the app is:
 
 <img src="screenshots/step-43.gif">
@@ -3427,8 +3408,33 @@ if (this.state.input.length>15){
 }
 ```
 
+<h3 class="result"> 🔵 Result</h3>
 
-=======
+The output is:
+
+
+<img src="screenshots/step-43-solution.gif">
+
+
+<hr>
+
+## 🟨 Step 44: Use Array.map() to Dynamically Render Elements
+
+- We often do not know the state of the application until it's being used! For example, we can not predict how many notes a user makes on a to-do app.
+
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below shows the MyToDoList component.
+
+- Inside the constructor, create a this.state object and define two states: userInput should be initialised as an empty string, and toDoList show be initialised as an empty array.
+
+- Nextm delete the null value in the render(), map over the toDoList array stored in the component's internal state and dynamically render a "li" for each item.
+
+- Try entering the string eat, code, sleep, repeat into textarea.
+
+
+```jsx
 const textAreaStyles = {
   width: 235,
   margin: 5
@@ -3489,13 +3495,13 @@ class MyToDoList extends React.Component {
 const items = this.state.toDoList.map(i=> <li>{i}</li>); // Change this line
 ```
 
->>>>>>> Stashed changes
+
 <h3 class="solution"> 🟢 Solution </h3>
 
 The final solution is:
 
 ```jsx
-<<<<<<< Updated upstream
+
 class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
@@ -3528,7 +3534,7 @@ class GateKeeper extends React.Component {
     );
   }
 };
-=======
+
 const textAreaStyles = {
   width: 235,
   margin: 5
@@ -3576,19 +3582,16 @@ class MyToDoList extends React.Component {
     );
   }
 }
->>>>>>> Stashed changes
 ```
 
 <h3 class="result"> 🔵 Result</h3>
 
 The output is:
 
-<<<<<<< Updated upstream
-<img src="screenshots/step-43-solution.gif">
-=======
-<img src="screenshots/step-43.gif">
 
->>>>>>> Stashed changes
+<img src="screenshots/step-44.gif">
+
+
 
 ## 🟨  PLACEHOLDER
 
