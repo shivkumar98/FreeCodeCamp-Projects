@@ -3343,6 +3343,7 @@ The output is:
 
 <img src="screenshots/step-42-solution.gif">
 
+<<<<<<< Updated upstream
 <hr>
 
 
@@ -3359,10 +3360,27 @@ The output is:
 - The cobe below hass a simple controller input component with a styled border.
 
 - The border should be red if the user types more than 15 characters in input box. Apply a condition so that the border style is set to 3px solid red.
+=======
+## 🟨 Step 43: Use Array.map() to Dynamically Render Elements
+
+- We often do not know the state of the application until it's being used! For example, we can not predict how many notes a user makes on a to-do app.
+
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below shows the MyToDoList component.
+
+- Inside the constructor, create a this.state object and define two states: userInput should be initialised as an empty string, and toDoList show be initialised as an empty array.
+
+- Nextm delete the null value in the render(), map over the toDoList array stored in the component's internal state and dynamically render a "li" for each item.
+
+- Try entering the string eat, code, sleep, repeat into textarea.
+>>>>>>> Stashed changes
 
 - The code is initialised as:
 
 ```jsx
+<<<<<<< Updated upstream
 classz GateKeeper extends React.Component {
   constructor(props){
     super(props);
@@ -3410,11 +3428,74 @@ if (this.state.input.length>15){
 ```
 
 
+=======
+const textAreaStyles = {
+  width: 235,
+  margin: 5
+};
+
+class MyToDoList extends React.Component {
+  constructor(props) {
+    super(props);
+    // Change code below this line
+
+    // Change code above this 
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleSubmit() {
+    const itemsArray = this.state.userInput.split(',');
+    this.setState({
+      toDoList: itemsArray
+    });
+  }
+  handleChange(e) {
+    this.setState({
+      userInput: e.target.value
+    });
+  }
+  render() {
+    const items = null; // change this line
+    return(
+      <div>
+        <textArea
+          onChange={this.handleChange}
+          value={this.state.userInput}
+          style={textAreaStyles}
+          placeholder='Seperate Items with Commas' 
+        />
+        <br />
+        <button onClick={this.handleSubmit}>Create List</button>
+        <h1>My "To Do" List:</h1>
+        <ul>{items}</ul>
+      </div>
+    );
+  }
+}
+```
+
+- I first initialise the state of the MyToDoList component:
+
+```jsx
+    this.state = {
+      userInput: '',
+      toDoList: []
+    };
+```
+
+- I then use the map() function to create an array of list items:
+
+```jsx
+const items = this.state.toDoList.map(i=> <li>{i}</li>); // Change this line
+```
+
+>>>>>>> Stashed changes
 <h3 class="solution"> 🟢 Solution </h3>
 
 The final solution is:
 
 ```jsx
+<<<<<<< Updated upstream
 class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
@@ -3447,13 +3528,67 @@ class GateKeeper extends React.Component {
     );
   }
 };
+=======
+const textAreaStyles = {
+  width: 235,
+  margin: 5
+};
+
+class MyToDoList extends React.Component {
+  constructor(props) {
+    super(props);
+    // Change code below this line
+    this.state = {
+      userInput: '',
+      toDoList: []
+    };
+    // Change code above this line
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleSubmit() {
+    const itemsArray = this.state.userInput.split(',');
+    this.setState({
+      toDoList: itemsArray
+    });
+  }
+  handleChange(e) {
+    this.setState({
+      userInput: e.target.value
+    });
+  }
+  render() {
+   
+    const items = this.state.toDoList.map(i=> <li>{i}</li>); // Change this line
+    return (
+      <div>
+        <textarea
+          onChange={this.handleChange}
+          value={this.state.userInput}
+          style={textAreaStyles}
+          placeholder='Separate Items With Commas'
+        />
+        <br />
+        <button onClick={this.handleSubmit}>Create List</button>
+        <h1>My "To Do" List:</h1>
+        <ul>{items}</ul>
+      </div>
+    );
+  }
+}
+>>>>>>> Stashed changes
 ```
 
 <h3 class="result"> 🔵 Result</h3>
 
 The output is:
 
+<<<<<<< Updated upstream
 <img src="screenshots/step-43-solution.gif">
+=======
+<img src="screenshots/step-43.gif">
+
+>>>>>>> Stashed changes
 
 ## 🟨  PLACEHOLDER
 
