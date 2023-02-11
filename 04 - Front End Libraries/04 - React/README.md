@@ -3591,7 +3591,71 @@ The output is:
 
 <img src="screenshots/step-44.gif">
 
+<hr>
 
+
+## 🟨  45: Give Sibling Elements a Unique Key Attribute
+
+- In the previous step, we used the map() method to dynamically render a number of elements based on user input.
+
+- When you create an array of elements, each one needa key attribute set to a unique value.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below has an array with front-end libraries and a stateless functional component named Frameworks().
+
+- Frameworks() needs to map the array to an unordered list.
+
+- Finish writing the map callback to return an li element for each framework in the frontEndFrameworks array.
+
+- Make sure to give each li a key attribute, set to a unique value.
+
+- The li elements should also contain text from frontEndFrameworks.
+
+- The code is initialised as:
+
+```jsx
+ const frontEndFrameworks = [
+  'React',
+  'Angular',
+  'Ember',
+  'Knockout',
+  'Backbone',
+  'Vue'
+ ];
+
+function Frameworks() {
+  const renderFrameworks = null // Change this line
+  return (
+    <div>
+      <h1>Popular Front End JavaScript Frameworks</h1>
+      <ul>
+        {renderFrameworks}
+      </ul>
+    </div>
+  );
+};
+```
+
+- Currently, the output is:
+
+![](screenshots/2023-02-11-14-55-49.png)
+
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I modify the line to:
+
+```jsx
+const renderFrameworks = frontEndFrameworks.map((k,v)=><li key={v}>{k}</li>); // Change this line
+```
+
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](screenshots/2023-02-11-14-54-58.png)
 
 ## 🟨  PLACEHOLDER
 
