@@ -3657,6 +3657,51 @@ The output is:
 
 ![](screenshots/2023-02-11-14-54-58.png)
 
+
+<hr>
+
+
+## 🟨  46: Use Array.filter() to Dynamically Filter an Array
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below defines the MyComponent component with a state initialised as an array of users.
+
+- Filter the array to so we ony see users which are online
+
+- In the renderOnline variable, map over the filtered array and return a li element which contains text of their username. Invluse unique key as well
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+          users: [{username: 'Jeff', online: true}, {username: 'Alan', online: false}, {username: 'Mary',online: true}, {username: 'Jim', online: false}, {username: 'Sara', online: true}, {username: 'Laura',online: true}]
+    }
+  };
+  render() {
+    const usersOnline = this.state.users.filter(i=> i.online==true); // change this line
+    const renderOnline = usersOnline.map((k,v)=> <li key={v}>{k.username}</li>)
+    return (
+      <div>
+        <h1>Current Online Users:</h1>
+        <ul>{renderOnline}</ul>
+      </div>
+    );
+  }
+}
+```
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+![](screenshots/2023-02-11-15-10-33.png)
+
 ## 🟨  PLACEHOLDER
 
 <h3 class="intro"> ⚪ What is React? </h3>
