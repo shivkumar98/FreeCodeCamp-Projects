@@ -3702,16 +3702,44 @@ The output is:
 
 ![](screenshots/2023-02-11-15-10-33.png)
 
-## 🟨  PLACEHOLDER
+<hr>
 
-<h3 class="intro"> ⚪ What is React? </h3>
+
+## 🟨  47: Render React on the Server with renderToString
+
+- So far we have been rendering React components on client-side. This is the go to way, but we can also render on server.
+
+- React has a renderToString() method, we may want to use server because client-side is not good for SEO and first time load will be faster.
 
 <h3 class="task"> 🔴 Task </h3>
 
+- the renderToString method is provided on ReactDOMServer which is available as a global object
+
+- It takes one argument which is the React element.
+
+- Use the renderToString method to render App in the code below:
+
+```jsx
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return </div>
+  }
+};
+
+// change the code below this line
+```
+
 <h3 class="solution"> 🟢 Solution </h3>
 
-<h3 class="result"> 🔵 Result</h3>
+- I add the following:
 
-The output is:
+```jsx
+ReactDOMServer.renderToString(<App />)
+```
 
-<h3 class="example"> 🟠 Example </h3>
+
+
+
