@@ -10,14 +10,193 @@
 
 <span style="font-size:20px; font-weight:bold">
 
-### ✅   Sass is not understood by browsers, we use the Sass software to generate a CSS file from a SCSS file
+### ✅ React is an open source library which use JSX (a combination of JavaScript and HTML)
 
+### ✅ JSX Elements must return a single element, if more than one elements are returned then they must be encapsulated with another element (like a div)
+
+### ✅ We use the ReactDOM.render(JSX jsx, targetElement) to render React components
+
+### ✅ In order to add classes to HTML using JSX, you use the className attribute
+
+### ✅ All JSX elements must be closed (including self-closing ones)!
+
+### ✅ We can define a function using the function() {} declaration
+
+### ✅ We create a React component by declaring a class which extends React.Component
+
+### ✅ We use the ReactDOM.render(componentToRender, targetElement) to render React components
+
+### ✅ We can nest React components, by declaring one as an element in the render() method of another
+
+### ✅ We can pass properties to a React component like <MyApp user="Shiv">
+
+### ✅ We can access a prop using {prop.someProperty} in our code!
+
+### ✅ We can even pass a list into our props in our code: &lt;ChildComponent colors={["green", "blue", "red"]} />
+
+### ✅ We can access the props given to a component like so:
+
+```jsx
+const ChildComponent = (props) => <p>{props.tasks}</p>
+```
+
+### ✅ We can set default props of a component:
+
+```jsx
+ShoppingCart.defaultProps = { items: 0}
+```
+
+### ✅ We can override a default Props within the render method by explicitly defining the prop
+
+```jsx
+return <Items quantity={10} />
+```
+
+### ✅ We can use PropTypes to ensure a component is passed a prop of correct type
+
+- E.g., to ensure that a quantity prop of type number is mandatory for a Items component:
+
+```jsx
+Items.propTypes = {quantity: PropTypes.number.isRequired}
+```
+
+### ✅ In order to access props from a class defined component, we must use the this keyword
+
+- E.g., accessing the name prop within the render method:
+
+```jsx
+<p>Hello, <strong>{this.props.name}</strong>!</p>
+```
+
+### ✅ We can assign propTypes and defaultProps for a stateless functional component
+
+```jsx
+class Camper extends React.Component {
+  render(){
+    return <p>{this.props.name}</p>
+  }
+}
+Camper.propTypes = {name:PropTypes.string.isRequired}
+Camper.defaultProps = {name:"CamperBot"}
+```
+
+### ✅ In order to create stateful components, we need to assign the state of the component
+
+- E.g, we assign the state in the constructor:
+
+```jsx
+this.state = {
+  firstName: ''
+}
+```
+
+- We can then access state in the render() method:
+
+```jsx
+<h1>{this.state.firstName}</h1>
+```
+
+### ✅ We initialise the state in constructor, and use setState() to modify state in our components
+
+- E.g., if we modify the state after a click of a button then we write:
+
+```jsx
+handleClick() {
+  this.setState({name:'React Rocks!'})
+}
+```
+
+### ✅ In order to use the previous state, we can use a lambda which exposes the state
+
+- E.g., if we wanted to toggle visibility:
+
+```jsx
+ toggleVisibility(){
+    this.setState(state => ({
+      visibility:!state.visibility
+    }));
+}
+```
+
+### ✅ In order to use a function within a component prop, we must bind it to the class using bind
+
+
+- In the constructor we write:
+
+```jsx
+this.handleClick = this.handleClick.bind(this);
+```
+
+- We can then access the handleClick method:
+
+```jsx
+<button onClick={this.handleClick}>Click Me</button>
+```
+
+### ✅ A common pattern is to pass state into a prop and access it via the props
+
+- E.g. let's set the name prop with the state:
+
+```jsx
+<Navbar name={this.state.name}/>
+```
+
+### ✅ We can create forms which handle change and submit events
+
+```jsx
+handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+}
+handleSubmit(event) {
+  event.preventDefault();
+  this.setState({submit:this.state.input})
+}
+```
+
+- Our render() method contains the form:
+
+```jsx
+<input value={this.state.input} onChange={this.handleChange}/>
+```
+
+### ✅ A common pattern is to pass state as props to child components. The child component can render the parent's state from its props
+
+### ✅ The componewntWillMount method is called before the component is mounted to the DOM
+
+### ✅ It's best practive to place API call in the componentDidMount() method
+
+### ✅ We can add inline styles to HTML elements, kebab-case is converted to camelCase
+
+- E.g., to make text red and 72pt:
+
+```jsx
+<div style={{color:"red", fontSize:72}}>Big Red</div>
+```
+
+### ✅ We can write JavaScript straight into our component's render method, before the return
+
+```jsx
+{condition && <p>markup</p>}
+```
+
+
+### ✅ We can write if/else statements using && notation
+
+- E.g.:
+
+```jsx
+{this.state.display && <h1>Displayed!</h1>}
+```
+
+### ✅ We can use ternary operators
+
+### ✅ We use ReactDOMServer.renderToString(&lt;ReactComponent>) to render React on server
 
 </span>
 
 <br>
-
-
 
 # ⭕ Introduction
 
