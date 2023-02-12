@@ -2,9 +2,63 @@
 
 # 4 React Tutorial
 
-# ⭕ Table of Contents
+# 📜 Table of Contents
 
 
+[✏️ Summary](#---summary)
+
+[⭕ Introduction](#--introduction)
+
+[⭕ Tutorial Commentary](#--tutorial-commentary)
+  * [🟨 1: Create a Simple JSX element](#---1--create-a-simple-jsx-element)
+  * [🟨 2: Create a Complex JSX element](#---2--create-a-complex-jsx-element)
+  * [🟨 3: Add Comments in JSX](#---3--add-comments-in-jsx)
+  * [🟨 4: Render HTML Elements to the DOM](#---4--render-html-elements-to-the-dom)
+  * [🟨 5: Define a HTML Class in JSX](#---5--define-a-html-class-in-jsx)
+  * [🟨 6: Learn about Self-Closing JSX Tags](#---6--learn-about-self-closing-jsx-tags)
+  * [🟨 7: Create a Stateless Functional Component](#---7--create-a-stateless-functional-component)
+  * [🟨 8: Creating a React Component Using class Syntax](#---8--creating-a-react-component-using-class-syntax)
+  * [🟨 9: Using Composition within Components](#---9--using-composition-within-components)
+  * [🟨 10: Use React to Render Nested Components](#---10--use-react-to-render-nested-components)
+  * [🟨 11: Compose React Components](#---11--compose-react-components)
+  * [🟨 12: Render a Class Component to the DOM](#---12--render-a-class-component-to-the-dom)
+  * [🟨 13: Writing a React Component from Scratch](#---13--writing-a-react-component-from-scratch)
+  * [🟨 14: Pass Props to a Stateless Functional Component](#---14--pass-props-to-a-stateless-functional-component)
+  * [🟨 15: Pass an Array as Props](#---15--pass-an-array-as-props)
+  * [🟨 16: Use Default Props](#---16--use-default-props)
+  * [🟨 17: Override Default Props](#---17--override-default-props)
+  * [🟨 18: Use PropTypes to Define Props You Expect](#---18--use-proptypes-to-define-props-you-expect)
+  * [🟨 19: Access Props Using this.props](#---19--access-props-using-thisprops)
+  * [🟨 20: Review Using Props with Stateless Functional Components](#---20--review-using-props-with-stateless-functional-components)
+  * [🟨 21: Createful a Statefut Component](#---21--createful-a-statefut-component)
+  * [🟨 22: Render State in the User Interface](#---22--render-state-in-the-user-interface)
+  * [🟨 23: Render State in UI in another way](#---23--render-state-in-ui-in-another-way)
+  * [🟨 24: Set State using this.setState()](#---24--set-state-using-thissetstate--)
+  * [🟨 25: Bind 'this' to a Class Method](#---25--bind--this--to-a-class-method)
+  * [🟨 26: Use State to Toggle an Element](#---26--use-state-to-toggle-an-element)
+  * [🟨 27: Write a Simple Counter](#---27--write-a-simple-counter)
+  * [🟨 28: Write a Controlled Input](#---28--write-a-controlled-input)
+  * [🟨 29: Create a Controlled Form](#---29--create-a-controlled-form)
+  * [🟨 30: Pass State as Props to Child Components](#---30--pass-state-as-props-to-child-components)
+  * [🟨 31: Pass a Callback as Props](#---31--pass-a-callback-as-props)
+  * [🟨 32: Use Lifecycle Method componentWillMount](#---32--use-lifecycle-method-componentwillmount)
+  * [🟨 33: Use componentDidMount Method](#---33--use-componentdidmount-method)
+  * [🟨 34: Add Event Listeners](#---34--add-event-listeners)
+  * [🟨 35: Optimise Re-Renders with shouldComponentUpdate](#---35--optimise-re-renders-with-shouldcomponentupdate)
+  * [🟨 36: Introducing Inline Styles](#---36--introducing-inline-styles)
+  * [🟨 37: Add Inline Styles in React](#---37--add-inline-styles-in-react)
+  * [🟨 38: Use Advanced JavaScript in React Render Method](#---38--use-advanced-javascript-in-react-render-method)
+  * [🟨 39: Render with an If-Else Condition](#---39--render-with-an-if-else-condition)
+  * [🟨 40: Use && for a More Concise Conditional](#---40--use----for-a-more-concise-conditional)
+  * [🟨 41: Use a Ternary Expression for Conditional Rendering](#---41--use-a-ternary-expression-for-conditional-rendering)
+  * [🟨 42: Render Conditionally from Props](#---42--render-conditionally-from-props)
+  * [🟨  43: Change Inline CSS Conditionally Based on Component State](#----43--change-inline-css-conditionally-based-on-component-state)
+  * [🟨 44: Use Array.map() to Dynamically Render Elements](#---step-44--use-arraymap---to-dynamically-render-elements)
+  * [🟨  45: Give Sibling Elements a Unique Key Attribute](#----45--give-sibling-elements-a-unique-key-attribute)
+  * [🟨  46: Use Array.filter() to Dynamically Filter an Array](#----46--use-arrayfilter---to-dynamically-filter-an-array)
+  * [🟨  47: Render React on the Server with renderToString](#----47--render-react-on-the-server-with-rendertostring)
+
+<br>
 
 # ✏️ Summary
 
@@ -3597,7 +3651,7 @@ The output is:
 
 <hr>
 
-## 🟨 Step 44: Use Array.map() to Dynamically Render Elements
+## 🟨 44: Use Array.map() to Dynamically Render Elements
 
 - We often do not know the state of the application until it's being used! For example, we can not predict how many notes a user makes on a to-do app.
 
@@ -3918,7 +3972,3 @@ class App extends React.Component {
 ```jsx
 ReactDOMServer.renderToString(<App />)
 ```
-
-
-
-
