@@ -16,7 +16,7 @@
 
 ## 🟨 1: Create a Redux Store
 
-<h3 class="intro"> ⚪ What id Redux </h3>
+<h3 class="intro"> ⚪ What is Redux </h3>
 
 - Redux is a state management framework which can be usd with many different web technologies including React.
 
@@ -44,7 +44,27 @@ The solution is:
 const store = Redux.createStore(reducer)
 ```
 
+<hr>
 
+## 🟨 2: Get State from Redux store
+
+- In order to get the state from store, we use the getState() method
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Use the getState() method to retrieve from the store, and assign this to a new variable "currentState"
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+const store = Redux.createStore(
+    (state = 5) => state;
+);
+// Change code below this line
+var currentState = store.getState();
+```
 
 
 ## 🟨 Placeholder
