@@ -90,6 +90,33 @@ const action = {
 }
 ```
 
+<hr>
+
+## 🟨 4: Define an Action Creator
+
+- After creating an action, next step is sending the action to redux store so the state can be updated
+
+- Action creators are used to achieve this
+
+- Action creator is a function which returns an action.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Define a function named actionCreator() which returns an action when defined
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+const action = {
+    type: 'LOGIN'
+}
+// define action creator here
+function actionCreator(){
+    return action;
+}
+```
 
 ## 🟨 Placeholder
 
