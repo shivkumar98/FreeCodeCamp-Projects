@@ -118,6 +118,40 @@ function actionCreator(){
 }
 ```
 
+## 🟨 5: Dispatch an Action Event
+
+- We call store.dispatch() to dispatch actions from Redux store.
+
+- Passing the value from an action creator will send an actin to the store.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The Redux store in the code below is initialised with an object containing "login: false"
+
+- There is a loginAction which returns an object of type LOGIN
+
+- Dispatch the LOGIN action to the Redux store by calling the dispatch method, and pass in the action created by loginAction()
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+const store = Redux.createStore(
+    (state={login:false}) => state
+)
+
+const loginAction = () => {
+    return {
+        type: 'LOGIN'
+    }
+};
+
+// dispatch the action here
+
+store.dispatch(loginAction())
+```
+
 ## 🟨 Placeholder
 
 <h3 class="intro"> ⚪ Introduction </h3>
