@@ -65,6 +65,30 @@ const store = Redux.createStore(
 // Change code below this line
 var currentState = store.getState();
 ```
+<hr>
+
+## 🟨 3: Define a Redux Action
+
+- In Redux, all state updates are triggered by dispatching actions.
+
+- An action is a JavaScript object which contains informations about an action event which has occured.
+
+- Sometimes a Redux action also carries a username afer a user logs in. Actions must contain a type property which specifies the type of action that occured.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Declare an object "action" and give it a property type set to the String 'LOGIN'
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+// Define an action here:
+const action = {
+  type: 'LOGIN'
+}
+```
 
 
 ## 🟨 Placeholder
