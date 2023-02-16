@@ -118,6 +118,8 @@ function actionCreator(){
 }
 ```
 
+<hr>
+
 ## 🟨 5: Dispatch an Action Event
 
 - We call store.dispatch() to dispatch actions from Redux store.
@@ -150,6 +152,95 @@ const loginAction = () => {
 // dispatch the action here
 
 store.dispatch(loginAction())
+```
+
+<hr>
+
+## 🟨 6: Handle an Action in the Store
+
+- After an action is created and dispatched, the Redux store needs to know how to handle the exception. This is the job for the Reducer function
+
+- Reducers in Redux are responsible for state modifications in response to actions
+
+- A reducer takes state and action, then returns new state.
+
+- state is read-only in Redux, hence reducer can only return a NEW state.
+
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below follows the previous step, as well as start of "reducer" function.
+
+- Fill the reducer function so that IF it recieves an action of type 'LOGIN' it returns a state with "login" set to true. OTHERWISE return current state.
+
+- The code is initialised as:
+
+```jsx
+const defaultState = {
+    login: true;
+};
+
+const reducer = ( state = defaultState, action ) => {
+    // Change code below this line
+
+    // Change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+    return {
+        type: 'LOGIN'
+    }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I implement the reducer function as:
+
+```javascript
+const reducer = ( state = defaultState, action ) => {
+    // Change code below this line
+    if (action.type == 'LOGIN'){
+        return {
+            login: true
+        }
+    } else {
+        return defaultState
+    }
+}
+```
+
+- The entire code is:
+
+```javascript
+const defaultState = {
+  login: false
+};
+
+const reducer = (state = defaultState, action) => {
+  // Change code below this line
+  console.log(action.type)
+  if (action.type=='LOGIN'){
+    return {
+      login: true
+    }
+  } else {
+    return defaultState
+  }
+
+
+  // Change code above this line
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
 ```
 
 ## 🟨 Placeholder
