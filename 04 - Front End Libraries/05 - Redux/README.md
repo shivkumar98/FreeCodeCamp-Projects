@@ -229,8 +229,6 @@ const reducer = (state = defaultState, action) => {
   } else {
     return defaultState
   }
-
-
   // Change code above this line
 };
 
@@ -239,6 +237,105 @@ const store = Redux.createStore(reducer);
 const loginAction = () => {
   return {
     type: 'LOGIN'
+  }
+};
+```
+
+<hr>
+
+## 🟨 7: Use a Switch Statement to Handle Multiple Actions
+
+- You can instruct Redux store how to handle different types of actions.
+
+- E.g., suppose you are managing user authentication, you want to a state representation for users which are logged in and when they logout. You can represent this with an "authenticated" object. You need action creators corresponding to user login/logout.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below has store, actions and action creators set up for you.
+
+- Fill in the reducer function so it can handle multiple authentication actions.
+
+- Use a switch statement to respond to different action events in the reducer.
+
+- The code is initialised as:
+
+```javascript
+const defaultState = {
+    authenticated: false
+};
+
+const authReducer = ( state = defaultState, action ) =>
+{
+    // Change code below this line
+
+    // Change code above this line
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+    return { type: 'LOGIN' }
+}
+
+const logoutUser = () => {
+    return { type: 'LOGOUT' }
+}
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- I struggled to get a solution! So this is FreeCodeCamp's solution!
+
+- The reducer function is implemented as:
+
+```javascript
+const authReducer = ( state=defaultState, action ) =>
+{
+    switch (action.type) {
+        case "LOGIN": 
+            return { authenticated: true };
+        case "LOGOUT":
+            return { authenticated: false };
+        default: return defaultState;
+    }
+}
+```
+
+- The entire code is:
+
+```javascript
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+ switch (action.type) {
+    case "LOGIN":
+      return {
+        authenticated: true
+      };
+
+    case "LOGOUT":
+      return {
+        authenticated: false
+      };
+
+    default:
+      return defaultState;
+  }
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
   }
 };
 ```
