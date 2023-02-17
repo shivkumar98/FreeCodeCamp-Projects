@@ -434,6 +434,96 @@ const logoutUser = () => {
 };
 ```
 
+<hr>
+
+## 🟨 9: Register a Store Listener
+
+- The Redux store has another method: redux.subscribe(). This let's you subscribe listener functions to the store, which are called when an action is dispatched against store.
+
+- One use of the subscribe method is to add a function which logs a message every time an action is received.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Write a callback function which increments a global "count" variable and pass to the subscribe method 
+
+- You will see tthat dispatch is called 3 times in a row, test the count is equal to 3!
+
+- The code is initialised as:
+
+```javascript
+const ADD = 'ADD';
+
+const reducer = ( state = 0, action ) => {
+  switch(action.type) {
+    case ADD: {
+      return state+1;
+    }
+    default: return state;
+  }
+};
+
+const store = Store.redux(reducer);
+
+// Global count variable
+let count = 0;
+
+// Change code below this line
+
+// Change code above this line
+
+store.dispatch({type:ADD});
+console.log(count);
+store.dispatch({type:ADD});
+console.log(count);
+store.dispatch({type:ADD});
+console.log(count);
+```
+
+- I add the following lines:
+
+```javascript
+const increment = () =>{
+  count++;
+}
+store.subscribe(increment())
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+const ADD = 'ADD';
+
+const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case ADD:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(reducer);
+
+// Global count variable:
+let count = 0;
+
+// Change code below this line
+const increment = () =>{
+  count++;
+}
+store.subscribe(increment())
+// Change code above this line
+
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+store.dispatch({type: ADD});
+console.log(count);
+```
+
 ## 🟨 Placeholder
 
 <h3 class="intro"> ⚪ Introduction </h3>
