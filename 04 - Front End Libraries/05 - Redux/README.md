@@ -340,6 +340,100 @@ const logoutUser = () => {
 };
 ```
 
+<hr>
+
+## 🟨 8: Use const for Action Types
+
+- A common practice is to assign action types as read-only, then reference these constants elsewhere in code.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Declare "LOGIN" and "LOGOUT" as const values and assign them to the strings 'LOGIN' and 'LOGOUT'.
+
+- Then edit the authReducer() and the action creators to reference the constant values.
+
+- The code is initialised as:
+
+```javascript
+
+const defaultState = { authenticated: false };
+
+const authReducer = (state=defaultState, action) => {
+    
+    switch (action.type) {
+        case 'LOGIN': {
+            return { authenticated: true }
+        }
+        case 'LOGOUT': {
+            return { authenticated: false }
+        }
+
+        default:
+          return state
+    }
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+}
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+- The solution is:
+
+```javascript
+const LOGIN = 'LOGIN'
+const LOGOUT = 'LOGOUT'
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+
+  switch (action.type) {
+    case LOGIN: 
+      return {
+        authenticated: true
+      }
+    case LOGOUT: 
+      return {
+        authenticated: false
+      }
+
+    default:
+      return state;
+
+  }
+
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: LOGIN
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: LOGOUT
+      }
+};
+```
+
 ## 🟨 Placeholder
 
 <h3 class="intro"> ⚪ Introduction </h3>
