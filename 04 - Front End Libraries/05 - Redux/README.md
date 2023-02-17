@@ -524,6 +524,35 @@ store.dispatch({type: ADD});
 console.log(count);
 ```
 
+<hr>
+
+## 🟨 10: Combine Multiple Reducers
+
+- Redux provides reducer composition as a solution for complex applications
+
+- You define multiple reducers to handle different pieces of your application's state. We can compose these reducers together to one root reducer. This root reducer is passed into redux.createStore() method
+
+- Redux provides a combineReducers() method. This method accepts an object.
+
+- You should create a reducer for each distinct piece of application state.
+
+- E.g., in a note-taking app, one reducer could handle authentication and another for handling text user submits. We may write a combineReducer method like:
+
+```javascript
+const rootReducer = Redux.combineReducers({
+  auth: authenticationReducer,
+  notes: notesReducer
+});
+```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- There are counterReducer() and authReducer() functions provided in the code editor, along with a Redux store.
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
 ## 🟨 Placeholder
 
 <h3 class="intro"> ⚪ Introduction </h3>
