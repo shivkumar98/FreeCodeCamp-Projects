@@ -923,6 +923,100 @@ const store = Redux.createStore(counterReducer);
 ```
 
 
+<hr>
+
+## 🟨 14: Never Mutate State
+
+- The key principle of Redux is never to mutate state, instead to return a new copy of state.
+
+- If we took a snapshot of the state over time (State1, State2, ...), the states will change iteratively. This immutability allows  **time-travel debugging**.
+
+- Redux does **NOT** enforce immutability on state in its store or reducers - this responsibility is on you! 😠
+
+- Fortunantely, JavaScript has built in immutability on main of its types 😅 - including strings, numbers. Arrays and Objects, however, are mutable! 😰
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The store and reducer in the code below are for managing to-do items. 
+
+1. Finish writing the ADD_TO_DO case in the reducer to append a new to-do to the state.
+
+- The code is initialised as:
+
+```javascript
+const ADD_TO_DO = 'ADD_TO_DO';
+
+// A list of strings representing tasks to do:
+const todos = [
+    'Go to the store',
+    'Clean the house',
+    'Learn to code',
+]
+
+const immutableReducer = (state=todos, action) => {
+    switch(action.type){
+        case ADD_TO_DO:
+            // Don't Mutate state here or the tests will fail
+            return
+        default:
+            return state;
+    }
+};
+
+const addToDo = (todo) => {
+    return {
+        type: ADD_TO_DO,
+        todo
+    }
+};
+
+const addToDo = (todo) => {
+    return {
+        type: ADD_TO_DO,
+        todo
+    }
+}
+
+const store = Redux.createStore(ikmmutableReducer);
+```
+
+- I concatenate the toDo propertyu of the action object to the state:
+
+```javascript
+console.log(state)
+return state.concat(action.toDo)
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+const ADD_TO_DO = 'ADD_TO_DO';
+
+// A list of strings representing tasks to do:
+const todos = [
+    'Go to the store',
+    'Clean the house',
+    'Cook dinner',
+    'Learn to code',
+]
+
+const immutableReducers = (state=todos, action) => {
+    switch(action.type){
+        case ADD_TO_DO:
+            console.log(action) // { type: 'ADD_TO_DO', todo: '__TEST__TO__DO__' }
+            return state.concat(action.todo)
+        default return state
+    }
+}
+
+const addToDo = (todo) => {
+    return { type: ADD_TO_DO, todo }
+}
+
+const store = Redux.createStore(immutableReducer);
+```
 
 ## 🟨 Placeholder
 
