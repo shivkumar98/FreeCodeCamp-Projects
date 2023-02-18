@@ -1018,13 +1018,6 @@ const addToDo = (todo) => {
 const store = Redux.createStore(immutableReducer);
 ```
 
-<h3 class="task"> 🔴 Task </h3>
-
-- Use the spread operator to return a new copy of state when a to-do is added
-
-<h3 class="solution"> 🟢 Solution </h3>
-
-The solution is:
 
 <hr>
 
@@ -1086,6 +1079,78 @@ const addToDo = (todo) => {
   return {
     type: 'ADD_TO_DO',
     todo
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+```
+
+
+<hr>
+
+## 🟨 16: Remove an Item from an Array
+
+- We can use the spread operator again but slice() is another useful method
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The reducer and action creator were modified to remove an item from an array based on the index of the item.
+
+- Finish writing the reducer so a new state array is returned with the item at the specific index removed
+
+- The code is initialised:
+
+```javascript
+const immutableReducer = (state=[0,1,2,3,4,5], action) => {
+    switch(action.type){
+        case 'REMOVE_ITEM':
+            // don't mutate the state here or test will fail
+            return
+        default:
+            rerturn state;
+    }
+}
+
+const removeItem = (index) => {
+    return {
+        type: 'REMOVE_ITEM',
+        index
+    }
+}
+
+const store = Redux.createStore(immutableReducer);
+```
+
+- I used the slice method which creates a slice of an array. In order to remove the one at the specified index, I use two slices:
+
+1. ...state.slice(0, index)
+2. ...state.slice(index+1, state.length)
+
+- I then place these two slices in an array:
+
+```javascript
+return [ ...state.slice(0, index), ...state.slice(index+1, state.length) ]
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+const immutableReducer = (state = [0,1,2,3,4,5], action) => {
+  switch(action.type) {
+    case 'REMOVE_ITEM':
+      // Don't mutate state here or the tests will fail
+      return [...state.slice(0,action.index), ...state.slice(action.index+1, state.length)]
+    default:
+      return state;
+  }
+};
+
+const removeItem = (index) => {
+  return {
+    type: 'REMOVE_ITEM',
+    index
   }
 }
 
