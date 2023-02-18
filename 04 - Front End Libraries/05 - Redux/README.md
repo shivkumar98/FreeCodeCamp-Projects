@@ -748,6 +748,125 @@ The result is:
 
 ![](screenshots/2023-02-18-10-21-53.png)
 
+<hr>
+
+## 🟨 12: Use Middleware to Handle Asynchrous Actions
+
+- Eventually, you will call asynchrous actions in your app! Redux provides middleware for this purpose called Redux Thunk middleware.
+
+- In order to include this in the app, you pass an argument to Redux.applyMiddleware() which is then passed in whole to Redux.createStore()'s second parameter. E.g.:
+
+```javascript
+const store = Redux.createStore(
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+);
+```
+
+- The below code simulates an asynchrous request with setTimeout() call.
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Write both dispatches in the handleAsync() action creator. Dispatch requestingData() before the setTimeout(). Then after receiving the data, dispatch
+
+- The code is initialised as:
+
+```javascript
+const REQUESTING_DATA = 'REQUESTING_DATA'
+const RECEIVEDE_DATA = 'RECIEVED_DATA'
+
+const requestingData = () => { return { type: REQUESTING_DATA } }
+const receivedData = (data) => { return { type: RECEIVED_DATA, users: data.users} }
+
+const handleAsync = () => {
+    return function(dispatch){
+        // Dispatch request action here
+
+        setTimeout(function(){
+            let data = {
+                users = ['Jeff', 'William', 'Alice']
+            }
+            // Dispatch received data action here
+        }, 2500);
+    }
+};
+
+const defaultState = {
+    fetching: false,
+    users: []
+};
+
+const asyncDataReducer = (state=defaultState, action) => {
+    switch(action.type){
+        case REQUESTING_DATA:
+            return {
+                fetching: false,
+                users: action.users
+            }
+        default:
+            return state;
+    }
+};
+
+const store = Redux.createStore(
+    asyncDataReducer,
+    Redux.applyMiddleware(ReduxThunk.default)
+);
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+const REQUESTING_DATA = 'REQUESTING_DATA'
+const RECEIVED_DATA = 'RECEIVED_DATA'
+
+const requestingData = () => { return {type: REQUESTING_DATA} }
+const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }
+
+const handleAsync = () => {
+  return function(dispatch) {
+    // Dispatch request action here
+  dispatch(requestingData())
+    setTimeout(function() {
+      let data = {
+        users: ['Jeff', 'William', 'Alice']
+      }
+      // Dispatch received data action here
+      dispatch(receivedData(data));
+    }, 2500);
+  }
+};
+
+const defaultState = {
+  fetching: false,
+  users: []
+};
+
+const asyncDataReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case REQUESTING_DATA:
+      return {
+        fetching: true,
+        users: []
+      }
+    case RECEIVED_DATA:
+      return {
+        fetching: false,
+        users: action.users
+      }
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+);
+```
+
 ## 🟨 Placeholder
 
 <h3 class="intro"> ⚪ Introduction </h3>
