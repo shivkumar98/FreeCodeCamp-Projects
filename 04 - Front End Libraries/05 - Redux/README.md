@@ -634,6 +634,120 @@ const rootReducer = Redux.combineReducers({
 const store = Redux.createStore(rootReducer);
 ```
 
+
+<hr>
+
+## 🟨 11: Send Action Data to the Store
+
+- So far the actions we dispatched only contained "type" information. We can also send specified data with our actions.
+
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code below defines notesReducer() and addNoteText() action creator.
+
+- Finish the addNotText so it returns an action object. The object should have "type" of value ADD_NOTE, and also a "text" property set to "note" data
+
+- When you call the addNoteText() creator, you'll pass specific note data.
+
+- Secondly, finish the switch statement in notesReducer. When ADD_NOTE case is triggered, it should return the text property on the incoming action as new state
+
+```javascript
+const ADD_NOTE = 'ADD_NOTE';
+
+const notesReducer = (state='Initial State', action) => {
+    switch (action.type) {
+        // Change code below this line
+
+        // Change code above this line
+        default:
+            return state;
+    }
+};
+
+const addNoteText = (note) => {
+    // Change code below this line
+
+    // Change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getData());
+store.dispatch(addNoteText('Hello'));
+console.log(store.getState());
+```
+
+- The console initially displays:
+
+![](screenshots/2023-02-18-10-10-47.png)
+
+- I first implement the addNoteText() function:
+
+```javascript
+const addNoteText = (note) => {
+  // Change code below this line
+  return {
+    type: ADD_NOTE,
+    text: note
+  }
+  // Change code above this line
+};
+```
+
+- I then implement the notesReducer:
+
+```javascript
+const noteReducer = (state='Initial State', action) => {
+    switch (action.type) {
+        // Change code below this line
+        case ADD_NOTE:
+            return action.text
+        // Change coee above this line
+        default:
+            return state;
+    }
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+``` javascript
+const ADD_NOTE = 'ADD_NOTE';
+
+const notesReducer = (state = 'Initial State', action) => {
+  switch(action.type) {
+    // Change code below this line
+      case ADD_NOTE:
+      return action.text;
+    // Change code above this line
+    default:
+      return state;
+  }
+};
+
+const addNoteText = (note) => {
+  // Change code below this line
+  return {
+    type: ADD_NOTE,
+    text: note
+  }
+  // Change code above this line
+};
+
+const store = Redux.createStore(notesReducer);
+
+console.log(store.getState());
+store.dispatch(addNoteText('Hello!'));
+console.log(store.getState());
+```
+
+The result is:
+
+![](screenshots/2023-02-18-10-21-53.png)
+
 ## 🟨 Placeholder
 
 <h3 class="intro"> ⚪ Introduction </h3>
