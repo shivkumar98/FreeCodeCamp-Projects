@@ -980,7 +980,7 @@ const addToDo = (todo) => {
 const store = Redux.createStore(ikmmutableReducer);
 ```
 
-- I concatenate the toDo propertyu of the action object to the state:
+- I concatenate the toDo property of the action object to the state:
 
 ```javascript
 console.log(state)
@@ -1017,6 +1017,81 @@ const addToDo = (todo) => {
 
 const store = Redux.createStore(immutableReducer);
 ```
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Use the spread operator to return a new copy of state when a to-do is added
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+<hr>
+
+## 🟨 15: Use the Spread Operator on Arrays
+
+- The spread operator enumerates the values of an array into a new instance. We can then convert it back to an array by enclosing with square brackets. This is now a clone 👯 of the original array.
+
+
+<h3 class="task"> 🔴 Task </h3>
+
+- Use the spread operator to return a new copy of the state
+
+- The code is initialised as:
+
+```jsx
+const immutableReducer = (state = ['Do not mutate state!'], action) => {
+    switch(action.type) {
+        case 'ADD_TO_DO':
+            // Don't mutate state here or the test will fail
+            return
+        default:
+            return state
+    }
+};
+
+const addToDo = (todo) => {
+    return {
+        type: 'ADD_TO_DO',
+        todo
+    }
+}
+
+const store = Redux.createStore(immutableReducer)
+```
+
+- I add the following line:
+
+```javascript
+case 'ADD_TO_DO':
+    return [...state].concat(action.todo)
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```jsx
+const immutableReducer = (state = ['Do not mutate state!'], action) => {
+  switch(action.type) {
+    case 'ADD_TO_DO':
+      // Don't mutate state here or the tests will fail
+      return [...state].concat(action.todo)
+    default:
+      return state;
+  }
+};
+
+const addToDo = (todo) => {
+  return {
+    type: 'ADD_TO_DO',
+    todo
+  }
+}
+
+const store = Redux.createStore(immutableReducer);
+```
+
 
 ## 🟨 Placeholder
 
