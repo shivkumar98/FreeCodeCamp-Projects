@@ -549,9 +549,90 @@ const rootReducer = Redux.combineReducers({
 
 - There are counterReducer() and authReducer() functions provided in the code editor, along with a Redux store.
 
+- The code is initialised as:
+
+```javascript
+const counterReducer = (state=0. action) => {
+    switch(action.type) {
+        case INCREMENT:
+            return state + 1;
+        case DECREMENTR:
+            return state - 1;
+        default:
+            return state;
+    }
+}
+
+const LOGIN = 'LOGIN'
+const LOGOTUT = 'LOGOUT';
+
+const authReducer = (state={authenticated:false}, action) => {
+    switch (action.type){
+        case LOGIN: return {authentication:true}
+        case LOGIN: return {authentication:false}
+        default:
+            return state
+    }
+};
+
+const rootReducer = // define reducer here
+
+const store = Redux.createStore(rootReducer)
+```
+
+- I define the rootReducer as:
+
+```javascript
+const authReducer = Redux.combineReducers({
+    count: counterReducer,
+    auth: authReducer
+})
+```
+
 <h3 class="solution"> 🟢 Solution </h3>
 
 The solution is:
+
+```javascript
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const authReducer = (state = {authenticated: false}, action) => {
+  switch(action.type) {
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+    default:
+      return state;
+  }
+};
+
+const rootReducer = Redux.combineReducers({
+  count: counterReducer,
+  auth: authReducer
+});
+
+const store = Redux.createStore(rootReducer);
+```
 
 ## 🟨 Placeholder
 
