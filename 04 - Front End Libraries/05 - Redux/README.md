@@ -867,6 +867,63 @@ const store = Redux.createStore(
 );
 ```
 
+<hr>
+
+## 🟨 13: Write a Counter with Redux
+
+- We have learnt all the core principles of Redux. We've seen how to create actions and action creators, create a Reduc store, dispatch actions against the store, design state updates wwith pure reducers. We also saw how to compose reducers and handle asynchrous actions.
+
+- The next challenge will be about state immutability
+
+<h3 class="task"> 🔴 Task </h3>
+
+- In this lesson, I will implement a counter from scratch using Redux.
+
+
+
+- The code is initialised as:
+
+```javascript
+const INCREMENT = null; // define a constant for increment action types
+const DECREMENT = null; // define a constant for decrement action types
+
+const counterReducer = null; // Define the counter reducer which will increment/decrement the state based on the action it receives.
+
+const incAction = null; // Define an action creator for incrementing
+
+const decAction = null; // Define an action creator for decrementing
+
+const store = null; // Define the Redux store here. passing in your reducers
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```javascript
+const INCREMENT = 'INCREMENT'
+const DECREMENT = 'DECREMENT'
+
+const counterReducer = (state=0, action) => {
+    switch (action.type) {
+        case INCREMENT: return state + 1;
+        case DECREMENT: return state - 1;
+        default: return state
+    }
+}
+
+const incAction = () => {
+    return { type: INCREMENT }
+}
+const decAction = () => {
+    return { type: DECREMENT }
+}
+
+const store = Redux.createStore(counterReducer);
+```
+
+
+
 ## 🟨 Placeholder
 
 <h3 class="intro"> ⚪ Introduction </h3>
