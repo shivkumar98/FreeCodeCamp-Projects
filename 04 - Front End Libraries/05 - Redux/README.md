@@ -1158,18 +1158,88 @@ const store = Redux.createStore(immutableReducer);
 ```
 
 
-## 🟨 Placeholder
+<hr>
 
-<h3 class="intro"> ⚪ Introduction </h3>
+## 🟨 17: Copy an Object with Object.assign
 
-<h3 class="example"> 🟠 Example </h3>
+- A useful tool to ensure state immutability is the Object.assign() method.
+
+- Object.assitgn() maps a source object's properties to a target object. Any matching properties are overwritten by porperties from soure object. A common way to use this method is to pass a null object as the first argument.
+
+- Here's an example:
+
+```javascript
+const newObject = object.assign({}, obj1, obj2);
+```
+
+- This takes the properties from obj1 and obj2
 
 <h3 class="task"> 🔴 Task </h3>
+
+- The redux state and actions were modified to handle an object for the state. Edit the below coede to retrurn a new state object for actions with type "ONLINE", which sets the status property to "online. 
+
+- Use the Object.assign() for this task!
+
+- The code is initialised as:
+
+```javascript
+const defaultState = {
+    user: 'CamperBot',
+    status: 'offline',
+    friends: '732,982',
+    community: 'freeCodeCamp'
+};
+
+const immutableReducer = (state = defaultState, action) => {
+    switch(action.type){
+        case 'ONLINE':
+            // don't mutate state here!!!
+            return
+        default:
+            return state;
+    }
+};
+
+const WakeUp = () => {
+    return { type: 'ONLINE' }
+};
+
+const store = Redux.createStore(immutableRedducer);
+```
+
+- I modify the return statement to:
+
+```javascript
+return Object.assign({}, state, {status: 'online'})
+```
 
 <h3 class="solution"> 🟢 Solution </h3>
 
 The solution is:
 
-<h3 class="result"> 🔵 Result</h3>
-
-The output is:
+```javascript
+const defaultState = {
+  user: 'CamperBot',
+  status: 'offline',
+  friends: '732,982',
+  community: 'freeCodeCamp'
+};
+const immutableReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case 'ONLINE':
+      // Don't mutate state here or the tests will fail
+      console.log(
+       Object.assign({}, state,{status: 'ONLINE'})
+      )
+      return Object.assign({}, defaultState,{status: 'online'})
+    default:
+      return state;
+  }
+};
+const wakeUp = () => {
+  return {
+    type: 'ONLINE'
+  }
+};
+const store = Redux.createStore(immutableReducer);
+```
