@@ -6,28 +6,28 @@
 
 
 
-[✏️ Summary](#---summary)
+[✏️ Summary](#%EF%B8%8F-summary)
 
-[⭕ Introduction](#--introduction)
+[⭕ Introduction](#-introduction)
 
-[⭕ Tutorial Commentary](#--tutorial-commentary)
-  * [🟨 1: Create a Redux Store](#---1--create-a-redux-store)
-  * [🟨 2: Get State from Redux store](#---2--get-state-from-redux-store)
-  * [🟨 3: Define a Redux Action](#---3--define-a-redux-action)
-  * [🟨 4: Define an Action Creator](#---4--define-an-action-creator)
-  * [🟨 5: Dispatch an Action Event](#---5--dispatch-an-action-event)
-  * [🟨 6: Handle an Action in the Store](#---6--handle-an-action-in-the-store)
-  * [🟨 7: Use a Switch Statement to Handle Multiple Actions](#---7--use-a-switch-statement-to-handle-multiple-actions)
-  * [🟨 8: Use const for Action Types](#---8--use-const-for-action-types)
-  * [🟨 9: Register a Store Listener](#---9--register-a-store-listener)
-  * [🟨 10: Combine Multiple Reducers](#---10--combine-multiple-reducers)
-  * [🟨 11: Send Action Data to the Store](#---11--send-action-data-to-the-store)
-  * [🟨 12: Use Middleware to Handle Asynchrous Actions](#---12--use-middleware-to-handle-asynchrous-actions)
-  * [🟨 13: Write a Counter with Redux](#---13--write-a-counter-with-redux)
-  * [🟨 14: Never Mutate State](#---14--never-mutate-state)
-  * [🟨 15: Use the Spread Operator on Arrays](#---15--use-the-spread-operator-on-arrays)
-  * [🟨 16: Remove an Item from an Array](#---16--remove-an-item-from-an-array)
-  * [🟨 17: Copy an Object with Object.assign](#---17--copy-an-object-with-objectassign)
+[⭕ Tutorial Commentary](#-tutorial-commentary)
+  * [🟨 1: Create a Redux Store](#-1-create-a-redux-store)
+  * [🟨 2: Get State from Redux store](#-2-get-state-from-redux-store)
+  * [🟨 3: Define a Redux Action](#-3-define-a-redux-action)
+  * [🟨 4: Define an Action Creator](#-4-define-an-action-creator)
+  * [🟨 5: Dispatch an Action Event](#-5-dispatch-an-action-event)
+  * [🟨 6: Handle an Action in the Store](#-6-handle-an-action-in-the-store)
+  * [🟨 7: Use a Switch Statement to Handle Multiple Actions](#-7-use-a-switch-statement-to-handle-multiple-actions)
+  * [🟨 8: Use const for Action Types](#-8-use-const-for-action-types)
+  * [🟨 9: Register a Store Listener](#-9-register-a-store-listener)
+  * [🟨 10: Combine Multiple Reducers](#-10-combine-multiple-reducers)
+  * [🟨 11: Send Action Data to the Store](#-11-send-action-data-to-the-store)
+  * [🟨 12: Use Middleware to Handle Asynchrous Actions](#-12-use-middleware-to-handle-asynchrous-actions)
+  * [🟨 13: Write a Counter with Redux](#-13-write-a-counter-with-redux)
+  * [🟨 14: Never Mutate State](#-14-never-mutate-state)
+  * [🟨 15: Use the Spread Operator on Arrays](#-15-use-the-spread-operator-on-arrays)
+  * [🟨 16: Remove an Item from an Array](#-16-remove-an-item-from-an-array)
+  * [🟨 17: Copy an Object with Object.assign](#-17-copy-an-object-with-objectassign)
 
   <br>
   <br>
