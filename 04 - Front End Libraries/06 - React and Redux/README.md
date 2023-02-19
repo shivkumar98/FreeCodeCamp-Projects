@@ -256,6 +256,86 @@ The output is:
 
 <img src="screenshots/step-2.gif">
 
+
+<hr>
+
+## 🟨 3: Extract State Logic to Redux
+
+- We finished the React component, we need to move its logic to the Redux state. This is the first step to connect a React app to Reduc.
+
+- We shall look at a simple example first, to see how React and Redux work together
+
+<h3 class="task"> 🔴 Task </h3>
+
+- We define an actin type ADD, then create an action creator addMessage() which create the action to add a message. I will passs a meesage to the action creator and include the message in the returned action.
+
+- Then create messageReducer which handles state for messages. The initial state should be an empty array. The redycer should add the message to the array stored in state, or return current state.
+
+- Finally, create the Redux store using the reducer!
+
+- The code is initialised as:
+
+```jsx
+// Define ADD, addMessage(), messageReducer(), and store here:
+```
+
+- I create a constant for ADD:
+
+```jsx
+const ADD = 'ADD'
+```
+
+- I define the addMessage() action creator:
+
+```jsx
+const addMessage = (message) => {
+    return { type: ADD, message: message}
+}
+```
+
+- I define a defaultState of an empty array and the reducer:
+
+```jsx
+const defaultState = []
+const messageReducer = (state=defaultState, action) => {
+    case (action.type) {
+        case ADD: return [...state].concat(action.message)
+        default: return state
+    }
+}
+```
+
+- I then create the store with the reducer:
+
+```jsx
+const store = Redux.createStore(messageReducer);
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```jsx
+// Define ADD, addMessage(), messageReducer(), and store here:
+
+const ADD = 'ADD'
+
+const addMessage = (message) => {
+  return { type: ADD, message: message}
+}
+
+const defaultState = []
+
+const messageReducer = (state=defaultState, action) => {
+  switch (action.type){
+    case ADD: return [...state].concat(action.message)
+    default: return state
+  }
+}
+
+const store = Redux.createStore(messageReducer)
+```
+
 ## 🟨 Placeholder
 
 <h3 class="task"> 🔴 Task </h3>
