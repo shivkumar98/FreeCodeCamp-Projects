@@ -4,7 +4,142 @@
 
 # 📜 Table of Contents
 
+
+
+[✏️ Summary](#---summary)
+
+[⭕ Introduction](#--introduction)
+
+[⭕ Tutorial Commentary](#--tutorial-commentary)
+  * [🟨 1: Create a Redux Store](#---1--create-a-redux-store)
+  * [🟨 2: Get State from Redux store](#---2--get-state-from-redux-store)
+  * [🟨 3: Define a Redux Action](#---3--define-a-redux-action)
+  * [🟨 4: Define an Action Creator](#---4--define-an-action-creator)
+  * [🟨 5: Dispatch an Action Event](#---5--dispatch-an-action-event)
+  * [🟨 6: Handle an Action in the Store](#---6--handle-an-action-in-the-store)
+  * [🟨 7: Use a Switch Statement to Handle Multiple Actions](#---7--use-a-switch-statement-to-handle-multiple-actions)
+  * [🟨 8: Use const for Action Types](#---8--use-const-for-action-types)
+  * [🟨 9: Register a Store Listener](#---9--register-a-store-listener)
+  * [🟨 10: Combine Multiple Reducers](#---10--combine-multiple-reducers)
+  * [🟨 11: Send Action Data to the Store](#---11--send-action-data-to-the-store)
+  * [🟨 12: Use Middleware to Handle Asynchrous Actions](#---12--use-middleware-to-handle-asynchrous-actions)
+  * [🟨 13: Write a Counter with Redux](#---13--write-a-counter-with-redux)
+  * [🟨 14: Never Mutate State](#---14--never-mutate-state)
+  * [🟨 15: Use the Spread Operator on Arrays](#---15--use-the-spread-operator-on-arrays)
+  * [🟨 16: Remove an Item from an Array](#---16--remove-an-item-from-an-array)
+  * [🟨 17: Copy an Object with Object.assign](#---17--copy-an-object-with-objectassign)
+
+  <br>
+  <br>
+
 # ✏️ Summary
+
+<span style="font-size:20px; font-weight:bold">
+
+### ✅ Redux is a state management framework with a single state for entire application -the Redux store
+
+### ✅ We can create the store by passing a reducer function into the Redux.createStore() function. E.g.:
+
+```javascript
+const reducer = (state) => { return state; }
+const store = Redux.createStore(reducer);
+```
+
+### ✅ We can access the state using the getState() method
+
+```javascript
+const store = Redux.createStore(reducer);
+var currentState = store.getState()
+```
+
+### ✅ Changes to state are trigger by dispatching actions. Actions are objects with a mandatory "type" key.
+
+```javascript
+const action = { type: 'LOGIN' }
+```
+
+### ✅ Action creators are used to dispatch actions to the Redux Store, these are functions which return an action
+
+```javascript
+const loginAction = () => { return { type: 'LOGIN' } };
+store.dispatch(loginAction())
+```
+
+### ✅ The redux store must be configured to handle actions dispatched to it. This is the role of the reducer function!
+
+### ✅ A reducer takes a state and function and returns a new state
+
+### ✅ We can confiure the reducer to use a switch on the action.type property. E.g. suppose we are configuring our app to set the authentication property for user to true or false depending on if they login or logout.
+
+```javascript
+const authReducer = (state={authenticated: false}, action) => {
+    switch(action.type) {
+        case 'LOGIN': return { authernticated: true }
+        case 'LOGOUT': return { authenticated: false }
+        default: return state
+    }
+};
+```
+
+### ✅ Good practice is to set action types to constants which can be accessed globally
+
+```javascript
+const LOGIN = 'LOGIN'
+const LOGOUT = 'LOGOUT'
+const authReducer = (state={authenticated: false}, action) => {
+    switch(action.type) {
+        case LOGIN: return { authernticated: true }
+        case LOGOUT: return { authenticated: false }
+        default: return state
+    }
+};
+```
+
+### ✅ We can add listeners to the store which are called when an action is dispatched against store using store.subscribe()
+
+```javascript
+const increment = () =>{
+  count++;
+}
+store.subscribe(increment())
+```
+
+### ✅ We can combine multiple reducer functions to one root reducer function using Redux.combineReducers()
+
+```javascript
+const authReducer = Redux.combineReducers({
+    count: counterReducer,
+    auth: authReducer
+})
+```
+
+### ✅ Action creators can also contain data. E.g.:
+
+```javascript
+const addNoteText = (note) => {
+    return { type: ADD_NOTE, text: note }
+}
+
+const noteReducer = (state='Initial State', action) => {
+    switch (action.type) {
+        case ADD_NOTE: return action.text
+        default: return state
+    }
+}
+console.log(store.getState()); // Initial SWtate
+store.dispatch(addNoteText('Hello!'));
+console.log(store.getState()); // Hello!
+```
+
+### ✅ We can use Redux.applyMiddleware(ReduxThunk.default) to handle asynchrous evenets
+
+### ✅ Redux does not enfore state immutabilty through reducers and store, responsibility is one user. We  can use methods like concat and spread operator in order to not modify original state. State immutability allows for time-trabel debugging as we can look at specific snapshots of the state
+
+### ✅ We can use Object.assign({}, obj1, obj2) to create new instance of an object with properties copied from obj1 and obj2
+
+</span>
+
+
 
 # ⭕ Introduction
 
@@ -158,7 +293,7 @@ store.dispatch(loginAction())
 
 ## 🟨 6: Handle an Action in the Store
 
-- After an action is created and dispatched, the Redux store needs to know how to handle the exception. This is the job for the Reducer function
+- After an action is created and dispatched, the Redux store needs to know how to handle the action. This is the job for the Reducer function
 
 - Reducers in Redux are responsible for state modifications in response to actions
 
