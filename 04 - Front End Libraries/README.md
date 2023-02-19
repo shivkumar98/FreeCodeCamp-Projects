@@ -15,3 +15,5 @@
 4. [**React**](/04%20-%20Front%20End%20Libraries/04%20-%20React/)
 
 5. [**Redux**](/04%20-%20Front%20End%20Libraries/05%20-%20Redux/)
+
+6. [**React and Redux**](/04%20-%20Front%20End%20Libraries/06%20-%20React%20and%20Redux/)
