@@ -336,6 +336,239 @@ const messageReducer = (state=defaultState, action) => {
 const store = Redux.createStore(messageReducer)
 ```
 
+
+<hr>
+
+## 🟨 4: Use Provider to Connect Redux to React
+
+- In the previous step, we created a Redux store to handle messages array and created an action for adding new messages.
+
+- The next step is to provide React access to the Redux store and the actions it needsto dispatch updates. React provides react-redux package to help accomplish these tasks.
+
+<br>
+
+- React Redux propvides a small API with two key featuresL: Provider and Connect.
+
+- The Provider is a wrapper component for the React app.
+
+- This wrapper allows you to access the Redux store and dispatch functions.
+
+- The Provider component takes two props: Redux store and the child components of your app.
+
+- Defining the Provider for an App component might look like this:
+
+```jsx
+<Provider store={store}>
+    <App/>
+</Provider>
+```
+<br>
+
+<h3 class="task"> 🔴 Task </h3>
+
+- The code editor shows all your Redux and React code from the previous challenges. This includes the Redux store, actions annd the DisplayMessages component.
+
+- There is a new AppWrapper component which acts as a top-level component to render the Provider from ReactRedux, and pass the Redux store as a prop.
+
+- Then, render the DisplayMessages component as a child.
+
+- The code is initialised as:
+
+```jsx
+// Redux:
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+    return {
+        type: ADD,
+        message
+    }
+};
+
+const messageReducer = (state=[], action) => {
+    switch (action.type){
+        case ADD:
+            return [
+                ...state,
+                action.message
+            ];
+        default:
+            return state
+    }
+};
+
+const store = Redux.createStore(messageReducer);
+
+// React:
+
+class DisplayMessages extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = { input: '', messages: [] }
+        this.handleChange=this.handleChange.bind(this);
+        this.submitMessage=this.submitMessage.bind(this);
+    }
+    handleChange(event){
+        this.setState({
+            input: event.target.value
+        });
+    }
+    submitMessage(event){
+        this.setState({
+            const currentMessage = state.input;
+            return {
+                input: '',
+                messages: state.messages.concat(currentMessage)
+            }
+        });
+    }
+    render() {
+        return (
+            <div>
+                <h2>Type in a new Message:</h2>
+                <input
+                    value={this.state.input}
+                    onChange={this.handleChange}/><br>
+                <button onClick={this.submitMessage}>Submit</button>
+                <ul>
+                    {this.state.message.map( (message, idx) => {
+                        return(
+                            <li key={idx}>{message}</li>
+                        )
+                    })
+                    }
+                </ul>
+            </div>
+        )
+    }
+};
+
+const Provider = ReactRedux.Provider
+
+class AppWrapper extends React.Component {
+    // Render the Provider below this line
+
+    // Change code above this line
+}
+```
+
+- I implement the render() method for AppWrapper:
+
+```jsx
+class AppWrapper extends React.Component {
+  // Render the Provider below this line
+  render(){
+    return (
+      <Provider store={store}>
+        <DisplayMessages />
+      </Provider>
+    )
+  }
+  // Change code above this line
+};
+```
+
+<h3 class="solution"> 🟢 Solution </h3>
+
+The solution is:
+
+```jsx
+// Redux:
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message
+  }
+};
+
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+
+
+
+const store = Redux.createStore(messageReducer);
+
+// React:
+
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.submitMessage = this.submitMessage.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  submitMessage() {  
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        <input
+          value={this.state.input}
+          onChange={this.handleChange}/><br/>
+        <button onClick={this.submitMessage}>Submit</button>
+        <ul>
+          {this.state.messages.map( (message, idx) => {
+              return (
+                 <li key={idx}>{message}</li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  }
+};
+
+const Provider = ReactRedux.Provider;
+
+class AppWrapper extends React.Component {
+  // Render the Provider below this line
+render(){
+    return (
+      <Provider store={store}>
+        <DisplayMessages />
+      </Provider>
+    )
+  }
+  // Change code above this line
+};
+```
+
+
+<h3 class="result"> 🔵 Result</h3>
+
+The output is:
+
+<img src="step-4.gif">
+
+
 ## 🟨 Placeholder
 
 <h3 class="task"> 🔴 Task </h3>
