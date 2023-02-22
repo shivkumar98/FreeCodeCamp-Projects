@@ -81,13 +81,21 @@
             super(props);
             
             this.state = {
-                quote: 'Use pomodoro technique to avoid burnout'
+                randomIndex: 0
             }
         }
         
         render(){
+            const randomQuotes = {
+                0:['Shiv Kumar', 'Use the Pomodoro technique to avoid burnout'],
+                1:['Jordan Peterson', 'You are too complex to understand yourself.']
+            }
+            const quote = randomQuotes[0][1]
+            const author = randomQuotes[0][0]
+
+            
             return (
-                <p>{this.state.quote}</p>
+                <p>{quote}</p>
             )
         }
       }
