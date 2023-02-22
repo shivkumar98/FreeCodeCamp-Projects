@@ -569,6 +569,14 @@ The output is:
 <img src="step-4.gif">
 
 
+<hr>
+
+## 🟨 5: Map State to Props
+
+- The Provider component allows you to provide state and dispatch to your React components, but you must specify exactly what state and actions you want.
+
+- This way, you make sure that each component only has access to the state it needs
+
 ## 🟨 Placeholder
 
 <h3 class="task"> 🔴 Task </h3>
