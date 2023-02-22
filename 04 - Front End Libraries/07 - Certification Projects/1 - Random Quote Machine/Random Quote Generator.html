@@ -50,59 +50,74 @@
         background-color: rgb(189, 187, 153);
         border: none;
         border-radius: 5%;
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
 
     }
 
     #new-quote {
         height: 40px;
-        width: 100px
+        width: 100px;
+        color: white;
     }
 </style>
 
 <body>
 
     <div id="quote-box" class="container-fluid align-items-center align-middle vertical-cernter">
-        <div id="text"></div>
-        <p id="author" class="text-right">- Shiv Kumar</p>
-        <div>
-            <button class="button" id="tweet-quote"><i class="fa fa-twitter"></i></button>
-            <button class="button"><i class="fa fa-tumblr"></i></button>
-            <button id="new-quote" class="float-right button">New Quote</button>
-        </div>
+
     </div>
 
     <div id="mydiv"></div>
 
     <script type="text/babel">
-      class Quote extends React.Component {
-        constructor(props){
-            super(props);
-            
-            this.state = {
-                randomIndex: 0
+        class Quote extends React.Component {
+            constructor(props) {
+                super(props);
+                this.handleClick = this.handleClick.bind(this)
+                this.state = {
+                    randomIndex: 0
+                }
+            }
+            handleClick(){
+                this.setState({
+                    randomIndex: Math.floor(Math.random() * 7)
+                 });
+                 console.log(this.state)
+            }
+            render() {
+                const randomQuotes = {
+                    0: ['- Shiv Kumar', 'Use the Pomodoro technique to avoid burnout'],
+                    1: ['- Jordan Peterson', 'You are too complex to understand yourself.'],
+                    2: ['- Scarface', 'Say hello to my little friend!'],
+                    3: ['- Memento', 'The world doesn’t just disappear when you close your eyes, does it?'],
+                    4: ['- The Matrix', 'Fate, It Seems, Is Not Without A Sense Of Irony.'],
+                    5: ["- Schindler's List", "Whoever saves one life, saves the world entire."],
+                    6: ["- The Usual Suspects", "The greatest trick the devil ever pulled was convincing the world he didn't exist."],
+                    7: ["- 3 Idiots", "That day we learned, when your friend flunks, you feel bad, when he tops, you feel worse"],
+                    8: ["- Fight Club", "We Are A By-Product Of A Lifestyle Obsession."]
+                }
+                const quote = randomQuotes[this.state.randomIndex][1]
+                const author = randomQuotes[this.state.randomIndex][0]
+
+                return (
+                    <div>
+                        <p id="text">{quote}</p>
+                        <p id="author" className="text-right">{author}</p>
+                        <div>
+                            <button className="button" id="tweet-quote"><i className="fa fa-twitter"></i></button>
+                            <button className="button"><i class="fa fa-tumblr"></i></button>
+                            <button onClick={this.handleClick} id="new-quote" className="float-right button">New Quote</button>
+                        </div>
+                    </div>
+                )
             }
         }
-        
-        render(){
-            const randomQuotes = {
-                0:['Shiv Kumar', 'Use the Pomodoro technique to avoid burnout'],
-                1:['Jordan Peterson', 'You are too complex to understand yourself.']
-            }
-            const quote = randomQuotes[0][1]
-            const author = randomQuotes[0][0]
 
-            
-            return (
-                <p>{quote}</p>
-            )
-        }
-      }
 
-      
 
-      ReactDOM.render(<Quote />, document.getElementById('text'))
+        ReactDOM.render(<Quote />, document.getElementById('quote-box'))
     </script>
 
 
