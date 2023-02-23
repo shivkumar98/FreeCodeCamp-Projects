@@ -1,0 +1,69 @@
+<html>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin>
+</script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+
+    <div>This is a static component</div>
+    <br /><br />
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const Citrus = () => {
+            return (
+                <div>
+                <h2>Citrus</h2>
+                <ul>
+                    <li>Lemon</li>
+                    <li>Lime</li>
+                    <li>Orange</li>
+                    <li>GrapeFruit</li>
+                </ul>
+                </div>
+            )
+        }
+
+        const NonCitrus = () => {
+            return (
+                <div>
+                <h2>Citrus</h2>
+                <ul>
+                    <li>Apples</li>
+                    <li>Blueberries</li>
+                    <li>Strawberries</li>
+                    <li>Bananas</li>
+                </ul>
+                </div>
+            )
+        }
+
+        // nest NonCitrus and Citrus in Fruits
+        class Fruits extends React.Component {
+            constructor(props){
+                super(props);
+            }
+            render() {
+                return (
+                    <div>
+                        <h2>Fruits:</h2>
+                        {/* change code below this line */ }
+                        <Citrus />
+                        <NonCitrus/>
+                        { /* change code above this line */ }
+                    </div>
+                );
+            }
+        }
+
+
+        ReactDOM.render(
+            <Fruits />,
+            document.getElementById('root')
+        );
+    </script>
+
+</body>
