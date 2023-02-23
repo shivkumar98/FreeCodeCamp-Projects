@@ -1,0 +1,54 @@
+<html>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin>
+</script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+
+    <div>This is a static component</div>
+    <br /><br />
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // in order to pass an array into a JSX element, it must be treated as JS
+        // hence wrapped in curlyh braces
+
+
+        // pass in an array for each List component in ToDo component for tasks to do
+        // access the tasks prop in the List's render component
+
+        const List = (props) => {
+            {/* change code below this line */ }
+            return <p>{props.tasks.join(', ')}</p>
+            {/* change code above this line */ }
+        };
+
+        class ToDo extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>To Do Lists</h1>
+                        <h2>Today</h2>
+                        {/* change code below this line */}
+                        <List tasks={['eat', 'work', 'sleep']} />
+                        <h2>Tomorrow</h2>
+                        <List tasks={['get haircut', 'sleep', 'work']} />
+                        {/* change code above this line */}
+                    </div>
+                );
+            }
+        };
+
+        ReactDOM.render(
+            <ToDo />,
+            document.getElementById('root')
+        );
+    </script>
+
+</body>
