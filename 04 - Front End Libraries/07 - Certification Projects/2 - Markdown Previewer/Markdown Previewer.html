@@ -1,114 +1,149 @@
 <html>
-    <head>
-        <title>Random Quote Generator</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js" integrity="sha512-uwSxMaa/W7dmSIXEd07BMVymisMRRUS/Pr5a76AquekKKu9HWn4rBiCd+ZtwqnoijAJvttdrz8krzP26kZjg0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <style>
-      #preview {
-        background-color: yellow;
-        height: 100%;
-      }
-    </style>
-  <body>
-   
-    <div id="previewer"></div>
-    <div id="preview"></div>
+
+<head>
+  <title>Shiv's Markdown Previewer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js"
+    integrity="sha512-uwSxMaa/W7dmSIXEd07BMVymisMRRUS/Pr5a76AquekKKu9HWn4rBiCd+ZtwqnoijAJvttdrz8krzP26kZjg0Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  html, body{
+    background-color: #87B5B5;
+    padding-top: 20px;
+  }
+
+  #editor{
+    display: inline;
+  }
+  textarea {
+    margin: auto;
+    width: 50%;
+    height: 200px;
+    background-color: #C0D8D8;
+    padding: none;
+    
+    border:none
+  }
+
+  #preview {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #C0D8D8;
+    padding: 10px;
+    border:none
+
+  }
+</style>
+
+<body>
+
+  <div id="previewer"></div>
+ 
 
 
 
-    <script type="text/babel">
-      
+  <script type="text/babel">
+
     class MarkDownPreviewer extends React.Component {
-      constructor(props){
+      constructor(props) {
         super(props);
         this.state = {
-            input: '',
-            preview: '',
-            initial: ''
-          }
+          input: '',
+          preview: '',
+          initial: ''
+        }
         this.handleChange = this.handleChange.bind(this);
       }
-      handleChange(event){
+      handleChange(event) {
         this.setState({
-            preview: marked.parse(event.target.value)
+          preview: marked.parse(event.target.value)
         })
       }
-      componentWillMount(){
+      componentWillMount() {
         var text = "# Welcome to my React Markdown Previewer!\n" +
-	"\n" +
-	"## This is a sub-heading...\n" +
-	"### And here's some other cool stuff:\n" +
-	"\n" +
-	"Heres some code, `<div></div>`, between 2 backticks.\n" +
-	"\n" +
-	"```\n" +
-	"// this is multi-line code:\n" +
-	"\n" +
-	"function anotherExample(firstLine, lastLine) {\n" +
-	"  if (firstLine == '```' && lastLine == '```') {\n" +
-	"    return multiLineCode;\n" +
-	"  }\n" +
-	"}\n" +
-	"```\n" +
-	"\n" +
-	"You can also make text **bold**... whoa!\n" +
-	"Or _italic_.\n" +
-	"Or... wait for it... **_both!_**\n" +
-	"And feel free to go crazy ~~crossing stuff out~~.\n" +
-	"\n" +
-	"There's also [links](https://www.freecodecamp.org), and\n" +
-	">Block Quotes!\n" +
-	"\n" +
-	"And if you want to get really crazy, even tables:\n" +
-	"\n" +
-	"Wild Header | Crazy Header | Another Header?\n" +
-	"------------ | ------------- | -------------\n" +
-	"Your content can | be here, and it | can be here....\n" +
-	"And here. | Okay. | I think we get it.\n" +
-	"\n" +
-	"- And of course there are lists.\n" +
-	"  - Some are bulleted.\n" +
-	"     - With different indentation levels.\n" +
-	"        - That look like this.\n" +
-	"\n" +
-	"\n" +
-	"1. And there are numbered lists too.\n" +
-	"1. Use just 1s if you want!\n" +
-	"1. And last but not least, let's not forget embedded images:\n" +
-	"\n" +
-	"![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)\n" +
-	"\n";
-     this.setState({
-      initial: text,
-      preview: marked.parse(text)
-     })
+          "\n" +
+          "## This is a sub-heading...\n" +
+          "### And here's some other cool stuff:\n" +
+          "\n" +
+          "Heres some code, `<div></div>`, between 2 backticks.\n" +
+          "\n" +
+          "```\n" +
+          "// this is multi-line code:\n" +
+          "\n" +
+          "function anotherExample(firstLine, lastLine) {\n" +
+          "  if (firstLine == '```' && lastLine == '```') {\n" +
+          "    return multiLineCode;\n" +
+          "  }\n" +
+          "}\n" +
+          "```\n" +
+          "\n" +
+          "You can also make text **bold**... whoa!\n" +
+          "Or _italic_.\n" +
+          "Or... wait for it... **_both!_**\n" +
+          "And feel free to go crazy ~~crossing stuff out~~.\n" +
+          "\n" +
+          "There's also [links](https://www.freecodecamp.org), and\n" +
+          ">Block Quotes!\n" +
+          "\n" +
+          "And if you want to get really crazy, even tables:\n" +
+          "\n" +
+          "Wild Header | Crazy Header | Another Header?\n" +
+          "------------ | ------------- | -------------\n" +
+          "Your content can | be here, and it | can be here....\n" +
+          "And here. | Okay. | I think we get it.\n" +
+          "\n" +
+          "- And of course there are lists.\n" +
+          "  - Some are bulleted.\n" +
+          "     - With different indentation levels.\n" +
+          "        - That look like this.\n" +
+          "\n" +
+          "\n" +
+          "1. And there are numbered lists too.\n" +
+          "1. Use just 1s if you want!\n" +
+          "1. And last but not least, let's not forget embedded images:\n" +
+          "\n" +
+          "![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)\n" +
+          "\n";
+        this.setState({
+          initial: text,
+          preview: marked.parse(text)
+        })
       }
-      render(){
-        
-        return ( 
-            <div>
-                <textArea id="editor" onChange={this.handleChange} value={this.state.input}>{this.state.initial}</textArea>
-                <div id="preview" dangerouslySetInnerHTML={{__html: this.state.preview}} />
-                
+      render() {
+
+        return (
+          <div>
+            <div className="container-fluid d-flex justify-content-center" >
+              
+              <textArea id="editor"
+              onChange={this.handleChange}
+              value={this.state.input}
+              >{this.state.initial}</textArea>
+            </div>
+            <div id="preview" dangerouslySetInnerHTML={{ __html: this.state.preview }} />
+
           </div>
         );
-      } 
+      }
     }
 
 
-      ReactDOM.render(<MarkDownPreviewer />, document.getElementById('previewer'))
+    ReactDOM.render(<MarkDownPreviewer />, document.getElementById('previewer'))
 
 
   </script>
-  </body>
+</body>
+
 </html>
