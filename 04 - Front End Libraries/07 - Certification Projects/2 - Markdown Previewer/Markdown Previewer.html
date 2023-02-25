@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js" integrity="sha512-uwSxMaa/W7dmSIXEd07BMVymisMRRUS/Pr5a76AquekKKu9HWn4rBiCd+ZtwqnoijAJvttdrz8krzP26kZjg0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <style>
@@ -19,38 +20,44 @@
       }
     </style>
   <body>
-    <textarea id="editor"></textarea>
+   
+    <div id="previewer"></div>
     <div id="preview"></div>
 
 
 
     <script type="text/babel">
-    class Editor extends React.Component {
-
+      
+    class MarkDownPreviewer extends React.Component {
       constructor(props){
-        super(props)
+        super(props);
+        this.state = {
+            input: '',
+            preview: ''
+        }
+        this.handleChange = this.handleChange.bind(this);
       }
+      handleChange(event){
+        this.setState({
+            preview: marked.parse(event.target.value)
+        })
 
-
+      }
       render(){
         return ( 
-          <div></div>
+            <div>
+                <textArea id="editor" onChange={this.handleChange} value={this.state.input}></textArea>
+                <div dangerouslySetInnerHTML={{__html: this.state.preview}} />
+                
+          </div>
         );
       } 
     }
 
-    class Preview extends React.Component {
-      constructor(props){
-        super(props);
-      }
-      return (
-        
-      )
-      
-    }
 
-      ReactDOM.render(<Editor />, document.getElementById('editor'))
-      ReactDOM.render(<div className="preview"></div>, document.getElementById('preview'))
+      ReactDOM.render(<MarkDownPreviewer />, document.getElementById('previewer'))
+
+
   </script>
   </body>
 </html>
