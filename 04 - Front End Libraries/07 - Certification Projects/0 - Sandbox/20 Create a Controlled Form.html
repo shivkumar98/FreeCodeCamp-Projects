@@ -1,0 +1,71 @@
+<html>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin>
+</script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // TASK:
+        // the MyForm component is set up with an empty form
+        // the submit handler is called when the form is submitted
+        // this is whenn the button with type "submit" is clicked
+        // add an input element in the form and set its value and onChange
+
+        // complete the handleSubmit method so the submit state is set to current input value
+
+        // call event.preventDefault in submit handler to prevent page refresh
+
+        class MyForm extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    input: '',
+                    submit: ''
+                };
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+            }
+            handleChange(event) {
+                this.setState({
+                    input: event.target.value
+                });
+            }
+            handleSubmit(event) {
+                // Change code below this line
+                event.preventDefault()
+                this.setState((state) => ({
+                    submit: state.input
+                }))
+                // Change code above this line
+            }
+            render() {
+                return (
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            {/* Change code below this line */}
+                            <input onChange={this.handleChange} value={this.state.input} />
+                            {/* Change code above this line */}
+                            <button type='submit'>Submit!</button>
+                        </form>
+                        {/* Change code below this line */}
+                        <h1>{this.state.input},{this.state.submit}</h1>
+                        {/* Change code above this line */}
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+            <MyForm />,
+            document.getElementById('root')
+        );
+
+    </script>
+
+</body>
+
+</html>

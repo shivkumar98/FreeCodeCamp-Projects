@@ -1,0 +1,48 @@
+<html>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin>
+</script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+
+
+
+    <div id="root"></div>
+
+
+
+    <script type="text/babel">
+
+        // TASK:
+        // the h1 should only render value from state
+
+        class MyComponent extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    name: 'freeCodeCamp'
+                }
+            }
+            render() {
+                return (
+                    <div>
+                        { /* Change code below this line */}
+                        <h1>{this.state.name}</h1>
+                        { /* Change code above this line */}
+                    </div>
+                );
+            }
+        };
+
+
+        ReactDOM.render(
+            <Camper />,
+            document.getElementById('root')
+        );
+
+    </script>
+
+</body>
+
+</html>

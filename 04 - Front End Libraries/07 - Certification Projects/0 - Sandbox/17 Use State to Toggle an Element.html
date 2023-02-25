@@ -1,0 +1,73 @@
+<html>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin>
+</script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // state updates may asynchrous
+        // meaning we cannot use this.state/props when calculating next value
+        /* we cannot write the following:
+        this.setState({
+            counter: this.state.counter + this.props.increment
+        })
+        */
+        /* Instead we write a function which accesses state and props:
+        this.setState((state,props) => ({
+         counter: state.counter + props.increment
+        }));
+        */
+
+        // TASK: 
+        // Implement the toggleVisibility handler oso components visibility is set to true or falswe
+
+        class MyComponent extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    visibility: false
+                };
+                // change code here
+                this.toggleVisibility = this.toggleVisibility.bind(this);
+                // change code above
+
+            }
+            // define toggleVisibility here
+            toggleVisibility() {
+                this.setState((state) => ({
+                    visibility: !state.visibility
+                }));
+            }
+            // add code above
+            render() {
+                if (this.state.visibility) {
+                    return (
+                        <div>
+                            <button onClick={this.toggleVisibility}>Click Me</button>
+                            <h1>Now you see me!</h1>
+                        </div>
+                    )
+                } else {
+                    return (
+                        <div>
+                            <button onClick={this.toggleVisibility}>Click Me</button>
+                        </div>
+                    )
+                }
+            }
+        }
+
+        ReactDOM.render(
+            <MyComponent />,
+            document.getElementById('root')
+        );
+
+    </script>
+
+</body>
+
+</html>

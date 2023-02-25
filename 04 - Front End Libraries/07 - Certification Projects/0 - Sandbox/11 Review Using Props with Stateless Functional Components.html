@@ -1,0 +1,64 @@
+<html>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin>
+</script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+
+
+
+    <div id="root"></div>
+
+
+
+    <script type="text/babel">
+
+        // stateless functional component == a function which accepts props and returns JSX
+        // stateless component == ES6 class extending React.Component
+        // statefull component == a class which maintains its own internal state
+
+        // TASK: define the Camper component
+        // ensure it has one p element with only the name from the props
+        // define propTypeson the Camper to require a name as strings
+
+        class CampSite extends React.Component {
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return (
+                    <div>
+                        <Camper />
+                    </div>
+                )
+            }
+        }
+        // change code below this line
+        class Camper extends React.Component {
+            constructor(props) {
+                super(props);
+                console.log(this.props)
+            }
+
+            render() {
+                return <p>{this.props.name}</p>
+            }
+        }
+        Camper.propTypes = { name: PropTypes.string.isRequired }
+        Camper.defaultProps = {
+            name: "CamperBot"
+        }
+
+
+
+        ReactDOM.render(
+            <Camper />,
+            document.getElementById('root')
+        );
+
+    </script>
+
+</body>
+
+</html>
