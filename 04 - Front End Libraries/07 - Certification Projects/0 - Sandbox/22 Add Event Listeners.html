@@ -1,0 +1,69 @@
+<html>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin>
+</script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // the componentDidMount is the best place to attach event listeners
+        // react uses synthetic event system
+
+        // TASK:
+        // attach listener in the componentDidMount() method for keydown events.
+        // have the events trigger a handleKeyPress method.
+        // you can use document.addEvent listener to take the event as first arg, and callback as second arg
+
+        // in the componentWillUnmount(), remove the same listener.
+        // you can pass arguments to document.removeEventListener()
+
+        class MyComponent extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    message: ''
+                };
+                this.handleEnter = this.handleEnter.bind(this);
+                this.handleKeyPress = this.handleKeyPress.bind(this);
+            }
+            // Change code below this line
+            componentDidMount() {
+                document.addEventListener('keydown', this.handleKeyPress)
+            }
+            componentWillUnmount() {
+                document.removeEventListener('keydown', this.handleKeyPress)
+            }
+            // Change code above this line
+            handleEnter() {
+                this.setState((state) => ({
+                    message: state.message + 'You pressed the enter key! '
+                }));
+            }
+            handleKeyPress(event) {
+                if (event.keyCode === 13) {
+                    this.handleEnter();
+                }
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>{this.state.message}</h1>
+                    </div>
+                );
+            }
+        };
+
+        ReactDOM.render(
+            <MyComponent />,
+            document.getElementById('root')
+        );
+
+    </script>
+
+</body>
+
+</html>
