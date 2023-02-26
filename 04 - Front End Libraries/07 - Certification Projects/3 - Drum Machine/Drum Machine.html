@@ -50,6 +50,21 @@
                 super(props);
                 this.state = {
                 }
+                this.handleClick = this.handleClick.bind(this);
+            }
+            handleClick(event){
+                switch(event.target.id){
+                    case 'heater-1':document.getElementById('Q').play(); break;
+                    case 'heater-2':document.getElementById('W').play(); break;
+                    case 'heater-3':document.getElementById('E').play(); break;
+                    case 'heater-4':document.getElementById('A').play(); break;
+                    case 'clap':document.getElementById('S').play(); break;
+                    case 'open-hh':document.getElementById('D').play(); break;
+                    case 'kick-hat':document.getElementById('Z').play(); break;
+                    case 'kick':document.getElementById('X').play(); break;
+                    case 'closed-hat':document.getElementById('C').play(); break;
+
+                }
             }
             render() {
                 return (
@@ -58,19 +73,19 @@
                         <div id="drumpad-container">
                             <div class="container">
                                 <div class="row justify-content-center">
-                                    <button id="heater-1" class="drum-pad"><audio class="clip"  id="Q" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"></audio>Q</button>
-                                    <button id="heater-2" class="drum-pad"><audio class="clip"  id="W" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"></audio>W</button>
-                                    <button id="heater-3" class="drum-pad"><audio class="clip"  id="E" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"></audio>E</button>
+                                    <button id="heater-1" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="Q" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"></audio>Q</button>
+                                    <button id="heater-2" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="W" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"></audio>W</button>
+                                    <button id="heater-3" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="E" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"></audio>E</button>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <button id="heater-4" class="drum-pad"><audio class="clip"  id="A" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4.mp3"></audio>A</button>
-                                    <button id="clap" class="drum-pad"><audio class="clip"  id="S" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"></audio>S</button>
-                                    <button id="open-hh" class="drum-pad"><audio class="clip"  id="D" src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"></audio>D</button>
+                                    <button id="heater-4" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="A" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"></audio>A</button>
+                                    <button id="clap" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="S" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"></audio>S</button>
+                                    <button id="open-hh" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="D" src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"></audio>D</button>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <button id="kick-hat" class="drum-pad"><audio class="clip"  id="Z" src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"></audio>Z</button>
-                                    <button id="kick" class="drum-pad"><audio class="clip"  id="X" src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"></audio>X</button>
-                                    <button id="closed-hat" class="drum-pad"><audio class="clip"  id="C" src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"></audio>C</button>
+                                    <button id="kick-hat" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="Z" src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"></audio>Z</button>
+                                    <button id="kick" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="X" src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"></audio>X</button>
+                                    <button id="closed-hat" class="drum-pad" onClick={this.handleClick}><audio class="clip"  id="C" src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"></audio>C</button>
                                 </div>
                             </div>
                         </div>
