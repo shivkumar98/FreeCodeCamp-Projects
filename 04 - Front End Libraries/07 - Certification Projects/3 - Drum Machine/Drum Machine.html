@@ -51,6 +51,7 @@
                 this.state = {
                 }
                 this.handleClick = this.handleClick.bind(this);
+                this.handleKeyPress = this.handleKeyPress.bind(this);
             }
             handleClick(event){
                 switch(event.target.id){
@@ -64,6 +65,40 @@
                     case 'kick':document.getElementById('X').play(); break;
                     case 'closed-hat':document.getElementById('C').play(); break;
 
+                }
+            }
+            componentWillMount(){
+                document.addEventListener('keypress', this.handleKeyPress)
+            }
+            handleKeyPress(event){
+                console.log(event)
+                switch(event.keyCode){
+                    case 113: 
+                    case 81: document.getElementById('Q').play(); break;
+
+                    case 119: 
+                    case 87: document.getElementById('W').play(); break;
+
+                    case 101:
+                    case 69: document.getElementById('E').play(); break;
+
+                    case 97:
+                    case 65: document.getElementById('A').play(); break;
+
+                    case 115: 
+                    case 83: document.getElementById('S').play(); break;
+
+                    case 100: 
+                    case 68: document.getElementById('D').play(); break;
+
+                    case 122: 
+                    case 90: document.getElementById('Z').play(); break;
+
+                    case 120: 
+                    case 88: document.getElementById('X').play(); break;
+
+                    case 99: 
+                    case 67: document.getElementById('C').play(); break;
                 }
             }
             render() {
