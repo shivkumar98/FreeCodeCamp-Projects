@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Drum Mahcine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .drum-pad {
+        background-color: grey;
+        width:60px;
+        height: 50px;
+        margin: 5px 2px;
+        display: flex;
+        padding: 12px 0;
+        justify-content: center;
+    }
+    #drum-machine{
+        margin: auto;
+    }
+</style>
+
+<body>
+
+    <div id="drum-machine"></div>
+
+
+
+
+    <script type="text/babel">
+
+        class DrumMachine extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                }
+            }
+            render() {
+                return (
+                    <div>
+                        <div id="display"></div>
+                        <div id="drumpad-container">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="drum-pad">Q</div>
+                                    <div class="drum-pad">W</div>
+                                    <div class="drum-pad">E</div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="drum-pad">A</div>
+                                    <div class="drum-pad">S</div>
+                                    <div class="drum-pad">D</div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="drum-pad">Z</div>
+                                    <div class="drum-pad">X</div>
+                                    <div class="drum-pad">C</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        }
+
+
+
+        ReactDOM.render(<DrumMachine />, document.getElementById('drum-machine'))
+
+
+    </script>
+</body>
+
+</html>
