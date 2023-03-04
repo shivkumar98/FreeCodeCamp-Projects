@@ -1,56 +1,149 @@
 <html>
-    <head>
-        <title>Shiv's Calculator</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <style>
-      .calculator{
-        background-color: black;
-        width: 430px;
-        height: 500px;
-        margin: 30% auto;
-        padding: 0;
-      }
-      #display{
-        background-color: aliceblue;
-        width: 99%;
-        margin: 0 auto;
-        height: 8%;
-      }
 
-    </style>
-  <body>
-    <div id="calculator"></div>
+<head>
+  <title>Shiv's Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  .calculator {
+    background-color: black;
+    width: 430px;
+    height: 500px;
+    margin: 30% auto;
+    padding: 1px;
+  }
 
-    <script type="text/babel">
-      class Calculator extends React.Component {
-        constructor(props){
-          super(props);
-          this.state = {
-            result: 0
-          }
+  #display {
+    background-color: aliceblue;
+    width: 93%;
+    margin: 0 auto;
+    height: 13%;
+  }
+
+  html, body {
+    background-color: #C2C2D6;
+  }
+
+  .key{
+    
+  }
+
+
+
+  #allClear{
+    background-color: #AC3939;
+    width: 100%;
+    height: 100%;
+    margin: none;
+    padding: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-family: monospace
+  }
+
+  .operation {
+    background-color: #666666;
+    width: 100%;
+    height: 100px;
+    margin: none;
+    padding: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-family: monospace;
+  }
+
+  .keys-1-9 {
+    background-color: #4D4D4D;
+    width: 100%;
+    height: 100px;
+    margin: none;
+    padding: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-family: monospace;
+  }
+
+</style>
+
+<body>
+  <div id="calculator"></div>
+
+  <script type="text/babel">
+    class Calculator extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          result: 0
         }
-        render(){
-          return (
-            <div className="calculator container-fluid">
-              <div id="display">0</div>
-              <button id="equals">=</button>
+      }
+      render() {
+        return (
+          <div className="calculator container">
+            <div id="display">0</div>
+            <div class="container-fluid">
+              <div class="row no-gutters calculator-row" >
+                <div class="col-md-6" >
+                  <button class="key" id="allClear">AC</button>
+                </div>
+                <div class="col-md-3">
+                  <button class="key operation">/</button>
+                </div>
+                <div class="col-md-3">
+                  <button class="key operation">x</button>
+                </div>
+              </div>
+
+              <div class="row no-gutters">
+                <div class="col-3">
+                  <button class="key keys-1-9" id="seven">7</button>  
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="eight">8</button>  
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="nine">9</button>    
+                </div>
+                <div class="col-3">
+                  <button class="key operation" id="subtract">-</button>    
+                </div>
+              </div>
+
+              <div class="row no-gutters">
+                <div class="col-3">
+                  <button class="key keys-1-9" id="four">4</button>  
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="five">5</button>  
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="six">6</button>    
+                </div>
+                <div class="col-3">
+                  <button class="key operation" id="add">+</button>    
+                </div>
+              </div>
+
             </div>
-          );
-        }
+          </div>
+        );
       }
+    }
 
-      ReactDOM.render(<Calculator />, document.getElementById('calculator'))
+    ReactDOM.render(<Calculator />, document.getElementById('calculator'))
 
   </script>
-  </body>
+</body>
+
 </html>
