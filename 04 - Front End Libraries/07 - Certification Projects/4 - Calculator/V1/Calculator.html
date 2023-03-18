@@ -23,30 +23,31 @@
         super(props);
         this.state = {
           result: "",
-          input: "",
+          display: "",
+          ans: 0,
           lastOperation: ""
         }
         this.handleClick = this.handleClick.bind(this);
-        this.updateDisplay = this.updateDisplay.bind(this);
+        this.buttonPress = this.buttonPress.bind(this);
         this.addition = this.addition.bind(this);
         this.subtraction = this.subtraction.bind(this);
         this.multiplication = this.multiplication.bind(this);
-        this.computeLastOperation = this.computeLastOperation.bind(this);
+        this.equals = this.equals.bind(this);
       }
       handleClick(event) {
         switch (event.target.id) {
-          case 'clear': this.updateDisplay('clear'); break;
-          case 'zero': this.updateDisplay('0'); break;
-          case 'one': this.updateDisplay('1'); break;
-          case 'two': this.updateDisplay('2'); break;
-          case 'three': this.updateDisplay('3'); break;
-          case 'four': this.updateDisplay('4'); break;
-          case 'five': this.updateDisplay('5'); break;
-          case 'six': this.updateDisplay('6'); break;
-          case 'seven': this.updateDisplay('7'); break;
-          case 'eight': this.updateDisplay('8'); break;
-          case 'nine': this.updateDisplay('9'); break;
-          case 'decimal': this.updateDisplay('decimal'); break;
+          case 'clear': this.buttonPress('clear'); break;
+          case 'zero': this.buttonPress('0'); break;
+          case 'one': this.buttonPress('1'); break;
+          case 'two': this.buttonPress('2'); break;
+          case 'three': this.buttonPress('3'); break;
+          case 'four': this.buttonPress('4'); break;
+          case 'five': this.buttonPress('5'); break;
+          case 'six': this.buttonPress('6'); break;
+          case 'seven': this.buttonPress('7'); break;
+          case 'eight': this.buttonPress('8'); break;
+          case 'nine': this.buttonPress('9'); break;
+          case 'decimal': this.buttonPress('decimal'); break;
           case 'add': this.addition(); break;
           case 'subtract': this.subtraction(); break;
           case 'multiply': this.multiplication(); break;
@@ -54,63 +55,48 @@
           case 'equals': this.computeLastOperation(); break;
         }
       }
-      updateDisplay(button) {
-        switch (button) {
-          case 'clear': this.setState({ // clicking on AC button
-            result: "0",
-            input: ""
-          }); break;
-          case 'decimal': 
-          
-          this.setState((state) => ({
-            result: state.result.includes('.')?state.result+"" :state.result  + ".",
-            input: state.input
-          }))
-
-        }
-        if (parseInt(button) >= 0 && parseInt(button) <= 9) { // clicking on digit button
-          this.setState((state) => ({
-            result: state.result=="0"?parseInt(button)+"":(""+state.result  + parseInt(button)),
-            input: state.input
-          }))
+     buttonPress(key){
+      switch (key){
+        case 'clear':{
+          this.setState({
+            result: "",
+            display: "",
+            ans: 0,
+            lastOperation: ""
+          })
         }
       }
+     }
       addition() {
-        this.setState((state) => ({
-          input: state.input+state.result+"+",
-          result: "",
-          lastOperation: "+"
-        }));
+
       }
       subtraction(){
-        this.setState((state) => ({
-          input: state.input+state.result+"-",
-          result: "",
-          lastOperation: "-"
-        }));
+      
       }
       multiplication(){
-        this.setState((state) => ({
-          input: state.input+state.result+"*",
-          result: "",
-          lastOperation: "*"
-        }));
+    
       }
       division(){
-        this.setState((state) => ({
-          input: state.input+state.result+"/",
-          result: "",
-          lastOperation: "/"
-        }));
+       
       }
 
-      computeLastOperation() {
+      equals() {
         console.log("equals clicked!!!")
         console.log("result: "+this.state.result)
         console.log("input: "+this.state.input)
-        this.setState((state) => ({
+        if (this.state.result.includes('+','*','/')){
+          this.setState((state) => ({
           input: state.input + state.result,
           result: (eval(state.input + state.result )==undefined)?"":eval(state.input + state.result ),
+          lastOperation: "="
+        }));
+        } else {
+          
+        }
+        
+        this.setState((state) => ({
+          input: state.input,
+          result: "",
           lastOperation: "="
         }));
       }
@@ -119,9 +105,9 @@
           <div className="calculator container">
 
             <div class="displays">
-              <div id="result">{this.state.input}</div>
+              <div id="result">{this.state.result}</div>
               <br />
-              <div id="display">{this.state.result}</div>
+              <div id="display">{this.state.display}</div>
             </div>
 
             <div class="container-fluid">
