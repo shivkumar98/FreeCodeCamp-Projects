@@ -110,13 +110,14 @@
                 
       }
       updateDisplay(input){
-        if (input == null){
-          this.setState({result:0})
-        } else if (input=='one'){
-          this.setState(state=>({
+        switch(input){
+          case null: this.setState({result:0}); break; // clicking on AC button
+          case 'one': this.setState(state=>({
             input: state.input + ""+ 1
-          }))
+          }));
+          break;
         }
+      
         
         console.log("Display is updated")
       }
