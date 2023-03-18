@@ -95,26 +95,35 @@
       constructor(props) {
         super(props);
         this.state = {
-          result: 0
+          result: 0,
+          input: ""
         }
         this.handleClick = this.handleClick.bind(this);
         this.updateDisplay = this.updateDisplay.bind(this);
       }
       handleClick(event){
         switch (event.target.id) {
-          case 'clear': this.updateDisplay();
+          case 'clear': this.updateDisplay(); break;
+          case 'one': this.updateDisplay('one'); break
         }
 
                 
       }
-      updateDisplay(){
-        this.setState({result:0})
+      updateDisplay(input){
+        if (input == null){
+          this.setState({result:0})
+        } else if (input=='one'){
+          this.setState(state=>({
+            input: state.input + ""+ 1
+          }))
+        }
+        
         console.log("Display is updated")
       }
       render() {
         return (
           <div className="calculator container">
-            <div id="display">{this.state.result}</div>
+            <div id="display">{this.state.result}<br />{this.state.input}</div>
             <div class="container-fluid">
               <div class="row no-gutters calculator-row" >
                 <div class="col-md-6" >
@@ -130,13 +139,13 @@
 
               <div class="row no-gutters">
                 <div class="col-3">
-                  <button class="key keys-1-9" id="seven">7</button>  
+                  <button class="key keys-1-9" id="seven" onClick={this.handleClick}>7</button>  
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="eight">8</button>  
+                  <button class="key keys-1-9" id="eight" onClick={this.handleClick}>8</button>  
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="nine">9</button>    
+                  <button class="key keys-1-9" id="nine" onClick={this.handleClick}>9</button>    
                 </div>
                 <div class="col-3">
                   <button class="key operation" id="subtract">-</button>    
@@ -145,28 +154,28 @@
 
               <div class="row no-gutters">
                 <div class="col-3">
-                  <button class="key keys-1-9" id="four">4</button>  
+                  <button class="key keys-1-9" id="four" onClick={this.handleClick}>4</button>  
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="five">5</button>  
+                  <button class="key keys-1-9" id="five" onClick={this.handleClick}>5</button>  
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="six">6</button>    
+                  <button class="key keys-1-9" id="six" onClick={this.handleClick}>6</button>    
                 </div>
                 <div class="col-3">
-                  <button class="key operation" id="add">+</button>    
+                  <button class="key operation" id="add" onClick={this.handleClick}>+</button>    
                 </div>
               </div>
 
               <div class="row no-gutters">
                 <div class="col-3">
-                  <button class="key keys-1-9" id="one">1</button>  
+                  <button class="key keys-1-9" id="one" onClick={this.handleClick}>1</button>  
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="two">2</button>  
+                  <button class="key keys-1-9" id="two" onClick={this.handleClick}>2</button>  
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="three">3</button>    
+                  <button class="key keys-1-9" id="three" onClick={this.handleClick}>3</button>    
                 </div>
               </div>
 
