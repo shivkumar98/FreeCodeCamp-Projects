@@ -53,52 +53,54 @@
           case 'equals': this.computeLastOperation(); break;
         }
       }
-      updateDisplay(input) {
-        switch (input) {
+      updateDisplay(button) {
+        switch (button) {
           case 'clear': this.setState({ // clicking on AC button
-            result: 0,
-            input: "0"
+            result: "0",
+            input: ""
           }); break; 
 
         }
-        if (parseInt(input) >= 0 && parseInt(input) <= 9) {
+        if (parseInt(button) >= 0 && parseInt(button) <= 9) {
           this.setState((state) => ({
-            result: state.result + parseInt(input)
+            result: state.result=="0"?parseInt(button):(""+state.result  + parseInt(button)),
+            input: state.input
+            
           }))
         }
       }
       addition() {
         this.setState((state) => ({
-          result: state.result + "+",
-          input: "0",
+          input: state.input+state.result+"+",
+          result: "",
           lastOperation: "+"
         }));
       }
       subtraction(){
         this.setState((state) => ({
-          result: state.result + "-",
-          input: "0",
+          input: state.input+state.result+"-",
+          result: "",
           lastOperation: "-"
         }));
       }
       multiplication(){
         this.setState((state) => ({
-          result: state.result+"*",
-          input: "0",
+          input: state.input+state.result+"*",
+          result: "",
           lastOperation: "*"
         }));
       }
       division(){
         this.setState((state) => ({
-          result: state.result+"/",
-          input: "0",
+          input: state.input+state.result+"/",
+          result: "",
           lastOperation: "/"
         }));
       }
       computeLastOperation() {
         this.setState((state) => ({
-          result: (state.result),
-          input: eval(state.result),
+          input: state.input + state.result,
+          result: eval(state.input + state.result),
           lastOperation: "="
         }));
       }
@@ -107,9 +109,9 @@
           <div className="calculator container">
 
             <div class="displays">
-              <div id="result">{this.state.result}</div>
+              <div id="result">{this.state.input}</div>
               <br />
-              <div id="display">{this.state.input}</div>
+              <div id="display">{this.state.result}</div>
             </div>
 
             <div class="container-fluid">
