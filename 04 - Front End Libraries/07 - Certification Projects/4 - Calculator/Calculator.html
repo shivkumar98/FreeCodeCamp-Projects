@@ -46,6 +46,7 @@
           case 'seven': this.updateDisplay('7'); break;
           case 'eight': this.updateDisplay('8'); break;
           case 'nine': this.updateDisplay('9'); break;
+          case 'decimal': this.updateDisplay('decimal'); break;
           case 'add': this.addition(); break;
           case 'subtract': this.subtraction(); break;
           case 'multiply': this.multiplication(); break;
@@ -58,14 +59,19 @@
           case 'clear': this.setState({ // clicking on AC button
             result: "0",
             input: ""
-          }); break; 
+          }); break;
+          case 'decimal': 
+          
+          this.setState((state) => ({
+            result: state.result.includes('.')?state.result+"" :state.result  + ".",
+            input: state.input
+          }))
 
         }
-        if (parseInt(button) >= 0 && parseInt(button) <= 9) {
+        if (parseInt(button) >= 0 && parseInt(button) <= 9) { // clicking on digit button
           this.setState((state) => ({
-            result: state.result=="0"?parseInt(button):(""+state.result  + parseInt(button)),
+            result: state.result=="0"?parseInt(button)+"":(""+state.result  + parseInt(button)),
             input: state.input
-            
           }))
         }
       }
@@ -97,10 +103,14 @@
           lastOperation: "/"
         }));
       }
+
       computeLastOperation() {
+        console.log("equals clicked!!!")
+        console.log("result: "+this.state.result)
+        console.log("input: "+this.state.input)
         this.setState((state) => ({
           input: state.input + state.result,
-          result: eval(state.input + state.result),
+          result: (eval(state.input + state.result )==undefined)?"":eval(state.input + state.result ),
           lastOperation: "="
         }));
       }
@@ -174,7 +184,7 @@
                   <button class="key keys-1-9" id="zero" onClick={this.handleClick}>0</button>
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="decimal">.</button>
+                  <button class="key keys-1-9" id="decimal" onClick={this.handleClick}>.</button>
                 </div>
                 <div class="col-3">
                   <button class="key equals" id="equals" onClick={this.handleClick}>=</button>
