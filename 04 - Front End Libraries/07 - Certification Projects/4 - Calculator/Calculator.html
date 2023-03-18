@@ -22,7 +22,7 @@
     padding: 1px;
   }
 
-  #display {
+  .displays {
     background-color: aliceblue;
     width: 93%;
     margin: 0 auto;
@@ -98,10 +98,13 @@
         super(props);
         this.state = {
           result: 0,
-          input: ""
+          input: "",
+          lastOperation: ""
         }
         this.handleClick = this.handleClick.bind(this);
         this.updateDisplay = this.updateDisplay.bind(this);
+        this.addition = this.addition.bind(this);
+        this.computeLastOperation = this.computeLastOperation.bind(this);
       }
       handleClick(event){
         switch (event.target.id) {
@@ -116,6 +119,8 @@
           case 'seven': this.updateDisplay('7'); break;
           case 'eight': this.updateDisplay('8'); break;
           case 'nine': this.updateDisplay('9'); break;
+          case 'add': this.addition(); break
+          case 'equals': this.computeLastOperation(); break;
         }
       }
       updateDisplay(input){
@@ -132,16 +137,33 @@
               input: state.input=="0"||state.input==null?parseInt(input):""+state.input + parseInt(input)
             }))
           }
-      
-        
-        console.log("Display is updated")
+      }
+      addition(){
+        this.setState((state)=>({
+          result: state.result+parseInt(state.input),
+          input:"0",
+          lastOperation: "plus"
+        }));
+      }
+      computeLastOperation(){
+        if (this.state.lastOperation=='plus'){
+          this.setState((state)=>({
+            result: state.result+parseInt(state.input),
+            input:"0",
+            lastOperation: ""
+          }))
+        }
       }
       render() {
         return (
           <div className="calculator container">
-            <div id="result">{this.state.result}</div>
+            
+            <div class="displays">
+              <div id="result">{this.state.result}</div>
             <br/>
             <div id="display">{this.state.input}</div>
+              </div>
+            
             <div class="container-fluid">
               <div class="row no-gutters calculator-row" >
                 <div class="col-md-6" >
@@ -205,7 +227,7 @@
                   <button class="key keys-1-9" id="decimal">.</button>  
                 </div>
                 <div class="col-3">
-                <button class="key equals" id="equals">=</button>  
+                <button class="key equals" id="equals" onClick={this.handleClick}>=</button>  
                 </div>
               </div>
               <div class="col-3">
