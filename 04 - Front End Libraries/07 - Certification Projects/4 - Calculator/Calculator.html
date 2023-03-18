@@ -30,6 +30,7 @@
         this.updateDisplay = this.updateDisplay.bind(this);
         this.addition = this.addition.bind(this);
         this.subtraction = this.subtraction.bind(this);
+        this.multiplication = this.multiplication.bind(this);
         this.computeLastOperation = this.computeLastOperation.bind(this);
       }
       handleClick(event) {
@@ -47,6 +48,7 @@
           case 'nine': this.updateDisplay('9'); break;
           case 'add': this.addition(); break;
           case 'subtract': this.subtraction(); break;
+          case 'multiply': this.multiplication(); break;
           case 'equals': this.computeLastOperation(); break;
         }
       }
@@ -78,6 +80,13 @@
           lastOperation: "minus"
         }));
       }
+      multiplication(){
+        this.setState((state) => ({
+          result: parseInt(state.input),
+          input: "0",
+          lastOperation: "multiply"
+        }));
+      }
       computeLastOperation() {
         switch (this.state.lastOperation){
           case 'plus': this.setState((state) => ({
@@ -87,6 +96,11 @@
           })); break;
           case 'minus': this.setState((state) => ({
             result: state.result - parseInt(state.input),
+            input: "0",
+            lastOperation: ""
+          })); break;
+          case 'multiply': this.setState((state) => ({
+            result: state.result * parseInt(state.input),
             input: "0",
             lastOperation: ""
           })); break;
@@ -108,10 +122,10 @@
                   <button class="key" id="clear" onClick={this.handleClick}>AC</button>
                 </div>
                 <div class="col-md-3">
-                  <button class="key operation" id="divide">/</button>
+                  <button class="key operation" id="divide" onClick={this.handleClick}>/</button>
                 </div>
                 <div class="col-md-3">
-                  <button class="key operation" id="multiply">x</button>
+                  <button class="key operation" id="multiply" onClick={this.handleClick}>x</button>
                 </div>
               </div>
 
