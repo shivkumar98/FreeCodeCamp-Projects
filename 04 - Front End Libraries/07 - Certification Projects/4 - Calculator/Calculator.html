@@ -22,7 +22,7 @@
       constructor(props) {
         super(props);
         this.state = {
-          result: 0,
+          result: "",
           input: "",
           lastOperation: ""
         }
@@ -49,6 +49,7 @@
           case 'add': this.addition(); break;
           case 'subtract': this.subtraction(); break;
           case 'multiply': this.multiplication(); break;
+          case 'divide': this.division(); break;
           case 'equals': this.computeLastOperation(); break;
         }
       }
@@ -62,49 +63,44 @@
         }
         if (parseInt(input) >= 0 && parseInt(input) <= 9) {
           this.setState((state) => ({
-            input: state.input == "0" || state.input == null ? parseInt(input) : "" + state.input + parseInt(input)
+            result: state.result + parseInt(input)
           }))
         }
       }
       addition() {
         this.setState((state) => ({
-          result: state.result + parseInt(state.input),
+          result: state.result + "+",
           input: "0",
-          lastOperation: "plus"
+          lastOperation: "+"
         }));
       }
       subtraction(){
         this.setState((state) => ({
-          result: parseInt(state.input),
+          result: state.result + "-",
           input: "0",
-          lastOperation: "minus"
+          lastOperation: "-"
         }));
       }
       multiplication(){
         this.setState((state) => ({
-          result: parseInt(state.input),
+          result: state.result+"*",
           input: "0",
-          lastOperation: "multiply"
+          lastOperation: "*"
+        }));
+      }
+      division(){
+        this.setState((state) => ({
+          result: state.result+"/",
+          input: "0",
+          lastOperation: "/"
         }));
       }
       computeLastOperation() {
-        switch (this.state.lastOperation){
-          case 'plus': this.setState((state) => ({
-            result: state.result + parseInt(state.input),
-            input: "0",
-            lastOperation: ""
-          })); break;
-          case 'minus': this.setState((state) => ({
-            result: state.result - parseInt(state.input),
-            input: "0",
-            lastOperation: ""
-          })); break;
-          case 'multiply': this.setState((state) => ({
-            result: state.result * parseInt(state.input),
-            input: "0",
-            lastOperation: ""
-          })); break;
-        }
+        this.setState((state) => ({
+          result: (state.result),
+          input: eval(state.result),
+          lastOperation: "="
+        }));
       }
       render() {
         return (
