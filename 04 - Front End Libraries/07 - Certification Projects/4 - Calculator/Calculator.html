@@ -22,11 +22,19 @@
     padding: 1px;
   }
 
-  #display {
+  #display:first-of-type {
     background-color: aliceblue;
     width: 93%;
     margin: 0 auto;
     height: 13%;
+  }
+
+  #display:nth-of-type(2) {
+    background-color: aliceblue;
+    width: 93%;
+    margin: -40px auto;
+    height: 13%;
+    
   }
 
   html, body {
@@ -103,20 +111,32 @@
       }
       handleClick(event){
         switch (event.target.id) {
-          case 'clear': this.updateDisplay(); break;
-          case 'one': this.updateDisplay('one'); break
+          case 'clear': this.updateDisplay('clear'); break;
+          case 'zero': this.updateDisplay('0'); break;
+          case 'one': this.updateDisplay('1'); break;
+          case 'two': this.updateDisplay('2'); break;
+          case 'three': this.updateDisplay('3'); break;
+          case 'four': this.updateDisplay('4'); break;
+          case 'five': this.updateDisplay('5'); break;
+          case 'six': this.updateDisplay('6'); break;
+          case 'seven': this.updateDisplay('7'); break;
+          case 'eight': this.updateDisplay('8'); break;
+          case 'nine': this.updateDisplay('9'); break;
         }
-
-                
       }
       updateDisplay(input){
         switch(input){
-          case null: this.setState({result:0}); break; // clicking on AC button
-          case 'one': this.setState(state=>({
-            input: state.input + ""+ 1
-          }));
-          break;
+          case 'clear': this.setState({
+            result: 0,
+            input: ""
+          }); break; // clicking on AC button
+          
         }
+        if (parseInt(input) >=0 && parseInt(input) <=9){
+            this.setState((state)=>({
+              input: state.input + parseInt(input)
+            }))
+          }
       
         
         console.log("Display is updated")
@@ -124,7 +144,9 @@
       render() {
         return (
           <div className="calculator container">
-            <div id="display">{this.state.result}<br />{this.state.input}</div>
+            <div id="display">{this.state.result}</div>
+            <br/>
+            <div id="display">{this.state.input}</div>
             <div class="container-fluid">
               <div class="row no-gutters calculator-row" >
                 <div class="col-md-6" >
@@ -182,7 +204,7 @@
 
               <div class="row no-gutters">
                 <div class="col-6">
-                  <button class="key keys-1-9" id="zero">0</button>  
+                  <button class="key keys-1-9" id="zero" onClick={this.handleClick}>0</button>  
                 </div>
                 <div class="col-3">
                   <button class="key keys-1-9" id="decimal">.</button>  
