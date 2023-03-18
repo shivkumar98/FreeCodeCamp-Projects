@@ -29,17 +29,12 @@
     height: 13%;
   }
 
-
-
-  html, body {
+  html,
+  body {
     background-color: #C2C2D6;
   }
 
-  .key{
-    
-  }
-
-
+  .key {}
 
   #clear {
     background-color: #AC3939;
@@ -59,7 +54,8 @@
     height: 80px;
     margin: none;
     padding: none;
-    border: 1px solid rgb(10,10,10);;
+    border: 1px solid rgb(10, 10, 10);
+    ;
     color: white;
     font-size: 25px;
     font-family: monospace;
@@ -86,7 +82,6 @@
     width: 100%;
     color: white;
   }
-
 </style>
 
 <body>
@@ -104,9 +99,10 @@
         this.handleClick = this.handleClick.bind(this);
         this.updateDisplay = this.updateDisplay.bind(this);
         this.addition = this.addition.bind(this);
+        this.subtraction = this.subtraction.bind(this);
         this.computeLastOperation = this.computeLastOperation.bind(this);
       }
-      handleClick(event){
+      handleClick(event) {
         switch (event.target.id) {
           case 'clear': this.updateDisplay('clear'); break;
           case 'zero': this.updateDisplay('0'); break;
@@ -119,51 +115,63 @@
           case 'seven': this.updateDisplay('7'); break;
           case 'eight': this.updateDisplay('8'); break;
           case 'nine': this.updateDisplay('9'); break;
-          case 'add': this.addition(); break
+          case 'add': this.addition(); break;
+          case 'subtract': this.subtraction(); break;
           case 'equals': this.computeLastOperation(); break;
         }
       }
-      updateDisplay(input){
-        switch(input){
-          case 'clear': this.setState({
+      updateDisplay(input) {
+        switch (input) {
+          case 'clear': this.setState({ // clicking on AC button
             result: 0,
             input: "0"
-          }); break; // clicking on AC button
-          
+          }); break; 
+
         }
-        if (parseInt(input) >=0 && parseInt(input) <=9){
-            this.setState((state)=>({
-              
-              input: state.input=="0"||state.input==null?parseInt(input):""+state.input + parseInt(input)
-            }))
-          }
+        if (parseInt(input) >= 0 && parseInt(input) <= 9) {
+          this.setState((state) => ({
+            input: state.input == "0" || state.input == null ? parseInt(input) : "" + state.input + parseInt(input)
+          }))
+        }
       }
-      addition(){
-        this.setState((state)=>({
-          result: state.result+parseInt(state.input),
-          input:"0",
+      addition() {
+        this.setState((state) => ({
+          result: state.result + parseInt(state.input),
+          input: "0",
           lastOperation: "plus"
         }));
       }
-      computeLastOperation(){
-        if (this.state.lastOperation=='plus'){
-          this.setState((state)=>({
-            result: state.result+parseInt(state.input),
-            input:"0",
+      subtraction(){
+        this.setState((state) => ({
+          result: parseInt(state.input),
+          input: "0",
+          lastOperation: "minus"
+        }));
+      }
+      computeLastOperation() {
+        switch (this.state.lastOperation){
+          case 'plus': this.setState((state) => ({
+            result: state.result + parseInt(state.input),
+            input: "0",
             lastOperation: ""
-          }))
+          })); break;
+          case 'minus': this.setState((state) => ({
+            result: state.result - parseInt(state.input),
+            input: "0",
+            lastOperation: ""
+          })); break;
         }
       }
       render() {
         return (
           <div className="calculator container">
-            
+
             <div class="displays">
               <div id="result">{this.state.result}</div>
-            <br/>
-            <div id="display">{this.state.input}</div>
-              </div>
-            
+              <br />
+              <div id="display">{this.state.input}</div>
+            </div>
+
             <div class="container-fluid">
               <div class="row no-gutters calculator-row" >
                 <div class="col-md-6" >
@@ -179,59 +187,59 @@
 
               <div class="row no-gutters">
                 <div class="col-3">
-                  <button class="key keys-1-9" id="seven" onClick={this.handleClick}>7</button>  
+                  <button class="key keys-1-9" id="seven" onClick={this.handleClick}>7</button>
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="eight" onClick={this.handleClick}>8</button>  
+                  <button class="key keys-1-9" id="eight" onClick={this.handleClick}>8</button>
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="nine" onClick={this.handleClick}>9</button>    
+                  <button class="key keys-1-9" id="nine" onClick={this.handleClick}>9</button>
                 </div>
                 <div class="col-3">
-                  <button class="key operation" id="subtract">-</button>    
-                </div>
-              </div>
-
-              <div class="row no-gutters">
-                <div class="col-3">
-                  <button class="key keys-1-9" id="four" onClick={this.handleClick}>4</button>  
-                </div>
-                <div class="col-3">
-                  <button class="key keys-1-9" id="five" onClick={this.handleClick}>5</button>  
-                </div>
-                <div class="col-3">
-                  <button class="key keys-1-9" id="six" onClick={this.handleClick}>6</button>    
-                </div>
-                <div class="col-3">
-                  <button class="key operation" id="add" onClick={this.handleClick}>+</button>    
+                  <button class="key operation" id="subtract" onClick={this.handleClick}>-</button>
                 </div>
               </div>
 
               <div class="row no-gutters">
                 <div class="col-3">
-                  <button class="key keys-1-9" id="one" onClick={this.handleClick}>1</button>  
+                  <button class="key keys-1-9" id="four" onClick={this.handleClick}>4</button>
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="two" onClick={this.handleClick}>2</button>  
+                  <button class="key keys-1-9" id="five" onClick={this.handleClick}>5</button>
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="three" onClick={this.handleClick}>3</button>    
+                  <button class="key keys-1-9" id="six" onClick={this.handleClick}>6</button>
+                </div>
+                <div class="col-3">
+                  <button class="key operation" id="add" onClick={this.handleClick}>+</button>
+                </div>
+              </div>
+
+              <div class="row no-gutters">
+                <div class="col-3">
+                  <button class="key keys-1-9" id="one" onClick={this.handleClick}>1</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="two" onClick={this.handleClick}>2</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="three" onClick={this.handleClick}>3</button>
                 </div>
               </div>
 
               <div class="row no-gutters">
                 <div class="col-6">
-                  <button class="key keys-1-9" id="zero" onClick={this.handleClick}>0</button>  
+                  <button class="key keys-1-9" id="zero" onClick={this.handleClick}>0</button>
                 </div>
                 <div class="col-3">
-                  <button class="key keys-1-9" id="decimal">.</button>  
+                  <button class="key keys-1-9" id="decimal">.</button>
                 </div>
                 <div class="col-3">
-                <button class="key equals" id="equals" onClick={this.handleClick}>=</button>  
+                  <button class="key equals" id="equals" onClick={this.handleClick}>=</button>
                 </div>
               </div>
               <div class="col-3">
-                
+
 
               </div>
 
