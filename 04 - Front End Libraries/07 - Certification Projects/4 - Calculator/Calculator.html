@@ -97,15 +97,28 @@
         this.state = {
           result: 0
         }
+        this.handleClick = this.handleClick.bind(this);
+        this.updateDisplay = this.updateDisplay.bind(this);
+      }
+      handleClick(event){
+        switch (event.target.id) {
+          case 'clear': this.updateDisplay();
+        }
+
+                
+      }
+      updateDisplay(){
+        this.setState({result:0})
+        console.log("Display is updated")
       }
       render() {
         return (
           <div className="calculator container">
-            <div id="display">2+2=5</div>
+            <div id="display">{this.state.result}</div>
             <div class="container-fluid">
               <div class="row no-gutters calculator-row" >
                 <div class="col-md-6" >
-                  <button class="key" id="clear">AC</button>
+                  <button class="key" id="clear" onClick={this.handleClick}>AC</button>
                 </div>
                 <div class="col-md-3">
                   <button class="key operation" id="divide">/</button>
