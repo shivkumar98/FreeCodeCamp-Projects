@@ -22,20 +22,14 @@
     padding: 1px;
   }
 
-  #display:first-of-type {
+  #display {
     background-color: aliceblue;
     width: 93%;
     margin: 0 auto;
     height: 13%;
   }
 
-  #display:nth-of-type(2) {
-    background-color: aliceblue;
-    width: 93%;
-    margin: -40px auto;
-    height: 13%;
-    
-  }
+
 
   html, body {
     background-color: #C2C2D6;
@@ -128,13 +122,14 @@
         switch(input){
           case 'clear': this.setState({
             result: 0,
-            input: ""
+            input: "0"
           }); break; // clicking on AC button
           
         }
         if (parseInt(input) >=0 && parseInt(input) <=9){
             this.setState((state)=>({
-              input: state.input + parseInt(input)
+              
+              input: state.input=="0"||state.input==null?parseInt(input):""+state.input + parseInt(input)
             }))
           }
       
@@ -144,7 +139,7 @@
       render() {
         return (
           <div className="calculator container">
-            <div id="display">{this.state.result}</div>
+            <div id="result">{this.state.result}</div>
             <br/>
             <div id="display">{this.state.input}</div>
             <div class="container-fluid">
