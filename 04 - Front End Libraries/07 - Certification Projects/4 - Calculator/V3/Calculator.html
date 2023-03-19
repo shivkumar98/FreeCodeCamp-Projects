@@ -141,6 +141,13 @@
             result: "",
             lastOperation: "-"
           }));
+        } else if (this.state.lastOperation=="="){
+          this.setState((state) => ({
+          input: state.ans+"-",
+          result: "",
+          ans: "",
+          lastOperation: "-"
+        }));
         }
       }
       multiplication(){
@@ -150,7 +157,14 @@
           result: "*",
           lastOperation: "*"
         }));
-        }
+        } else if (this.state.lastOperation=="="){
+          this.setState((state) => ({
+          input: state.ans+"*",
+          result: "",
+          ans: "",
+          lastOperation: "*"
+        }));
+        } 
       }
       division(){
         if (this.state.lastOperation=="digit" || this.state.lastOperation=="AC"){
@@ -165,7 +179,14 @@
             result: "",
             lastOperation: "/"
           }));
-        } 
+        } else if (this.state.lastOperation=="="){
+          this.setState((state) => ({
+          input: state.ans+"/",
+          result: "",
+          ans: "",
+          lastOperation: "/"
+        }));
+        }  
       }
          computeLastOperation() {
      if (this.state.lastOperation == "digit") {
