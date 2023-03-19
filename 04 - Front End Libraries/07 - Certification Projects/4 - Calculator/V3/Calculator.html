@@ -1,0 +1,242 @@
+<html>
+
+<head>
+  <title>Shiv's Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="calculator"></div>
+
+  <script type="text/babel">
+    class Calculator extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          result: "0", // Before blank
+          input: "",
+          ans: 0,
+          lastOperation: "AC"
+        }
+        this.handleClick = this.handleClick.bind(this);
+        this.updateDisplay = this.updateDisplay.bind(this);
+        this.addition = this.addition.bind(this);
+        this.subtraction = this.subtraction.bind(this);
+        this.multiplication = this.multiplication.bind(this);
+        this.computeLastOperation = this.computeLastOperation.bind(this);
+      }
+      handleClick(event) {
+        switch (event.target.id) {
+          case 'clear': this.updateDisplay('clear'); break;
+          case 'zero': this.updateDisplay('0'); break;
+          case 'one': this.updateDisplay('1'); break;
+          case 'two': this.updateDisplay('2'); break;
+          case 'three': this.updateDisplay('3'); break;
+          case 'four': this.updateDisplay('4'); break;
+          case 'five': this.updateDisplay('5'); break;
+          case 'six': this.updateDisplay('6'); break;
+          case 'seven': this.updateDisplay('7'); break;
+          case 'eight': this.updateDisplay('8'); break;
+          case 'nine': this.updateDisplay('9'); break;
+          case 'decimal': this.updateDisplay('decimal'); break;
+          case 'add': this.addition(); break;
+          case 'subtract': this.subtraction(); break;
+          case 'multiply': this.multiplication(); break;
+          case 'divide': this.division(); break;
+          case 'equals': this.computeLastOperation(); break;
+        }
+      }
+      updateDisplay(button) {
+        switch (button) {
+          case 'clear': this.setState({ // clicking on AC button
+            result: "0",
+            input: "",
+            lastOperation: "AC"
+          }); break;
+          case 'decimal': 
+          this.setState((state) => ({
+            result: state.result.includes('.')?state.result+"" :state.result  + ".",
+            input: state.input
+          }))
+
+        }
+        // USER PRESSES A DIGIT 0-9
+        if (parseInt(button) >= 0 && parseInt(button) <= 9) { // clicking on digit button
+          
+          this.setState((state) => ({
+            result: state.result=="0"?parseInt(button)+"":(""+state.result  + parseInt(button)),
+            input: state.input,
+            ans:0,
+            lastOperation: "digit"
+          }))
+        }
+      }
+      // PRESSING ADD BUTTON
+      addition() {
+        if (this.state.lastOperation=="digit"){
+          this.setState((state) => ({
+          input: state.input+state.result+"+",
+          result: "",
+          lastOperation: "+"
+        }));
+        } else if (this.state.lastOperation=="="){
+          this.setState((state) => ({
+          input: state.ans+"+",
+          result: "",
+          ans: "",
+          lastOperation: "+"
+        }));
+        }  else if (this.state.lastOperation=="AC"){
+           this.setState((state) => ({
+            result: state.result=="0"?parseInt(button)+"":(""+state.result  + parseInt(button)),
+            input: state.input,
+            ans:0,
+            lastOperation: "digit"
+          }));
+        } else if (this.state.lastOperation=="+"){
+          
+        } else if (this.state.lastOperation=="*" || this.state.lastOperation=="-" || this.state.lastOperation=="/" || this.state.lastOperation=="AC"){
+          this.setState((state) => ({
+                display: state.display,
+                result: "+",
+                ans: "",
+                lastOperation: "+"
+              }));
+        }
+        
+      }
+      subtraction(){
+        this.setState((state) => ({
+          input: state.input+state.result+"-",
+          result: "",
+          lastOperation: "-"
+        }));
+      }
+      multiplication(){
+        this.setState((state) => ({
+          input: state.input+state.result+"*",
+          result: "",
+          lastOperation: "*"
+        }));
+      }
+      division(){
+        this.setState((state) => ({
+          input: state.input+state.result+"/",
+          result: "",
+          lastOperation: "/"
+        }));
+      }
+
+      computeLastOperation() {
+     if (this.state.lastOperation == "digit") {
+              this.setState((state) => ({
+                input: state.input + state.result + "=" + eval(state.input + state.result),
+                // result: /*(eval(state.input + state.result) == undefined) ? "" :*/ eval(state.input + state.result),
+                result: eval(state.input + state.result),
+                ans: eval(state.input + state.result),
+                lastOperation: "="
+              }))
+            }
+      }
+      render() {
+        return (
+          <div className="calculator container">
+
+            <div class="displays">
+              <div id="result">INPUT: {this.state.input}</div>
+              <br />
+              <div id="display">RESULT: {this.state.result}</div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row no-gutters calculator-row" >
+                <div class="col-md-6" >
+                  <button class="key" id="clear" onClick={this.handleClick}>AC</button>
+                </div>
+                <div class="col-md-3">
+                  <button class="key operation" id="divide" onClick={this.handleClick}>/</button>
+                </div>
+                <div class="col-md-3">
+                  <button class="key operation" id="multiply" onClick={this.handleClick}>x</button>
+                </div>
+              </div>
+
+              <div class="row no-gutters">
+                <div class="col-3">
+                  <button class="key keys-1-9" id="seven" onClick={this.handleClick}>7</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="eight" onClick={this.handleClick}>8</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="nine" onClick={this.handleClick}>9</button>
+                </div>
+                <div class="col-3">
+                  <button class="key operation" id="subtract" onClick={this.handleClick}>-</button>
+                </div>
+              </div>
+
+              <div class="row no-gutters">
+                <div class="col-3">
+                  <button class="key keys-1-9" id="four" onClick={this.handleClick}>4</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="five" onClick={this.handleClick}>5</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="six" onClick={this.handleClick}>6</button>
+                </div>
+                <div class="col-3">
+                  <button class="key operation" id="add" onClick={this.handleClick}>+</button>
+                </div>
+              </div>
+
+              <div class="row no-gutters">
+                <div class="col-3">
+                  <button class="key keys-1-9" id="one" onClick={this.handleClick}>1</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="two" onClick={this.handleClick}>2</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="three" onClick={this.handleClick}>3</button>
+                </div>
+              </div>
+
+              <div class="row no-gutters">
+                <div class="col-6">
+                  <button class="key keys-1-9" id="zero" onClick={this.handleClick}>0</button>
+                </div>
+                <div class="col-3">
+                  <button class="key keys-1-9" id="decimal" onClick={this.handleClick}>.</button>
+                </div>
+                <div class="col-3">
+                  <button class="key equals" id="equals" onClick={this.handleClick}>=</button>
+                </div>
+              </div>
+              <div class="col-3">
+
+
+              </div>
+
+            </div>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<Calculator />, document.getElementById('calculator'))
+
+  </script>
+</body>
+
+</html>

@@ -26,7 +26,7 @@
           result: "",
           display: "",
           ans: 0,
-          lastOperation: ""
+          lastOperation: "clear"
         }
         this.handleClick = this.handleClick.bind(this);
         this.buttonPress = this.buttonPress.bind(this);
@@ -34,10 +34,18 @@
         this.subtraction = this.subtraction.bind(this);
         this.multiplication = this.multiplication.bind(this);
         this.equals = this.equals.bind(this);
+        this.clearScreen = this.clearScreen.bind(this);
+      }
+      clearScreen(){
+          this.setState((state) => ({
+                result: "",
+                display: "0",
+                ans: state.ans,
+                lastOperation: "clear"
+              }));
       }
       handleClick(event) {
         switch (event.target.id) {
-          case 'clear': this.buttonPress('clear'); break;
           case 'zero': this.buttonPress('0'); break;
           case 'one': this.buttonPress('1'); break;
           case 'two': this.buttonPress('2'); break;
@@ -56,19 +64,11 @@
           case 'equals': this.buttonPress('equals'); break;
         }
       }
+      
+
       buttonPress(key) {
         switch (key) {
-          case 'clear': {
-            this.setState({
-              result: "",
-              display: "0",
-              ans: 0,
-              lastOperation: "clear"
-            });
-          }
-            break;
           case 'plus': {
-            alert("plus clicked")
 
             if (this.state.lastOperation == "digit") {
               this.setState((state) => ({
@@ -84,16 +84,17 @@
                 ans: "",
                 lastOperation: "plus"
               }));
-            else if (this.state.lastOperation == "divides" || this.state.lastOperation == "times" || this.state.lastOperation == "plus")
+            else if ( this.state.lastOperation=="plus" || this.state.lastOperation == "divides" || this.state.lastOperation == "times" || this.state.lastOperation == "plus" || this.state.lastOperation=="clear")
               this.setState((state) => ({
-                result: "",
-                display: "",
+                result: state.result,
+                display: "+",
                 ans: "",
                 lastOperation: "plus"
               }));
           }
             break;
           case 'minus': {
+            alert("minus clicked")
             if (this.state.lastOperation == "digit")
               this.setState((state) => ({
                 result: state.result,
@@ -108,16 +109,17 @@
                 ans: "",
                 lastOperation: "minus"
               }));
-            else if (this.state.lastOperation == "divides" || this.state.lastOperation == "times" || this.state.lastOperation == "plus")
-              this.setState((state) => ({
-                result: "",
+            else if (this.state.lastOperation=="minus" || this.state.lastOperation == "divides" || this.state.lastOperation == "times" || this.state.lastOperation == "plus"  || this.state.lastOperation=="clear")
+            this.setState((state) => ({
+                result: state.ans,
                 display: "-",
                 ans: "",
-                lastOperation: "plus"
+                lastOperation: "minus"
               }));
           }
             break;
           case 'times': {
+            alert("times cliked")
             if (this.state.lastOperation == "digit")
               this.setState((state) => ({
                 result: state.result,
@@ -132,7 +134,7 @@
                 ans: "",
                 lastOperation: "times"
               }));
-            else if (this.state.lastOperation == "divides" || this.state.lastOperation == "times" || this.state.lastOperation == "plus")
+            else if ( this.state.lastOperation=="times" || this.state.lastOperation == "divides" || this.state.lastOperation == "times" || this.state.lastOperation == "plus"  || this.state.lastOperation=="clear")
               this.setState((state) => ({
                 result: "",
                 display: "*",
@@ -142,6 +144,7 @@
           }
             break;
           case 'divides': {
+            alert("divides clicked")
             if (this.state.lastOperation == "digit")
               this.setState((state) => ({
                 result: state.result,
@@ -156,7 +159,7 @@
                 ans: "",
                 lastOperation: "divides"
               }));
-            else if (this.state.lastOperation == "divides" || this.state.lastOperation == "times" || this.state.lastOperation == "plus")
+            else if (this.state.lastOperation == "divides" || this.state.lastOperation == "times" || this.state.lastOperation == "plus"  || this.state.lastOperation=="clear")
               this.setState((state) => ({
                 result: "",
                 display: "/",
@@ -166,6 +169,7 @@
           }
             break;
           case 'equals': {
+            alert("equals clicked")
             if (this.state.lastOperation == "digit") {
               this.setState((state) => ({
                 result: state.result + "=" + eval(state.result),
@@ -180,6 +184,7 @@
 
         if (parseInt(key) >= 0 && parseInt(key) <= 9) {
           let numberKey = parseInt(key);
+          alert(numberKey + " key pressed")
           if (this.state.lastOperation == "minus")
             this.setState((state) => ({
               result: state.result + "-" + numberKey,
@@ -208,11 +213,19 @@
               ans: 0,
               lastOperation: "digit"
             }));
-          else { // lastOperation null or empty
-            this.setState((state) => ({
+            else if (this.state.lastOperation == ""){
+              this.setState((state) => ({
               result: state.result + numberKey,
               display: "" + state.display + numberKey,
               ans: 0,
+              lastOperation: "digit"
+            }));
+            }
+          else if (this.state.lastOperation=="digit" || this.state.lastOperation=="clear") { // lastOperation null or empty
+            this.setState((state) => ({
+              result: state.result + numberKey,
+              display: "" + state.display + numberKey,
+              ans: state.result + numberKey,
               lastOperation: "digit"
             }));
           }
@@ -232,9 +245,7 @@
       }
 
       equals() {
-        console.log("equals clicked!!!")
-        console.log("result: " + this.state.result)
-        console.log("input: " + this.state.input)
+
         if (this.state.result.includes('+', '*', '/')) {
           this.setState((state) => ({
             input: state.input + state.result,
@@ -264,7 +275,7 @@
             <div class="container-fluid">
               <div class="row no-gutters calculator-row" >
                 <div class="col-md-6" >
-                  <button class="key" id="clear" onClick={this.handleClick}>AC</button>
+                  <button class="key" id="clear" onClick={this.clearScreen}>AC</button>
                 </div>
                 <div class="col-md-3">
                   <button class="key operation" id="divide" onClick={this.handleClick}>/</button>
