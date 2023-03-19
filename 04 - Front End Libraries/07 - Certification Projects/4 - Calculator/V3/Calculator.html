@@ -23,7 +23,7 @@
         super(props);
         this.state = {
           result: "0", // Before blank
-          input: "",
+          input: " ",
           ans: 0,
           lastOperation: "AC"
         }
@@ -71,13 +71,21 @@
         }
         // USER PRESSES A DIGIT 0-9
         if (parseInt(button) >= 0 && parseInt(button) <= 9) { // clicking on digit button
-          
-          this.setState((state) => ({
+          if (this.state.lastOperation=="+" || this.state.lastOperation=="AC" || this.state.lastOperation=="digit" || this.state.lastOperation=="-" || this.state.lastOperation=="/"){
+            this.setState((state) => ({
             result: state.result=="0"?parseInt(button)+"":(""+state.result  + parseInt(button)),
             input: state.input,
             ans:0,
             lastOperation: "digit"
           }))
+          } else if (this.state.lastOperation=="*"){
+            this.setState((state) => ({
+            result: state.result=="0"?parseInt(button)+"":(""+parseInt(button)),
+            input: state.input,
+            ans:0,
+            lastOperation: "digit"
+          }))
+          }
         }
       }
       // PRESSING ADD BUTTON
@@ -114,7 +122,8 @@
         }
         
       }
-      // USER ENTERS - KEY
+      // USER ENTERS MINUS KEY
+      // User stories: 5*-5 should equal -25
       subtraction(){
         if (this.state.lastOperation=="digit" || this.state.lastOperation=="AC"){
           this.setState((state) => ({
@@ -122,20 +131,28 @@
           result: "",
           lastOperation: "-"
         }));
-        } else if (this.state.lastOperation=="-" || this.state.lastOperation=="+" || this.state.lastOperation=="*" || this.state.lastOperation=="/"){
+        } else if (this.state.lastOperation=="-" || this.state.lastOperation=="+" ){
             this.setState((state) => ({
             input: state.input[state.input.length-2]+"-",
+            result: "",
+            lastOperation: "-"
+          }));
+        } else if (this.state.lastOperation=="*" || this.state.lastOperation=="/"){
+          this.setState((state) => ({
+            input: state.input+"-",
             result: "",
             lastOperation: "-"
           }));
         }
       }
       multiplication(){
-        this.setState((state) => ({
+        if (this.state.lastOperation=="digit"){
+           this.setState((state) => ({
           input: state.input+state.result+"*",
-          result: "",
+          result: "*",
           lastOperation: "*"
         }));
+        }
       }
       division(){
         this.setState((state) => ({
