@@ -114,12 +114,21 @@
         }
         
       }
+      // USER ENTERS - KEY
       subtraction(){
-        this.setState((state) => ({
+        if (this.state.lastOperation=="digit" || this.state.lastOperation=="AC"){
+          this.setState((state) => ({
           input: state.input+state.result+"-",
           result: "",
           lastOperation: "-"
         }));
+        } else if (this.state.lastOperation=="-" || this.state.lastOperation=="+" || this.state.lastOperation=="*" || this.state.lastOperation=="/"){
+            this.setState((state) => ({
+            input: state.input[state.input.length-2]+"-",
+            result: "",
+            lastOperation: "-"
+          }));
+        }
       }
       multiplication(){
         this.setState((state) => ({
@@ -152,9 +161,9 @@
           <div className="calculator container">
 
             <div class="displays">
-              <div id="result">INPUT: {this.state.input}</div>
+              <div id="result">{/*INPUT: */}{this.state.input}</div>
               <br />
-              <div id="display">RESULT: {this.state.result}</div>
+              <div id="display">{/*RESULT: */}{this.state.result}</div>
             </div>
 
             <div class="container-fluid">
