@@ -108,13 +108,11 @@
             result: state.result=="0"?parseInt(button)+"":(""+state.result  + parseInt(button)),
             input: state.input,
             ans:0,
-            lastOperation: "digit"
+            lastOperation: "+"
           }));
-        } else if (this.state.lastOperation=="+"){
-          
-        } else if (this.state.lastOperation=="*" || this.state.lastOperation=="-" || this.state.lastOperation=="/" || this.state.lastOperation=="AC"){
+        }  else if (this.state.lastOperation=="*" || this.state.lastOperation=="-" || this.state.lastOperation=="/" || this.state.lastOperation=="AC"){
           this.setState((state) => ({
-                display: state.display,
+                input: state.input.replaceAll(/[+\-*\/]+([*/+-])/g, ""),
                 result: "+",
                 ans: "",
                 lastOperation: "+"
@@ -155,14 +153,21 @@
         }
       }
       division(){
-        this.setState((state) => ({
+        if (this.state.lastOperation=="digit" || this.state.lastOperation=="AC"){
+          this.setState((state) => ({
           input: state.input+state.result+"/",
           result: "",
           lastOperation: "/"
         }));
+        } else if (this.state.lastOperation=="/" || this.state.lastOperation=="+" || this.state.lastOperation=="*" || this.state.lastOperation=="-") {
+            this.setState((state) => ({
+            input: state.input.replaceAll(/[+\-*\/]+([*/+-])/g, ""),
+            result: "",
+            lastOperation: "/"
+          }));
+        } 
       }
-
-      computeLastOperation() {
+         computeLastOperation() {
      if (this.state.lastOperation == "digit") {
               this.setState((state) => ({
                 input: state.input + state.result + "=" + eval(state.input + state.result),
