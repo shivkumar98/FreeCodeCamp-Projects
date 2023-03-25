@@ -49,7 +49,7 @@
         this.setState((state)=>({
           running: state.running,
           sessionLength: state.sessionLength,
-          breakLength: state.breakLength==0?0:(state.breakLength-1),
+          breakLength: state.breakLength==1?1:(state.breakLength-1),
           timeLeft: state.timeLeft
         }))
       }
@@ -64,9 +64,9 @@
       decrementSession(){
         this.setState((state)=>({
           running: state.running,
-          sessionLength: state.sessionLength==0?0:(state.sessionLength-1),
+          sessionLength: state.sessionLength==1?1:(state.sessionLength-1),
           breakLength: state.breakLength,
-          timeLeft: state.sessionLength==0?0:(state.sessionLength-1)
+          timeLeft: state.sessionLength==1?1:(state.sessionLength-1)
         }))
       }
       incrementSession(){
