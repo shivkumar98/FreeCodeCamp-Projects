@@ -28,9 +28,54 @@
         this.state = {
           running: false,
           sessionLength: 25,
-          breakLength: 5
+          breakLength: 5,
+          timeLeft: "25:00"
         }
-
+        this.reset = this.reset.bind(this);
+        this.decrementBreak = this.decrementBreak.bind(this);
+        this.incrementBreak = this.incrementBreak.bind(this);
+        this.decrementSession = this.decrementSession.bind(this);
+        this.incrementSession = this.incrementSession.bind(this);
+      }
+      reset(){
+        this.setState({
+          running: false,
+          sessionLength: 25,
+          breakLength: 5,
+          timeLeft: "25:00"
+        })
+      }
+      decrementBreak(){
+        this.setState((state)=>({
+          running: state.running,
+          sessionLength: state.sessionLength,
+          breakLength: state.breakLength==0?0:(state.breakLength-1),
+          timeLeft: state.timeLeft
+        }))
+      }
+      incrementBreak(){
+        this.setState((state) => ({
+          running: state.running,
+          sessionLength: state.sessionLength,
+          breakLength: state.breakLength==60?60:(state.breakLength+1),
+          timeLeft: state.timeLeft
+        }))
+      }
+      decrementSession(){
+        this.setState((state)=>({
+          running: state.running,
+          sessionLength: state.sessionLength==0?0:(state.sessionLength-1),
+          breakLength: state.breakLength,
+          timeLeft: state.timeLeft
+        }))
+      }
+      incrementSession(){
+        this.setState((state)=>({
+          running: state.running,
+          sessionLength: state.sessionLength==60?60:(state.sessionLength+1),
+          breakLength: state.breakLength,
+          timeLeft: state.timeLeft
+        }))
       }
       render() {
         return (
@@ -38,23 +83,23 @@
             
             <div>
               <h2 id="break-label">Break Length</h2>
-              <button id="break-decrement">Decrement</button>
-              <button id="break-increment">Increment</button>
+              <button id="break-decrement" onClick={this.decrementBreak}>Decrement</button>
+              <button id="break-increment" onClick={this.incrementBreak}>Increment</button>
               <p id="break-length">{this.state.breakLength}</p>
             </div>
             <div>
               <h2 id="session-label">Session Length</h2>
-              <button id="session-decrement">Decrement</button>
-              <button id="session-increment">Increment</button>
+              <button id="session-decrement" onClick={this.decrementSession}>Decrement</button>
+              <button id="session-increment" onClick={this.incrementSession}>Increment</button>
               <p id="session-length">{this.state.sessionLength}</p>
             </div>
             <div>
               <h2 id="timer-label">Session</h2>
-              <p id="time-left">{this.state.sessionLength}</p>
+              <p id="time-left">{this.state.timeLeft}</p>
             </div>
             <div>
               <button id="start_stop">START/STOP</button>
-              <button id="reset">RESET</button>
+              <button id="reset" onClick={this.reset}>RESET</button>
             </div>
           </div>
         )
