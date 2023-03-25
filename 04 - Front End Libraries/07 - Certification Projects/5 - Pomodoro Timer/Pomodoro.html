@@ -66,7 +66,7 @@
           running: state.running,
           sessionLength: state.sessionLength==0?0:(state.sessionLength-1),
           breakLength: state.breakLength,
-          timeLeft: state.timeLeft
+          timeLeft: state.sessionLength==0?(0+":00"):(state.sessionLength-1+":00")
         }))
       }
       incrementSession(){
@@ -74,7 +74,7 @@
           running: state.running,
           sessionLength: state.sessionLength==60?60:(state.sessionLength+1),
           breakLength: state.breakLength,
-          timeLeft: state.timeLeft
+          timeLeft: state.sessionLength==60?(60+":00"):(state.sessionLength+1+":00")
         }))
       }
       render() {
