@@ -1,0 +1,175 @@
+<html>
+
+<head>
+    <title>V2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <style>
+
+    </style>
+
+    <div id="pomodoro"></div>
+
+    <script type="text/babel">
+        let countdown;
+        class Pomodoro extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    running: false,
+                    sessionLength: 25,
+                    breakLength: 5,
+                    timeLeft: 25 * 60, // in minutes
+                    sessionOrBreak: "session"
+                }
+                this.reset = this.reset.bind(this);
+                this.decrementBreak = this.decrementBreak.bind(this);
+                this.incrementBreak = this.incrementBreak.bind(this);
+                this.decrementSession = this.decrementSession.bind(this);
+                this.incrementSession = this.incrementSession.bind(this);
+                this.stopStart = this.stopStart.bind(this);
+                this.beginSession = this.beginSession.bind(this);
+
+            }
+            reset() {
+                clearInterval(countdown)
+                this.setState({
+                    running: false,
+                    sessionLength: 25,
+                    breakLength: 5,
+                    timeLeft: 25 * 60,
+                    sessionOrBreak: "session"
+                })
+            }
+            stopStart() {
+                if (this.state.running === false) {
+                    this.setState({ running: true })
+                    countdown = setInterval(() => {
+                        this.setState(state => ({
+                            timeLeft: state.timeLeft - 1
+                        }))
+                        if (this.state.timeLeft == 0) {
+                            console.log("timer ended")
+                            clearInterval(countdown)
+                            if (this.state.sessionOrBreak == "session") {
+                                this.beginBreak()
+                            } else if (this.state.sessionOrBreak=="break"){
+                                this.beginSession();
+                            }
+
+                        }
+                    }, 1000)
+                } else { // timer is running
+                    clearInterval(countdown)
+                    this.setState({
+                        running: false
+                    })
+                }
+            }
+            beginBreak() {
+                console.log("begin break")
+                this.setState({
+                    timeLeft: this.state.breakLength * 60,
+                    sessionOrBreak: "break",
+                    running: false
+                })
+                this.stopStart()
+            }
+
+            beginSession() {
+                console.log("begin session")
+                this.setState({
+                    timeLeft: this.state.sessionLength * 60,
+                    sessionOrBreak: "session",
+                    running: false
+                })
+                this.stopStart()
+            }
+
+            decrementBreak() {
+                if (this.state.running === false) {
+                    this.setState((state) => ({
+                        running: state.running,
+                        sessionLength: state.sessionLength,
+                        breakLength: state.breakLength == 1 ? 1 : (state.breakLength - 1),
+                        timeLeft: state.timeLeft
+                    }))
+                }
+
+            }
+            incrementBreak() {
+                if (this.state.running === false) {
+                    this.setState((state) => ({
+                        running: state.running,
+                        sessionLength: state.sessionLength,
+                        breakLength: state.breakLength == 60 ? 60 : (state.breakLength + 1),
+                        timeLeft: state.timeLeft
+                    }))
+                }
+            }
+            decrementSession() {
+                if (this.state.running === false) {
+                    this.setState((state) => ({
+                        running: state.running,
+                        sessionLength: state.sessionLength == 1 ? 1 : (state.sessionLength - 1),
+                        breakLength: state.breakLength,
+                        timeLeft: state.timeLeft == (1 * 60) ? 60 : state.timeLeft - 60
+                    }))
+                }
+            }
+            incrementSession() {
+                if (this.state.running === false) {
+                    this.setState((state) => ({
+                        running: state.running,
+                        sessionLength: state.sessionLength == 60 ? 60 : (state.sessionLength + 1),
+                        breakLength: state.breakLength,
+                        timeLeft: state.timeLeft == 60 * 60 ? 60 * 60 : state.timeLeft + 60
+                    }))
+                }
+            }
+            render() {
+                return (
+                    <div>
+
+                        <div>
+                            <h2 id="break-label">Break Length</h2>
+                            <button id="break-decrement" onClick={this.decrementBreak}>Decrement</button>
+                            <button id="break-increment" onClick={this.incrementBreak}>Increment</button>
+                            <p id="break-length">{this.state.breakLength}</p>
+                        </div>
+                        <div>
+                            <h2 id="session-label">Session Length</h2>
+                            <button id="session-decrement" onClick={this.decrementSession}>Decrement</button>
+                            <button id="session-increment" onClick={this.incrementSession}>Increment</button>
+                            <p id="session-length">{this.state.sessionLength}</p>
+                        </div>
+                        <div>
+                            <h2 id="timer-label">Session</h2>
+                            <p id="time-left">{(Math.floor(this.state.timeLeft / 60) + "").padStart(2, '0') + ":" + ((this.state.timeLeft - Math.floor(this.state.timeLeft / 60) * 60) + "").padStart(2, '0')}</p>
+                        </div>
+                        <div>
+                            <button id="start_stop" onClick={this.stopStart}>START/STOP</button>
+                            <button id="reset" onClick={this.reset}>RESET</button>
+                        </div>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Pomodoro />, document.getElementById('pomodoro'));
+
+    </script>
+</body>
+
+</html>
