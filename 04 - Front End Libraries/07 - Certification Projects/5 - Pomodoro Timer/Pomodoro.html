@@ -22,6 +22,7 @@
   <div id="pomodoro"></div>
 
   <script type="text/babel">
+    let countdown;
     class Pomodoro extends React.Component {
       constructor(props) {
         super(props);
@@ -29,7 +30,7 @@
           running: false,
           sessionLength: 25,
           breakLength: 5,
-          timeLeft: 25*60 // in minutes
+          timeLeft: 25 * 60 // in minutes
         }
         this.reset = this.reset.bind(this);
         this.decrementBreak = this.decrementBreak.bind(this);
@@ -37,61 +38,74 @@
         this.decrementSession = this.decrementSession.bind(this);
         this.incrementSession = this.incrementSession.bind(this);
         this.stopStart = this.stopStart.bind(this);
+
       }
-      reset(){
+      reset() {
+        if (this.state.running===true){
+          this.stopStart()
+        }
         this.setState({
           running: false,
           sessionLength: 25,
           breakLength: 5,
-          timeLeft: 25*60
+          timeLeft: 25 * 60
         })
       }
-      stopStart(){
-        if (this.state.running==false){
-          // the timer has now started
-          this.setState({running: true});
-
-          
-        } else {
-          // the timer stops
+      stopStart() {
+        if (this.state.running === false){
+          this.setState({running:true})
+            countdown = setInterval( ()=> {
+            this.setState(state=>({
+              timeLeft: state.timeLeft-1
+            }))
+            if (this.state.timeLeft==0){
+              clearInterval(countdown)
+            }
+          }, 1000)
+        } else { // timer is running
+          clearInterval(countdown)
+          this.setState({
+            running: false
+          })
         }
       }
-      decrementBreak(){
-        this.setState((state)=>({
-          running: state.running,
-          sessionLength: state.sessionLength,
-          breakLength: state.breakLength==1?1:(state.breakLength-1),
-          timeLeft: state.timeLeft
-        }))
-      }
-      incrementBreak(){
+      
+      decrementBreak() {
         this.setState((state) => ({
           running: state.running,
           sessionLength: state.sessionLength,
-          breakLength: state.breakLength==60?60:(state.breakLength+1),
+          breakLength: state.breakLength == 1 ? 1 : (state.breakLength - 1),
           timeLeft: state.timeLeft
         }))
       }
-      decrementSession(){
-        this.setState((state)=>({
+      incrementBreak() {
+        this.setState((state) => ({
           running: state.running,
-          sessionLength: state.sessionLength==1?1:(state.sessionLength-1),
-          breakLength: state.breakLength,
-          timeLeft: state.timeLeft==(1*60)?60:state.timeLeft-60
+          sessionLength: state.sessionLength,
+          breakLength: state.breakLength == 60 ? 60 : (state.breakLength + 1),
+          timeLeft: state.timeLeft
         }))
       }
-      incrementSession(){
-        this.setState((state)=>({
+      decrementSession() {
+        this.setState((state) => ({
           running: state.running,
-          sessionLength: state.sessionLength==60?60:(state.sessionLength+1),
+          sessionLength: state.sessionLength == 1 ? 1 : (state.sessionLength - 1),
           breakLength: state.breakLength,
-          timeLeft: state.timeLeft==60*60?60*60:state.timeLeft+60
+          timeLeft: state.timeLeft == (1 * 60) ? 60 : state.timeLeft - 60
+        }))
+      }
+      incrementSession() {
+        this.setState((state) => ({
+          running: state.running,
+          sessionLength: state.sessionLength == 60 ? 60 : (state.sessionLength + 1),
+          breakLength: state.breakLength,
+          timeLeft: state.timeLeft == 60 * 60 ? 60 * 60 : state.timeLeft + 60
         }))
       }
       render() {
         return (
           <div>
-            
+
             <div>
               <h2 id="break-label">Break Length</h2>
               <button id="break-decrement" onClick={this.decrementBreak}>Decrement</button>
@@ -106,7 +120,7 @@
             </div>
             <div>
               <h2 id="timer-label">Session</h2>
-              <p id="time-left">{(Math.floor(this.state.timeLeft / 60)+"").padStart(2, '0') + ":"+  ((this.state.timeLeft - Math.floor(this.state.timeLeft / 60) * 60)+"").padStart(2, '0')}</p>
+              <p id="time-left">{(Math.floor(this.state.timeLeft / 60) + "").padStart(2, '0') + ":" + ((this.state.timeLeft - Math.floor(this.state.timeLeft / 60) * 60) + "").padStart(2, '0')}</p>
             </div>
             <div>
               <button id="start_stop" onClick={this.stopStart}>START/STOP</button>
