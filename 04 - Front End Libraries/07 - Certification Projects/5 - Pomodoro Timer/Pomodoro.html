@@ -29,7 +29,7 @@
           running: false,
           sessionLength: 25,
           breakLength: 5,
-          timeLeft: "25:00"
+          timeLeft: 25
         }
         this.reset = this.reset.bind(this);
         this.decrementBreak = this.decrementBreak.bind(this);
@@ -42,7 +42,7 @@
           running: false,
           sessionLength: 25,
           breakLength: 5,
-          timeLeft: "25:00"
+          timeLeft: 25
         })
       }
       decrementBreak(){
@@ -66,7 +66,7 @@
           running: state.running,
           sessionLength: state.sessionLength==0?0:(state.sessionLength-1),
           breakLength: state.breakLength,
-          timeLeft: state.sessionLength==0?(0+":00"):(state.sessionLength-1+":00")
+          timeLeft: state.sessionLength==0?0:(state.sessionLength-1)
         }))
       }
       incrementSession(){
@@ -74,7 +74,7 @@
           running: state.running,
           sessionLength: state.sessionLength==60?60:(state.sessionLength+1),
           breakLength: state.breakLength,
-          timeLeft: state.sessionLength==60?(60+":00"):(state.sessionLength+1+":00")
+          timeLeft: state.sessionLength==60?(60):(state.sessionLength+1)
         }))
       }
       render() {
@@ -95,7 +95,7 @@
             </div>
             <div>
               <h2 id="timer-label">Session</h2>
-              <p id="time-left">{this.state.timeLeft}</p>
+              <p id="time-left">{this.state.timeLeft<=9?("0"+this.state.timeLeft+":00"):(this.state.timeLeft+":00")}</p>
             </div>
             <div>
               <button id="start_stop">START/STOP</button>
