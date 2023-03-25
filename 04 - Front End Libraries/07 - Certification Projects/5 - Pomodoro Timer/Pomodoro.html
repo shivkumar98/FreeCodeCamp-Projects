@@ -29,21 +29,32 @@
           running: false,
           sessionLength: 25,
           breakLength: 5,
-          timeLeft: 25
+          timeLeft: 25*60 // in minutes
         }
         this.reset = this.reset.bind(this);
         this.decrementBreak = this.decrementBreak.bind(this);
         this.incrementBreak = this.incrementBreak.bind(this);
         this.decrementSession = this.decrementSession.bind(this);
         this.incrementSession = this.incrementSession.bind(this);
+        this.stopStart = this.stopStart.bind(this);
       }
       reset(){
         this.setState({
           running: false,
           sessionLength: 25,
           breakLength: 5,
-          timeLeft: 25
+          timeLeft: 25*60
         })
+      }
+      stopStart(){
+        if (this.state.running==false){
+          // the timer has now started
+          this.setState({running: true});
+
+          
+        } else {
+          // the timer stops
+        }
       }
       decrementBreak(){
         this.setState((state)=>({
@@ -66,7 +77,7 @@
           running: state.running,
           sessionLength: state.sessionLength==1?1:(state.sessionLength-1),
           breakLength: state.breakLength,
-          timeLeft: state.sessionLength==1?1:(state.sessionLength-1)
+          timeLeft: state.timeLeft==(1*60)?60:state.timeLeft-60
         }))
       }
       incrementSession(){
@@ -74,7 +85,7 @@
           running: state.running,
           sessionLength: state.sessionLength==60?60:(state.sessionLength+1),
           breakLength: state.breakLength,
-          timeLeft: state.sessionLength==60?(60):(state.sessionLength+1)
+          timeLeft: state.timeLeft==60*60?60*60:state.timeLeft+60
         }))
       }
       render() {
@@ -95,10 +106,10 @@
             </div>
             <div>
               <h2 id="timer-label">Session</h2>
-              <p id="time-left">{this.state.timeLeft<=9?("0"+this.state.timeLeft+":00"):(this.state.timeLeft+":00")}</p>
+              <p id="time-left">{(Math.floor(this.state.timeLeft / 60)+"").padStart(2, '0') + ":"+  ((this.state.timeLeft - Math.floor(this.state.timeLeft / 60) * 60)+"").padStart(2, '0')}</p>
             </div>
             <div>
-              <button id="start_stop">START/STOP</button>
+              <button id="start_stop" onClick={this.stopStart}>START/STOP</button>
               <button id="reset" onClick={this.reset}>RESET</button>
             </div>
           </div>
