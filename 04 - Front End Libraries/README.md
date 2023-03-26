@@ -2,6 +2,8 @@
 
 * I started this certification on 05/01/2023
 
+* I completed the curriculum on 25/06/2023 ([**view certification here**](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/front-end-development-libraries))
+
 # Contents:
 
 ## Tutorials:
