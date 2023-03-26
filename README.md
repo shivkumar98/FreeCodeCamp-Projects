@@ -32,5 +32,8 @@ This repo contains documentation, code, solutions I curated while working throug
   &nbsp; 📍 [**View projects here**](/04%20-%20Front%20End%20Libraries)
   
   &nbsp; 📍 Started on 05/01/2022
+     
+  &nbsp; 📍 Earned [**Certification**](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/front-end-development-libraries) on 25/03/2022
+
 
 
