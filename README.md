@@ -29,7 +29,7 @@ This repo contains documentation, code, solutions I curated while working throug
 
 ## **4 - Front End Development Libraries**
 
-  &nbsp; 📍 [**View projects here**](/04%20-%20Front%20End%20Libraries)
+  &nbsp; 📍 [**View projects here**](/04%20-%20Front%20End%20Libraries) // todo: fix this link and all links in subdirectory
   
   &nbsp; 📍 Started on 05/01/2022
      
