@@ -72,6 +72,13 @@ for (let i = 0; i<array.length; i++) {
     console.log(array[i]);
 }
 ```
+* There is also an enhanced for loop:
+```js
+let rows = ["!", "!!", "!!!"];
+for (const row of rows) {
+    console.log(row +"\n");
+}
+```
 * We have a `String.repeat(int)` method which returns the string repeated n times
 ```js
 console.log("Hello ".repeat(2)); // Hello Hello
