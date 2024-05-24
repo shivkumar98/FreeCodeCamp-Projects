@@ -3,6 +3,8 @@
 
 ## 👨‍🍳 Final Product 👨‍🍳
 
+## 1 Setting up HTML
+
 * I create the boiler point of my HTML file:
 ```html
 <!DOCTYPE HTML>
@@ -48,3 +50,36 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"]
 ```
+
+* I set up the test and buttons in my HTML:
+```html
+<body>
+    <div id="game">
+        <div id="stats">
+            <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+            <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+            <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+          </div>
+          <div id="controls">
+            <button id="button1">Go to store</button>
+            <button id="button2">Go to cave</button>
+            <button id="button3">Fight dragon</button>
+          </div>
+          <div id="monsterStats"></div>
+          <div id="text"></div>
+    </div>
+</body>
+```
+![](screenshots/2024-05-24-08-25-17.png)
+
+## DOM
+* The DOM is a tree structure representation of the HTML which JavaScript can use to interact with the HTML
+* The `document` object represents the entire HTML
+* We can use `document.getQuerySelector()` to obtain an element using a CSS selector
+* I try to obtain the button element by adding the following to my script.js:
+```js
+let button1 = document.querySelector("#button1");
+console.log(button1);
+```
+* But when I run the code in the browser it logs `null`😱
+* The issue is that the JavaScript file is located in the `script` tag
