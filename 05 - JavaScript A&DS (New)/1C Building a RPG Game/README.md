@@ -3,7 +3,7 @@
 
 ## 👨‍🍳 Final Product 👨‍🍳
 
-## 1 Setting up HTML
+## Setting up HTML
 
 * I create the boiler point of my HTML file:
 ```html
@@ -82,4 +82,64 @@ let button1 = document.querySelector("#button1");
 console.log(button1);
 ```
 * But when I run the code in the browser it logs `null`😱
-* The issue is that the JavaScript file is located in the `script` tag
+* The issue is that the JavaScript file is located in the `script` tag, so the JavaScript loads before the browser has processed it!!!
+* I rectify this issue by moving the script tag to just before the `</body>` tag:
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="en">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>RPG - Dragon Repeller</title>
+    </head>
+        
+    </head>
+    <body>
+
+        <div id="game">
+            <div id="stats">
+                <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+                <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+                <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+              </div>
+              <div id="controls">
+                <button id="button1">Go to store</button>
+                <button id="button2">Go to cave</button>
+                <button id="button3">Fight dragon</button>
+              </div>
+              <div id="monsterStats"></div>
+              <div id="text"></div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
+```
+* Now running the JavaScript I see the following in the console:
+```html
+<button id="button1">Go to store</button>
+```
+* I use const instead as I will not reassign this, and get the other two buttons:
+```js
+const  button1 = document.querySelector("#button1");
+// console.log(button1); // logs: <button id="button1">Go to store</button>
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+```
+
+* I add two spans for the monster's name and health in the `#monsterStats` div:
+```html
+<div id="monsterStats">
+  <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+  <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+</div>
+```
+* I add some text to my `#text` div:
+```html
+<div id="text">Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+</div>
+```
+* My web page now looks like:
+![](2024-05-24-09-59-00.png)
+
+## Styling
