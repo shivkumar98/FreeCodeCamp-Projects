@@ -202,3 +202,50 @@ button {
 ```
 * The page now looks like:
 ![](2024-05-24-16-37-19.png)
+
+<hr>
+
+* I add constants for the other text elements:
+```js
+const text = document.querySelector("#text");
+const xpText = document.querySelector("#xpText");
+const healthText = document.querySelector("#healthText");
+const goldText = document.querySelector("#goldText");
+const monsterStats = document.querySelector("#monsterStats");
+const monsterName = document.querySelector("#monsterName");
+const monsterHealthText = document.querySelector("#monsterHealth");
+```
+* I add the following functions:
+```js
+function goStore() {
+  console.log("Going to store.");
+}
+
+function goCave() {
+  console.log("Going to cave.");
+}
+
+function fightDragon() {
+  console.log("Fighting dragon.");
+}
+```
+
+* `button1` is a button element (Go to store) - buttons have a `onclick` property
+  - Properties can bbe accessed via **DOT NOTATION**
+* I set the onclick property of button1 to the function `goStore`
+```js
+// initialising buttons:
+button1.onclick = goStore;
+```
+* Clicking on the button in browser now logs `Going to store`💡
+* Note: you cannot use `goStore()` on the RHS:
+```js
+button.onclick = goStore(); // ⚠️ does not work!!
+```
+* I now set button2 and button3:
+```js
+button2.onclick = goCave;
+button3.onclick = fightDragon;
+```
+
+* Using the `querySelector()` method returns the entire HTML element:

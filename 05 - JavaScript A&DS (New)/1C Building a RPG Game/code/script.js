@@ -6,7 +6,32 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"]
 
-const  button1 = document.querySelector("#button1");
-// console.log(button1); // logs: <button id="button1">Go to store</button>
+const button1 = document.querySelector("#button1");
+console.log(button1); // <button id="button1">
+console.log(button1.innerText); // Go to store
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
+const text = document.querySelector("#text");
+const xpText = document.querySelector("#xpText");
+const healthText = document.querySelector("#healthText");
+const goldText = document.querySelector("#goldText");
+const monsterStats = document.querySelector("#monsterStats");
+const monsterName = document.querySelector("#monsterName");
+const monsterHealthText = document.querySelector("#monsterHealth");
+
+// initialising buttons:
+button1.onclick = goStore;
+button2.onclick = goCave;
+button3.onclick = fightDragon;
+
+function goStore() {
+    console.log("Going to store.");
+}
+  
+function goCave() {
+    console.log("Going to cave.");
+}
+  
+function fightDragon() {
+    console.log("Fighting dragon.");
+}
