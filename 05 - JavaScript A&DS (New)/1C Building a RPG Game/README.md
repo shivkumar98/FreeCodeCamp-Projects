@@ -3,7 +3,7 @@
 
 ## 👨‍🍳 Final Product 👨‍🍳
 
-## Setting up HTML
+## 🟥 Setting up HTML
 
 * I create the boiler point of my HTML file:
 ```html
@@ -72,7 +72,10 @@ let inventory = ["stick"]
 ```
 ![](screenshots/2024-05-24-08-25-17.png)
 
-## DOM
+<hr>
+
+## 🟥 DOM
+
 * The DOM is a tree structure representation of the HTML which JavaScript can use to interact with the HTML
 * The `document` object represents the entire HTML
 * We can use `document.getQuerySelector()` to obtain an element using a CSS selector
@@ -206,7 +209,7 @@ button {
 
 <hr>
 
-## Using onclick Event
+## 🟥 Using onclick Event
 
 * I add constants for the other text elements:
 ```js
@@ -301,3 +304,131 @@ function goTown() {
   text.innerText = "You are in the town square. You see a sign that says \"Store\".";
 }
 ```
+
+<hr>
+
+## 🟥 Using Objects
+* There are 7 primitive types in JavaScript:
+  - Number
+  - BigInt
+  - String
+  - Boolean
+  - Null
+  - Undefined
+  - Symbol
+* Objects are non-primitive data types which **STORE KEY-VALUE PAIRS**
+* The syntax of an object is:
+```js 
+{
+  key: value
+}
+```
+* Objects are like arrays but you can also access and modify data using **PROPERTIES**
+* E.g.:
+```js
+const cat = {
+  name: "Whiskers"
+}
+console.log(cat); // Object { name: "Whiskers" }
+```
+* To add multiple properties, they **MUST be seperated by commas**;
+```js
+const multipleProperties = {
+  property1: 1,
+  "property2": 3
+};
+```
+* If I want to declare a property with whitespace, then it **MUST BE WRAPPED WITH QUOTES**
+```js
+const cat = {
+  name: "Whiskers",
+  "Number of legs": 4
+}
+```
+* You can access properties via **DOT NOTATION OR BRACKET NOTATION**:
+```js
+const obj = {
+  property1: "Hello world",
+  "property2": "My name is Shiv",
+  "property with whitespace": 64
+}
+obj.property1; // "Hello World"
+obj."property2"; // COMPILER ERROR
+obj.property2; // "My name is Shiv"
+// you access a property with white space with bracket notation:
+obj["property with whitespace"]; // 64
+obj["property1"]; // "Hello world"
+```
+
+## 🟥 Refactoring goTown() and goStore()
+* There's alot of duplication with the `goStore()` and `goTown()` functions:
+```js
+function goTown() {
+  button1.innerText = "Go to store";
+  button2.innerText = "Go to cave";
+  button3.innerText = "Fight dragon";
+  button1.onclick = goStore;
+  button2.onclick = goCave;
+  button3.onclick = fightDragon;
+  text.innerText = "You are in the town square. You see a sign that says \"Store\".";
+}
+  
+function goStore() {
+  button1.innerText = "Buy 10 health (10 gold)";
+  button2.innerText = "Buy weapon (30 gold)"
+  button3.innerText = "Go to town square"
+  button1.onclick = buyHealth;
+  button2.onclick = buyWeapon;
+  button3.onclick = goTown;
+  console.log(text.innerText)
+  text.innerText =  "You enter the store.";
+}
+```
+* I create a `locations` array with objects to store the above information:
+```js
+const locations = [
+  {
+    name: "town square",
+    "button text": ["Go to store", "Go to cave", "Fight dragon"],
+    "button functions": [goStore, goCave, fightDragon],
+    text: "You are in the town square. You see a sign that says \"Store\"."
+  },
+  {
+    name: "store",
+    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+    "button functions": [buyHealth, buyWeapon, goTown],
+    text: "You enter the store."
+  }
+];
+```
+* I create a new function called `update()` and move the body of `goTown()` into the update function:
+
+```js
+function update(location) {
+  button1.innerText = "Go to store";
+  button2.innerText = "Go to cave";
+  button3.innerText = "Fight dragon";
+  button1.onclick = goStore;
+  button2.onclick = goCave;
+  button3.onclick = fightDragon;
+  text.innerText = "You are in the town square. You see a sign that says \"Store\".";
+}
+
+function goTown() {
+  update(locations[0]);
+}
+```
+* I then update the `update()` function to set the innerTexts and onclick events using data from `locations`:
+```js
+function update(location) {
+  button1.innerText = location["button text"][0];
+  button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+  button1.onclick = location["button functions"][0];
+  button2.onclick = location["button functions"][1];
+  button3.onclick = location["button functions"][2];
+  text.innerText = location.text
+}
+```
+
+* I
