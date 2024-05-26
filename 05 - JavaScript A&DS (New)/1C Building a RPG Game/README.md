@@ -140,7 +140,8 @@ const button3 = document.querySelector("#button3");
 </div>
 ```
 * My web page now looks like:
-![](2024-05-24-09-59-00.png)
+
+![](screenshots/2024-05-24-09-59-00.png)
 
 ## Styling
 * I start adding styling to the css:
@@ -201,9 +202,11 @@ button {
 }
 ```
 * The page now looks like:
-![](2024-05-24-16-37-19.png)
+![](screenshots/2024-05-24-16-37-19.png)
 
 <hr>
+
+## Using onclick Event
 
 * I add constants for the other text elements:
 ```js
@@ -248,4 +251,53 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 ```
 
-* Using the `querySelector()` method returns the entire HTML element:
+* Using the `querySelector()` method returns the entire HTML element, we can obtain the text by using the `innerText` property 💡
+```js
+const button1 = document.querySelector("#button1");
+console.log(button1); // <button id="button1">
+console.log(button1.innerText); // Go to store
+```
+
+* I update the `goStore()` function so it updates:
+  - the text of button1 to "Buy 10 health (10 gold)"
+  - the text of button2 to "Buy weapon (30 gold)"
+  - the text of button3 to "Go to town square"
+```js
+function goStore() {
+  button1.innerText = "Buy 10 health (10 gold)";
+  button2.innerText = "Buy weapon (30 gold)"
+  button3.innerText = "Go to town square"
+}
+```
+* I also update the text of the #text div, and assign new functions on the button's onclick event:
+```js
+function goStore() {
+  button1.innerText = "Buy 10 health (10 gold)";
+  button2.innerText = "Buy weapon (30 gold)"
+  button3.innerText = "Go to town square"
+  button1.onclick = buyHealth;
+  button2.onclick = buyWeapon;
+  button3.onclick = goTown;
+  text.innerText =  "You enter the store.";
+}
+
+function buyHealth() {}
+function buyWeapon() {}
+function goTown() {}
+```
+
+* Clicking on the `Go to store` button in browser:
+![](screenshots/step-40.gif)
+
+* I implement the goTown() function:
+```js
+function goTown() {
+  button1.innerText = "Go to store";
+  button2.innerText = "Go to cave";
+  button3.innerText = "Fight dragon";
+  button1.onclick = goStore;
+  button2.onclick = goCave;
+  button3.onclick = fightDragon;
+  text.innerText = "You are in the town square. You see a sign that says \"Store\".";
+}
+```
