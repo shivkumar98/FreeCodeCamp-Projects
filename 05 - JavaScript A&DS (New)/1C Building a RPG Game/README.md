@@ -781,3 +781,13 @@ function goFight() {
   monsterName.innerText = monsters[fighting].name;
 }
 ```
+
+* I implement the `attack()` method, which reduces the player's health by the monster's power, and reduces monster's health by the power of player's weapon:
+```js
+function attack() {
+  text.innerText = "The "+ monsters[fighting].name+" attacks.";
+  text.innerText += " You attack it with your "+ weapons[currentWeapon].name+".";
+  health -= monsters[fighting].level;
+  monsterHealth -= weapons[currentWeapon].power;
+}
+```
