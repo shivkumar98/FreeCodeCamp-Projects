@@ -841,3 +841,92 @@ function defeatMonster() {
   xpText.innerText = xp;
 }
 ```
+* I create a new location in the locations variable:
+```js
+const locations = [
+  {
+    name: "town square",
+    "button text": ["Go to store", "Go to cave", "Fight dragon"],
+    "button functions": [goStore, goCave, fightDragon],
+    text: "You are in the town square. You see a sign that says \"Store\"."
+  },
+  {
+    name: "store",
+    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+    "button functions": [buyHealth, buyWeapon, goTown],
+    text: "You enter the store."
+  },
+  {
+    name: "cave",
+    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
+    "button functions": [fightSlime, fightBeast, goTown],
+    text: "You enter the cave. You see some monsters."
+  },
+  {
+    name: "fight",
+    "button text": ["Attack", "Dodge", "Run"],
+    "button functions": [attack, dodge, goTown],
+    text: "You are fighting a monster."
+  },
+  {
+    name: "kill monster",
+    "button text": ["Go to town square", "Go to town square", "Go to town square"],
+    "button functions": [goTown, goTown, goTown],
+    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+  }
+];
+```
+* I update the defeatMonster method:
+```js
+function defeatMonster() {
+  gold += Math.floor(monsters[fighting].level * 6.7);
+  xp += monsters[fighting].level;
+  goldText.innerText = gold;
+  xpText.innerText = xp;
+  update(locations[4])
+}
+```
+* I now need to hide the monster stats window
+```js
+function update(location) {
+  monsterStats.style.display = "none";
+  button1.innerText = location["button text"][0];
+  button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+  button1.onclick = location["button functions"][0];
+  button2.onclick = location["button functions"][1];
+  button3.onclick = location["button functions"][2];
+  text.innerText = location.text;
+}
+```
+* I implement the lose method, the 6th location is to be specified:
+```js
+function lose() {
+  update(locations[5]);
+}
+```
+
+* I create the restart() function:
+```js
+function restart() {
+  xp = 0;
+  health = 100;
+  gold = 50;
+  currentWeapon = 0;
+  inventory = ["stick"];
+  goldText.innerText = gold;
+  healthText.innerText = health;
+  xpText.innerText = xp;
+  goTown();
+}
+```
+
+* I add the 6th location:
+```js
+{
+  name: "lose",
+  "button text": ["REPLAY?","REPLAY?","REPLAY?"],
+  "button functions": [restart, restart, restart],
+  text: "You die. &#x2620;"
+}
+```
