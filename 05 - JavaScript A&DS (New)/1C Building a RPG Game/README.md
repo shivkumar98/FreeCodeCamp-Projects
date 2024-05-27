@@ -146,7 +146,7 @@ const button3 = document.querySelector("#button3");
 
 ![](screenshots/2024-05-24-09-59-00.png)
 
-## Styling
+## 🟥 Styling
 * I start adding styling to the css:
 ```css
 body {
@@ -559,6 +559,7 @@ function buyWeapon() {
 let xp = 0;
 let health = 100;
 let gold = 50;
+let currentWeapon = 0;
 let fighting;
 let monster;
 let inventory = ["stick"];
@@ -671,4 +672,31 @@ function fightBeast() {}
 
 * And here is the behavior when we initialise the `gold` with 250:
 ![](screenshots/step-100.gif)
-## Selling Weapons
+
+## 🟥 Selling Weapons
+* When the player has the most powerful weapon (sword), they will have the ability to sell their old weapons:
+```js
+function sellWeapon() {
+  if (inventory.length > 1) {
+    gold += 15;
+    goldText.innerText = gold;
+  }
+}
+```
+* I need to add a `currentWeapon` variable, but there is already one declared globally! 😱
+* If we declare this variable in the function, it will only be scoped within the function:
+```js
+function sellWeapon() {
+  if (inventory.length > 1) {
+    gold += 15;
+    goldText.innerText = gold;
+    let currentWeapon = inventory.shift();
+    text.innerText = "You sold a "+currentWeapon+".";
+    tex.innerText+=" In your inventory you have: "+ inventory;
+  } else {
+    text.innerText = "Don't sell your only weapon";
+  }
+}
+```
+
+## Monsters
