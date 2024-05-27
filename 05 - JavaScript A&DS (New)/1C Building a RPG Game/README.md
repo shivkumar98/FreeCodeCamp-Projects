@@ -791,3 +791,53 @@ function attack() {
   monsterHealth -= weapons[currentWeapon].power;
 }
 ```
+
+## Math.random()
+
+* The `Math` object has a static `.random()` method which generates a random number between 0 (inclusive) and 1 (exclusive)
+* To generate a random number between 1 and 5, we need to use the `Math.floor()` function:
+```js
+Math.floor(Math.ranom()*5) + 1;
+```
+* I update the attack function such that damage is increased by a number between 1 and player's XP:
+```js
+function attack() {
+  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  health -= monsters[fighting].level;
+  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random()*xp) + 1;
+  // updating health and monster health text:
+  healthText.innerText = health;
+  monsterHealthText.innerText = monsterHealth;
+  if (health <= 0) {
+    lose();
+  } else if (monsterHealth <= 0) {
+    defeatMonster();
+  }
+}
+function lose() {}
+function defeatMonster() {}
+```
+
+* I implement the `dodge()` function:
+```js
+function dodge() {
+    text.innerText = "You dodge the attack from the "+monsters[fighting].name;
+}
+```
+* I implement the `defeatMonster()` function such that gold is incremented by monster's level times 6.7, and xp is incremented by monster's level:
+```js
+function defeatMonster() {
+  gold += Math.floor(monsters[fighting].level * 6.7); 
+  xp += monsters[fighting].level;
+}
+```
+* I then also update the gold and xp text:
+```js
+function defeatMonster() {
+  gold += Math.floor(monsters[fighting].level * 6.7);
+  xp += monsters[fighting].level;
+  goldText.innerText = gold;
+  xpText.innerText = xp;
+}
+```

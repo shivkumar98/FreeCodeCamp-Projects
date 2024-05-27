@@ -139,14 +139,33 @@ function sellWeapon() {
         text.innerText = "Don't sell your only weapon";
     }
 }
+
 function attack() {
-    text.innerText = "The "+ monsters[fighting].name+" attacks.";
-    text.innerText += " You attack it with your "+ weapons[currentWeapon].name+".";
+    text.innerText = "The " + monsters[fighting].name + " attacks.";
+    text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
     health -= monsters[fighting].level;
-    monsterHealth -= weapons[currentWeapon].power;
-  }
-  
-function dodge() {}
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random()*xp) + 1;
+    // updating health and monster health text:
+    healthText.innerText = health;
+    monsterHealthText.innerText = monsterHealth;
+    if (health <= 0) {
+        lose();
+    } else if (monsterHealth <= 0) {
+        defeatMonster();
+    }
+}
+
+function lose() {}
+function defeatMonster() {
+    gold += Math.floor(monsters[fighting].level * 6.7);
+    xp += monsters[fighting].level;
+    goldText.innerText = gold;
+    xpText.innerText = xp;
+}
+
+function dodge() {
+    text.innerText = "You dodge the attack from the "+monsters[fighting].name;
+}
 
 function goFight() {
     update(locations[3]);
