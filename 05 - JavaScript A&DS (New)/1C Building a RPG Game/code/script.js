@@ -146,7 +146,9 @@ function dodge() {}
 function goFight() {
     update(locations[3]);
     monsterHealth = monsters[fighting].health;
-    monsterStats.style.display = "block"
+    monsterStats.style.display = "block";
+    monsterHealthText.innerText = monsters[fighting].health;
+    monsterName.innerText = monsters[fighting].name;
 }
 
 function fightSlime() {

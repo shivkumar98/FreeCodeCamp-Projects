@@ -763,4 +763,21 @@ function goFight() {
 }
 ```
 
-* Currently the monster stats window does not show
+* Currently the monster stats window does not show, so i set the display to "block" (displays element like a block element like `<p`>):
+```js
+function goFight() {
+  updation(locations[3]);
+  monsterHealth = monster[fighting].health;
+  monsterStats.style.display = "block";
+}
+```
+* I also update the name and health of the monsters stats:
+```js
+function goFight() {
+  update(locations[3]);
+  monsterHealth = monsters[fighting].health;
+  monsterStats.style.display = "block";
+  monsterHealthText.innerText = monsters[fighting].health;
+  monsterName.innerText = monsters[fighting].name;
+}
+```
