@@ -499,3 +499,48 @@ const weapons = [
   }
 ];
 ```
+* I now implement the `buyWeapon()` function so that gold is reduced, and the `currentWeapon` index is incremented. I then also update the #gold text and #text:
+```js
+function buyWeapon() {
+    if (gold >= 30) {
+        gold -= 30;
+        currentWeapon++;
+        goldText.innerText = gold;
+        text.innerText = "You now have a new weapon."
+    }
+}
+```
+* I then update the function so that it adds the weapon to the inventory and prints a message of what's in your inventory:
+```js
+function buyWeapon() {
+  if (gold >= 30) {
+    gold -= 30;
+    currentWeapon++;
+    goldText.innerText = gold;
+    let newWeapon = weapons[currentWeapon].name;
+    text.innerText = "You now have a " + newWeapon + ".";
+    inventory.push(newWeapon);
+    text.innerText += " In your inventory you have: "+inventory;
+  } else {
+    text.innerText = "You do not have enough gold to buy a weapon.";
+  }
+}
+```
+* I finally add an enclosing check so that the currentWeapon index is less than the weapons size:
+```js
+function buyWeapon() {
+  if (currentWeapon < weapons.length) {
+    if (gold >= 30) {
+      gold -= 30;
+      currentWeapon++;
+      goldText.innerText = gold;
+      let newWeapon = weapons[currentWeapon].name;
+      text.innerText = "You now have a " + newWeapon + ".";
+      inventory.push(newWeapon);
+      text.innerText += " In your inventory you have: " + inventory;
+    } else {
+      text.innerText = "You do not have enough gold to buy a weapon.";
+    }
+  }
+}
+```
