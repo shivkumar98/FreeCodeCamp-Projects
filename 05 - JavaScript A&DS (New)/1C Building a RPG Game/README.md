@@ -1032,3 +1032,27 @@ function getMonsterAttackValue(level) {
   return hit > 0 ? hit : 0;
 }
 ```
+
+## 🟥 Adding Randomness to Whether Monster Hits
+* I update `attack()` function so that monster's health is only reduced if `isMonsterHit()` returns true:
+```js
+function attack() {
+  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  text.innerText += " You attack it with your " + weapons[currentWeaponIndex].name + ".";
+  health -= getMonsterAttackValue(monsters[fighting].level);
+  if (isMonsterHit()) {
+    monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;    
+  } else {
+    text.innerText += " You miss.";
+  }
+  /*
+  ... rest of code
+  */
+}
+```
+* I define the `isMonsterHit()` function to return true if Math.random > 0.2 (80% probability) OR when player's health is less than 20:
+```js
+function isMonsterHit() {
+  return Math.random() > .2 || health < 20;
+}
+```
