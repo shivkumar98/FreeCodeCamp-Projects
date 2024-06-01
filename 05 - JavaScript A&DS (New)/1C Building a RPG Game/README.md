@@ -792,7 +792,7 @@ function attack() {
 }
 ```
 
-## Math.random()
+## 🟥 Math.random()
 
 * The `Math` object has a static `.random()` method which generates a random number between 0 (inclusive) and 1 (exclusive)
 * To generate a random number between 1 and 5, we need to use the `Math.floor()` function:
@@ -959,7 +959,7 @@ function winGame() {
 }
 ```
 
-## Using innerHTML
+## 🟥 Using innerHTML
 
 * `&#x2620;` is HTML and it needs to be rendered as HTML
 * We use `innerHTML` to set the HTML of the page
@@ -998,5 +998,28 @@ function winGame() {
   "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
   "button functions": [restart, restart, restart],
   text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;"
+}
+```
+## 🟥 Improving Monster Attack
+
+* The game is now finished in terms of features. 
+* We shall improve the monster's attack value by making it depend on xp as well as level
+* I update the `attack()` function to:
+```js
+function attack() {
+  text.innerText = "The "+monsters[fighting].name+" attacks.";
+  text.innerText += " You attack it with your "+ weapons[currentWeaponIndex].name + " attacks.";
+  health -= getMonsterAttackValue(monsters[fighting].level);
+  /*
+  ... rest of code
+  */
+}
+```
+* I define the `getMonsterAttackValue()`:
+```js
+function getMonsterAttackValue(level) {
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
+  console.log(hit);
+  return hit;
 }
 ```
