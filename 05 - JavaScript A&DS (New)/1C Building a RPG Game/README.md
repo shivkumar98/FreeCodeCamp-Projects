@@ -469,7 +469,7 @@ function fightSlime() {}
 function fightBeast() {}
 ```
 
-## Implementing buyHealth
+## 🟥 Implementing buyHealth
 
 * The "store" and "cave" locations are complete. I now need to code player actions!
 * I implemment a `buyHealth()` method which reduces gold and increases health, then updates the #stats window:
@@ -486,7 +486,7 @@ function buyHealth() {
 }
 ```
 
-## Implementing buyWeapon()
+## 🟥 Implementing buyWeapon()
 
 * I create weapons array:
 ```js
@@ -932,7 +932,6 @@ function restart() {
 ```
 * Currently, when I lose the fight I see the following:
 
-![](screenshots\2024-06-01-11-26-21.png)
 ![](screenshots/2024-06-01-11-26-21.png)
 
 * I update the `attack()` function such that it calls a `winGame()` function if the you have defeated the dragon:
@@ -1084,3 +1083,57 @@ function attack() {
   }
 }
 ```
+
+## 🟥 Easter Egg
+* I add an easter egg to the RPG which lets the user to guess either 2 or 8 being present in a random numberes array🐣
+* If they guess successfully, the get extra gold; otherwise they lose health!
+* I start withh creating my `easterEgg()` function:
+```js
+function easterEgg() {
+  update(locations[7]);
+}
+```
+* I add a new location:
+```js
+{
+  name: "easter egg",
+  "button text": ["2", "8", "Go to town square?"],
+  "button functions": [pickTwo, pickEight, goTown],
+  text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
+}
+```
+* I add this `easterEgg()` function to the `kill monster` location:
+```js
+{
+  name: "kill monster",
+  "button text": ["Go to town square", "Go to town square", "Go to town square"],
+  "button functions": [goTown, goTown, easterEgg],
+  text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+}
+```
+
+* I define the `pickTwo()` and `pickEight()` as:
+```js
+function pickTwo() {
+  pick(2);
+}
+function pickEight() {
+  pick(8);
+}
+```
+* I implement the `pick(guess)` function as:
+```js
+function pick(guess) {
+  const numbers = [];
+  while (numbers.length < 10) {
+    // add random number between 0 and 10:
+    numbers.push(Math.floor(Math.random()*11));
+  }
+  text.innerText = "You picked "+guess+". Here are the random numbers:";
+  for (let i = 0; i < 10; i++) {
+    text.innerText += numbers[i] + "\n"
+  }
+}
+```
+* Playing the easter egg shows the following for example:
+![](screenshots/2024-06-01-15-31-41.png)
