@@ -162,6 +162,9 @@ function sellWeapon() {
 
 function attack() {
     text.innerText = "The " + monsters[fighting].name + " attacks.";
+    console.log("weapons: "+weapons)
+    console.log("currentWeapon"+ currentWeapon);
+    console.log("currentWeapn[index]"+weapons[currentWeapon])
     text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
     health -= getMonsterAttackValue(monsters[fighting].level);
     if (isMonsterHit()) {
@@ -180,6 +183,10 @@ function attack() {
       } else {
          defeatMonster();
       }
+    }
+    if (Math.random() <= .1 && inventory.length !==1) {
+        text.innerText += " Your "+ inventory.pop() + " breaks.";
+        currentWeapon--;
     }
   }
 
@@ -238,7 +245,7 @@ function restart() {
     xp = 0;
     health = 100;
     gold = 50;
-    currentWeaponIndex = 0;
+    currentWeapon = 0;
     inventory = ["stick"];
     goldText.innerText = gold;
     healthText.innerText = health;

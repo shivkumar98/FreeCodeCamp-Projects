@@ -1056,3 +1056,30 @@ function isMonsterHit() {
   return Math.random() > .2 || health < 20;
 }
 ```
+
+## 🟥 Weapon Breaking
+* On attack, there's a chance of weapon breaking so I add block of code at the end of the `attack()` function:
+```js
+function attack() {
+  /*
+  ... beginning of attack function
+  */
+  if (Math.random() <= .1) {
+    text.innerText += " Your "+ inventory.pop() + " breaks.";
+    currentWeapon--;
+  }
+}
+```
+* Currently the code breaks when they only have one weapon and it breaks!
+* I update the condition so that the weapon can NOT break if they only have one in inventory:
+```js
+function attack() {
+  /*
+  ... beginning of attack function
+  */
+  if (Math.random() <= .1 && inventory.length !==1) {
+    text.innerText += " Your " + inventory.pop() + " breaks.";
+    currentWeaponIndex--;
+  }
+}
+```
