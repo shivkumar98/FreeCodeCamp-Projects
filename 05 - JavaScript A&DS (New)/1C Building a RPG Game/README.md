@@ -1023,3 +1023,12 @@ function getMonsterAttackValue(level) {
   return hit;
 }
 ```
+* There is a bug in the above code😱 If xp is large, then `hit` could become negative.
+* We fix this by using a ternary operator:
+```js
+function getMonsterAttackValue(level) {
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
+  console.log(hit);
+  return hit > 0 ? hit : 0;
+}
+```
