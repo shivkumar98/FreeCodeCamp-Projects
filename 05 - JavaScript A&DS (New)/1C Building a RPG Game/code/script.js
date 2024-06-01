@@ -251,4 +251,5 @@ function restart() {
     healthText.innerText = health;
     xpText.innerText = xp;
     goTown();
-  }
+}
+

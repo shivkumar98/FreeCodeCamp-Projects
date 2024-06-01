@@ -933,6 +933,7 @@ function restart() {
 * Currently, when I lose the fight I see the following:
 
 ![](screenshots\2024-06-01-11-26-21.png)
+![](screenshots/2024-06-01-11-26-21.png)
 
 * I update the `attack()` function such that it calls a `winGame()` function if the you have defeated the dragon:
 ```js
