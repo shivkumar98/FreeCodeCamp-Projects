@@ -1137,3 +1137,53 @@ function pick(guess) {
 ```
 * Playing the easter egg shows the following for example:
 ![](screenshots/2024-06-01-15-31-41.png)
+
+* I use the `Arrays.includes()` method to see if the guess is present:
+```js
+function pick(guess) {
+  const numbers = [];
+  while (numbers.length < 10) {
+    // add random number between 0 and 10:
+    numbers.push(Math.floor(Math.random() * 11));
+  }
+  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
+  for (let i = 0; i < 10; i++) {
+    text.innerText += numbers[i] + "\n";
+  }
+  if (numbers.includes(guess)) {
+    text.innerText += "Right! You win 20 gold!";
+    gold += 20;
+    goldText.innerText = gold;
+  } else {
+    text.innerText += "Wrong! You lose 10 health!";
+    health -= 10;
+    healthText.innerText = health;
+  }
+}
+```
+* We need to check if the health has gone to zero!
+```js
+function pick(guess) {
+  const numbers = [];
+  while (numbers.length < 10) {
+    // add random number between 0 and 10:
+    numbers.push(Math.floor(Math.random() * 11));
+  }
+  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
+  for (let i = 0; i < 10; i++) {
+    text.innerText += numbers[i] + "\n";
+  }
+  if (numbers.includes(guess)) {
+    text.innerText += "Right! You win 20 gold!";
+    gold += 20;
+    goldText.innerText = gold;
+  } else {
+    text.innerText += "Wrong! You lose 10 health!";
+    health -= 10;
+    healthText.innerText = health;
+    if (health <=0) {
+      lose();
+    }
+  }
+}
+```
