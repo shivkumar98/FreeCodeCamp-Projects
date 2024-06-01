@@ -984,3 +984,19 @@ function update(location) {
 ```
 * Now when I lose, I see the following:
 ![](screenshots/2024-06-01-12-03-30.png)
+
+* I update the `winGame()` function to:
+```js
+function winGame() {
+  update(locations[6]);
+}
+```
+* And i define a new location:
+```js
+{
+  name: "win",
+  "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+  "button functions": [restart, restart, restart],
+  text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;"
+}
+```

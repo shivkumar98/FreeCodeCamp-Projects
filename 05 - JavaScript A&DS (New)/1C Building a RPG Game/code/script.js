@@ -74,6 +74,12 @@ const locations = [
         "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
         "button functions": [restart, restart, restart],
         text: "You die. &#x2620;"
+    },
+    {
+        name: "win",
+        "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+        "button functions": [restart, restart, restart],
+        text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;"
     }
 ]
 
@@ -173,8 +179,11 @@ function attack() {
     }
   }
 
+function winGame() {
+    update(locations[6]);
+}
+
 function lose() {
-    console.log("lose")
     update(locations[5]);
 }
 function defeatMonster() {
