@@ -912,7 +912,7 @@ function restart() {
   xp = 0;
   health = 100;
   gold = 50;
-  currentWeapon = 0;
+  currentWeaponIndex = 0;
   inventory = ["stick"];
   goldText.innerText = gold;
   healthText.innerText = health;
@@ -930,3 +930,57 @@ function restart() {
   text: "You die. &#x2620;"
 }
 ```
+* Currently, when I lose the fight I see the following:
+
+![](screenshots\2024-06-01-11-26-21.png)
+
+* I update the `attack()` function such that it calls a `winGame()` function if the you have defeated the dragon:
+```js
+function attack() {
+  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  health -= monsters[fighting].level;
+  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random()*xp) + 1;
+  // updating health and monster health text:
+  healthText.innerText = health;
+  monsterHealthText.innerText = monsterHealth;
+  if (health <= 0) {
+    lose();
+  } else if (monsterHealth <= 0) {
+    if (fighting === 2) {
+      winGame();
+    } else {
+       defeatMonster();
+    }
+  }
+}
+function winGame() {
+    console.log("You won the game");
+}
+```
+
+## Using innerHTML
+
+* `&#x2620;` is HTML and it needs to be rendered as HTML
+* We use `innerHTML` to set the HTML of the page
+* E.g. setting the innerHTML to will have the following result:
+```js
+text.innerHTML = "<ul><li>1</li><li>item2</li></ul>";
+```
+![](screenshots/2024-06-01-11-33-13.png)
+
+* So I set the innerHTML rather than innerText in my update function:
+```js
+function update(location) {
+  monsterStats.style.display = "none";
+  button1.innerText = location["button text"][0];
+  button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+  button1.onclick = location["button functions"][0];
+  button2.onclick = location["button functions"][1];
+  button3.onclick = location["button functions"][2];
+  text.innerHTML = location.text; // so HTML renders
+}
+```
+* Now when I lose, I see the following:
+![](screenshots/2024-06-01-12-03-30.png)
