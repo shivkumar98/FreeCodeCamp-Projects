@@ -3,7 +3,7 @@
 * I will learn how to validate input, perform calculations, and dynamically update your interface to display the results.
 * I will learn regex, template literals, and `addListener()` method.
 
-## Project Setup
+## 🟥 Project Setup
 * I have the following HTML:
 ```html
 <!DOCTYPE html>
@@ -115,7 +115,7 @@ select {
 }
 ``` 
 
-## Step 1
+## 🟥 Writing HTML for Form
 * Currently the webpage looks like:
 ![](screenshots/2024-06-08-13-24-55.png)
 
@@ -180,5 +180,23 @@ select {
    </span>
 </div>
 ```
+* I set the `type` to `button` so the button does not submit
 * The page now looks like:
-![](2024-06-08-13-58-22.png)
+![](screenshots/2024-06-08-13-58-22.png)
+* I add two other buttons, one for submission, one to clear the form:
+```html
+<div>
+   <button type="submit">Calculate Remaining Calories</button>
+   <button id="clear" type="button">Clear</button>
+</div>
+```
+* I create a div to display the result below the form:
+```html
+<div id="output" class="output hide"></div>
+```
+* Below the `main` element, I add the JavaScript:
+```html
+<script src="./script.js"></script>
+```
+* The page now looks like:
+![](screenshots/2024-06-08-14-12-16.png)
