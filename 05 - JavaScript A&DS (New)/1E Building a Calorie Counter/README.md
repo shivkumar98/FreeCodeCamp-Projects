@@ -241,4 +241,7 @@ function cleanInputString(str) {
 ```js
 const regex = \hello\; 
 ```
-* I want to match for 
+* I want to search for `+`, `-` and spaces. I write the following regex which searches for +, - (the + needs to be escaped with `\`):
+```js
+const regex = /\+-/;
+```
