@@ -6,3 +6,8 @@ const clearButton = document.getElementById("clear");
 const output = document.getElementById("output");
 
 let isError = false;
+
+function cleanInputStrin(str) {
+   const regex = /[+-\s]/g;
+   return str.replace(regex, "");
+}

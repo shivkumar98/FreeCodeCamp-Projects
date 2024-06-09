@@ -253,3 +253,19 @@ const regex = /\+-\s/;
 ```js
 const regex = /[+-\s]/;
 ```
+* You can add flags after the closing `\`
+* The global flag `g` instructs the regex to continue looking after it has found a match:
+```js
+const regex = /[+-\s]/g;
+```
+* I use the `.replace(regex, String)` method to replace the `+`, `-` and whitespace characters of the `str` parameter:
+```js
+function cleanInputString(str) {
+   const regex = /[+-\s]/g;
+   return str.replace(regex, "");
+}
+```
+* I test my code:
+```js
+console.log(cleanInputString("+-99")); // 99
+```
