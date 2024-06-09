@@ -203,7 +203,7 @@ select {
 * The page now looks like:
 ![](screenshots/2024-06-08-14-12-16.png)
 
-## JavaScript
+## 🟥 Declaring Variables
 * I declare a variable for my form:
 ```js
 const calorieCounter = document.getElementById("calorie-counter");
@@ -230,7 +230,7 @@ const output = document.getElementById("output")
 let isError = false;
 ```
 
-## Regular Expressions
+## 🟥 Regular Expressions
 
 * The budget input allows the user to enter `+` or `-` (e.g. +1.1 is a valid number).
 * I declare a `cleanInputString` function which cleans up the input using regex:
