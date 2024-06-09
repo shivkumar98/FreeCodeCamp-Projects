@@ -225,3 +225,20 @@ const clearButton = document.getElementById("clear")
 ```js
 const output = document.getElementById("output")
 ```
+* I initialise a variable called `isError` which will be set to true if user provides invalid input:
+```js
+let isError = false;
+```
+
+* The budget input allows the user to enter `+` or `-` (e.g. +1.1 is a valid number).
+* I declare a `cleanInputString` function which cleans up the input using regex:
+```js
+function cleanInputString(str) {
+
+}
+```
+* I write the following regex, which will match for the word `hello`:
+```js
+const regex = \hello\; 
+```
+* I want to match for 
