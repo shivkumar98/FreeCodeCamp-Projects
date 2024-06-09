@@ -230,6 +230,8 @@ const output = document.getElementById("output")
 let isError = false;
 ```
 
+## Regular Expressions
+
 * The budget input allows the user to enter `+` or `-` (e.g. +1.1 is a valid number).
 * I declare a `cleanInputString` function which cleans up the input using regex:
 ```js
@@ -268,4 +270,47 @@ function cleanInputString(str) {
 * I test my code:
 ```js
 console.log(cleanInputString("+-99")); // 99
+```
+
+<br>
+
+* HTML allows numbers in exponent notation (10e2 for e.g.)
+* We want to filter these out, so I create a function called `isInvalidInput(str)`:
+```js
+function isInvalidInput(str) {
+
+}
+```
+* I declare a regex variable which seeks for e, I use the `i` flag to make it case insensitive:
+```js
+const regex = /e/i;
+```
+* I use a character class range to find patterns where any number between 0-9 is before and after `e` is found:
+```js
+const regex = /[0-9]e[0-9]/i;
+```
+* The `+` modifier signifies a pattern which occurs ONE OR MORE times:
+```js
+const regex = /[0-9]+e[0-9]+/i;
+```
+* There is a shorthand for digits `\d`:
+```js
+const regex = /\d+e\d+/i;
+```
+* I use the String's `.match()` method which returns an array of matched, containing first match OR all matches if global flag is used
+```js
+const regex = /example/
+constr result = "example string".match(regex) // ['example']
+```
+* I implement my `isInvalidInput()` function:
+```js
+function isInvalidInput(str) {
+   const regex = \/d+e\d+/i;
+   return str.match(regex);
+}
+```
+* I test my function:
+```js
+console.log(isInvalidInput("1e3")); // Array [ "1e3" ]
+console.log(isInvalidInput("10")); // null
 ```
