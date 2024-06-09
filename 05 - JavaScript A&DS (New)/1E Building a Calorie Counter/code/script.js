@@ -21,3 +21,10 @@ function isInvalidInput(str) {
 
 // console.log(isInvalidInput("1e3")); // Array [ "1e3" ]
 // console.log(isInvalidInput("10")); // null
+
+function addEntry() {
+   const targetInputContainer = document
+      .querySelector(`#{entryDropdown.value} .input-container`);
+   const entryNumber = targetInputContainer.querySelectorAll();
+ 
+}

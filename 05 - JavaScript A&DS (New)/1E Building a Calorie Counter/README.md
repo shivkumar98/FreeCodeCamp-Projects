@@ -314,3 +314,36 @@ function isInvalidInput(str) {
 console.log(isInvalidInput("1e3")); // Array [ "1e3" ]
 console.log(isInvalidInput("10")); // null
 ```
+
+<br>
+
+* I create a function called `addEntry()`, to get the type, I use the `.value` property of the entryDropdown to construct a `targetId` variable:
+```js
+function addEntry() {
+   const targetId = "#" + entryDropdown.value;
+}
+```
+* I create a variable for `targetInputContainer`:
+```js
+function addEntry() {
+   const targetId = "#" + entryDropdown.value;
+   const targetInputContainer  = document.querySelector(targetId + " .input-container");
+}
+```
+* I refactor the above code to use TEMPLATE LITERALS:
+```js
+function addEntry() {
+  const targetId = '#' + entryDropdown.value;
+  const targetInputContainer = document.querySelector(`${targetId} .input-container`);
+}
+```
+* The code can be simplified:
+```js
+function addEntry() {
+   const targetInputContainer = document
+      .querySelector(`#{entryDropdown.value} .input-container`);
+}
+```
+
+
+* The `querySelectorAll()` method returns a `NodeList`. I use this method to get the number of entries a user adds
