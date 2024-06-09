@@ -3,6 +3,8 @@
 * I will learn how to validate input, perform calculations, and dynamically update your interface to display the results.
 * I will learn regex, template literals, and `addListener()` method.
 
+## Final Product
+
 ## 🟥 Project Setup
 * I have the following HTML:
 ```html
@@ -200,3 +202,26 @@ select {
 ```
 * The page now looks like:
 ![](screenshots/2024-06-08-14-12-16.png)
+
+## JavaScript
+* I declare a variable for my form:
+```js
+const calorieCounter = document.getElementById("calorie-counter");
+```
+* I declare a variable for the budget input:
+```js
+const budgetNumberInput = document.getElementById("budget");
+```
+* I declare a variable for the dropdown:
+```js
+const entryDropdown = document.getElementById("entry-dropdown");
+```
+* I add variables for the add entry and clear button:
+```js
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear")
+```
+* I declare a variale for the output:
+```js
+const output = document.getElementById("output")
+```
