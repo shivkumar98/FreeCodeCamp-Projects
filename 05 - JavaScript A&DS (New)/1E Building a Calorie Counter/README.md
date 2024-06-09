@@ -245,3 +245,11 @@ const regex = \hello\;
 ```js
 const regex = /\+-/;
 ```
+* I use `\s` for whitespace characters:
+```js
+const regex = /\+-\s/;
+```
+* I want my regex to look for `+`, `-`, and whitespace in any order. To do this I create a character class by wrapping the characters in square brackets. I no longer need to escape the `+` character:
+```js
+const regex = /[+-\s]/;
+```
