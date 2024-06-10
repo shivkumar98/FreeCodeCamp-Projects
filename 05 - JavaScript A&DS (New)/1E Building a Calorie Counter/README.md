@@ -388,7 +388,7 @@ function addEntry() {
 targetInputContainer.innerHTML += HTMLString;
 ```
 
-## Event Listeners
+## 🟥 Event Listeners
 * We previously assigned the `.onclick` property of a button to a function to execute code on the click
 * We can also use theh `.addEventListener()` to do this:
 ```js
@@ -398,3 +398,24 @@ addEntryButton.addEventListener("click", function() {console.log("hello")}); // 
 ```js
 addEntryButton.addEventListener("click", addEntry)
 ```
+
+## 🟥 Ironing out Bugs🕷️
+* Currently the first entry number is 0
+![](screenshots/2024-06-10-14-09-28.png)
+* I fix this by adding one to `entryNumber` where its initialised:
+```js
+const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length+1;
+```
+
+<br>
+
+* Another bug is when you fill in one entry, click Add Entry and the existing entry clears out:
+![](screenshots/bug-2.gif)
+* This is because the values in the inputs are not saved into the `.innerHTML` property
+* We can use the built in `insertAdjacentHTML()` method, which takes postion as first argument, and HTML to add as second argument.
+* We can use `"beforeend"` to position it as the last child of the element:
+```js
+targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
+```
+* Now the app behaves as expected:
+![](screenshots/bug-2-fixed.gif)
