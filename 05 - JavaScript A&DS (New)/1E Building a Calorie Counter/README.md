@@ -387,3 +387,14 @@ function addEntry() {
 ```js
 targetInputContainer.innerHTML += HTMLString;
 ```
+
+## Event Listeners
+* We previously assigned the `.onclick` property of a button to a function to execute code on the click
+* We can also use theh `.addEventListener()` to do this:
+```js
+addEntryButton.addEventListener("click", function() {console.log("hello")}); // prints hello when Add Entry is clicked
+```
+* At the bottom of my script, I add the following to call the `addEntry()` function:
+```js
+addEntryButton.addEventListener("click", addEntry)
+```
