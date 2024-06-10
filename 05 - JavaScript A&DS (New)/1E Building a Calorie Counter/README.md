@@ -369,3 +369,21 @@ const HTMLString = `
   <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
   <input type="number" min="0" placeholder="Calories" id="${entryDropdown.value}-${entryNumber}-calories"/>`;
 ```
+* My function now looks like:
+```js
+function addEntry() {
+   const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
+   const entryNumber = targetInputContainer
+      .querySelectorAll('input[type="text"]').length;
+   const HTMLString = `
+   <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
+   <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
+   <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
+   <input type="number" min="0" placeholder="Calories" id="${entryDropdown.value}-${entryNumber}-calories"/>`;
+}
+```
+
+* I use the `innerHTML` property of the `targetInputContainer` to add the content of `HTMLString`:
+```js
+targetInputContainer.innerHTML += HTMLString;
+```
