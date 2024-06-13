@@ -7,7 +7,7 @@ const output = document.getElementById("output");
 
 let isError = false;
 
-function cleanInputStrin(str) {
+function cleanInputString(str) {
    const regex = /[+-\s]/g;
    return str.replace(regex, "");
 }
@@ -46,10 +46,14 @@ function getCaloriesFromInputs(list) {
 
 addEntryButton.addEventListener("click", addEntry);
 
+function calculateCalories(e) {
+   e.preventDefault();
+   isError = false;
+}
+
 function getCaloriesFromInputs(list) {
    let calories = 0;
-
-      for (const item of list) {
+   for (const item of list) {
       const currVal = cleanInputString(item.value);
       const invalidInputMatch = isInvalidInput(currVal);
 
@@ -60,4 +64,5 @@ function getCaloriesFromInputs(list) {
       }
       calories += Number(currVal);
    }
+   return calories;
 }

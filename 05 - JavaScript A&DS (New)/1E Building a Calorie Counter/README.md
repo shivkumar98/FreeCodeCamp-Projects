@@ -420,7 +420,7 @@ targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 * Now the app behaves as expected:
 ![](screenshots/bug-2-fixed.gif)
 
-## Calculating Calories
+## 🟥 Getting Calories From Inputs
 * I create a function to calculates the calories from a list:
 ```js
 function getCaloriesFromInputs(list) {
@@ -437,11 +437,9 @@ function getCaloriesFromInputs(list) {
 ```js
 function getCaloriesFromInputs(list) {
    let calories = 0;
-
    for (const item of list) {
       const currVal = cleanInputString(item.value);
       const invalidInputMatch = isInvalidInput(currVal);
-
       if (invalidInputMatch) {
          alert(`Invalid Input : ${invalidInputMatch[0]}`);
       }
@@ -464,8 +462,7 @@ Number('fdjsf'); // NaN
 ```js
 function getCaloriesFromInputs(list) {
    let calories = 0;
-
-      for (const item of list) {
+   for (const item of list)  {
       const currVal = cleanInputString(item.value);
       const invalidInputMatch = isInvalidInput(currVal);
 
@@ -476,5 +473,22 @@ function getCaloriesFromInputs(list) {
       }
       calories += Number(currVal);
    }
+   retun calories;
+}
+``` 
+
+## 🟥 Calculating Calories
+* I declare an empty function which has a parameter `e` - this is a commmon name for the event listeners
+```js
+function calculateCalories(e) {
+
+}
+```
+* I will attach this function to the submission of the form
+* The `summbit` event is triggered when the form is submitted, the default behaviour is to reload the page. We can prevent this by calling `.preventDefault()`
+```js
+function calculateCalories(e) {
+   e.preventDefault();
+   isError = false;
 }
 ```
