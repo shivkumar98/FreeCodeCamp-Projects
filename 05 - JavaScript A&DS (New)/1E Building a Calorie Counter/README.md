@@ -485,7 +485,7 @@ function calculateCalories(e) {
 }
 ```
 * I will attach this function to the submission of the form
-* The `summbit` event is triggered when the form is submitted, the default behaviour is to reload the page. We can prevent this by calling `.preventDefault()`
+* The `sumbit` event is triggered when the form is submitted, the default behaviour is to reload the page. We can prevent this by calling `.preventDefault()`
 ```js
 function calculateCalories(e) {
    e.preventDefault();
@@ -495,4 +495,24 @@ function calculateCalories(e) {
 
 <br>
 
-* 
+* I use `document.querySelectorAll()` to get the number inputs from the form for breakfast, lunch, ...:
+```js
+function calculateCalories(e) {
+   e.preventDefault();
+   isError = false;
+
+   const breakfastNumberInputs = document.querySelectorAll('#breakfast input[type=number]');
+   const lunchNumberInputs = document.querySelectorAll('#lunch input[type=number]');
+   const dinnerNumberInputs = document.querySelectorAll('#dinner input[type=number]');
+   const snackNumberInputs = document.querySelectorAll('#snacks inpute[type=number]');
+   const exerciseNumberInputs = document.querySelectorAll('#exercise input[type=number]');
+}
+```
+* I then calculate the calories using the function I defined earlier:
+```js
+const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs);
+const lunchCalories = getCaloriesFromInputs(lunchNumberInputs);
+const dinnerCalories = getCaloriesFromInputs(dinnerNumberInputs);
+const snacksCalories = getCaloriesFromInputs(snacksNumberInputs);
+const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs);
+```
