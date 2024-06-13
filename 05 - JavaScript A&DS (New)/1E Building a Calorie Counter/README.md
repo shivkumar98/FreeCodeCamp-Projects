@@ -516,3 +516,8 @@ const dinnerCalories = getCaloriesFromInputs(dinnerNumberInputs);
 const snacksCalories = getCaloriesFromInputs(snacksNumberInputs);
 const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs);
 ```
+
+* I already have a decalred variable for the budget calories, I wrap this in an array:
+```js
+const budgetCalories = getCaloriesFromInputs([budgetNumberInput]);
+```
