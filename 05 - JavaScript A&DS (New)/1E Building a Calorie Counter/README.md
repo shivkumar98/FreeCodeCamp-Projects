@@ -419,3 +419,62 @@ targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 ```
 * Now the app behaves as expected:
 ![](screenshots/bug-2-fixed.gif)
+
+## Calculating Calories
+* I create a function to calculates the calories from a list:
+```js
+function getCaloriesFromInputs(list) {
+   let calories = 0;
+
+   for (const item of list) {
+      const currVal = cleanInputString(item.value);
+      const invalidInputMatch = isInvalidInput(currVal);
+   }
+}
+```
+
+* I treat `invalidInputMatch` as a truthy value (if null its false) and alert a message which contains the first elemment of the array:
+```js
+function getCaloriesFromInputs(list) {
+   let calories = 0;
+
+   for (const item of list) {
+      const currVal = cleanInputString(item.value);
+      const invalidInputMatch = isInvalidInput(currVal);
+
+      if (invalidInputMatch) {
+         alert(`Invalid Input : ${invalidInputMatch[0]}`);
+      }
+   }
+}
+```
+* Within the if block, I set `isError` to true and return null:
+```js
+if (invalidInputMatch) {
+   alert(`Invalid Input : ${invalidInputMatch[0]}`);
+   isError = true;
+   return null;
+}
+```
+* Now I want to add the currVal to the calories when it is valid in order to convert currVal into an actual number, I can use the `Number` class's constructor which has the following behaviour:
+```js
+Number('1000'); // 1000
+Number('fdjsf'); // NaN
+```
+```js
+function getCaloriesFromInputs(list) {
+   let calories = 0;
+
+      for (const item of list) {
+      const currVal = cleanInputString(item.value);
+      const invalidInputMatch = isInvalidInput(currVal);
+
+      if (invalidInputMatch) {
+         alert(`Invalid Input : ${invalidInputMatch[0]}`);
+         isError = true;
+         return null;
+      }
+      calories += Number(currVal);
+   }
+}
+```
