@@ -42,7 +42,7 @@ const shuffleButton = document.getElementById("shuffle");
 ```js
 let allSongs = [];
 ```
-* I create an object within this method:
+* I create an object within this array:
 ```js
 const allSongs = [
    {
@@ -53,4 +53,24 @@ const allSongs = [
       src: "https://cdn.freecodecamp.org/curriculum/js-music-player/scratching-the-surface.mp3"
    }
 ]
+```
+* I add another object to allSongs:
+```js
+{
+   id: 1,
+   title: "Can't Stay Down",
+   artist: "Quincy Larson",
+   duration: "4:15",
+   src: "https://cdn.freecodecamp.org/curriculum/js-music-player/can't-stay-down.mp3"
+}
+```
+* I add another obbject:
+```js
+{
+   id: 2,
+   title: "Still Learning",
+   artist: "Quincy Larson",
+   duration: "3:51",
+   src: "https://cdn.freecodecamp.org/curriculum/js-music-player/still-learning.mp3"
+}
 ```
