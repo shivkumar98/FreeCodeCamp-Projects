@@ -120,7 +120,7 @@ const allSongs = [
 ];
 ```
 
-## Web Audio API
+## 🟥 Web Audio API
 * All modern web browsers support Web Audio API which enables you to generate and process audio in webb applications
 * I initialise an `Audio` class instance which creates a HTML5 `audio` element:
 ```js
@@ -132,7 +132,7 @@ const audio = new Audio()
 let userData = {};
 ```
 
-## Spread Operator (...)
+## 🟥 Spread Operator (...)
 * In order for me to remove a song, or shuffle songs in my playlist, I need to take a copy of `allSongs` without mutating it
 * The `...` spread operator can help me achieve this, its used to copy one array into another. E.g. suppose I have two arrays `arr1` and `arr2`, then I can merge as so:
 ```js
@@ -145,4 +145,12 @@ const combined = [...arr1, ...arr2]; // [1,2,3,4,5,6]
 let userData = {
    songs: [...allSongs]
 }
+```
+* To track the current song's info and playback time, I initialise `currentSong` and `songCurrentTime` properties:
+```js
+let userData = {
+  songs: [...allSongs],
+  currentSong: null,
+  songCurrentTime: 0
+};
 ```
