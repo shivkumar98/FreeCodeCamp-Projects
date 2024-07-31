@@ -24,5 +24,33 @@
 
 
 ## 🟥 Project Setup
+* The [HTML](project-setup/index.html) and [CSS](project-setup/styles.css) files have been provided to me
 
-## 🟥 
+## 🟥 Step 1
+* I create my javascript and initialise some variables   
+```js
+const playlistSongs = document.getElementById("playlist-songs");
+const playButton = document.getElementById("play");
+const pauseButton = document.getElementById("pause");
+
+const nextButton = document.getElementById("next");
+const previousButton = document.getElementById("previous");
+const shuffleButton = document.getElementById("shuffle");
+```
+
+* I create an array to store all the songs
+```js
+let allSongs = [];
+```
+* I create an object within this method:
+```js
+const allSongs = [
+   {
+      id: 0,
+      title: "Scratching The Surface",
+      artist: "Quincy Larson",
+      duration: "4:25",
+      src: "https://cdn.freecodecamp.org/curriculum/js-music-player/scratching-the-surface.mp3"
+   }
+]
+```
