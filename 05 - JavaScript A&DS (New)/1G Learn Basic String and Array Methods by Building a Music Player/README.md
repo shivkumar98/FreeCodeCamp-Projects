@@ -26,7 +26,7 @@
 ## 🟥 Project Setup
 * The [HTML](project-setup/index.html) and [CSS](project-setup/styles.css) files have been provided to me
 
-## 🟥 Step 1
+## 🟥 Initialising Variables
 * I create my javascript and initialise some variables   
 ```js
 const playlistSongs = document.getElementById("playlist-songs");
@@ -37,6 +37,8 @@ const nextButton = document.getElementById("next");
 const previousButton = document.getElementById("previous");
 const shuffleButton = document.getElementById("shuffle");
 ```
+
+## 🟥 Creating Array for Songs
 
 * I create an array to store all the songs
 ```js
@@ -116,4 +118,31 @@ const allSongs = [
     src: "https://cdn.freecodecamp.org/curriculum/js-music-player/chasing-that-feeling.mp3",
   },
 ];
+```
+
+## Web Audio API
+* All modern web browsers support Web Audio API which enables you to generate and process audio in webb applications
+* I initialise an `Audio` class instance which creates a HTML5 `audio` element:
+```js
+const audio = new Audio()
+```
+
+* The music player should keep track of the songs, the current song playing, and the time of the current song. I create a `userData` variable to hold this information
+```js
+let userData = {};
+```
+
+## Spread Operator (...)
+* In order for me to remove a song, or shuffle songs in my playlist, I need to take a copy of `allSongs` without mutating it
+* The `...` spread operator can help me achieve this, its used to copy one array into another. E.g. suppose I have two arrays `arr1` and `arr2`, then I can merge as so:
+```js
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+const combined = [...arr1, ...arr2]; // [1,2,3,4,5,6]
+```
+* Using this, I copy `allSongs` to a songs property of userData:
+```js
+let userData = {
+   songs: [...allSongs]
+}
 ```
