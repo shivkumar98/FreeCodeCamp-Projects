@@ -154,3 +154,17 @@ let userData = {
   songCurrentTime: 0
 };
 ```
+
+## 🟥 Arrow Functions
+* In the previous projects, I used regular functions (and anonymous functions), now I will be using `arrow functions`
+* Arrow functions are ANONYMOUS functions
+* E.g. you can declare an arrow function as:
+```js
+() => {console.log("hello")}
+```
+* This will NOT print anything unless I call it
+* You can call an anonymous function using a variable:
+```js
+let arrowFunction = () => { console.log("hello"); }
+arrowFunction(); // hello
+```
