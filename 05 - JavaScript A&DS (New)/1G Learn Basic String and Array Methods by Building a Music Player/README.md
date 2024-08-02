@@ -180,7 +180,7 @@ arrowFunction(); // hello
 const printGreeting = () => {
   console.log("Hello there!")
 }
-printGreeting()
+printGreeting() // Hello there!
 ```
 
 * I create a new function called printMessage which prints a parameter:
@@ -188,5 +188,19 @@ printGreeting()
 const printMessage = (org) => {
   console.log(`${org} is awesome!`)
 }
-printMessage("freeCodeCamp");
+printMessage("freeCodeCamp"); 
+// freeCodeCamp is awesome!
+```
+
+* You can also return a value from arrow function
+```js
+const addTwoNumbers  = (num1,num2) => {
+  return num1+num2;
+}
+console.log(addTwoNumbers(3, 4))  // 7
+```
+
+* Like Java lambdas, you can omit the curly braces and `return` keyword if the result can expressed as a single line:
+```js
+const addTwoNumbers = (num1, num2) => num1+num2
 ```

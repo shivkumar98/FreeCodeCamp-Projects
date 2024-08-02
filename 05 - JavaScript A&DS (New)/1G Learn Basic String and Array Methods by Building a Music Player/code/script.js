@@ -47,3 +47,11 @@ const printMessage = (org) => {
    console.log(`${org} is awesome!`)
 }
 printMessage("freeCodeCamp");
+
+// explicit return:
+const addTwoNumbers = (num1, num2) => {
+   return num1+num2;
+}
+
+// implicit return:
+const addTwoNumbersV2 = (num1, num2) => num1+num2
