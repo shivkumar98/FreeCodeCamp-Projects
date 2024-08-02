@@ -25,6 +25,8 @@
 
 ## 🟥 Project Setup
 * The [HTML](project-setup/index.html) and [CSS](project-setup/styles.css) files have been provided to me
+* The website currently looks like this and has no functionality:
+![](screenshots/2024-08-02-07-38-18.png)
 
 ## 🟥 Initialising Variables
 * I create my javascript and initialise some variables   
@@ -204,3 +206,7 @@ console.log(addTwoNumbers(3, 4))  // 7
 ```js
 const addTwoNumbers = (num1, num2) => num1+num2
 ```
+
+<hr>
+
+* To display songs in UI, I need to create a function, I create a `renderSongs` function
