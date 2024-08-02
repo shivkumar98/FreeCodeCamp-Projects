@@ -168,3 +168,25 @@ let userData = {
 let arrowFunction = () => { console.log("hello"); }
 arrowFunction(); // hello
 ```
+* Or you can call it directly:
+```js
+(
+   () => { console.log("hello"); }
+)(); // hello
+```
+
+* I create an arrow function called `printGreeting`:
+```js
+const printGreeting = () => {
+  console.log("Hello there!")
+}
+printGreeting()
+```
+
+* I create a new function called printMessage which prints a parameter:
+```js
+const printMessage = (org) => {
+  console.log(`${org} is awesome!`)
+}
+printMessage("freeCodeCamp");
+```
