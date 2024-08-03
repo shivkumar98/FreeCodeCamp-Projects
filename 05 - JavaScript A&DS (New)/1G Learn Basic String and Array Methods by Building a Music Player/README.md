@@ -230,3 +230,13 @@ const renderSongs = (array) => {
   })
 }
 ```
+* Within the `li` element, I nest a button with class `playlist-song-info` and a span of `song.title`:
+```js
+return `
+<li id="song-${song.id}" class="playlist-song">
+  <button class="playlist-song-info">
+    <span class="playlist-song-title">${song.title}</span>
+  </button>
+</li>
+`
+```
