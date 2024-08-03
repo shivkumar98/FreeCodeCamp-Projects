@@ -45,3 +45,9 @@ const addTwoNumbers = (num1, num2) => {
 
 // implicit return:
 const addTwoNumbersV2 = (num1, num2) => num1+num2
+
+const renderSongs = (array) => {
+   const songsHTML = array.map((song) => {
+     return `<li id="song-${song.id}" class="playlist-song"></li>`
+   })
+ }

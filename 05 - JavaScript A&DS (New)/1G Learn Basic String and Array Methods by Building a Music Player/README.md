@@ -209,4 +209,24 @@ const addTwoNumbers = (num1, num2) => num1+num2
 
 <hr>
 
-* To display songs in UI, I need to create a function, I create a `renderSongs` function
+## 🟥 Array Map Function
+
+
+* The `map()` function takes a function as a parameter - AKA a **callback function**:
+```js
+let array = [1,2,3]
+let doubledArray = array.map((number) => number*2) // [2,4,6]
+```
+* To display songs in UI, I need to create a function, I create a `renderSongs` function which takes an array parameter:
+```js
+const renderSongs = (array) => {
+}
+```
+* I use the map function to create a `<li>` element with an id of `song-id` (with id being replaced with actual ID of song) and class `playlist-song`:
+```js
+const renderSongs = (array) => {
+  const songsHTML = array.map((song) => {
+    return `<li id="song-${song.id}" class="playlist-song"></li>`
+  })
+}
+```
