@@ -117,3 +117,16 @@ const renderSongs = (array) => {
 }
 
 renderSongs(allSongs)
+
+//optional chaining:
+const user = {
+   name: "Shiv",
+   address: {
+      city: "New York",
+      state: undefined,
+      country: null
+   }
+}
+
+console.log(user.address.country)
+const zipCode = user.address.zip

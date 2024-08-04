@@ -308,3 +308,11 @@ renderSongs(allSongs)
 * And I do now see all the songs listed on the webpage:
 
 <img src="screenshots/2024-08-04-11-43-03.png" width="200px">
+
+## Optional Chaining (?.)
+* Optional chaining can help you avoid getting Reference Errors at run time for accessing properties which do exist:
+```js
+const user = { name: "Shiv" }
+// user.address.zipCode // THROWS ERROR
+user.address?.zipCode // undefined
+```
