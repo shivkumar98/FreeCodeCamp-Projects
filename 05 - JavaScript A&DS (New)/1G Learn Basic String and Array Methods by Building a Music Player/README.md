@@ -309,7 +309,7 @@ renderSongs(allSongs)
 
 <img src="screenshots/2024-08-04-11-43-03.png" width="200px">
 
-## Optional Chaining (?.)
+## 🟥 Optional Chaining (?.)
 * Optional chaining can help you avoid getting Reference Errors at run time for accessing properties which do exist:
 ```js
 const user = { name: "Shiv" }
