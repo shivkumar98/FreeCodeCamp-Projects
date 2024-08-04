@@ -279,6 +279,32 @@ const renderSongs = (array) => {
       </button>
       ... (REST OF LITERAL OMITTED)
     `   
-  }).map("");
+  }).join("");
 }
 ```
+
+* I now need to use the constructed `songsHTML` element and update the playlistSongs inner HTML:
+```js
+const renderSongs = (array) => {
+  const songsHTML = array.map((song) => {
+    return `
+    <li id="song-${song.id}" class="playlist-song">
+      <button class="playlist-song-info">
+          <span class="playlist-song-title">${song.title}</span>
+          <span class="playlist-song-artist">${song.artist}</span>
+          <span class="playlist-song-duration">${song.duration}</span>
+      </button>
+      ... (REST OF LITERAL OMITTED)
+    `   
+  }).join("");
+  playlistSongs.innerHTML = songsHTML;
+}
+```
+
+* To test my code was working so I call the renderSongs function with allSongs
+```js
+renderSongs(allSongs)
+```
+* And I do now see all the songs listed on the webpage:
+
+<img src="screenshots/2024-08-04-11-43-03.png" width="200px">
