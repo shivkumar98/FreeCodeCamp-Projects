@@ -316,3 +316,54 @@ const user = { name: "Shiv" }
 // user.address.zipCode // THROWS ERROR
 user.address?.zipCode // undefined
 ```
+
+* Using optional chaining, I replace the `allSongs` parameter of `renderSongs` with the songs property of userData:
+```js
+renderSongs(userData?.songs)
+```
+
+* I still see the same list of songs as previous screenshot
+
+## 🟥 Array Sort Method
+* I want to sort the songs in the playlist by name of song
+* Arrays has a sort method:
+```js
+const names = ["Charlie", "Alpha", "Zebra", "Beta"]
+console.log(names.sort()) // [ 'Alpha', 'Beta', 'Charlie', 'Zebra' ]
+```
+* I start by creating an arrow function called `sortSongs`:
+```js
+const sortSongs = () => {
+  userData?.songs.sort();
+}
+```
+
+* In order for us to sort by the name of the song objects, a compare callback must be supplied.
+* The callback function takes two parameters and returns a number. 
+  * If the number is negative, the two elements are in right order
+  * If the number is positive, the second element should be before first number
+  * If the number is 0, then they are the same element and require no change
+* You can directly compare strings using `<`, `>` operators
+* I implement the sortSongs method as:
+```js
+const sortSongs = () => {
+  userData?.songs.sort((a,b) => {
+    if (a.title < b.title)
+      return -1
+    if (a.title > b.title)
+      return 1
+    return 0
+  });
+
+  return userData?.songs
+}
+```
+
+* Finally, I replace the direct usage of `userDate?.songs` with the sortSongs function:
+```js
+renderSongs(sortSongs());
+```
+
+* Looking at the webpage, the songs are now sorted:
+
+<img src="screenshots/2024-08-04-12-33-01.png" width="200px">
