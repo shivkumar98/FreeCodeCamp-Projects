@@ -256,3 +256,29 @@ return `
   </svg>
 </button>
 ```
+
+## 🟥 Array Join Method
+* You can join elements of an array using `.join()` method which can optionally take in a seperator:
+```js
+let array = ["hello","my","name","is","Shiv"]
+array.join(); // "hello,my,name,is,shiv"
+array.join(" "); // "hello my name is shiv"
+```
+
+* Currently, the `songsHTML` is an array, so all the HTML is seperated by commas
+* I chain on the join method at the end of the map:
+```js
+const renderSongs = (array) => {
+  const songsHTML = array.map((song) => {
+    return `
+    <li id="song-${song.id}" class="playlist-song">
+      <button class="playlist-song-info">
+          <span class="playlist-song-title">${song.title}</span>
+          <span class="playlist-song-artist">${song.artist}</span>
+          <span class="playlist-song-duration">${song.duration}</span>
+      </button>
+      ... (REST OF LITERAL OMITTED)
+    `   
+  }).map("");
+}
+```
