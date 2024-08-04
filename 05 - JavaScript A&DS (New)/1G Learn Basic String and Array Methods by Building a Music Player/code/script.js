@@ -87,13 +87,17 @@ let userData = {
    songCurrentTime: 0
 };
 
-// explicit return:
-const addTwoNumbers = (num1, num2) => {
-   return num1+num2;
-}
+const playSong = (id) => {
+   const song = userData?.songs.find((song) => song.id === id);
+   audio.src = song.src
+   audio.title = song.title
 
-// implicit return:
-const addTwoNumbersV2 = (num1, num2) => num1+num2
+   if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
+      audio.currentTime = 0;
+   } else {
+      audio.currentTime = userData?.songCurrentTime;
+   }
+};
 
 const renderSongs = (array) => {
    const songsHTML = array.map((song) => {
@@ -112,9 +116,8 @@ const renderSongs = (array) => {
          </button>
       </li>
       `   
-   }).join("");const sortSongs = () => {
-  userData?.songs.sort();
-}
+   }).join("");
+
    playlistSongs.innerHTML = songsHTML;
 }
 

@@ -367,3 +367,53 @@ renderSongs(sortSongs());
 * Looking at the webpage, the songs are now sorted:
 
 <img src="screenshots/2024-08-04-12-33-01.png" width="200px">
+
+
+## 🟥 Array Find Method
+* The `find()` method finds the first element of an array which satisfies the condition defined in callback function, if no element satisfies condition then `undefined` is returned
+* E.g.:
+```js
+const nums = [1,3,5,7]
+nums.find(a => a%2==0); // undefined
+nums.find(a => a%1==0); // 1
+nums.find(a => a>3); // 5
+```
+
+* I create a playSong function which takes an `id` for a song:
+```js
+const playSong = (id) => {
+  const song = userDate?.songs.find(song => song.id === id);
+}
+```
+* I now use the song which is found to set the src and title properties of the `Audio` instance which was created:
+```js
+const audio = new Audio()
+let userData = {
+   songs: [...allSongs],
+   currentSong: null,
+   songCurrentTime: 0
+};
+// ^^ EXISTING CODE
+
+const playSong = (id) => {
+  const song = userData?.songs.find((song) => song.id === id);
+  audio.src = song.src
+  audio.title = song.title
+};
+```
+
+* I now want to set the currentTime property of the song, before I do, I check if the currentSong is null (no song is playing yet) OR that the song ID is different from the currerent song
+* If the selected song is new or different, then I set `currentTime` property of `audio` to 0
+```js
+if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
+  audio.currentTime = 0
+}
+```
+* I add an else clause to set the currentTime to what's in the userData (this can be used to resume existing song):
+```js
+if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
+  audio.currentTime = 0;
+} else {
+  audio.currentTime = userData?.songCurrentTime;
+}
+```
