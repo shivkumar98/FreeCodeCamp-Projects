@@ -417,3 +417,47 @@ if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
   audio.currentTime = userData?.songCurrentTime;
 }
 ```
+
+* I need to update the current song to the song variable:
+```js
+userData.currentSong = song;
+```
+
+* To the `playButton` element, I add the `playing` class, and finally call the `play()` method on the audio instance:
+```js
+playButton.classList.add("playing");
+audio.play();
+```
+
+* The playSong is completed! See below for the code:
+```js
+const playSong = (id) => {
+  const song = userData?.songs.find((song) => song.id === id);
+  audio.src = song.src
+  audio.title = song.title
+
+  if (userData?.currentSong === null || userData?.currentSong.id !== song.id) {
+    audio.currentTime = 0;
+  } else {
+    audio.currentTime = userData?.songCurrentTime;
+  }
+  
+  userData.currentSong = song;
+  playButton.classList.add("playing");
+  audio.play();
+};
+```
+
+## 🟥 Adding Event Listener To Play Song
+* Now that the playSong function is complete, I need to add an event listener for the play song
+* Here is the current behaviour of pressing the play button:
+<img src="screenshots/step-42.gif">
+
+* I add an empty function call for when the `playButton` is clicked:
+```js
+playButton.addEventListener("click", ()=> {
+
+})
+```
+* When the page is first loaded, `userData.currentSong` will be null
+* So I do a check to see if it is falsey:
