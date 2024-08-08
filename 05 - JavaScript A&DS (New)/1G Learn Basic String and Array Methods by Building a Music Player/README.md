@@ -477,3 +477,21 @@ if (!userData?.currentSong) {
 }
 ```
 * Now when I press play on webpage load, the first song in the list is played🎉
+
+## 🟥 Adding Event Listener to Play Song in Playlist
+* For the `renderSongs` function, I update the construction of the button with class `playlist-song-info` to have an onclick event:
+```js
+const renderSongs = (array) => {
+   const songsHTML = array.map((song) => {
+      return `
+      <li id="song-${song.id}" class="playlist-song">
+        <button class="playlist-song-info" onclick="playSong(${song.id})">
+            <span class="playlist-song-title">${song.title}</span>
+            <span class="playlist-song-artist">${song.artist}</span>
+            <span class="playlist-song-duration">${song.duration}</span>
+        </button>
+        ...` // REST OF CODE
+   })
+}
+```
+* Now if the play button has been clicked, and I click on one of the songs in the playlist, the song I clicked on will start playing!!!🎉🎉🎉
