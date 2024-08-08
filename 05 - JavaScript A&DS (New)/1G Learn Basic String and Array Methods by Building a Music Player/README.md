@@ -468,3 +468,12 @@ playButton.addEventListener("click", ()=> {
    }
 })
 ```
+* I add an else clause:
+```js
+if (!userData?.currentSong) {
+   playSong(userData?.songs[0].id)
+} else {
+   playSong(userData?.currentSong.id)
+}
+```
+* Now when I press play on webpage load, the first song in the list is played🎉
