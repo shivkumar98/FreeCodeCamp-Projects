@@ -460,4 +460,11 @@ playButton.addEventListener("click", ()=> {
 })
 ```
 * When the page is first loaded, `userData.currentSong` will be null
-* So I do a check to see if it is falsey:
+* So I do a check to see if it is falsey, so if currentSong is null I call the playSong function using the id of first song in `userData.songs`:
+```js
+playButton.addEventListener("click", ()=> {
+   if (!userData?.currentSong) {
+      playSong(userData.songs[0].id)
+   }
+})
+```
