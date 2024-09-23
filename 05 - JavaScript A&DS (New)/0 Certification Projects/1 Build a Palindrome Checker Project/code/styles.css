@@ -25,6 +25,8 @@ label {
     background-color: white;
     border-radius: 10px;
     padding: 20px 0;
+    box-shadow: rgb(4, 0, 239) 0px 3px 8px;
+
 }
 
 #palindrome-checker > label {
