@@ -2,11 +2,16 @@
    it is submitted
 */
 const palindromeChecker = document.getElementById("palindrome-checker");
+const textInput = document.getElementById("text-input").value
 
 palindromeChecker.addEventListener("submit", palindromeCheck);
 
 function palindromeCheck(e) {
-    e.preventDefault();
+    e.preventDefault(); // stop form from being submitted
 
     console.log("check clicked")
+    console.log(textInput)
+
+    if (textInput.length === 0) 
+        alert("Please input a value")
 }
