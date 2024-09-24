@@ -14,4 +14,7 @@ function palindromeCheck(e) {
 
     if (textInput.length === 0) 
         alert("Please input a value")
+
+    const filteredTextInput = removeWhiteSpaceAndSpecialCharacters(textInput);
+    
 }
