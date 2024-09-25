@@ -32,7 +32,7 @@
 17. When the `#text-input` element contains the text `five|\_/|four` and the `#check-btn element` is clicked, the `#result` element should contain the text `"five|\_/|four is not a palindrome"`
 </details>
 
-## Project Commentary
+## ✏️ Project Commentary ✏️
 * I began with the HTML and CSS to make my app look similar to the one on FreeCodeCamp ([https://palindrome-checker.freecodecamp.rocks/](https://palindrome-checker.freecodecamp.rocks/))
 * My website look like this:
 <details>
@@ -68,6 +68,7 @@ function palindromeCheck(e) {
 }
 ```
 </summary>
+</details>
 
 * I wanted to start using TDD, I began creating a javascript module which I could import into [script.js](./code/script.js)
 * I defined [function.js](./code/js/functions.js) as:
@@ -77,3 +78,23 @@ function removeWhiteSpaceAndSpecialCharacters(input) {
 }
 module.exports = removeWhiteSpaceAndSpecialCharacters;
 ```
+* I created [function.js](./code/js/functions.test.js):
+```js
+const removeWhiteSpaceAndSpecialCharacters = require('./removeWhiteSpaceAndSpecialCharacters');
+
+test('should return input with no changes when it contains no special characters', ()=> {
+    expect(removeWhiteSpaceAndSpecialCharacters('A')).toBe('A')
+})
+```
+* Note: the above import is wrong, I incorrectly assumed you would use the function name, it SHOULD be the following:
+```js
+const removeWhiteSpaceAndSpecialCharacters = require('./functions');
+```
+* I then began trying to initialise NPM and get the Jest module from within [./code/js/](./code/js/), which created the npm_modules and `package.json` but when I ran `npm test` it would complain the module could not be found in the root of this project
+* I decided to not use `npm test` and just use a VS Code plugin [Jest Runner](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner)
+* So now I am able to run the test successfully as seen in below screenshot:
+<details>
+
+![](./screenshots/2024-09-25-11-28-10.png)
+
+</details>
