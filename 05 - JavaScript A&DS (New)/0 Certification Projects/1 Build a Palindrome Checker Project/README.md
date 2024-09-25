@@ -31,3 +31,49 @@
 16. When the `#text-input` element contains the text `0_0 (: /-\ :) 0-0` and the `#check-btn element` is clicked, the `#result` element should contain the text `"0_0 (: /-\ :) 0-0 is a palindrome"`
 17. When the `#text-input` element contains the text `five|\_/|four` and the `#check-btn element` is clicked, the `#result` element should contain the text `"five|\_/|four is not a palindrome"`
 </details>
+
+## Project Commentary
+* I began with the HTML and CSS to make my app look similar to the one on FreeCodeCamp ([https://palindrome-checker.freecodecamp.rocks/](https://palindrome-checker.freecodecamp.rocks/))
+* My website look like this:
+<details>
+<summary>Screenshot</summary>
+
+![](./screenshots/2024-09-25-10-54-37.png)
+
+<hr>
+</details>
+
+* I then started working on the javascript in [script.js](./code/script.js)
+* I first worked on showing an alert if the input was blank:
+<details>
+<summary>Code</summary>
+
+```js
+/* getting the form element, so i cann listen to when 
+   it is submitted
+*/
+const palindromeChecker = document.getElementById("palindrome-checker");
+const textInput = document.getElementById("text-input").value
+
+palindromeChecker.addEventListener("submit", palindromeCheck);
+
+function palindromeCheck(e) {
+   e.preventDefault(); // stop form from being submitted
+
+   console.log("check clicked")
+   console.log(textInput)
+
+   if (textInput.length === 0) 
+      alert("Please input a value")
+}
+```
+</summary>
+
+* I wanted to start using TDD, I began creating a javascript module which I could import into [script.js](./code/script.js)
+* I defined [function.js](./code/js/functions.js) as:
+```js
+function removeWhiteSpaceAndSpecialCharacters(input) {
+   return input;
+}
+module.exports = removeWhiteSpaceAndSpecialCharacters;
+```
