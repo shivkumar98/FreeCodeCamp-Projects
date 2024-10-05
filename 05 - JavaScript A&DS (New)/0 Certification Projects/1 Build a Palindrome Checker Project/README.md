@@ -98,3 +98,22 @@ const removeWhiteSpaceAndSpecialCharacters = require('./functions');
 ![](./screenshots/2024-09-25-11-28-10.png)
 
 </details>
+
+* I was having issues with my tests. I was incorrectly importing and exporting
+* You can export multiple functions using curly braces:
+```js
+function removeWhiteSpaceAndSpecialCharacters(input) {
+   return desired = input.replace(/[_,.\s]/gi, '');
+}
+
+function isPalindrome(filteredString) {
+   const reversedString = filteredString.split("").reverse().join("");
+   return filteredString === reversedString;
+}
+
+module.exports = { removeWhiteSpaceAndSpecialCharacters, isPalindrome }
+```
+* You then need to import the functions with a single line in the test file:
+```js
+const { removeWhiteSpaceAndSpecialCharacters, isPalindrome } = require('./functions');
+```

@@ -1,12 +1,11 @@
 function removeWhiteSpaceAndSpecialCharacters(input) {
-    return input.replace(/[_,.]/gi, '');
+    return desired = input.replace(/[_,.\s]/gi, '');
 }
 
 function isPalindrome(filteredString) {
     const reversedString = filteredString.split("").reverse().join("");
     return filteredString === reversedString;
 }
-
 
 /* getting the form element, so i cann listen to when 
    it is submitted
