@@ -3,7 +3,7 @@ function removeWhiteSpaceAndSpecialCharacters(input) {
 }
 
 function isPalindrome(filteredString) {
-    const reversedString = filteredString.split("").reverse();
+    const reversedString = filteredString.split("").reverse().join("");
     return filteredString === reversedString;
 }
 
@@ -33,8 +33,10 @@ function palindromeCheck(e) {
     const isFilteredInputPalindrome = isPalindrome(filteredTextInput)
     console.log(isFilteredInputPalindrome)
 
-    if (isPalindrome) {
+    if (isFilteredInputPalindrome) {
         result.textContent = textInput + " is a Palindrome"
+    } else {
+        result.textContent = textInput + " is not a Palindrome"
     }
     
 
