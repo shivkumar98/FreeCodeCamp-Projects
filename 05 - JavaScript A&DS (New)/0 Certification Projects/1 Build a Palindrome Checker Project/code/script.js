@@ -11,14 +11,16 @@ function removeWhiteSpaceAndSpecialCharacters(input) {
 /* getting the form element, so i cann listen to when 
    it is submitted
 */
+
 const palindromeChecker = document.getElementById("palindrome-checker");
-const textInput = document.getElementById("text-input").value
-const result = document.getElementById("result");
 
 palindromeChecker.addEventListener("submit", palindromeCheck);
 
 function palindromeCheck(e) {
     e.preventDefault(); // stop form from being submitted
+
+    const textInput = document.getElementById("text-input").value
+    const result = document.getElementById("result");
 
     console.log("check clicked")
     console.log(textInput)
