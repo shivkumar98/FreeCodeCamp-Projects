@@ -1,8 +1,19 @@
+function removeWhiteSpaceAndSpecialCharacters(input) {
+    return input;
+}
+
+ function isPalindrome(filteredString) {
+    const reversedString = filteredString.split("").reverse();
+    return filteredString === reversedString;
+}
+
+
 /* getting the form element, so i cann listen to when 
    it is submitted
 */
 const palindromeChecker = document.getElementById("palindrome-checker");
 const textInput = document.getElementById("text-input").value
+const result = document.getElementById("result");
 
 palindromeChecker.addEventListener("submit", palindromeCheck);
 
@@ -16,5 +27,16 @@ function palindromeCheck(e) {
         alert("Please input a value")
 
     const filteredTextInput = removeWhiteSpaceAndSpecialCharacters(textInput);
+    console.log(filteredTextInput)
+    const isFilteredInputPalindrome = isPalindrome(filteredTextInput)
+    console.log(isFilteredInputPalindrome)
+
+    if (isPalindrome) {
+        result.textContent = textInput + " is a Palindrome"
+    }
+    
+
+    console.log(filteredTextInput)
+    console.log(isPalindrome)
     
 }
