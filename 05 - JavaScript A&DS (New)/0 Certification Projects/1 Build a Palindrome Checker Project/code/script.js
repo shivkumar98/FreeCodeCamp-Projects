@@ -25,8 +25,10 @@ function palindromeCheck(e) {
     console.log("check clicked")
     console.log(textInput)
 
-    if (textInput.length === 0) 
+    if (textInput.length === 0) {
         alert("Please input a value")
+        return
+    }
 
     const filteredTextInput = removeWhiteSpaceAndSpecialCharacters(textInput);
     console.log(filteredTextInput)
