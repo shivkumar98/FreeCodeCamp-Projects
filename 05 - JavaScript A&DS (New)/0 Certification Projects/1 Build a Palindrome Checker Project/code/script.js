@@ -1,8 +1,8 @@
 function removeWhiteSpaceAndSpecialCharacters(input) {
-    return input;
+    return desired = input.replace(/[_,.]/gi, '');
 }
 
- function isPalindrome(filteredString) {
+function isPalindrome(filteredString) {
     const reversedString = filteredString.split("").reverse();
     return filteredString === reversedString;
 }
