@@ -1,5 +1,5 @@
 function removeWhiteSpaceAndSpecialCharacters(input) {
-    return desired = input.replace(/[_,.]/gi, '');
+    return input.replace(/[_,.]/gi, '');
 }
 
 function isPalindrome(filteredString) {
