@@ -1,7 +1,7 @@
 const { removeWhiteSpaceAndSpecialCharacters, isPalindrome } = require('./functions');
 
 test('should return input with no changes when it contains no special characters', ()=> {
-    expect(removeWhiteSpaceAndSpecialCharacters('A')).toBe('A')
+    expect(removeWhiteSpaceAndSpecialCharacters('A')).toBe('a')
 })
 
 test('should return true when evaluating A is a palindrome', () => {
@@ -30,3 +30,11 @@ test('should return amanaplanacanalpanama when A man, a plan, a canal. Panama is
     expect(removeWhiteSpaceAndSpecialCharacters('A man, a plan, a canal. Panama')).toBe('amanaplanacanalpanama')
 });
 
+
+test('should return 0000', () => {
+    expect(removeWhiteSpaceAndSpecialCharacters('0_0 (: /-\\ :) 0-0')).toBe('0000')
+});
+
+test('should return true when myageis00siegaym is inputted', () => {
+    expect(isPalindrome('myageis00siegaym')).toBeTruthy();
+})
