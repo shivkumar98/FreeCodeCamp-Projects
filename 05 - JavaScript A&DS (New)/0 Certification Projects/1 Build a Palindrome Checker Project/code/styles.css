@@ -1,0 +1,66 @@
+body {
+    background-color: #0a0a23
+}
+.centred {
+    margin: auto;
+    width: 400px;
+    min-width: 400px;
+    text-align: center;
+}
+
+.container {
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+label {
+    color: black;
+}
+
+#palindrome-checker {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 0;
+    box-shadow: rgb(4, 0, 239) 0px 3px 8px;
+
+}
+
+#palindrome-checker > label {
+    width: 100%;
+    font-family: 'Franklin Gothic';
+    font-size: 10pt;
+}
+
+button {
+    background-color: #5a01a7;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 8pt;
+    margin: 0;
+    padding: 5px 8px;
+}
+
+input {
+    border-style: none;
+    border-bottom: 1px solid #5a01a7;
+}
+
+.info-text {
+    border-radius: 20px;
+    background-color: #00471b;
+    font-family: 'Franklin Gothic';
+    margin-top: 20px;
+    color: white;
+    padding: 10px 40px;
+}
+
+#result {
+    font-family: 'Franklin Gothic';
+    font-size: 14pt;
+    font-weight: 100;
+}

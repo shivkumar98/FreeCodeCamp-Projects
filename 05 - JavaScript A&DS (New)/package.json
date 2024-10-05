@@ -1,0 +1,15 @@
+{
+  "name": "freecodecamp-projects",
+  "version": "1.0.0",
+  "description": "This repo contains documentation, code, solutions I curated while working through [freeCodeCamp's](https://www.freecodecamp.org)  certifications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
