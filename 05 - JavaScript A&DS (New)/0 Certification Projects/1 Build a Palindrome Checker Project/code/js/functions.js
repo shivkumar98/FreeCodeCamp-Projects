@@ -7,5 +7,4 @@ function removeWhiteSpaceAndSpecialCharacters(input) {
     return filteredString === reversedString;
 }
 
-export { removeWhiteSpaceAndSpecialCharacters, isPalindrome}
 module.exports = removeWhiteSpaceAndSpecialCharacters;
