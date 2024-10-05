@@ -21,7 +21,12 @@ test('should return false when evaluating a non palindrome', () => {
     expect(isPalindrome('not a palindrome is not a palindrome')).toBeFalsy()
 });
 
-test('should racecar when race car is inputted', () => {
+test('should return racecar when race car is inputted', () => {
     expect(removeWhiteSpaceAndSpecialCharacters('race car')).toBe('racecar')
+});
+
+
+test('should return amanaplanacanalpanama when A man, a plan, a canal. Panama is inputted', () => {
+    expect(removeWhiteSpaceAndSpecialCharacters('A man, a plan, a canal. Panama')).toBe('amanaplanacanalpanama')
 });
 

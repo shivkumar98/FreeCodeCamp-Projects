@@ -1,5 +1,6 @@
 function removeWhiteSpaceAndSpecialCharacters(input) {
-    return desired = input.replace(/[_,.\s]/gi, '');
+    const lowerCased = input.toLowerCase()
+    return lowerCased.replace(/[_,.\s]/gi, '');
 }
 
 function isPalindrome(filteredString) {
