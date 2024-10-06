@@ -14,7 +14,7 @@
 <!-- omit in toc -->
 ## 👨‍🍳 Final Product 👨‍🍳
 
-* You can test the app [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05%20-%20JavaScript%20A%26DS%20(New)/1G%20Learn%20Basic%20String%20and%20Array%20Methods%20by%20Building%20a%20Music%20Player/code/index.html)
+* You can test the app [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05-javascript-a-ds-new/1-javascript-fundamentals/1g-learn-basic-string-and-array-methods-by-building-a-music-player/code/index.html)
 
 Here is a demo:
 

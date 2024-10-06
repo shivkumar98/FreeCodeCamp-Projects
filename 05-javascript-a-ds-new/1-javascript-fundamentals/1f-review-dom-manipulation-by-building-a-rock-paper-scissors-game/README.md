@@ -4,7 +4,7 @@
 <!-- omit in toc -->
 ## 👨‍🍳 Final Product 👨‍🍳
 
-* You can test the app [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05%20-%20JavaScript%20A%26DS%20(New)/1F%20Review%20DOM%20Manipulation%20by%20Building%20a%20Rock%2C%20Paper%2C%20Scissors%20Game/code/index.html)
+* You can test the app [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05-javascript-a-ds-new/1-javascript-fundamentals/1f-review-dom-manipulation-by-building-a-rock-paper-scissors-game/code/index.html)
 
 * Here is a demo:
 
