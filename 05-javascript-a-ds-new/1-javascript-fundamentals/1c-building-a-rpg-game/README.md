@@ -3,7 +3,7 @@
 
 ## 👨‍🍳 Final Product 👨‍🍳
 * The code for this exercise can be found [here](code)
-* You can try the game using this [link](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05%20-%20JavaScript%20A%26DS%20(New)/1C%20Building%20a%20RPG%20Game/code/index.html)
+* You can try the game using this [link](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05-javascript-a-ds-new/1-javascript-fundamentals/1c-building-a-rpg-game/code/index.html)
 * Here is a demo of it running:
 ![](screenshots/demo.gif)
 

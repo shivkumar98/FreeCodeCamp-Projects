@@ -6,7 +6,7 @@
 
 <!-- omit in toc -->
 ## 👨‍🍳 Final Product 👨‍🍳
-* You can test the app [here]([/05](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05%20-%20JavaScript%20A%26DS%20(New)/1E%20Building%20a%20Calorie%20Counter/code/index.html))
+* You can test the app [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05-javascript-a-ds-new/1-javascript-fundamentals/1e-building-a-calorie-counter/code/index.html)
 * Here is a small demo:
 
 ![](screenshots/demo.gif)

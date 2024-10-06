@@ -1,7 +1,7 @@
 # 🧠 1D Building a Random Background Colour Changer
 
 ## 👨‍🍳 Final Product 👨‍🍳
-* You can test out the app [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05%20-%20JavaScript%20A%26DS%20(New)/1D%20Building%20a%20Random%20Background%20Color%20Changer/code/index.html)
+* You can test out the app [here](https://htmlpreview.github.io/?https://github.com/shivkumar98/FreeCodeCamp-Projects/blob/main/05-javascript-a-ds-new/1-javascript-fundamentals/1d-building-a-random-background-color-changer/code/index.html)
 * Here's a small demo:
 
 ![](screenshots/demo.gif)
