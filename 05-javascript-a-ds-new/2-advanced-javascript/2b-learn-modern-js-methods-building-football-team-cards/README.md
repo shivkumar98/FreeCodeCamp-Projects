@@ -276,7 +276,7 @@ footer {
 <img src="./screenshots/start.gif" width="400px">
 </details>
 
-## TODO: name this section
+## 🟥 Setting Up Variables
 * I declare 4 variables for the 4 spans at the top of the HTML:
 ```js
 const teamName = document.getElementById("team");
@@ -475,3 +475,11 @@ players: [
 ]
 ```
 </details>
+
+## 🟥 Object freeze() Methhod
+* The `Object.freeze()` method prevents modification of a variable at runtime (unlike using `const` which prevents modification at compile time)
+* The browser will not actually have an issue if it does happen unless you are using strict mode
+* I freeze the `myFavoriteFootballTeam` object:
+```js
+
+```
