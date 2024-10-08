@@ -275,3 +275,17 @@ footer {
 
 <img src="./screenshots/start.gif" width="400px">
 </details>
+
+## TODO: name this section
+* I declare 4 variables for the 4 spans at the top of the HTML:
+```js
+const teamName = document.getElementById("team");
+const typeOfSport = document.getElementById("sport");
+const worldCupYear = document.getElementById("year");
+const headCoach = document.getElementById("head-coach")
+```
+
+* I declare another variable for the dic which encapsulates all the cards:
+```js
+const playerCards = document.getElementById("player-cards")
+```
