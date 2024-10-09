@@ -518,3 +518,7 @@ const { sport, team }  = myFavoriteFootballTeam
 ```js
 const { sport, team, year, players } = myFavoriteFootballTeam;
 ```
+* I use destructuring to access `coachName` from `myFavoriteFootballTeam.headCoach`:
+```js
+const { coachName } =  myFavoriteFootballTeam.headCoach 
+```
