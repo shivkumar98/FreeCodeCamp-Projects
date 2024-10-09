@@ -553,3 +553,10 @@ console.log(defaultValue(13)) // you must be atleast 13
 ```js
 const setPlayerCards = (arr = players) => {};
 ```
+* I set up a new array which is responsible for adding the player card information to the page.
+* Inside the function, I map the array:
+```js
+const setPlayerCards = (arr = players) => {
+   playerCards.innerHTML += arr.map(() => {})
+};
+```
