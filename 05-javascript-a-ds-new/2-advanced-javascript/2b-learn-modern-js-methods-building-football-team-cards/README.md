@@ -522,3 +522,19 @@ const { sport, team, year, players } = myFavoriteFootballTeam;
 ```js
 const { coachName } =  myFavoriteFootballTeam.headCoach 
 ```
+
+## 🟥 Setting the headings
+* I now work on the information on the screen displaying.
+* I set the textContent of the four headings at the top of the page to the destructured variables:
+```js
+typeOfSport.textContent = sport
+teamName.textContent = team
+worldCupYear.textContent = year
+headCoach.textContent = coachName
+```
+
+## 🟥 Filters
+* I start making the dropdown filters work by intialising an empty arrow function:
+```js
+const setPlayerCards = () => {}
+```
