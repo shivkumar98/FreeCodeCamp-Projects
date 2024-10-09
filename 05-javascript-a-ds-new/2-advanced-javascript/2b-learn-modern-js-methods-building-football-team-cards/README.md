@@ -513,5 +513,8 @@ const { name, isCool } = { developerObj }
 * I rewrite my sport and team constants using destructuring:
 ```js
 const { sport, team }  = myFavoriteFootballTeam
-
+```
+* I add year, and players to the destructuring:
+```js
+const { sport, team, year, players } = myFavoriteFootballTeam;
 ```
