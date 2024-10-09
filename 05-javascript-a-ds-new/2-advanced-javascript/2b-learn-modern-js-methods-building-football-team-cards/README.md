@@ -481,5 +481,37 @@ players: [
 * The browser will not actually have an issue if it does happen unless you are using strict mode
 * I freeze the `myFavoriteFootballTeam` object:
 ```js
+Object.freeze(myFavoriteFootballTeam)
+```
+
+* I access the `sport` key of my `myFavoriteFootballTeam` object - which is "Football", and the team key:
+```js
+const sport = myFavoriteFootballTeam.sport;
+const team = myFavoriteFootballTeam.team;
+```
+
+## 🟥 Object Destructuring 
+* Object destructuring enables you to set multiple constants at the same time:
+<details>
+
+```js
+// WITHOUT destructuring:
+const developerObj = {
+   name: "Shiv is cool",
+   isCool: true
+}
+const name = developerObj.name
+const isCool = developerObj.isCool
+console.log(`${name} ${isCool}`) // Shiv is cool true
+
+// WITH destructuring
+const { name, isCool } = { developerObj }
+```
+* NOTE: the variable names must be exactly same as the keys for this to work (I think)
+</details>
+
+* I rewrite my sport and team constants using destructuring:
+```js
+const { sport, team }  = myFavoriteFootballTeam
 
 ```

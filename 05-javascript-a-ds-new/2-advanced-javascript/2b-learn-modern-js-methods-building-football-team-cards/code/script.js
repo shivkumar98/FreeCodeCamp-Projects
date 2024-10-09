@@ -177,3 +177,4 @@ players: [
 
 Object.freeze(myFavoriteFootballTeam)
 
+const { sport, team }  = myFavoriteFootballTeam
