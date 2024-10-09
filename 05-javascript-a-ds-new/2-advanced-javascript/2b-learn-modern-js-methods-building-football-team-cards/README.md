@@ -533,8 +533,23 @@ worldCupYear.textContent = year
 headCoach.textContent = coachName
 ```
 
-## 🟥 Filters
-* I start making the dropdown filters work by intialising an empty arrow function:
+## 🟥 Default Patameters
+
+* Unlike Java, JavaScript supports default values for parameters when they are not provided:
+<details>
+
+<summary>Example</summary>
+
 ```js
-const setPlayerCards = () => {}
+const defaultValue = (age = 18) => {
+   return `you must be atleast ${age}`
+}
+console.log(defaultValue()) // you must be atleast 18s
+console.log(defaultValue(13)) // you must be atleast 13
+```
+</details>
+
+* I work on making the dropdown filters work by setting up an empty setPlayerCards function which has an `arr` parameter with default value:
+```js
+const setPlayerCards = (arr = players) => {};
 ```
