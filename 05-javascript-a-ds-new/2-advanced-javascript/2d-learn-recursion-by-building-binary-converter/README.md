@@ -20,4 +20,10 @@
    <img src="screenshots/project-setup.png" width="400px">
    </details>
 
-## 🟥 Assigning Variables for Page Elements 
+## 🟥 Without Recursion
+* I set up the following constants:
+   ```js
+   const numberInput = document.getElementById("number-input")
+   const convertBtn = document.getElementById("convert-btn")
+   const result = document.getElementById("result")
+   ```
