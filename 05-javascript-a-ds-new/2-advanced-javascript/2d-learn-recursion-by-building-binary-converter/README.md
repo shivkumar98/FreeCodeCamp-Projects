@@ -27,3 +27,26 @@
    const convertBtn = document.getElementById("convert-btn")
    const result = document.getElementById("result")
    ```
+* I create a function which will execute when user clicks the Convert button, for now I will print what is in the input field:
+
+   ```js
+   const checkUserInput = () => {
+      console.log(numberInput.value)
+   }
+
+   convertBtn.addEventListener("click", checkUserInput);
+   ```
+* I also want to trigger the `checkUserInput()` whenever the user presses enter
+* I use the ⌨️`keydown`⌨️ event which lets me check what key the user has pressed:
+   ```js
+   numberInput.addEventListener("keydown", (e)=>{})
+   ```
+* I can determine key the user has pressed❗If I print the `e` parameter in the console, I would see: `{ isTrusted: [Getter] }`. I can obtain the key using the `e.key` property
+* I check that the key is "enter":
+   ```js
+   numberInput.addEventListener("keydown", (e)=>{
+      if (e.key === "Enter") {
+         checkUserInput()
+      }
+   })
+   ```
