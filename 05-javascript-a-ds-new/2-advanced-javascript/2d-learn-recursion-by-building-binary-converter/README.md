@@ -10,6 +10,14 @@
 
 ## 👨‍🍳 Final Product TODO 👨‍🍳
 ## 📝 Summary Notes TODO 📝
-## 🛠️ Project Setup TODO 🛠️
+
+## 🛠️ Project Setup 🛠️
+
+* I have been provided the [HTML](code/index.html) and [CSS](code/styles.css)
+* This is what the page looks like:
+   <details>
+
+   <img src="screenshots/project-setup.png" width="400px">
+   </details>
 
 ## 🟥 Assigning Variables for Page Elements 
