@@ -77,3 +77,18 @@ if (!numberInput.value || isNaN(parseInt(numberInput.value)) || parseInt(numberI
    return;
 }
 ```
+* I create a function for the conversion to binary:
+```js
+const decimalToBinary = (input) => {}
+```
+
+* I call the above in my checkUserInput function:
+```js
+const checkUserInput = () => {
+   /* if (!numberInput.value ...
+      REST OF CODE
+   */
+
+   decimalToBinary(parseInt(numberInput.value))
+}
+```
