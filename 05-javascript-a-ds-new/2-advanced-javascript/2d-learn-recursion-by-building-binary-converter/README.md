@@ -82,7 +82,7 @@ if (!numberInput.value || isNaN(parseInt(numberInput.value)) || parseInt(numberI
 const decimalToBinary = (input) => {}
 ```
 
-* I call the above in my checkUserInput function:
+* I call the above in my checkUserInput function, and clear the input of the number input:
 ```js
 const checkUserInput = () => {
    /* if (!numberInput.value ...
@@ -90,5 +90,6 @@ const checkUserInput = () => {
    */
 
    decimalToBinary(parseInt(numberInput.value))
+   numberInput.value = ''
 }
 ```
