@@ -135,3 +135,10 @@ while (input < 0) {
    input = quotient
 }
 ```
+
+* After the while-loop, I log the following:
+```js
+console.log("Inputs: ", inputs);
+console.log("Quotients: ", quotients)
+console.log("Remainders: ", remainders)
+```
