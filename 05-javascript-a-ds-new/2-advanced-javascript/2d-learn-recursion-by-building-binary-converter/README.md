@@ -50,3 +50,29 @@
       }
    })
    ```
+* I update the implementation of checkUserInput(), to check that the input is not blank:
+```js
+const checkUserInput = () => {
+   if (!numberInput.value) {
+      
+   }
+}
+```
+* There `parseInt()` function converts a string to a number:
+```js
+parseInt('123') // 123
+parseInt('aaa') // NaN
+```
+* I update the if check to see if the parsed input is NaN:
+```js
+if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
+      
+}
+```
+
+* I add a third condition to check if number is less than zero:
+```js
+if (!numberInput.value || isNaN(parseInt(numberInput.value)) || parseInt(numberInput.value)<0) {
+      
+}
+```
