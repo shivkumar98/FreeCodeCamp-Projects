@@ -93,3 +93,13 @@ const checkUserInput = () => {
    numberInput.value = ''
 }
 ```
+
+* I define some arrays in my decimalToBinary() function:
+```js
+const decimalToBinary() = () => {
+   let inputs = []
+   let quotients = []
+   let remainders = []
+   return "01110110";
+}
+```
