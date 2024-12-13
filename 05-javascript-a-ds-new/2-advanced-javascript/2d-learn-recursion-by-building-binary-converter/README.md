@@ -77,6 +77,9 @@ if (!numberInput.value || isNaN(parseInt(numberInput.value)) || parseInt(numberI
    return;
 }
 ```
+
+## 🟥 Iteration 1: Without Recursion
+
 * I create a function for the conversion to binary:
 ```js
 const decimalToBinary = (input) => {}
@@ -97,9 +100,38 @@ const checkUserInput = () => {
 * I define some arrays in my decimalToBinary() function:
 ```js
 const decimalToBinary() = () => {
-   let inputs = []
-   let quotients = []
-   let remainders = []
+   const inputs = []
+   const quotients = []
+   const remainders = []
    return "01110110";
+}
+```
+
+* I need to keep dividing the input by 2 to work out the binary representation:
+```js
+while (input < 0) {
+   const quotient = Math.floor(input / 2)
+   input = quotient
+}
+```
+* I create a `remainder` variable to store the remainder of the halfing (can be either 0 or 1):
+```js
+while (input < 0) {
+   const quotient = Math.floor(input / 2)
+   const remainder = input % 2
+   input = quotient
+}
+```
+* I push the above variables, and the input (before reassignment) to the arrays:
+```js
+while (input < 0) {
+   const quotient = Math.floor(input / 2)
+   const remainder = input % 2
+
+   inputs.push(input)
+   quotients.push(quotient)
+   remainders.push(remainder)
+
+   input = quotient
 }
 ```
