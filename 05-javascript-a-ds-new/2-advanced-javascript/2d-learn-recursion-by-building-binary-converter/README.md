@@ -166,15 +166,54 @@
 * Trying to convert 0 to binary does not work currently, since the while loop checks if input is greater than zero, nothing is added to the arrays
 * So nothing is printed to the results div!
 * I fix this, by manually setting the result to `"0"`:
+   ```js
+   const decimalToBinary = (input) => {
+      const inputs = [];
+      const quotients = [];
+      const remainders = [];
+
+      if (input === 0) {
+         result.innerText = "0";
+         return;
+      }
+   }
+   ```
+
+* This is the first iteration of the `decimalToBinary()` function:
+   ```js
+   const decimalToBinary = (input) => {
+      const inputs = []
+      const quotients = []
+      const remainders = []
+      if (input === 0) {
+         result.innerText = "0";
+         return;
+      }
+      while (input > 0) {
+         const quotient = Math.floor(input / 2)
+         const remainder = input % 2
+         inputs.push(input)
+         quotients.push(quotient)
+         remainders.push(remainder)
+         input = quotient
+      }
+      console.log("Inputs: ", inputs);
+      console.log("Quotients: ", quotients);
+      console.log("Remainders: ", remainders);
+      result.innerText = remainders.reverse().join("")
+   }
+   ```
+
+## 🟥 Improving `decimalToBinary()` Function
+* We can make the function more efficient by not tracking the inputs and quotient
+* I redefine my `decimalToBinary()` function as:
 ```js
 const decimalToBinary = (input) => {
-   const inputs = [];
-   const quotients = [];
-   const remainders = [];
-
-   if (input === 0) {
-      result.innerText = "0";
-      return;
+   let binary = ""
+   while (input > 0) {
+      binary = (input % 2) + binary;
+      input = Math.floor(input / 2);
    }
+   result.innerText = binary
 }
 ```
