@@ -235,3 +235,48 @@
    ```
 
 ## 🟥 Iteration 2: WITH Recursion
+
+### 📍 Recursion
+* I will be learning about the Call Stack data structure, and convert my `decimalToBinary()` function to use recursion.
+* I create a function called `a()`, which calls a function `b()`, which calls a function `c()`:
+   ```js
+   const a = () => {
+      return "freeCodeCamp " + b()
+   }
+   const b = () => {
+      return "is " + c();
+   }
+   const c = () => {
+      return "awesome!"
+   }
+   ```
+* If I log this:
+   ```js
+   console.log(a()) // freeCodeCamp is awesome!
+   ```
+
+### 📍 Call Stack
+* A stack 📚 is a LIFO data structure. Elements can be pushed to top of stack, and popped off the top of stack
+* The ***call stack*** is a collection of function calls stored in a stack structure. When you call a function, it is added to top of stack, and when it returns it removes it from top of stack.
+* I will see this by creating a mock call stack.
+* I create a `callStack` array:
+   ```js
+   const callStack = [
+      'a(): returns "freeCodeCamp " + b()'
+   ]
+   ```
+* Since a() calls b(), I add the string `"b(): returns 'is ' + c()"` to the top of stack:
+   ```js
+   const callStack = [
+      'a(): returns "freeCodeCamp " + b()',
+      "b(): returns 'is ' + c()"
+   ]
+   ```
+* Since b() calls c(), I add the string `"c(): returns 'awesome!'"`:
+   ```js
+   const callStack = [
+      'a(): returns "freeCodeCamp " + b()',
+      'b(): returns "is " + c()',
+      "c(): returns 'awesome!'"
+   ];
+   ```
