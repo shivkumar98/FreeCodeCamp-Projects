@@ -161,3 +161,20 @@
 
    <img src="screenshots/step-33.gif" width="400px">
    </details>
+
+## 🕷️ Fixing Bug 1 🕷️
+* Trying to convert 0 to binary does not work currently, since the while loop checks if input is greater than zero, nothing is added to the arrays
+* So nothing is printed to the results div!
+* I fix this, by manually setting the result to `"0"`:
+```js
+const decimalToBinary = (input) => {
+   const inputs = [];
+   const quotients = [];
+   const remainders = [];
+
+   if (input === 0) {
+      result.innerText = "0";
+      return;
+   }
+}
+```
