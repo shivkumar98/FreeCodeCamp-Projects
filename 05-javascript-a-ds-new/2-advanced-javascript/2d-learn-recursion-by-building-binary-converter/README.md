@@ -51,94 +51,113 @@
    })
    ```
 * I update the implementation of checkUserInput(), to check that the input is not blank:
-```js
-const checkUserInput = () => {
-   if (!numberInput.value) {
-      
+   ```js
+   const checkUserInput = () => {
+      if (!numberInput.value) {
+         
+      }
    }
-}
-```
+   ```
 * There `parseInt()` function converts a string to a number:
-```js
-parseInt('123') // 123
-parseInt('aaa') // NaN
-```
+   ```js
+   parseInt('123') // 123
+   parseInt('aaa') // NaN
+   ```
 * I update the if check to see if the parsed input is NaN:
-```js
-if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
-      
-}
-```
+   ```js
+   if (!numberInput.value || isNaN(parseInt(numberInput.value))) {
+         
+   }
+   ```
 
 * I add a third condition to check if number is less than zero, and then alert the user:
-```js
-if (!numberInput.value || isNaN(parseInt(numberInput.value)) || parseInt(numberInput.value)<0) {
-   alert("Please provide a decimal number greater than or equal to 0");
-   return;
-}
-```
+   ```js
+   if (!numberInput.value || isNaN(parseInt(numberInput.value)) || parseInt(numberInput.value)<0) {
+      alert("Please provide a decimal number greater than or equal to 0");
+      return;
+   }
+   ```
 
 ## 🟥 Iteration 1: Without Recursion
 
 * I create a function for the conversion to binary:
-```js
-const decimalToBinary = (input) => {}
-```
+   ```js
+   const decimalToBinary = (input) => {}
+   ```
 
 * I call the above in my checkUserInput function, and clear the input of the number input:
-```js
-const checkUserInput = () => {
-   /* if (!numberInput.value ...
-      REST OF CODE
-   */
+   ```js
+   const checkUserInput = () => {
+      /* if (!numberInput.value ...
+         REST OF CODE
+      */
 
-   decimalToBinary(parseInt(numberInput.value))
-   numberInput.value = ''
-}
-```
+      decimalToBinary(parseInt(numberInput.value))
+      numberInput.value = ''
+   }
+   ```
 
 * I define some arrays in my decimalToBinary() function:
-```js
-const decimalToBinary() = () => {
-   const inputs = []
-   const quotients = []
-   const remainders = []
-   return "01110110";
-}
-```
+   ```js
+   const decimalToBinary() = () => {
+      const inputs = []
+      const quotients = []
+      const remainders = []
+      return "01110110";
+   }
+   ```
 
 * I need to keep dividing the input by 2 to work out the binary representation:
-```js
-while (input < 0) {
-   const quotient = Math.floor(input / 2)
-   input = quotient
-}
-```
+   ```js
+   while (input < 0) {
+      const quotient = Math.floor(input / 2)
+      input = quotient
+   }
+   ```
 * I create a `remainder` variable to store the remainder of the halfing (can be either 0 or 1):
-```js
-while (input < 0) {
-   const quotient = Math.floor(input / 2)
-   const remainder = input % 2
-   input = quotient
-}
-```
+   ```js
+   while (input < 0) {
+      const quotient = Math.floor(input / 2)
+      const remainder = input % 2
+      input = quotient
+   }
+   ```
 * I push the above variables, and the input (before reassignment) to the arrays:
-```js
-while (input < 0) {
-   const quotient = Math.floor(input / 2)
-   const remainder = input % 2
+   ```js
+   while (input < 0) {
+      const quotient = Math.floor(input / 2)
+      const remainder = input % 2
 
-   inputs.push(input)
-   quotients.push(quotient)
-   remainders.push(remainder)
+      inputs.push(input)
+      quotients.push(quotient)
+      remainders.push(remainder)
 
-   input = quotient
-}
-```
+      input = quotient
+   }
+   ```
 
 * After the while-loop, I log the following:
-```js
-console.log("Inputs: ", inputs);
-console.log("Quotients: ", quotients)
-console.log("Remainders: ", remainders)
-```
+   ```js
+   console.log("Inputs: ", inputs);
+   console.log("Quotients: ", quotients)
+   console.log("Remainders: ", remainders)
+   ```
+* If I enter 6 and convert, I see the following in the console:
+   ```c
+   Inputs:  [ 6, 3, 1 ]
+   Quotients:  [ 3, 1, 0 ]
+   Remainders:  [ 0, 1, 1 ]
+   ```
+* The remainders reversed, is the binary representation of 6: `110`
+* I set the inner text of the result div to the remainders reverse:
+   ```js
+      result.innerText = remainders.reverse().join("")
+   ```
+
+* Here is the app working:
+
+   <details>
+   <summary>GIF</summary>
+
+   <img src="screenshots/step-33.gif" width="400px">
+   </details>
