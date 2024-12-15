@@ -280,3 +280,23 @@
       "c(): returns 'awesome!'"
    ];
    ```
+* If we imagine what this this is a stack, the top of the stack returns `"awesome!"`, it is popped off:
+   ```js
+   const callStack = [
+      'a(): returns "freeCodeCamp " + b()',
+      'b(): returns "is " + c()'
+   ];
+   ```
+* Now the top of the stack gets evaluated as `"is " + "awesome!"`:
+   ```js
+   const callStack = [
+      'a(): returns "freeCodeCamp " + b()',
+      "b(): returns 'is ' + 'awesome!'"
+   ]
+   ```
+* Now `b()` gets executed, and its popped off the stack:
+   ```js
+   const callStack = [
+      "a(): returns 'freeCodeCamp ' + 'is awesome!'"
+   ]
+   ```
