@@ -162,7 +162,7 @@
    <img src="screenshots/step-33.gif" width="400px">
    </details>
 
-## 🕷️ Fixing Bug 1 🕷️
+### 🕷️ Fixing Bug 1 🕷️
 * Trying to convert 0 to binary does not work currently, since the while loop checks if input is greater than zero, nothing is added to the arrays
 * So nothing is printed to the results div!
 * I fix this, by manually setting the result to `"0"`:
@@ -204,16 +204,34 @@
    }
    ```
 
-## 🟥 Improving `decimalToBinary()` Function
+### 📍 Improving `decimalToBinary()` Function
 * We can make the function more efficient by not tracking the inputs and quotient
 * I redefine my `decimalToBinary()` function as:
-```js
-const decimalToBinary = (input) => {
-   let binary = ""
-   while (input > 0) {
-      binary = (input % 2) + binary;
-      input = Math.floor(input / 2);
+   ```js
+   const decimalToBinary = (input) => {
+      let binary = ""
+      while (input > 0) {
+         binary = (input % 2) + binary;
+         input = Math.floor(input / 2);
+      }
+      result.innerText = binary
    }
-   result.innerText = binary
-}
-```
+   ```
+
+* I again check if the input is 0 so that it sets the result to `"0"`:
+   ```js
+   const decimalToBinary = (input) => {
+      let binary = ""
+      if (input === 0) {
+         binary = "0"
+      }
+
+      while (input > 0) {
+         binary = (input % 2) + binary;
+         input = Math.floor(input / 2);
+      }
+      result.innerText = binary
+   }
+   ```
+
+## 🟥 Iteration 2: WITH Recursion
