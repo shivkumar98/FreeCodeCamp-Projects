@@ -300,3 +300,28 @@
       "a(): returns 'freeCodeCamp ' + 'is awesome!'"
    ]
    ```
+* Finally, the last element is popped off, so a() returns: `freeCodeCamp is awesome!`
+
+### 📍 Countdown Using Recursion
+* I will create a function that will count down to zero from a given number:
+   ```js
+   const countdown = (number) => {
+      console.log(number)
+   };
+   ```
+* I add the base case when the number is 0:
+   ```js
+   const countdown = (number) => {
+      console.log(number)
+
+      if (number === 0) {
+         return
+      } else {
+
+      }
+   };
+   ```
+* To write the recursive case, I need to get closer to base case of 0, so I reduce the number by 1 and call the function again
+```js
+
+```
