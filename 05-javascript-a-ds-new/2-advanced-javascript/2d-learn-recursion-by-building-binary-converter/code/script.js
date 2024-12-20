@@ -2,18 +2,6 @@ const numberInput = document.getElementById("number-input")
 const convertBtn = document.getElementById("convert-btn")
 const result = document.getElementById("result")
 
-const countdown = (number) => {
-    console.log(number)
-    console.log(number);
-
-    if (number === 0) {
-      return;
-    } else {
-      countdown(number - 1);
-    }
- };
-
-
 const decimalToBinary = (input) => {
     let binary = ""
     if (input === 0) {

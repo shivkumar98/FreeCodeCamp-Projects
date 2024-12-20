@@ -336,3 +336,37 @@
    1
    0
    ```
+
+### 📍 Understand Call Stack With Recursion
+
+* To understand how a call stack works, I modify my countdown function to:
+```js
+const countDownAndUp = (number) => {
+   console.log(number);
+   if (number === 0) {
+      console.log("Reached base case");
+      return;
+   } else {
+      countDownAndUp(number - 1);
+      console.log(number);
+   }
+};
+```
+* If I call `countDownAndUp(3)`, I see the following logged:
+   ```c
+   3
+   2
+   1
+   0
+   Reached base case
+   1
+   2
+   3
+   ```
+* On first iteration: `countDownAndUp(3)`, number = 3, so its logged, then `countDownAndUp(2)` is called, and the logging of number is paused
+* On second iteration: `countDownAndUp(2)`, number = 2, so its logged, then `countDownAndUp(1)` is called, and the logging of number is paused
+* On third iteration: `countDownAndUp(1)`, number = 1, so its logged, then `countDownAndUp(0)` is called, and the logging of number is paused
+* On fourth iteration: `Reached base case is logged`
+* `CountDownAndUp(1)` was the last recursive call, so it completes the else block to print `1`
+* `CountDownAndUp(2)` then resumes and completes the else block to print `2`
+* `countDownAndUp(3)` then resumes and completes the else block to print `3`
