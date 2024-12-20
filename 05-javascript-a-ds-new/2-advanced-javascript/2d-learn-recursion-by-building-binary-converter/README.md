@@ -180,6 +180,9 @@
    ```
 
 * This is the first iteration of the `decimalToBinary()` function:
+  <details>
+  <summary>Without recursion decimalToBinary()</summary>
+
    ```js
    const decimalToBinary = (input) => {
       const inputs = []
@@ -203,6 +206,7 @@
       result.innerText = remainders.reverse().join("")
    }
    ```
+   </details>
 
 ### 🔺 Improving `decimalToBinary()` Function
 * We can make the function more efficient by not tracking the inputs and quotient
@@ -340,20 +344,20 @@
 ### 🔺 Understand Call Stack With Recursion
 
 * To understand how a call stack works, I modify my countdown function to:
-```js
-const countDownAndUp = (number) => {
-   console.log(number);
-   if (number === 0) {
-      console.log("Reached base case");
-      return;
-   } else {
-      countDownAndUp(number - 1);
+   ```js
+   const countDownAndUp = (number) => {
       console.log(number);
-   }
-};
-```
+      if (number === 0) {
+         console.log("Reached base case");
+         return;
+      } else {
+         countDownAndUp(number - 1);
+         console.log(number);
+      }
+   };
+   ```
 * If I call `countDownAndUp(3)`, I see the following logged:
-   ```c
+   ```m
    3
    2
    1
@@ -370,3 +374,36 @@ const countDownAndUp = (number) => {
 * `CountDownAndUp(1)` was the last recursive call, so it completes the else block to print `1`
 * `CountDownAndUp(2)` then resumes and completes the else block to print `2`
 * `countDownAndUp(3)` then resumes and completes the else block to print `3`
+
+## 🟥 Iteration 2: With Recursion
+* Here is the current implementation of `decimalToBinary()`:
+  <details>
+  <summary>Without recursion decimalToBinary()</summary>
+
+   ```js
+   const decimalToBinary = (input) => {
+      let binary = ""
+      if (input === 0) {
+         binary = "0"
+      }
+      while (input > 0) {
+         binary = (input % 2) + binary;
+         input = Math.floor(input / 2);
+      }
+      result.innerText = binary
+   }
+   ```
+   </details>
+
+* I clear out the `decimalToBinary()` function and write the base case of the recursive call:
+```js
+const decimalToBinary = (input) => {
+   if (input === 0) {
+      return "";
+   }
+};
+```
+* I need to halve my input, and append it to the remainder of `input ÷ 2`, so I add the following recursion case:
+```js
+
+```
