@@ -20,7 +20,7 @@
    <img src="screenshots/project-setup.png" width="400px">
    </details>
 
-## 🟥 Without Recursion
+## 🟥 Making the form Functional
 * I set up the following constants:
    ```js
    const numberInput = document.getElementById("number-input")
@@ -204,7 +204,7 @@
    }
    ```
 
-### 📍 Improving `decimalToBinary()` Function
+### 🔺 Improving `decimalToBinary()` Function
 * We can make the function more efficient by not tracking the inputs and quotient
 * I redefine my `decimalToBinary()` function as:
    ```js
@@ -234,9 +234,9 @@
    }
    ```
 
-## 🟥 Iteration 2: WITH Recursion
+## 🟥 Understanding Recursion
 
-### 📍 Recursion
+### 🔺 Recursion
 * I will be learning about the Call Stack data structure, and convert my `decimalToBinary()` function to use recursion.
 * I create a function called `a()`, which calls a function `b()`, which calls a function `c()`:
    ```js
@@ -255,7 +255,7 @@
    console.log(a()) // freeCodeCamp is awesome!
    ```
 
-### 📍 Call Stack
+### 🔺 Call Stack
 * A stack 📚 is a LIFO data structure. Elements can be pushed to top of stack, and popped off the top of stack
 * The ***call stack*** is a collection of function calls stored in a stack structure. When you call a function, it is added to top of stack, and when it returns it removes it from top of stack.
 * I will see this by creating a mock call stack.
@@ -302,7 +302,7 @@
    ```
 * Finally, the last element is popped off, so a() returns: `freeCodeCamp is awesome!`
 
-### 📍 Countdown Using Recursion
+### 🔺 Countdown Using Recursion
 * I will create a function that will count down to zero from a given number:
    ```js
    const countdown = (number) => {
@@ -337,7 +337,7 @@
    0
    ```
 
-### 📍 Understand Call Stack With Recursion
+### 🔺 Understand Call Stack With Recursion
 
 * To understand how a call stack works, I modify my countdown function to:
 ```js
