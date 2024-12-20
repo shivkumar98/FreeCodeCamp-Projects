@@ -396,14 +396,29 @@
    </details>
 
 * I clear out the `decimalToBinary()` function and write the base case of the recursive call:
-```js
-const decimalToBinary = (input) => {
-   if (input === 0) {
-      return "";
-   }
-};
-```
+   ```js
+   const decimalToBinary = (input) => {
+      if (input === 0) {
+         return "";
+      }
+   };
+   ```
 * I need to halve my input, and append it to the remainder of `input ÷ 2`, so I add the following recursion case:
-```js
+   ```js
+   const decimalToBinary = (input) => {
+      if (input === 0) {
+         return "";
+      } else {
+         return decimalToBinary(Math.floor(input / 2)) + (input % 2);
+      }
+   }
+   ```
+* I still need to set the text of the `result` div, I do this in the `checkUserInput()` function:
+   ```js
+   const checkUserInput = () => {
+      // EXISTING CODE
 
-```
+      result.textContent = decimalToBinary(parseInt(numberInput.value))
+      numberInput.value = ''
+   }
+   ```
