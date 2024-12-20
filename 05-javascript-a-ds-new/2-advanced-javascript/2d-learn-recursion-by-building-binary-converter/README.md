@@ -422,3 +422,12 @@
       numberInput.value = ''
    }
    ```
+
+### 🕷️ Fixing Bug 2 🕷️
+* The app works! But no result shows if input is 0!
+* I fix this by fixing my base case and setting the result to "0":
+   ```js
+   if (input === 0) {
+      return "0";
+   }
+   ```
