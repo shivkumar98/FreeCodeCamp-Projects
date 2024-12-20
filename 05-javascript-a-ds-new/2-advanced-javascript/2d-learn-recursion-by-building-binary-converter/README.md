@@ -431,3 +431,13 @@
       return "0";
    }
    ```
+### 🕷️ Fixing Bug 2 🕷️
+* If I enter 1 into the input, the result is `01`!
+* I add an else clause for this:
+   ```js
+   if (input === 0) {
+      return "0";
+   } else if (input === 1) {
+      return "1";
+   }
+   ```
