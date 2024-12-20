@@ -313,15 +313,26 @@
    ```js
    const countdown = (number) => {
       console.log(number)
-
       if (number === 0) {
          return
-      } else {
-
-      }
+      } else {}
    };
    ```
 * To write the recursive case, I need to get closer to base case of 0, so I reduce the number by 1 and call the function again
-```js
-
-```
+   ```js
+   const countdown = (number) => {
+      console.log(number)
+      if (number === 0) {
+         return
+      } else {
+         countdown(number-1);
+      }
+   };
+   ```
+* If I call `countdown(3)`, I see the following logged:
+   ```c
+   3
+   2
+   1
+   0
+   ```
