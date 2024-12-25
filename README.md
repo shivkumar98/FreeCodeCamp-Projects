@@ -32,7 +32,7 @@ This repo contains documentation, code, solutions I curated while working throug
 
 ## **4 - Front End Development Libraries**
 
-  &nbsp; 📍 [**View projects here**](/04%20-%20Front%20End%20Libraries) // todo: fix this link and all links in subdirectory
+  &nbsp; 📍 [**View projects here**](/04%20-%20Front%20End%20Libraries)
   
   &nbsp; 📍 [**See certification here**](https://www.freecodecamp.org/certification/fcc55144a21-0a3a-4329-acd7-8e49b83d46f3/front-end-development-libraries)
 
@@ -40,7 +40,7 @@ This repo contains documentation, code, solutions I curated while working throug
      
 ## **5 - JavaScript Data Structures + Algorithms (New)**
 
-  &nbsp; 📍 [**View projects here**](/05%20-%20JavaScript%20A&DS%20(New)/)
+  &nbsp; 📍 [**View projects here**](/05-javascript-a-ds-new/)
 
   &nbsp; 📍 Started on 22/05/2024
 
