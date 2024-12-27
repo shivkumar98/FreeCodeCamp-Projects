@@ -133,3 +133,30 @@
 
     <img src="screenshots/2024-12-27-12-09-57.png" height="200px">
     </details>
+
+* I add the Convert button:
+    ```js
+    <main>
+        <h2>Enter a Number</h2>
+        <input id="number" type="number">
+        <br>
+        <button id="convert-btn">Convert</button>
+    </main>
+    ```
+* I style it with CSS:
+    ```css
+    #convert-btn {
+        width: 85%;
+        font-size: 18pt;
+        background: linear-gradient(#fecc4c, #ffac33);
+        margin-top: 20pt;
+        border: 1px solid #fecc4c;
+        padding: 12px 0;
+    }
+    ```
+* This is what it looks like:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-27-17-49-10.png" height="200px">
+    </details>
