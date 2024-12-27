@@ -1,0 +1,30 @@
+body {
+    background-color: #1b1b32;
+    margin-top: 48px;
+}
+.centred {
+    margin: auto;
+    width: 500px;
+    min-width: 400px;
+    text-align: center;
+}
+
+.container {
+    background-color: whitesmoke;
+}
+
+h1 { 
+    font-family: 'Castoro Titling';
+    color: white;
+    font-size: 30pt;
+    font-weight: lighter;
+    line-height: 38pt;
+}
+
+main {
+    border: 3px solid #f5f6f7;
+    background-color: #3b3d4f;
+    color: white;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    padding-top: 18px;
+}

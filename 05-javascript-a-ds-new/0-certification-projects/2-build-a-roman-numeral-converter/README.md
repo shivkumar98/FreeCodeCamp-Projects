@@ -4,6 +4,7 @@
 
 ## 📜 Instructions 📜
 * Roman numerals are based on seven symbols which can be combined to express Arabic numerals. E.g.:
+  
 | Roman numerals | Arabic numerals |
 |----------------|-----------------|
 |      M         |      1000       |
@@ -20,7 +21,7 @@
 |      IV        |      14         |
 |      I         |      1          |
 
-## 📖 User Stories TODO 📖 
+## 📖 User Stories 📖 
 1. You should have an `input` element with an `id` of `"number"`
 2. You should have a `button` element with an `id` of `"convert-btn"`
 3. You should have a `div`, `span` or `p` element with an `id` of `output`
@@ -33,4 +34,79 @@
 10. When the `#number` element contains the number 1023 and the `#convert-btn` element is clicked, the `#output` element should contain the text `"MXXIII"`
 11. When the `#number` element contains the number 3999 and the `#convert-btn` element is clicked, the `#output` element should contain the text `"MMMCMXCIX"`
 
-## ✏️ Project Commentary TODO ✏️
+## ✏️ Project Commentary ✏️
+
+### ⭐ Front-End Work ⭐
+* I intialised the HTML as:
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta lang="en">
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="./styles.css">
+            <title>Roman Numeral Converter</title>
+        </head>
+        <body>
+            <div class="centred">
+                <img src="fcc_primary.svg" height="30pt">
+                <h1>ROMAN <br>NUMERAL<br> CONVERTER</h1>
+            
+            </div>
+            <script src="./script.js"></script>
+        </body>
+    </html>
+    ```
+* And my CSS as:
+    ```css
+    body {
+        background-color: #1b1b32;
+        margin-top: 48px;
+    }
+    .centred {
+        margin: auto;
+        width: 500px;
+        min-width: 400px;
+        text-align: center;
+    }
+
+    .container {
+        background-color: whitesmoke;
+    }
+
+    h1 { 
+        font-family: 'Castoro Titling';
+        color: white;
+        font-size: 30pt;
+        font-weight: lighter;
+        line-height: 38pt;
+    }
+    ```
+* This is what it looks like:
+    <details>
+    <summary>Screenshot</summary>
+
+    ![](screenshots/2024-12-27-11-53-51.png)
+    </details>
+  
+
+* I add a `main` element:
+    ```html
+    <div class="centred">
+        <img src="fcc_primary.svg" height="30pt">
+        <h1>ROMAN <br>NUMERAL<br> CONVERTER</h1>
+        <main>
+            <h2>Enter a Number</h2>
+        </main>
+    </div>
+    ```
+* And I give it the following styling:
+    ```css
+    main {
+        border: 3px solid #f5f6f7;
+        background-color: #3b3d4f;
+        color: white;
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
+        padding-top: 18px;
+    }
+    ```
