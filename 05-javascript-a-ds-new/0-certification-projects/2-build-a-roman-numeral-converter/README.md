@@ -86,7 +86,7 @@
     <details>
     <summary>Screenshot</summary>
 
-    ![](screenshots/2024-12-27-11-53-51.png)
+    <img src="screenshots/2024-12-27-11-53-51.png" width="200px">
     </details>
   
 
@@ -110,3 +110,26 @@
         padding-top: 18px;
     }
     ```
+
+* In my `main` element, I add the following input:
+    ```html
+    <input id="number" type="number">
+    ```
+* With the following styling:
+    ```css
+    #number {
+        width: 80%;
+        height: 40pt;
+        background-color: #0a0a23;
+        font-size: 30pt;
+        color:white;
+        border: 1px solid white;
+        padding: 4px 10px;
+    }
+    ```
+* This is what it looks like:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-27-12-09-57.png" height="200px">
+    </details>

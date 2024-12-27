@@ -28,3 +28,13 @@ main {
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     padding-top: 18px;
 }
+
+#number {
+    width: 80%;
+    height: 40pt;
+    background-color: #0a0a23;
+    font-size: 30pt;
+    color:white;
+    border: 1px solid white;
+    padding: 4px 10px;
+}
