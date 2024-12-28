@@ -160,3 +160,55 @@
 
     <img src="screenshots/2024-12-27-17-49-10.png" height="200px">
     </details>
+
+### ⭐ Please Enter a valid number ⭐
+* I add an `#output` div which has a CSS class of hide:
+    ```html
+    <div class="centred">
+        <img src="fcc_primary.svg" height="30pt">
+        <h1>ROMAN <br>NUMERAL<br> CONVERTER</h1>
+        <main>
+            <h2>Enter a Number</h2>
+            <input id="number" type="number">
+            <br>
+            <button id="convert-btn">Convert</button>
+        </main>
+        <div id="output" class="hide"></div>
+    </div>
+    ```
+* I style it using: 
+    ```css
+    .hide {
+        display: none;
+    }
+    #output {
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
+        height: 56pt;
+        line-height: 56pt;
+        margin-top: 20px;   
+        justify-content: center;
+    }
+    .error {
+        color: #850000;
+        background-color: #ffadad;
+        font-size: 24pt;
+        border: 3px solid #850000;
+    }
+    ```
+* I initialise my JavaScript file as:
+    ```js
+    const convertBtn = document.getElementById("convert-btn")
+    const output = document.getElementById("output")
+
+    convertBtn.addEventListener("click", ()=> {
+        output.textContent = "Please enter a valid number";
+        output.classList.remove("hide")
+        output.classList.add("error")
+    })
+    ```
+* Now, when I click the convert button, I will always see an error in the output div:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-28-16-06-49.png" height="200px">
+    </details>

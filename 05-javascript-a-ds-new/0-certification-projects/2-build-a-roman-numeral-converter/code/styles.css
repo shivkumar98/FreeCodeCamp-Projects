@@ -48,3 +48,22 @@ main {
     border: 1px solid #fecc4c;
     padding: 12px 0;
 }
+
+#output {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    height: 56pt;
+    line-height: 56pt;
+    margin-top: 20px;   
+    justify-content: center;
+}
+
+.error {
+    color: #850000;
+    background-color: #ffadad;
+    font-size: 24pt;
+    border: 3px solid #850000;
+}
+
+.hide {
+    display: none;
+}
