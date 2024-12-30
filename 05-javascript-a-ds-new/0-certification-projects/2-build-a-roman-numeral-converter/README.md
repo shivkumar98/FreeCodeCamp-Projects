@@ -448,3 +448,31 @@ function decimalToRomanNumeral(input) {
         return "X".repeat(numberOfTens) + decimalToRomanNumeral(input-(10*numberOfTens))
     }
     ```
+### ⭐ Converting 40-49 to Roman Numerals ⭐
+* These numbers are just "XL" Pre-appended to the number, I update my function to:
+```js
+function decimalToRomanNumeral(input) {
+    if (input === 0) {
+        return "";
+    } 
+    if (input <=9) {
+        if (input<=3) {
+            return "I".repeat(input)
+        } else if (input==4) {
+            return "IV"
+        } else if (input==5) {
+            return "V"
+        } else if (input >=6 && input <= 8) {
+            return "V"+ decimalToRomanNumeral(input-5);
+        } else {
+            return "IX"
+        } 
+    } else if (input >=10 && input <=39) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "X".repeat(numberOfTens) + decimalToRomanNumeral(input-(10*numberOfTens))
+    } else if (input >=40 && input <=49) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "XL" + decimalToRomanNumeral(input-(10*numberOfTens));
+    }
+}
+```

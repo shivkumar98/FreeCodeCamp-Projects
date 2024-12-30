@@ -174,6 +174,43 @@ test('should return XXXIX when 39 is input', ()=> {
 })
 
 
-test('should return XXX when 40 is input', ()=> {
-    expect(decimalToRomanNumeral(40)).toBe('XXXX')
+test('should return XL when 40 is input', ()=> {
+    expect(decimalToRomanNumeral(40)).toBe('XL')
+})
+
+test('should return XLI when 41 is input', ()=> {
+    expect(decimalToRomanNumeral(41)).toBe('XLI')
+})
+
+test('should return XLII when 42 is input', ()=> {
+    expect(decimalToRomanNumeral(42)).toBe('XLII')
+})
+
+test('should return XLIII when 43 is input', ()=> {
+    expect(decimalToRomanNumeral(43)).toBe('XLIII')
+})
+
+test('should return XLIV when 44 is input', ()=> {
+    expect(decimalToRomanNumeral(44)).toBe('XLIV')
+})
+
+test('should return XLV when 45 is input', ()=> {
+    expect(decimalToRomanNumeral(45)).toBe('XLV')
+})
+
+test('should return XLVI when 46 is input', ()=> {
+    expect(decimalToRomanNumeral(46)).toBe('XLVI')
+})
+
+test('should return XLVII when 47 is input', ()=> {
+    expect(decimalToRomanNumeral(47)).toBe('XLVII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(48)).toBe('XLVIII')
+})
+
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(49)).toBe('XLIX')
 })
