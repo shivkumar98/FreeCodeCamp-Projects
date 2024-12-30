@@ -8,4 +8,10 @@ convertBtn.addEventListener("click", ()=> {
         output.classList.remove("hide")
         output.classList.add("error")
     }
+
+    if (parseInt(number.value) <= 0) {
+        output.textContent = "Please enter a number greater than or equal to 1";
+        output.classList.remove("hide")
+        output.classList.add("error")
+    }
 })

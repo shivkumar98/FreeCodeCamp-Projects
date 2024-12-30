@@ -161,7 +161,7 @@
     <img src="screenshots/2024-12-27-17-49-10.png" height="200px">
     </details>
 
-### ⭐ Please Enter a valid number ⭐
+### ⭐ Handling Empty Number Input ⭐
 * I add an `#output` div which has a CSS class of hide:
     ```html
     <div class="centred">
@@ -225,3 +225,24 @@
     })
     ```
 * Now the error will show if number is blank, and nothing is shown if there is a number in the field
+
+### ⭐ Handling Negative Number Input ⭐
+* As of now, nothing happens if a negative number is inputted
+* I add another if block to my JavaScript:
+    ```js
+    convertBtn.addEventListener("click", ()=> {
+        // EXISTING CODE HERE
+
+        if (parseInt(number.value) <= 0) {
+            output.textContent = "Please enter a number greater than or equal to 1";
+            output.classList.remove("hide")
+            output.classList.add("error")
+        }
+    })
+    ```
+* However the text bleeds outside of the div:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-30-12-30-23.png" height="200px">
+    </details>
