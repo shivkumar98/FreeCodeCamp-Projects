@@ -212,3 +212,16 @@
 
     <img src="screenshots/2024-12-28-16-06-49.png" height="200px">
     </details>
+
+* I fix my script, so that the error is only shown when the number input is empty:
+    ```js
+    const number = document.getElementById("number")
+    convertBtn.addEventListener("click", ()=> {
+        if (number.value ==="") {
+            output.textContent = "Please enter a valid number";
+            output.classList.remove("hide")
+            output.classList.add("error")
+        }
+    })
+    ```
+* Now the error will show if number is blank, and nothing is shown if there is a number in the field
