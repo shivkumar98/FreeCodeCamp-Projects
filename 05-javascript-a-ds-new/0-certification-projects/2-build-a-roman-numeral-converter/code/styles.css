@@ -49,12 +49,17 @@ main {
     padding: 12px 0;
 }
 
+.hide {
+    display: none;
+}
+
 #output {
     font-family: 'Lato', Helvetica, Arial, sans-serif;
-    height: 56pt;
-    line-height: 56pt;
+    min-width: 56pt;
     margin-top: 20px;   
+    padding: 20px 0;
     justify-content: center;
+    overflow-wrap: break-word;
 }
 
 .error {
@@ -62,8 +67,4 @@ main {
     background-color: #ffadad;
     font-size: 24pt;
     border: 3px solid #850000;
-}
-
-.hide {
-    display: none;
 }

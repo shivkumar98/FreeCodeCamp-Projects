@@ -246,3 +246,44 @@
 
     <img src="screenshots/2024-12-30-12-30-23.png" height="200px">
     </details>
+
+* I change the CSS, so that the height is not fixed to `56pt`, from
+    ```css
+    #output {
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
+        height: 56pt;
+        line-height: 56pt;
+        margin-top: 20px;   
+        justify-content: center;
+    }
+    ```
+* to:
+    ```css
+    #output {
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
+        min-width: 56pt;
+        margin-top: 20px;   
+        padding: 20px 0;
+        justify-content: center;
+        overflow-wrap: break-word;
+    }
+    ```
+* Now when I enter `-1`, it looks like:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-30-12-38-55.png" height="200px">
+    </details>
+* And if I enter empty, it looks like:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-30-12-39-35.png" height="200px">
+    </details>
+
+* I now have 5 of the tests from freeCodeCamp passing:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-30-12-43-16.png" height="200px">
+    </details>
