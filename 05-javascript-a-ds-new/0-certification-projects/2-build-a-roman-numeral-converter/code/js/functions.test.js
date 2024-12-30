@@ -123,3 +123,57 @@ test('should return XXVII when 27 is input', ()=> {
 test('should return XXVIII when 28 is input', ()=> {
     expect(decimalToRomanNumeral(28)).toBe('XXVIII')
 })
+
+test('should return XXIX when 29 is input', ()=> {
+    expect(decimalToRomanNumeral(29)).toBe('XXIX')
+})
+
+
+test('should return XXX when 30 is input', ()=> {
+    expect(decimalToRomanNumeral(30)).toBe('XXX')
+})
+
+//
+
+test('should return XXXI when 31 is input', ()=> {
+    expect(decimalToRomanNumeral(31)).toBe('XXXI')
+})
+
+test('should return XXXII when 32 is input', ()=> {
+    expect(decimalToRomanNumeral(32)).toBe('XXXII')
+})
+
+test('should return XXXIII when 33 is input', ()=> {
+    expect(decimalToRomanNumeral(33)).toBe('XXXIII')
+})
+
+test('should return XXXIV when 34 is input', ()=> {
+    expect(decimalToRomanNumeral(34)).toBe('XXXIV')
+})
+
+test('should return XXXV when 35 is input', ()=> {
+    expect(decimalToRomanNumeral(35)).toBe('XXXV')
+})
+
+
+test('should return XXXVI when 36 is input', ()=> {
+    expect(decimalToRomanNumeral(36)).toBe('XXXVI')
+})
+
+
+test('should return XXXVII when 37 is input', ()=> {
+    expect(decimalToRomanNumeral(37)).toBe('XXXVII')
+})
+
+test('should return XXXVIII when 38 is input', ()=> {
+    expect(decimalToRomanNumeral(38)).toBe('XXXVIII')
+})
+
+test('should return XXXIX when 39 is input', ()=> {
+    expect(decimalToRomanNumeral(39)).toBe('XXXIX')
+})
+
+
+test('should return XXX when 40 is input', ()=> {
+    expect(decimalToRomanNumeral(40)).toBe('XXXX')
+})

@@ -14,7 +14,7 @@ function decimalToRomanNumeral(input) {
         } else {
             return "IX"
         } 
-    } else if (input >=10 && input <=29) {
+    } else if (input >=10 && input <=39) {
         let numberOfTens = Math.floor(input/10 % 10)
         return "X".repeat(numberOfTens) + decimalToRomanNumeral(input-(10*numberOfTens))
     }

@@ -383,7 +383,7 @@ npm install --save-dev jest
     }
     ```
 
-### ⭐ Converting 21-30 to Roman Numerals ⭐
+### ⭐ Converting 21-39 to Roman Numerals ⭐
 * The numbers 21-30, is the same as as numbers 11-20, but with X preappended to it
 * So I update my function to:
 ```js
@@ -427,16 +427,24 @@ function decimalToRomanNumeral(input) {
     }
     ```
 * Now that I can do some real refactoring; I squash the last to else-if conditions:
-```js
-function decimalToRomanNumeral(input) {
-    if (input === 0) {
-        return "";
-    } 
-    if (input <=9) {
-        // EXISTING CODE HERE
-    } else if (input >=10 && input <=29) {
+    ```js
+    function decimalToRomanNumeral(input) {
+        if (input === 0) {
+            return "";
+        } 
+        if (input <=9) {
+            // EXISTING CODE HERE
+        } else if (input >=10 && input <=29) {
+            let numberOfTens = Math.floor(input/10 % 10)
+            return "X".repeat(numberOfTens) + decimalToRomanNumeral(input-(10*numberOfTens))
+        }
+    }
+    ```
+
+* The code I have also works for numbers 30-39, so I expand the else condition:
+    ```js
+    else if (input >=10 && input <=39) {
         let numberOfTens = Math.floor(input/10 % 10)
         return "X".repeat(numberOfTens) + decimalToRomanNumeral(input-(10*numberOfTens))
     }
-}
-```
+    ```
