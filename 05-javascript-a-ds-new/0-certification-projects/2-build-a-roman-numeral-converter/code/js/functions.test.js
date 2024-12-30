@@ -45,3 +45,45 @@ test('should return IX when 9 is input', ()=> {
 test('should return X when 10 is input', ()=> {
     expect(decimalToRomanNumeral(10)).toBe('X')
 })
+
+test('should return XI when 11 is input', ()=> {
+    expect(decimalToRomanNumeral(11)).toBe('XI')
+})
+
+test('should return XII when 12 is input', ()=> {
+    expect(decimalToRomanNumeral(12)).toBe('XII')
+})
+
+test('should return XIII when 13 is input', ()=> {
+    expect(decimalToRomanNumeral(13)).toBe('XIII')
+})
+
+test('should return XIV when 14 is input', ()=> {
+    expect(decimalToRomanNumeral(14)).toBe('XIV')
+})
+
+test('should return XV when 15 is input', ()=> {
+    expect(decimalToRomanNumeral(15)).toBe('XV')
+})
+
+
+test('should return XVI when 16 is input', ()=> {
+    expect(decimalToRomanNumeral(16)).toBe('XVI')
+})
+
+
+test('should return XVII when 17 is input', ()=> {
+    expect(decimalToRomanNumeral(17)).toBe('XVII')
+})
+
+test('should return XVIII when 18 is input', ()=> {
+    expect(decimalToRomanNumeral(18)).toBe('XVIII')
+})
+
+test('should return XIX when 19 is input', ()=> {
+    expect(decimalToRomanNumeral(19)).toBe('XIX')
+})
+
+test('should return XX when 19 is input', ()=> {
+    expect(decimalToRomanNumeral(19)).toBe('XIX')
+})

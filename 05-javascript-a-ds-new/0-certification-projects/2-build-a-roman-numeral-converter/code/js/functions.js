@@ -16,9 +16,9 @@ function decimalToRomanNumeral(input) {
         } else {
             return "X"
         }
+    } else if (input >=11 && input <=20) {
+        return "X" + decimalToRomanNumeral(input-10)
     }
-
-    
 }
 
 module.exports = { decimalToRomanNumeral}
