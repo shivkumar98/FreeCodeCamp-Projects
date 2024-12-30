@@ -214,3 +214,46 @@ test('', ()=> {
 test('', ()=> {
     expect(decimalToRomanNumeral(49)).toBe('XLIX')
 })
+
+//
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(50)).toBe('L')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(51)).toBe('LI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(52)).toBe('LII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(53)).toBe('LIII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(54)).toBe('LIV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(55)).toBe('LV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(56)).toBe('LVI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(57)).toBe('LVII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(58)).toBe('LVIII')
+})
+
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(59)).toBe('LIX')
+})
