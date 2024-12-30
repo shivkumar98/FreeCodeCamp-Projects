@@ -23,6 +23,12 @@ function decimalToRomanNumeral(input) {
     } else if (input >=50 && input <=59) {
         let numberOfTens = Math.floor(input/10 % 10)
         return "L" + decimalToRomanNumeral(input-(10*numberOfTens));
+    } else if (input >=60 && input <=69) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "LX" + decimalToRomanNumeral(input-(10*numberOfTens));
+    } else if (input >=70 && input <=79) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "LXX" + decimalToRomanNumeral(input-(10*numberOfTens));
     }
 }
 

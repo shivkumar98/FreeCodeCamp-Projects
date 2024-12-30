@@ -466,3 +466,19 @@ function decimalToRomanNumeral(input) {
         return "L" + decimalToRomanNumeral(input-(10*numberOfTens));
     }
     ```
+### ⭐ Converting 60-69 to Roman Numerals ⭐
+* The numbers 60 to 69 are just "LX" pre-appended to `decimalToRomanNumeral(input-60)`:
+    ```js
+    else if (input >=60 && input <=69) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "LXI" + decimalToRomanNumeral(input-(10*numberOfTens));
+    }
+    ```
+### ⭐ Converting 70-79 to Roman Numerals ⭐
+* The numbers 70 to 79 are just "LXX" pre-appended to `decimalToRomanNumeral(input-70)`:
+    ```js
+    else if (input >=70 && input <=79) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "LXX" + decimalToRomanNumeral(input-(10*numberOfTens));
+    }
+    ```

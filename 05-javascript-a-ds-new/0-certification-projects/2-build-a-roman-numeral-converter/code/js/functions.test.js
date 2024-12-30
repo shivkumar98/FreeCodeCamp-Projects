@@ -257,3 +257,89 @@ test('', ()=> {
 test('', ()=> {
     expect(decimalToRomanNumeral(59)).toBe('LIX')
 })
+
+//
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(60)).toBe('LX')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(61)).toBe('LXI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(62)).toBe('LXII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(63)).toBe('LXIII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(64)).toBe('LXIV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(65)).toBe('LXV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(66)).toBe('LXVI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(67)).toBe('LXVII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(68)).toBe('LXVIII')
+})
+
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(69)).toBe('LXIX')
+})
+
+//
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(70)).toBe('LXX')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(71)).toBe('LXXI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(72)).toBe('LXXII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(73)).toBe('LXXIII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(74)).toBe('LXXIV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(75)).toBe('LXXV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(76)).toBe('LXXVI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(77)).toBe('LXXVII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(78)).toBe('LXXVIII')
+})
+
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(79)).toBe('LXXIX')
+})
