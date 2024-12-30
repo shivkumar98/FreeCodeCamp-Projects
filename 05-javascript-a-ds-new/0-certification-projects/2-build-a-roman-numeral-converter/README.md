@@ -287,3 +287,30 @@
 
     <img src="screenshots/2024-12-30-12-43-16.png" height="200px">
     </details>
+
+### ⭐ Handling Too Large Number Input ⭐
+* I also check if the input is greater than 3999:
+    ```js
+    convertBtn.addEventListener("click", ()=> {
+        // EXISTING CODE HERE
+
+        if (parseInt(number.value) > 3999) {
+            output.textContent = "Please enter a number less than or equal to 3999";
+            output.classList.remove("hide")
+            output.classList.add("error")
+        }
+    })
+    ```
+* Now if enter a large number, I see this error message:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-30-13-03-12.png" height="200px">
+    </details>
+
+* Now the first 6 tests pass:
+    <details>
+    <summary>Screenshot</summary>
+
+    <img src="screenshots/2024-12-30-13-04-07.png" height="200px">
+    </details>

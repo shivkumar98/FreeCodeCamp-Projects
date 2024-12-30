@@ -14,4 +14,10 @@ convertBtn.addEventListener("click", ()=> {
         output.classList.remove("hide")
         output.classList.add("error")
     }
+
+    if (parseInt(number.value) > 3999) {
+        output.textContent = "Please enter a number less than or equal to 3999";
+        output.classList.remove("hide")
+        output.classList.add("error")
+    }
 })
