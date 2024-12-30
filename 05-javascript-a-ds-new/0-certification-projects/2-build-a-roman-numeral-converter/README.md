@@ -314,3 +314,31 @@
 
     <img src="screenshots/2024-12-30-13-04-07.png" height="200px">
     </details>
+
+### ⭐ Converting 9 to Roman Numerals ⭐
+* The seventh test is:
+
+7. When the `#number` element contains the number 9 and the `#convert-btn` element is clicked, the `#output` element should contain the text `"IX"`.
+
+* I initialise my `functions.js` file [here](./code/js/functions.js) as:
+    ```js
+    function decimalToRomanNumeral(input) {
+        return "IX"
+    }
+
+    module.exports = { decimalToRomanNumeral}
+    ```
+* I intialise my `functions.test.js` file [here](./code/js/functions.test.js) as:
+    ```js
+    const { decimalToRomanNumeral } = require('./functions');
+
+    test('should return IX when 9 is input', ()=> {
+        expect(decimalToRomanNumeral(9)).toBe('IX')
+    })
+    ```
+* I then open the terminal and enter:
+```
+npm init -y    
+npm install --save-dev jest
+```
+* I then can run my tests by clicking on the test button in VSCode or using the terminal
