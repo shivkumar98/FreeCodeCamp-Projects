@@ -376,6 +376,38 @@ npm install --save-dev jest
             return "";
         } 
         if (input <=10) {
+            // EXISTING CODE HERE
+        } else if (input >=11 && input <=20) {
+            return "X" + decimalToRomanNumeral(input-10)
+        }
+    }
+    ```
+
+### ⭐ Converting 21-30 to Roman Numerals ⭐
+* The numbers 21-30, is the same as as numbers 11-20, but with X preappended to it
+* So I update my function to:
+```js
+function decimalToRomanNumeral(input) {
+    if (input === 0) {
+        return "";
+    } 
+    if (input <=10) {
+        // EXISTING CODE HERE
+    } else if (input >=11 && input <=20) {
+        return "X" + decimalToRomanNumeral(input-10)
+    } else if (input >=21 && input <=30) {
+        return "XX"+ decimalToRomanNumeral(input-20)
+    }
+}
+```
+* I notice there is a pattern here, so I decide to refactor. 
+* I notice I need to make my code and conditions consistent, so I first make the following refactoring:
+    ```js
+    function decimalToRomanNumeral(input) {
+        if (input === 0) {
+            return "";
+        } 
+        if (input <=9) {
             if (input<=3) {
                 return "I".repeat(input)
             } else if (input==4) {
@@ -384,14 +416,27 @@ npm install --save-dev jest
                 return "V"
             } else if (input >=6 && input <= 8) {
                 return "V"+ decimalToRomanNumeral(input-5);
-            } else if (input == 9) {
-                return "IX"
             } else {
-                return "X"
-            }
-        } else if (input >=11 && input <=20) {
+                return "IX"
+            } 
+        } else if (input >=10 && input <=19) {
             return "X" + decimalToRomanNumeral(input-10)
+        } else if (input >=20 && input <=29) {
+            return "XX"+ decimalToRomanNumeral(input-20)
         }
     }
     ```
-
+* Now that I can do some real refactoring; I squash the last to else-if conditions:
+```js
+function decimalToRomanNumeral(input) {
+    if (input === 0) {
+        return "";
+    } 
+    if (input <=9) {
+        // EXISTING CODE HERE
+    } else if (input >=10 && input <=29) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "X".repeat(numberOfTens) + decimalToRomanNumeral(input-(10*numberOfTens))
+    }
+}
+```

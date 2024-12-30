@@ -84,6 +84,42 @@ test('should return XIX when 19 is input', ()=> {
     expect(decimalToRomanNumeral(19)).toBe('XIX')
 })
 
-test('should return XX when 19 is input', ()=> {
-    expect(decimalToRomanNumeral(19)).toBe('XIX')
+test('should return XX when 20 is input', ()=> {
+    expect(decimalToRomanNumeral(20)).toBe('XX')
+})
+
+//
+
+test('should return XXI when 21 is input', ()=> {
+    expect(decimalToRomanNumeral(21)).toBe('XXI')
+})
+
+test('should return XXII when 22 is input', ()=> {
+    expect(decimalToRomanNumeral(22)).toBe('XXII')
+})
+
+test('should return XXIII when 23 is input', ()=> {
+    expect(decimalToRomanNumeral(23)).toBe('XXIII')
+})
+
+test('should return XXIV when 24 is input', ()=> {
+    expect(decimalToRomanNumeral(24)).toBe('XXIV')
+})
+
+test('should return XXV when 25 is input', ()=> {
+    expect(decimalToRomanNumeral(25)).toBe('XXV')
+})
+
+
+test('should return XXVI when 16 is input', ()=> {
+    expect(decimalToRomanNumeral(26)).toBe('XXVI')
+})
+
+
+test('should return XXVII when 27 is input', ()=> {
+    expect(decimalToRomanNumeral(27)).toBe('XXVII')
+})
+
+test('should return XXVIII when 28 is input', ()=> {
+    expect(decimalToRomanNumeral(28)).toBe('XXVIII')
 })
