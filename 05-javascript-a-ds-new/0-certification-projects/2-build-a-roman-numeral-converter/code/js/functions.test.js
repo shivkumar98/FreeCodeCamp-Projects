@@ -356,4 +356,26 @@ test('', ()=> {
     expect(decimalToRomanNumeral(1899)).toBe('MDCCCXCIX')
 })
 
+// 1900 - 1999
+test('', ()=> {
+    expect(decimalToRomanNumeral(1900)).toBe('MCM')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(1999)).toBe('MCMXCIX')
+})
 
+// 2000 - 2999
+test('', ()=> {
+    expect(decimalToRomanNumeral(2000)).toBe('MM')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(2999)).toBe('MMCMXCIX')
+})
+
+// 3000 - 3999
+test('', ()=> {
+    expect(decimalToRomanNumeral(3000)).toBe('MMM')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(3999)).toBe('MMMCMXCIX')
+})

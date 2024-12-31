@@ -586,3 +586,11 @@ else if (input >=100 && input<=399) {
     }
     ```
     
+### ⭐ Converting 2000-3999 to Roman Numerals ⭐
+* I convert numbers up to 3999 with this else-if blocks:
+    ```js
+    else if (input >=2000 && input <=3999) {
+        let numberOfThousandths = Math.floor(input/1000 % 1000)
+        return "M".repeat(numberOfThousandths)+decimalToRomanNumeral(input-(1000*numberOfThousandths));
+    }
+    ```

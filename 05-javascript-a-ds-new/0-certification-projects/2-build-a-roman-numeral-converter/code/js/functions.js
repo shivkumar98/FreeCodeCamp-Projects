@@ -47,7 +47,10 @@ function decimalToRomanNumeral(input) {
         return "MD"+"C".repeat(numberOfHundredsAbove1500)+decimalToRomanNumeral(input-1500-(100*numberOfHundredsAbove1500));
     } else if (input >=1900 && input <=1999) {
         return "MCM"+decimalToRomanNumeral(input-1900);
-    } 
+    } else if (input >=2000 && input <=3999) {
+        let numberOfThousandths = Math.floor(input/1000 % 1000)
+        return "M".repeat(numberOfThousandths)+decimalToRomanNumeral(input-(1000*numberOfThousandths));
+    }
 }
 
 module.exports = { decimalToRomanNumeral}
