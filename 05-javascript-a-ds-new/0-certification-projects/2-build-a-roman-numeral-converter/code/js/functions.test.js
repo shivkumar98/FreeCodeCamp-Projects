@@ -353,7 +353,7 @@ test('', ()=> {
     expect(decimalToRomanNumeral(99)).toBe('XCIX')
 })
 
-// 100:
+// 100-199:
 test('', ()=> {
     expect(decimalToRomanNumeral(100)).toBe('C')
 })
@@ -370,3 +370,123 @@ test('', ()=> {
     expect(decimalToRomanNumeral(199)).toBe('CXCIX')
 })
 
+// 200-299:
+test('', ()=> {
+    expect(decimalToRomanNumeral(200)).toBe('CC')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(205)).toBe('CCV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(215)).toBe('CCXV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(250)).toBe('CCL')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(299)).toBe('CCXCIX')
+})
+// 300-399:
+test('', ()=> {
+    expect(decimalToRomanNumeral(300)).toBe('CCC')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(305)).toBe('CCCV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(315)).toBe('CCCXV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(350)).toBe('CCCL')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(399)).toBe('CCCXCIX')
+})
+
+// 400-499:
+test('', ()=> {
+    expect(decimalToRomanNumeral(400)).toBe('CD')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(405)).toBe('CDV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(415)).toBe('CDXV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(450)).toBe('CDL')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(499)).toBe('CDXCIX')
+})
+// 500-599:
+test('', ()=> {
+    expect(decimalToRomanNumeral(500)).toBe('D')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(505)).toBe('DV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(515)).toBe('DXV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(550)).toBe('DL')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(599)).toBe('DXCIX')
+})
+// 600-699:
+test('', ()=> {
+    expect(decimalToRomanNumeral(600)).toBe('DC')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(605)).toBe('DCV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(615)).toBe('DCXV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(650)).toBe('DCL')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(699)).toBe('DCXCIX')
+})
+// 700-799:
+test('', ()=> {
+    expect(decimalToRomanNumeral(700)).toBe('DCC')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(705)).toBe('DCCV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(715)).toBe('DCCXV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(750)).toBe('DCCL')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(799)).toBe('DCCXCIX')
+})
+// 800-899:
+test('', ()=> {
+    expect(decimalToRomanNumeral(800)).toBe('DCCC')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(805)).toBe('DCCCV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(815)).toBe('DCCCXV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(850)).toBe('DCCCL')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(899)).toBe('DCCCXCIX')
+})
+ // 900 - 999
+ test('', ()=> {
+    expect(decimalToRomanNumeral(900)).toBe('CM')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(999)).toBe('CMXCIX')
+})

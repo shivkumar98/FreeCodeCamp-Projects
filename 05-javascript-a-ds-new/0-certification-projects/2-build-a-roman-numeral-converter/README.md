@@ -536,3 +536,39 @@ function decimalToRomanNumeral(input) {
         return "C" + decimalToRomanNumeral(input-100);
     }
     ```
+
+### ⭐ Converting 200-399 to Roman Numerals ⭐
+* Here is the else-if blocks for 200-399:
+```js
+else if (input >=200 && input<=299) {
+    return "CC" + decimalToRomanNumeral(input-200);
+} else if (input >=300 && input<=399) {
+    return "CCC" + decimalToRomanNumeral(input-300);
+}
+```
+* Clearly there is a pattern where "C" is repeated by the hundredths digit of input, and `decimalToRomanNumeral(input - (100 * hundredths digit)` is appended to it
+* So I refactor this to:
+    ```js
+    else if (input >=100 && input<=399) {
+        let numberOfHundreds = Math.floor(input/100 % 100)
+        return "C".repeat(numberOfHundreds) + decimalToRomanNumeral(input-(100*numberOfHundreds));
+    }
+    ```
+### ⭐ Converting 400-999 to Roman Numerals ⭐
+* I convert the numbers up to 999 with these else-if blocks:
+```js
+else if (input >=100 && input<=399) {
+    let numberOfHundreds = Math.floor(input/100 % 100)
+    return "C".repeat(numberOfHundreds) + decimalToRomanNumeral(input-(100*numberOfHundreds));
+} else if (input >=400 && input <=499) {
+    return "CD" + decimalToRomanNumeral(input - 400)
+} else if (input >=500 && input <=899) {
+    let numberOfHundredsAbove500 = Math.floor((input-500)/100 % 100)
+    return "D"+ "C".repeat(numberOfHundredsAbove500) + decimalToRomanNumeral(input-(100*numberOfHundredsAbove500)-500)
+} else if (input >=500 && input <=899) {
+    let numberOfHundredsAbove500 = Math.floor((input-500)/100 % 100)
+    return "D"+ "C".repeat(numberOfHundredsAbove500) + decimalToRomanNumeral(input-(100*numberOfHundredsAbove500)-500)
+} else if (input >=900 && input <=999) {
+    return "CM"+decimalToRomanNumeral(input-900)
+}
+```
