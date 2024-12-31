@@ -594,3 +594,125 @@ else if (input >=100 && input<=399) {
         return "M".repeat(numberOfThousandths)+decimalToRomanNumeral(input-(1000*numberOfThousandths));
     }
     ```
+
+### ⭐ Utilising decimalToRomanNumeral() Function ⭐
+* I now have a function which is tested that convert an integer to a Roman numeral represented string:
+    <details>
+
+    <summary>decimalToRomanNumeral(input)</summary>
+
+    ```js
+    function decimalToRomanNumeral(input) {
+        if (input === 0) {
+            return "";
+        } 
+        if (input <=9) {
+            if (input<=3) {
+                return "I".repeat(input)
+            } else if (input==4) {
+                return "IV"
+            } else if (input==5) {
+                return "V"
+            } else if (input >=6 && input <= 8) {
+                return "V"+ decimalToRomanNumeral(input-5);
+            } else {
+                return "IX"
+            } 
+        } else if (input >=10 && input <=39) {
+            let numberOfTens = Math.floor(input/10 % 10)
+            return "X".repeat(numberOfTens) + decimalToRomanNumeral(input-(10*numberOfTens))
+        } else if (input >=40 && input <=49) {
+            let numberOfTens = Math.floor(input/10 % 10)
+            return "XL" + decimalToRomanNumeral(input-(10*numberOfTens));
+        } else if (input >=50 && input <=89) {
+            let numberOfTens = Math.floor(input/10 % 10)
+            let numberOfTensAbove50 = Math.floor((input-50)/10 % 10)
+            return "L" +"X".repeat(numberOfTensAbove50) + decimalToRomanNumeral(input-(10*numberOfTens));
+        } else if (input >=90 && input <=99) {
+            let numberOfTens = Math.floor(input/10 % 10)
+            return "XC" + decimalToRomanNumeral(input-(10*numberOfTens));
+        } else if (input >=100 && input<=399) {
+            let numberOfHundreds = Math.floor(input/100 % 100)
+            return "C".repeat(numberOfHundreds) + decimalToRomanNumeral(input-(100*numberOfHundreds));
+        } else if (input >=400 && input <=499) {
+            return "CD" + decimalToRomanNumeral(input - 400)
+        } else if (input >=500 && input <=899) {
+            let numberOfHundredsAbove500 = Math.floor((input-500)/100 % 100)
+            return "D"+ "C".repeat(numberOfHundredsAbove500) + decimalToRomanNumeral(input-(100*numberOfHundredsAbove500)-500)
+        } else if (input >=900 && input <=999) {
+            return "CM"+decimalToRomanNumeral(input-900)
+        } else if (input >=1000 && input <=1399) {
+            let numberOfHundredsAbove1000 = Math.floor((input-1000)/100 % 100)
+            return "M"+"C".repeat(numberOfHundredsAbove1000)+decimalToRomanNumeral(input-1000-(100*numberOfHundredsAbove1000));
+        } else if (input >=1400 && input <=1499) {
+            return "MCD" + decimalToRomanNumeral(input-1400);
+        } else if (input >=1500 && input <=1899) {
+            let numberOfHundredsAbove1500 = Math.floor((input-1500)/100 % 100)
+            return "MD"+"C".repeat(numberOfHundredsAbove1500)+decimalToRomanNumeral(input-1500-(100*numberOfHundredsAbove1500));
+        } else if (input >=1900 && input <=1999) {
+            return "MCM"+decimalToRomanNumeral(input-1900);
+        } else if (input >=2000 && input <=3999) {
+            let numberOfThousandths = Math.floor(input/1000 % 1000)
+            return "M".repeat(numberOfThousandths)+decimalToRomanNumeral(input-(1000*numberOfThousandths));
+        }
+    }
+    ```
+
+    </details>
+
+* At the bottom of the event listener, I add the following code:
+    ```js
+
+    convertBtn.addEventListener("click", ()=> {
+        // existing code
+
+        let romanNumeralOfInput = decimalToRomanNumeral(number.value);
+        output.textContent = romanNumeralOfInput;
+        output.classList.remove("hide")
+        output.classList.add("result")
+        return;
+    })
+    ```
+* I get few test failures (from freeCodeCamp). I realised I didn't add returns in my if checks for when user input is not valid
+* I correct my function, so that there is early returns:
+    ```js
+    convertBtn.addEventListener("click", ()=> {
+        if (number.value ==="") {
+            output.textContent = "Please enter a valid number";
+            output.classList.remove("hide")
+            output.classList.add("error")
+            return;
+        }
+
+        if (parseInt(number.value) <= 0) {
+            output.textContent = "Please enter a number greater than or equal to 1";
+            output.classList.remove("hide")
+            output.classList.add("error")
+            return;
+        }
+
+        if (parseInt(number.value) > 3999) {
+            output.textContent = "Please enter a number less than or equal to 3999";
+            output.classList.remove("hide")
+            output.classList.add("error")
+            return;
+        }
+
+        let romanNumeralOfInput = decimalToRomanNumeral(number.value);
+        output.textContent = romanNumeralOfInput;
+        output.classList.remove("hide")
+        output.classList.add("result")
+        return;
+    })
+    ```
+
+* I also create a new CSS class for the result:
+    ```css
+    .result {
+        color: white;
+        background-color: #3b3d4f;
+        font-size: 24pt;
+        border: 3px solid white;
+    }
+    ```
+* Now all my tests pass!

@@ -68,3 +68,10 @@ main {
     font-size: 24pt;
     border: 3px solid #850000;
 }
+
+.result {
+    color: white;
+    background-color: #3b3d4f;
+    font-size: 24pt;
+    border: 3px solid white;
+}
