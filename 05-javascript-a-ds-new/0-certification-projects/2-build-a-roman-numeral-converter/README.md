@@ -491,3 +491,12 @@ function decimalToRomanNumeral(input) {
         return "LXXX" + decimalToRomanNumeral(input-(10*numberOfTens));
     }
     ```
+
+### ⭐ Converting 90-99 to Roman Numerals ⭐
+* The numbers 90 to 99 are just "XC" pre-appended to `decimalToRomanNumeral(input-90)`:
+    ```js
+    else if (input >=90 && input <=99) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "XC" + decimalToRomanNumeral(input-(10*numberOfTens));
+    }
+    ```

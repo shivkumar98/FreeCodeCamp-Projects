@@ -387,3 +387,47 @@ test('', ()=> {
 test('', ()=> {
     expect(decimalToRomanNumeral(89)).toBe('LXXXIX')
 })
+
+// 90 - 99:
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(90)).toBe('XC')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(91)).toBe('XCI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(92)).toBe('XCII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(93)).toBe('XCIII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(94)).toBe('XCIV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(95)).toBe('XCV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(96)).toBe('XCVI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(97)).toBe('XCVII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(98)).toBe('XCVIII')
+})
+
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(99)).toBe('XCIX')
+})
+
