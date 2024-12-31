@@ -1,0 +1,77 @@
+body {
+    background-color: #1b1b32;
+    margin-top: 48px;
+}
+.centred {
+    margin: auto;
+    width: 500px;
+    min-width: 400px;
+    text-align: center;
+}
+
+.container {
+    background-color: whitesmoke;
+}
+
+h1 { 
+    font-family: 'Castoro Titling';
+    color: white;
+    font-size: 30pt;
+    font-weight: lighter;
+    line-height: 38pt;
+}
+
+main {
+    border: 3px solid #f5f6f7;
+    background-color: #3b3d4f;
+    color: white;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    padding-top: 18px;
+    padding-bottom: 36px;
+}
+
+#number {
+    width: 80%;
+    height: 40pt;
+    background-color: #0a0a23;
+    font-size: 30pt;
+    color:white;
+    border: 1px solid white;
+    padding: 4px 10px;
+}
+
+#convert-btn {
+    width: 85%;
+    font-size: 18pt;
+    background: linear-gradient(#fecc4c, #ffac33);
+    margin-top: 20pt;
+    border: 1px solid #fecc4c;
+    padding: 12px 0;
+}
+
+.hide {
+    display: none;
+}
+
+#output {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    min-width: 56pt;
+    margin-top: 20px;   
+    padding: 20px 0;
+    justify-content: center;
+    overflow-wrap: break-word;
+}
+
+.error {
+    color: #850000;
+    background-color: #ffadad;
+    font-size: 24pt;
+    border: 3px solid #850000;
+}
+
+.result {
+    color: white;
+    background-color: #3b3d4f;
+    font-size: 24pt;
+    border: 3px solid white;
+}
