@@ -27,6 +27,8 @@ function decimalToRomanNumeral(input) {
     } else if (input >=90 && input <=99) {
         let numberOfTens = Math.floor(input/10 % 10)
         return "XC" + decimalToRomanNumeral(input-(10*numberOfTens));
+    } else if (input >=100 && input<=199) {
+        return "C" + decimalToRomanNumeral(input-100);
     }
 }
 

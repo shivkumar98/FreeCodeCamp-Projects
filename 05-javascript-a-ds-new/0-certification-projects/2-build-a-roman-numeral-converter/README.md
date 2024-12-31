@@ -527,3 +527,12 @@ function decimalToRomanNumeral(input) {
         return "L" +"X".repeat(numberOfTensAbove50) + decimalToRomanNumeral(input-(10*numberOfTens));
     }
     ```
+
+### ⭐ Converting 100-199 to Roman Numerals ⭐
+
+* The numbers 100-199 are just "C" pre-appended to decimalToRomanNumeral(input-100):
+    ```js
+    else if (input >=100 && input<=199) {
+        return "C" + decimalToRomanNumeral(input-100);
+    }
+    ```

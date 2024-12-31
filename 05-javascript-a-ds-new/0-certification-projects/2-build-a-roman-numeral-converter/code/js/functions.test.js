@@ -128,306 +128,245 @@ test('should return XXIX when 29 is input', ()=> {
     expect(decimalToRomanNumeral(29)).toBe('XXIX')
 })
 
+// 30-39:
 
 test('should return XXX when 30 is input', ()=> {
     expect(decimalToRomanNumeral(30)).toBe('XXX')
 })
-
-//
-
 test('should return XXXI when 31 is input', ()=> {
     expect(decimalToRomanNumeral(31)).toBe('XXXI')
 })
-
 test('should return XXXII when 32 is input', ()=> {
     expect(decimalToRomanNumeral(32)).toBe('XXXII')
 })
-
 test('should return XXXIII when 33 is input', ()=> {
     expect(decimalToRomanNumeral(33)).toBe('XXXIII')
 })
-
 test('should return XXXIV when 34 is input', ()=> {
     expect(decimalToRomanNumeral(34)).toBe('XXXIV')
 })
-
 test('should return XXXV when 35 is input', ()=> {
     expect(decimalToRomanNumeral(35)).toBe('XXXV')
 })
-
-
 test('should return XXXVI when 36 is input', ()=> {
     expect(decimalToRomanNumeral(36)).toBe('XXXVI')
 })
-
-
 test('should return XXXVII when 37 is input', ()=> {
     expect(decimalToRomanNumeral(37)).toBe('XXXVII')
 })
-
 test('should return XXXVIII when 38 is input', ()=> {
     expect(decimalToRomanNumeral(38)).toBe('XXXVIII')
 })
-
 test('should return XXXIX when 39 is input', ()=> {
     expect(decimalToRomanNumeral(39)).toBe('XXXIX')
 })
 
-
+// 40-49:
 test('should return XL when 40 is input', ()=> {
     expect(decimalToRomanNumeral(40)).toBe('XL')
 })
-
 test('should return XLI when 41 is input', ()=> {
     expect(decimalToRomanNumeral(41)).toBe('XLI')
 })
-
 test('should return XLII when 42 is input', ()=> {
     expect(decimalToRomanNumeral(42)).toBe('XLII')
 })
-
 test('should return XLIII when 43 is input', ()=> {
     expect(decimalToRomanNumeral(43)).toBe('XLIII')
 })
-
 test('should return XLIV when 44 is input', ()=> {
     expect(decimalToRomanNumeral(44)).toBe('XLIV')
 })
-
 test('should return XLV when 45 is input', ()=> {
     expect(decimalToRomanNumeral(45)).toBe('XLV')
 })
-
 test('should return XLVI when 46 is input', ()=> {
     expect(decimalToRomanNumeral(46)).toBe('XLVI')
 })
-
 test('should return XLVII when 47 is input', ()=> {
     expect(decimalToRomanNumeral(47)).toBe('XLVII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(48)).toBe('XLVIII')
 })
-
-
 test('', ()=> {
     expect(decimalToRomanNumeral(49)).toBe('XLIX')
 })
 
-//
-
+// 50-59:
 test('', ()=> {
     expect(decimalToRomanNumeral(50)).toBe('L')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(51)).toBe('LI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(52)).toBe('LII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(53)).toBe('LIII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(54)).toBe('LIV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(55)).toBe('LV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(56)).toBe('LVI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(57)).toBe('LVII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(58)).toBe('LVIII')
 })
-
-
 test('', ()=> {
     expect(decimalToRomanNumeral(59)).toBe('LIX')
 })
 
-//
-
+// 60-69
 test('', ()=> {
     expect(decimalToRomanNumeral(60)).toBe('LX')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(61)).toBe('LXI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(62)).toBe('LXII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(63)).toBe('LXIII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(64)).toBe('LXIV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(65)).toBe('LXV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(66)).toBe('LXVI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(67)).toBe('LXVII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(68)).toBe('LXVIII')
 })
-
-
 test('', ()=> {
     expect(decimalToRomanNumeral(69)).toBe('LXIX')
 })
 
-//
-
+// 70-79:
 test('', ()=> {
     expect(decimalToRomanNumeral(70)).toBe('LXX')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(71)).toBe('LXXI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(72)).toBe('LXXII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(73)).toBe('LXXIII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(74)).toBe('LXXIV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(75)).toBe('LXXV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(76)).toBe('LXXVI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(77)).toBe('LXXVII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(78)).toBe('LXXVIII')
 })
-
-
 test('', ()=> {
     expect(decimalToRomanNumeral(79)).toBe('LXXIX')
 })
 
-//
-
+// 80-89
 test('', ()=> {
     expect(decimalToRomanNumeral(80)).toBe('LXXX')
 })
-
-
 test('', ()=> {
     expect(decimalToRomanNumeral(81)).toBe('LXXXI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(82)).toBe('LXXXII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(83)).toBe('LXXXIII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(84)).toBe('LXXXIV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(85)).toBe('LXXXV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(86)).toBe('LXXXVI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(87)).toBe('LXXXVII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(88)).toBe('LXXXVIII')
 })
-
-
 test('', ()=> {
     expect(decimalToRomanNumeral(89)).toBe('LXXXIX')
 })
 
 // 90 - 99:
-
 test('', ()=> {
     expect(decimalToRomanNumeral(90)).toBe('XC')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(91)).toBe('XCI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(92)).toBe('XCII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(93)).toBe('XCIII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(94)).toBe('XCIV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(95)).toBe('XCV')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(96)).toBe('XCVI')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(97)).toBe('XCVII')
 })
-
 test('', ()=> {
     expect(decimalToRomanNumeral(98)).toBe('XCVIII')
 })
-
-
 test('', ()=> {
     expect(decimalToRomanNumeral(99)).toBe('XCIX')
+})
+
+// 100:
+test('', ()=> {
+    expect(decimalToRomanNumeral(100)).toBe('C')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(105)).toBe('CV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(115)).toBe('CXV')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(150)).toBe('CL')
+})
+test('', ()=> {
+    expect(decimalToRomanNumeral(199)).toBe('CXCIX')
 })
 
