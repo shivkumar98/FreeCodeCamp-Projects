@@ -565,10 +565,24 @@ else if (input >=100 && input<=399) {
 } else if (input >=500 && input <=899) {
     let numberOfHundredsAbove500 = Math.floor((input-500)/100 % 100)
     return "D"+ "C".repeat(numberOfHundredsAbove500) + decimalToRomanNumeral(input-(100*numberOfHundredsAbove500)-500)
-} else if (input >=500 && input <=899) {
-    let numberOfHundredsAbove500 = Math.floor((input-500)/100 % 100)
-    return "D"+ "C".repeat(numberOfHundredsAbove500) + decimalToRomanNumeral(input-(100*numberOfHundredsAbove500)-500)
 } else if (input >=900 && input <=999) {
     return "CM"+decimalToRomanNumeral(input-900)
 }
 ```
+
+### ⭐ Converting 1000-1999 to Roman Numerals ⭐
+* I convert numbers up to 1999 with these else-if blocks:
+    ```js
+    else if (input >=1000 && input <=1399) {
+        let numberOfHundredsAbove1000 = Math.floor((input-1000)/100 % 100)
+        return "M"+"C".repeat(numberOfHundredsAbove1000)+decimalToRomanNumeral(input-1000-(100*numberOfHundredsAbove1000));
+    } else if (input >=1400 && input <=1499) {
+        return "MCD" + decimalToRomanNumeral(input-1400);
+    } else if (input >=1500 && input <=1899) {
+        let numberOfHundredsAbove1500 = Math.floor((input-1500)/100 % 100)
+        return "MD"+"C".repeat(numberOfHundredsAbove1500)+decimalToRomanNumeral(input-1500-(100*numberOfHundredsAbove1500));
+    } else if (input >=1900 && input <=1999) {
+        return "MCM"+decimalToRomanNumeral(input-1900);
+    }
+    ```
+    
