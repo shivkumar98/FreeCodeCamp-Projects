@@ -20,18 +20,10 @@ function decimalToRomanNumeral(input) {
     } else if (input >=40 && input <=49) {
         let numberOfTens = Math.floor(input/10 % 10)
         return "XL" + decimalToRomanNumeral(input-(10*numberOfTens));
-    } else if (input >=50 && input <=59) {
+    } else if (input >=50 && input <=89) {
         let numberOfTens = Math.floor(input/10 % 10)
-        return "L" + decimalToRomanNumeral(input-(10*numberOfTens));
-    } else if (input >=60 && input <=69) {
-        let numberOfTens = Math.floor(input/10 % 10)
-        return "LX" + decimalToRomanNumeral(input-(10*numberOfTens));
-    } else if (input >=70 && input <=79) {
-        let numberOfTens = Math.floor(input/10 % 10)
-        return "LXX" + decimalToRomanNumeral(input-(10*numberOfTens));
-    } else if (input >=80 && input <=89) {
-        let numberOfTens = Math.floor(input/10 % 10)
-        return "LXXX" + decimalToRomanNumeral(input-(10*numberOfTens));
+        let numberOfTensAbove50 = Math.floor((input-50)/10 % 10)
+        return "L" +"X".repeat(numberOfTensAbove50) + decimalToRomanNumeral(input-(10*numberOfTens));
     } else if (input >=90 && input <=99) {
         let numberOfTens = Math.floor(input/10 % 10)
         return "XC" + decimalToRomanNumeral(input-(10*numberOfTens));

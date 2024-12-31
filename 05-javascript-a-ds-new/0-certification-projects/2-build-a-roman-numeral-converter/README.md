@@ -500,3 +500,30 @@ function decimalToRomanNumeral(input) {
         return "XC" + decimalToRomanNumeral(input-(10*numberOfTens));
     }
     ```
+### ⭐ Refactoring decimalToRomanNumeral ⭐
+
+* There is a clear pattern for when the input is between 50 and 89, the roman numeral representation is `"L" + "X"*(tens digit of (input-50)) + decimalToRomanNumeral(input-(10*numberOfTens))`
+* I refactor my function from:
+    ```js
+    else if (input >=50 && input <=59) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "L" + decimalToRomanNumeral(input-(10*numberOfTens));
+    } else if (input >=60 && input <=69) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "LX" + decimalToRomanNumeral(input-(10*numberOfTens));
+    } else if (input >=70 && input <=79) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "LXX" + decimalToRomanNumeral(input-(10*numberOfTens));
+    } else if (input >=80 && input <=89) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "LXXX" + decimalToRomanNumeral(input-(10*numberOfTens));
+    }
+    ```
+* To:
+    ```js
+    else if (input >=50 && input <=89) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        let numberOfTensAbove50 = Math.floor((input-50)/10 % 10)
+        return "L" +"X".repeat(numberOfTensAbove50) + decimalToRomanNumeral(input-(10*numberOfTens));
+    }
+    ```
