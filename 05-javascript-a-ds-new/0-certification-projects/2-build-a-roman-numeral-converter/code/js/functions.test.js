@@ -343,3 +343,47 @@ test('', ()=> {
 test('', ()=> {
     expect(decimalToRomanNumeral(79)).toBe('LXXIX')
 })
+
+//
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(80)).toBe('LXXX')
+})
+
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(81)).toBe('LXXXI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(82)).toBe('LXXXII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(83)).toBe('LXXXIII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(84)).toBe('LXXXIV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(85)).toBe('LXXXV')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(86)).toBe('LXXXVI')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(87)).toBe('LXXXVII')
+})
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(88)).toBe('LXXXVIII')
+})
+
+
+test('', ()=> {
+    expect(decimalToRomanNumeral(89)).toBe('LXXXIX')
+})

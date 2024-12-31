@@ -482,3 +482,12 @@ function decimalToRomanNumeral(input) {
         return "LXX" + decimalToRomanNumeral(input-(10*numberOfTens));
     }
     ```
+
+### ⭐ Converting 80-89 to Roman Numerals ⭐
+* The numbers 80 to 89 are just "LXXX" pre-appended to `decimalToRomanNumeral(input-80)`:
+    ```js
+    else if (input >=80 && input <=89) {
+        let numberOfTens = Math.floor(input/10 % 10)
+        return "LXXX" + decimalToRomanNumeral(input-(10*numberOfTens));
+    }
+    ```
