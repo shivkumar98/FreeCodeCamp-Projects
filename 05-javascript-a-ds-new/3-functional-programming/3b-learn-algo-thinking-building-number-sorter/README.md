@@ -84,3 +84,35 @@
    ```
 * Now  when I click the sort button, the elements in the dropdown get copied to the output:
    ![](screenshots/2025-02-13-15-31-05.png)
+
+
+## 🟥 Bubble Sort
+* The first sorting algorithm I will learn is bubble sort
+  * With bubble sort, we start from the start of the array and compare the first two elements and swap the element if the first element is greater than second
+  * We then move to the second and third elements and repeat
+  * When we reach the end of the array, we check if all the elemts are sorted and repeat from first step
+  * Here is the algorithm for the sorting:
+      ```
+      for i 0 to length(A)-1
+         for j 0 to length(A)-i-1
+            if A[j] > A[j+1]
+               swap A[j] with A[+1]
+      ```
+* I declare a `bubbleSort` function with a for loop:
+```js
+const bubbleSort = (array) => {
+   for (let i=0;i<array.length;i++) {
+    
+   }
+}
+```
+* I nest another loop which loops through all elements EXCEPT the last one, and I print the array and the values in index `j` and `j+1`
+```js
+const bubbleSort = (array) => {
+   for (let i=0;i<array.length;i++) {
+      for (let j=0;j<array.length-1;j++) {
+         console.log(array, array[j], array[j+1]);
+      }
+   }
+}
+```
