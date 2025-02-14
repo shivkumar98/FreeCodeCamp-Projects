@@ -86,7 +86,7 @@
    ![](screenshots/2025-02-13-15-31-05.png)
 
 
-## 🟥 Bubble Sort
+## 🟥 Bubble Sort 🫧
 * The first sorting algorithm I will learn is bubble sort
   * With bubble sort, we start from the start of the array and compare the first two elements and swap the element if the first element is greater than second
   * We then move to the second and third elements and repeat
@@ -177,3 +177,27 @@
    }
    ```
 </details>
+
+## 🟥 Selection Sort
+* I will now implement selection sort 
+* The selection sorting algorithm runs element by element starting with the first element, it seeks the lowest element in the array to the right and swaps the current element with the lowest. It then proceeds with the next element on the right and repeats the cycle looking for the smallest element in remainder of array
+* Here is the pseudo code:
+```c
+for i from 0 to (A.length-1) {
+   min_index = i; // assume current position has min val
+   for j from i+1 to (A.length-1) {
+      if (A[j] < A[min_index])
+         min_index = j
+   }
+   swap(A[i], A[j]) // swap the element with lowest value
+}
+```
+* I start with the implementation by declaring a function:
+```js
+const selectionSort = (array) => {   
+}
+```
+* And I update the call to `bubbleSort` to `selectionSort` in my `sortInputArray()` function:
+```js
+const sortedValues = selectionSort(inputValues);
+```
