@@ -94,18 +94,18 @@
   * Here is the algorithm for the sorting:
       ```
       for i 0 to length(A)-1
-         for j 0 to length(A)-i-1
+         for j 0 to length(A)-2
             if A[j] > A[j+1]
-               swap A[j] with A[+1]
+               swap A[j] with A[j+1]
       ```
 * I declare a `bubbleSort` function with a for loop:
-```js
-const bubbleSort = (array) => {
-   for (let i=0;i<array.length;i++) {
-    
+   ```js
+   const bubbleSort = (array) => {
+      for (let i=0;i<array.length;i++) {
+      
+      }
    }
-}
-```
+   ```
 * I nest another loop which loops through all elements EXCEPT the last one, and I print the array and the values in index `j` and `j+1`
    ```js
    const bubbleSort = (array) => {
@@ -126,7 +126,7 @@ const bubbleSort = (array) => {
    }
    ```
 * Now when I click sort, I see the bubble sort in action:
-   ```r
+   ```c
    [8,2,4,1,3] 8 2
    [8,2,4,1,3] 2 4
    [8,2,4,1,3] 4 1
@@ -144,3 +144,36 @@ const bubbleSort = (array) => {
    [8,2,4,1,3] 4 1 
    [8,2,4,1,3] 1 3
    ```
+* In my inner loop, I compare the elements with index `j` and `j+1`:
+   ```js
+   for (let j=0;j<array.length;j++) {
+      if (array[j]>array[j+1]) {
+         const temp = array[j]
+         array[j] = array[j+1]
+         array[j+1] = temp
+      }
+   }
+   ```
+* After the outer loop is finished, I return the sorted array:
+   ```js
+   return array;
+   ```
+* This is the final implementation of `bubbleSort()`:
+<details>
+   <summary>bubbleSort() implementation</summary>
+
+   ```js
+   const bubbleSort = (array) => {
+      for (let i=0;i<array.length;i++) {
+         for (let j=0;j<array.length-1;j++) {
+            if (array[j]>array[j+1]) {
+               const temp = array[j]
+               array[j] = array[j+1]
+               array[j+1] = temp
+            }
+         }
+      }
+      return array;
+   }
+   ```
+</details>
