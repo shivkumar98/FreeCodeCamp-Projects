@@ -107,12 +107,40 @@ const bubbleSort = (array) => {
 }
 ```
 * I nest another loop which loops through all elements EXCEPT the last one, and I print the array and the values in index `j` and `j+1`
-```js
-const bubbleSort = (array) => {
-   for (let i=0;i<array.length;i++) {
-      for (let j=0;j<array.length-1;j++) {
-         console.log(array, array[j], array[j+1]);
+   ```js
+   const bubbleSort = (array) => {
+      for (let i=0;i<array.length;i++) {
+         for (let j=0;j<array.length-1;j++) {
+            console.log(array, array[j], array[j+1]);
+         }
       }
    }
-}
-```
+   ```
+* To test my bubbleSort function, I call it in the `sortInputArray()` function:
+   ```js
+   const sortInputArray = (event) => {
+      /* EXISTING CODE HERE */
+      
+      const sortedValues = bubbleSort(inputValues)
+      updateUI(sortedValues);
+   }
+   ```
+* Now when I click sort, I see the bubble sort in action:
+   ```r
+   [8,2,4,1,3] 8 2
+   [8,2,4,1,3] 2 4
+   [8,2,4,1,3] 4 1
+   [8,2,4,1,3] 1 3
+   [8,2,4,1,3] 8 2
+   [8,2,4,1,3] 2 4
+   [8,2,4,1,3] 4 1 
+   [8,2,4,1,3] 1 3
+   [8,2,4,1,3] 8 2
+   [8,2,4,1,3] 2 4
+   [8,2,4,1,3] 4 1 
+   [8,2,4,1,3] 1 3
+   [8,2,4,1,3] 8 2
+   [8,2,4,1,3] 2 4
+   [8,2,4,1,3] 4 1 
+   [8,2,4,1,3] 1 3
+   ```
