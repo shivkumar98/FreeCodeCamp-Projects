@@ -16,6 +16,8 @@
    ```js
    isNaN(Number("not a number")) // false
    ```
+* The `.reduce()` method takes an array and applies a callback method to condense into a single value, it's second parameter is used to initialise the value and should be set to avoid incorrect values from being generated 💡
+
 ## 🛠️ Project Setup 🛠️
 
 * I have been provided the [HTML](code/index.html) and [CSS](code/styles.css)
@@ -58,5 +60,22 @@ const calculate = () => {
    const value = document.querySelector("#numbers").value;
    const array = value.split(/,\s*/g);
    const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
+}
+```
+
+## 🟥 Calculating Mean
+* I will calculate the mean of an array of numbers by using the `.reduce()` method
+* The `.reduce()` method takes an array and applies a callback method to condense into a single value, it's second parameter is used to initialise the value and should be set to avoid incorrect values from being generated 💡
+* I declare a getMean function:
+```js
+const getMean = (array) => 
+   array.reduce((acc, el) => acc + el, 0) / array.length;
+```
+* I use the above function in my `calculate()` function, so I can display to DOM:
+```js
+const calculate = () => {
+   // EXISTING CODE
+   const mean = getMean(numbers);
+   document.querySelector("#mean").textContent = mean
 }
 ```
