@@ -11,9 +11,52 @@
 * You can try out the application I built in this tutorial via this [link](TODOOOOOOO)
 
 ## 📝 Summary Notes TODOOOOOOOOOOOOOO 📝
-
+* The value obtained from an input element is ALWAYS a string 💡
+* There is a `isNaN()` method which enables you to check if a number is not a number:
+   ```js
+   isNaN(Number("not a number")) // false
+   ```
 ## 🛠️ Project Setup 🛠️
 
 * I have been provided the [HTML](code/index.html) and [CSS](code/styles.css)
 
-## 🟥 H2
+## 🟥 Obtaining Numbers from Input
+* I initialise my [JavaScript file](code/script.js) by declaring a `calculate` function:
+   ```js
+   const calculate = () => {
+
+   }
+   ```
+* I need to obtain the values in the `id=numbers` input field, instead of using conventional document.findById(), I use the querySelector and  obtain it's `value` property:
+```js
+const calculate = () => {
+  const value = document.querySelector("#numbers").value    
+}
+```
+* I use this variable to obtain an array of the numbers, I use regex to split based on whitespace and a comma:
+```js
+const value = document.querySelector("#numbers").value    
+const array = value.split(/,\s*/g)
+```
+* The value from an input element is ALWAYS a string 💡
+* So I convert my array to numbers:
+```js
+const value = document.querySelector("#numbers").value;
+const array = value.split(/,\s*/g);
+const numbers = array.map(el => Number(el));
+```
+* Since the user can enter any string, the number array may contain `NaN` - I filter these out:
+```js
+const value = document.querySelector("#numbers").value;
+const array = value.split(/,\s*/g);
+const numbers = array.map(el => Number(el));
+const filtered = numbers.filter(el => !isNaN(el));
+```
+* I chain the above filtering to the mapping, and my `calculate()` function is complete:
+```js
+const calculate = () => {
+   const value = document.querySelector("#numbers").value;
+   const array = value.split(/,\s*/g);
+   const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
+}
+```
