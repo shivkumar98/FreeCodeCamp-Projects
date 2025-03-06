@@ -17,6 +17,14 @@
    isNaN(Number("not a number")) // false
    ```
 * The `.reduce()` method takes an array and applies a callback method to condense into a single value, it's second parameter is used to initialise the value and should be set to avoid incorrect values from being generated 💡
+* I can prevent a form from submitting by returning false on the `onsubmit` attribute of a HTML form element 💡
+   ```html
+   <form onsubmit="calculate(); return false">
+      <label for="numbers">Numbers:</label>
+      <input type="text" name="numbers" id="numbers" />
+      <button type="submit">Calculate</button>
+   </form>
+   ```
 
 ## 🛠️ Project Setup 🛠️
 
@@ -30,52 +38,72 @@
    }
    ```
 * I need to obtain the values in the `id=numbers` input field, instead of using conventional document.findById(), I use the querySelector and  obtain it's `value` property:
-```js
-const calculate = () => {
-  const value = document.querySelector("#numbers").value    
-}
-```
+   ```js
+   const calculate = () => {
+   const value = document.querySelector("#numbers").value    
+   }
+   ```
 * I use this variable to obtain an array of the numbers, I use regex to split based on whitespace and a comma:
-```js
-const value = document.querySelector("#numbers").value    
-const array = value.split(/,\s*/g)
-```
+   ```js
+   const value = document.querySelector("#numbers").value    
+   const array = value.split(/,\s*/g)
+   ```
 * The value from an input element is ALWAYS a string 💡
 * So I convert my array to numbers:
-```js
-const value = document.querySelector("#numbers").value;
-const array = value.split(/,\s*/g);
-const numbers = array.map(el => Number(el));
-```
-* Since the user can enter any string, the number array may contain `NaN` - I filter these out:
-```js
-const value = document.querySelector("#numbers").value;
-const array = value.split(/,\s*/g);
-const numbers = array.map(el => Number(el));
-const filtered = numbers.filter(el => !isNaN(el));
-```
-* I chain the above filtering to the mapping, and my `calculate()` function is complete:
-```js
-const calculate = () => {
+   ```js
    const value = document.querySelector("#numbers").value;
    const array = value.split(/,\s*/g);
-   const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
-}
-```
+   const numbers = array.map(el => Number(el));
+   ```
+* Since the user can enter any string, the number array may contain `NaN` - I filter these out:
+   ```js
+   const value = document.querySelector("#numbers").value;
+   const array = value.split(/,\s*/g);
+   const numbers = array.map(el => Number(el));
+   const filtered = numbers.filter(el => !isNaN(el));
+   ```
+* I chain the above filtering to the mapping, and my `calculate()` function is complete:
+   ```js
+   const calculate = () => {
+      const value = document.querySelector("#numbers").value;
+      const array = value.split(/,\s*/g);
+      const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
+   }
+   ```
 
 ## 🟥 Calculating Mean
 * I will calculate the mean of an array of numbers by using the `.reduce()` method
 * The `.reduce()` method takes an array and applies a callback method to condense into a single value, it's second parameter is used to initialise the value and should be set to avoid incorrect values from being generated 💡
 * I declare a getMean function:
-```js
-const getMean = (array) => 
-   array.reduce((acc, el) => acc + el, 0) / array.length;
-```
+   ```js
+   const getMean = (array) => 
+      array.reduce((acc, el) => acc + el, 0) / array.length;
+   ```
 * I use the above function in my `calculate()` function, so I can display to DOM:
-```js
-const calculate = () => {
-   // EXISTING CODE
-   const mean = getMean(numbers);
-   document.querySelector("#mean").textContent = mean
-}
-```
+   ```js
+   const calculate = () => {
+      // EXISTING CODE
+      const mean = getMean(numbers);
+      document.querySelector("#mean").textContent = mean
+   }
+   ```
+* When I attempt to test the code by entering numbers and clicking `Calculate` button, the page submits - meaning I do not see the Mean being calculated
+* This is due to the form in the HTML calling the calculate function:
+   ```html
+   <form onsubmit="calculate();">
+      <label for="numbers">Numbers:</label>
+      <input type="text" name="numbers" id="numbers" />
+      <button type="submit">Calculate</button>
+   </form>
+   ```
+* I can prevent a form from submitting by returning false on the `onsubmit` attribute of a HTML form element 💡
+   ```html
+   <form onsubmit="calculate(); return false">
+      <label for="numbers">Numbers:</label>
+      <input type="text" name="numbers" id="numbers" />
+      <button type="submit">Calculate</button>
+   </form>
+   ```
+* Now when I click the calculate button, the mean is displayed on screen:
+  
+   ![](screenshots/2025-03-06-08-10-49.png)
