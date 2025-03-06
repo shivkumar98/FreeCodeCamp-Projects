@@ -20,11 +20,11 @@
 * I can prevent a form from submitting by returning false on the `onsubmit` attribute of a HTML form element 💡
    ```html
    <form onsubmit="calculate(); return false">
-      <label for="numbers">Numbers:</label>
-      <input type="text" name="numbers" id="numbers" />
-      <button type="submit">Calculate</button>
-   </form>
    ```
+* You can provide a callback to `.sort()` which takes two elements (a,b) and sorts a before b if return is <0, sorts b before a if return is >0, and makes no change if return == 0 💡
+  ```js
+  array.sort((a,b)=>a-b) // ascending order
+  ```
 
 ## 🛠️ Project Setup 🛠️
 
@@ -107,3 +107,19 @@
 * Now when I click the calculate button, the mean is displayed on screen:
   
    ![](screenshots/2025-03-06-08-10-49.png)
+
+## 🟥 Calculating Median
+* I declare a function for calculating the median, this calculation depends on whether the length of that array is odd or even
+* I first need to sort the array from smallest to largest
+* The `.sort()` method converts elements of an array to a string and then sorts alphabetically if no callback is provided 💡
+* You can provide a callback to `.sort()` which takes two elements (a,b) and sorts a before b if return is <0, sorts b before a if return is >0, and makes no change if return == 0 💡
+  * E.g you can sort an array in ascending order:
+      ```js
+      array.sort((a,b)=>a-b)
+      ```
+* I create a sorted variable in my `getMedian()` function:
+   ```js
+   const getMedian = (array) => {
+   const sorted = array.sort((a, b) => a - b);
+   }
+   ```
