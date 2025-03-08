@@ -26,6 +26,11 @@
   array.sort((a,b)=>a-b) // ascending order
   ```
 * The `.sort()` method MUTATES the original array - we do not want to have side effects, so we shall use `.toSorted()` which does not mutate original array 💡
+* You can obtain the values of an object by passing it to the `Object.values()` method:
+   ```js
+   const object = {1:"Shiv is cool",2:"Shiv is not cool"}
+   Object.values(object); // [ 'Shiv is cool', 'Shiv is not cool' ]
+   ```
 
 ## 🛠️ Project Setup 🛠️
 
@@ -156,3 +161,57 @@
 * Now the median is calculated in my app:
   
    ![](screenshots/2025-03-08-19-43-59.png)
+
+
+## 🟥 Calculating Mode
+* I constrcut my `getMode()` function by initialising an object literal which I will use to count the number of occurence of distinct elements:
+```js
+const getMode = (array) => {
+   const counts = {}
+}
+```
+* I run a forEach loop which initialises the count of an element at 1, or increments if it already exists:
+```js
+const getMode = (array) => {
+   const counts = {};
+   array.forEach(el => {
+      if (counts[el]) {
+         counts[el] += 1;
+      } else {
+         counts[el] = 1;
+      }
+   });
+   return counts;
+}
+```
+* I use the ternary operator to simply above
+```js
+const getMode = (array) => {
+   const counts = {};
+   array.forEach(el => {
+      counts[el] = counts[el] ? counts[el]+1 : 1   
+   });
+   return counts;
+}
+```
+* I need to actually return the mode now
+ 
+### 🔴 Edge Case 1: Every Value Appears Same Number of Times
+* I can check if all the values of the `counts` object are the same by utilising the `Set` datastructure which does not allow duplicates
+* I can obtain the values of an object by passing it to the `Object.values()` method:
+   ```js
+   const object = {1:"Shiv is cool",2:"Shiv is not cool"}
+   Object.values(object); // [ 'Shiv is cool', 'Shiv is not cool' ]
+   ```
+* I construct the set using the values from the `counts` object, and return null if there is only 1:
+```js
+const getMode = (array) => {
+   const counts = {};
+   array.forEach(el => counts[el] = counts[el] ? counts[el] + 1 : 1);
+   if (new Set(Object.values(counts)).size === 1) {
+      return null
+   }
+}
+```
+
+### 🔴 Returning Highest Element
