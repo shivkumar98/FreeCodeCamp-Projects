@@ -25,6 +25,7 @@
   ```js
   array.sort((a,b)=>a-b) // ascending order
   ```
+* The `.sort()` method MUTATES the original array - we do not want to have side effects, so we shall use `.toSorted()` which does not mutate original array 💡
 
 ## 🛠️ Project Setup 🛠️
 
@@ -123,3 +124,35 @@
    const sorted = array.sort((a, b) => a - b);
    }
    ```
+* The `.sort()` method MUTATES the original array - we do not want to have side effects, so we shall use `.toSorted()` which does not mutate original array 💡
+* I change the sort to toSorted:
+   ```js
+   const getMedian = (array) => {
+      const sorted = array.toSorted((a,b)=>a-b)
+   }
+   ```
+* There median of a set is dependent on whether the size is odd or even - if odd, this is the middle number, if even it's the mean of two middle numbers:
+   ```js
+   const getMedian = (array) => {
+      const sorted = array.toSorted((a, b) => a - b);
+      if (sorted.length % 2 === 1) {
+         return sorted[Math.floor(sorted.length/2)]
+      } else {
+         return getMean([
+            sorted[sorted.length/2],
+            sorted[(sorted.length/2)-1]
+         ])
+      }
+   }
+   ```
+* I update the `calculate()` function:
+   ```js
+   const mean = getMean(numbers);
+   const median = getMedian(numbers);
+
+   document.querySelector("#mean").textContent = mean;
+   document.querySelector("#median").textContent = median
+   ```
+* Now the median is calculated in my app:
+  
+   ![](screenshots/2025-03-08-19-43-59.png)
