@@ -235,3 +235,52 @@ const getMode = (array) => {
       [0]
 }
 ```
+
+### 🔴 Edge Case 2: There are multiple values which are Mode
+* The mode isn't necessarily a single value, if multiple values have the same highest frequency, they are all considered the mode
+* I check if there are other elements which have the same highest frequency:
+```js
+const getMode = (array) => {
+   // EXISTING CODE
+
+   const highest = Object.keys(counts)
+      .sort((a,b) => counts[b]-counts[a])
+      [0]
+   const mode = Object.keys(counts)
+      .filter(el => counts[el]===counts[highest])
+}
+```
+* Finally, I return the mode concatenated by a comma and space. Here is the final implementation of `getMode()`:
+   <details>
+   <summary>Final Implementation of getMode()</summary>
+   
+   ```js
+   const getMode = (array) => {
+      const counts = {};
+      array.forEach(el => counts[el] = counts[el] ? counts[el] + 1 : 1);
+      if (new Set(Object.values(counts)).size === 1) {
+         return null
+      }
+      const highest = Object.keys(counts)
+         .sort((a,b) => counts[b]-counts[a]
+      )[0]
+      const mode = Object.keys(counts)
+         .filter((el) => counts[el] === counts[highest]);
+      
+      return mode.join(", ")
+   }
+   ```
+   </details>
+
+* I now utilise the above method in my `calculate()` function:
+```js
+const mean = getMean(numbers);
+const median = getMedian(numbers);
+const mode = getMode(numbers);
+
+document.querySelector("#mean").textContent = mean;
+document.querySelector("#median").textContent = median;
+document.querySelector("#mode").textContent = mode;
+```
+* Now the mode is successfully displayed
+   ![](screenshots/2025-03-10-07-42-16.png)
