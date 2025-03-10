@@ -315,3 +315,6 @@
    document.querySelector("#mode").textContent = mode;
    document.querySelector("#range").textContent = range;
    ```
+
+## 🟥 Calculating Variance
+
