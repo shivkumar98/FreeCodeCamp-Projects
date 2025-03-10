@@ -31,7 +31,11 @@
    const object = {1:"Shiv is cool",2:"Shiv is not cool"}
    Object.values(object); // [ 'Shiv is cool', 'Shiv is not cool' ]
    ```
-
+* You can extract the keys of an object using `Object.keys(object)` 💡
+   ```js
+   const counts = {2: 1, 64: 1; 128: 4}
+   Object.keys(counts); // [2, 64, 128]
+   ```
 ## 🛠️ Project Setup 🛠️
 
 * I have been provided the [HTML](code/index.html) and [CSS](code/styles.css)
@@ -215,3 +219,19 @@ const getMode = (array) => {
 ```
 
 ### 🔴 Returning Highest Element
+* I need to extract the key of my `counts` object which has the largest count
+* You can extract the keys of an object using `Object.keys(object)` 💡
+   ```js
+   const counts = {2: 1, 64: 1; 128: 4}
+   Object.keys(counts); // [2, 64, 128]
+   ```
+* In my `getMode()` function, I declare a highest variable which gets the keys of counts, sorts it in descending order by the values in counts:
+```js
+const getMode = (array) => {
+   // EXISTING CODE
+
+   const highest = Object.keys(counts)
+      .sort((a,b) => counts[b]-counts[a])
+      [0]
+}
+```
