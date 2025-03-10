@@ -169,35 +169,35 @@
 
 ## 🟥 Calculating Mode
 * I constrcut my `getMode()` function by initialising an object literal which I will use to count the number of occurence of distinct elements:
-```js
-const getMode = (array) => {
-   const counts = {}
-}
-```
+   ```js
+   const getMode = (array) => {
+      const counts = {}
+   }
+   ```
 * I run a forEach loop which initialises the count of an element at 1, or increments if it already exists:
-```js
-const getMode = (array) => {
-   const counts = {};
-   array.forEach(el => {
-      if (counts[el]) {
-         counts[el] += 1;
-      } else {
-         counts[el] = 1;
-      }
-   });
-   return counts;
-}
-```
+   ```js
+   const getMode = (array) => {
+      const counts = {};
+      array.forEach(el => {
+         if (counts[el]) {
+            counts[el] += 1;
+         } else {
+            counts[el] = 1;
+         }
+      });
+      return counts;
+   }
+   ```
 * I use the ternary operator to simply above
-```js
-const getMode = (array) => {
-   const counts = {};
-   array.forEach(el => {
-      counts[el] = counts[el] ? counts[el]+1 : 1   
-   });
-   return counts;
-}
-```
+   ```js
+   const getMode = (array) => {
+      const counts = {};
+      array.forEach(el => {
+         counts[el] = counts[el] ? counts[el]+1 : 1   
+      });
+      return counts;
+   }
+   ```
 * I need to actually return the mode now
  
 ### 🔴 Edge Case 1: Every Value Appears Same Number of Times
@@ -208,15 +208,15 @@ const getMode = (array) => {
    Object.values(object); // [ 'Shiv is cool', 'Shiv is not cool' ]
    ```
 * I construct the set using the values from the `counts` object, and return null if there is only 1:
-```js
-const getMode = (array) => {
-   const counts = {};
-   array.forEach(el => counts[el] = counts[el] ? counts[el] + 1 : 1);
-   if (new Set(Object.values(counts)).size === 1) {
-      return null
+   ```js
+   const getMode = (array) => {
+      const counts = {};
+      array.forEach(el => counts[el] = counts[el] ? counts[el] + 1 : 1);
+      if (new Set(Object.values(counts)).size === 1) {
+         return null
+      }
    }
-}
-```
+   ```
 
 ### 🔴 Returning Highest Element
 * I need to extract the key of my `counts` object which has the largest count
@@ -226,30 +226,30 @@ const getMode = (array) => {
    Object.keys(counts); // [2, 64, 128]
    ```
 * In my `getMode()` function, I declare a highest variable which gets the keys of counts, sorts it in descending order by the values in counts:
-```js
-const getMode = (array) => {
-   // EXISTING CODE
+   ```js
+   const getMode = (array) => {
+      // EXISTING CODE
 
-   const highest = Object.keys(counts)
-      .sort((a,b) => counts[b]-counts[a])
-      [0]
-}
-```
+      const highest = Object.keys(counts)
+         .sort((a,b) => counts[b]-counts[a])
+         [0]
+   }
+   ```
 
 ### 🔴 Edge Case 2: There are multiple values which are Mode
 * The mode isn't necessarily a single value, if multiple values have the same highest frequency, they are all considered the mode
 * I check if there are other elements which have the same highest frequency:
-```js
-const getMode = (array) => {
-   // EXISTING CODE
+   ```js
+   const getMode = (array) => {
+      // EXISTING CODE
 
-   const highest = Object.keys(counts)
-      .sort((a,b) => counts[b]-counts[a])
-      [0]
-   const mode = Object.keys(counts)
-      .filter(el => counts[el]===counts[highest])
-}
-```
+      const highest = Object.keys(counts)
+         .sort((a,b) => counts[b]-counts[a])
+         [0]
+      const mode = Object.keys(counts)
+         .filter(el => counts[el]===counts[highest])
+   }
+   ```
 * Finally, I return the mode concatenated by a comma and space. Here is the final implementation of `getMode()`:
    <details>
    <summary>Final Implementation of getMode()</summary>
@@ -273,14 +273,14 @@ const getMode = (array) => {
    </details>
 
 * I now utilise the above method in my `calculate()` function:
-```js
-const mean = getMean(numbers);
-const median = getMedian(numbers);
-const mode = getMode(numbers);
+   ```js
+   const mean = getMean(numbers);
+   const median = getMedian(numbers);
+   const mode = getMode(numbers);
 
-document.querySelector("#mean").textContent = mean;
-document.querySelector("#median").textContent = median;
-document.querySelector("#mode").textContent = mode;
-```
+   document.querySelector("#mean").textContent = mean;
+   document.querySelector("#median").textContent = median;
+   document.querySelector("#mode").textContent = mode;
+   ```
 * Now the mode is successfully displayed
    ![](screenshots/2025-03-10-07-42-16.png)
