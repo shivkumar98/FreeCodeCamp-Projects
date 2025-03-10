@@ -36,6 +36,12 @@
    const counts = {2: 1, 64: 1; 128: 4}
    Object.keys(counts); // [2, 64, 128]
    ```
+* The Math.min() and Math.max() functions will not return the lowest/highest element of an array, it will return `NaN`, to obtain the lowest/highest element you need to spread the array 💡
+   ```js
+   Math.min([1,2,3]); // NaN
+   Math.min(...[1,2,3]); // 1
+   ```
+
 ## 🛠️ Project Setup 🛠️
 
 * I have been provided the [HTML](code/index.html) and [CSS](code/styles.css)
@@ -284,3 +290,28 @@
    ```
 * Now the mode is successfully displayed
    ![](screenshots/2025-03-10-07-42-16.png)
+
+## 🟥 Calculating Mode
+* The Math.min() and Math.max() functions will not return the lowest/highest element of an array, it will return `NaN`, to obtain the lowest/highest element you need to spread the array 💡
+   ```js
+   Math.min([1,2,3]); // NaN
+   Math.min(...[1,2,3]); // 1
+   ```
+* I create my getRange() function as:
+   ```js
+   const getRange = (array) => {
+   return Math.max(...array) - Math.min(...array)
+   }
+   ```
+* And update the calculate function:
+   ```js
+   const mean = getMean(numbers);
+   const median = getMedian(numbers);
+   const mode = getMode(numbers);
+   const range = getRange(numbers);
+
+   document.querySelector("#mean").textContent = mean;
+   document.querySelector("#median").textContent = median;
+   document.querySelector("#mode").textContent = mode;
+   document.querySelector("#range").textContent = range;
+   ```
