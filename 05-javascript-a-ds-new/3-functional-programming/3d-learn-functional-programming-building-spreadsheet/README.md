@@ -25,9 +25,28 @@ const outer = () => {
 * I set the onload property of window to a function which obtains the `#container` div:
 ```js
 window.onload = () => {
-  const container = document.getElementById("container");
+   const container = document.getElementById("container");
 }
 ```
 
 ### 🔴 Nested Functions
-* Nested functed fu
+* Nested functed functions allow a function to reuse logic.
+* I create a nested function to create a label:
+```js
+window.onload = () => {
+   const container = document.getElementById("container");
+   const createLabel = (name) => {
+      
+   }
+}
+```
+* I implement the `crateLabel` function using the `createElement()`, adn `appendChild()` methods to add element to the `#container`:
+```js
+const createLabel = (name) => {
+   const label = document.createElement("div");
+   label.className = "label";
+   label.textContent = name;
+   container.appendChild(label);
+}
+```
+  
