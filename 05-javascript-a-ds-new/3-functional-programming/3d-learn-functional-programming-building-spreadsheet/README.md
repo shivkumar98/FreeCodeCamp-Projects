@@ -101,3 +101,26 @@ const charRange = (start, end) =>
    range(start.charCodeAt(0), end.charCodeAt(0))
       .map(code=>String.fromCharCode(code));
 ```
+
+### 🔴 Displaying Columns A-J and Rows
+* My two helper functions are complete, I can go back to the `onload` event handler
+* I create a variable to store letters A to J, and call the `createLabel()` function on each letter:
+```js
+window.onload = () => {
+   const container = document.getElementById("container");
+   const createLabel = (name) => {
+      const label = document.createElement("div");
+      label.className = "label";
+      label.textContent = name;
+      container.appendChild(label);
+   }
+   const letters = charRange("A", "J")
+   letters.forEach(createLabel)
+}
+```
+* Now I have the columns showing on page load:
+   <details>
+      <summary>Screenshot</summary>
+
+   ![](screenshots/2025-03-28-14-50-06.png)
+   </details>
