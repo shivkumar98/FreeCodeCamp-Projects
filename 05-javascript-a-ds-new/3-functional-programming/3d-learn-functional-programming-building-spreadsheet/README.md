@@ -49,4 +49,31 @@ const createLabel = (name) => {
    container.appendChild(label);
 }
 ```
-  
+
+### 🔴 Creating Range Function
+* I need to create a function which will create an array of numbers ranging from a starting value and ending value
+* I initialise my `range` function by returning an array:
+```js
+const range = (start, end) => Array();
+```
+* If I need to create a range from 1-3, the number of elements will be `end`-`start`+1 = 3. 
+* I need intiialise my array with a lengh, so I use the above logic to do this:
+```js
+const range = (start, end) => Array(end - start + 1);
+```
+* I chain the `fill()` method to the constructor, and fill the array with the `start` parameter:
+```js
+const range = (start, end) => Array(end - start + 1)
+   .fill(start);
+```
+* I need to map each element such that each element is incremented by the index, so if I have a range of 1-3 => `[1+0, 1+1, 1+2]`
+* I can achieve this via the `map()` method:
+```js
+const range = (start, end) => Array(end - start + 1)
+   .fill(start)
+   .map((element, index) => element + index);
+```
+
+### Creating Character Range Function
+* I also need a function which will create a range of characters, e.g. `a-c` => `[a,b,c]`
+* 
