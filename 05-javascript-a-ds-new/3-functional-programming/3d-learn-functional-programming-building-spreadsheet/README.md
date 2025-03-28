@@ -9,17 +9,26 @@
 ## 📝 Summary Notes TODOOOOOOOOOO 📝
 * The `window` object represent the browser window, you can define behaviour of the window when the HTML, CSS and scripts have finished loading using the `.onload` property
 * You can define nested functions which enables the function to reuse logic without having the logic globally defined:
-```js
-const outer = () => {
-   const inner = () => { }
-}
-```
+   ```js
+   const outer = () => {
+      const inner = () => { }
+   }
+   ```
+* You can covert a letter to the numeric unicode representation using `.charCodeAt()` - you can pass an optional parameter to specify the index of the character within a string
+   ```js
+   'a'.charCodeAt(); // 99
+   'aaac'.charCodeAt(3); // 99
+   ```
+* You can convert the numeric unicode representation of a character to a string using `String.fromCharCode()`
+   ```js
+   String.fromCharCode(99); // 'c'
+   ```
 
 ## 🟥 1. Project Setup 🛠️
 
 * I have been provided the [HTML](code/index.html) and [CSS](code/styles.css)
 
-## 🟥 Programtically Generate Cells
+## 🟥 2. Programtically Generate Cells
 * I have been supplied with a HTML container and some CSS. My first task is to programtically generate cells for your spreadsheet
 * The global `window`  represents the browser window. It has `.onload` property which lets you define functionality when the window has loaded the entire page, including CSS and scripts.
 * I set the onload property of window to a function which obtains the `#container` div:
@@ -74,6 +83,21 @@ const range = (start, end) => Array(end - start + 1)
    .map((element, index) => element + index);
 ```
 
-### Creating Character Range Function
+### 🔴 Creating Character Range Function
 * I also need a function which will create a range of characters, e.g. `a-c` => `[a,b,c]`
-* 
+* I declare a `charRange` function:
+```js
+const charRange = (start, end) => range(start, end)
+```
+* I cannot use the `range()` function like this, since it needs to be passed a number (due to calculation of array length)
+* I fix this by converting the parameters to numbers using `.charCodeAt(0)` (0 is an optional parameter which declares the index):
+```js
+const charRange = (start, end) => 
+   range(start.charCodeAt(0), end.charCodeAt(0));
+```
+* Now I have an array with a range of numbers representing the letters, I can covert these back to letters using `String.fromCharCode()`:
+```js
+const charRange = (start, end) => 
+   range(start.charCodeAt(0), end.charCodeAt(0))
+      .map(code=>String.fromCharCode(code));
+```
