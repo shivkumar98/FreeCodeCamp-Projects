@@ -102,7 +102,7 @@ const charRange = (start, end) =>
       .map(code=>String.fromCharCode(code));
 ```
 
-### 🔴 Displaying Columns A-J and Rows
+### 🔴 Displaying Columns A-J
 * My two helper functions are complete, I can go back to the `onload` event handler
 * I create a variable to store letters A to J, and call the `createLabel()` function on each letter:
 ```js
@@ -124,3 +124,29 @@ window.onload = () => {
 
    ![](screenshots/2025-03-28-14-50-06.png)
    </details>
+
+### 🔴 Displaying Rows 1-99 and Input Cells
+* I create a range 1-99, and create a label for each element:
+   ```js
+   window.onload = () => {
+      // EXISTING CODE
+      range(1,99).forEach(number => {
+         createLabel(number)
+      })
+   }
+   ```
+* This renders the labels as columns rather than rows:
+   
+   ![](screenshots/2025-03-31-08-08-11.png)
+
+* I nest a `forEach()` loop on the `letters` array, to create a new input in the DOM (for the cells):
+```js
+range(1, 99).forEach(number => {
+   createLabel(number);
+   letters.forEach(letter => {
+   const input = document.createElement("input");
+   input.type = "text";
+   input.id = letter + number;
+   })
+})
+```
