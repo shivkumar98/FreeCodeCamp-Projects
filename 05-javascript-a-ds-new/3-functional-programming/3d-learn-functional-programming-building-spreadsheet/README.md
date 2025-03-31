@@ -14,14 +14,19 @@
       const inner = () => { }
    }
    ```
-* You can covert a letter to the numeric unicode representation using `.charCodeAt()` - you can pass an optional parameter to specify the index of the character within a string
-   ```js
-   'a'.charCodeAt(); // 99
-   'aaac'.charCodeAt(3); // 99
+* You can covert a letter to the numeric unicode representation using `.charCodeAt()` - you can pass an optional parameter to specify the index of the character within a stringcCodeAt(3); // 99
    ```
 * You can convert the numeric unicode representation of a character to a string using `String.fromCharCode()`
    ```js
    String.fromCharCode(99); // 'c'
+   ```
+* You can directly update an attribute using the following syntax, rather than using `.setAttribute()`:
+   ```js
+   element.attributeNameWithHypens = value
+   ```
+ * E.g you can set `aria-label` via:
+   ```js
+   element.ariaLabel = "Aria Label Value";
    ```
 
 ## 🟥 1. Project Setup 🛠️
@@ -150,3 +155,37 @@
       })
    })
    ```
+
+---
+#### 💡 Setting Attributes 💡
+* In earlier projects, I set the attribute of an element using `.setAttribute()` 
+* You can directly update an attribute using the following syntax, rather than using `.setAttribute()`:
+   ```js
+   element.attributeNameWithHypens = value
+   ```
+ * E.g you can set `aria-label` via:
+   ```js
+   element.ariaLabel = "Aria Label Value";
+   ```
+---
+
+* I set the `aria-label` to `letter + number` as well:
+
+```js
+letters.forEach(letter => {
+   const input = document.createElement("input");
+   input.type = "text";
+   input.id = letter + number;
+   input.ariaLabel = letter + number;
+})
+```
+* Finally to get the cells on the page, I append the input to the container element as a child:
+```js
+letters.forEach(letter => {
+   const input = document.createElement("input");
+   input.type = "text";
+   input.id = letter + number;
+   input.ariaLabel = letter + number;
+   container.appendChild(input)
+})
+```
