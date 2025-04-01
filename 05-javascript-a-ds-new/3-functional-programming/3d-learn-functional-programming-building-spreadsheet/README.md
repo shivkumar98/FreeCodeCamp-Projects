@@ -43,7 +43,7 @@
    }
    ```
 
-### 🔴 2.1 Nested Functions
+### 🟡 2.1 Nested Functions
 * Nested functed functions allow a function to reuse logic.
 * I create a nested function to create a label:
    ```js
@@ -64,7 +64,7 @@
    }
    ```
 
-### 🔴 2.2 Creating Range Function
+### 🟡 2.2 Creating Range Function
 * I need to create a function which will create an array of numbers ranging from a starting value and ending value
 * I initialise my `range` function by returning an array:
    ```js
@@ -88,7 +88,7 @@
       .map((element, index) => element + index);
    ```
 
-### 🔴2.3 Creating Character Range Function
+### 🟡 2.3 Creating Character Range Function
 * I also need a function which will create a range of characters, e.g. `a-c` => `[a,b,c]`
 * I declare a `charRange` function:
    ```js
@@ -107,7 +107,7 @@
          .map(code=>String.fromCharCode(code));
    ```
 
-### 🔴 2.4 Displaying Columns A-J
+### 🟡 2.4 Displaying Columns A-J
 * My two helper functions are complete, I can go back to the `onload` event handler
 * I create a variable to store letters A to J, and call the `createLabel()` function on each letter:
    ```js
@@ -130,7 +130,7 @@
    ![](screenshots/2025-03-28-14-50-06.png)
    </details>
 
-### 🔴 2.5 Displaying Rows 1-99 and Input Cells
+### 🟡 2.5 Displaying Rows 1-99 and Input Cells
 * I create a range 1-99, and create a label for each element:
    ```js
    window.onload = () => {
@@ -221,3 +221,18 @@
    }
    ```
    </details>
+
+## 🟥 3. Programming functions
+* I am now going to start programming the built in functions that can be utilised by my spreadsheet
+* I create a `sum()` function sums values of an array parameter:
+```js
+const sum = (nums) => nums.reduce((el, acc)=>el+acc,0)
+```
+* I create an isEven function which checks if a number is even or not:
+```js
+const isEven = (num) => num % 2 === 0
+```
+* I create a function which finds the average of an array:
+```js
+
+```
