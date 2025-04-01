@@ -43,7 +43,7 @@
    }
    ```
 
-### 🔴 Nested Functions
+### 🔴 2.1 Nested Functions
 * Nested functed functions allow a function to reuse logic.
 * I create a nested function to create a label:
    ```js
@@ -64,7 +64,7 @@
    }
    ```
 
-### 🔴 Creating Range Function
+### 🔴 2.2 Creating Range Function
 * I need to create a function which will create an array of numbers ranging from a starting value and ending value
 * I initialise my `range` function by returning an array:
    ```js
@@ -88,7 +88,7 @@
       .map((element, index) => element + index);
    ```
 
-### 🔴 Creating Character Range Function
+### 🔴2.3 Creating Character Range Function
 * I also need a function which will create a range of characters, e.g. `a-c` => `[a,b,c]`
 * I declare a `charRange` function:
    ```js
@@ -107,7 +107,7 @@
          .map(code=>String.fromCharCode(code));
    ```
 
-### 🔴 Displaying Columns A-J
+### 🔴 2.4 Displaying Columns A-J
 * My two helper functions are complete, I can go back to the `onload` event handler
 * I create a variable to store letters A to J, and call the `createLabel()` function on each letter:
    ```js
@@ -130,7 +130,7 @@
    ![](screenshots/2025-03-28-14-50-06.png)
    </details>
 
-### 🔴 Displaying Rows 1-99 and Input Cells
+### 🔴 2.5 Displaying Rows 1-99 and Input Cells
 * I create a range 1-99, and create a label for each element:
    ```js
    window.onload = () => {
@@ -171,24 +171,24 @@
 
 * I set the `aria-label` to `letter + number` as well:
 
-```js
-letters.forEach(letter => {
-   const input = document.createElement("input");
-   input.type = "text";
-   input.id = letter + number;
-   input.ariaLabel = letter + number;
-})
-```
+   ```js
+   letters.forEach(letter => {
+      const input = document.createElement("input");
+      input.type = "text";
+      input.id = letter + number;
+      input.ariaLabel = letter + number;
+   })
+   ```
 * Finally to get the cells on the page, I append the input to the container element as a child:
-```js
-letters.forEach(letter => {
-   const input = document.createElement("input");
-   input.type = "text";
-   input.id = letter + number;
-   input.ariaLabel = letter + number;
-   container.appendChild(input)
-})
-```
+   ```js
+   letters.forEach(letter => {
+      const input = document.createElement("input");
+      input.type = "text";
+      input.id = letter + number;
+      input.ariaLabel = letter + number;
+      container.appendChild(input)
+   })
+   ```
 * Here is what the spreadsheet looks like now:
 
    ![](screenshots/2025-04-01-08-55-28.png)
