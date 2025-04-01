@@ -189,3 +189,35 @@ letters.forEach(letter => {
    container.appendChild(input)
 })
 ```
+* Here is what the spreadsheet looks like now:
+
+   ![](screenshots/2025-04-01-08-55-28.png)
+
+* Here is the full code which is used to load the webpage:
+
+   <details>
+
+   ```js
+   window.onload = () => {
+      const container = document.getElementById("container");
+      const createLabel = (name) => {
+         const label = document.createElement("div");
+         label.className = "label";
+         label.textContent = name;
+         container.appendChild(label);
+      }
+      const letters = charRange("A", "J")
+      letters.forEach(createLabel)
+      range(1, 99).forEach(number => {
+         createLabel(number);
+         letters.forEach(letter => {
+            const input = document.createElement("input");
+            input.type = "text";
+            input.id = letter + number;
+            input.ariaLabel = letter + number;
+            container.appendChild(input)
+         })
+      })
+   }
+   ```
+   </details>
