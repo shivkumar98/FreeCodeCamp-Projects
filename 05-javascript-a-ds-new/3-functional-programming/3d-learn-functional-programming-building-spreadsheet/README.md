@@ -296,3 +296,13 @@ const update = event => {
    const value = element.value.replace(/\s/g,"")
 }
 ```
+* I check that the value does not include the ID of the element. I only want to update the cell if the user types "=" at the beginning of the expression so I write an if statement for both of these:
+```js
+const update = event => {
+   const element = event.target;
+   const value = element.value.replace(/\s/g, "");
+   if (!value.includes(element.id) && value[0]==="=") {
+
+   }
+}
+```
