@@ -256,7 +256,7 @@ const spreadsheetFunctions = {
 }
 ```
 
-## 🟥 4. Utilising Spreadsheet Functions
+## 🟥 4. Detecting User entering Expression in Cell
 * I shall now start utilising these functions
 * I create an update function which takes an event parameter, I add a console log for debugging:
 ```js
@@ -302,7 +302,90 @@ const update = event => {
    const element = event.target;
    const value = element.value.replace(/\s/g, "");
    if (!value.includes(element.id) && value[0]==="=") {
-
+      
    }
 }
+```
+
+## 🟥 5. WIP
+* I will now create a function which can parse and evaluate the input string. I dfeclare an `evalFormula` function which takes `x` and `cells` as parameters:
+```js
+const evalFormula = (x, cells) => {
+
+}
+```
+* Within this function, I declare `idToText` function which takes an `id` parameter which finds the cell where the ID match:
+```js
+const evalFormula = (x, cells) => {
+   idToText = (id) => cells.find(cell=>cell.id === id).value
+}
+```
+* I need to be ablet to match cell ranges in a formula (like `A1:B12`, `A3:A25`) - I will use regex to match these patterns
+* I declare a `rangeRegex` to match `A` to `J`. I will use a character class to achieve this:
+```js
+const evalFormula = (x, cells) => {
+   idToText = (id) => cells.find(cell=>cell.id === id).value
+   const rangeRegex = /([A-J])/
+}
+```
+* After getting a matching cell leeter, the regex needs to martch a number from 1-99, I add a second capture group for this to capture a digit and an optional second digit:
+```js
+const rangeRegex = /([A-J])([1-9][0-9]?)/;
+```
+* I then need to match for a colon after first two capture letters:
+```js
+const rangeRegex = /([A-J])([1-9][0-9]?):/;
+```
+* I can copy and paster my first two capture groups after the colon:
+```js
+const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/;
+```
+* Finally i make it global and case insentitve:
+```js
+const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/ig;
+```
+
+<br>
+
+* I then create a `rangeFromString()` function which makes a range of numbers between two numbers, I parse it to make it safe to call the range on it:
+```js
+const evalFormula = (x, cells) => {
+   const idToText = id => cells.find(cell => cell.id === id).value;
+   const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/ig;
+   const rangeFromString = (num1, num2) => range(parseInt(num1), parseInt(num2));
+}
+```
+* I declare a `elemValue()` function which returns a function:
+```js
+const evalFormula = (x, cells) => {
+   // EXISTING CODE HERE
+   const elemValue = num => {
+      const inner = character => {
+         return idToText(character + num);
+      }
+      return inner;
+   }
+}
+```
+* I create a curried function called `addCharacters()` which takes a `character1` parameter which returns a function which takes `character2` parameter:
+```js
+const evalFormula = (x, cells) => {
+   // EXISTING CODE HERE
+   const elemValue = num => {
+      const inner = character => {
+         return idToText(character + num);
+      }
+      return inner;
+   }
+   const addCharacters = character1 => character2 => {
+   }
+}
+```
+* I return another function which takes a `num` parameter:
+```js
+const addCharacters = character1 => character2 => num => {}
+```
+* I refactor my `elemValue` to use currying:
+```js
+const elemValue = num => character => idToText(character + num);
 ```
