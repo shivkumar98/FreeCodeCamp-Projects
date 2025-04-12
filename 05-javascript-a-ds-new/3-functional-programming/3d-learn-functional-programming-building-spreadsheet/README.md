@@ -257,9 +257,26 @@ const spreadsheetFunctions = {
 
 ## 🟥 4. Utilising Spreadsheet Functions
 * I shall now start utilising these functions
-* I create an update function which takes an event parameter:
+* I create an update function which takes an event parameter, I add a console log for debugging:
 ```js
 const update = event => {
    console.log("change");
+}
+```
+* I want to trigger the above function when the input is modified. So on the `window.onload` function I call the function on change of input:
+```js
+window.onload = () => {
+   // EXISTING CODE HERE
+   range(1, 99).forEach(number => {
+      createLabel(number);
+      letters.forEach(letter => {
+         const input = document.createElement("input");
+         input.type = "text";
+         input.id = letter + number;
+         input.ariaLabel = letter + number;
+         input.onchange = update
+         // REST OF CODE HERE
+      })
+   })
 }
 ```
