@@ -45,5 +45,6 @@ window.onload = () => {
 }
 
 const update = event => {
-    console.log("change");
+    const element = event.target;
+    const value = element.value.replace(/\s/g,"")
 }

@@ -28,6 +28,7 @@
    ```js
    element.ariaLabel = "Aria Label Value";
    ```
+* The event from a `change` event listener has a `target` property which represents the DOM element being changed
 
 ## 🟥 1. Project Setup 🛠️
 
@@ -278,5 +279,20 @@ window.onload = () => {
          // REST OF CODE HERE
       })
    })
+}
+```
+* Now when I enter text, and press enter on any of the cells the `update()` function is triggered
+* The event from a `change` event listener has a `target` property which represents the DOM element being changed💡
+* I assign the target property to a constant called `element`:
+```js
+const update = event => {
+   const element = event.target
+}
+```
+* I can obtain the value of the element after its been changed using the `.change` property. I assign this to variable called value and remove the whitespace:
+```js
+const update = event => {
+   const element = event.target;
+   const value = element.value.replace(/\s/g,"")
 }
 ```
