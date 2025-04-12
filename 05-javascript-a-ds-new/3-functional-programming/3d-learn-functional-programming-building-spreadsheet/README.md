@@ -234,5 +234,14 @@ const isEven = (num) => num % 2 === 0
 ```
 * I create a function which finds the average of an array:
 ```js
-
+const average = (nums) => sum(nums)/nums.length
+```
+* I create a function to calculate the media of an array of numbers:
+```js
+const median = nums => {
+   const sorted = nums.slice().sort((a, b) => a - b);
+   const length = sorted.length;
+   const middle = length / 2 - 1;
+   return isEven(middle) ? average(sorted[middle], sorted[middle+1]) : sorted[Math.floor(middle)+1]
+}
 ```
