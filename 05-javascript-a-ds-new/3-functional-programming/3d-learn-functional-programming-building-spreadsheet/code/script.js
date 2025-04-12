@@ -7,6 +7,11 @@ const median = nums => {
     const middle = length / 2 - 1;
     return isEven(length) ? average([sorted[middle], sorted[middle+1]]) : sorted[Math.floor(middle)+1]
 }
+const spreadsheetFunctions = {
+    sum,
+    average,
+    median
+}
 
 const range = (start, end) => Array(end - start + 1)
    .fill(start)

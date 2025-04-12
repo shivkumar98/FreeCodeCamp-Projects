@@ -245,3 +245,21 @@ const median = nums => {
    return isEven(middle) ? average(sorted[middle], sorted[middle+1]) : sorted[Math.floor(middle)+1]
 }
 ```
+
+* I decalre a `spreadsheetFunctions` object which maps all the above functions themselves. I use shorthand notation syntax to do this:
+```js
+const spreadsheetFunctions = {
+   sum,
+   average,
+   median
+}
+```
+
+## 🟥 4. Utilising Spreadsheet Functions
+* I shall now start utilising these functions
+* I create an update function which takes an event parameter:
+```js
+const update = event => {
+   console.log("change");
+}
+```
