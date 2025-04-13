@@ -2,6 +2,7 @@
 * Functional programming is a popular approach to software development where code is organised into smaller functions which are combined to building complex programs
 * In this spreadsheet application project, I will learn about parsing and evaluating mathematical expressions, implement spreadsheet functions, handling cell references and dynamically updating the page based on user input
 * I will cover convepts like `map()`, `find()`, `includes()`, and `parseInt()`
+* In JavaScript, unused parameters are prefixed with `_` as common convention
 
 ## 👨‍🍳 Final Product TODOOOOOOOO 👨‍🍳
 * You can try out the application I built in this tutorial via this [link](TODOOOOOOOOOO)
@@ -435,5 +436,35 @@ const rangeExpanded = x.replace(rangeRegex, (match, char1, num1, char2, num2) =>
 ```
 * Since addCharacters() returns a function which returns a function, I pass in `char1` and `char2`:
 ```js
-
+const rangeExpanded = x.replace(rangeRegex, (match, char1, num1, char2, num2) => rangeFromString(num1, num2).map(addCharacters(char1)(char2)));
+```
+* In JavaScript, unused parameters are prefixed with `_` as common convention
+* I denote the `match` parameter as bein unused:
+```js
+const rangeExpanded = x.replace(rangeRegex, (_match, char1, num1, char2, num2) => rangeFromString(num1, num2).map(addCharacters(char1)(char2)));
+```
+* I declare a `cellRegex` to match cell references:
+```js
+const cellRegex = /[A-J][1-9][0-9]?/ig
+```
+* I declare a `cellExpanded` variable which calls `.replace()` on `rangeExpanded`:
+```js
+const cellExpanded = rangeExpanded.replace(cellRegex, (match)=>{})
+```
+* I update the matching function to return `idToText()` with the match being made uppercase:
+```js
+const cellExpanded = rangeExpanded.replace(cellRegex, match => idToText(match.toUpperCase()))
+```
+* Here is the implementation of `evalFormula()`:
+```js
+const evalFormula = (x, cells) => {
+   const idToText = id => cells.find(cell => cell.id === id).value;
+   const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/ig;
+   const rangeFromString = (num1, num2) => range(parseInt(num1), parseInt(num2));
+   const elemValue = num => character => idToText(character + num);
+   const addCharacters = character1 => character2 => num => charRange(character1, character2).map(elemValue(num));
+   const rangeExpanded = x.replace(rangeRegex, (_match, char1, num1, char2, num2) => rangeFromString(num1, num2).map(addCharacters(char1)(char2)));
+   const cellRegex = /[A-J][1-9][0-9]?/gi;
+   const cellExpanded = rangeExpanded.replace(cellRegex, match => idToText(match.toUpperCase()));
+}
 ```
