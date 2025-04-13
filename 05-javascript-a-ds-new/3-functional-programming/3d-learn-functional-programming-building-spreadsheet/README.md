@@ -316,7 +316,7 @@ const update = event => {
 }
 ```
 
-## 🟥 5. WIP
+## 🟥 5. Evaluating Formaulas
 * I will now create a function which can parse and evaluate the input string. I dfeclare an `evalFormula` function which takes `x` and `cells` as parameters:
 ```js
 const evalFormula = (x, cells) => {
@@ -468,3 +468,27 @@ const evalFormula = (x, cells) => {
    const cellExpanded = rangeExpanded.replace(cellRegex, match => idToText(match.toUpperCase()));
 }
 ```
+
+* An infix is a mathematical operator which appears between two operands
+* I create a `infixToFunction` object which can map symbols to functions to be used when parsing expressions:
+```js
+const infixToFunction = {
+  
+}
+```
+* I map `+` to a function which sums two parameters:
+```js
+const infixToFunction = {
+   "+": (x, y) => x + y,
+}
+```
+* I do the same for `-`, `/` and `*`:
+```js
+const infixToFunction = {
+   "+": (x, y) => x + y,
+   "-": (x, y) => x - y,
+   "/": (x, y) => x / y,
+   "*": (x, y) => x * y
+}
+```
+* 
