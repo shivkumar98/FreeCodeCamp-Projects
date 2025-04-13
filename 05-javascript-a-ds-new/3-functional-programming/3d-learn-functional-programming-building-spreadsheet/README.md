@@ -511,3 +511,21 @@ const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, ar
 ```js
 const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator](parseFloat(arg1), parseFloat(arg2)));
 ```
+* I create a function to account for order of operations:
+```js
+const highPrecedence = (str) => {}
+```
+* I check if the `str` matches a number followed by a `*` or `/` followed by another number:
+```js
+const highPrecedence = str => {
+   const regex = /([\d.]+)([*\/])([\d.]+)/;
+   return regex.test(str);
+}
+```
+* I am now going to evaluate the expression, I declare a `str2` variable:
+```js
+const highPrecedence = str => {
+  const regex = /([\d.]+)([*\/])([\d.]+)/;
+  const str2 = infixEval(str, regex)
+}
+```
