@@ -30,6 +30,14 @@
    ```
 * The event from a `change` event listener has a `target` property which represents the DOM element being changed
 
+* The `.replace()` method has signature for a regex and a string, but there is also a signature for a regex and a function. This function is applied to matched characters. E.g.:
+   ```js
+   const x = "shiv is cool";
+   x.replace(/[sio]/, (match)=>match.toUpperCase())
+   // returns ShIv Is cOOl
+   ```
+
+
 ## 🟥 1. Project Setup 🛠️
 
 * I have been provided the [HTML](code/index.html) and [CSS](code/styles.css)
@@ -388,4 +396,44 @@ const addCharacters = character1 => character2 => num => {}
 * I refactor my `elemValue` to use currying:
 ```js
 const elemValue = num => character => idToText(character + num);
+```
+* I chain the `.map()` method to the `charRange()` call for the `addCharacters()`:
+```js
+const evalFormula = (x, cells) => {
+  // EXISTING CODE HERE
+  const addCharacters = character1 => character2 => num => charRange(character1, character2).map(elemValue(num));
+}
+```
+* I declare a `rangeExpanded` variable:
+```js
+const evalFormula = (x, cells) => {
+  // EXISTING CODE HERE
+  const rangeExpanded = x.replace(rangeRegex);
+}
+```
+* The `.replace()` method has signature for a regex and a string, but there is also a signature for a regex and a function. This function is applied to matched characters. E.g.:
+   ```js
+   const x = "shiv is cool";
+   x.replace(/[sio]/, (match)=>match.toUpperCase())
+   // returns ShIv Is cOOl
+   ```
+* I add the function to the `.replace()` method:
+```js
+const rangeExpanded = x.replace(rangeRegex, (match)=>{});
+```
+* The `rangeRegex` has four capture groups, these four capture groups can be matched by the function in the `.replace()` call - I declare the match parameter as well as the two character and two number capture groups:
+```js
+const rangeExpanded = x.replace(rangeRegex, (match, char1, num1, char2, num2) => {});
+```
+* I implicitly return a call to `rangeFromString()`:
+```js
+const rangeExpanded = x.replace(rangeRegex, (match, char1, num1, char2, num2) => rangeFromString(num1, num2));
+```
+* I chain on a call to the `addCharacters()` function:
+```js
+const rangeExpanded = x.replace(rangeRegex, (match, char1, num1, char2, num2) => rangeFromString(num1, num2).map(addCharacters));
+```
+* Since addCharacters() returns a function which returns a function, I pass in `char1` and `char2`:
+```js
+
 ```
