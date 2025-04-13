@@ -491,4 +491,15 @@ const infixToFunction = {
    "*": (x, y) => x * y
 }
 ```
-* 
+* I declare an `infixEval()` functions which takes `str` and `regex` parameters:
+```js
+const infixEval = (str, regex) => str.replace(regex, () => {});
+```
+* I add `match`, `arg1`, `operator` and `arg2` as parameters:
+```js
+const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => {});
+```
+* I return the `operator` key's value from `infixToFuntion`:
+```js
+const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator]);
+```
