@@ -4,7 +4,7 @@ const infixToFunction = {
     "/": (x, y) => x / y,
     "*": (x, y) => x * y
 }
-const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator]);
+const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator](parseFloat(arg1), parseFloat(arg2)));
 
 const isEven = num => num % 2 === 0;
 const sum = nums => nums.reduce((acc, el) => acc + el, 0);
@@ -68,4 +68,4 @@ const update = event => {
     if (!value.includes(element.id) && value[0]==="=") {
  
     }
- }
+}

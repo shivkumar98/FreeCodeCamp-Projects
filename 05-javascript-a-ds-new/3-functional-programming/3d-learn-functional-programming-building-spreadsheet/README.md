@@ -503,3 +503,11 @@ const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, ar
 ```js
 const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator]);
 ```
+* I now pass `arg1` and `arg2` to the function from the object:
+```js
+const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator](arg1, arg2));
+```
+* `arg1` and `arg2` are strings, so the operations will be applied incorrectly. I use `parseFloat()` method to change these to numbers:
+```js
+const infixEval = (str, regex) => str.replace(regex, (_match, arg1, operator, arg2) => infixToFunction[operator](parseFloat(arg1), parseFloat(arg2)));
+```
