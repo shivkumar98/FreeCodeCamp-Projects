@@ -529,3 +529,57 @@ const highPrecedence = str => {
   const str2 = infixEval(str, regex)
 }
 ```
+* The `infixEval()` function will only evaluate the first multiplication or division operation, because `regex` isn't global.
+* I check if `str2` is equal to `str` and return `str` otherwise i return `highPrecedence(str2)`:
+```js
+const highPrecedence = str => {
+   const regex = /([\d.]+)([*\/])([\d.]+)/;
+   const str2 = infixEval(str, regex);
+   return str === str2 ? str : highPrecedence(str2)
+}
+```
+* I will now start applying the function, so I declare a `applyFunction()` which takes a `str` function:
+```js
+const applyFunction = str => {
+}
+```
+* I declare a `noHigh` variable and assign it to the result of `highPrecedence(str)`:
+```js
+const applyFunction = str => {
+   const noHigh = highPrecedence(str);
+}
+```
+* I declare an `infix` variable which will check for a number (including decimal numbers) is followed by `+`/`-` followed by a number:
+```js
+const applyFunction = str => {
+   const noHigh = highPrecedence(str);
+   const infix = /([\d.]+)([+-])([\d.]+)/
+}
+```
+* I declare `str2`:
+```js
+const applyFunction = str => {
+   const noHigh = highPrecedence(str);
+   const infix = /([\d.]+)([+-])([\d.]+)/;
+   const str2 = infixEval(noHigh, infix)
+}
+```
+* I declare a `functionCall` regex which will match for expressions like `sum(1, 4)`:
+```js
+const applyFunction = str => {
+   const noHigh = highPrecedence(str);
+   const infix = /([\d.]+)([+-])([\d.]+)/;
+   const str2 = infixEval(noHigh, infix);
+   const functionCall = /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i
+}
+```
+* I declare an internal function which splits an argument by commas and parses it into numbers:
+```js
+const applyFunction = str => {
+   const noHigh = highPrecedence(str);
+   const infix = /([\d.]+)([+-])([\d.]+)/;
+   const str2 = infixEval(noHigh, infix);
+   const functionCall = /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i;
+   const toNumberList = (args) => args.split(",").map(parseFloat)
+}
+```
