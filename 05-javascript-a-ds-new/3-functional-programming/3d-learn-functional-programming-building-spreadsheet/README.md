@@ -573,7 +573,7 @@ const applyFunction = str => {
    const functionCall = /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i
 }
 ```
-* I declare an internal function which splits an argument by commas and parses it into numbers:
+* I declare an internal `toNumberList()` function which splits an argument by commas and parses it into numbers:
 ```js
 const applyFunction = str => {
    const noHigh = highPrecedence(str);
@@ -581,5 +581,27 @@ const applyFunction = str => {
    const str2 = infixEval(noHigh, infix);
    const functionCall = /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i;
    const toNumberList = (args) => args.split(",").map(parseFloat)
+}
+```
+* I create an internal `applyFunction()` function which obtains the `sum/average/median` functions, I lowercase the `fn` so it matches the case of the object keys:
+```js
+const applyFunction = str => {
+   const noHigh = highPrecedence(str);
+   const infix = /([\d.]+)([+-])([\d.]+)/;
+   const str2 = infixEval(noHigh, infix);
+   const functionCall = /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i;
+   const toNumberList = args => args.split(",").map(parseFloat);
+   const apply = (fn, args) => spreadsheetFunctions[fn.toLowerCase()]
+}
+```
+* I update the `apply()` function so it uses the `args` parameter:
+```js
+const applyFunction = str => {
+   const noHigh = highPrecedence(str);
+   const infix = /([\d.]+)([+-])([\d.]+)/;
+   const str2 = infixEval(noHigh, infix);
+   const functionCall = /([a-z0-9]*)\(([0-9., ]*)\)(?!.*\()/i;
+   const toNumberList = args => args.split(",").map(parseFloat);
+   const apply = (fn, args) => spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
 }
 ```
