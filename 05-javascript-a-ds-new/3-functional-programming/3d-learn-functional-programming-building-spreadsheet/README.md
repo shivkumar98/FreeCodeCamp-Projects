@@ -605,3 +605,27 @@ const applyFunction = str => {
    const apply = (fn, args) => spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
 }
 ```
+* I return the result of calling `.replace()` on `str2`:
+```js
+const applyFunction = str => {
+   // EXISTING CODE HERE
+   return str2.replace(functionCall, () => {})
+}
+```
+* I update the callback function to take `match`, `fn` and `args` and return if `fn` is a key in `spreadsheetFunctions` - I do this using the `hasOwnProperty() method:
+```js
+const applyFunction = str => {
+   // EXISTING CODE HERE
+   return str2.replace(functionCall, (match, fn, args) => 
+      spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()))
+}
+```
+* If the `spreadsheetFunctions` does contain the property, I will return the result of calling `apply` with `fn` and `args`; otherwise return match:
+```js
+
+const applyFunction = str => {
+   // EXISTING CODE HERE
+   return str2.replace(functionCall, (match, fn, args) => 
+      spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()) ? apply(fn, args) : match)
+}
+```
