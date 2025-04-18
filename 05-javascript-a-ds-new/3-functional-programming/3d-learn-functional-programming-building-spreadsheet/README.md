@@ -629,3 +629,20 @@ const applyFunction = str => {
       spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()) ? apply(fn, args) : match)
 }
 ```
+* I shall now utilise the function parser in my `evalFormula`. I declare a `functionExpanded`:
+```js
+const evalFormula = (x, cells) => {
+   // EXISTING CODE HERE
+   const cellExpanded = rangeExpanded.replace(cellRegex, match => idToText(match.toUpperCase()));
+   const functionExpanded = applyFunction(cellExpanded);
+}
+```
+* I return `functionExpanded` if it is equal to `x`, otherwise I call `evalFormula()` using `functionExpanded`:
+```js
+const evalFormula = (x, cells) => {
+   // EXISTING CODE HERE
+   const cellExpanded = rangeExpanded.replace(cellRegex, match => idToText(match.toUpperCase()));
+   const functionExpanded = applyFunction(cellExpanded);
+   return functionExpanded === x ? functionExpanded : evalFormula(functionExpanded, cells)
+}
+```
