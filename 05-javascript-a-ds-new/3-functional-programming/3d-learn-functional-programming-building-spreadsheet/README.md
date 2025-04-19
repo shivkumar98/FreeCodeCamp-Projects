@@ -664,3 +664,58 @@ element.value = evalFormula(value.slice(1), document.getElementById('container')
 ```js
 element.value = evalFormula(value.slice(1), Array.from(document.getElementById("container").children));
 ```
+
+## 🟥 6. Adding More Formulas
+* I addd an `even` method which filters for even numbers:
+```js
+const spreadsheetFunctions = {
+  sum,
+  average,
+  median,
+  even: nums => nums.filter(isEven),
+}
+```
+* I also add `firsttwo` and `lasttwo` methods:
+```js
+const spreadsheetFunctions = {
+   sum,
+   average,
+   median,
+   even: nums => nums.filter(isEven),
+   firsttwo: nums => nums.slice(0, 2),
+   lasttwo: nums => nums.slice(-2),
+}
+```
+* I add `has2` and `increment` method
+```js
+const spreadsheetFunctions = {
+   sum,
+   average,
+   median,
+   even: nums => nums.filter(isEven),
+   firsttwo: nums => nums.slice(0, 2),
+   lasttwo: nums => nums.slice(-2),
+   has2: nums => nums.includes(2),
+   increment: nums => nums.map(num => num + 1),
+}
+```
+* I add a `someeven` method:
+```js
+someeven: nums => nums.some(isEven),
+```
+* I add an `evereven` method:
+```js
+everyeven: nums => nums.every(isEven),
+```
+* I add a `random` method which generates a random number between the first number up to the sum of the two:
+```js
+random: ([x, y]) => Math.floor(Math.random() * y + x),
+```
+* I add a `range` method which generates a range from first number up to second number of `nums`:
+```js
+range: nums => range(...nums),
+```
+* Finally I add a `nodupes` method which returns `nums` with duplicates removed:
+```js
+nodupes: nums => [...new Set(nums)]
+```

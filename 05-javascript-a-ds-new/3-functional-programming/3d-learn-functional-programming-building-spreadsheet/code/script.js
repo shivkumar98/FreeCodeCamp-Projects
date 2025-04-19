@@ -23,7 +23,17 @@ const median = nums => {
 const spreadsheetFunctions = {
     sum,
     average,
-    median
+    median,
+    even: nums => nums.filter(isEven),
+    firsttwo: nums => nums.slice(0, 2),
+    lasttwo: nums => nums.slice(-2),
+    has2: nums => nums.includes(2),
+    increment: nums => nums.map(num => num + 1),
+    someeven: nums => nums.some(isEven),
+    everyeven: nums => nums.every(isEven),
+    random: ([x, y]) => Math.floor(Math.random() * y + x),
+    range: nums => range(...nums),
+    nodupes: nums => [...new Set(nums)]
 }
 const applyFunction = str => {
     const noHigh = highPrecedence(str);
