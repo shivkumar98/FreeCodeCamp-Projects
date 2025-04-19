@@ -646,3 +646,21 @@ const evalFormula = (x, cells) => {
    return functionExpanded === x ? functionExpanded : evalFormula(functionExpanded, cells)
 }
 ```
+* I update the `update()` function so it can actually evaluate formulas. I call `evalFormula()` with the first character of `value`:
+```js
+const update = event => {
+   const element = event.target;
+   const value = element.value.replace(/\s/g, "");
+   if (!value.includes(element.id) && value.startsWith('=')) {
+      element.value = evalFormula(value.slice(1));
+   }
+}
+```
+* I need to pass the cells in the second argument - I obtain this using the `children` property of `#container`:
+```js
+element.value = evalFormula(value.slice(1), document.getElementById('container').children);
+```
+* The `.children` property returns a Collection, rather than an array. I convert the collection using `Array.from()`:
+```js
+element.value = evalFormula(value.slice(1), Array.from(document.getElementById("container").children));
+```
