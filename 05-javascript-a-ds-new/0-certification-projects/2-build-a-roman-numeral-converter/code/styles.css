@@ -1,5 +1,5 @@
 body {
-    background-color: #1b1b32;
+    background-color: #3b3b4f;
     margin-top: 48px;
 }
 .centred {
@@ -23,7 +23,6 @@ h1 {
 
 main {
     border: 3px solid #f5f6f7;
-    background-color: #3b3d4f;
     color: white;
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     padding-top: 18px;
