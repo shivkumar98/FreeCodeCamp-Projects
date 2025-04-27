@@ -84,3 +84,35 @@ clearButton.addEventListener("click", (e) => {
    results.innerHTML =  ""
 })
 ```
+
+### ⭐ Telephone Validation ⭐
+* I wrote a regex so it only allows spaces, numbers and dashes:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const validPhoneNumber = /^[\d\s-]+$/g
+   return validPhoneNumber.test(phoneNumber)
+}
+```
+* I wrote two tests for this:
+```js
+test('should allow numbers, spaces and dashes', () => {
+   expect(isPhoneNumberValid("1 555-555-5555")).toBe(true)
+})
+
+test('should not allow special characters or letters', () => {
+   expect(isPhoneNumberValid("123**&!!asdf#")).toBe(false)
+})
+```
+* I wrote a test to allow for brackets:
+```js
+test('should allow numbers in brackets', () => {
+   expect(isPhoneNumberValid("1 (555) 555-5555")).toBe(true)
+})
+```
+* I update my function to:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const validPhoneNumber = /^[\d\s-()]+$/g
+   return validPhoneNumber.test(phoneNumber)
+}
+```

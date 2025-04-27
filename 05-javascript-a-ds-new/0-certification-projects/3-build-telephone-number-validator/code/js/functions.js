@@ -1,5 +1,5 @@
 function isPhoneNumberValid(phoneNumber) {
-    const validPhoneNumber = /[\d()-]/g
+    const validPhoneNumber = /^[\d\s-()]+$/g
     return validPhoneNumber.test(phoneNumber)
 }
 
