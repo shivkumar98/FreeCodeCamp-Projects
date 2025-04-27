@@ -3,5 +3,5 @@ function isPhoneNumberValid(phoneNumber) {
     return validPhoneNumber.test(phoneNumber)
 }
 
-module.exports = { isPhoneNumberValid }
+export { isPhoneNumberValid };
  

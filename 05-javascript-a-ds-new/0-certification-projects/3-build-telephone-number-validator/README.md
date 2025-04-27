@@ -116,3 +116,15 @@ function isPhoneNumberValid(phoneNumber) {
    return validPhoneNumber.test(phoneNumber)
 }
 ```
+
+### ⭐ Importing Function from functions.js in script.js
+* I wanted to utilise my function that I defined in [./code/js/functions.js](./code/js/functions.js), without having to paste the function directly
+* The first thing I did was import the function in [./code/script.js](./code/script.js):
+```js
+import { isPhoneNumberValid  } from "./js/functions.js"
+```
+* I got an error in my browser that imports needed to be top level. The solution to that was to specify the script import as a module in [index.html](./code/index.html):
+```js
+<script type="module" src="./script.js"></script>
+```
+* I got another error in browser, which says modules can not served via filesystem. The solution to that was to run a server which I achieved by installing `Live Server` extension from VS code,. I then opened the HTML file using Live Server and everything worked!
