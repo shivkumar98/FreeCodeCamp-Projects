@@ -117,7 +117,7 @@ function isPhoneNumberValid(phoneNumber) {
 }
 ```
 
-### ⭐ Importing Function from functions.js in script.js
+### ⭐ Importing Function from functions.js in script.js ⭐
 * I wanted to utilise my function that I defined in [./code/js/functions.js](./code/js/functions.js), without having to paste the function directly
 * The first thing I did was import the function in [./code/script.js](./code/script.js):
 ```js
@@ -129,7 +129,7 @@ import { isPhoneNumberValid  } from "./js/functions.js"
 ```
 * I got another error in browser, which says modules can not served via filesystem. The solution to that was to run a server which I achieved by installing `Live Server` extension from VS code,. I then opened the HTML file using Live Server and everything worked!
 
-### ⭐ Displaying Result
+### ⭐ Displaying Result ⭐
 * I update my script so that it uses the function I've written, and displays whether it is valid in the results div:
 ```js
 checkButton.addEventListener("click", (e) => {
@@ -158,3 +158,28 @@ checkButton.addEventListener("click", (e) => {
 * So it now looks like:
   
    <img src="screenshots/2025-04-28-07-15-21.png" height="400px">
+
+### ⭐ Fixing Tests ⭐
+* My tests did not work due to me using module export. I fixed this by following thi by installing babel-jest using `npm i jest ts-jest babel-jest @babel/preset-env`
+* I then also created a `babel.config.js` file with:
+```js
+module.exports = {presets: ['@babel/preset-env']}
+```
+* Now my tests run!
+
+### ⭐ Expanding Validation ⭐
+* I write a test that the area code must be provided, so minimum number of digits is 10:
+```js
+test('should have a minimum of 10 digits', () => {
+   expect(isPhoneNumberValid("555 555 555")).toBe(false)
+})
+```
+* I update my implementation to:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const numberOfDigits = phoneNumber.split("").filter((a) => a.match(/\d/)).length
+   if (numberOfDigits < 10) return false
+   const validPhoneNumber = /^[\d\s-()]+$/g
+   return validPhoneNumber.test(phoneNumber)
+}
+```

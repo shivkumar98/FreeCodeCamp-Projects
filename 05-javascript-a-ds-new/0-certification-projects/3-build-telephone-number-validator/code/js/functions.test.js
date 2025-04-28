@@ -11,3 +11,7 @@ test('should not allow special characters or letters', () => {
 test('should allow numbers in brackets', () => {
     expect(isPhoneNumberValid("1 (555) 555-5555")).toBe(true)
 })
+
+test('should have a minimum of 10 digits', () => {
+    expect(isPhoneNumberValid("555 555 555")).toBe(false)
+})
