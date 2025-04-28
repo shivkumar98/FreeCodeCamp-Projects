@@ -64,11 +64,11 @@
 
 ## ✏️ Project Commentary ✏️
 
-### ⭐ Front-End Work ⭐
+### ⭐ HTML and CSS ⭐
 * I completed the front end and styles, the results look like this:
 ![](2025-04-22-07-54-14.png)
 
-### ⭐ Back-End Work ⭐
+### ⭐ Showing Alert if Input is Empty ⭐
 * I got the user story of showing an alert if the input is empty with the following code:
 ```js
 const checkButton = document.getElementById("check-btn")
@@ -85,7 +85,7 @@ clearButton.addEventListener("click", (e) => {
 })
 ```
 
-### ⭐ Telephone Validation ⭐
+### ⭐ Initialising isPhoneNumberValid Function and Tests ⭐
 * I wrote a regex so it only allows spaces, numbers and dashes:
 ```js
 function isPhoneNumberValid(phoneNumber) {
