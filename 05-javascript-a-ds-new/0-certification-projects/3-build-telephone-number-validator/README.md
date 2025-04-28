@@ -128,3 +128,33 @@ import { isPhoneNumberValid  } from "./js/functions.js"
 <script type="module" src="./script.js"></script>
 ```
 * I got another error in browser, which says modules can not served via filesystem. The solution to that was to run a server which I achieved by installing `Live Server` extension from VS code,. I then opened the HTML file using Live Server and everything worked!
+
+### ⭐ Displaying Result
+* I update my script so that it uses the function I've written, and displays whether it is valid in the results div:
+```js
+checkButton.addEventListener("click", (e) => {
+   if (userInput.value === "") 
+      alert("Please provide a phone number")
+   if (isPhoneNumberValid(userInput.value)) {
+      results.textContent = "Valid US number: "+userInput.value;
+   } else 
+      results.textContent = "Invalid US number: "+userInput.value;
+})
+```
+* Now when I enter a valid number, I get the result:
+
+   <img src="screenshots/2025-04-28-07-10-45.png" height="300px">
+
+* I also updated the style for the results div:
+```css
+#results-div {
+   height: 200px;
+   padding-top: 20px;
+   color: rgb(0, 71, 27);
+   font-size: 300;
+   font-weight: 300;
+}
+```
+* So it now looks like:
+  
+   <img src="screenshots/2025-04-28-07-15-21.png" height="400px">

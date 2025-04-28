@@ -49,6 +49,10 @@ main {
 
 #results-div {
     height: 200px;
+    padding-top: 20px;
+    color: rgb(0, 71, 27);
+    font-size: 300;
+    font-weight: 300;
 }
 
 #buttons {

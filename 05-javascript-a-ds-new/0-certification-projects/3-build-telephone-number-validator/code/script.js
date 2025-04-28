@@ -8,9 +8,9 @@ checkButton.addEventListener("click", (e) => {
     if (userInput.value === "") 
         alert("Please provide a phone number")
     if (isPhoneNumberValid(userInput.value)) {
-        alert("VALID")
+        results.textContent = "Valid US number: "+userInput.value;
     } else 
-        alert("invalid")
+        results.textContent = "Invalid US number: "+userInput.value;
 })
 
 clearButton.addEventListener("click", (e) => {
