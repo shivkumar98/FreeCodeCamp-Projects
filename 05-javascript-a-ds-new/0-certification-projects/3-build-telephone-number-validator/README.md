@@ -167,7 +167,7 @@ module.exports = {presets: ['@babel/preset-env']}
 ```
 * Now my tests run!
 
-### ⭐ Expanding Validation ⭐
+### ⭐ Asserting Minimum Number of Digits ⭐
 * I write a test that the area code must be provided, so minimum number of digits is 10:
 ```js
 test('should have a minimum of 10 digits', () => {
@@ -179,6 +179,41 @@ test('should have a minimum of 10 digits', () => {
 function isPhoneNumberValid(phoneNumber) {
    const numberOfDigits = phoneNumber.split("").filter((a) => a.match(/\d/)).length
    if (numberOfDigits < 10) return false
+   const validPhoneNumber = /^[\d\s-()]+$/g
+   return validPhoneNumber.test(phoneNumber)
+}
+```
+
+### ⭐ Asserting Each Opening Bracket has a Closing Bracket ⭐
+* I write the following test which fails:
+```js
+test('should have equal number of opening and closing brackets', () => {
+   expect(isPhoneNumberValid("1 555)555-5555")).toBe(false)
+})
+```
+* I update the function to check number of `(` is equal to number of `)`:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const numberOfDigits = phoneNumber.split("").filter((a) => a.match(/\d/)).length
+   if (numberOfDigits < 10) return false
+   const numberOfOpeningBrackets = phoneNumber.split("").filter(a => a==='(').length
+   const numberOfClosingBrackets = phoneNumber.split("").filter(a => a===')').length
+   if (numberOfOpeningBrackets != numberOfClosingBrackets)
+      return false
+   const validPhoneNumber = /^[\d\s-()]+$/g
+   return validPhoneNumber.test(phoneNumber)
+}
+```
+* I then do some minor refactoring so that multiple arrays aren't being created:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const phoneNumberSplit = phoneNumber.split("")
+   const numberOfDigits = phoneNumberSplit.filter((a) => a.match(/\d/)).length
+   if (numberOfDigits < 10) return false
+   const numberOfOpeningBrackets = phoneNumberSplit.filter(a => a==='(').length
+   const numberOfClosingBrackets = phoneNumberSplit.filter(a => a===')').length
+   if (numberOfOpeningBrackets != numberOfClosingBrackets)
+      return false
    const validPhoneNumber = /^[\d\s-()]+$/g
    return validPhoneNumber.test(phoneNumber)
 }
