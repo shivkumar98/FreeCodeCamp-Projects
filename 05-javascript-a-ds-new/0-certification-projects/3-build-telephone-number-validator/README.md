@@ -218,3 +218,31 @@ function isPhoneNumberValid(phoneNumber) {
    return validPhoneNumber.test(phoneNumber)
 }
 ```
+
+### ⭐ Asserting Number in round Brackets needs to begin with 5 ⭐
+* Only the area code `555` can be wrapped in brackets, so I write the following test which fails:
+```js
+test('only the area code 555 should be surrounded in brackets', () => {
+   expect(isPhoneNumberValid("(6054756961)")).toBe(false)
+});
+```
+* And I update my function to:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const phoneNumberSplit = phoneNumber.split("")
+   const numberOfDigits = phoneNumberSplit.filter((a) => a.match(/\d/)).length
+   if (numberOfDigits < 10) return false
+   const numberOfOpeningBrackets = phoneNumberSplit.filter(a => a==='(').length
+   const numberOfClosingBrackets = phoneNumberSplit.filter(a => a===')').length
+   if (numberOfOpeningBrackets != numberOfClosingBrackets)
+      return false
+   const numbersInBrackets = /\((.*?)\)/
+   if (numbersInBrackets.test(phoneNumber)) {
+      const firstLetterAfterOpeningBracket = phoneNumber.match(/\((.*?)\)/)[0][1]
+      if (firstLetterAfterOpeningBracket != '5') return false
+   }
+   
+   const validPhoneNumber = /^[\d\s-()]+$/g
+   return validPhoneNumber.test(phoneNumber)
+}
+```

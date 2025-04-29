@@ -6,6 +6,12 @@ function isPhoneNumberValid(phoneNumber) {
     const numberOfClosingBrackets = phoneNumberSplit.filter(a => a===')').length
     if (numberOfOpeningBrackets != numberOfClosingBrackets)
         return false
+    const numbersInBrackets = /\((.*?)\)/
+    if (numbersInBrackets.test(phoneNumber)) {
+        const firstLetterAfterOpeningBracket = phoneNumber.match(/\((.*?)\)/)[0][1]
+        if (firstLetterAfterOpeningBracket != '5') return false
+    }
+    
     const validPhoneNumber = /^[\d\s-()]+$/g
     return validPhoneNumber.test(phoneNumber)
 }

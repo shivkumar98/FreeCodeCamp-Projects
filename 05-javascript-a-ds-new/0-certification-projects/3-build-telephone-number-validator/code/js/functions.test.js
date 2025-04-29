@@ -19,3 +19,7 @@ test('should have a minimum of 10 digits', () => {
 test('should have equal number of opening and closing brackets', () => {
     expect(isPhoneNumberValid("1 555)555-5555")).toBe(false)
 })
+
+test('only the area code 555 should be surrounded in brackets', () => {
+    expect(isPhoneNumberValid("(6054756961)")).toBe(false)
+});
