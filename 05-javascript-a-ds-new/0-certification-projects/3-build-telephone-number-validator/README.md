@@ -246,3 +246,31 @@ function isPhoneNumberValid(phoneNumber) {
    return validPhoneNumber.test(phoneNumber)
 }
 ```
+
+### ⭐ If Country Code is Provided It Has to Be 1 ⭐
+* I wrote the following two tests, first which fails and second passes already:
+```js
+test('if country code is provided, should return false if it is one', ()=> {
+   expect(isPhoneNumberValid("2 757 622-7382")).toBe(false)
+})
+
+test('if country code is provided, should return true, if it is 1', () => {
+   expect(isPhoneNumberValid("1 555-555-5555")).toBe(true)
+})
+```
+* I update my function:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const phoneNumberSplit = phoneNumber.split("")
+   const numberOfDigits = phoneNumberSplit.filter((a) => a.match(/\d/)).length
+   if (numberOfDigits < 10) return false
+   const countryCodeIsProvided = numberOfDigits == 11;
+   if (countryCodeIsProvided) {
+      const digitsOfPhoneNumberOnly =  phoneNumberSplit.filter((a) => a.match(/\d/))
+      const countryCodeDigit = digitsOfPhoneNumberOnly[0];
+      if (countryCodeDigit != "1")
+         return false;
+   }
+   // REST OF FUNCTION
+}
+```

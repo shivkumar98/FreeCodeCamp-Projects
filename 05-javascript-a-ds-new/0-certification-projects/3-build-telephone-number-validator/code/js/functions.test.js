@@ -23,3 +23,11 @@ test('should have equal number of opening and closing brackets', () => {
 test('only the area code 555 should be surrounded in brackets', () => {
     expect(isPhoneNumberValid("(6054756961)")).toBe(false)
 });
+
+test('if country code is provided, should return false if it is one', ()=> {
+    expect(isPhoneNumberValid("2 757 622-7382")).toBe(false)
+})
+
+test('if country code is provided, should return true, if it is 1', () => {
+    expect(isPhoneNumberValid("1 555-555-5555")).toBe(true)
+})
