@@ -274,3 +274,26 @@ function isPhoneNumberValid(phoneNumber) {
    // REST OF FUNCTION
 }
 ```
+
+### ⭐ Invalidate Phone Numbers with more than two dashes ⭐
+* I write the following test which fails:
+```js
+test('should return false if no country code is provided  and there is more than 2 dashes', () => {
+   expect(isPhoneNumberValid("55 55-55-555-5")).toBe(false)
+})
+```
+* I update my function to:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const phoneNumberSplit = phoneNumber.split("")
+   const digitsOfPhoneNumberOnly = phoneNumberSplit.filter((a) => a.match(/\d/));
+   const numberOfDigits = digitsOfPhoneNumberOnly.length
+   if (numberOfDigits < 10) return false
+   if (numberOfDigits === 10) {
+      const numberOfDashes = phoneNumberSplit.filter(char => char === '-').length;
+      if (numberOfDashes > 2) 
+         return false;
+   }
+   // REST OF FUNCTION
+}
+```

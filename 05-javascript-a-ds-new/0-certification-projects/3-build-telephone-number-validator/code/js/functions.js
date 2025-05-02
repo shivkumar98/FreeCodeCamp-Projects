@@ -3,6 +3,11 @@ function isPhoneNumberValid(phoneNumber) {
     const digitsOfPhoneNumberOnly = phoneNumberSplit.filter((a) => a.match(/\d/));
     const numberOfDigits = digitsOfPhoneNumberOnly.length
     if (numberOfDigits < 10) return false
+    if (numberOfDigits === 10) {
+        const numberOfDashes = phoneNumberSplit.filter(char => char === '-').length;
+        if (numberOfDashes > 2) 
+            return false;
+    }
     const countryCodeIsProvided = numberOfDigits == 11;
     if (countryCodeIsProvided) {
         const countryCodeDigit = digitsOfPhoneNumberOnly[0];
