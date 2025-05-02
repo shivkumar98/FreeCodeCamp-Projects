@@ -2,7 +2,7 @@ function isPhoneNumberValid(phoneNumber) {
     const phoneNumberSplit = phoneNumber.split("")
     const digitsOfPhoneNumberOnly = phoneNumberSplit.filter((a) => a.match(/\d/));
     const numberOfDigits = digitsOfPhoneNumberOnly.length
-    if (numberOfDigits < 10) return false
+    if (numberOfDigits < 10 || numberOfDigits > 11) return false
     if (numberOfDigits === 10) {
         const numberOfDashes = phoneNumberSplit.filter(char => char === '-').length;
         if (numberOfDashes > 2) 

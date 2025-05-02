@@ -47,3 +47,7 @@ test('Should return true if area code is in brackets, and rest is split by dash'
 test('should return false if no country code is provided  and there is more than 2 dashes', () => {
     expect(isPhoneNumberValid("55 55-55-555-5")).toBe(false)
 })
+
+test('Should return false if more than 11 digits', () => {
+    expect(isPhoneNumberValid("11 555-555-5555")).toBe(false)
+})

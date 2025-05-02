@@ -297,3 +297,21 @@ function isPhoneNumberValid(phoneNumber) {
    // REST OF FUNCTION
 }
 ```
+
+### ⭐ Invalidate Phone Numbers With More Than 11 Digits ⭐
+* I write the following test which fails:
+```js
+test('Should return false if more than 11 digits', () => {
+   expect(isPhoneNumberValid("11 555-555-5555")).toBe(false)
+})
+```
+* I update my function to return false if length is greater than 11:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const phoneNumberSplit = phoneNumber.split("")
+   const digitsOfPhoneNumberOnly = phoneNumberSplit.filter((a) => a.match(/\d/));
+   const numberOfDigits = digitsOfPhoneNumberOnly.length
+   if (numberOfDigits < 10 || numberOfDigits > 11) return false
+   // REST OF FUNCTION
+}
+```
