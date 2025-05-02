@@ -315,3 +315,19 @@ function isPhoneNumberValid(phoneNumber) {
    // REST OF FUNCTION
 }
 ```
+
+### ⭐ Refactor: Checking More than Two Dashes ⭐
+* I realise there's some unnecessary code when I check if there's more than two dashes:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const phoneNumberSplit = phoneNumber.split("")
+   const digitsOfPhoneNumberOnly = phoneNumberSplit.filter((a) => a.match(/\d/));
+   const numberOfDigits = digitsOfPhoneNumberOnly.length
+   if (numberOfDigits < 10 || numberOfDigits > 11) return false
+   const numberOfDashes = phoneNumberSplit.filter(char => char === '-').length;
+   if (numberOfDashes > 2) 
+      return false;
+   // REST OF FUNCTION
+}
+```
+* All my tests still pass
