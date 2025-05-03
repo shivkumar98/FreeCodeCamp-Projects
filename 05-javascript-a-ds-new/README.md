@@ -8,6 +8,7 @@
 |---| ----------- | ------ |
 | 1 | 05/10/2024 | [Palindrome Checker](./0-certification-projects/1-build-a-palindrome-checker-project/) |
 | 2 | 01/01/2025 | [Roman Numeral Converter](./0-certification-projects/2-build-a-roman-numeral-converter/) |
+| 3 | 03/05/2025 | [Telephone Validator](./0-certification-projects/3-build-telephone-number-validator/) |
 
 ## ⭐️ Section 1: JavaScript Fundamentals ⭐️
 
