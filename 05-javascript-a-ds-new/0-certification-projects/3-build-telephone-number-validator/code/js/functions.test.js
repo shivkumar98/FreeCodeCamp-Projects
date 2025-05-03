@@ -51,3 +51,7 @@ test('should return false if no country code is provided  and there is more than
 test('Should return false if more than 11 digits', () => {
     expect(isPhoneNumberValid("11 555-555-5555")).toBe(false)
 })
+
+test('Should return false when first character is dash', () => {
+    expect(isPhoneNumberValid("-1 102 021 3377")).toBe(false);
+})

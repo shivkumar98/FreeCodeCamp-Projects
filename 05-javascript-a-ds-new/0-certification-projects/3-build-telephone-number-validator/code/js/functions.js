@@ -1,5 +1,6 @@
 function isPhoneNumberValid(phoneNumber) {
     const phoneNumberSplit = phoneNumber.split("")
+    if (phoneNumberSplit[0] == "-") return false
     const digitsOfPhoneNumberOnly = phoneNumberSplit.filter((a) => a.match(/\d/));
     const numberOfDigits = digitsOfPhoneNumberOnly.length
     if (numberOfDigits < 10 || numberOfDigits > 11) return false

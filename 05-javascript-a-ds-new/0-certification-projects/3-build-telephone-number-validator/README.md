@@ -330,4 +330,21 @@ function isPhoneNumberValid(phoneNumber) {
    // REST OF FUNCTION
 }
 ```
-* All my tests still pass
+
+### ⭐ Invalidate Phone Numbers Beginning With Dash ⭐
+* Tests 1 to 34 passed on FreeCodeCamp, but additional tests were ran for the last two tests. 
+* I write the following failing test which is executed by the FreeCodeCamp test suite:
+```js
+test('Should return false when first character is dash', () => {
+   expect(isPhoneNumberValid("-1 102 021 3377")).toBe(false);
+})
+```
+* I update my function to make the above test passes:
+```js
+function isPhoneNumberValid(phoneNumber) {
+   const phoneNumberSplit = phoneNumber.split("")
+   if (phoneNumberSplit[0] == "-") return false
+   // REST OF CODE
+}
+```
+* Test 36 now passes
