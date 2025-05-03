@@ -20,7 +20,7 @@ test('should have equal number of opening and closing brackets', () => {
     expect(isPhoneNumberValid("1 555)555-5555")).toBe(false)
 })
 
-test('only the area code 555 should be surrounded in brackets', () => {
+test('only the area code should be surrounded in brackets', () => {
     expect(isPhoneNumberValid("(6054756961)")).toBe(false)
 });
 
@@ -54,4 +54,8 @@ test('Should return false if more than 11 digits', () => {
 
 test('Should return false when first character is dash', () => {
     expect(isPhoneNumberValid("-1 102 021 3377")).toBe(false);
+})
+
+test('Should return true', () => {
+    expect(isPhoneNumberValid("1 (342) 324-5763")).toBe(true);  
 })

@@ -348,3 +348,34 @@ function isPhoneNumberValid(phoneNumber) {
 }
 ```
 * Test 36 now passes
+
+### ⭐ Fix: Only allowing 555 to be in brackets ⭐
+* I wrote a previous test which is still passing:
+```js
+test('only the area code 555 should be surrounded in brackets', () => {
+   expect(isPhoneNumberValid("(6054756961)")).toBe(false)
+});
+```
+* Which I made pass with the following code:
+```js
+const numbersInBrackets = /\((.*?)\)/
+if (numbersInBrackets.test(phoneNumber)) {
+   const firstLetterAfterOpeningBracket = phoneNumber.match(/\((.*?)\)/)[0][1]
+   if (firstLetterAfterOpeningBracket != '5') return false
+}
+```
+* However, this implementation is incorrect. I have another tests which is failing due to this code:
+```js
+test('Should return true when country code is provided, and area code is provided', () => {
+    expect(isPhoneNumberValid("1 (342) 324-5763")).toBe(true);  
+})
+```
+* I update the implementation to:
+```js
+const numbersInBrackets = /\((.*?)\)/
+if (numbersInBrackets.test(phoneNumber)) {
+   const numberOfDigitsWithinBrackets = phoneNumber.match(/\((.*?)\)/)[0].length - 2
+   if (numberOfDigitsWithinBrackets != 3) return false
+}
+```
+* All my tests pass!
