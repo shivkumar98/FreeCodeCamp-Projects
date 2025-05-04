@@ -37,3 +37,8 @@
 | 2 | 03/03/2025 | [Learn Basic Algorithmic Thinking by Building a Number Sorter](./3-functional-programming/3b-learn-algo-thinking-building-number-sorter/) |
 | 3 | 14/03/2025 | [Learn Advanced Array Methods by Building a Statistics Calculator](./3-functional-programming/3c-learn-array-methods-building-stats-calc/) |
 | 4 | 20/04/2025 | [Learn Functional Programming by Building a Spreadsheet](./3-functional-programming/3d-learn-functional-programming-building-spreadsheet/) |
+
+## ⭐️ Section 4: Object-Oriented Programming ⭐️
+|#  | Date Complete | Tutorial | 
+|---|----|-------------------- |
+| 1 | 23/06/2025 | [Learn Basic OOP by building a Shopping Cart](./4-object-oriented-programming/4a-learn-oop-build-shopping-cart/) |
