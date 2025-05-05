@@ -133,4 +133,23 @@ let isCartShowing = false
 
    </details>
 
+* I will now use JavaScript to display the products in the HTML. I use a for each loop, and object destructuring for the parameter of the forEach:
+```js
+products.forEach(
+  ({ name, id, price, category }) => {
+
+  }
+);
+```
+* I append a `<div>` element which has a `<h2>` of the `name` of the product to the innerHTML of `dessertCards`:
+```js
+products.forEach(
+   ({ name, id, price, category }) => {
+      dessertCards.innerHTML += `
+         <div class="dessert-card"><h2>${name}</h2></div>
+      `;
+   }
+);
+```
+
 ### ⭐ H3 ⭐
