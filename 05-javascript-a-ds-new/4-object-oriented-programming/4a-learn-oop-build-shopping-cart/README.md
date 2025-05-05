@@ -8,7 +8,10 @@
    <img height="500px" src="./screenshots/demo.gif">
 
 ## 📝 Summary Notes 📝
-
+* You can create classes in JavaScript in a similar way to Java but using the `class` keyword
+```js
+class Computer {}
+```
 
 ## 🛠️ Project Setup 🛠️
 
@@ -19,7 +22,7 @@
    <img src="screenshots/project-setup.png" width="400px">
    </details>
 
-## 🟥 H2
+## 🟥 Initialising Variables
 
 * I initialise my JavaScript with three variables pointed to the containers:
 ```js
@@ -48,6 +51,8 @@ const showHideCartSpan = document.getElementById("show-hide-cart");
 ```js
 let isCartShowing = false
 ```
+
+## 🟥 Rendering Products
 
 * I intiialise a `products` array with objects with keys: `id`, `name`, `price` and `category`:
 
@@ -167,6 +172,57 @@ products.forEach(
 ```
 * This is what the dessert page looks like right now:
 
-   ![](screenshots/2025-05-05-09-08-26.png)
+   <img src="screenshots/2025-05-05-09-08-26.png" height="300px">
+
+* I add a `Add to cart` button after the second `<p>` element:
+```js
+products.forEach(
+  ({ name, id, price, category }) => {
+    dessertCards.innerHTML += `
+      <div class="dessert-card">
+        <h2>${name}</h2>
+        <p class="dessert-price">\$${price}</p>
+        <p class="product-category">Category: ${category}</p>
+        <button id="${id}" class="add-to-cart-btn">Add to cart</button>
+      </div>
+    `;
+  }
+);
+```
+
+* This is what the page looks like right now:
+
+
+   <img src="screenshots/2025-05-05-09-14-43.png" height="300px">
+
+
+## 🟥 JavaScript Class
+* You can create classes in JavaScript in a similar way to Java but using the `class` keyword
+```js
+class Computer {}
+```
+* I create a class to represent my shopping cart:
+```js
+class ShoppingCart {
+
+};
+```
+* Classes have a special method for constructing the class called `constructor` - this is used to initialise variables.
+* I add an empty constructor method to my `ShoppingCart`:
+```js
+class ShoppingCart {
+   constructor() {}
+};
+```
+* Within the constructor, you can use the `this` keyword to set the values of the fields of an object. I intialise the `total` to zero and `taxRate` to 8.25:
+```js
+class ShoppingCart {
+   constructor() {
+      this.items = []
+      this.total = 0;
+      this.taxRate = 8.25
+   }
+};
+```
 
 ### ⭐ H3 ⭐
