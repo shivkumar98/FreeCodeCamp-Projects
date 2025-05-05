@@ -151,5 +151,22 @@ products.forEach(
    }
 );
 ```
+* I add two `<p>` elements after the div to render the price and category:
+```js
+products.forEach(
+  ({ name, id, price, category }) => {
+    dessertCards.innerHTML += `
+      <div class="dessert-card">
+        <h2>${name}</h2>
+        <p class="dessert-price">\$${price}</p>
+        <p class="product-category">Category: ${category}</p>
+      </div>
+    `;
+  }
+);
+```
+* This is what the dessert page looks like right now:
+
+   ![](screenshots/2025-05-05-09-08-26.png)
 
 ### ⭐ H3 ⭐
