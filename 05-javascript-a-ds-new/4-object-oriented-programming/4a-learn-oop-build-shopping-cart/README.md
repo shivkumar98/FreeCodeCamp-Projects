@@ -240,6 +240,21 @@ addItem(id, products) {
    const product = products.find((item) => item.id === id);
 }
 ```
+* I destructure the `name` and `price` properties:
+```js
+addItem(id, products) {
+   const product = products.find((item) => item.id === id);
+   const {name, price} = product
+}
+```
+* I add the `product` to the `items` field of the ShoppingCart class:
+```js
+addItem(id, products) {
+   const product = products.find((item) => item.id === id);
+   const { name, price } = product;
+   this.items.push(product)
+}
+```
 
 
 ### ⭐ H3 ⭐
