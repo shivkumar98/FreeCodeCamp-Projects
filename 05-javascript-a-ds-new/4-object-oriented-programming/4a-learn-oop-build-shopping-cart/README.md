@@ -224,5 +224,22 @@ class ShoppingCart {
    }
 };
 ```
+* I add an `addItem()` method to my class:
+```js
+class ShoppingCart {
+   // constructor
+
+   addItem(id, products) {
+
+   }
+}
+```
+* I use the `id` parameter, to find the product with matching id in the products array:
+```js
+addItem(id, products) {
+   const product = products.find((item) => item.id === id);
+}
+```
+
 
 ### ⭐ H3 ⭐
