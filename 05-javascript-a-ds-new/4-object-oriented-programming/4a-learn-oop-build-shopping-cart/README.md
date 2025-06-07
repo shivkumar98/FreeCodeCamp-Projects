@@ -393,7 +393,29 @@
    }
    ```
 
-   
+
    </details>
+
+## 🟥 Testing addItem() Method
+* I instantiate the `ShoppingCart` class:
+
+```js
+const cart = new ShoppingCart();
+```
+
+* I need to bind the `addItem()` method to all the `Add to cart` buttons
+* I obtain all elements with the class `add-to-cart-btn`:
+
+```js
+const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
+```
+
+* The above is a `Collection` which does not have a `forEach()` method, I convert it to an array using spread operator:
+
+```js
+
+```
+
+
 
 ### ⭐ H3 ⭐
