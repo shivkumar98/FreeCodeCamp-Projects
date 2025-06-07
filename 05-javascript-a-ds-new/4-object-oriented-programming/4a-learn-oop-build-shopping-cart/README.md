@@ -283,4 +283,6 @@ this.items.forEach((dessert) => {
    totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1;
 })
 ```
+
+* I need to update the count in the frontend, the HTML for this does not exist yet, but when it is there will be a span with an id of `product-count-for-id${product.id}` for each product in cart
 ### ⭐ H3 ⭐
