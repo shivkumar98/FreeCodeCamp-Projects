@@ -255,6 +255,18 @@ addItem(id, products) {
    this.items.push(product)
 }
 ```
+* I need to have a count of each product in my cart, so I intiialise a counter object and loop through the `items` of my array:
+```js
+addItem(id, products) {
+   const product = products.find((item) => item.id === id);
+   const { name, price } = product;
+   this.items.push(product);
 
+   const totalCountPerProduct = {};
+   this.items.forEach((dessert) => {
+   
+   })
+}
+```
 
 ### ⭐ H3 ⭐
