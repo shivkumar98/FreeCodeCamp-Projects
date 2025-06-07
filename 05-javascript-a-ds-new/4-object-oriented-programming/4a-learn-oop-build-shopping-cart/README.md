@@ -268,5 +268,19 @@ addItem(id, products) {
    })
 }
 ```
-
+## 🟥 Using OR Operator to Initialise Value
+* In my `totalCountPerProduct` variable, I want to store the `id` of the dessert as the key, and the count as the value
+* If totalCountPerProduct doesn't have the id of the dessert already stored, I want to initialise the count as 0
+* A common way to address this issue is to use the `||` operator, in my forEach loop I apply this pattern:
+```js
+this.items.forEach((dessert) => {
+   totalCountPerProduct[dessert.id] = totalCountPerProduct[dessert.id] || 0
+})
+```
+* I want to the value to be incremented by 1 when a dessert.id is looped, so I increment the RHS by 1:
+```js
+this.items.forEach((dessert) => {
+   totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1;
+})
+```
 ### ⭐ H3 ⭐
