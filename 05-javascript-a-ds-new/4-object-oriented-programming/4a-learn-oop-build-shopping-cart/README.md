@@ -285,4 +285,14 @@ this.items.forEach((dessert) => {
 ```
 
 * I need to update the count in the frontend, the HTML for this does not exist yet, but when it is there will be a span with an id of `product-count-for-id${product.id}` for each product in cart
+* I declare a variable to store the updated count of the product of the item being added, and one for the span for the count in the UI:
+```js
+addItem(id, products) {
+   // EXISTING CODE HERE
+   const currentProductCount = totalCountPerProduct[product.id];
+   const currentProductCountSpan = document.getElementById(`product-count-for-id${product.id}`)
+}
+```
+
+
 ### ⭐ H3 ⭐
