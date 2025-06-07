@@ -268,7 +268,8 @@ addItem(id, products) {
    })
 }
 ```
-## 🟥 Using OR Operator to Initialise Value
+// TODO: WRITE A SUMMARY NOTE ON THIS
+## 🟥 Using OR Operator to Initialise Value 
 * In my `totalCountPerProduct` variable, I want to store the `id` of the dessert as the key, and the count as the value
 * If totalCountPerProduct doesn't have the id of the dessert already stored, I want to initialise the count as 0
 * A common way to address this issue is to use the `||` operator, in my forEach loop I apply this pattern:
@@ -284,6 +285,7 @@ this.items.forEach((dessert) => {
 })
 ```
 
+## 🟥 Updating the Cart's Count of Products
 * I need to update the count in the frontend, the HTML for this does not exist yet, but when it is there will be a span with an id of `product-count-for-id${product.id}` for each product in cart
 * I declare a variable to store the updated count of the product of the item being added, and one for the span for the count in the UI:
 ```js
@@ -294,5 +296,56 @@ addItem(id, products) {
 }
 ```
 
+* If the product is already in the cart, i.e. it's count is more than one, then I need to update the textContent to the count of the product being added followed by an x:
+```js
+currentProductCount > 1 
+   ? currentProductCountSpan.textContent = `${currentProductCount}x`
+   : undefined;
+```
+* If the product is a new item for the cart (the count will be one), then I need to add a new element to the `productsContainer`, so this code is what generate the intial HTML which is updated when a product is added for a succeeding time:
+```js
+currentProductCount > 1 
+   ? currentProductCountSpan.textContent = `${currentProductCount}x`
+   : productsContainer.innerHTML += `
+      <div id="dessert${id}" class="product">
+         <p>
+            <span class="product-count" id="product-count-for-id${id}"></span>${name}
+         </p>
+         <p>${price}</p>
+      </div>
+   `;
+```
+* The complete implementation of `addItem()` is finished:
+
+   <details>
+      <summary>addItem() Implementation</summary>
+
+   ```js
+   addItem(id, products) {
+      const product = products.find((item) => item.id === id);
+      const { name, price } = product;
+      this.items.push(product);
+
+      const totalCountPerProduct = {};
+      this.items.forEach((dessert) => {
+         totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1;
+      })
+
+      const currentProductCount = totalCountPerProduct[product.id];
+      const currentProductCountSpan = document.getElementById(`product-count-for-id${product.id}`);
+
+      currentProductCount > 1 
+         ? currentProductCountSpan.textContent = `${currentProductCount}x`
+         : productsContainer.innerHTML += `
+            <div id="dessert${id}" class="product">
+                  <p>
+                     <span class="product-count" id="product-count-for-id${id}"></span>${name}
+                  </p>
+                  <p>${price}</p>
+            </div>
+         `;
+   }
+   ```
+   </details>
 
 ### ⭐ H3 ⭐
