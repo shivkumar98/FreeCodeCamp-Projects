@@ -413,7 +413,11 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
 * The above is a `Collection` which does not have a `forEach()` method, I convert it to an array using spread operator:
 
 ```js
-
+[...addToCartBtns].forEach(
+   (btn) => {
+      btn.addEventListener("click", (event) => {})
+   }
+)
 ```
 
 
