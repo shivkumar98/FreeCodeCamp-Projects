@@ -420,6 +420,19 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
 )
 ```
 
+* I call the `addItem()` method to button using the `event.target.id` property, converting it from a String to a number:
+
+```js
+[...addToCartBtns].forEach(
+   (btn) => {
+      btn.addEventListener("click", (event) => {
+         cart.addItem(Number(event.target.id), products);
+      })
+   }
+)
+```
+
+
 
 
 ### ⭐ H3 ⭐
