@@ -400,56 +400,56 @@
 ### ⭐ Binding addItem() to Buttons ⭐
 * I instantiate the `ShoppingCart` class:
 
-```js
-const cart = new ShoppingCart();
-```
+   ```js
+   const cart = new ShoppingCart();
+   ```
 
 * I need to bind the `addItem()` method to all the `Add to cart` buttons
 * I obtain all elements with the class `add-to-cart-btn`:
 
-```js
-const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
-```
+   ```js
+   const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
+   ```
 
 * The above is a `Collection` which does not have a `forEach()` method, I convert it to an array using spread operator:
 
-```js
-[...addToCartBtns].forEach(
-   (btn) => {
-      btn.addEventListener("click", (event) => {})
-   }
-)
-```
+   ```js
+   [...addToCartBtns].forEach(
+      (btn) => {
+         btn.addEventListener("click", (event) => {})
+      }
+   )
+   ```
 
 * I call the `addItem()` method to button using the `event.target.id` property, converting it from a String to a number:
 
-```js
-[...addToCartBtns].forEach(
-   (btn) => {
-      btn.addEventListener("click", (event) => {
-         cart.addItem(Number(event.target.id), products);
-      })
-   }
-)
-```
+   ```js
+   [...addToCartBtns].forEach(
+      (btn) => {
+         btn.addEventListener("click", (event) => {
+            cart.addItem(Number(event.target.id), products);
+         })
+      }
+   )
+   ```
 
 ### ⭐ Enabling Show Cart Button ⭐
 * I add an event listener to the `Show Cart` button:
 
-```js
-cartBtn.addEventListener("click", () => {
+   ```js
+   cartBtn.addEventListener("click", () => {
 
-});
-```
+   });
+   ```
 
 * I flip the value of `isCartShowing`, and conditionally display the textContent of `showHideCartSpan`:
 
-```js
-cartBtn.addEventListener("click", () => {
-   isCartShowing = !isCartShowing;
-   showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show"
-});
-```
+   ```js
+   cartBtn.addEventListener("click", () => {
+      isCartShowing = !isCartShowing;
+      showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show"
+   });
+   ```
 
 * Now when I click the `Show Cart` button, the text changes to `Hide Cart`, and vice versa:
 
