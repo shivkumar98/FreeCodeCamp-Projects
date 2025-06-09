@@ -397,6 +397,7 @@
    </details>
 
 ## 🟥 Testing addItem() Method
+### ⭐ Binding addItem() to Buttons ⭐
 * I instantiate the `ShoppingCart` class:
 
 ```js
@@ -432,7 +433,32 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
 )
 ```
 
+### ⭐ Enabling Show Cart Button ⭐
+* I add an event listener to the `Show Cart` button:
 
+```js
+cartBtn.addEventListener("click", () => {
+
+});
+```
+
+* I flip the value of `isCartShowing`, and conditionally display the textContent of `showHideCartSpan`:
+
+```js
+cartBtn.addEventListener("click", () => {
+   isCartShowing = !isCartShowing;
+   showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show"
+});
+```
+
+* Now when I click the `Show Cart` button, the text changes to `Hide Cart`, and vice versa:
+
+   <details>
+   <summary>GIF</summary>
+
+   <img src="./screenshots/step 39.gif">
+
+   </details>
 
 
 ### ⭐ H3 ⭐

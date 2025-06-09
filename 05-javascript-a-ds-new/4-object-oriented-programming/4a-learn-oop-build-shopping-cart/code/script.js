@@ -143,3 +143,8 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
         })
     }
 )
+
+cartBtn.addEventListener("click", () => {
+   isCartShowing = !isCartShowing;
+   showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show"
+});
