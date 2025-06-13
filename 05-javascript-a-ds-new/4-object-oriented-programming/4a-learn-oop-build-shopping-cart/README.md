@@ -478,5 +478,17 @@ cartBtn.addEventListener("click", () => {
 
    </details>
 
+## 🟥 Calculating Total Number of Items
+* I add another method to my `ShoppingCart` class:
+
+```js
+class ShoppingCart {
+   // CONSTRUCTOR AND addItem() CODE
+
+   getCounts() {
+      return this.items.length;
+   }
+};
+```
 
 ### ⭐ H3 ⭐

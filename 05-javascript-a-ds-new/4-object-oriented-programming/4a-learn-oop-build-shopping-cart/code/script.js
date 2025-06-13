@@ -130,7 +130,11 @@ class ShoppingCart {
                 <p>${price}</p>
             </div>
         `;
-  }
+    }
+
+    getCounts() {
+        return this.items.length;
+    }
 };
 
 const cart = new ShoppingCart();
