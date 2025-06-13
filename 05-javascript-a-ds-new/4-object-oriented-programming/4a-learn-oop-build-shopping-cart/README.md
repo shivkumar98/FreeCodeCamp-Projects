@@ -460,5 +460,23 @@
 
    </details>
 
+* I a also conditionally set the `display` property of the `cartContainer`'s style:
+
+```js
+cartBtn.addEventListener("click", () => {
+  isCartShowing = !isCartShowing;
+  showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show";
+  cartContainer.style.display = isCartShowing ? "block" : "none"
+});
+```
+* Now my cart shows:
+
+   <details>
+   <summary>GIF</summary>
+
+   <img src="./screenshots/step 40.gif">
+
+   </details>
+
 
 ### ⭐ H3 ⭐
