@@ -143,7 +143,11 @@ class ShoppingCart {
     calculateTotal() {
         const subTotal = this.items.reduce((total, item)=>total+item.price,0);
         const tax = this.calculateTaxes(subTotal);
-        this.total = subTotal + tax
+        this.total = subTotal + tax;
+        cartSubTotal.textContent = `$${subTotal.toFixed(2)}`;
+        cartTaxes.textContent = `$${tax.toFixed(2)}`
+        cartTotal.textContent = `$${this.total.toFixed(2)}`
+        return this.total;
     }
 };
 
@@ -155,6 +159,7 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
         btn.addEventListener("click", (event) => {
             cart.addItem(Number(event.target.id), products);
             totalNumberOfItems.textContent = cart.getCounts();
+            cart.calculateTotal();
         })
     }
 )
