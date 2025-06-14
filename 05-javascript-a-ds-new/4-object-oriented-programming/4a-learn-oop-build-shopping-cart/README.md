@@ -469,7 +469,7 @@
    cartContainer.style.display = isCartShowing ? "block" : "none"
    });
    ```
-   
+
 * Now my cart shows:
 
    <details>
@@ -599,3 +599,6 @@
    <img src="./screenshots/step 53.gif">
 
    </details>
+
+## 🟥 Clearing Cart
+
