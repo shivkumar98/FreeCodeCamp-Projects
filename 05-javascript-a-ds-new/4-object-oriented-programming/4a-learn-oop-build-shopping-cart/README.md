@@ -491,4 +491,60 @@ class ShoppingCart {
 };
 ```
 
+* I want the `getCounts()` method to be triggered everytime the `Add to cart` button.
+* I call the method and set the `textContent` of `totalNumberOfItems` whenever the button is clicked:
+
+```js
+[...addToCartBtns].forEach(
+   (btn) => {
+      btn.addEventListener("click", (event) => {
+         cart.addItem(Number(event.target.id), products);
+         totalNumberOfItems.textContent = cart.getCounts();
+      })
+   }
+)
+```
+
+## 🟥 Calculating Total
+* I add a new method to the `ShoppingCart` class:
+
+```js
+calculateTotal() {
+   const subTotal = this.items.reduce((total, item)=>total+item.price,0)
+}
+```
+* The total includes the tax, so I create a method for this which takes the `taxRate` parameter and returns the product of an `amount`:
+
+```js
+calculateTaxes(amount) {
+   return ((this.taxRate/100) * amount).toFixed(2);
+}
+```
+* I rounded to two decimal places using `.toFixed(2)` - this returns a String, so I will convert it back to a number using `parseFloat()`:
+
+```js
+calculateTaxes(amount) {
+   return parseFloat(((this.taxRate / 100) * amount).toFixed(2));
+}
+```
+
+* I utilise this method for calculating the total:
+
+```js
+calculateTotal() {
+   const subTotal = this.items.reduce((total, item)=>total+item.price,0)
+   const tax = this.calculateTaxes(subTotal)
+}
+```
+
+* I set the `total` property of `ShoppingCart` to the sum:
+
+```js
+calculateTotal() {
+   const subTotal = this.items.reduce((total, item)=>total+item.price,0);
+   const tax = this.calculateTaxes(subTotal);
+   this.total = subTotal + tax
+}
+```
+
 ### ⭐ H3 ⭐

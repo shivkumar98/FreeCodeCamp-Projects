@@ -135,6 +135,16 @@ class ShoppingCart {
     getCounts() {
         return this.items.length;
     }
+
+    calculateTaxes(amount) {
+        return parseFloat(((this.taxRate / 100) * amount).toFixed(2));
+    }
+
+    calculateTotal() {
+        const subTotal = this.items.reduce((total, item)=>total+item.price,0);
+        const tax = this.calculateTaxes(subTotal);
+        this.total = subTotal + tax
+    }
 };
 
 const cart = new ShoppingCart();
@@ -144,6 +154,7 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
     (btn) => {
         btn.addEventListener("click", (event) => {
             cart.addItem(Number(event.target.id), products);
+            totalNumberOfItems.textContent = cart.getCounts();
         })
     }
 )
