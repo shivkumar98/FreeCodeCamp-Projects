@@ -462,13 +462,14 @@
 
 * I a also conditionally set the `display` property of the `cartContainer`'s style:
 
-```js
-cartBtn.addEventListener("click", () => {
-  isCartShowing = !isCartShowing;
-  showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show";
-  cartContainer.style.display = isCartShowing ? "block" : "none"
-});
-```
+   ```js
+   cartBtn.addEventListener("click", () => {
+   isCartShowing = !isCartShowing;
+   showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show";
+   cartContainer.style.display = isCartShowing ? "block" : "none"
+   });
+   ```
+   
 * Now my cart shows:
 
    <details>
@@ -481,112 +482,114 @@ cartBtn.addEventListener("click", () => {
 ## 🟥 Calculating Total Number of Items
 * I add another method to my `ShoppingCart` class:
 
-```js
-class ShoppingCart {
-   // CONSTRUCTOR AND addItem() CODE
+   ```js
+   class ShoppingCart {
+      // CONSTRUCTOR AND addItem() CODE
 
-   getCounts() {
-      return this.items.length;
-   }
-};
-```
+      getCounts() {
+         return this.items.length;
+      }
+   };
+   ```
 
 * I want the `getCounts()` method to be triggered everytime the `Add to cart` button.
 * I call the method and set the `textContent` of `totalNumberOfItems` whenever the button is clicked:
 
-```js
-[...addToCartBtns].forEach(
-   (btn) => {
-      btn.addEventListener("click", (event) => {
-         cart.addItem(Number(event.target.id), products);
-         totalNumberOfItems.textContent = cart.getCounts();
-      })
-   }
-)
-```
+   ```js
+   [...addToCartBtns].forEach(
+      (btn) => {
+         btn.addEventListener("click", (event) => {
+            cart.addItem(Number(event.target.id), products);
+            totalNumberOfItems.textContent = cart.getCounts();
+         })
+      }
+   )
+   ```
 
 ## 🟥 Calculating Total
 * I add a new method to the `ShoppingCart` class:
 
-```js
-calculateTotal() {
-   const subTotal = this.items.reduce((total, item)=>total+item.price,0)
-}
-```
+   ```js
+   calculateTotal() {
+      const subTotal = this.items.reduce((total, item)=>total+item.price,0)
+   }
+   ```
+
 * The total includes the tax, so I create a method for this which takes the `taxRate` parameter and returns the product of an `amount`:
 
-```js
-calculateTaxes(amount) {
-   return ((this.taxRate/100) * amount).toFixed(2);
-}
-```
+   ```js
+   calculateTaxes(amount) {
+      return ((this.taxRate/100) * amount).toFixed(2);
+   }
+   ```
+
 * I rounded to two decimal places using `.toFixed(2)` - this returns a String, so I will convert it back to a number using `parseFloat()`:
 
-```js
-calculateTaxes(amount) {
-   return parseFloat(((this.taxRate / 100) * amount).toFixed(2));
-}
-```
+   ```js
+   calculateTaxes(amount) {
+      return parseFloat(((this.taxRate / 100) * amount).toFixed(2));
+   }
+   ```
 
 * I utilise this method for calculating the total:
 
-```js
-calculateTotal() {
-   const subTotal = this.items.reduce((total, item)=>total+item.price,0)
-   const tax = this.calculateTaxes(subTotal)
-}
-```
+   ```js
+   calculateTotal() {
+      const subTotal = this.items.reduce((total, item)=>total+item.price,0)
+      const tax = this.calculateTaxes(subTotal)
+   }
+   ```
 
 * I set the `total` property of `ShoppingCart` to the sum:
 
-```js
-calculateTotal() {
-   const subTotal = this.items.reduce((total, item)=>total+item.price,0);
-   const tax = this.calculateTaxes(subTotal);
-   this.total = subTotal + tax
-}
-```
+   ```js
+   calculateTotal() {
+      const subTotal = this.items.reduce((total, item)=>total+item.price,0);
+      const tax = this.calculateTaxes(subTotal);
+      this.total = subTotal + tax
+   }
+   ```
 
 * I update the `textContent` of `cartSubTotal`, `cartTaxes`, `cartTotal`:
 
-```js
-calculateTotal() {
-   const subTotal = this.items.reduce((total, item)=>total+item.price,0);
-   const tax = this.calculateTaxes(subTotal);
-   this.total = subTotal + tax;
-   cartSubTotal.textContent = `$${subTotal.toFixed(2)}`;
-   cartTaxes.textContent = `$${tax.toFixed(2)}`
-   cartTotal.textContent = `$${this.total.toFixed(2)}`
-}
-```
+   ```js
+   calculateTotal() {
+      const subTotal = this.items.reduce((total, item)=>total+item.price,0);
+      const tax = this.calculateTaxes(subTotal);
+      this.total = subTotal + tax;
+      cartSubTotal.textContent = `$${subTotal.toFixed(2)}`;
+      cartTaxes.textContent = `$${tax.toFixed(2)}`
+      cartTotal.textContent = `$${this.total.toFixed(2)}`
+   }
+   ```
 
 * Finally, I return the total:
 
-```js
-calculateTotal() {
-   const subTotal = this.items.reduce((total, item)=>total+item.price,0);
-   const tax = this.calculateTaxes(subTotal);
-   this.total = subTotal + tax;
-   cartSubTotal.textContent = `$${subTotal.toFixed(2)}`;
-   cartTaxes.textContent = `$${tax.toFixed(2)}`;
-   cartTotal.textContent = `$${this.total.toFixed(2)}`;
-   return this.total;
-}
-```
+   ```js
+   calculateTotal() {
+      const subTotal = this.items.reduce((total, item)=>total+item.price,0);
+      const tax = this.calculateTaxes(subTotal);
+      this.total = subTotal + tax;
+      cartSubTotal.textContent = `$${subTotal.toFixed(2)}`;
+      cartTaxes.textContent = `$${tax.toFixed(2)}`;
+      cartTotal.textContent = `$${this.total.toFixed(2)}`;
+      return this.total;
+   }
+   ```
 
 * I call this method whenever the button is clicked:
 
-```js
-[...addToCartBtns].forEach(
-   (btn) => {
-      btn.addEventListener("click", (event) => {
-         cart.addItem(Number(event.target.id), products);
-         totalNumberOfItems.textContent = cart.getCounts();
-         cart.calculateTotal();
-      })
-   }
-)
-```
+   ```js
+   [...addToCartBtns].forEach(
+      (btn) => {
+         btn.addEventListener("click", (event) => {
+            cart.addItem(Number(event.target.id), products);
+            totalNumberOfItems.textContent = cart.getCounts();
+            cart.calculateTotal();
+         })
+      }
+   )
+   ```
 
 * Now my cart's subtotal, taxes and total shows:
 
