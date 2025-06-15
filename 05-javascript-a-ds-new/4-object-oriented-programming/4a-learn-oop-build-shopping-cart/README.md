@@ -1,18 +1,24 @@
 # 🧠 4A Learn Basic OOP by Building a Shopping Cart
+
 * In this project, I will be building a shopping cart application using JavaScript
 
 ## 👨‍🍳 Final Product 👨‍🍳
+
 * You can try out the application I built in this tutorial via this [link]()
 * Here is a demo:
    
    <img height="500px" src="./screenshots/demo.gif">
 
 ## 📝 Summary Notes 📝
+
 * You can create classes in JavaScript in a similar way to Java but using the `class` keyword
 
    ```js
    class Computer {}
    ```
+
+
+* Browser's have a built-in confirmation dialog, this is displayed in browser using the `confirm()` function which returns true if user confirms and false if the user cancels
 
 ## 🛠️ Project Setup 🛠️
 
@@ -306,6 +312,7 @@
 
 // TODO: WRITE A SUMMARY NOTE ON THIS
 ## 🟥 Using OR Operator to Initialise Value 
+
 * In my `totalCountPerProduct` variable, I want to store the `id` of the dessert as the key, and the count as the value
 * If totalCountPerProduct doesn't have the id of the dessert already stored, I want to initialise the count as 0
 * A common way to address this issue is to use the `||` operator, in my forEach loop I apply this pattern:
@@ -325,6 +332,7 @@
    ```
 
 ## 🟥 Updating the Cart's Count of Products
+
 * I need to update the count in the frontend, the HTML for this does not exist yet, but when it is there will be a span with an id of `product-count-for-id${product.id}` for each product in cart
 * I declare a variable to store the updated count of the product of the item being added, and one for the span for the count in the UI:
    
@@ -397,7 +405,9 @@
    </details>
 
 ## 🟥 Testing addItem() Method
+
 ### ⭐ Binding addItem() to Buttons ⭐
+
 * I instantiate the `ShoppingCart` class:
 
    ```js
@@ -434,6 +444,7 @@
    ```
 
 ### ⭐ Enabling Show Cart Button ⭐
+
 * I add an event listener to the `Show Cart` button:
 
    ```js
@@ -480,6 +491,7 @@
    </details>
 
 ## 🟥 Calculating Total Number of Items
+
 * I add another method to my `ShoppingCart` class:
 
    ```js
@@ -507,6 +519,7 @@
    ```
 
 ## 🟥 Calculating Total
+
 * I add a new method to the `ShoppingCart` class:
 
    ```js
@@ -602,3 +615,94 @@
 
 ## 🟥 Clearing Cart
 
+* I add a `clearCart()` method to the `ShoppingCart` class:
+
+```js
+clearCart() {
+
+}
+```
+
+* If the cart is already empty, I show an alert and return the function:
+
+```js
+clearCart() {
+   if (!this.items.length) {
+      alert("Your shopping cart is already empty")
+      return
+   }
+}
+```
+
+* Browser's have a built-in confirmation dialog, this is displayed in browser using the `confirm()` function which returns true if user confirms and false if the user cancels.
+* I declare a `isCartCleared` variable:
+
+```js
+clearCart() {
+   if (!this.items.length) {
+      alert("Your shopping cart is already empty");
+      return;
+   }
+   const isCartCleared = confirm("Are you sure you want to clear all items from your shopping cart?");
+}
+```
+
+* I set `items` and `total` back to their original values upong creation of `ShoppingCart`, and clear the HTML of `productsContainer`:
+
+```js
+const isCartCleared = confirm("Are you sure you want to clear all items from your shopping cart?");
+
+if (isCartCleared) {
+   this.items = [];
+   this.total = 0;
+   productsContainer.innerHTML = ''
+}
+```
+
+* I also set the textContent of `totalNumberOfItems`, `cartSubTotal`, `cartTaxes`, and `cartTotal` back to zero:
+
+```js
+if (isCartCleared) {
+   this.items = [];
+   this.total = 0;
+   productsContainer.innerHTML = ''
+   totalNumberOfItems.textContent = 0;
+   cartSubTotal.textContent = 0;
+   cartTaxes.textContent = 0;
+   cartTotal.textContent = 0;
+}
+```
+
+* Here is the complete implementation of `clearCart()`:
+
+
+   <details>
+      <summary>clearCart() Implementation</summary>
+
+   ```js
+   clearCart() {
+      if (!this.items.length) {
+         alert("Your shopping cart is already empty")
+         return
+      }
+      const isCartCleared = confirm("Are you sure you want to clear all items from your shopping cart?");
+
+      if (isCartCleared) {
+         this.items = [];
+         this.total = 0;
+         productsContainer.innerHTML = "";
+         totalNumberOfItems.textContent = 0;
+         cartSubTotal.textContent = 0;
+         cartTaxes.textContent = 0;
+         cartTotal.textContent = 0;
+      }
+   }
+   ```
+
+   </details>
+
+* I create an event listener for clicking on the `Clear Cart` button, and i assign the `clearCart()` method to the event. I pass in `cart.clearCart` as the callback, it requires me to bind the cart instance:
+
+```js
+clearCartBtn.addEventListener("click", cart.clearCart.bind(cart));
+```
